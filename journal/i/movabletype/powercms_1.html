@@ -1,0 +1,97 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>PowerCMSのグループ機能で前後のリンクを作成するメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>PowerCMSのグループ機能で前後のリンクを作成するメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;PowerCMSのグループ機能で前後のリンクを作成するメモ</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p><a href="http://www.powercms.jp/">PowerCMS</a>にはエントリーやウェブページなどをグループとしてまとめて管理する機能があります。</p>
+<blockquote>
+<p>コンテンツ管理 | PowerCMS ver.3<br /><a href="http://www.powercms.jp/features/contents_management.html">http://www.powercms.jp/features/contents_management.html</a></p>
+</blockquote>
+<p>このグループを使ってブログ記事やウェブページを並び替えたりして自由に表示させることができるようになります。<br />並び替え用のカスタムフィールドを用意するとか、日付で並び替える必要がなくなるので便利ですね。</p>
+<p>そんなグループ機能を使っていて、ある記事の前後の記事はどうやって取り出したらいいのだろう？？と思ったので少し考えてみました。</p>
+<h2>組み合わせを考えてみる</h2>
+<p>1,2,3,4,5というエントリーがあったら</p>
+<p>prev(2):1<br /> prev(3):2<br /> prev(4):3<br /> prev(5):4</p>
+<p>next(1):2<br /> next(2):3<br />next(3):4<br /> next(4):5</p>
+<p>こんな感じのがつくれればいいんだろう、、、というところまではなんとなく理解。</p>
+<p>配列、ハッシュあたりを使えばできるんだろうなぁ、と思いつつこの辺はどうも苦手でして＞＜<br />でもそんなことは言ってられないので「<a href="https://github.com/movabletype/Documentation/wiki/Japanese-mtml-guide-3-3">配列、ハッシュ、&lt;mt:loop&gt;、&lt;mt:for&gt;  movabletype/Documentation Wiki</a>」を読み込んでみました。</p>
+<blockquote>
+<p>配列、ハッシュ、&lt;mt:loop&gt;、&lt;mt:for&gt;  movabletype/Documentation Wiki<br /><a href="https://github.com/movabletype/Documentation/wiki/Japanese-mtml-guide-3-3">https://github.com/movabletype/Documentation/wiki/Japanese-mtml-guide-3-3</a></p>
+</blockquote>
+<p>まず最初に</p>
+<p>next(1):2</p>
+<p>prev(2):1<br />next(2):3</p>
+<p>prev(3):2<br />next(3):4</p>
+<p>prev(4):3<br />next(4):5</p>
+<p>prev(5):4</p>
+<p>こんな組み合わせを考えたりしましたが、そもそも3つの値を保存しておけるわけないし、ということで、</p>
+<p>prev(2):1<br />next(1):2</p>
+<p>prev(3):2<br />next(2):3</p>
+<p>prev(4):3<br />next(3):4</p>
+<p>prev(5):4<br />next(4):5</p>
+<p>という組み合わせをループで作ればいいのかということで解決。</p>
+<h2>MTMLを考えてみる</h2>
+<p>5つのエントリーに対して、4組あればいいので、</p>
+<p>&lt;MT:GroupPages group="hogehoge"&gt;<br />&lt;mt:Unless name="__first__"&gt;<br />&lt;mt:pageID setvar="thisID" /&gt;<br />&lt;mt:Var name="prev{$thisID}" value="$prevID" /&gt;<br />&lt;mt:Var name="next{$prevID}" value="$thisID" /&gt;<br />&lt;/mt:Unless&gt;<br />&lt;mt:pageID setvar="prevID"/&gt;<br />&lt;/MT:GroupPages&gt;</p>
+<p>という感じで書いてみました。<br />prev、nextというハッシュにセットするかんじです。</p>
+<p>表示させる側は<br />（ウェブページアーカイブを想定してます）</p>
+<p>&lt;mt:PageID setvar="curID"&gt;<br />&lt;mt:Var name="prev{$curID}" setvar="prevID"/&gt;<br />&lt;mt:Var name="next{$curID}" setvar="nextID"/&gt;</p>
+<p>&lt;ul&gt;<br />&lt;mt:If name="prevID"&gt;<br />&lt;mt:Pages id="$prevID"&gt;&lt;li&gt;&lt;a href="&lt;mt:PagePermalink&gt;"&gt;&lt;mt:PageTitle&gt;&lt;/a&gt;&lt;/li&gt;&lt;/mt:Pages&gt;<br />&lt;/mt:If&gt;<br />&lt;mt:If name="nextID"&gt;<br />&lt;mt:Pages id="$nextID"&gt;&lt;li&gt;&lt;a href="&lt;mt:PagePermalink&gt;"&gt;&lt;mt:PageTitle&gt;&lt;/a&gt;&lt;/li&gt;&lt;/mt:Pages&gt;<br />&lt;/mt:If&gt;<br />&lt;/ul&gt;</p>
+<p>といったかんじです。</p>
+<p>今のウェブページのIDをcurIDにセットして前後のウェブページのIDをprevID、nextIDとしてとりだして、直接IDでウェブページを指定してみました。</p>
+<p>他にも配列を使って各IDをセットしておいて、表示させる際に自分のページが何番目かを計算して表示させる、といった方法も考えられますね。</p>
+<p>まだまだ理解ができていないところがありますが、ハッシュや配列に入れた方がよさそうな場合もあるので、もう少し積極的に使ってみようと思いました。</p>
+<h2>「Movable Type 5.1 Webサイト制作ガイド Volume 2」も参考にさせてもらいました</h2>
+<p>この辺の配列・ハッシュの話とかは藤本さんの「<a href="http://www.h-fj.com/blog/mt51bookvol2/">Movable Type 5.1 Webサイト制作ガイド Volume 2</a>」に詳しく書かれていますね。</p>
+<blockquote>
+<p>The blog of H.Fujimoto : 「Movable Type 5.1 Webサイト制作ガイド Volume 2」特設ページ<br /><a href="http://www.h-fj.com/blog/mt51bookvol2/">http://www.h-fj.com/blog/mt51bookvol2/</a></p>
+</blockquote>
+<p>こちらも改めて読み直してみました。</p>
+<p>ハッシュ、配列に入れる際にmt:entriesといったループとかの中での書き方とか参考になります。</p>
+<h2>関連リンク</h2>
+<ul>
+<li>オブジェクトをグループ分けして出力する - The blog of H.Fujimoto<br /><a href="http://www.h-fj.com/blog/archives/2012/11/22-160245.php">http://www.h-fj.com/blog/archives/2012/11/22-160245.php</a></li>
+<li>配列/ハッシュ変数を使いやすくする MovableType プラグイン:ArrayUtil - Open MagicVox.net<br /><a href="http://www.magicvox.net/archive/2012/11222040/">http://www.magicvox.net/archive/2012/11222040/</a></li>
+</ul>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/wordpressfeedurl.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/kindle_1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

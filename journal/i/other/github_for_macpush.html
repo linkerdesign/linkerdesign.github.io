@@ -1,0 +1,78 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GitHub for Macで複数のリポジトリにPushする｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GitHub for Macで複数のリポジトリにPushする</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;GitHub for Macで複数のリポジトリにPushする</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+クリスマス休暇、冬休みでどこにいこうか？とワクワクしながら仕事をガンバロウと思っているこの頃です。</p>
+<p>さて、前回「<a href="http://linker.in/journal/2011/10/gitpush.php">Gitで複数のリポジトリにPushしてみる</a> 」というのを書きました。</p>
+<blockquote>
+  <p>Gitで複数のリポジトリにPushしてみる｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2011/10/gitpush.php">http://linker.in/journal/2011/10/gitpush.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>個人的には<a href="http://www.git-tower.com/">Tower</a>を使って管理することが多いのでそれを使って試していました。<br />
+多分問題無くできるだろう、とはおもっていたのですが無料で使える<a href="http://mac.github.com/">GitHub for Mac</a>で試してみました。</p>
+<blockquote>
+  <p>GitHub for Mac<br />
+  <a href="http://mac.github.com/">http://mac.github.com/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>まず自分のGitHubのアカウントにあるrepositoryの一覧から「Clone to Computer」を選んで自分のローカルに持ってきます。<br />
+持ってくるとこんな感じですね。</p>
+<p><img src="http://linker.in/journal/images/111006-01.jpg" width="539" height="351" alt="111006-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>実際にファイルを編集するとこのような感じで修正が認識されるのでmessageを入力してCommitします。</p>
+<p><img src="http://linker.in/journal/images/111006-02.jpg" width="600" height="262" alt="111006-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Commitして右上のBrunch to Syncをクリックすると問題無くPushされます。</p>
+<p><img src="http://linker.in/journal/images/111006-03.jpg" width="600" height="261" alt="111006-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>続いて前回と同様に.git / configのファイルを修正してもう一つのrepositoryの情報を追加しておきます。</p>
+<p>その状態でPushするとこのように複数のrepositoryに問題無くpushされます。</p>
+<p><img src="http://linker.in/journal/images/111006-04.jpg" width="528" height="498" alt="111006-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ということでめでたしめでたしなわけですが、Github同士で複数Pushできても特に意味ないです。</p>
+<p>個人的には「<a href="http://net.tutsplus.com/tutorials/other/the-perfect-workflow-with-git-github-and-ssh/">The Perfect Workflow, with Git, GitHub, and SSH | Nettuts+</a> 」に書かれてあるような感じで別のチェック用の環境でも自動化出来る様にしたいな、と思っているところです。</p>
+<blockquote>
+  <p>The Perfect Workflow, with Git, GitHub, and SSH | Nettuts+<br />
+  <a href="http://net.tutsplus.com/tutorials/other/the-perfect-workflow-with-git-github-and-ssh/">http://net.tutsplus.com/tutorials/other/the-perfect-workflow-with-git-github-and-ssh/</a></p>
+</blockquote>
+<p>これをみると出来そうな気もするのですが、どうもうまくいかずに引っかかってしまっています。</p>
+<p>rsyncを使う方法など方法はいくつかあるみたいですが、まずはこれについて引き続き試行錯誤してみたいと思います。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/adobe_css3_mobile_packfireworks.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/thank-you-steve-jobs.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

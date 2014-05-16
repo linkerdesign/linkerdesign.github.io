@@ -1,0 +1,99 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>LESSを使ってすっきりCSSを記述してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>LESSを使ってすっきりCSSを記述してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;LESSを使ってすっきりCSSを記述してみる</p>
+
+<p><img src="http://linker.in/journal/100826.gif" width="600" height="200" alt="100826.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+PCも熱中症になって壊れないか冷や冷やする日が続いてますが、みなさんＰＣにも快適な環境で仕事されてますか？</p>
+<p>以前にもどこかで見た気がするのですが、<a href="http://lesscss.org/index.html">LESS</a>というのを使うとCSSを少しだけすっきり記述することができます。<br />
+.lessファイルでCSSのようなものを作成していってコンパイルすると.cssファイルができあがる、という仕組みです。</p>
+<p>.lessを保存した後にコンパイルするとかめんどくさいなぁと思ったのでなにかいい方法はないものか、と見てみたらcodaのプラグインが存在するようです。<br />
+普段はcodaではなくDreamweaverで作業しているのでDWの拡張とかあると個人的にはうれしいのですが、とりあえずこのcodaのプラグインを試してみました。DWの場合はLESS用のアプリを使うと近い感じで作業できます。</p>
+<h2>lessをインストール</h2>
+<p>まずはlessをインストールしましょう。ターミナルでこんな感じに入れます。</p>
+<p>$ sudo gem install less</p>
+<p><img src="http://linker.in/journal/images/100826-01.jpg" width="520" height="406" alt="100826-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>パスワードを聞かれるのでパスワードいれるとインストール完了です。あら簡単。</p>
+<h2>Codaプラグインをダウンロード</h2>
+<p>次にCodaのプラグインをダウンロードします</p>
+<blockquote>
+  <p>LESS CSS Plugin for Coda<br />
+  <a href="http://incident57.com/coda/index2.php">http://incident57.com/coda/index2.php</a></p>
+</blockquote>
+<p>Downloadをクリックするとプラグインを保存できます。Codaを終了している状態でプラグインファイルをダブルクリックするとプラグインがインストールされます。</p>
+<p><img src="http://linker.in/journal/images/100826-02.jpg" width="112" height="84" alt="100826-02.jpg" style="border:2px #7c7c7c solid;" /><br /></p>
+<p>これまた簡単ですね。</p>
+<h2>実際に使ってみる</h2>
+<p>ということで実際に使ってみましょう。サンプルでhoge.lessというファイルを作成します。</p>
+<p><img src="http://linker.in/journal/images/100826-03.jpg" width="462" height="328" alt="100826-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>作成したら<a href="http://stack3.com/html_css/less_css.html">{LESS} 変数や構造化でコードをすっきり記述できるCSSの拡張</a> で紹介されているサンプルファイルを入れてみます。</p>
+<p><img src="http://linker.in/journal/images/100826-04.jpg" width="600" height="592" alt="100826-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>この状態で保存しても特に変化は無しです。プラグインを動かします。</p>
+<p>プラグイン＞LESS Compiler<br />
+と移動します</p>
+<p><img src="http://linker.in/journal/images/100826-05.jpg" width="600" height="424" alt="100826-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>移動するとLESS Compilerのウィンドウが立ち上がります。</p>
+<p><img src="http://linker.in/journal/images/100826-06.jpg" width="600" height="307" alt="100826-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ここでCompile Allをクリックします。</p>
+<p><img src="http://linker.in/journal/images/100826-07.jpg" width="600" height="307" alt="100826-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>こんなかんじで成功するとhoge.cssが作成されます。</p>
+<p><img src="http://linker.in/journal/images/100826-08.jpg" width="600" height="497" alt="100826-08.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ウィンドウを立ち上げた状態でAutomatically compile file when savedにチェックを入れておくと.lessファイルが保存される度にコンパイルされます。</p>
+<p><img src="http://linker.in/journal/images/100826-12.jpg" width="600" height="307" alt="100826-12.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>ではDreamweaverでやってみる</h2>
+<p>macであればアプリもあるようなので、少しだけ簡単にコンパイルできそうです。<br /></p>
+<blockquote>
+  <p>LESS.app For Mac OS X<br />
+  <a href="http://incident57.com/less/">http://incident57.com/less/</a>&nbsp;&nbsp;<br /></p>
+</blockquote>
+<p>このアプリで.lessファイルを開いておいて、DWで.lessを保存するとCSSもできそうなかんじですね。<br />
+まずはDWで.lessをコードビューで開ける様に環境設定で設定を追加しておきます。</p>
+<p><img src="http://linker.in/journal/images/100826-09.jpg" width="600" height="391" alt="100826-09.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>この状態で.lessファイルをDWとlessのアプリで開いておきます。DWで.lessを保存するとcodaの時と同じようになります。<br />
+（minifyにチェックを入れておく必要があります）</p>
+<p><img src="http://linker.in/journal/images/100826-11.jpg" width="600" height="342" alt="100826-11.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>設定する方法があるのかもしれませんが、.cssファイルではないので、コードヒントが使えませんね。</p>
+<h2>ということで</h2>
+<p>普段作っている作り方・書き方と異なるので慣れも当然必要かもしれませんが、効率的に書けそうな可能性がありますね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/ipadflipboard.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/fwug001.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

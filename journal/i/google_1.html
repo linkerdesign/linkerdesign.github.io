@@ -1,0 +1,67 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Google カスタム検索でシノニムを設定して同義語の取りこぼしを減らしてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Google カスタム検索でシノニムを設定して同義語の取りこぼしを減らしてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;&nbsp;&raquo;&nbsp;Google カスタム検索でシノニムを設定して同義語の取りこぼしを減らしてみる</p>
+
+<p>みなさん、こんにちは、まーしーです</p>
+<p>今日はGoogle カスタム検索の中にあるシノニムを触ってみた話でも。</p>
+<p>シノニムとは下記に若干記載があります。</p>
+<blockquote>
+  <p>より的確な結果を得るためのユーザー クエリの改善 - Google Custom Search API - Google Code<br />
+  <a href="http://code.google.com/intl/ja/apis/customsearch/docs/queries.html#synonyms">http://code.google.com/intl/ja/apis/customsearch/docs/queries.html#synonyms</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>同義語を追加することで検索結果に反映することが出来るようです。</p>
+<h2>シノニムの作成</h2>
+<p>同義語の追加はこのようにして行えます。</p>
+<p><img src="http://linker.in/journal/images/100517-01.jpg" width="500" height="219" alt="100517-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>サンプルで作ってみた検索エンジンを使い自分の日記を「ブーゲンビレア」で検索してみると、３件結果が表示されました。</p>
+<p><img src="http://linker.in/journal/images/100517-02.jpg" width="500" height="637" alt="100517-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>個人的には「<b>ブーゲンビリア</b>」と記述することが多いので「ブーゲンビレア」と「ブーゲンビリア」を同義語に設定してみます。</p>
+<p><img src="http://linker.in/journal/images/100517-03.jpg" width="500" height="173" alt="100517-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>こう設定した上で「ブーゲンビレア」で検索し直してみます。</p>
+<p><img src="http://linker.in/journal/images/100517-04.jpg" width="500" height="917" alt="100517-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ブーゲンビリアも検索対象になっているようです。<br />
+本来はもう少し違った感じで使うものだと思いますが、検索キーワードの幅を広げる事ができますね。</p>
+<p>「ブーゲンビリア」と「ブーゲンビレア」くらいであればGoogleがいずれ解決してしまうと思いますが、専門的な場合などはこのようなかんじで独自に追加して設定しておくということもありそうですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_92.php">&laquo;&nbsp;前の記事へ</a></p>
+
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

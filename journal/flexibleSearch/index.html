@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head profile="http://www.w3.org/2003/g/data-view">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>検索サンプル</title>
+<link rel="stylesheet" href="./flexibleSearch.css" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="./hashchange.js"></script>
+<script type="text/javascript" src="./flexibleSearch.min.js"></script>
+<body>
+<div class="section" id="container">
+<h1>検索サンプル</h1>
+<script type="text/javascript">
+jQuery(function($){
+$('#search_content').flexibleSearch({
+resultTargetId : "fs-result-target",
+loadingImgPath : "./loading.gif",
+searchDataPath : "/journal/search_data.js"
+});
+});
+</script>
+<div id="search_content"></div>
+<div id="fs-result-target"></div>
+</div>
+</body>
+</html>

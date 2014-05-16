@@ -1,0 +1,142 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTCSで、ユーザーごとの全得票数を合計してみる。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTCSで、ユーザーごとの全得票数を合計してみる。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTCSで、ユーザーごとの全得票数を合計してみる。</p>
+
+<p>こんばんは。</p>
+
+<p>今日はお祝い事だったので、美味しいものを沢山いただいてしまった@cremaです。ひゃぁ、明日は節制だー！</p>
+
+<p>さて、今日は、ちこっとMovable Typeの小ネタでも行きましょう。</p>
+
+<h2>Movable Typeコミュニティ・ソリューションでの記事に対する投票</h2>
+
+<p>Movable Typeコミュニティ・ソリューションのテンプレートセットである「コミュニティブログ」では、ひとつひとつのブログ記事に対して★のマークをクリックして「投票」することができます。</p>
+
+<p>投票数はほぼリアルタイムで集計され、「この記事に対して幾つの★がついている」ということを見ることができます。</p>
+
+<p>スクリーンショットで見ると、黒い星の中に「1」と書いてある部分が得票数ですね。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090612.gif" src="http://linker.in/journal/images/ph20090612.gif" width="388" height="195" class="mt-image-none" style="" /></span></p>
+
+<p>「記事単位で幾つ★がついているか」というのは、このように見ることができるのですが、「あるユーザーが書いた記事を全て合計して、★が幾つついているか」というリストは、デフォルトでは見ることができないと思います。</p>
+
+<p>ということで、それを書いてみるテスト。</p>
+
+<h2>まずはユーザーの名前をリストアップ</h2>
+
+<p>実験用に、新規のインデックステンプレートを作成し、適当な出力ファイル名をつけましょう。</p>
+
+<p>コミュニティブログのユーザー一覧を引っ張ってくるのに使うのは、mt:Authorsブロックタグです。その中にmt:AuthorDisplayNameタグを書いてみましょう。</p>
+
+<pre class="brush:xml">
+&lt;mt:Authors&gt;
+&lt;mt:AuthorDisplayName /&gt;
+&lt;/mt:Authors&gt;
+</pre>
+
+<p>ユーザーが4人いた場合、出力結果はこうなります。</p>
+
+<pre class="brush:xml">
+太郎二郎花子良子
+</pre>
+
+<h2>それぞれが書いたブログ記事の★の数をリストアップ</h2>
+
+<p>ここに、それぞれが書いたブログ記事の★の数をリストアップするべく、mt:Entriesなどを使ってみます。</p>
+
+<pre class="brush:xml">
+&lt;mt:Authors&gt;
+&lt;mt:AuthorDisplayName /&gt;&lt;mt:AuthorDisplayName setvar="authorDisplayName" /&gt;
+&lt;mt:Entries author="$authorDisplayName"&gt;
+&lt;mt:EntryScore namespace="community_pack_recommend" /&gt;
+&lt;/mt:Entries&gt;
+&lt;/mt:Authors&gt;
+</pre>
+
+<p>mt:AuthorDisplayName setvar="authorDisplayName"の部分で、一度ユーザー名を変数「authorDisplayName」に格納します。そしてそれを使ってmt:Entriesの出力結果を絞り込みますので、このような感じになります。</p>
+
+<pre class="brush:xml">
+太郎 1 4 4 二郎 3 花子 4 2 良子 3
+</pre>
+
+<p>名前の後の数字が、mt:EntryScore namespace="community_pack_recommend"によって出力された、それぞれの記事についた★の数です。この場合、太郎さんは「★1個」「★4個」「★4個」と、★のついた記事を3つ持っているのです。</p>
+
+<p><br />
+<h2>先ほど出力された数字を合計する</h2</p>
+
+<p>この、それぞれのユーザ名の後ろに並んだ数字の合計値を計算できれば、ユーザー名＋それぞれのブログ記事の合計得票数を出せますね。</p>
+
+<p>ということで、ここで変数を足します。</p>
+
+<pre class="brush:xml">
+&lt;mt:Authors&gt;
+&lt;mt:AuthorDisplayName /&gt;&lt;mt:AuthorDisplayName setvar="authorDisplayName" /&gt;
+&lt;mt:SetVar name="sum" value="0" /&gt;
+&lt;mt:Entries author="$authorDisplayName"&gt;
+&lt;mt:EntryScore namespace="community_pack_recommend" setvar="numStar" /&gt;
+&lt;mt:setVar name="sum" op="+" value="$numStar" /&gt;
+&lt;/mt:Entries&gt;
+&lt;mt:GetVar name="sum" /&gt;
+&lt;/mt:Authors&gt;
+</pre
+
+<p>mt:Entriesの前に、mt:SetVar name="sum"を足し、変数「sum」を準備します。</p>
+
+<p>mt:EntryScoreにsetvar="numStar"を追加し、名前の後の数字のひとつを変数「numStar」に格納。</p>
+
+<p>mt:setVar name="sum" op="+" value="$numStar"の部分で、ループが廻るたびに変数「sum」に変数「numStar」が加算されていきます。</p>
+
+<p>ループから抜けたあとに、mt:GetVar name="sum"で数値を出力。この数値が、それぞれのユーザーのブログ記事の合計得票数になります。</p>
+
+<p>出力結果はこんな感じ。</p>
+
+<pre class="brush:xml">
+太郎 9 二郎 3 花子 6 良子 3 
+</pre>
+
+<p>あとは、これに色々装飾を追加して素敵なリストに仕上げることができます。</p>
+
+<p>説明はこれにて終了。お疲れ様でした。<br />
+</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/podcast/6podcast.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/dieter.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

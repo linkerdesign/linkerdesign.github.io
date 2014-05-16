@@ -1,0 +1,81 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>2台のmacをいろいろと同期とか共有して使いやすくする。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>2台のmacをいろいろと同期とか共有して使いやすくする。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;ワークスタイル&nbsp;&raquo;&nbsp;2台のmacをいろいろと同期とか共有して使いやすくする。</p>
+
+<p><img alt="100505_00.jpg" src="http://linker.in/journal/images/100505_00.jpg" width="640" height="195" class="mt-image-none" style="" /></p>
+<p>こんにちは、taku-workです。<br />
+Google Docsの新バージョンの同時編集機能はけっこうおもしろい。<br />
+スプレッドシートの編集を同時にしているとゲームしているみたいです。</p>
+<p>というわけで、今回は2台のmacをいろいろと同期とか共有して使いやすくしようというお話。<br />
+同じ環境にしておけば作業もはかどります。はかどるはずです。はかどるかも。</p>
+<h2>Things</h2>
+<p>同期設定はアプリの起動時にoptionキーを押したまま起動します。<br />
+起動の際に表示される画面からライブラリを作成します。<br />
+作成先をDropboxなどにして2台のmacのThingsそれぞれから、そのライブラリを読み込む設定にすれば共有できます。</p>
+<p>すでにライブラリを作成済みの場合は<br />
+~/Library/Application Support/Cultured Code/Things<br />
+のディレクトリをDropboxなどにコピーします。</p>
+<p>２台目のmacからThingsを立ち上げる時にoptionキーで立ち上げてDropboxフォルダに移しているライブラリを選択すればOKです。</p>
+<p>iPhoneの同期ですが、同じネットワーク上の2つのmacに同じiPhoneを同期する設定にしていると片方でエラーが起きて同期できません。<br />
+iPhoneの同期だけは片方のmacにしておくほうが良さそうです。</p>
+<h2>1password</h2>
+<p>こちらもデータファイルをDropboxにいれることで同期させます。<br />
+PreferencesのGeneralから「Move」でファイルを移動します。</p>
+<h2>TextExpander</h2>
+<p>TextExpanderはバージョン3.x からDropbox経由または、MobileMe経由で同期が可能です。<br />
+ただし、3.xをいれるにはSnow Leopard以降が必要です。<br />
+設定は環境設定のSyncからDropboxまたはMobileMeを選びます。</p>
+<h2>teleport</h2>
+<p>同期ではないですが、2台のmacを使う場合には、以前@mersyが紹介していた「<a href="http://linker.in/journal/2009/03/macteleport.php">teleport</a>」が大活躍します。<br />
+2台以上のmacでマウスとキーボード、クリップボードの共有ができます。</p>
+<p>クリップボードの拡張には「<a href="http://linker.in/journal/2010/02/macclipsclipmenu.php">ClipMenu</a>」を使っているのですが、こちらも問題なく使えるので大変便利です。</p>
+<h2>MobileMe</h2>
+<p>あとは細々としたiCal、safariのブックマーク、アドレスブック、ことえりユーザー辞書などはまとめてMobileMeで同期してしまいます。<br />
+Transmit のお気に入り設定なども同期できます。以外と便利です。</p>
+<h2>ということで</h2>
+<p>Dropboxを使うのはもちろんのことですが、各種アプリの同期とteleportのおかげでわりとストレス無く2台のMacbookproを同時に使えます。<br />
+メインのモニタ−と合わせて3モニター体制になりましたが、そのうちの１つを資料表示用にあてられるのがこんなにも快適とは。<br />
+とりあえず、teleportだけでもおすすめです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_90.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/mt5_1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

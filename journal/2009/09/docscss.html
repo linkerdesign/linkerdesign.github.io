@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="linkerではドキュメントを共有するツールの1つとしてGoogle Docsを使っています。CSSを設定できることを知らなかったという声を聞いたのでその辺をまとめてみました。全てをGoogle に依存してしまうのは考え物ですが、用途としてはありかもしれません。" />
+<meta name="keywords" content="linker" />
+<meta name="author" content="柳谷 真志" /><link rel="author" href="https://plus.google.com/112387447202401710035" />
+<meta name="copyright" content="linker" />
+<meta name="company" content="linker" />
+<link rel="apple-touch-icon" href="/logo2.png" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta property="fb:app_id" content="107697189262112" />
+<link rel="canonical" href="/journal/2009/09/docscss.php"/>
+<meta property="og:site_name" content="linker"/>
+<meta property="og:title" content="Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。"/>
+<meta property="og:description" content='linkerではドキュメントを共有するツールの1つとしてGoogle Docsを使っています。CSSを設定できることを知らなかったという声を聞いたのでその辺をまとめてみました。全てをGoogle に依存してしまうのは考え物ですが、用途としてはありかもしれません。'/>
+<meta property="og:url" content="/journal/2009/09/docscss.php"/>
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/images/logo-og.jpg">
+<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>
+<script type="text/javascript" src="/journal/mt.js"></script>
+<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
+<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
+<title>Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。｜linker journal｜linker</title>
+<!-- favicon -->
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="prev" href="/journal/2009/09/ggg.php" title="gggの銀座界隈隈ガヤガヤ青春ショーを見てきた" />
+<link rel="next" href="/journal/2009/09/2-2.php" title="一回やすみ（その2）" />
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/styles-site.css" />
+<link rel="stylesheet" title="one-column" type="text/css" href="/css/layout/two-column-right.css" />
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAboveKzPdj4cCY33y_AFXrhTFON1NPSXOuC_9HjyQZ4DJK5Lf2hTCmI5fEJiyfCZRvZW8RAMvV-wVRg"></script>
+<link rel="alternate" type="application/atom+xml" title="linker 更新情報" href="http://feeds2.feedburner.com/linker-news" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6930174-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div class="section" id="container">
+<div id="header" class="pkg">
+    <p id="logo"><a href="/"><img src="/images/logo.gif" alt="linker" width="148" height="53" /></a></p>
+    <ul>
+      <li><a href="/about/"><img src="/images/menu-about.gif" alt="linkerについて" width="111" height="22" class="onimage" /></a></li>
+      <li><a href="/profile/"><img src="/images/menu-profile.gif" alt="3人のプロフィール" width="129" height="22" class="onimage" /></a></li>
+      <li><a href="/works"><img src="/images/menu-works.gif" alt="linkerの実績" width="97" height="22" class="onimage" /></a></li>
+      <li><img src="/images/menu-journal_cur.gif" alt="linker&amp;nbsp;journal" width="104" height="22" /></li>
+      <li><a href="/contact/"><img src="/images/menu-contact.gif" alt="お問い合わせ" width="101" height="22" class="onimage" /></a></li>    </ul>
+</div>
+  <div id="pageheadArea">
+    <p><img src="/images/txt-lead.gif" alt="linkerは「人と人」「人と情報」「人と物」をつなぐデザインユニットです。" width="386" height="21" /></p>
+        <ul id="sitenavi">
+          <li><a href="/">top</a></li><li><a href="/journal/">linker journal</a></li><li>Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。</li>
+        </ul>
+  </div>
+<div id="mainArea" class="pkg">
+  <div id="contentsArea">
+  <div id="entryjournal">
+    <div id="navientry">
+        <span class="navipreviousentry"><a href="/journal/2009/09/ggg.html">前の記事</a></span>｜
+        <span class="navinextentry"><a href="/journal/2009/09/2-2.html">次の記事</a></span>
+      </div>
+      <h1>Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。</h1>
+      <div class="entrymeta pkg">
+      <span class="entrydate">2009年09月10日</span>
+      <span class="entrycategory"><a href="/journal/tips/">Tips</a></span>
+      <span class="entryauthor"><img src="/images/img-mersy-thumb16.jpg" alt="柳谷 真志" /><a href="/journal/author/mersy/">柳谷 真志</a></span>
+      </div>
+      <div class="entrymain">
+      <p><img src="/journal/images/090910.gif" width="600" height="200" alt="090910.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+健康が一番と自宅の周りを20分ほど走ったら本日は軽く筋肉痛です。<br />
+走るのとテニスは微妙に違うようです・・</p>
+<p>さて、今日は<a href="http://docs.google.com/">Google Docs</a>の話でも。<br />
+以前@cremaが「<a href="/journal/2009/03/google.php">Googleドキュメントでアジェンダ作成。さらにログにする。</a>」でも書いていてご存じかと思いますが、linkerの3人は自宅作業がメインです。<br />
+テキストベースのドキュメントとか議事録はGoogle Docsで共有したりすることが多いです。&nbsp;&nbsp;<br /></p>
+<p>Google Docsを普段からよく使われていて、ご存じの方も多いかもしれませんが、今日はそのGoogle Docsの小ネタでも。</p>
+<h2>目次を設定する</h2>
+<p>Docsで文章を入力しながら「Option + 1」でh1とか「Option + 2」でh2とかいう感じで見出しをつけることが出来ます。<br />
+標準ではこんな感じになりますね。</p>
+<p><img src="/journal/images/090910-01.jpg" width="600" height="419" alt="090910-01.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>せっかく見出しをつけたので、 出来れば目次をつけたいところです。<br />
+「Insert → Table of contents」と行くと目次を挿入することが可能です。</p>
+<p><img src="/journal/images/090910-02.jpg" width="600" height="408" alt="090910-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>当然、ページ内リンクも可能です。</p>
+<p><img src="/journal/images/090910-03.jpg" width="600" height="518" alt="090910-03.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>文章がすごく多いときは重宝するはずです。<br />
+リンクをクリックして移動することも楽ですし、全体の構成を見直すにも使えそうですね。</p>
+<h2>CSSでデフォルトのデザインを設定</h2>
+<p>見出しがついているのですが、本文部分は文字サイズや太字だけだとなかなか差がわからないですよね。<br />
+そんなことないですか？個人的にはわかりにくいです。<br />
+書籍とかでもどこに揃ってる見出しなのか？とかわからないといらっとしちゃいますね。</p>
+<p>Google DocsではHTML/CSSと同じようにCSSでデフォルトのデザインを設定しておけばそのスタイルがあたった状態で編集が可能です。<br /></p>
+<p>「Edit（編集）→Edit CSS」といくと</p>
+<p><img src="/journal/images/090910-04.jpg" width="600" height="416" alt="090910-04.jpg" style="border:2px #808080 solid;" /></p>
+<p>CSSの編集画面がひらきますのでCSSを記述します。</p>
+<p><img src="/journal/images/090910-05.jpg" width="500" height="304" alt="090910-05.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>このあたりに何を記述するのは人それかと思いますが、h1,h2,h3,pを記述しておけば良いんじゃないでしょうか？</p>
+<p><br />
+<img src="/journal/images/090910-06.jpg" width="600" height="414" alt="090910-06.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>目次部分はposition:fixedとかにすると使いやすいですね。</p>
+<p>まっさらな状態から書き始めると段落（pタグ）として認識されませんが、「Option + 0」で段落になるので、その後は改行で段落替え。<br />
+「Shift + Enter」 で強制改行という感じになります。</p>
+<h2>テンプレートに登録</h2>
+<p>Google Docsではテンプレートを登録することができます。<br />
+現時点では自分の作業するところ、というよりはGoogleが配布する側におく形になります。</p>
+<p><a href="http://docs.google.com/templates?type=docs">http://docs.google.com/templates?type=docs</a>にアクセスします。<br />
+（直接のリンクが見あたらないので「New ＞ From template」でも同様のページに移動します）</p>
+<p><img src="/journal/images/090910-07.jpg" width="600" height="500" alt="090910-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Submit a Templateをクリックすると</p>
+<p><img src="/journal/images/090910-08.jpg" width="600" height="405" alt="090910-08.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>こんなかんじなので、自分のGoogle Docsからドキュメントを選択して、概要等を記入してテンプレートとして送信します。</p>
+<p>こういったかんじで登録したテンプレートから新規Documentを作ろうと思うと「New ＞ From template」という流れになり、先ほど登録したGoogle DocsのTemplate Galleryから選ぶという感じになります。<br />
+ちなみに今回登録してみたテンプレートは<br />
+<a href="http://docs.google.com/previewtemplate?id=0AU_eXG5671iBYWZ6NTR4aGs0emg1XzdnZGJkempnOA&amp;mode=public">http://docs.google.com/previewtemplate?id=0AU_eXG5671iBYWZ6NTR4aGs0emg1XzdnZGJkempnOA&amp;mode=public</a>&nbsp;&nbsp;<br />
+にあるようです。</p>
+<p>テンプレートに登録したファイルを編集するときは</p>
+<p><img src="/journal/images/090910-09.jpg" width="600" height="360" alt="090910-09.jpg" style="border:2px #828282 solid;" /></p>
+<p>こんなかんじで、上部にアラートが出るようです。</p>
+<p>Google DocsのTemplate GalleryにはMy Templatesというメニューもあるので、そこから自分のテンプレートを選んで作成、という流れになります。<br />
+でも、正直この流れってめんどくさいですよね。<br />
+であればCSS等を設定しておいた空のファイルを作成しておいて、それをコピペして使う方が良いかと思います。</p>
+<p>この辺がさらに使いやすくなると、テンプレートに登録する人も増えるような気がするんだけどなぁ、と思ったりもしています。<br />
+とはいえ、Google Docsでも十分な場合とかはこういった感じで最初に設定しておけば十分使いやすい気がしています。<br />
+他の人とDocumentを共有しないといけない場合以外にもいかがでしょうか？</p>
+      </div>
+      <div class="entrymetafoot pkg">
+      <p class="entrydate"><span>2009年09月10日</span></p>
+      <p class="entrytag"><span>google&nbsp;,&nbsp;Googleドキュメント</span></p>
+<fb:like href="http%3A%2F%2Flinker.in%2Fjournal%2F2009%2F09%2Fdocscss.php" layout="standard" show_faces="false"></fb:like></p>
+</div>
+<div id="entrynavifoot">
+      <p id="entrypreviousfoot"><a href="/journal/2009/09/ggg.html">gggの銀座界隈隈ガヤガヤ青春ショーを見てきた</a></p>
+        <p id="entrynextfoot"><a href="/journal/2009/09/2-2.html">一回やすみ（その2）</a></p>
+      </div>
+    </div><!-- /#entryjournal -->
+  </div><!-- /id="contentsArea" -->
+<div id="menuArea">
+<div class="menu">
+<h2><img src="/images/menutit-category.gif" alt="Category カテゴリーアーカイブ" width="102" height="30" /></h2>
+<ul>
+<li><a href="/journal/cat45/">アート</a></li>
+<li><a href="/journal/design/">デザイン</a></li>
+<li><a href="/journal/xhtmlcss/">HTML/CSS/JavaScript</a></li>
+<li><a href="/journal/movabletype/">Movable Type</a></li>
+<li><a href="/journal/tips/">Tips</a></li>
+<li><a href="/journal/review/">レビュー</a></li>
+<li><a href="/journal/workstyle/">ワークスタイル</a></li>
+<li><a href="/journal/event/">イベント</a></li>
+<li><a href="/journal/cms/">その他CMS全般</a></li>
+<li><a href="/journal/casestudy/">ケーススタディ</a></li>
+<li><a href="/journal/direction/">ディレクション</a></li>
+<li><a href="/journal/mobile/">モバイル</a></li>
+<li><a href="/journal/podcast/">こんぶだしmeeting</a></li>
+<li><a href="/journal/other/">その他</a></li>
+</ul>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-archives.gif" alt="Archives 月別アーカイブ" width="81" height="30" /></h2>
+<select onchange="location.href=this.options[this.selectedIndex].value">
+<option value="/journal/2013/05/">2013年5月</option>
+<option value="/journal/2013/03/">2013年3月</option>
+<option value="/journal/2013/02/">2013年2月</option>
+<option value="/journal/2013/01/">2013年1月</option>
+<option value="/journal/2012/12/">2012年12月</option>
+<option value="/journal/2012/11/">2012年11月</option>
+<option value="/journal/2012/10/">2012年10月</option>
+<option value="/journal/2012/09/">2012年9月</option>
+<option value="/journal/2012/08/">2012年8月</option>
+<option value="/journal/2012/07/">2012年7月</option>
+<option value="/journal/2012/06/">2012年6月</option>
+<option value="/journal/2012/05/">2012年5月</option>
+<option value="/journal/2012/04/">2012年4月</option>
+<option value="/journal/2012/03/">2012年3月</option>
+<option value="/journal/2012/02/">2012年2月</option>
+<option value="/journal/2012/01/">2012年1月</option>
+<option value="/journal/2011/12/">2011年12月</option>
+<option value="/journal/2011/11/">2011年11月</option>
+<option value="/journal/2011/10/">2011年10月</option>
+<option value="/journal/2011/09/">2011年9月</option>
+<option value="/journal/2011/08/">2011年8月</option>
+<option value="/journal/2011/07/">2011年7月</option>
+<option value="/journal/2011/06/">2011年6月</option>
+<option value="/journal/2011/05/">2011年5月</option>
+<option value="/journal/2011/04/">2011年4月</option>
+<option value="/journal/2011/03/">2011年3月</option>
+<option value="/journal/2011/02/">2011年2月</option>
+<option value="/journal/2011/01/">2011年1月</option>
+<option value="/journal/2010/12/">2010年12月</option>
+<option value="/journal/2010/11/">2010年11月</option>
+<option value="/journal/2010/10/">2010年10月</option>
+<option value="/journal/2010/09/">2010年9月</option>
+<option value="/journal/2010/08/">2010年8月</option>
+<option value="/journal/2010/07/">2010年7月</option>
+<option value="/journal/2010/06/">2010年6月</option>
+<option value="/journal/2010/05/">2010年5月</option>
+<option value="/journal/2010/04/">2010年4月</option>
+<option value="/journal/2010/03/">2010年3月</option>
+<option value="/journal/2010/02/">2010年2月</option>
+<option value="/journal/2010/01/">2010年1月</option>
+<option value="/journal/2009/12/">2009年12月</option>
+<option value="/journal/2009/11/">2009年11月</option>
+<option value="/journal/2009/10/">2009年10月</option>
+<option value="/journal/2009/09/">2009年9月</option>
+<option value="/journal/2009/08/">2009年8月</option>
+<option value="/journal/2009/07/">2009年7月</option>
+<option value="/journal/2009/06/">2009年6月</option>
+<option value="/journal/2009/05/">2009年5月</option>
+<option value="/journal/2009/04/">2009年4月</option>
+<option value="/journal/2009/03/">2009年3月</option>
+<option value="/journal/2009/02/">2009年2月</option>
+<option value="/journal/2009/01/">2009年1月</option>
+</select>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-author.gif" alt="Author 執筆者別アーカイブ" width="101" height="30" /></h2>
+<ul id="menu-authorlist">
+  <li id="crema"><a href="/journal/author/crema/"><span>黒野 明子</span></a></li>
+  <li id="taku-work"><a href="/journal/author/taku-work/"><span>秋野 琢</span></a></li>
+  <li id="mersy"><a href="/journal/author/mersy/"><span>柳谷 真志</span></a></li>
+</ul>
+</div>
+<!-- /id="menuArea" -->
+</div>
+<script type="text/javascript">
+jQuery(function($){
+$("iframe.twitter-share-button").css("vertical-align","bottom");
+});
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<!-- id="mainArea" -->
+</div>
+<div id="footerArea">
+<div class="section pkg" id="footer">
+<p class="contact"><a href="/contact/"><img src="/images/img-footer-contact.gif" alt="お問い合わせ" width="153" height="74" class="onimage" /></a></p>
+  <ul id="footernavi">
+    <li id="footernavitop"><a href="/">トップページ</a></li>
+      <li><a href="/about/">linkerについて</a></li>
+      <li><a href="/profile/">3人のプロフィール</a></li>
+      <li><a href="/works/">linkerの実績</a></li>
+      <li><a href="/journal/">linker journal</a></li>
+    </ul>
+<address>copyright &copy; 2008-2014 linker all rights reserved.</address>
+  <!-- id="footer" -->
+  </div>
+</div>
+<!-- id="container" -->
+</div>
+<script type="text/javascript" src="/js/function.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = '/js/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+</body>
+</html>
+

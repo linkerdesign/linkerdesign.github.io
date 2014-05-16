@@ -1,0 +1,75 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「File include is disabled by "AllowFileInclude" config directive」はMT5.13以降のfileモディファイアに関するエラーです｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>「File include is disabled by "AllowFileInclude" config directive」はMT5.13以降のfileモディファイアに関するエラーです</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;「File include is disabled by "AllowFileInclude" config directive」はMT5.13以降のfileモディファイアに関するエラーです</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>Movable Typeは5.13から、MTIncludeタグでfileモディファイアがデフォルトでは使えなくなりました。</p>
+<blockquote>
+  <p>MTInclude | テンプレートタグリファレンス<br />
+  <a href="http://www.movabletype.jp/documentation/appendices/tags/include.html">http://www.movabletype.jp/documentation/appendices/tags/include.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>この5.13のアップデートの話はjournalでも書きましたね。</p>
+<blockquote>
+  <p>MT 5.13 が出ていますね｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2012/02/mt-513.php">http://linker.in/journal/2012/02/mt-513.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>そもそも、5.13でfileモディファイアを使ったらどのようなエラーメッセージを返してくるのか？とおもったのでfileモディファイアを使って再構築してみました。<br />
+出てきたエラーメッセージは下記のようなかんじでした。</p>
+<blockquote>
+  <p>テンプレート「test」の再構築中にエラーが発生しました: &lt;mtinclude&gt;タグでエラーがありました: File include is disabled by "AllowFileInclude" config directive.</p>
+</blockquote>
+<p>わかりやすいエラーメッセージですね。</p>
+<p><a href="http://www.movabletype.jp/documentation/appendices/config-directives/allowfileinclude.html">AllowFileIncludeの環境変数リファレンス</a>に書いてあるように</p>
+<blockquote>
+  <p>AllowFileInclude 1<br /></p>
+</blockquote>
+<p>をmt-config.cgiに指定すれば問題無く使えますね。</p>
+<blockquote>
+  <p>AllowFileInclude | 環境変数リファレンス<br />
+  <a href="http://www.movabletype.jp/documentation/appendices/config-directives/allowfileinclude.html">http://www.movabletype.jp/documentation/appendices/config-directives/allowfileinclude.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ということで、アップデートしたばかりであれば特に気にならないのですが、時間がたつと今回のアップデートの様な内容があったことを忘れてしまいでした。<br />
+将来、前述の様なエラーメッセージと出会って困った時に、自分のこのエントリーが検索ででてくればいいなぁ、と個人的なメモとして残しておこうと思います。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/2_4.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/ui-tea-report.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

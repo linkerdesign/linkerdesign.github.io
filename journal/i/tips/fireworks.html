@@ -1,0 +1,83 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Fireworksのシンボルスクリプトを使ってシンボルをもうすこし便利に使う｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Fireworksのシンボルスクリプトを使ってシンボルをもうすこし便利に使う</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Fireworksのシンボルスクリプトを使ってシンボルをもうすこし便利に使う</p>
+
+<p><img alt="100731_00.jpg" src="http://linker.in/journal/images/100731_00.jpg" width="640" height="195" class="mt-image-none" style="" /></p>
+<p>こんにちは、taku-workです。<br />
+magic trackpadを試しに使ってみているのですが、ウェブサイトを見たりするくらいの軽めの使い方には良さそうですね。<br />
+さすがにグラフィック作業にはまだ使いづらい感じです。</p>
+<p>ということで、今回はAdobe Fireworksのシンボルスクリプトを使ってシンボルをもうすこし便利に使うおはなし。<br />
+webサイトやアプリケーションなどのUIで同じ要素のまとまりだけど文字列は違うなど、そんなときに役に立ちます。</p>
+<h2>まずは要素を作ります。</h2>
+<p>要素のセットを作ります。<br />
+今回はアイテム名とスペックと背景を変えるようなサンプルを作りました。</p>
+<p><img alt="100731_01.jpg" src="http://linker.in/journal/images/100731_01.jpg" width="500" height="245" class="mt-image-none" style="" /></p>
+<p>次に各レイヤーに名前をつけておきます。<br />
+この名前を元にシンボルスクリプトをつけていくことになります。</p>
+<p><img alt="100731_02.jpg" src="http://linker.in/journal/images/100731_02.jpg" width="441" height="396" class="mt-image-none" style="" /></p>
+<h2>シンボルに登録します。</h2>
+<p>作ったアイテムをシンボルに登録します。<br />
+グラフィックシンボルを選び、「共有ライブラリに保存」にチェックを入れます。</p>
+<p><img alt="100731_03.jpg" src="http://linker.in/journal/images/100731_03.jpg" width="500" height="195" class="mt-image-none" style="" /></p>
+<h2>シンボルスクリプトを作成します。</h2>
+<p>[メニュー] → [コマンド] → [シンボルスクリプトを作成] を選択します。</p>
+<p><img alt="100731_04.jpg" src="http://linker.in/journal/images/100731_04.jpg" width="500" height="371" class="mt-image-none" style="" /></p>
+<p>「 シンボルスクリプトを作成」パネルから要素名を選択して、属性やプロパティ名、値をセットしていきます。<br />
+シンボルごとにテキストの文字を変えたい場合は属性を「textChars」にして値を任意にいれておきます。</p>
+<p><img alt="100731_05.jpg" src="http://linker.in/journal/images/100731_05.jpg" width="500" height="377" class="mt-image-none" style="" /></p>
+<p>スクリプトが作成できたら右下の保存ボタンで保存します。<br />
+最後にドキュメントライブラリにあるシンボルを削除します。<br />
+これをしないとなぜかスクリプトがうまく動きません。</p>
+<h2>シンボルスクリプトを使う</h2>
+<p>準備が整ったら共有ライブラリから先ほどシンボルスクリプトを設定したシンボルをドラッグして表示します。<br />
+画面下のプロパティタブの右にシンボルプロパティというタブを開くと先ほど設定したシンボルスクリプトの値を個々に設定できます。</p>
+<p><img alt="100731_06.jpg" src="http://linker.in/journal/images/100731_06.jpg" width="500" height="264" class="mt-image-none" style="" /></p>
+<p>これでシンボルを複数コピーしても要素が同じものは文字列などを任意に変えることができます。</p>
+<p><img alt="100731_07.jpg" src="http://linker.in/journal/images/100731_07.jpg" width="500" height="349" class="mt-image-none" style="" /></p>
+<h2>ということで</h2>
+<p>webサイトの見出しや商品アイテムのセットなど使いどころは結構ありそうです。<br />
+ただ、セットしたシンボルスクリプトを再編集すると、もう一度ドキュメントライブラリにあるシンボルを削除する必要があるのでそこは注意が必要です。<br />
+属性の指定などは多めにしておくと良いかもしれません。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/wordpresstwitter.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/ectomac.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

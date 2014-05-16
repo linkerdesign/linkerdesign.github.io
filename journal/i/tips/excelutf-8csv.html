@@ -1,0 +1,58 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>中国語のExcelデータをUTF-8のcsvに切り替えてインポート｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>中国語のExcelデータをUTF-8のcsvに切り替えてインポート</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;中国語のExcelデータをUTF-8のcsvに切り替えてインポート</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+気づいたら大相撲が始まっていたという、相撲好きにはあってはならないことで反省です。</p>
+<p>今日は先日であった小ネタでも。</p>
+<p>ある作業でエクセルのデータをインポート用のCSVに変える作業があったのですが、そのエクセルのデータは中国語でした。</p>
+<p>エクセルはShift-jisで中国語の文字がトーフのように四角になってしまうんですが、データとしては問題無く持ててるようなんですよね。<br />
+ただ、それをそのままcsvにしようとするとうまくいきませんでした。</p>
+<p>なので、一旦タブ区切りのtxtファイル（UTF-16）で保存しておいて、そのtxtファイルをUTF-8に変換してCSVファイルにするという流れをとってみました。</p>
+<p>ひとまずこの方法でほしいところまではいけたようです。<br />
+試行錯誤してみてとりあえずの方法が見つかったかんじでした。</p>
+<p>そういう中国語のCSVデータをMTにインポートするときは文字コードをちゃんと指定しないとインポートできないということも経験できました。</p>
+<p>何事も経験してみないと分からないですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/gallery_su_2.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_194.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

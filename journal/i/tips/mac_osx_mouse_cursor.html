@@ -1,0 +1,100 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Mac OSXで、作業中に変化するマウスカーソルをキャプチャする話。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Mac OSXで、作業中に変化するマウスカーソルをキャプチャする話。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Mac OSXで、作業中に変化するマウスカーソルをキャプチャする話。</p>
+
+<p><img alt="mouse-ttl.gif" src="http://linker.in/journal/images/mouse-ttl.gif" width="640" height="100" class="mt-image-none" style="" /></p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>Mac OSXでマウスカーソルをキャプチャする方法なんてよく知られていることだと思うのですが、Illustrator作業中のマウスカーソルの変化を撮影するのにちょっと手間取ったので、自分用メモ。</p>
+
+<h2>まずはマウスカーソルを入れないキャプチャ</h2>
+
+<p>マウスカーソルを入れないキャプチャだったら、以下の二つはごく日常的に使われてますよね。</p>
+
+<ul>
+	<li>command + shift + 3 （画面全体をキャプチャ）</li>
+	<li>command + shift + 4 （選択範囲をキャプチャ）</li>
+</ul>
+
+<p>左手だけでさくっとできるので、1日10回ぐらいは無意識でやってる気がします。ただし、マウスカーソルはキャプチャできません。</p>
+
+<h2>グラブ</h2>
+
+<p>そこで、重宝するのがMac OSX標準搭載のキャプチャ機能「グラブ」。</p>
+
+<p>確かにグラブの［取り込み＞タイマー］を使えば、マウスカーソルは撮影できます。しかしそこで撮影できるのは、［グラブ＞環境設定］から選べる8種類のみなんですよね（下図参照）。</p>
+
+<p><img alt="mouse.png" src="http://linker.in/journal/images/mouse.png" width="241" height="222" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>私がキャプチャしたかったのは、Illustratorで［選択ツール＋option］をしたときの二重のマウスカーソルなのですが、グラブでやるとこうなるのです。</p>
+
+<p><img alt="mouse002.png" src="http://linker.in/journal/images/mouse002.png" width="257" height="207" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>環境設定で選んでいるデフォルトのマウスカーソルでキャプチャされてしまうのですよね。これがちょっと嫌なのでした。</p>
+
+<h2>そこでターミナルを使う</h2>
+
+<p>で、色々検索していて行き当たったのが、小飼弾さんの記事でした。</p>
+
+<ul>
+	<li><a href="http://blog.livedoor.jp/dankogai/archives/50787032.html">404 Blog Not Found:tips - Mac OS Xのスクリーンショット</a></li>
+</ul>
+
+<p>この記事の「screencaptureコマンド」のセクションに、細かい指定ができると書かれているので、色々組み合わせてチャレンジ。ターミナルを起動して、</p>
+
+<pre>sleep 10 ; screencapture -cC</pre>
+
+<p>を実行してみました。</p>
+
+<p><img alt="mouse-004.gif" src="http://linker.in/journal/images/mouse-004.gif" width="436" height="106" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>こう書くと［10秒後に］［マウスカーソルを含めて］［クリップボードにキャプチャを記憶］という指定になってます（細かいオプションは、弾さんの記事を読んでくださいね）。</p>
+
+<p>10秒の間にIllustratorに戻って、キャプチャしたい状況を再現して待っていると、カシャッと音がしてキャプチャ完了。Photoshopにペーストすれば、ちゃんとこんな風にとれてました。素晴らしい。</p>
+
+<p><img alt="mouse003.jpg" src="http://linker.in/journal/images/mouse003.jpg" width="258" height="196" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>ということで、ターミナルで色々とできるのは分かっていてもちょっと気後れしがちだったりするのですが、もっと積極的に使っていきたい今日この頃です。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/post_166.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/macbook_air_mid_2011.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>フルパスを簡単に調べる方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>フルパスを簡単に調べる方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;フルパスを簡単に調べる方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />東京はだいぶ秋めいてきた気がしますね。朝晩は寒い気がしますね。</p>
+<p>さて、先日、仕事中に作業環境内での作業環境のフルパスを調べる必要がありました。<br />普段はそういうことはないんですが、接続情報しかなかったので何とか調べる方法がないのかと思ったら簡単に調べられるんですね。</p>
+<pre>&lt;?php<br />echo __FILE__;<br />?&gt;</pre>
+<p>と書いたphpファイルを作ってアップして、そのファイルを表示させるとそのファイルまでのフルパスが表示されます。</p>
+<p>__FILE__のような定数についてはこちらを参考に。</p>
+<blockquote>
+<p>PHP: 自動的に定義される定数 - Manual<br /><a href="http://php.net/manual/ja/language.constants.predefined.php">http://php.net/manual/ja/language.constants.predefined.php</a></p>
+</blockquote>
+<p>Basic認証をかける際にhtpasswdファイルまではフルパスで書いたりするなどあるので、さくっと知りたいときにはいいかもしれないですね。</p>
+<h2>参考リンク</h2>
+<p>レンタルサーバーでフルパスがわからないときに調べる方法 　山本隆の開発日誌<br /><a href="http://www.gesource.jp/weblog/?p=433">http://www.gesource.jp/weblog/?p=433</a></p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/passbook.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/ticket.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

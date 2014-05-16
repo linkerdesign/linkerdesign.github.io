@@ -1,0 +1,82 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>2つのフォルダを比較して差分ファイルを取り出してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>2つのフォルダを比較して差分ファイルを取り出してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;2つのフォルダを比較して差分ファイルを取り出してみる</p>
+
+<p><img src="http://linker.in/journal/images/101007.gif" width="600" height="200" alt="101007.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+ロンドンはなかなか天気が安定しない日が続いています。 折りたたみ傘は手放せませんね。</p>
+<p>さて、先日2つのフォルダに入っているファイルが微妙に違うからその差分を取り出したい、とおもって色々調べてみました。<br />
+今回使ったのはCompare Foldersというソフトです。調べてみた感じではwindowsにもいくつかあるような感じです。</p>
+<blockquote>
+  <p>Download Compare Folders for Mac - Compare contents of two folders. MacUpdate Mac Software Downloads <a href="http://www.macupdate.com/info.php/id/14192/compare-folders">http://www.macupdate.com/info.php/id/14192/compare-folders</a><br /></p>
+</blockquote>
+<p>まずはダウンロードしてインストールしておきます。アプリを起動するとこのようなかんじです。</p>
+<p><img src="http://linker.in/journal/images/101007-01.jpg" width="543" height="503" alt="101007-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>今回はサンプルでこのようなフォルダを２つ用意してみました。</p>
+<p><img src="http://linker.in/journal/images/101007-02.jpg" width="550" height="222" alt="101007-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>比較したいフォルダをフォルダ１，２のアイコンところにドラッグします。フォルダ名のところをクリックしてフォルダを選択することもできます。<br />
+２つのフォルダをドラッグし終えると、このようなアラートがでて、比較するオプションを指定できます。</p>
+<p><img src="http://linker.in/journal/images/101007-03.jpg" width="473" height="320" alt="101007-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>比較が完了するとこのようになります。</p>
+<p><img src="http://linker.in/journal/images/101007-04.jpg" width="550" height="510" alt="101007-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Duplicate Itemsですので、共通ファイルが表示されています。<br />
+Unique Itemsをクリックすれば差分ファイルが表示されます。</p>
+<p><img src="http://linker.in/journal/images/101007-05.jpg" width="550" height="509" alt="101007-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>取り出したい差分のアイテムを選択して右クリックでArchiveを選択すると、保存場所を選択できます。<br />
+保存するとこのような感じになります。</p>
+<p><img src="http://linker.in/journal/images/101007-06.jpg" width="287" height="164" alt="101007-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>このアーカイブファイルを解凍すると差分のファイルが取り出せます。</p>
+<p><img src="http://linker.in/journal/images/101007-07.jpg" width="321" height="174" alt="101007-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>もともとのファイルがあった場所までの階層も考慮してアーカイブされる様なので、元々のファイルがあった場所によっては深い位置になってしまいますが、必要としているファイルを取り出すことができますね。</p>
+<h2>ターミナルでもできるかも？</h2>
+<p>macではターミナルでもできそうな感じです。</p>
+<p>ファイル名の一覧を取得するまではできたのですが、差分ファイルのみをどこかにまとめる、というのはできなかったのでこれはまたいつか見てみたいと思います。</p>
+<p>ちなみにターミナルで</p>
+<blockquote>
+  <p>diff -rq フォルダ１のパス フォルダ２のパス</p>
+</blockquote>
+<p>と書けば、差分のファイル名一覧を表示できます。<br />
+該当フォルダをターミナルにドロップすればパスが自動で入力されるんですね。</p>
+<p>もうすこし便利な方法やツールもありそうですが、参考までに。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/google_mobile_appgoogle.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/facebook.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

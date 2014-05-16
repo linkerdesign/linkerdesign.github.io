@@ -1,0 +1,122 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTでカスタムフィールドのチェックボックスの値をまとめて表示する｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTでカスタムフィールドのチェックボックスの値をまとめて表示する</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTでカスタムフィールドのチェックボックスの値をまとめて表示する</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+今日もMTネタで。</p>
+
+<p>Movable Typeのカスタムフィールドにはいくつか種類がありますが、ブログ記事にチェックボックスを追加してチェックがあるときは○○をする、といった事が可能になります。<br />
+ただ、MT標準の機能ではチェックボックスをグループでは使いにくいです。<br />
+基本的には1つずつカスタムフィールドを追加していくかんじですね。</p>
+
+<h2>チェックボックスのカスタムフィールドをグルーピングする</h2>
+
+<p>A,B,C,D,E,F（それぞれのMTタグはMTcustomAなど）<br />
+とチェックボックスがあってチェックが入っている時にこれを表示する場合を簡単に書くと</p>
+
+<pre class="brush:xml">
+&lt;MTIf tag=&quot;customA&quot;&gt;A&lt;/MTIf&gt;、&lt;MTIf tag=&quot;customB&quot;&gt;B&lt;/MTIf&gt;、&lt;MTIf tag=&quot;customC&quot;&gt;C&lt;/MTIf&gt;.....
+</pre>
+
+<p>こんな感じになるかとおもいますが、区切り文字（この場合は「、」）をどう表示するか、というのを考えないといけないですね。<br />
+そこで、チェックボックスが入っているものをハッシュに入れるという方法をとってみたいと思います。</p>
+
+<p>ソースの全体はこんな感じになりそうです。</p>
+
+<pre class="brush:xml">
+&lt;MTIf tag=&quot;customA&quot;&gt;&lt;MTSetVarBlock name=&quot;push(Fields)&quot;&gt;A&lt;/MTSetVarBlock&gt;&lt;/MTIf&gt;
+&lt;MTIf tag=&quot;customB&quot;&gt;&lt;MTSetVarBlock name=&quot;push(Fields)&quot;&gt;B&lt;/MTSetVarBlock&gt;&lt;/MTIf&gt;
+......
+&lt;MTVar name=&quot;count(Fields)&quot; setvar=&quot;Fieldscount&quot;&gt;
+&lt;MTIf name=&quot;Fieldscount&quot; ge=&quot;1&quot;&gt;
+値：&lt;MTFor var=&quot;i&quot; from=&quot;0&quot; to=&quot;$Fieldscount&quot; glue=&quot;、&quot;&gt;&lt;$MTVar name=&quot;Fields[$i]&quot;$&gt;&lt;/MTFor&gt;
+&lt;MTElse&gt;
+値：無し
+&lt;/MTIf&gt;
+</pre>
+
+<p>個別に見ていきます。</p>
+
+<p>こんなかんじでカスタムフィールドに値があるときFieldsに追加していきます。</p>
+
+<pre class="brush:xml">
+&lt;MTIf tag=&quot;customA&quot;&gt;&lt;MTSetVarBlock name=&quot;push(Fields)&quot;&gt;A&lt;/MTSetVarBlock&gt;&lt;/MTIf&gt;
+&lt;MTIf tag=&quot;customB&quot;&gt;&lt;MTSetVarBlock name=&quot;push(Fields)&quot;&gt;B&lt;/MTSetVarBlock&gt;&lt;/MTIf&gt;
+</pre>
+
+<p>Fieldsの数を変数にセットします。</p>
+
+<pre class="brush:xml">
+&lt;MTVar name=&quot;count(Fields)&quot; setvar=&quot;Fieldscount&quot;&gt;
+</pre>
+
+<p>条件分岐して値が０かどうかで切り替えます。</p>
+
+<pre class="brush:xml">
+&lt;MTIf name=&quot;Fieldscount&quot; ge=&quot;1&quot;&gt;
+</pre>
+
+<p>0でないときは表示させる必要があるので、こんなかんじで</p>
+
+<pre class="brush:xml">
+&lt;MTFor var=&quot;i&quot; from=&quot;0&quot; to=&quot;$Fieldscount&quot; glue=&quot;、&quot;&gt;&lt;$MTVar name=&quot;Fields[$i]&quot;$&gt;&lt;/MTFor&gt;
+</pre>
+
+<p>ループさせることが出来ますし、区切り文字も指定することが可能になります。これで値が入っている時は<br />
+値：（A、B）<br />
+とか表示されますね。</p>
+
+<p>個人的にハッシュは使いこなせているとは言い難いのでもうすこし積極的に使いたいところです。<br />
+oscarさんも<a href="http://www.zelazny.mydns.jp/archives/002732.php">先日のエントリー</a>でハッシュについて書かれていましたのでまだまだ使える所は広そうです。</p>
+
+<h2>プラグインでも対応可能</h2>
+
+<p>グループはプラグインなどで対応も可能そうです。さがしてみたところではこういったプラグインもあるようです。</p>
+
+<blockquote><p>More Custom Fields | Plugins | Eat Drink Sleep Movable Type<br />
+<a href="http://eatdrinksleepmovabletype.com/plugins/more_custom_fields/index.php">http://eatdrinksleepmovabletype.com/plugins/more_custom_fields/index.php</a></p>
+</blockquote>
+
+<p>場合によってはこれらを使うなどの選択肢もあるかも知れませんね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_85.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/movable_type5_002.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

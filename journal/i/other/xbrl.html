@@ -1,0 +1,195 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>XBRL勉強会に参加してきました（ます）｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>XBRL勉強会に参加してきました（ます）</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;XBRL勉強会に参加してきました（ます）</p>
+
+<p><img src="http://linker.in/journal/images/090305.gif" width="600" height="200" alt="090305.gif" /></p>
+<p>こんにちは、大学のゼミは（たしか）管理会計だったまーしーです。<br />
+学んだことはもう記憶の彼方ですが・・</p>
+<h2>XBRLってご存じですか？</h2>
+<p>先日たまたまXBRL勉強会があるということをしり、今日がちょうどその勉強会の日なのでそれに参加してます。<br /></p>
+<blockquote>
+  <p>みんなでXBRL勉強会：公式Wiki / FrontPage<br />
+  <a href="http://xbrl-study.pbwiki.com/">http://xbrl-study.pbwiki.com/</a></p>
+</blockquote>
+<p>XBRLはXMLベースの言語で財務諸表とか用に作られたものだと思ってもらえればいいかと思います。（そう認識してます）<br />
+websiteを作る１つの言語にHTMLがあって、XMLに準拠したらXHTMLみたいなかんじですかね。<br />
+（ざっくりすぎてスミマセン）</p>
+<blockquote>
+  <p>XBRLとは｜XBRL JAPAN<br />
+  <a href="http://www.xbrl-jp.org/about/index.html">http://www.xbrl-jp.org/about/index.html</a></p>
+
+  <p>XBRL JAPAN<br />
+  <a href="http://www.xbrl-jp.org/about/index.html">http://www.xbrl-jp.org/</a></p>
+</blockquote>
+<p>XMLをXSLTで成形したり、HTML,XHTMLをCSSで成形したりということがあるわけですが、<br />
+んじゃXBRLは？ということになるわけですね。&nbsp;&nbsp;</p>
+<p>ということで、参加しながらXBRLってなに？みたいな話を（ライブで）書こうかと思います。<br /></p>
+<h2>XBRLとの出会いは数年前</h2>
+<p>XBRLってのを知ったのはだいぶ前なんですが、その時は本を眺めたくらいですしまだまだ未知数だなぁくらいでした。<br />
+実際、今いただいている仕事にXBRLが直結することはほぼ無いのかもしれません。<br />
+会計とかを少しかじった過去があるので、なんとなく興味があります。</p>
+<p>ほんとそんな感じの個人的な興味で今日は参加してるので、どのくらいかけるかも全く未知数です。<br />
+どういう利用シーンがありそうかとかを考えながら、少し刺激を受けてくる予定です。</p>
+<p>=== 以下勉強会中にかきながらです ===</p>
+<p>キーワード<br /></p>
+<ul>
+  <li>XBRL</li>
+
+  <li>インスタンス文書</li>
+
+  <li>タクソノミー</li>
+
+  <li>タクソノミースキーマ</li>
+
+  <li>リンクベース<br />
+  定義、表示、計算、名称、参照</li>
+</ul>
+<h2>XBRLってなに？</h2>
+<p>・各種財務報告用の情報を標準化したXMLベースの言語（データ形式）<br />
+・世界標準化された規格<br />
+・会計基準、開示規則にあわせて項目を追加できる<br />
+・業種別、企業別の実態に合わせて項目を追加できる<br />
+・財務情報に限らず、事業報告に活用可能<br />
+・企業内部の会計システムにも利用できる</p>
+<p>XBRLには二つある</p>
+<p>▼XBRL GL<br />
+・ 日常の会計取引をデータ化<br />
+・ 仕分け科目<br />
+・ 総勘定元帳</p>
+<p>▼XBRL FL（こっちが基本的なXBRL）<br />
+・企業が外部に報告する決算書などの財務報告</p>
+<h2>XBRLを読んでみる</h2>
+<p>ＥＤＩＮＥＴから検索、入手したXBRLデータ<br />
+拡張子は.xbrl<br />
+実際に扱うには難しい<br />
+仕様が理解しがたい、情報不足</p>
+<p>XBRLの入手方法<br />
+・金融庁のEDINET<br />
+・東京証券取引所のTDnet<br />
+・その他3rd partyが提供するプライベートサイト</p>
+<p>XBRLの基本仕様<br />
+・インスタンス文書<br />
+・タクソノミー</p>
+<h2>XBRL利用シーン</h2>
+<p>・個人投資家との組み合わせ<br />
+・アナリスト向けのプログラム</p>
+<h2>XBRLを使うと何ができるの？</h2>
+<p>ソフトウェアで一連の処理を自動化<br /></p>
+<p>他言語に対応</p>
+<p>メリット<br />
+・分析が楽<br />
+・データを抜き出す手間が減る<br />
+・自動化で大量データを扱える<br />
+・海外向けへ展開するさいに<br /></p>
+<h2>XBRLの事例</h2>
+<p>・金融庁<br />
+・国税庁<br />
+・日本銀行<br />
+・新銀行東京<br />
+etc</p>
+<h2>使う人・会社のメリットは？</h2>
+<p>▼導入企業のメリット</p>
+<p>・新たな負担（デメリット）<br />
+・意志決定の迅速化<br />
+・経理業務の効率化、コスト削減<br />
+・連結決算処理の迅速化<br />
+&nbsp;&nbsp;・情報開示の迅速化<br />
+&nbsp;&nbsp;・？戦略的な情報開示が可能になる<br />
+&nbsp;&nbsp;&nbsp; 非財務情報の開示：ex)アメリカのEBR=XBRL+アルファ<br />
+&nbsp;&nbsp;・内部統制システムへの応用</p>
+<p>▼誰がうれしいの？</p>
+<p>・投資家<br />
+決算書の利用が広がる<br />
+より高度で迅速な分析が可能 &nbsp;&nbsp;</p>
+<p>・アナリスト</p>
+<p>・情報ベンダー（新聞、出版、屎尿調査会社etc）<br />
+コスト削減、提供する情報の質が変わる<br />
+デメリットも多い（個人が同レベルのものをもてる）</p>
+<p>・公認会計士<br />
+監査業務がスムーズ</p>
+<p>・税理士<br />
+書類作成業務が効率化</p>
+<p>・金融機関<br />
+融資審査のスピードが上がる<br />
+シンジケートローンなど市場型間接金融への利用<br />
+審査のスピード可</p>
+<p>・信用調査会社<br />
+DBの提供方式が変わる（過去データをXBRLに）<br />
+EDINETは2008以降のXBRLしかない</p>
+<p>・行政機関<br />
+入力作業から開放される</p>
+<p>・ITベンダー<br />
+ビジネスチャンス<br />
+（作成ツール、変換ツール、分析ツール、チェックツール）<br />
+ぷろねくさす、たからいんさつ、ってところが作ってるソフトで上場企業が開示しているのものは全てやっている</p>
+<p>コスト削減（市場規模が大きい）</p>
+<p>XMLが無料な分、参入障壁が低い</p>
+<h2>XBRLを使うのに必要なもの？</h2>
+<p>XMLなので、特にこれといって必要なものはなさそうなかんじ。<br />
+ただ、凄くながいXMLデータなので視覚的に見やすくするためのツールは必須なのかもしれないな、と。<br />
+それがExcelに落とし込めるものなのか、ブラウザで見れるものなのかは、色々ありそうな感じでしたが。</p>
+<h2>勉強会のまとめ</h2>
+<p>仕事の電話とかが入ってしまったので、途中抜けでした。</p>
+<p>なんとなくだけれども、XBRLができることによって、そこからビジネスがうまれるとしたら、プログラマが頑張るしかなさそうな感じがしました。<br />
+APIが公開されている、というのとは若干ちがうようなかんじで、<br />
+共通のデータが公開されてて、それを修正する方法さえ覚えてしまえば、オーダーメイドのものは作りやすいのかもしれないなぁ、というかんじ。</p>
+<p>財務諸表のビジュアル化という流れは一見良さそうに見えるのだけれども、それにお金を払う人がいるのか？ビジネスとして成立するのか？というと<br />
+少し考えただけだと答えが出なかったなぁという印象です。</p>
+<p>FLとGLのXBRLがあって、FLがいわゆるXBRLとして捉えられている訳なんですが、FLの方では特にビジネスになりそうなものが見えてこないなぁという印象でした。<br />
+アイデア豊富な人が考えると、色々でてくるのかもしれないけれども。</p>
+<p>むしろGLと効率化、という流れの方が少し可能性があるんじゃないのかなぁ、という印象でした。</p>
+<p>ただ、この辺の領域はプログラムとアナリストの組み合わせがあってこそ成り立つものっぽいな、というかんじなので、<br />
+linkerみたいなデザインユニットが組むとなると、プログラマとアナリストが組んでつくったもの個人向けなどに販売するとかで<br />
+UIを開発するとか そういうところになるのかな〜、と思ったりしました。</p>
+<p>全体に漂うなんかありそう、というのはビジネスになりそう、と考えてるのもあるのかもしれないですが、<br />
+可能性は少しはあるのかな？という勉強会でした。</p>
+<p>今後も数回続くようなので、また次回とかに少しアイデアを考える場にしたいな、と。<br />
+投資とかやる友人と少し話してみないとですね。</p>
+<h2>journalに書く方法としてのまとめ</h2>
+<p>リアルタイムにやろうと思いましたが、結構難しいですね。<br />
+最後が勉強会だと、書くわけにいかないですし。<br />
+なんか違うテーマの時とか、扱いやすいものとかの時に再度やってみたいかもな〜、と既に反省です。<br />
+本日のは読みにくくて申し訳ありません・・・・</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_10.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/workstyle/google.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>a-blog CMS について聞いてきました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>a-blog CMS について聞いてきました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;a-blog CMS について聞いてきました</p>
+
+<p></p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090325.jpg" src="http://linker.in/journal/images/090325.jpg" class="mt-image-center" style="margin: 0pt auto 20px; text-align: center; display: block;" height="200" width="600" /></span>
+<p>みなさん、こんにちは、まーしーです<br />
+WBC（優勝！）に甲子園、相撲と気になるものが豊富で困ってしまうこの頃。仕事に集中しないといけないですね。</p>
+<p>おとといより<a href="http://linker.in/journal/2009/03/a-blog-cms.php">cremaさん</a>、<a href="http://linker.in/journal/2009/03/a-blog-cms-1.php">taku-workさん</a>が連日書いていましたが、先日a-blog CMS勉強会に参加してきました。</p>
+<p>a-blog自体は知ってはいましたが使ったことはないという状態で機能豊富なa-blog CMSの説明を聞いてきました。<br />
+既にお二人が色々書かれているので重複する箇所もあるかもしれませんが、個人的に気になったところや他のCMSの比較などを書いてみたいと思います。<br />
+当日はいろいろな機能の話やカスタマイズ方法の話を口頭できいただけで、色々いじってみるというところまではいっていないので、もしかしたら的外れなことも書いているかもしれませんが、そのあたりは実際にさわってみて確認してもらえればと思います。</p>
+<p>現在は日々良くなっているような状況らしく昨日よりも今日の方がさらに使いやすくなっているかとおもいますので、<br />
+下記は書いている現時点での話であって実際に使う際はまた違ったものになっているのかもしれません。</p>
+<h2>第一印象はSOY CMSに似てるかも。</h2>
+<p>a-blog CMSはMTあたりのレンジというかMTを使わない人たちを狙っているとのことでした。<br />
+個人的にはMTというよりはSOY CMS , Wordpressあたりが近いという印象ですね。<br /></p>
+<p>第一印象はSOY CMSという感じました。<br />
+ちょうどSOY CMSを少しだけさわってみる機会があったのですごく近い印象です。<br />
+既存のHTMLテンプレートを必要部分だけカスタマイズしてCMS化していく、という切り口でスタートしたのも関係してるかもしれません。</p>
+<p>同じようなことは他のCMSでも可能かもしれませんが、<br />
+そこにかかる手間がa-blog CMSは少ないということなのかもしれませんね。<br />
+MTだったらとりあえずindex テンプレートにつっこんで、という形であればできそうな気がしますが、さくっとデザインを差し替えるのは難しいですよね。</p>
+<h2>デザインテンプレートのフォルダ管理はWordpressに近そう</h2>
+<p>themeフォルダの下にデザインテンプレートのセットがいくつかいれられて、読み込むテンプレートの順番も何となく決まっている様な感じのようです。(Wordpressでいうところのhomeとindexみたいなかんじっぽい）<br />
+そこにフォルダ単位でセットを入れておけばデザインを差し替えられるそうです。&nbsp;&nbsp;<br />
+このあたりはwordpressと似ていますね。</p>
+<p>system というフォルダがあってそちらはそちらで管理画面をカスタマイズ可能なようです。<br />
+このような感じでそこのthemeフォルダにCMS化されていない既存サイトのHTMLを放り込めば<br />
+とりあえずは見れるようになるとのことでした。</p>
+<h2>柔軟なカスタムフィールド</h2>
+<p>カスタムフィールドは管理画面のテンプレートを直接書く形で追加していく流れのようです。<br />
+このあたりはa-blog CMSをつかって更新する人がいじるというよりは制作側が色々カスタマイズする様な感じですかね。<br />
+一度作っておけばあとは更新担当者が追加できるというのはメリットかもしれません。&nbsp;&nbsp;<br />
+このあたりの説明と感覚はもう少しさわってみないと伝えられないですね。。</p>
+<p>なんとなくMTのalt-tmplを修正するような作業に近いんじゃないかとも思います。<br />
+DBとの連携周りはもしかしたらMTよりは楽なのかもしれませんね。&nbsp;&nbsp;</p>
+<p>MTのカスタムフィールドは追加するのは簡単ですが、<br />
+タグを何かしらテンプレートに埋め込まないと使いにくいですからね。<br />
+追加したものを更新担当者が自由に埋め込めるというところはa-blog CMSの方が強そうな気がします。</p>
+<h2>マルチブログのグルーピング化</h2>
+<p>マルチブログ的にブログを増やして権限付与とかはできるようでした。<br />
+それにあわせてブログ自体をグルーピングできるようです。<br />
+このあたりの機能は他のCMSにはあまりなさそうな気がしました。</p>
+<p>MTだとroleといったかんじでしょうか。</p>
+<h2>その他気になったところなど</h2>
+<ul>
+  <li><span style="font-family: Arial; font-size: 13px;">SSIと同じ記述でincludeができる</span></li>
+
+  <li><span style="font-family: Arial; font-size: 13px;">MD5に置き換えとかを今後追加する方向</span></li>
+
+  <li><span style="font-family: Arial; font-size: 13px;">データを含めてインストール（←どういう意味でメモったのか忘れた・・・）</span></li>
+</ul>
+<h2>まずは慣れるところかな</h2>
+<p>なんとなく普段使い慣れているものがある分、考え方のものさしがそちらによってしまいますよね（反省）。<br />
+便利なんだけどそこに自分自身がなじめないという様な状態です。<br />
+SOY CMSは最近名前を聞くようになったので少しいじってみましたが、その便利さを体感するところまでは至っていません。<br />
+a-blog CMSもベータテストが始まったので、これから本格的にさわってみて今まで使ってきたものにはない便利さを体感したいところです。</p>
+<p>どういうCMSがそのユーザーにとって一番使いやすいのか。<br />
+いろいろなCMSが増えてきて、必要な機能と担当者のスキルともろもろを考えながら最適な提案ができるようにこちらがもっと勉強していかないといけないな、と思った勉強会でした。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/a-blog_cms_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cms/soy_cms.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

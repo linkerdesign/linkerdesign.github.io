@@ -1,0 +1,123 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>なかなか奥が深そうなMTのプレビュー機能｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>なかなか奥が深そうなMTのプレビュー機能</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;なかなか奥が深そうなMTのプレビュー機能</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />今日は「<a href="http://www.adventar.org/calendars/26">Movable Type Advent Calendar 2012</a>」の10日目の記事として書いてみます。</p>
+<p>仕事ではいろいろな案件でMTを使うことが多いです。<br />MTMLを編集してhtmlを生成するというのは問題ないのですが、実際の運用を想定した管理画面でのプレビューでよく問題になることがあるので少し見てみました。<br />恥ずかしながらプレビューへの対応は後手になってしまったり、そもそも対応をしていなかったりなど色々なのですが、みなさんはどうでしょうか？</p>
+<h2>個別記事がある場合のプレビュー</h2>
+<p>MTの標準テンプレートで見てみます。<br />個別記事ページを生成する場合はこのような感じで問題なくプレビューできます。</p>
+<p><img title="121210-01.png" src="http://linker.in/journal//images/121210-01.png" alt="121210 01" width="600" height="380" border="0" /></p>
+<p>他のブログを読み込むとか、表示させるところに分岐が入ったりすると引っかかることもあるかもしれませんが、コンテキストはブログ記事なのでそこまで大変じゃないでしょう。</p>
+<h2>ブログ記事テンプレートを使わない場合</h2>
+<p>データの管理はブログ記事でするけど、個別の記事ページを作成しない、という場合もあるかと思います。<br />一覧形式で表示させるといった感じですね。</p>
+<p>そういった場合、ブログ記事のアーカイブテンプレート自体がないと思います。<br />その場合、ブログ記事をプレビューした場合はこのようになると思います。</p>
+<p><img title="121210-02.png" src="http://linker.in/journal//images/121210-02.png" alt="121210 02" width="600" height="358" border="0" /></p>
+<p>タイトルと本文はプレビューできていますが、こんな状態で納品したらクレームが来るだけなので何かしら対策が必要になります。</p>
+<p>ブログ記事アーカイブを削除したのでこうなりますが、ひとまずブログ記事アーカイブはデフォルトのテンプレートに戻しておいて、公開の状態を「公開しない」にしておくとよいでしょう。</p>
+<h2>記事一覧をプレビューする</h2>
+<p>ブログ記事の個別ページは持たせないけど、一覧形式で表示させるためにブログ記事を使用する場合のプレビューを考えてみましょう。<br />これまでと同じようにMT標準のテンプレートで考えてみます。<br />メインページのように新着を表示させる、という前提です。</p>
+<p>その場合はまずはメインページのテンプレートの内容をそのままブログ記事アーカイブ（「公開しない」設定になっている）に持って行けばいいでしょう。</p>
+<p><img title="121210-03.png" src="http://linker.in/journal//images/121210-03.png" alt="121210 03" width="600" height="374" border="0" /></p>
+<p>これでとりあえずプレビュー時にはこのテンプレートが使われることになります。</p>
+<p><img title="121210-04.png" src="http://linker.in/journal//images/121210-04.png" alt="121210 04" width="600" height="371" border="0" /></p>
+<p>プレビューも問題なさそうですね。</p>
+<h2>新規記事をプレビューする</h2>
+<p>リスト形式でプレビューできるようになりました。<br />ただ、新規に記事を作成して、保存前の状態だとこれではプレビューができません。</p>
+<p>今の状態は</p>
+<p>&lt;mt:Entries&gt;<br />&lt;$mt:Include module="ブログ記事の概要"$&gt;<br />&lt;/mt:Entries&gt;</p>
+<p>こんなかんじでリストにして表示させているわけですが保存前だとmt:Entriesでは出てきません。<br />プレビュー自体はブログ記事アーカイブと同じコンテキストなので</p>
+<p>&lt;$mt:Include module="ブログ記事の概要"$&gt;<br />&lt;mt:Entries&gt;<br />&lt;$mt:Include module="ブログ記事の概要"$&gt;<br />&lt;/mt:Entries&gt;</p>
+<p>このようにmt:Entriesの中とプレビュー用にもう一つ追加しておくとよいでしょう。</p>
+<p><img title="121210-05.png" src="http://linker.in/journal//images/121210-05.png" alt="121210 05" width="600" height="371" border="0" /></p>
+<p>プレビューも問題なさそうですね。</p>
+<p>下書き保存をしてある記事をプレビューする場合もこの方法で問題ないです。</p>
+<h3>未保存のEntryIDは -1</h3>
+<p>参考までに、未保存のブログ記事の場合、そのEntryIDは -1になります。<br />なので</p>
+<p>&lt;mt:if tag="entryid" eq="-1"&gt;<br />&lt;$mt:Include module="ブログ記事の概要"$&gt;<br />&lt;/mt:if&gt;</p>
+<p>といった条件分岐が可能になります。</p>
+<p>ただし、下書き保存をしている場合は何かしらのIDをもっているのでこれでは分岐ができません。</p>
+<h3>未保存のブログ記事のEntryStatusはPublish</h3>
+<p>下書きかどうかを判定するには&lt;$MTEntryStatus$&gt;というファンクションタグがあるので、この値で判定が可能です。</p>
+<p>&lt;mt:If tag="EntryStatus" eq="Draft"&gt;<br />〜〜〜<br />&lt;/mt:If&gt;</p>
+<p>下書きの判定は可能ですが、記事を新規に作成して未保存の場合、Publishが返ってくるので要注意です。<br />entryidが-1かどうかの判定と組み合わせるといいでしょう。</p>
+<h2>プレビューする記事が最新ではない場合</h2>
+<p>ここまではプレビューする記事が最新の場合を想定してきました。<br />ただ、運用によってはプレビューするタイミングが最新の場合だけ、とは限らないでしょう。</p>
+<p>プレビューしている記事が最新じゃなくても一番上にでて、実際表示される際は該当の箇所に表示、ということが許されるのであれば、ここまでの方法でひとまずは問題なさそうです。</p>
+<p>プレビューする記事の状況として考えられるのは<br />・記事が未保存の場合<br />・記事が保存済みで下書き状態<br />・記事が公開中で編集してプレビューする場合<br />が考えられます。</p>
+<p>日付順に並ぶ前提では、記事が未保存の場合は最新になることが多いと思います。<br />記事が公開中で編集してプレビューする場合はmt:Entriesのリストのなかで表示されるので問題ないです。</p>
+<p>なので、「記事が保存済みで下書き状態」という状況を考えてみます。</p>
+<p>&lt;mt:Entries&gt;のなかでは取得できないので一旦ハッシュに入れることにします。<br />ソースはこんな感じですね。</p>
+<p>&lt;mt:EntryID setvar="_entryID"&gt;&lt;mt:EntryID setvar="_curID"&gt; <br />&lt;mt:SetVarBlock name="previewlist" key="$_entryID"&gt;&lt;mt:EntryDate format="%Y%m%d%H%M"&gt;&lt;/mt:SetVarBlock&gt;<br /> &lt;mt:Entries&gt;&lt;mt:EntryID setvar="_entryID"&gt;<br />&lt;mt:SetVarBlock name="previewlist" key="$_entryID"&gt;&lt;mt:EntryDate format="%Y%m%d%H%M"&gt;&lt;/mt:SetVarBlock&gt;<br />&lt;/mt:Entries&gt;<br /> &lt;mt:loop name="previewlist" sort_by="value numeric reverse"&gt;&lt;mt:Var name="__key__" setvar="_key"&gt;<br /> &lt;mt:If name="_key" eq="$_curID"&gt;<br /> &lt;$mt:Include module="ブログ記事の概要"$&gt;<br /> &lt;mt:Else&gt;<br /> &lt;mt:Entries id="$_key"&gt;&lt;$mt:Include module="ブログ記事の概要"$&gt;&lt;/mt:Entries&gt;<br /> &lt;/mt:If&gt;<br /> &lt;/mt:loop&gt;</p>
+<p>まず最初の</p>
+<p>&lt;mt:EntryID setvar="_entryID"&gt;&lt;mt:EntryID setvar="_curID"&gt;<br />&lt;mt:SetVarBlock name="previewlist" key="$_entryID"&gt;&lt;mt:EntryDate format="%Y%m%d%H%M"&gt;&lt;/mt:SetVarBlock&gt;</p>
+<p>の部分でプレビューしている記事のentryIDをkeyにセット（_entryID）して、値として日付をpreviewlistというハッシュにセットしておきます。<br />プレビューしている記事のIDは_curIDにもセットしておきます。</p>
+<p>&lt;mt:Entries&gt;&lt;mt:EntryID setvar="_entryID"&gt;<br />&lt;mt:SetVarBlock name="previewlist" key="$_entryID"&gt;&lt;mt:EntryDate format="%Y%m%d%H%M"&gt;&lt;/mt:SetVarBlock&gt;<br />&lt;/mt:Entries&gt;</p>
+<p>この部分で他の公開済みの記事についても同じようにそれぞれentryIDと日付を１組としてハッシュに入れておきます。</p>
+<p>あとはハッシュにいれた物を取り出します。</p>
+<p>&lt;mt:loop name="previewlist" sort_by="value numeric reverse"&gt;&lt;mt:Var name="__key__" setvar="_key"&gt;<br />&lt;mt:If name="_key" eq="$_curID"&gt;<br />&lt;$mt:Include module="ブログ記事の概要"$&gt;<br />&lt;mt:Else&gt;<br />&lt;mt:Entries id="$_key"&gt;&lt;$mt:Include module="ブログ記事の概要"$&gt;&lt;/mt:Entries&gt;<br />&lt;/mt:If&gt;<br />&lt;/mt:loop&gt;</p>
+<p>という感じでループ内で値（日付）でソートして取り出していきます。</p>
+<p>取り出す際に</p>
+<p>&lt;mt:Entries id="$_key"&gt;&lt;$mt:Include module="ブログ記事の概要"$&gt;&lt;/mt:Entries&gt;</p>
+<p>という感じでmt:Entriesにidを指定して取り出しますが、下書き保存の記事についてはこれでは取り出せないので、</p>
+<p>&lt;mt:If name="_key" eq="$_curID"&gt;<br />&lt;$mt:Include module="ブログ記事の概要"$&gt;<br />&lt;mt:Else&gt;<br />&lt;mt:Entries id="$_key"&gt;&lt;$mt:Include module="ブログ記事の概要"$&gt;&lt;/mt:Entries&gt;<br />&lt;/mt:If&gt;</p>
+<p>という感じで分岐をさせてそのまま表示させます。<br />ループのなかですが、このプレビューがこの記事のコンテキストになっているのでこれで大丈夫です。</p>
+<p>ということで下書きの記事をプレビューしてみます。</p>
+<p><img title="121210-06.png" src="http://linker.in/journal//images/121210-06.png" alt="121210 06" width="600" height="361" border="0" /></p>
+<p>このようなかんじで下書き状態のテストエントリー4をプレビューしてみます。</p>
+<p><img title="121210-07.png" src="http://linker.in/journal//images/121210-07.png" alt="121210 07" width="600" height="308" border="0" /></p>
+<p>下書き状態のテストエントリー4も表示される場所でプレビューできました。</p>
+<h2>簡単なリスト形式でのプレビューの話でした</h2>
+<p>ということで、簡単なリスト形式のプレビューについて書いてみました。<br />他のカテゴリーを引っ張るとか、他のブログのカスタムフィールドのチェックが入った物を取り出すとか色々な条件が絡んでくると結構面倒です。</p>
+<p>カスタムフィールドの値でピックアップしたものを何件か表示させていた場合<br />&lt;mt:Entries field:customfieldbasename="foo"&gt;<br />みたいな感じでmt:Entriesでは簡単に取り出せますが、プレビューする記事の状況によっては取り出せません。</p>
+<p>プレビューしたい記事自体にカスタムフィールドの値にチェックが入っているかどうかの判定が必要になります。<br />チェックが入っているということはピックアップして表示するわけですが、ピックアップの件数が5件と決まっていて、公開済みの記事で5件表示されている場合はプレビューの分を差し引く必要があります。<br />ここでの並び順とかも問題になるでしょう。</p>
+<p>単純にカスタムフィールドの値のチェックだけでなく、記事の状況によっての分岐が入るので、仕組みは難しくはないですが、色々な条件を想定した分岐が必要になります。</p>
+<p>html側でphp includeさせている場合などもプレビューの場合はphp includeが使えないのでテンプレートモジュールも用意しておいてそれを読み込む、といったことが必要になります。</p>
+<p>プレビューテンプレートかどうかの分岐は<br />&lt;mt:if name="preview_template"&gt;<br />になりますね。</p>
+<p>プレビューについてMTQにあがっていたのですが、</p>
+<blockquote>
+<p>プレビュー機能について - MTQ | Movable Type 5 ユーザーコミュニティ<br /><a href="http://communities.movabletype.jp/2012/10/post-682.html">http://communities.movabletype.jp/2012/10/post-682.html</a></p>
+</blockquote>
+<p>多分この質問をされた方は記事のプレビューとリストになってる方のプレビューもしたい、ということなのではないかと思います。<br />なんかやればできるんじゃないかなぁという気もしなくもないですが、簡単にはできなさそうな気もします。<br />だったら一旦ステージングを挟むなどした方がスムーズにできるかもしれませんね。</p>
+<p>どういうプレビューにするかというところまで要件定義の時点で詰められればいいきもしますが、なかなかそうはいかないことも多そうです。<br />今回書いてみたソースなども無駄に複雑な気がするのでもっといい解決策がありそうな気もしています。<br />プレビューはまだまだ奥が深そうです。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/movabletype/movable_type_522.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/kindleiphone.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

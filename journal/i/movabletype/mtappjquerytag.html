@@ -1,0 +1,101 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTAppjQueryをつかってTag一覧を出力する｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTAppjQueryをつかってTag一覧を出力する</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTAppjQueryをつかってTag一覧を出力する</p>
+
+<p>みなさん、こんにちは、まーしーです</p>
+<p>CMSの管理画面でタグを入力する際に、最初数文字入力すると補完してくれたりしますよね。これはこれで便利なのですが、最初の文字がわかっていないとそもそも補完できません。</p>
+<p>ということで<a href="http://twitter.com/tinybeans">@tinybeans</a>さんにMTAppjQuery でそういうことができないか確認してみたら早速実装されていました。<br />
+これは現在の最新版である0.14から実装されてるようです。</p>
+<p>まずプラグインをダウンロードします</p>
+<blockquote>
+  <p>Downloads - mtapp-jquery - Project Hosting on Google Code<br />
+  <a href="http://code.google.com/p/mtapp-jquery/downloads/list">http://code.google.com/p/mtapp-jquery/downloads/list</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ダウンロードしたプラグインは/mt/plugins/、/mt/mt-static/plugins/にアップします。<br />
+mt-staticの方にアップするフォルダは_MTAppjQueryからMTAppjQuery に変更しておきましょう。</p>
+<p>プラグインのインストールが終わったらuser.js、user.cssを編集します。</p>
+<h2>user.jsを編集する</h2>
+<p>/mt-static/plugins/MTAppjQuery/js/user.jsを編集します。</p>
+<p>今回つかうタグの部分はMTAppMultiCheckboxになります。<br />
+user.jsに入っているサンプルはこのようになっています。</p>
+<blockquote>
+  <p>$.MTAppMultiCheckbox({<br />
+  basename: 'tags',<br />
+  label: 'Moveble Type,TypePad,MTOS,VOX',<br />
+  custom: 0,<br />
+  debug: 0<br />
+  });</p>
+</blockquote>
+<p>これを当てるとこんな感じの管理画面になります。</p>
+<p><img src="http://linker.in/journal/images/100906-01.jpg" width="500" height="383" alt="100906-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>タグ部分を少しカスタマイズして全部表示できるようにします。</p>
+<blockquote>
+  <p>if($('body#edit-entry').length &amp;&amp; blogID == 2){<br />
+  var tags = tagList.join(',');<br />
+  $.MTAppMultiCheckbox({basename:'tags',label:tags,debug:1,insert:'after'});<br />
+  }</p>
+</blockquote>
+<p>こんな感じでuser.jsに記述します。ブログ記事編集画面で、blogIDが２の時だけ適用します。</p>
+<p><img src="http://linker.in/journal/images/100906-02.jpg" width="550" height="450" alt="100906-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>項目がおおいので若干見にくいですが、タグ一覧が表示できました。</p>
+<h2>user.cssを編集する</h2>
+<p>続いてuser.cssを編集して少しだけ見た目を調整してみます。user.cssにこんな感じで記述してみます。</p>
+<blockquote>
+  <p>#tags-field span.multicheckbox_container {<br />
+  display: block;<br />
+  }<br />
+  #tags-field label{<br />
+  display: inline-block;<br />
+  padding-right: 3px;<br />
+  line-height: 1.5;<br />
+  cursor: pointer;<br />
+  }</p>
+</blockquote>
+<p>管理画面はこんな感じになって少しだけ見やすくなった気がします。</p>
+<p><img src="http://linker.in/journal/images/100906-03.jpg" width="550" height="431" alt="100906-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>数など最適なかたちにあわせて修正するとよさそうです。</p>
+<h2>ということで</h2>
+<p>見た目の調整では限界もあるかもしれませんが、入力項目を表示しておくことでタグが増えすぎることをおさえることもできそうですね。<br />
+あとは表記の揺れなども抑えられそうです。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_114.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/illustrator_cs5.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

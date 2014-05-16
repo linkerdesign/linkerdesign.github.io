@@ -1,0 +1,89 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GUIでGitを使える「Tower」をさらっと触ってみた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GUIでGitを使える「Tower」をさらっと触ってみた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;レビュー&nbsp;&raquo;&nbsp;GUIでGitを使える「Tower」をさらっと触ってみた</p>
+
+<p><img src="http://linker.in/journal/images/101216.png" width="600" height="200" alt="101216.png" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+今年も残り半月ないんですね、、、はやいものです。。。</p>
+<p>バージョン管理に<a href="http://git-scm.com/">Git</a>を使ってるを使ってる方にとって、macではこれというGUIのツールが無かったと思います。<br />
+Subversionだと<a href="http://versionsapp.com/">Versions</a>がありますね。</p>
+<p>そんなMac向けにベータ版ですがTowerというのが出ていました。</p>
+<blockquote>
+  <p>Tower - The most powerful Git client for Mac<br />
+  <a href="http://www.git-tower.com/">http://www.git-tower.com/</a><br /></p>
+</blockquote>
+<p>個人的にGitもなんとなく使ってるくらいで、使いこなしているとは言い難いレベルです。<br />
+そんなレベルなので、Terminalからうつのも量が多くないのでそこまで面倒じゃなかったりします。<br />
+（過去にGitを使いながらご迷惑かけたことは多々ありますが、、、）<br />
+とはいえ、GUIなら少しは違うのかな？ということで早速触ってみました。</p>
+<h2>起動画面</h2>
+<p>メインエリアにリポジトリの一覧が並ぶんでしょうか。</p>
+<p><img src="http://linker.in/journal/images/101216-01.jpg" width="510" height="442" alt="101216-01.jpg" style="border:2px #7c7c7c solid;" /><br /></p>
+<h2>リポジトリを作成する</h2>
+<p>起動画面の右側一番下に「Create Local Repository」があるのでここをクリックしてリポジトリを作成してみます</p>
+<p><img src="http://linker.in/journal/images/101216-02.jpg" width="330" height="416" alt="101216-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>細かいOptionsはおいといてフォルダを選択すれば簡単にリポジトリができます。<br />
+.gitのフォルダも作成されていますね。</p>
+<p><img src="http://linker.in/journal/images/101216-03.jpg" width="473" height="304" alt="101216-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>新規ファイルのAddとCommit</h2>
+<p>リポジトリを作成して、新規ファイルを入れてみました</p>
+<p><img src="http://linker.in/journal/images/101216-04.jpg" width="550" height="476" alt="101216-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ツールバーに「Add」があるのでaddしておきます</p>
+<p>「Commit」をクリックしてコミットします。Commit messageも入れられます。</p>
+<p><img src="http://linker.in/journal/images/101216-05.jpg" width="396" height="365" alt="101216-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>CommitしたあとでHistoryをみてみるとこのような感じです。</p>
+<p><img src="http://linker.in/journal/images/101216-06.jpg" width="550" height="476" alt="101216-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>この状態でサンプルファイルを編集してみます。</p>
+<p><img src="http://linker.in/journal/images/101216-07.jpg" width="550" height="476" alt="101216-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>変わったところが下に表示されていますね。<br />
+再度Commitしてみます。</p>
+<p><img src="http://linker.in/journal/images/101216-08.jpg" width="550" height="476" alt="101216-08.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Historyに追加されていますね。<br />
+Historyはリスト表示も可能です。</p>
+<p><img src="http://linker.in/journal/images/101216-09.jpg" width="550" height="476" alt="101216-09.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>このあとはブランチをわけたり、mergeしたりなど色々やっていく感じになると思います。<br />
+Githubとも問題無くつながるのかな。。</p>
+<p>そのあたりもこれから触っていってみたいと思います。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/post_135.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/tryrs_1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

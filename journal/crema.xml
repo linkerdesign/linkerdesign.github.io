@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>linker journal - cremaの記事一覧 -</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/" />
+    <link rel="self" type="application/atom+xml" href="http://linker.in/journal/crema.xml" />
+    <id>tag:linker.in,2009-02-04:/journal//2</id>
+    <updated>2013-05-10T18:16:19Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 5.06</generator>
+
+<entry>
+    <title>hara19.jp管理人が作ったパンケーキだらけのサイト「東京パンケーキ速報」</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/05/tokyo-pancake.php" />
+    <id>tag:linker.in,2013:/journal//2.1137</id>
+
+    <published>2013-05-09T17:57:23Z</published>
+    <updated>2013-05-10T18:16:19Z</updated>
+
+    <summary>ども。@cremaです。 今日は、友人が新しく立ち上げたWebサイトを、さらっとご紹介してみますね。その名も東京パンケーキ速報と言うのですが、title要素に添...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="blog" label="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="wordpress" label="WordPress" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。@cremaです。</p>
+
+<p>今日は、友人が新しく立ち上げたWebサイトを、さらっとご紹介してみますね。その名も<a href="http://pancake.tokyo.jp/" target="_blank">東京パンケーキ速報</a>と言うのですが、title要素に添えられた副題「ジタバタするほど美味しい東京のパンケーキたち」というのが、ちょっと可愛いのですw</p>
+
+<p><a href="http://pancake.tokyo.jp/" target="_blank"><img alt="pancake.png" src="http://linker.in/journal/assets_c/2013/05/pancake-thumb-500x629-4187.png" width="500" height="629" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>このサイトの管理人である<a href="https://twitter.com/ysakaki" target="_blank">@ysakaki</a>は、一部界隈では「パンケーキ神」と呼ばれるほどパンケーキ大好きな男性なのですが、本業は30min.さんのエンジニアで、元々<a href="http://hara19.jp/">hara19.jp</a>という人気原宿情報サイトを運営しているんですよね。</p>
+
+<p>hara19.jpはWordPressでできていまして、去年のWordCampでは、突如PVが上がった時の高速化対策やらブログ運営のコツなどのノウハウをじっくり語っていました。</p>
+
+<p><iframe src="http://www.slideshare.net/slideshow/embed_code/14303070" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/ysakaki/hara19jp-ysakaki" title="hara19.jpの裏側 〜地域情報サイトの構築・運営ノウハウ〜" target="_blank">hara19.jpの裏側 〜地域情報サイトの構築・運営ノウハウ〜</a> </strong> from <strong><a href="http://www.slideshare.net/ysakaki" target="_blank">ysakaki</a></strong> </div></p>
+
+<p><iframe width="560" height="315" src="http://www.youtube.com/embed/XSwuhVUE3Ng" frameborder="0" allowfullscreen></iframe></p>
+
+<p>hara19.jpを運営していく中で、パンケーキを食する才能に目覚め、パンケーキ部門を切り出して別サイトにしたという。</p>
+
+<p>@ysakakiの面白いところは、バリバリのエンジニア、かつ、コミュニケーションとおもてなし能力の高いブロガーであるところですかね。</p>
+
+<p>シズル感のある写真も撮れて、文章力と編集力もあり、フットワーク軽く取材に行ってしまい、アクセス解析もがっつりやり、なおかつサイトの実装とサーバの面倒は自分で見られるという、なんというか万能感のあるひとなので羨ましい。</p>
+
+<p>少しでも見習って、人気サイトを運営してみたいと思う今日この頃です。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Adobe Illustrator CCとPhotoshop CCの新機能をいくつかピックアップ</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/05/adobe-illustrator-ccphotoshop-cc.php" />
+    <id>tag:linker.in,2013:/journal//2.1135</id>
+
+    <published>2013-05-07T08:13:09Z</published>
+    <updated>2013-05-07T09:51:41Z</updated>
+
+    <summary>ども。 @crema です。 日本時間の昨夜アメリカ本国で始まったAdobe MAXでの発表を受け、本日東京でも「Create Now MAX 2013 速報 ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。 @crema です。</p>
+
+<p>日本時間の昨夜アメリカ本国で始まった<a href="http://max.adobe.com" target="_blank">Adobe MAX</a>での発表を受け、本日東京でも「Create Now MAX 2013 速報 スペシャルイベント」が開催されました。Ustreamでも中継されていましたので、ご覧になった方も多いかと思います。</p>
+
+<p>発表内容は、基本的には下記記事の通りなのですが、</p>
+
+<ul>
+	<li><a href="http://gihyo.jp/news/report/2013/05/0701">Adobe，同社のクリエイティブツール「Adobe Creative Cloud」のアップデートを発表――クラウドサービスとして生まれ変わり，2013年6月18日から提供開始予定：レポート｜gihyo.jp ... 技術評論社</a></li>
+</ul>
+
+<p>特に話題になっているのは、</p>
+
+<ol>
+	<li>今後の新バージョン提供はCreative Cloud上のみで行われることになり、新バージョンのパッケージでの販売が無くなる</li>
+	<li>製品名の最後につくのは「CS（Creative Suite）」ではなく「CC（Creative Cloud）」になる</li>
+	<li>Fireworksの新バージョン開発がされなくなる（バグフィックスと新OSへの対応はされる模様）</li>
+</ol>
+
+<p>といったあたりでしょうか。</p>
+
+<p>Fireworks関連では、長谷川恭久さんが素敵記事をさっそく公開されていますね。</p>
+
+<ul>
+	<li><a href="http://www.yasuhisa.com/could/article/fireworks-and-workflow/">Fireworks後のツールとワークフロー : could</a></li>
+</ul>
+
+<p>そんななか空気が読めない感じで（？）恐縮ですが、せっかくなので、特に自分が注目しているIllustratorとPhotoshopの新機能について、さっくりメモっておきたいと思います。</p>
+
+<h2>Adobe Illustrator CCの新機能いくつか</h2>
+
+<h3>文字タッチツール</h3>
+
+<p>アウトライン化せずに文字情報を保ったまま、一文字づつ選択して変形できるツールが追加されました。文字列に変形をかけた後、文字を打ち替えることも可能です。</p>
+
+<p><img alt="写真：文字タッチツールデモ" src="http://linker.in/journal/images/ICC1.jpg" width="500" height="375" style="display: block; margin: 0 auto 20px;" /></p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/18338/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>囲み罫を作りやすくなったブラシ</h3>
+
+<p>自分で作成するブラシで、コーナータイル（ブラシの角の部分）が自動生成されるようになったり、</p>
+
+<p><img alt="写真：コーナータイルデモ" src="http://linker.in/journal/images/ICC2.jpg" width="500" height="375" style="display: block; margin: 0 auto 20px;" /></p>
+
+<p>写真を使ったブラシ生成が可能になったり。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/18339/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>CSSの書き出し機能の強化</h3>
+
+<p>Illustratorで作成したアートワークから、CSSを書き出したりSVGとしてコードを生成したりできるようになったとのこと。個人的には、これで書き出されるコードの内容とワークフローの改善が可能かどうかを、今後重点的に検証していきたいと考えています。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/18340/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>エリア内文字とポイント文字を瞬間切換え</h3>
+
+<p>エリア内文字ツール右側をクリックすると、ポイント文字に瞬間的に切り替わる。逆も可能。地味ですが意外と役立ちそうな機能ですね。</p>
+
+<p><img alt="写真：エリア内文字とポイント文字を瞬間切換えデモ" src="http://linker.in/journal/images/ICC3.jpg" width="500" height="375" style="display: block; margin: 0 auto 20px;" /></p>
+
+<h3>全体的なIllustrator CCの紹介ビデオ</h3>
+
+<p>その他にも多くの新機能があるので、気になる方はこちらのビデオをどうぞ。長さは12分ほどです。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/17703/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h2>Photoshop CCの新機能いくつか</h2>
+
+<h3>「ぶれの軽減」で手ぶれ写真をシャープに補正</h3>
+
+<p>今日のデモで最も観客が湧いていた機能は、多分これ。新機能「ぶれの軽減」により、長めの露光（1秒とか）で生じた『手ぶれ』が、無かったことのようになっていました。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1276/18359/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>スマートシャープ機能の刷新</h3>
+
+<p>ネムい写真をシャープにする『スマートシャープ』機能のアルゴリズムが刷新されたそうで、ノイズやハロー効果が少ない状態で写真をしゃーぷにできるとのこと。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1276/18357/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>Camera Rawをフィルターメニューとして使用</h3>
+
+<p>これまではプラグインだった「Camera Raw」を、Photoshopの中でフィルターメニューとして使用できるようになりました。写真撮影好きのひとには、嬉しい機能かもしれませんね。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1276/18358/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h2>雑感</h2>
+
+<p>今日の『Fireworks開発終了』発表を受けて、一部では『脱Adobe！』という機運も盛り上がっているように見受けられますが、個人的には自分が適切と判断したツールを適切なシーンで使い分けしていけばいいのかなと思っています。</p>
+
+<p>のらりくらりとした態度のようですが、仕事としてIllustratorとPhotoshopの講義や書籍執筆をしているわりには、「なにがなんでもIllustratorとPhotoshopを使わなきゃ！」という考えでもなく、逆に「これからの時代は完全に脱Adobeだ！」というわけでもなく。</p>
+
+<p>性格的に食わず嫌いではなく、なんでもとりあえずは首を突っ込んでみたいのですよね。</p>
+
+<p>正解はいつもひとつではなく、時代と環境によって、常に揺れ動くものだと思いますので。</p>
+
+<p>ということで、今後も様々なツールをあちこち試しながら、メーカーさん、制作者の皆さん、そしてクライアントさんの想いや事情をうわばみのように飲み込みつつ、時代の流れに則った最適解を探していこうと考えています。</p>
+
+<p>当面の課題は、IllustratorをどのくらいWeb制作のワークフローに乗っけていけるかな、という実験ですかねー。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>【満員御礼】「仕事でちょこっと使えるPhotoshop講座」で喋ります。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/photoshop-lesson.php" />
+    <id>tag:linker.in,2013:/journal//2.1133</id>
+
+    <published>2013-03-22T14:54:07Z</published>
+    <updated>2013-03-22T15:37:15Z</updated>
+
+    <summary> ども。火曜／金曜担当の@cremaです。 今日は「こういうこともやってまーす」というご紹介を。 公私に渡って仲良しなepoch seedの森下さんが企画してく...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="photoshop" label="photoshop" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="ttl20130322.png" src="http://linker.in/journal/images/ttl20130322.png" width="640" height="250" class="mt-image-none" style="" /></p>
+
+<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p>今日は「こういうこともやってまーす」というご紹介を。</p>
+
+<p>公私に渡って仲良しな<a href="http://epochseed.jp/" target="_blank">epoch seed</a>の森下さんが企画してくださったちょっと変わった講座、「<a href="http://peatix.com/event/11578" target="_blank">【広報・マーケ向け】仕事でちょこっと使えるAdobe Photoshop講座</a>」が開催されるのですよ。</p>
+
+<p>ときは2013年4月5日（金）、ところはデジタルハリウッドさんのStudio新宿。</p>
+
+<p>ということで、本当はこの記事で「参加者募集しております！」と書きたいところだったのですが、なんと先ほど募集開始後1時間で15人の定員が埋まってしまいまして！　ありがとうございます！</p>
+
+<p>イベントの企画意図としては、「デザインが本業ではない広報やマーケティング担当者が、ブログやFacebookページに写真をアップする際、基本的な修正や加工をできるようになる！」というもの。</p>
+
+<p>広報やマーケの方は、なにかと業務で写真を扱うことがあるものなんですね。商品写真、イベントレポート写真、ポートレイト写真などなど。バタバタなスケジュールの中で急いで撮影したもの、光線の具合が悪かったもの、ヘアスタイルがちょっと乱れてしまったものなど、見栄えを良くしておきたい写真も多々ありそうです。</p>
+
+<p>そこで今回は、そんな「Photoshopをちょこっと使いたい」というライトユーザー層に向けた講座を準備することにしました。</p>
+
+<p>ポートレイト写真の色補正、後れ毛などを綺麗に消す、少し小顔／デカ目に補正など、自分で写真をいじって「こんなことができるんだー！」と感じていただく、ワークショップ形式。さらにデモンストレーションで、補正した写真をIllustratorに配置して、ポストカードっぽくレイアウトしていきます。</p>
+
+<p><a href="http://www.rokunana.com/" target="_blank">ロクナナ</a>さんで月に1回開講している<a href="http://67.org/ws/workshop/detail/084design.html">黒野明子のIllustratorとPhotoshop基本講座</a>でも、「突然会社の広報担当（Web担当）になって、IllustratorとPhotoshopを使う必要がある！」という受講生の方が度々おいでになるので、一定のライトユーザー需要があるなぁという肌感覚がありまして。</p>
+
+<p>学生さんやデザイナー志望の方に講義をするのも有意義で楽しいのですが、こういう講座にも今後様々な形で関わっていけたらいいなと思っております。</p>
+
+<p>こういった講師のお仕事がありましたら、お気軽にお声掛けくださいませ（笑）。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>WDF vol.8＠金沢にて「ソーシャル系Webサービスのつくり方」というお題で話してきました。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/wdf-vol8.php" />
+    <id>tag:linker.in,2013:/journal//2.1132</id>
+
+    <published>2013-03-12T10:57:38Z</published>
+    <updated>2013-03-12T16:38:14Z</updated>
+
+    <summary>ども。火曜／金曜担当の@cremaです。 先日当journalで告知しておりました通り、金沢のWeb系勉強会「WDF vol.8」にて、「ソーシャル系Webサー...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="イベント" label="イベント" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p><a href="http://linker.in/journal/2013/02/wdf-vol8.php" target="_blank">先日当journalで告知</a>しておりました通り、金沢のWeb系勉強会「<a href="http://wdf.jp/vol08/" target="_blank">WDF vol.8</a>」にて、「ソーシャル系Webサービスのつくり方」というお題の60分の講演をしてきました。</p>
+
+<p><a href="http://linker.in/journal/images/wdf-kurono.jpg"><img alt="wdf-kurono.jpg" src="http://linker.in/journal/assets_c/2013/03/wdf-kurono-thumb-500x375-4172.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>内容は、私のクライアントさんである<a href="http://agilemedia.jp/" target="_blank">アジャイルメディア・ネットワーク</a>にて週3回常駐しながら、ディレクターTさん＋エンジニアMさんと3人組で、「Webサービスの中の人」業務をどのようにやっているかというもの。</p>
+
+<p>これまでこういったナマな仕事内容を語ったことは無く、受講者のみなさまに受け入れていただけるかどうか若干不安があったのですが、終わってみると概ねご満足いただけたようで、ほっとしているところです。</p>
+
+<p>「まだまだこれから」「いま試行錯誤中」という部分も多く含まれていましたが、このように仕事をしている人達もいるのかという一例として、1mmでも参考にしていただければ、とても喜びます。</p>
+
+<p>同時に講演した古瀬美香さん（ウォークスコミュニケーションズ）と、最後にパネルディスカッションもさせていただきました。</p>
+
+<p><a href="http://linker.in/journal/images/wdf-panel.jpg"><img alt="wdf-panel.jpg" src="http://linker.in/journal/assets_c/2013/03/wdf-panel-thumb-500x333-4174.jpg" width="500" height="333" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>話題の中心は、「スマートフォンとECサイト」「O2O」など。この先モバイル端末に合わせたWebサイト／サービスをどのように構築していくか、会場のみなさまも交えてイメージを膨らませていきました。</p>
+
+<p>当日の参加者のみなさまのつぶやきをまとめたTogetterは、こちら。</p>
+
+<ul>
+	<li><a href="http://togetter.com/li/468629">WDF Vol.8 ツイートまとめ - Togetter</a></li>
+</ul>
+
+<p>わざわざ大阪から金沢まで参加しにきてくれた出口さんの素敵ブログ記事は、こちら。</p>
+
+<ul>
+	<li><a href="http://funnis.net/blog/activity/wdf-vol-8/">WDF Vol.8「これからのWebサイトディレクションに欠かせない充実のセッションが揃いました。」に参加してきました。｜ふにろぐ</a></li>
+</ul>
+
+<p>当日ご参加くださった受講者のみなさま、一緒に講演してくださったみなさま、そしてもちろん主催のみなさま、全てに感謝です。ありがとうございました！</p>
+
+<p>ということで、こういった新ネタを作る講師は、これにてしばらく打ち止め。私が出せるネタは出し尽くしてしまった感がありますので、しばし充電期間に入りますね。いずれパワーアップして戻ってくる予定ですので、またその時はかまってやってください。</p>
+
+<p>あ、IllustratorとPhotoshopの講師やイベントは引き続き色々やっていきますので、そちらもどうぞよろしくお願いいたします！</p>
+
+<p>※講演／パネルディスカッション中の写真は、WDF主催者の方の許諾を得て、<a href="https://www.facebook.com/wdfinfo" target="_blank">Facebookページ</a>から転載させていただきました。ありがとうございます！</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>ポッドキャスト上手くなりたい。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/podcast.php" />
+    <id>tag:linker.in,2013:/journal//2.1130</id>
+
+    <published>2013-03-08T15:30:02Z</published>
+    <updated>2013-03-08T15:50:47Z</updated>
+
+    <summary> ども、火曜／金曜担当の@cremaです。 完全なる趣味で、毎週日曜深夜に「純喫茶エピソード」というポッドキャストをやっているわけなのですが。 現時点での最新公...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="podcast" label="podcast" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><a href="http://linker.in/journal/images/logo-episode.png"><img alt="logo-episode.png" src="http://linker.in/journal/assets_c/2012/02/logo-episode-thumb-300x286-3633.png" width="300" height="286" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></p>
+
+<p>ども、火曜／金曜担当の@cremaです。</p>
+
+<p>完全なる趣味で、毎週日曜深夜に「<a href="http://cafe-episode.tumblr.com/" target="_blank">純喫茶エピソード</a>」というポッドキャストをやっているわけなのですが。</p>
+
+<p><a href="http://cafe-episode.tumblr.com/post/44456744873/vol-58" target="_blank">現時点での最新公開分</a>の自分の喋りが、相当グダグダで悲しいので、今後気をつけようと思う点をリストアップしてみました。</p>
+
+<p>当たり前のことなんですけどね......。なかなかできておりませんで......（涙目）。</p>
+
+<ul>
+	<li>何かを話しはじめる前には、できるだけ要点を提示してから詳細を語る。</li>
+	<li>自分だけ話さず、相方さんたちに適度に話をふる。その際、話が続くようにクローズドクエスチョンを適度に混ぜる。</li>
+	<li>相方さん達の考えを引き出して盛り上げる工夫を、もっと考える。</li>
+	<li>聴取者の人には分からないので、「あれ」とか「これ」とかの指示代名詞を使わないようにする。特にブログ記事を引用して紹介する時は、タイトルや要点を簡潔に提示する。</li>
+	<li>Skype録音なので難しいのだけれど、できるだけ相方さん達と話を被せないようにする。</li>
+	<li>テーマに対して、もう少し予習する。</li>
+	<li>そもそも、ゆるゆるがテーマなので、それに見合った話題選定やムード作りを見直す。</li>
+</ul>
+
+<p>うむー。今年は頑張らない宣言をした上に、番組コンセプトは「ゆるゆる」ではありますが、せっかくやっているからには、もう少し自分の話術クオリティを上げていきたい！</p>
+
+<p>練習用に、自分一人だけのポッドキャストをやってみるのもいいのかも？ と、相変わらず悩めるアラフォーでした。</p>
+
+<p>手のかからない<a href="http://audioboo.fm/" target="_blank">AudioBoo</a>とかで試そうかな...（妄想）</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>「デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕」レビュー</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/fireworks-cs6.php" />
+    <id>tag:linker.in,2013:/journal//2.1126</id>
+
+    <published>2013-02-22T16:59:46Z</published>
+    <updated>2013-02-22T17:28:49Z</updated>
+
+    <summary> ども。@cremaです。 いつもとってもお世話になっている株式会社エフシーゼロ(#fc0)のお二人、山本和泉さんと藤川麻夕子さんから、ご著書の「デザインの学校...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="fireworks" label="fireworks" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="644338_10151265182906791_305725335_n.jpg" src="http://linker.in/journal/images/644338_10151265182906791_305725335_n.jpg" width="403" height="403" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></p>
+
+<p>ども。@cremaです。</p>
+
+<p>いつもとってもお世話になっている<a href="http://fc0.vc/" target="_blank">株式会社エフシーゼロ(#fc0)</a>のお二人、山本和泉さんと藤川麻夕子さんから、ご著書の「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕</a>」を頂戴しました！　ありがとうございます！</p>
+
+<p>というわけで、さらっとレビューなど。</p>
+
+<p>実はわたくし、Webデザイナーに転職する以前から、ずーっとPhotoshop LOVERでした。いまもWebサイトのパーツやバナー作成などをする際、やっぱり一番手に馴染むのはPhotoshop。</p>
+
+<p>ただ昨今ではFireworksの人気が非常に高く、宗旨替えしたり両刀使いになったりする方もとっても多いですよね。</p>
+
+<p>そんなわけで私も、「その魅力を知りたい！」と、ぼちぼちFireworksを使い始めている昨今なのです。</p>
+
+<p>そんな私にとって、この本は「Fireworksでできること」をさらっと概観するのに、とてもいい感じ。</p>
+
+<p>もちろん「Webデザインがはじめて」という方が手にとってもしっかり分かるように構成されている内容なのですが、Photoshop使いが転向するためにも、Photoshopではできない（機能が異なる）部分をざっくり知ることができます。</p>
+
+<p>Fireworksでは、ガイドとガイドの間の長さを簡単に確認できたり、オブジェクトに設定するテクスチャが豊富に揃えられていたり、マスターページと呼ばれる共通部分を登録できたり、オブジェクトの角丸を後からサイズ変更したり、さすがWebデザインに特化されたソフトウェアならではの、便利機能が詰め込まれているのですよね（私としては「あ、この機能、Photoshopにもあればいいのに」なーんて思ってしまったりすることもあるのですがw）。</p>
+
+<p>そのような「ならではの機能」を盛り込みながら、平易でコンパクトな解説がなされているので、Webデザインに慣れているひとが短時間でさっくりFireworksに慣れるのにも、なかなかいい感じ。</p>
+
+<p>一冊を通して架空のショッピングサイト内の数ページを作る演習形式で書かれているので、実際のWebデザイン作業に沿ってよく使う機能を一通り知ることができるのも、良い構成かと思います。</p>
+
+<p>というわけで、これからWebデザインを学びたい方はもちろんのこと、私のようなPhotoshopからの転向組にもなかなか使える、Fireworks最初の教則本としてふさわしいものだと思った次第。</p>
+
+<p>気になる方は、チェックしてみてはいかがでしょうか？</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51GVkhQWO-L._SL160_.jpg" alt="デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.22</div></div><div class="amazlet-detail">#fc0 山本 和泉 藤川 麻夕子 <br />技術評論社 <br />売り上げランキング: 200,140<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>【2013年3月9日】金沢でWebサービスの裏舞台について話します。【WDF vol.8】</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/wdf-vol8.php" />
+    <id>tag:linker.in,2013:/journal//2.1123</id>
+
+    <published>2013-02-08T17:36:43Z</published>
+    <updated>2013-02-11T03:15:17Z</updated>
+
+    <summary> お久しぶりです。@cremaです。 今日は、講演の告知をさせてください。 来る2013年3月9日（土）WDF vol.8という金沢の勉強会で、最初で最後な新ネ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="ttl20130208.png" src="http://linker.in/journal/images/ttl20130208.png" width="640" height="200" class="mt-image-none" style="" /></p>
+
+<p>お久しぶりです。@cremaです。</p>
+
+<p>今日は、講演の告知をさせてください。</p>
+
+<p>来る2013年3月9日（土）<a href="http://wdf.jp/vol08/" target="_blank">WDF vol.8</a>という金沢の勉強会で、最初で最後な新ネタの講演をさせていただきます。</p>
+
+<p>そのお題は「ソーシャル系Webサービスのつくり方　〜デザイナーとして、SNSの発言と位置情報を活用したWebサービス開発に関わる〜」というものです。</p>
+
+<p>私がこういう話をするというのも、ちょっと珍しいでしょう。</p>
+
+<p>せっかく講演のご依頼をいただいたので、いままでの繰り返しではなく新しいことをお話したくなり、主催のみなさまにお願いしたのです。</p>
+
+<p>なんと言っても今年のテーマは「<a href="http://linker.in/journal/2013/01/boredom.php" target="_blank">人生に飽きない工夫をしようかな。</a>」ですのでね。</p>
+
+<p>っで、何をお話するかというと、いま仕事の中で最も時間を割いて取り組んでいる「Webサービスの中の人業務」についてなのです。</p>
+
+<p>実は私、<a href="http://agilemedia.jp/" target="_blank">アジャイルメディア・ネットワーク</a>さんという会社で週3回×5時間づつ、常駐のお仕事をさせていただいておりまして。</p>
+
+<p>お仕事の内容は、自社開発Webサービスの企画段階から色々混ぜていただき、UIをデザインしたり、コーディングしたり、テストしたり、改善したり、何から何まで話し合ったりetc......。</p>
+
+<p>ディレクターTさん＋エンジニアMさん＋デザイナー私という最小単位の3人組で、どのようにスピード感を持ってビジネスを動かしているか、という裏舞台をお話する予定なのです。</p>
+
+<p>いわゆる「見た目のデザイン」についてのお話はとても少ないと思うのですが、「ビジネスとしてWebサービスを回すチームに、デザイナーとしてどう貢献するか」ということを、守秘義務の範囲内で事細かにお話させていただくつもりで準備を進めています。</p>
+
+<p>少人数でのWebサービス開発に興味のある方には、色々面白いヒントを持って帰っていただけるように全力を尽くしますので、金沢方面のみなさま、よろしければ遊びにきてください。</p>
+
+<p>もちろん、私以外の4人のみなさまのセッションも、超充実ですよ！　私はそっちが楽しみですw</p>
+
+<dl>
+	<dt>女性向けECサイトコンバージョンアップ術　〜ECで利益を出す為に担当者が身につけたい3つの基本と応用〜</dt>
+	<dd>株式会社ウォークスコミュニケーションズ Webデザイナー　古瀬美香さん</dd>
+	<dt>大規模サイトにおける本当は怖いCSSの話</dt>
+	<dd>株式会社DMM.comラボ Webデザイナー　井上誠さん</dd>
+	<dt>韓国のICTとソーシャルメディアから学べるソーシャルWeb時代</dt>
+	<dd>株式会社シーピーユー　金聖弼さん</dd>
+	<dt>パネルディスカッション</dt>
+	<dd>モデレータ：株式会社ウーマンスタイル　村中ゆかりさん</dd>
+</dl>
+
+<p>ということで、この講演を最後に、しばらく講演系のお仕事はお休みして充電予定のわたくし。滅多にしないお話になると思いますので、ぜひいらしてくださいませ！</p>
+
+<p>（あ、各種ソフトウェアの講師仕事はもちろん続けますが、人前で講演するのはちょっとネタ切れの感があるので、しばし仕込みの期間に入るということで、よろしくお願いいたします。当分じっくりネタ貯金します！）</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>西新宿のノマドカフェ「BASE POINT」を覗いてきましたレポート。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/01/base-point.php" />
+    <id>tag:linker.in,2013:/journal//2.1119</id>
+
+    <published>2013-01-15T11:38:26Z</published>
+    <updated>2013-01-17T06:41:40Z</updated>
+
+    <summary>ども。火曜／金曜担当の@cremaです。 以前書いた記事「ノマドワーキング用カフェ＠渋谷・新宿・原宿・六本木・青山一丁目」をご覧になった『西新宿のノマドカフェ「...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="cafe" label="cafe" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="カフェ" label="カフェ" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="コワーキングスペース" label="コワーキングスペース" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p>以前書いた記事「<a href="http://linker.in/journal/2011/03/nomado-cafe.php" target="_blank">ノマドワーキング用カフェ＠渋谷・新宿・原宿・六本木・青山一丁目</a>」をご覧になった『西新宿のノマドカフェ「BASE POINT」』関係者の方から、「2012年12月に、西新宿にノマドカフェをオープンしました」という営業メールをいただきまして。</p>
+
+<p>ちょうどたまたまlinker3人で会う日でしたので、覗きに行かせていただきました。</p>
+
+<p>（こういう記事って、事実告知しないといけないので一応。宣伝費をいただいたりとかは一切ないのですが、興味本位でお邪魔したら、今回だけ料金をおまけしていただきました。ということもありながら、普通に良い場所だなと感じたので、記事にした次第です。ということで、ステマではありませぬー）</p>
+
+<p>新宿駅西口から、徒歩7分前後ですかね。地図でいうとこんな感じのところです。</p>
+
+<p><iframe width="640" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF7-22-3&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%97%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%92%E2%88%92%EF%BC%93&amp;gl=jp&amp;t=m&amp;z=14&amp;brcurrent=3,0x60188d2a13db37cb:0x4793a6d84d7903e5,0,0x60188d2a25eb6ec1:0xea446f483bcd475e&amp;ll=35.69504,139.695248&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF7-22-3&amp;ie=UTF8&amp;hq=&amp;hnear=%E6%9D%B1%E4%BA%AC%E9%83%BD%E6%96%B0%E5%AE%BF%E5%8C%BA%E8%A5%BF%E6%96%B0%E5%AE%BF%EF%BC%97%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%92%E2%88%92%EF%BC%93&amp;gl=jp&amp;t=m&amp;z=14&amp;brcurrent=3,0x60188d2a13db37cb:0x4793a6d84d7903e5,0,0x60188d2a25eb6ec1:0xea446f483bcd475e&amp;ll=35.69504,139.695248&amp;source=embed" style="color:#0000FF;text-align:left">大きな地図で見る</a></small></p>
+
+<p>お店の前の道の曲がり角のところには、こんな目印が立ってます。これを頼りに、いざ潜入。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4563.jpg"><img alt="IMG_4563.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4563-thumb-300x400-4126.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>入り口の写真を撮るのを忘れまして、ごめんなさい......。</p>
+
+<p>建物は3階建て。</p>
+
+<p>1階が食事＋お茶＋作業が可能なカフェ、2階がお茶と作業が可能なソファメインの空間、3階が貸会議室（イベントスペース）になっています。</p>
+
+<p><ins>そうそう、重要情報を追記。店舗内は基本的に禁煙で、3階が空いているときは3階のベランダのみ喫煙可だそうです！</ins></p>
+
+<p>まず1階の全体感は、こんな雰囲気。写真に写っていない範囲に、1人掛け席が3つと、半個室1つ、4人掛け席が1つある感じですかね。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4579.jpg"><img alt="IMG_4579.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4579-thumb-500x375-4128.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>色んなタイプの椅子と机の組合せがあるのですが、隅のこの席は集中できそう。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4580.jpg"><img alt="IMG_4580.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4580-thumb-500x375-4130.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>すべての席で電源を使えるように、内装が整えられています。お部屋の中央の席では、天井からぶら下がっている電源が用意されていました。伸び縮みするので、焼肉屋さんの吸煙機のようなイメージですね。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4566.jpg"><img alt="IMG_4566.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4566-thumb-300x400-4132.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>スタッフの方にお話を伺ったところ、テーブルの横幅にこだわりがあるとか。ドトールなどではテーブルの横幅が狭く、ノートPCの脇にちょっとしかスペースが無いため、ドリンクをPCの裏側に置いたりするなど、窮屈な作業耐性を強いられることがあります。「BASE POINT」さんでは「ドトールストレスの打破」をテーマに、わざわざ幅広の天板にテーブルを作り替えたとのこと。</p>
+
+<p>そんなわけで、ひとつのテーブルの横幅が、赤い矢印ぐらいの余裕があるのです。ドリンクを置いてもマウスを動かすスペースがある感じですねー。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4565.jpg"><img alt="IMG_4565.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4565-thumb-500x375-4144.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>2階は、ソファメインの作業空間。様々なデザインの椅子が置かれています。こちらは、お食事の持ち込みはできませんが、お茶と作業が可能。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4571.jpg"><img alt="IMG_4571.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4571-thumb-500x375-4134.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>ハンモックでご満悦の @mersy です。ハンモックは、全部で3つ用意されていました。天井からつり下げられています。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4568.jpg"><img alt="IMG_4568.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4568-thumb-300x400-4136.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>一番人気の球体型のソファに座った @taku-work 。膝の上にノートPCをセットするための作業台を貸し出してくれるので、ソファでの作業もいい感じの模様です。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4567.jpg"><img alt="IMG_4567.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4567-thumb-300x400-4138.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>カギのかかるロッカーもあるので、途中でここに荷物を預けてお手洗いに行ったりすることも可能とのこと。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4573.jpg"><img alt="IMG_4573.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4573-thumb-300x400-4140.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>2階のソファルームの脇には、10名ぐらいで会議できそうなお部屋が用意されていました。まだオープンしたてで内装も試行錯誤中なので、椅子や仕切りなどはこれから変化していくそうです。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4574.jpg"><img alt="IMG_4574.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4574-thumb-500x375-4142.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>そんなわけで、現在内装準備中の3階も見せていただきました。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4575.jpg"><img alt="IMG_4575.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4575-thumb-500x375-4146.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>3階は、こんな広さ。30人程度のセミナーも開催できそうな感じですよ。ホワイトボードがあって、椅子も準備中。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4577.jpg"><img alt="IMG_4577.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4577-thumb-500x375-4148.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>キラキラしたスマイルが素敵な、オーナーの近藤さん。自分が使いたい空間をこだわって作っていらっしゃるという情熱を、存分に語ってくださいました。</p>
+
+<p><a href="http://linker.in/journal/images/IMG_4581.jpg"><img alt="IMG_4581.jpg" src="http://linker.in/journal/assets_c/2013/01/IMG_4581-thumb-300x400-4150.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>この日は拝見しませんでしたが、屋上があって外に出られるのと、私書箱として使えるメールボックスも準備中だとか。まだこの先、内装や設備に手を入れて、どんどん快適仕事空間が広がっていく計画がある様子です。</p>
+
+<p>気になる料金ですが、1階と2階が全席電源完備、Wi-Fi無料、フリードリンクで1時間380円、3時間以上は1000円。この料金は2013年3月末までで、それ以降は変更の可能性もあるそうです。</p>
+
+<p>2階の小さな貸し会議室は、1h1,500円＋一人一般会議室入場料430円。3階の貸し会議室は、1h4,000円＋一人一般会議室入場料430円、とのこと（2013年1月17日、金額に変更があり、修正しました）。会員登録をしていただいたり、いいねを押していただければ、入場料380円というような形になるようです。</p>
+
+<p>随時金額の変更があるかもしれないので、ご利用になる前に確認してみてください。</p>
+
+<p>その他情報も貼っておきますね。</p>
+
+<p><strong>新宿ノマドカフェ「Base Point」（ベースポイント）</strong></p>
+
+<p>〒160-0023 東京都新宿区西新宿7-22-3 BPビル<br />
+電話：03-5332-8332</p>
+
+<p>公式Facebookページ<br />
+<a href="https://ja-jp.facebook.com/basepointcafe/" target="_blank">https://ja-jp.facebook.com/basepointcafe/</a></p>
+
+<p>公式サイト<br />
+<a href="http://b-pt.jp" target="_blank">http://b-pt.jp</a></p>
+
+<p>「ノマド」というと「（笑）」と言われてしまう昨今とは言え、やはりフリーランス生活には、落ち着いて作業や思索に耽ることができる場所が重要だったりします。</p>
+
+<p>Base Pointさんは、オーナーやスタッフの皆さん自身が快適に過ごせる空間作りを大切にされているようだったので、なかなか素敵だなぁと感じた次第。</p>
+
+<p>私個人としては、小滝橋通りにあるダンススタジオやスポーツクラブと近いので、レッスン前後に勉強しに行こうかな、と考えております。</p>
+
+<p>ご興味あったら、覗きに行ってみてくださいなー;-)</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>人生に飽きない工夫をしようかな。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/01/boredom.php" />
+    <id>tag:linker.in,2013:/journal//2.1116</id>
+
+    <published>2013-01-07T16:26:15Z</published>
+    <updated>2013-01-08T16:58:10Z</updated>
+
+    <summary>@cremaです。 2013年はじめの記事ですが、もう松の内も過ぎましたので単に「今年もよろしくお願いします」ということで、ここはひとつ。 昨年最後の記事で「今...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>@cremaです。</p>
+
+<p>2013年はじめの記事ですが、もう松の内も過ぎましたので単に「今年もよろしくお願いします」ということで、ここはひとつ。</p>
+
+<p><a href="http://linker.in/journal/2012/12/the-end-of-2012.php" target="_blank">昨年最後の記事で「今年はがんばらない」と書きました</a>。なぜ私がそこまで人生に疲れているかを考えると、つまりは色んなことに飽きてしまっているんだなぁと思うのです。</p>
+
+<p>私は、本当に本当に飽きっぽくて。</p>
+
+<p>なにかを極めて飽きるのならいいのですが、極められなくても飽きてしまうというのが、私の特徴です。</p>
+
+<p>Webの勉強でもダンスの練習でも、「初心者ではない」とぎりぎり言えるぐらいのレベルまでくると、その先に成長曲線の壁（というか、成長が鈍化する時期）があったりしますよね。</p>
+
+<p>そういう場合に努力を続けても結果が出なかったり、周囲の人にダメなところを指摘されたりすると、どうしようもなく立ち直れなくなるのです。ダメ人間ですね。</p>
+
+<p>一冊の本を読み続けることも難しいし、固定された人間関係の中で長時間過ごすのもちょっと苦手だし、編み物も完成させられないし。</p>
+
+<p>いままで多少なりとも結果らしきものを出せてきたとしたら、それは瞬発力と愛想でなんとか乗り切ってきたというべきかもしれません。</p>
+
+<p>今年の8月で40歳という節目を迎えるということもあり、いつまでも同じことを嘆いてばかりもいられないので、いま私は色々なものを捨てたり変えたりしようとしています。</p>
+
+<p>大量の服を片付けるのが困難になってきたので、ビニール袋15袋分を処分して持っている服を極端に減らしたり。したくないことをするとストレスで他のことに影響が出るので、できるだけお断りするようにしたり。</p>
+
+<p>自分をなかなか変えられないなら、環境の方を変えていってみようという発想と言えるでしょうか。</p>
+
+<p>その一環として「飽きっぽいなら、できるだけ物事に飽きない工夫をしたらいいんじゃないか」と、考え始めました。つい最近まで「飽きるのはダメ人間だからだし、飽きても我慢して続けなくてはいけないんだ」と自分を責めていたんですけれどね。</p>
+
+<p>これから「飽きない方法」を探っていこうと思っているのですが、ちょっと検索したところ、この記事に割と共感したので、リンクしておきます。</p>
+
+<ul>
+	<li><a href="http://sadadad54.hateblo.jp/entry/20101126/1290721607">飽きない工夫こそが続けるために必要なもの - sadadadの読書日記</a></li>
+</ul>
+
+<p>物事を飽きずにずーっと続けられる人から見たらびっくりするぐらい低次元のことで恐縮ですが、あと30年ぐらい残っている人生をなんとか工夫して乗り切ろうとしていますので、生温かくスルーして横目で見ていてください。</p>
+
+<p>では。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>さよなら2012年。2013年は、がんばりません。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/12/the-end-of-2012.php" />
+    <id>tag:linker.in,2012:/journal//2.1114</id>
+
+    <published>2012-12-27T17:19:26Z</published>
+    <updated>2012-12-28T17:45:30Z</updated>
+
+    <summary>火曜／金曜担当の@cremaです。 早いもので、今年の私の担当日はもう終わり。次回の火曜日は元日なのです。 今年も当linker journalを読んでくださっ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>火曜／金曜担当の@cremaです。</p>
+
+<p>早いもので、今年の私の担当日はもう終わり。次回の火曜日は元日なのです。</p>
+
+<p>今年も当linker journalを読んでくださったみなさま、誠にありがとうございました。私の担当日はどうにもゆるゆるだったりしておりますが、できる限り頑張っていきたいと思っております。</p>
+
+<p>さて毎年この時期は、「来年の目標」を考えたりしませんか。</p>
+
+<p>私は毎年末、「来年はxxxを勉強する！」「免許をとる！」「語学を再開する！」「xxkg痩せる！」などと息巻いておりました。</p>
+
+<p>そんな私も、来年40歳。</p>
+
+<p>そろそろ、人生の残り時間をどのように有効に使っていくか、真剣に考えなければいけない年齢となってきました。</p>
+
+<p>毎年の目標が達成できないことに落胆し、自己嫌悪に陥ることを繰り返してきたので、実現不可能な目標を挙げるのにも、もう嫌気がさしているのです。</p>
+
+<p>そういう訳で、2013年の目標はとてもシンプル。</p>
+
+<ul>
+	<li>がんばらない</li>
+	<li>したくないことはしない</li>
+	<li>会いたくないひとには会わない</li>
+</ul>
+
+<p>この3つだけを、忠実に守ります。</p>
+
+<p>脱ストレスフル生活を目指して。</p>
+
+<p>私事ですが今年の10月末でサルサパフォーマンスチームも卒業しまして、「仕事」と「自分自身」に向き合う時間をまとまって作ることができそうな2013年。</p>
+
+<p>自分にストレスのかかることを全て排除し、心と身体の声に耳を澄ませて、丁寧かつ健やかに生きるのが目標です。</p>
+
+<p>そして、そんな生活の中から新たな価値を産み出すことができるように、静かに生きていきたいと思っています。</p>
+
+<p>来年もどうぞよろしくお願いいたします。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>オーストリアで見つけた面白いモノ、その2。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/12/graz002.php" />
+    <id>tag:linker.in,2012:/journal//2.1102</id>
+
+    <published>2012-12-24T20:31:58Z</published>
+    <updated>2013-01-21T14:51:38Z</updated>
+
+    <summary>ども、火曜／金曜担当の@cremaです。 随分お久しぶりになってしまいましたが、オーストリア話の第二弾ということで、またしても淡々と写真をアップしていきます。 ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども、火曜／金曜担当の@cremaです。</p>
+
+<p>随分お久しぶりになってしまいましたが、オーストリア話の第二弾ということで、またしても淡々と写真をアップしていきます。</p>
+
+<p>当地は、カトリックがメインのお国柄。ということで、マリア像が祀られている建物が、あちらにもこちらにもそちらにも。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200128713/" title="IMG_3901 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8203/8200128713_3115cd0af3.jpg"  alt="IMG_3901" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200128713/">IMG_3901</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200128817/" title="IMG_3917 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8065/8200128817_d79199c45f.jpg"  alt="IMG_3917" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200128817/">IMG_3917</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200129281/" title="IMG_3930 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8489/8200129281_e66a8d2a84.jpg"  alt="IMG_3930" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200129281/">IMG_3930</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8201221376/" title="IMG_3933 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8487/8201221376_bbf6284621.jpg"  alt="IMG_3933" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8201221376/">IMG_3933</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200130209/" title="IMG_3958 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8490/8200130209_5b85f851fd.jpg"  alt="IMG_3958" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200130209/">IMG_3958</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>ベネトンの店舗が入っているビルにも、マリア像。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200129615/" title="IMG_3940 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8059/8200129615_7e8d268b6d.jpg"  alt="IMG_3940" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200129615/">IMG_3940</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>ちょっとした塔にもなっています。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200129711/" title="IMG_3949 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8068/8200129711_9bd33f3d4f.jpg"  alt="IMG_3949" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200129711/">IMG_3949</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>スーパーマーケットでは、チーズの種類の豊富さが、とにかく半端ありません。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200127483/" title="IMG_3847 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8489/8200127483_2f39d89e59.jpg"  alt="IMG_3847" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200127483/">IMG_3847</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>食パン系パンも充実。この他、写真には映っていませんが、まるい系パン、硬い系パン、甘い系パンも、別途充実。さすがですね。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8201219608/" title="IMG_3848 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8199/8201219608_0d14e5bd11.jpg"  alt="IMG_3848" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8201219608/">IMG_3848</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>野菜売り場の野菜は、日本とちょっと形が違うものもあり。特に一番手前のカラーピーマンは、長い。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200127683/" title="IMG_3849 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8345/8200127683_7fcda752f5.jpg"  alt="IMG_3849" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200127683/">IMG_3849</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>日本でも見かけますが、こちらでも街の落書きに、ステンシルっぽいものがちらほら。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8201220540/" title="IMG_3864 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8204/8201220540_1c95c5d9ca.jpg"  alt="IMG_3864" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8201220540/">IMG_3864</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8201220682/" title="IMG_3895 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8480/8201220682_b6bc3778e7.jpg"  alt="IMG_3895" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8201220682/">IMG_3895</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>ところで街はそろそろ、クリスマスの飾り付けが進んでいるようです。</p>
+
+<p>ホテルのひげ剃り用電源らしきもの。アイコンと言うかイラストと言うか、言葉は読めなくてもおじさんがひげを剃っているのがよく分かるデザインです。そして電源の穴が3つあり、左の穴と中央の穴に差すと110V、中央の穴と右の穴に差すと240Vでいける模様。穴の数が節約されているのがなんだかナイスな感じです。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8200127311/" title="IMG_3845 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8347/8200127311_64a7c825dc.jpg"  alt="IMG_3845" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8200127311/">IMG_3845</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>と、こんなところで、今日は終了。次回でオーストリア写真」編は最後にしまーす。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>【2013年1月16日】「生き延びるフリーランスの技術！」というお題で話します＠ベースキャンプ名古屋</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/12/basecamp-nagoya-crema.php" />
+    <id>tag:linker.in,2012:/journal//2.1107</id>
+
+    <published>2012-12-04T11:30:01Z</published>
+    <updated>2012-12-04T17:48:29Z</updated>
+
+    <summary> ども。昨日帰国しました@cremaです。 オーストリアの写真はまた追ってご紹介していくとして、今日は来月（もう来年！）のイベント登壇のご案内をさせてください。...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="イベント" label="イベント" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="50077b9c8245d-3_original_original_original_original.png" src="http://linker.in/journal/images/50077b9c8245d-3_original_original_original_original.png" width="300" height="300" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>ども。昨日帰国しました@cremaです。</p>
+
+<p>オーストリアの写真はまた追ってご紹介していくとして、今日は来月（もう来年！）のイベント登壇のご案内をさせてください。</p>
+
+<p>名古屋でキラキラ輝いているWeb制作会社<a href="http://www.appleple.com/" target="_blank">アップルップルさん</a>からお招きをうけ、「生き延びるフリーランスの技術！」というお題でお話をさせていただくことになりました。</p>
+
+<p>日時は、2013年1月16日19:30から21:30。会場は、アップルップルさんの素敵コワーキングスペース「<a href="http://basecamp-nagoya.jp/">ベースキャンプ名古屋（basecamp NAGOYA）</a>」でございます。</p>
+
+<p>これまで似たようなお題で<a href="http://wwfes.webridge-kagawa.com/" target="_blank">高松</a>と<a href="http://wwfes.wdha.jp/" target="_blank">青森</a>で登壇していますゆえ、「また？」と思われる可能性もありますが、そこはがらっと構成を変えるつもりです。</p>
+
+<p>今回はあえて「女性として」的な部分は前面に出さず、2003年から今年まで「どうやって食ってきたか」ということだけに焦点を当てる予定。</p>
+
+<p>具体的には、「どうやって営業／宣伝してきたか」「自分の何をウリにしてきたか」「どうやって協業者と知り合ってきたか」「どう分業してきたか」「使っているツールは？」「経理的なことはどうしているか」「フリーランスのメリット／デメリット」などなどを、「技術論」風にまとめて、公開orみなさまとディスカッションしていこうと思っています。</p>
+
+<p>一応10年間無借金経営で、仕事が途切れて別のアルバイトをしたりすることは無く、ありがたいことにWebデザイン関連の雑誌連載や書籍執筆やイベント登壇などもさせていただいた経験があり、それなりにフリーランスに向いている気がしているのです。わたくし。</p>
+
+<p>「これからフリーランスになってみたいかも？」と漠然と思っている方、別に独立するつもりはないけど他の働き方も知ってみたい方、もちろん現在フリーランスでなんとなくお悩みの方と、ざっくばらんに知識や問題を共有できればと思っております。当然、私の話すことだけが正解ではありませんので、「自分はこうしてる！」というツッコミもお待ち申し上げております。</p>
+
+<p>もしご興味がありましたら、お申し込みは下記ATNDからよろしくお願いいたします。</p>
+
+<ul>
+	<li><a href="http://atnd.org/events/34546">生き延びるフリーランスの技術！ : ATND</a></li>
+</ul>
+
+<p>最後になりますが、参加されるされないに関わらず「事前のネタ集め」として、下記のアンケートフォームをご用意いたしました。内容を匿名で公開いたしますので、差し支えの無い範囲でお答えいただければ、誠にありがたく思います。</p>
+
+<ul>
+	<li><a href="https://docs.google.com/spreadsheet/viewform?formkey=dE1yUjRDMThYcWt1eW9MZ1l5czdCdFE6MQ">「生き延びるフリーランスの技術！」事前アンケート</a></li>
+</ul>
+
+<p>それでは、当日は名古屋方面のみなさまと沢山お話できることを楽しみにしております！<br />
+どうぞよろしくお願いいたします！</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>オーストリアで見つけた面白いもの、その1。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/11/graz001.php" />
+    <id>tag:linker.in,2012:/journal//2.1098</id>
+
+    <published>2012-11-13T01:10:23Z</published>
+    <updated>2012-11-13T01:59:23Z</updated>
+
+    <summary>ども、火曜／金曜担当の@cremaです。 先週土曜日からオーストリア第二の都市グラーツに滞在しているのですが、街を歩いて目にした面白げなものを淡々とアップしてみ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども、火曜／金曜担当の@cremaです。</p>
+
+<p>先週土曜日からオーストリア第二の都市グラーツに滞在しているのですが、街を歩いて目にした面白げなものを淡々とアップしてみますね。</p>
+
+<p>のっけからちょっと分かりにくい写真でごめんなさい。スーパーマーケットで買い物中に使うカートなんですが、これが全部鎖で繋がってまして、外せなかったんです。他の人たちの動きをじーっと見ていると、どうやらコインを入れると鎖が外れる仕組みらしく。つまり有料なんですね。ということで、これは小さなお子様用カートなのですが、5セント（多分）入れるスロットがついていました。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180686105/" title="IMG_3762 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8343/8180686105_bd0d38cb43.jpg"  alt="IMG_3762" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180686105/">IMG_3762</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>道路工事中の標識は、日本と意匠がかなり共通。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180721680/" title="IMG_3742 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8065/8180721680_17717d1c5f.jpg"  alt="IMG_3742" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180721680/">IMG_3742</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>道端に「ガチャガチャ」を発見。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180721928/" title="IMG_3743 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8482/8180721928_d2e836fdf7.jpg"  alt="IMG_3743" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180721928/">IMG_3743</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>歩道に立っていた標識。人間のアイコン（というかイラスト）が、どこかにょろんとした印象。その下ausgenommen（除く、という意味の単語）があって、さらに下に自転車アイコン。総合すると、歩行者用の歩道で自転車は禁止ってことなのでしょうか？　それとも車はNGだけど、人間と自転車はOK？　どなたか教えてください＞＜</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180685379/" title="IMG_3741 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8209/8180685379_2d09c7efb3.jpg"  alt="IMG_3741" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180685379/">IMG_3741</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>この街の現代美術館っぽい施設「<a href="http://www.museum-joanneum.at/de/kunsthaus">Kunsthaus Graz</a>」の外観。別の角度から見るとゴーヤかナマコのようなとげとげが出ていて、クラシカルな街の中で完全に異質な空気を醸し出しています。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180685181/" title="IMG_3739 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8339/8180685181_0668e94555.jpg"  alt="IMG_3739" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180685181/">IMG_3739</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>その「Kunsthaus Graz」1階にあるカフェ。なんと毎週土曜日、このカフェでサルサパーティがあるとの情報が。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180721002/" title="IMG_3732 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8069/8180721002_8d1fbefc17.jpg"  alt="IMG_3732" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180721002/">IMG_3732</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>これが、そのサルサパーティのポスター。スペイン語や英語圏ではド派手かつ熱くるしいデザインの多いサルサ関係のグラフィックですが、ここはドイツ語圏だからなのか比較的シンプルでクールなデザイン。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180684533/" title="IMG_3730 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8058/8180684533_b1a09ec651.jpg"  alt="IMG_3730" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180684533/">IMG_3730</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>その他にも色々な音楽イベントやパーティがある模様です。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180720736/" title="IMG_3731 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8059/8180720736_44babbd064.jpg"  alt="IMG_3731" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180720736/">IMG_3731</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>「Kunsthaus Graz」のミュージアムショップの窓には、なぜだか日本語のネオンサインが。しかも「違いを愛する」というメッセージ。ここまでのことを色々類推すると、異文化コミュニケーションを重視しているんでしょうね。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180719886/" title="IMG_3729 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8485/8180719886_e0d916057b.jpg"  alt="IMG_3729" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180719886/">IMG_3729</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>ミュージアムショップ内部で売っていたクリスマスツリーの飾り。よく見るとPantoneの色指定になっているのが分かりますでしょうか。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180683321/" title="IMG_3727 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8478/8180683321_4f06513715.jpg"  alt="IMG_3727" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180683321/">IMG_3727</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>落書きだらけですが、郵便ポスト。オーストリアの郵便ポストは黄色なんですね。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180682759/" title="IMG_3724 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8200/8180682759_76638698f0.jpg"  alt="IMG_3724" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180682759/">IMG_3724</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>ワンコのイラスト＋メッセージ。Google翻訳すると「私は入ることができません」となったので、ペットを連れて入ってはいけないというサインのようです。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180718586/" title="IMG_3721 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8348/8180718586_3fe5cd0d3a.jpg"  alt="IMG_3721" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180718586/">IMG_3721</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>多分銀行か金融系の施設だと思うのですが、ロゴマークが美しかったので。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180681967/" title="IMG_3718 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8339/8180681967_67c619160e.jpg"  alt="IMG_3718" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180681967/">IMG_3718</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>同じロゴマークを立体にして窓の方にも取り付けてありました。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180681715/" title="IMG_3717 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8350/8180681715_9b9802919b.jpg"  alt="IMG_3717" width="288px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180681715/">IMG_3717</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>おまけ。これは何のドアか分かりますか？　正解は、私が滞在しているホテルのエレベーター。まずこのドアを開くと、中に左右に開くもうひとつの自動ドアがあるのです。なんで二重ドアになっているんだろう。まだ謎です。</p>
+
+<p><a href="http://www.flickr.com/photos/26437027%40N00/8180681539/" title="IMG_3710 by cremacremacrema, on Flickr" target="_blank"><img class="flickr_photo" src="http://farm9.staticflickr.com/8060/8180681539_7d62af946b.jpg"  alt="IMG_3710" width="216px"/></a><br /><cite class="flickr_photographer"><img src="http://farm7.static.flickr.com/6002/5974401716_35b6041cdc.jpg" width="16" /><a href="http://www.flickr.com/photos/26437027%40N00/8180681539/">IMG_3710</a> Photo by <a href="http://www.flickr.com/photos/26437027%40N00/">cremacremacrema</a></cite></p>
+
+<p>ということで、続きは次回金曜日に。<br />
+</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>明日から、ちょっと遠目にノマドってきます。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/11/graz.php" />
+    <id>tag:linker.in,2012:/journal//2.1096</id>
+
+    <published>2012-11-09T14:36:08Z</published>
+    <updated>2012-11-09T14:49:10Z</updated>
+
+    <summary>ども、火曜／金曜担当の@cremaです。 ご縁があって生まれて初めての海外出張をすることになり、オーストリアのグラーツという街に3週間ばかり出かけてきます。 プ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+    <category term="近況" label="近況" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども、火曜／金曜担当の@cremaです。</p>
+
+<p>ご縁があって生まれて初めての海外出張をすることになり、<a href="https://maps.google.co.jp/maps?q=%E3%82%B0%E3%83%A9%E3%83%BC%E3%83%84&ie=UTF-8&hq=&hnear=0x476e3587173065bb:0xfe8e8ad1d2dfdd9b,%E3%82%AA%E3%83%BC%E3%82%B9%E3%83%88%E3%83%AA%E3%82%A2+%E3%82%B0%E3%83%A9%E3%83%BC%E3%83%84&gl=jp&ei=EhadUKm6Kc3SmAX-3IHQAw&ved=0CCIQ8gEwAA" target="_blank">オーストリアのグラーツ</a>という街に3週間ばかり出かけてきます。</p>
+
+<p>プライベートではなく、純粋に仕事の旅。しかも独りで。</p>
+
+<p>公用語であるドイツ語も喋れませんし、北海道よりも寒いらしいし、はてさてどうなることでしょうか。時差は8時間。向こうで朝7:00に起きると、日本では15:00ですね。</p>
+
+<p>東京の様々な勉強会に出られないのがかなり寂しいのですが、それはさておき、良い仕事をするために張り切って行ってきます。成果は来年お見せできるのではないかと。</p>
+
+<p>向こうではWi-Fiも調達してオンラインで日本の仕事もこなす予定ですし、とにかく規則正しく健康に気をつけて過ごしてきたいと思います。</p>
+
+<p>そして初めて滞在する都市なので、デザイン的に面白いものを探して、このブログでご報告できればと。</p>
+
+<p>ということで、行ってまいりまーす。<br />
+</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>InstagramにやっとPCで見られるProfileページが来るみたい！</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/11/instagram-profile.php" />
+    <id>tag:linker.in,2012:/journal//2.1094</id>
+
+    <published>2012-11-06T11:39:00Z</published>
+    <updated>2012-11-06T11:48:24Z</updated>
+
+    <summary>ども。火曜／金曜担当の@cremaです。 もうご存知の方も多いかと思いますが、人気の写真アプリ「Instagram」に、やっと！PCで見られるProfileペー...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="instagram" label="Instagram" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p>もうご存知の方も多いかと思いますが、人気の写真アプリ「Instagram」に、やっと！PCで見られるProfileページが来るみたいですねぇ。</p>
+
+<ul>
+	<li><a href="http://help.instagram.com/customer/portal/articles/827076">Instagram Profiles on the Web ? Instagram Help Center</a></li>
+	<li><a href="http://www.itmedia.co.jp/news/articles/1211/06/news032.html">Instagram、Facebook似のWeb版プロフィールを発表 - ITmedia ニュース</a></li>
+</ul>
+
+<p>いままでは、個別の写真に対応するWebページはPCからも見られていたのですが、写真一覧を見たければ外部のWebサービスを使うしかなかったんですよね。</p>
+
+<p>閲覧するのはほんとに簡単で、<a href="http://instagram.com/crema">http://instagram.com/crema</a>みたいに、http://instagram.com/のあとにユーザーネームをつけるだけ。</p>
+
+<p>今のところ私のページは、こんな具合にまだプロフィールが表示されていない「待ち」の状態ですが、もう表示されている方もいらっしゃるようですし、数日以内にみんなに来るらしいですよ（記事によると）。</p>
+
+<p><a href="http://instagram.com/crema"><img alt="instagram.png" src="http://linker.in/journal/images/instagram.png" width="569" height="688" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>いままで「なぜ公式の一覧ページが無いのかな？」というのが不思議だったのですが（技術的な理由なのか戦略的な理由なのか私には不明ですが、偉い人は知ってるかも！）、やっとこれができて嬉しいですね。</p>
+
+<p>ってことで、今日はさらっと。</p>]]>
+        
+    </content>
+</entry>
+
+</feed>
+

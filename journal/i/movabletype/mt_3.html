@@ -1,0 +1,88 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTで記事一覧に関連エントリーを表示させたい｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTで記事一覧に関連エントリーを表示させたい</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTで記事一覧に関連エントリーを表示させたい</p>
+
+<p><img src="http://linker.in/journal/images/090803.gif" width="600" height="200" alt="090803.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+初の裁判員制度がスタートとか。歴史的な1日でしたね。&nbsp;&nbsp;&nbsp;&nbsp;<br /></p>
+<p>ブログとかで関連エントリーを表示させることがあるかと思います。<br />
+同じカテゴリーに属するエントリーだったり、同じタグがつけられたエントリーだったり。<br />
+プラグインなどを使用する方法などもありますね。<br />
+<a href="http://wppluginsj.sourceforge.jp/wp-jrelated/">Yahoo!の日本語形態素解析APIを利用したプラグイン</a>などもありますね。</p>
+<h2>記事一覧のリストに関連エントリーを</h2>
+<p>今回はプラグインを使わずに関連エントリーを出す場合。</p>
+<p><img src="http://linker.in/journal/images/090803-01.gif" width="400" height="400" alt="090803-01.gif" style="border:2px #7b7b7b solid;" /></p>
+<p>mt:Entries category="hogehoge"</p>
+<p>とやれば特定のカテゴリ「hogehoge」の記事一覧を出すことが可能ですが、mt:Entriesのなかでまたmt:Entriesをつかってエントリー一覧を表示させることは出来ないんですね。</p>
+<p>なのでmt:Entriesを使わずに、mt:ArchiveListでarchive_type="Individual"を使用してみます。<br />
+とりあえずのソースはこんな感じでしょうか。</p>
+<pre class="brush:xml">
+<ul>
+<MTSetvar name="catlistcount" value="0">
+<mt:SetVarBlock name="thiscat"><$MTEntryCategory$></mt:SetVarBlock>
+<MTSetVarBlock name="currententryid"><$MTEntryID$></MTSetVarBlock>
+<mt:ArchiveList archive_type="Individual">
+<MTSetVarBlock name="thisid"><$MTEntryID$></MTSetVarBlock>
+<MTIf name="catlistcount" lt="3">
+<mt:If tag="entrycategory" eq="$thiscat">
+<mt:If tag="entryid" ne="$currententryid">
+<mt:SetVar name="catlistcount" op="++">
+<li><a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a></li>
+</mt:If>
+</mt:If>
+</mt:If>
+</mt:ArchiveList>
+</ul>
+</pre>
+<p>2行目の&lt;MTSetvar name="catlistcount" value="0"&gt;で表示件数用のcatlistcountをとりあえず初期化しておき、&lt;mt:SetVarBlock name="thiscat"&gt;&lt;$MTEntryCategory$&gt;&lt;/mt:SetVarBlock&gt;で記事のカテゴリーをthiscatに、&lt;MTSetVarBlock name="currententryid"&gt;&lt;$MTEntryID$&gt;&lt;/MTSetVarBlock&gt;で記事のIDをcurrententryidに入れておきます。</p>
+<p>&lt;mt:ArchiveList archive_type="Individual"&gt;<br />
+〜<br />
+&lt;/mt:ArchiveList&gt;</p>
+<p>の部分でブログ記事の一覧を出します。</p>
+<p>&lt;mt:If tag="entrycategory" eq="$thiscat"&gt;で当該記事と同じカテゴリーの場合は表示させます。<br />
+当該記事は除くので&lt;mt:If tag="entryid" ne="$currententryid"&gt; として分けておきます。</p>
+<p>何件表示させるか？を調整しないといけないので&lt;mt:SetVar name="catlistcount" op="++"&gt;とやっておく必要がありますね。</p>
+<p>他にもうまいやりかたがいくらでもあるかとは思いますが、何かやりたいことの参考になればと幸いです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/omnigraffletips.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_40.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

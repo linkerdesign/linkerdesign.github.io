@@ -1,0 +1,103 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Google Docsで目次、CSS、テンプレートを設定してちょっとだけ便利に。</p>
+
+<p><img src="http://linker.in/journal/images/090910.gif" width="600" height="200" alt="090910.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+健康が一番と自宅の周りを20分ほど走ったら本日は軽く筋肉痛です。<br />
+走るのとテニスは微妙に違うようです・・</p>
+<p>さて、今日は<a href="http://docs.google.com/">Google Docs</a>の話でも。<br />
+以前@cremaが「<a href="http://linker.in/journal/2009/03/google.php">Googleドキュメントでアジェンダ作成。さらにログにする。</a>」でも書いていてご存じかと思いますが、linkerの3人は自宅作業がメインです。<br />
+テキストベースのドキュメントとか議事録はGoogle Docsで共有したりすることが多いです。&nbsp;&nbsp;<br /></p>
+<p>Google Docsを普段からよく使われていて、ご存じの方も多いかもしれませんが、今日はそのGoogle Docsの小ネタでも。</p>
+<h2>目次を設定する</h2>
+<p>Docsで文章を入力しながら「Option + 1」でh1とか「Option + 2」でh2とかいう感じで見出しをつけることが出来ます。<br />
+標準ではこんな感じになりますね。</p>
+<p><img src="http://linker.in/journal/images/090910-01.jpg" width="600" height="419" alt="090910-01.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>せっかく見出しをつけたので、 出来れば目次をつけたいところです。<br />
+「Insert → Table of contents」と行くと目次を挿入することが可能です。</p>
+<p><img src="http://linker.in/journal/images/090910-02.jpg" width="600" height="408" alt="090910-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>当然、ページ内リンクも可能です。</p>
+<p><img src="http://linker.in/journal/images/090910-03.jpg" width="600" height="518" alt="090910-03.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>文章がすごく多いときは重宝するはずです。<br />
+リンクをクリックして移動することも楽ですし、全体の構成を見直すにも使えそうですね。</p>
+<h2>CSSでデフォルトのデザインを設定</h2>
+<p>見出しがついているのですが、本文部分は文字サイズや太字だけだとなかなか差がわからないですよね。<br />
+そんなことないですか？個人的にはわかりにくいです。<br />
+書籍とかでもどこに揃ってる見出しなのか？とかわからないといらっとしちゃいますね。</p>
+<p>Google DocsではHTML/CSSと同じようにCSSでデフォルトのデザインを設定しておけばそのスタイルがあたった状態で編集が可能です。<br /></p>
+<p>「Edit（編集）→Edit CSS」といくと</p>
+<p><img src="http://linker.in/journal/images/090910-04.jpg" width="600" height="416" alt="090910-04.jpg" style="border:2px #808080 solid;" /></p>
+<p>CSSの編集画面がひらきますのでCSSを記述します。</p>
+<p><img src="http://linker.in/journal/images/090910-05.jpg" width="500" height="304" alt="090910-05.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>このあたりに何を記述するのは人それかと思いますが、h1,h2,h3,pを記述しておけば良いんじゃないでしょうか？</p>
+<p><br />
+<img src="http://linker.in/journal/images/090910-06.jpg" width="600" height="414" alt="090910-06.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>目次部分はposition:fixedとかにすると使いやすいですね。</p>
+<p>まっさらな状態から書き始めると段落（pタグ）として認識されませんが、「Option + 0」で段落になるので、その後は改行で段落替え。<br />
+「Shift + Enter」 で強制改行という感じになります。</p>
+<h2>テンプレートに登録</h2>
+<p>Google Docsではテンプレートを登録することができます。<br />
+現時点では自分の作業するところ、というよりはGoogleが配布する側におく形になります。</p>
+<p><a href="http://docs.google.com/templates?type=docs">http://docs.google.com/templates?type=docs</a>にアクセスします。<br />
+（直接のリンクが見あたらないので「New ＞ From template」でも同様のページに移動します）</p>
+<p><img src="http://linker.in/journal/images/090910-07.jpg" width="600" height="500" alt="090910-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Submit a Templateをクリックすると</p>
+<p><img src="http://linker.in/journal/images/090910-08.jpg" width="600" height="405" alt="090910-08.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>こんなかんじなので、自分のGoogle Docsからドキュメントを選択して、概要等を記入してテンプレートとして送信します。</p>
+<p>こういったかんじで登録したテンプレートから新規Documentを作ろうと思うと「New ＞ From template」という流れになり、先ほど登録したGoogle DocsのTemplate Galleryから選ぶという感じになります。<br />
+ちなみに今回登録してみたテンプレートは<br />
+<a href="http://docs.google.com/previewtemplate?id=0AU_eXG5671iBYWZ6NTR4aGs0emg1XzdnZGJkempnOA&amp;mode=public">http://docs.google.com/previewtemplate?id=0AU_eXG5671iBYWZ6NTR4aGs0emg1XzdnZGJkempnOA&amp;mode=public</a>&nbsp;&nbsp;<br />
+にあるようです。</p>
+<p>テンプレートに登録したファイルを編集するときは</p>
+<p><img src="http://linker.in/journal/images/090910-09.jpg" width="600" height="360" alt="090910-09.jpg" style="border:2px #828282 solid;" /></p>
+<p>こんなかんじで、上部にアラートが出るようです。</p>
+<p>Google DocsのTemplate GalleryにはMy Templatesというメニューもあるので、そこから自分のテンプレートを選んで作成、という流れになります。<br />
+でも、正直この流れってめんどくさいですよね。<br />
+であればCSS等を設定しておいた空のファイルを作成しておいて、それをコピペして使う方が良いかと思います。</p>
+<p>この辺がさらに使いやすくなると、テンプレートに登録する人も増えるような気がするんだけどなぁ、と思ったりもしています。<br />
+とはいえ、Google Docsでも十分な場合とかはこういった感じで最初に設定しておけば十分使いやすい気がしています。<br />
+他の人とDocumentを共有しないといけない場合以外にもいかがでしょうか？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/ggg.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/2_2.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

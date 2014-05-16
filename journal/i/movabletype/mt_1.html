@@ -1,0 +1,156 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTの年別アーカイブで月毎にグルーピングされた記事一覧を表示｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTの年別アーカイブで月毎にグルーピングされた記事一覧を表示</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTの年別アーカイブで月毎にグルーピングされた記事一覧を表示</p>
+
+<p><img src="http://linker.in/journal/images/090601.gif" width="600" height="200" alt="090601.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+はやいもので今日から６月ですね。</p>
+<p>先日はてブ経由で</p>
+<blockquote>
+  <p>MovableTypeで、こんな年別アーカイブページを出したい。 月毎にグルーピングされている感じ。 YYYY年M1月 　・記事A (YYYY年M1月DD日） 　・記事B (YYYY年M1月DD日） 　・.. - 人力検索はてな<br />
+  <a href="http://q.hatena.ne.jp/1243005857">http://q.hatena.ne.jp/1243005857</a></p>
+</blockquote>
+<p>こういうのをはてなで見つけたので、勉強がてら少し作ってみよう！ということでやってみました。<br />
+（ダミーのエントリーつくるのが手間だったので、自分の日記でやってみたんですが数が多くてそれはそれでめんどくさいですね・・）<br />
+もっとうまい方法もあるかもしれないのですが、とりあえずの回答例くらいだと思っていただければと思います。<br />
+スマートな方法があったら是非とも教えてください。</p>
+<h2>サンプル年別アーカイブ</h2>
+<p>ということで 作ってみたテンプレートがこちら。</p>
+<pre class="brush:xml">
+&lt;h2&gt;&lt;mt:ArchiveTitle&gt;&lt;/h2&gt;
+&lt;mt:ArchiveTitle setvar="thisyear" /&gt;
+&lt;mt:SetVar name="match" value="1"&gt;
+&lt;mt:Entries sort_order="ascend"&gt;
+&lt;mt:SetVarBlock name="thisMonth"&gt;&lt;mt:EntryDate format="%m" /&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:If name="match" eq="1"&gt;
+&lt;h3&gt;&lt;mt:GetVar name="thisyear" /&gt;&lt;mt:GetVar name="thisMonth" /&gt;月&lt;/h3&gt;
+&lt;ul&gt;
+&lt;/mt:If&gt;
+&lt;li&gt;&lt;a href="&lt;mt:EntryPermalink /&gt;"&gt;&lt;mt:EntryTitle encode_html="1" /&gt;&lt;/a&gt;（&lt;mt:EntryDate /&gt;）&lt;/li&gt;
+&lt;mt:EntryNext&gt;&lt;mt:SetVarBlock name="entryMonth"&gt;&lt;mt:EntryDate format="%m" /&gt;&lt;/mt:SetVarBlock&gt;&lt;/mtEntryNext&gt;
+&lt;mt:If name="entryMonth" ne="$thisMonth"&gt;
+&lt;/ul&gt;
+&lt;mt:SetVar name="match" value="1"&gt;
+&lt;mt:Else&gt;
+&lt;mt:SetVar name="match" value="0"&gt;
+&lt;/mt:If&gt;  
+&lt;mt:EntriesFooter&gt;
+&lt;mt:If name="match" eq="0"&gt;
+&lt;/ul&gt;
+&lt;/mt:If&gt;
+&lt;/mt:EntriesFooter&gt;
+&lt;/mt:Entries&gt;
+</pre>
+<p>ざっくりサンプルはこちら。<br /></p>
+<ul>
+  <li><a href="http://www.mersy418.com/2009/index.php">2009年</a></li>
+
+  <li><a href="http://www.mersy418.com/2008/index.php">2008年</a></li>
+
+  <li><a href="http://www.mersy418.com/2007/index.php">2007年</a></li>
+</ul>
+<h2>テンプレート解説</h2>
+<p>年数を表示させるためにアーカイブタイトルをthisyearにセット。</p>
+<pre class="brush:xml">
+&lt;mt:ArchiveTitle setvar="thisyear" /&gt;
+</pre>
+<p>判定用の変数 match=1をセット</p>
+<pre class="brush:xml">
+&lt;mt:SetVar name="match" value="1"&gt;
+</pre>
+<p>１をセットしておかないと最初が表示されないのでまずは１としておきます。</p>
+<p>エントリーを投稿した月をthisMonthにセット</p>
+<pre class="brush:xml">
+&lt;mt:SetVarBlock name="thisMonth"&gt;&lt;mt:EntryDate format="%m" /&gt;&lt;/mt:SetVarBlock&gt;
+</pre>
+<p>loop内での現在のエントリーと次のエントリーの投稿月が違う場合は月の見出しとリストのulを表示させたいので</p>
+<pre class="brush:xml">
+&lt;mt:If name="match" eq="1"&gt;
+&lt;h3&gt;&lt;mt:GetVar name="thisyear" /&gt;&lt;mt:GetVar name="thisMonth" /&gt;月&lt;/h3&gt;
+&lt;ul&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>こんな感じにしてあります。</p>
+<p>そして、現在のエントリーの投稿月と次のエントリーの投稿月が違うかどうか？を判定するために<br />
+entryMonthに次の月の投稿月をセットして条件分岐します。<br />
+次の月が違う場合は&lt;/ul&gt;も必要になりますのでそれを記載した上でmatch=1とします。</p>
+<pre class="brush:xml">
+&lt;mt:EntryNext&gt;&lt;mt:SetVarBlock name="entryMonth"&gt;&lt;mt:EntryDate format="%m" /&gt;&lt;/mt:SetVarBlock&gt;&lt;/mtEntryNext&gt;
+&lt;mt:If name="entryMonth" ne="$thisMonth"&gt;
+&lt;/ul&gt;
+&lt;mt:SetVar name="match" value="1"&gt;
+&lt;mt:Else&gt;
+&lt;mt:SetVar name="match" value="0"&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>mt:Else以下で matc=0を設定しないとずっと1になったままなので、0にしておく。</p>
+<p>基本的にこれで問題ないんですが、現在の年（サンプルだと2009年）はこれだと最後の閉じタグが表示されませんね。<br />
+なのでmt:EntriesFooterに条件分岐を加えて&lt;/ul&gt;を表示させるようにしてあります。</p>
+<pre class="brush:xml">
+&lt;mt:EntriesFooter&gt;
+&lt;mt:If name="match" eq="0"&gt;
+&lt;/ul&gt;
+&lt;/mt:If&gt;
+&lt;/mt:EntriesFooter&gt;
+&lt;/mt:Entries&gt;
+</pre>
+<h2>トレーニングしないと見えるモノもみえてきません</h2>
+<p>これを考えるのに参考になっているのは</p>
+<blockquote>
+  <p>MTSetVar(Block)/MTIfタグの具体的な利用例。 (Junnama Online (Mirror))<br />
+  <a href="http://junnama.alfasado.net/online/2007/10/mtsetvarblockmtif.html">http://junnama.alfasado.net/online/2007/10/mtsetvarblockmtif.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>のエントリーです。Junnamaさんほんとすげ〜。<br />
+ここの中で紹介されている</p>
+<pre class="brush:xml">
+&lt;MTSetVar name="match" value="1"&gt;
+</pre>
+<p>っていうのがすごく重要な考え方だと思いますね。<br />
+違うのを調べているときに検索でこの考え方をしってすごく感動させられました。<br />
+色々手をうごかしてトレーニングしないといけないですね。</p>
+<p>個人的にはアーカイブ周りが苦手です。<br />
+どうもmt:Archive系のタグの使い方がうまくイメージできていない感じですので、<br />
+このあたりはトレーニングして慣れるしかないですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/codatips.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_31.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

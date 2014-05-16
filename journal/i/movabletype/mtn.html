@@ -1,0 +1,109 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTでページングをするにあたってn回に一度タグを挿入｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTでページングをするにあたってn回に一度タグを挿入</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTでページングをするにあたってn回に一度タグを挿入</p>
+
+<p><img src="http://linker.in/journal/images/090430.gif" width="600" height="100" alt="090430.gif" /></p>
+<p>みなさん、こんにちは！まーしーです。<br />
+ここのところlinkerで３人行動が多いです。<br />
+GWはがんばりましょう！！<br /></p>
+<p>前回 jQueryのページングの話をしましたが、今日はその続きです。<br />
+前回のでページングを行うには&lt;ol&gt;&lt;/ol&gt;で区切っていく必要がありました。<br />
+MTでそれを行う場合をメモがてら書いておこうと思います。</p>
+<p>とりあえず10件ずつ、という前提で。完成のソースは</p>
+<pre class="brush:xml">
+&lt;MTIf name="__counter__" op="mod" value="10" eq="1"&gt;
+&lt;ol&gt;
+&lt;/MTIf&gt;
+&lt;li&lt;MTIf name="__counter__" op="mod" value="10" eq="1"&gt; class="firstline"&lt;/MTIf&gt;&gt;&lt;/li&gt;
+&lt;MTIf name="__counter__" op="mod" value="10" eq="0"&gt;
+&lt;/ol&gt;
+&lt;/MTIf&gt;
+&lt;MTIf name="__last__"&gt;
+&lt;MTUnless name="__counter__" op="mod" value="10" eq="0"&gt;&lt;/ol&gt;&lt;/MTUnless&gt;
+&lt;/MTIf&gt;
+</pre>
+<p>な感じになるんじゃないのかな?と思います。<br />
+最後のあたりがどうにもスマートじゃない気が若干します。</p>
+<h2>あまりが１の時に&lt;ol&gt;</h2>
+<p>何件ずつであっても最初はかならず ol からはじまるので10でわったあまりが１の時はかならず &lt;ol&gt;が入るようにしています。<br />
+それが１〜３行目ですね。</p>
+<pre class="brush:xml">
+&lt;MTIf name="__counter__" op="mod" value="10" eq="1"&gt;
+&lt;ol&gt;
+&lt;/MTIf&gt;
+</pre>
+<p>__counter__ で数を数えて10で割ったあまり（ op="mod" ）が１のとき（ eq="1" ）というかんじです。</p>
+<h2>10で割り切れるときは &lt;/ol&gt;</h2>
+<p>10回繰り返されたら閉じタグをいれます。<br />
+それが５〜７行目ですね。</p>
+<pre class="brush:xml">
+&lt;MTIf name="__counter__" op="mod" value="10" eq="0"&gt;
+&lt;/ol&gt;
+&lt;/MTIf&gt;
+</pre>
+<p>今度はあまりが0になる時です。</p>
+<h2>最後にはかならず&lt;/ol&gt;</h2>
+<p>何回繰り返すにしても最後はかならず &lt;/ol&gt; でおわるはずです。<br />
+ただ10の倍数で終わるときは先にかいた10で割ったときに既に &lt;/ol&gt;が入っていますので、それを除く形になりますね。<br />
+そのソースが８〜１０行目ということです。</p>
+<pre class="brush:xml">
+&lt;MTIf name="__last__"&gt;
+&lt;MTUnless name="__counter__" op="mod" value="10" eq="0"&gt;&lt;/ol&gt;&lt;/MTUnless&gt;
+&lt;/MTIf&gt;
+</pre>
+<p><strong>余りが０以外</strong>の時という感じですね。</p>
+<p>ここで書いた以外にも色々やり方もあるでしょうからこれが一番の正解じゃないはずですが、<br />
+なにかの参考になったら幸いです。</p>
+<h2>おまけ</h2>
+<p>ページングとかページネーションの言葉選びについての記事がありました。</p>
+<blockquote>
+  <p>? 一覧リストにおけるページングについて circumstance evidence<br />
+  <a href="http://blog.n1n9.jp/opinion/paging.php">http://blog.n1n9.jp/opinion/paging.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>このあたりをワーディング？というらしいですね。</p>
+<p>ディレクションとかするときは言葉の使い方には結構、気を使うと思うんですが同業者同士でも意思疎通がかならずうまくいく、ということはないですよね。<br />
+言葉にもっているイメージは千差万別ですしね。<br />
+このあたりのことはいつかjournalのテーマにしてみたいかもです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphonepalettescolor_expert.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_25.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

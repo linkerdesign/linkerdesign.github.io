@@ -1,0 +1,98 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>wp-flickr-pressを使ってWordpressにflickrの写真を簡単に追加してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>wp-flickr-pressを使ってWordpressにflickrの写真を簡単に追加してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;wp-flickr-pressを使ってWordpressにflickrの写真を簡単に追加してみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+最近我が家のブームはトランプのスピードです。２人で楽しむトランプゲームを少し研究しようかと思うこの頃です。</p>
+<p>さて、Wordpressで構築しているブログにFlickrにアップした写真を簡単に投稿するためのプラグイン「wp-flickr-press」を使ってみました。</p>
+<blockquote>
+  <p>Tatsuya Blog ? wp-flickr-press<br />
+  <a href="http://fukata.org/dev/wp-plugin/wp-flickr-press/">http://fukata.org/dev/wp-plugin/wp-flickr-press/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<h2>プラグインのインストール</h2>
+<p>プラグインのインストールは管理画面からプラグインを検索します。</p>
+<p><img src="http://linker.in/journal/images/110509-01.jpg" width="550" height="448" alt="110509-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p><img src="http://linker.in/journal/images/110509-02.jpg" width="550" height="436" alt="110509-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>インストールされました。プラグインを有効化しておきます。</p>
+<p><img src="http://linker.in/journal/images/110509-03.jpg" width="550" height="249" alt="110509-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>プラグインの設定を行う</h2>
+<p>設定の中にFlickrPressが追加されました。</p>
+<p><img src="http://linker.in/journal/images/110509-04.jpg" width="517" height="354" alt="110509-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>設定画面はこのような感じです。</p>
+<p><img src="http://linker.in/journal/images/110509-05.jpg" width="552" height="576" alt="110509-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まずはAPI KEYとSecret keyを取得しておきます。<br />
+リンクからFlickrのページへ移動してAppの作成画面へ移動します。</p>
+<p><img src="http://linker.in/journal/images/110509-06.jpg" width="600" height="419" alt="110509-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>必要な情報を入力するとそれぞれのキーを取得することが可能です。</p>
+<p>CallbackのURLを</p>
+<blockquote>
+  <p>http://[ブログのドメイン]/wp-content/plugins/wp-flickr-press/flickr_oauth_callback.php<br /></p>
+
+  <p>Tatsuya Blog ? wp-flickr-press<br />
+  <a href="http://fukata.org/dev/wp-plugin/wp-flickr-press/">http://fukata.org/dev/wp-plugin/wp-flickr-press/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>のように指定する必要があるようなのでFlickrのアプリケーションのサイドバーにあるeditから設定します。</p>
+<p><img src="http://linker.in/journal/images/110509-07.jpg" width="303" height="220" alt="110509-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Editから行くとこのようなかんじでCallbackのURLを指定することが出来るので指定しておきます。</p>
+<p><img src="http://linker.in/journal/images/110509-08.jpg" width="584" height="530" alt="110509-08.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ここまでおわったらまたWordpressの管理画面に戻って取得したAPIKEY類を入力します。<br />
+「Update OAuth Token」をクリックするとFlickrでの確認画面が表示され、UserID等が取得されます。</p>
+<p>これでプラグインの設定は完了です</p>
+<h2>実際にFlickrの写真を挿入する</h2>
+<p>プラグインの設定が完了すると投稿画面からFlickrの写真を挿入することが出来ます。</p>
+<p>Flickrのボタンが追加されました。</p>
+<p><img src="http://linker.in/journal/images/110509-09.jpg" width="601" height="351" alt="110509-09.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>最初は少し時間がかかりますが、写真一覧が表示されます。</p>
+<p><img src="http://linker.in/journal/images/110509-10.jpg" width="590" height="541" alt="110509-10.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>挿入したい写真の「表示する」をクリックしてサイズなどを選択して記事に挿入することが出来ます。</p>
+<p><img src="http://linker.in/journal/images/110509-11.jpg" width="590" height="559" alt="110509-11.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>実際に写真が挿入されました。</p>
+<p><img src="http://linker.in/journal/images/110509-12.jpg" width="590" height="358" alt="110509-12.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>写真の選択はこのような感じでFlickrのSetからも選べるようです。</p>
+<p><img src="http://linker.in/journal/images/110509-13.jpg" width="521" height="477" alt="110509-13.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>試してみたらこのPhotosetsはなんか写真がうまく表示されていなかったのでここはまたあとで確認してみようかと思います。</p>
+<h2>ということで</h2>
+<p>写真とかをflickrにあげている方はこのプラグインを試してみるといいかもしれませんね。ウェブサービスなどでももっとflickrとの連携がすすむといいなぁ、なども思ったりしますね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_150.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/37.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

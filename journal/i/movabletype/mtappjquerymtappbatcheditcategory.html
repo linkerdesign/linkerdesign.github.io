@@ -1,0 +1,78 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTAppjQueryのMTAppBatchEditCategoryをつかってメインカテゴリをまとめて変える方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTAppjQueryのMTAppBatchEditCategoryをつかってメインカテゴリをまとめて変える方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTAppjQueryのMTAppBatchEditCategoryをつかってメインカテゴリをまとめて変える方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+昨日はKindleの新しいのが発表されたみたいで。<br />
+新製品の発売サイクルが早くて作る方も使う方も色々大変ですね。</p>
+<p>さて、以前「<a href="http://linker.in/journal/2011/04/mt-8.php">MTで複数記事のカテゴリをまとめて変える方法</a> 」というのを書いてブログ記事のメインカテゴリを一括修正する簡単な方法を書きました。</p>
+<blockquote>
+  <p>MTで複数記事のカテゴリをまとめて変える方法｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2011/04/mt-8.php">http://linker.in/journal/2011/04/mt-8.php</a></p>
+</blockquote>
+<p>これと同じ事をMTAppjQueryでできる様にした$.MTAppBatchEditCategory();というのを教えてもらいました。</p>
+<p>まずは最新版の<a href="https://github.com/tinybeans/mt-plugin-MTAppjQuery">MTAppjQuery（v0.24）</a>をインストールします。</p>
+<blockquote>
+  <p>tinybeans/mt-plugin-MTAppjQuery - GitHub<br />
+  <a href="https://github.com/tinybeans/mt-plugin-MTAppjQuery">https://github.com/tinybeans/mt-plugin-MTAppjQuery</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>インストールしたら、user.jsかフリーエリアに<br />
+$.MTAppBatchEditCategory();<br />
+を記述します。</p>
+<p>フリーエリアに記述する場合はこのような感じになりますね。</p>
+<pre>
+&lt;mt:setvarblock name="mtapp_footer_jq" append="1"&gt;
+$.MTAppBatchEditCategory();
+&lt;/mt:setvarblock&gt;
+</pre>
+<p>プラグインが問題無く動作している場合、ブログ記事の一覧ページで編集したいブログ記事にチェックをいれ、アクションから一括編集を選択すると、このようなかんじでカテゴリを編集するボタンが出てきます。</p>
+<p><img src="http://linker.in/journal/images/110929-01.jpg" width="565" height="212" alt="110929-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>プルダウンの所を選択すれば使っているカテゴリが表示されます。</p>
+<p><img src="http://linker.in/journal/images/110929-02.jpg" width="344" height="89" alt="110929-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>「カテゴリをまとめて変更」ボタンをクリックするとこのようなかんじでカテゴリが変わります。</p>
+<p><img src="http://linker.in/journal/images/110929-03.jpg" width="575" height="243" alt="110929-03.jpg" style="border:2px #7c7c7c solid;" />&nbsp;&nbsp;</p>
+<p>あとは、保存・再構築で完了ですね。</p>
+<p>先日書いた方法だとFirebugやコンソールを使う必要がありますが、これだと簡単に修正できます。<br />
+MTを使う場合MTAppjQueryは必須プラグインですね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_173.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/workstyle/gray-zone.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

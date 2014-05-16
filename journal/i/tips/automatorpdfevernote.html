@@ -1,0 +1,139 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Automatorを使って複数画像をPDFにしてEvernoteに投げてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Automatorを使って複数画像をPDFにしてEvernoteに投げてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Automatorを使って複数画像をPDFにしてEvernoteに投げてみる</p>
+
+<p><img src="http://linker.in/journal/images/091001.gif" width="600" height="200" alt="091001.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+自宅のベランダにある朝顔もほぼ終了モードなので次は何を育てて楽しもうかとわくわくなこの頃です。<br />
+寒くなってきたので部屋の中で何かでしょうか。</p>
+<p>今日はEvernote絡みのことでも。<br />
+Evernoteに関するものはこのJournalでもいくつか書いています。</p>
+<ul>
+  <li>手書きメモをEvernoteで管理するアプリ「Paint for Evernote」<br />
+  <a href="http://linker.in/journal/2009/06/evernotepaint-for-evernote.php">http://linker.in/journal/2009/06/evernotepaint-for-evernote.php</a></li>
+
+  <li>Evernoteで部分をキャプチャして取り込む方法<br />
+  <a href="http://linker.in/journal/2009/04/evernote.php">http://linker.in/journal/2009/04/evernote.php</a>&nbsp;&nbsp;</li>
+
+  <li>ScanSnap＆Evernote＆PDFで新たなメモスタイルのご提案<br />
+  <a href="http://linker.in/journal/2009/09/scansnapevernotepdf.php">http://linker.in/journal/2009/09/scansnapevernotepdf.php</a>&nbsp;&nbsp;</li>
+</ul>
+<h2>Evernoteでは画像ファイルをPDFで管理したい</h2>
+<p>Evernoteは画像でもPDFでもなんでも放り込めてすごく便利なのですが、<br />
+画像やPDFにメモを付与したい時は画像をPDFに変換しておいた方が楽なんじゃないか？と思っています。<br />
+画像自体に直接メモが書ければいいのですが、それはなかなか出来ないので。<br />
+その辺はPDFにしておく方が分がありそうです。</p>
+<h3>通常の流れ</h3>
+<ol>
+  <li>複数画像を選択してAcrobatで開く。</li>
+
+  <li>開いて１枚のPDFにして保存する。</li>
+
+  <li>保存してできあがったものをEvernoteに放り込む。</li>
+</ol>
+<p>というステップを踏んでみたのですが、若干めんどうだなぁ、とおもったので他の方法を考えてみて<br />
+Automatorを使ってみることにしました。</p>
+<h2>AutomatorをつかってPDF作成からEvernoteにまでを行う</h2>
+<p>ということで複数画像をまとめて１枚のPDFにしてそれをEvernoteになげる、というのをAutomatorを使って作ってみました。<br />
+初Automatorです。</p>
+<p>Automatorを起動します。<br />
+（OSのバージョンで違うらしいのですが、うちのは10.5.8です。 ）</p>
+<p>カスタムを選択して編集画面へ。<br /></p>
+<p><a href="http://linker.in/journal/images/091001-02.jpg"><img src="http://linker.in/journal/091001-02-tm.jpg" width="500" height="300" alt="091001-02.jpg" style="border:2px #7f7f7f solid;" /></a></p>
+<h3>選択された項目を取得するようにする</h3>
+<p>画像を選択している時にPDFに変換するようにしたいので「選択された項目を取得」を追加します。</p>
+<p><a href="http://linker.in/journal/images/091001-01.jpg"><img src="http://linker.in/journal/091001-01-tm.jpg" width="500" height="334" alt="091001-01.jpg" style="border:2px #7e7e7e solid;" /></a></p>
+<h3>PDFに変更する</h3>
+<p>次にPDFの中から「イメージから新規PDFを作成」を追加します。<br />
+保存場所は好きなところに設定します。<br />
+ファイル名はとりあえずconvertにしてみました。</p>
+<p><a href="http://linker.in/journal/images/091001-03.jpg"><img src="http://linker.in/journal/091001-03-tm.jpg" width="500" height="242" alt="091001-03.jpg" style="border:2px #7e7e7e solid;" /></a></p>
+<p>ファイル名が被ってもそんなに問題はないのですが、一応ファイル名に日時くらいは追加しておきましょう。</p>
+<h3>ファイル名を変更する</h3>
+<p>ファイル・フォルダの「Finder項目の名前を変更」&nbsp;&nbsp;を追加します。<br />
+ファイル名に追加する日時等はご自由に指定します。<br />
+今回は「作成日時」を「年月日」の順で「名前の前に」「区切り記号」なしで追加し、項目名との間の「区切り記号」もなしにしました。<br />
+数字が一桁の時は0が入るように「桁あわせの0を使用」にチェックを入れてあります。</p>
+<p><a href="http://linker.in/journal/images/091001-04.jpg"><img src="http://linker.in/journal/091001-04-tm.jpg" width="500" height="285" alt="091001-04.jpg" style="border:2px #828282 solid;" /></a></p>
+<h3>Evernoteで開くようにする</h3>
+<p>ココまででPDFが作成されますので、そのファイルをEvernoteで開くとEvernoteに追加されます。<br />
+「ファイル・フォルダ」 の「Finder項目を開く」を追加して、開くアプリケーションを「Evernote.app」にしておきます。</p>
+<p><a href="http://linker.in/journal/images/091001-05.jpg"><img src="http://linker.in/journal/091001-05-tm.jpg" width="500" height="330" alt="091001-05.jpg" style="border:2px #7e7e7e solid;" /></a></p>
+<h3>プラグインを保存する</h3>
+<p>これを保存してアプリケーションの様に使用してもいいですし、スクリプトとして使ってもいいようです。<br />
+今回はスクリプトとして使う方法でいきます。<br />
+メニューから「ファイル」→「プラグインとして保存」<br />
+とたどってプラグインの名前を指定して、「プラグインの対象」 は「スクリプトメニュー」にしておきます。<br />
+今回はevernoteという名前で保存してみました。</p>
+<h3>スクリプトメニューをメニューバーに表示</h3>
+<p>メニューバーにスクリプトメニューが表示されている方はそのまま使えますが、表示されていない方は<br />
+「AppleScriptユーティリティー」を起動して「メニューバーにスクリプトメニューを表示」にチェックを入れます。</p>
+<p><img src="http://linker.in/journal/images/091001-06.jpg" width="480" height="396" alt="091001-06.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>スクリプトメニューが表示されます。<br />
+クリックすると先ほど作成したevernoteのスクリプトが確認出来るかと思います。</p>
+<p><img src="http://linker.in/journal/images/091001-07.jpg" width="316" height="440" alt="091001-07.jpg" style="border:2px #797979 solid;" /></p>
+<p>これで変更したい画像を選択した状態でスクリプトを選択するとPDFが作成され、<br />
+そのPDFファイルがEvernoteに放り込まれます。</p>
+<h2>まとめ</h2>
+<p>すごくざっくりですが、いくつかWebページみながら初めてAutomatorを使ってつくってみました。<br />
+簡単なことですと今回のを応用すればいくらでも広げられそうですね。<br />
+今回のような流れでなく当初のAcrobatを経由していた流れでも自動で出来る様な気もしています。</p>
+<p>Evernoteに関係した便利な使い方はまだまだあるかと思いますが、<br />
+同じような不便さや似たようなところで詰まっている方の参考になれば幸いです。</p>
+<h2>参考ページ</h2>
+<ul>
+  <li>Mac ハンドブック：Automator<br />
+  <a href="http://support.apple.com/kb/HT2488?viewlocale=ja_JP">http://support.apple.com/kb/HT2488?viewlocale=ja_JP</a></li>
+
+  <li>iPhotoの画像を600pxで保存するAutomatorワークフロー at r.izumitaの航跡<br />
+  <a href="http://koseki.caph.jp/2008/08/31/iphoto%E3%81%AE%E7%94%BB%E5%83%8F%E3%82%92600px%E3%81%A7%E4%BF%9D%E5%AD%98%E3%81%99%E3%82%8Bautomator%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC/">http://koseki.caph.jp/2008/08/31/iphoto%E3%81%AE%E7%94%BB%E5%83%8F%E3%82%92600px%E3%81%A7%E4%BF%9D%E5%AD%98%E3%81%99%E3%82%8Bautomator%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%95%E3%83%AD%E3%83%BC/</a>&nbsp;&nbsp;</li>
+
+  <li>Leopard の Automator が軽くヤバイ - ヌメのメモ帳（略してヌメモ）＠楽天 - 楽天ブログ（Blog）<br />
+  <a href="http://plaza.rakuten.co.jp/numemo/diary/200802140000/">http://plaza.rakuten.co.jp/numemo/diary/200802140000/</a></li>
+
+  <li>Automator の使い方 - ［Mac OSの使い方］All About<br />
+  <a href="http://allabout.co.jp/computer/macos/closeup/CU20050524A/">http://allabout.co.jp/computer/macos/closeup/CU20050524A/</a>&nbsp;&nbsp;</li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/hdddisk_inventory_x.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/twittertwitter.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

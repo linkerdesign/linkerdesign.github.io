@@ -1,0 +1,109 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MovableTypeでOpen Graph Protocolを実装したい｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MovableTypeでOpen Graph Protocolを実装したい</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MovableTypeでOpen Graph Protocolを実装したい</p>
+
+<p><img src="http://linker.in/journal/images/110217.png" width="600" height="200" alt="110217.png" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+先日今の家を小冊子で紹介するということでインタビューを受けました。カメラ向けられたりするとどうも恥ずかしいですね。</p>
+<p>さて、いつもお世話になってる<a href="http://twitter.com/#!/5509">noriさん</a>が先日「<a href="http://5509.me/log/wordpress-with-ogp">WordPressでOpen Graph Protocolを実装したい :: 5509</a>」という記事を書いていたのでMTでもやっておこうかな、という感じでちょっとやってみました。</p>
+<h2>サンプルソース</h2>
+<pre class="brush: xml;">
+&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:site_name" content="hogehoge" /&gt;
+&lt;meta property="og:title" content="hogehoge" /&gt; 
+&lt;meta property="og:url" content="記事のURL" /&gt; 
+&lt;meta property="og:description" content="hogehoge" /&gt; 
+&lt;meta property="og:image" content="画像パス" /&gt; 
+</pre>
+<p>が基本必要なかんじで、ブログ記事テンプレートだと</p>
+<pre class="brush: xml;">
+&lt;mt:If name="entry_archive"&gt;
+&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:site_name" content="&lt;mt:BlogName/&gt;" /&gt;
+&lt;meta property="og:title" content="&lt;mt:EntryTitle /&gt;" /&gt;
+&lt;meta property="og:url" content="&lt;mt:EntryPermalink /&gt;" /&gt;
+&lt;meta property="og:description" content="&lt;mt:EntryDescription /&gt;" /&gt;
+&lt;meta property="og:image" content="画像パス" /&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>といった感じになります。</p>
+<p>&lt;mt:If name="entry_archive"&gt;〜〜&lt;/mt:If&gt;の条件分岐はこれを書く場所に応じて入れて下さい。ブログ記事テンプレートに直接書く場合は不要です。<br /></p>
+<p>画像パスの部分は特に指定しないければ、ページ内で使用している画像を適当に拾って使ってくれるようです。</p>
+<p><img src="http://linker.in/journal/images/110217-01.jpg" width="484" height="129" alt="110217-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まぁ、likeしてPickupがでるのはいいのですが・・・さすがに違うので修正してみましょう。</p>
+<h2>画像を使用しているかどうかで表示させる画像を切り替える</h2>
+<p>画像部分についてはこのような感じになりますね。</p>
+<pre class="brush: xml;">
+&lt;MTSetvarblock name="ogimage"&gt;&lt;MTEntryAssets sort_order="ascend" lastn="1"&gt;&lt;$MTAssetURL$&gt;&lt;/MTEntryAssets&gt;&lt;/MTSetvarblock&gt;
+&lt;meta property="og:image" content="&lt;mt:If name='ogimage'&gt;&lt;$MTGetvar name='ogimage'&gt;&lt;mt:Else&gt;/images/logo-og.jpg&lt;/mt:If&gt;"&gt;
+</pre>
+<p>記事内で使用している画像のうち1つをとりだしてその画像パスをogimageにセットします。<br />
+最初に使用しているものを取り出すために sort_order="ascend"をしておきました。</p>
+<p>各記事ごとにカスタムフィールドで専用の画像をアップするなどする場合は</p>
+<pre class="brush: xml;">
+&lt;MTEntryAssets sort_order="ascend" lastn="1"&gt;&lt;$MTAssetURL$&gt;&lt;/MTEntryAssets&gt;
+</pre>
+<p>の部分をカスタムフィールドからの出力に変更すればいいでしょう。</p>
+<p>記事内で画像を使用していない場合もあるかと思うので、そのときに使用する画像は別途アップしておきます。<br />
+そして画像パスの部分を</p>
+<pre class="brush: xml;">
+&lt;meta property="og:image" content="&lt;mt:If name='ogimage'&gt;&lt;$MTGetvar name='ogimage'&gt;&lt;mt:Else&gt;/images/logo-og.jpg&lt;/mt:If&gt;"&gt;
+</pre>
+<p>こんな感じで書き換えておいて、ogimageに画像のパスが入っている場合はそれを使い、セットされていない場合はアップしたロゴ画像のパスを使うという形になります。</p>
+<h3>画像を使っているとき</h3>
+<p><img src="http://linker.in/journal/images/110217-02.jpg" width="473" height="153" alt="110217-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>最初に使用しているヘッダ画像が表示されています。</p>
+<h3>画像を使っていないとき</h3>
+<p><img src="http://linker.in/journal/images/110217-03.jpg" width="483" height="151" alt="110217-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>指定したロゴが表示されていますね。</p>
+<h2>ということで</h2>
+<p>こうみるとどちらの場合がいいかは少々悩むのですが、ロゴで統一してしまうのであればそれでもいいかもしれません。</p>
+<p>MTのAssetでサムネイルを作成して表示させることも可能です。正方形に切り出して使うことも出来るのですが、意図したところが切り出されるとは限らないので、とりあえず今回は使っている画像をそのまま入れてあります。</p>
+<p>OGP用の画像をアップするのは面倒なんだけど、記事内の画像を使用するのではなくて、ロゴを使いたいという場合などがあるのであれば、チェックボックスのカスタムフィールドを用意したり、特定のprivate tagを使うなどといった方法もありそうです。</p>
+<p>Facebookは日々色々変わっているようなので、これが常に使えるとは限らないですし、そもそも文法的にとか色々な話もありますが、likeを押してもらったときに、少しは関係のある画像が出た方がいいかもしれないですね。</p>
+<p>Thanks <a href="http://twitter.com/#!/5509">noriさん</a></p>
+<hr />
+<p>2011.2.17 21:15追記<br/>
+ブログ記事のog:typeはblogではなくarticleなので修正。コメントいただきありがとうございました！</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/iphone_9.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/color-book.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

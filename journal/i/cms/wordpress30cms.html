@@ -1,0 +1,166 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>とってだし自分用メモ「WordPress3.0の新機能とCMSへの応用」セミナー｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>とってだし自分用メモ「WordPress3.0の新機能とCMSへの応用」セミナー</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;とってだし自分用メモ「WordPress3.0の新機能とCMSへの応用」セミナー</p>
+
+<p><img alt="wp.jpg" src="http://linker.in/journal/images/wp.jpg" width="600" height="331" class="mt-image-none" style="" /></p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>本日は、麹町の<a href="http://www.kddi-webcommunications.co.jp/">KDDIウェブコミュニケーションズ</a>さんにて無料で行われた「8日間連続CMS無料セミナー開催」の5日目、「<strong>WordPress3.0の新機能とCMSへの応用</strong>」に参加してきました。</p>
+
+<p>講師は、キャンプフォーの高山一登さん（<a href="http://www.twitter.com/kaznoko">@kaznoko</a>）さん。実は、高山さんと私とは、講師業・書籍執筆・飲み会とあらゆる面でニアミスしてまして。「一度はお会いしたい人のひとり」リストに入っていたのですが、いまだお会いできたことがなく、今日は嬉しい初対面となりました:-)</p>
+
+<p>今日の記事は、その高山さんのセミナーの箇条書きメモ（95%自分用）を、無咀嚼で置いておきます。人に読ませる前提で書いていなくて読みにくいと思うので、あらかじめごめんなさい。</p>
+
+<p>高山さんのセミナーはライブコーディングが多く、実際のサイトにおけるカスタマイズの流れが掴みやすくて、ぜひまた受講してみたくなったことを申し添えておきます。</p>
+
+<p>それでは、以下メモ。</p>
+
+<h2>WordPress3.0の特徴</h2>
+
+<ul>
+	<li>phpとして機能する柔軟なテンプレーとタグ</li>
+	<li>安全かつ簡単に拡張できるプラグインシステム</li>
+	<li>画像の一括アップロード可能</li>
+	<li>管理画面上で画像の回転やトリミングができ、サムネイルも独自に編集できる</li>
+	<li>ユーザーの役割に講じた権限システム（デフォルトではそこまで出来ないので、無料のプラグインを使用）</li>
+</ul>
+
+<h2>3.0の新機能</h2>
+
+<ul>
+	<li>カスタムポストタイプ</li>
+	<li>カスタムタクソノミー</li>
+	<li>メニュー</li>
+	<li>ポストサムネール</li>
+	<li>カスタムヘッダー</li>
+	<li>カスタム背景</li>
+	<li>マルチサイト</li>
+</ul>
+
+<h2>ひとつめのサンプルサイト（フォトギャラリー）の実装デモ</h2>
+
+<p>写真の投稿について。記事内に複数の画像があっても、記事を代表する画像＝「アイキャッチ画像」を設定可能（WordPress 2.9から追加）</p>
+
+<p>/themes/以下に、新規テーマのディレクトリを作成。<br />
+その中に、以下3ファイルを置く。<br />
+<ul><br />
+	<li>screenshot.png -- テーマを識別させるための画像</li><br />
+	<li>index.php</li><br />
+	<li>style.css -- テーマ直下に置くCSS冒頭には、そのテーマに関する情報を書く。</li><br />
+</ul></p>
+
+<p>管理画面の［設定＞メディア］で、画像のトリミングなどの数値を設定。<br />
+管理画面の［設定＞パーマリンク設定］で、「カスタム構造」を選択し、ファイルの生成規則を指定する。右上の「利用可能なタグは沢山あります」のリンクより、指定の詳細が確認可能。</p>
+
+<p>/themes/以下に、functions.phpを置く。このテーマのシステム的な設定を記述するファイル。<br />
+add_theme_supportとadd_custom_background（コールバック関数を使い、管理画面から背景画像を変更できるようにする。）を指定。</p>
+
+<p>header.phpとfooter.phpの中身を記述し、複数のテンプレート内で利用する。</p>
+
+<p>&lt;body &lt;?php body_class(); ?&gt;&gt;と記述。ページによって、class属性の値を変えさせる。</p>
+
+<p>トップページを生成するindex.phpに、get_header、get_footerを記述。メッセージループ（&lt;?php if(have_post()) : while (have_posts()) : the_post(); ?&gt;）などを記述し、投稿された記事のリストを出すようにする。<br />
+管理画面より、カスタム背景のアップロード。場所や繰り返しの指定を、管理画面より行う。</p>
+
+<p>次は個別ページを生成するsingle.phpを記述。サムネイルを生成するthe_post_thumnailタグの中でrand関数を使い、CSS3のrotateの値がランダムに生成されるようにする＝サムネイルがリロードされるたびに、違う角度になる。</p>
+
+<p>次は、自分独自のテンプレートphotos-list.phpを作成する（複数のテンプレートで使用するモジュールとして）。<br />
+query_posts();→記事のリストアップをする際の記事の並び順やカテゴリの指定に使う。</p>
+
+<p>index.phpとsingle.phpにget_template_part() を書いて、モジュールかしたテンプレートを読み込む。</p>
+
+<h2>ふたつめのサンプルサイト（カフェのサイト）の実装デモ</h2>
+
+<p>また/themes/以下に、screenshot.png、index.php、style.cssを置く。<br />
+次にfunctions.phpの中にadd_theme_support( 'post-thumbnails' ); 、<br />
+add_theme_support( 'post-thumbnails' ); 、add_custom_image_headerを記述する。</p>
+
+<p>続いて、functions.php内に、<a href="http://www.google.co.jp/search?hl=ja&q=%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0%E3%83%9D%E3%82%B9%E3%83%88%E3%82%BF%E3%82%A4%E3%83%97&btnG=%E6%A4%9C%E7%B4%A2&aq=f&aqi=g2g-m1&aql=&oq=&gs_rfai=">カスタムポストタイプ</a>の設定。管理画面に「投稿」だけでなく、そのサイト独自の投稿画面を設置する。<br />
+※カスタムポストタイプを設定するプラグインも、昨日が少し狭いながらもあるらしい。</p>
+
+<p>さらに、カスタムタクソノミーの設定。register_taxonomyを使う。hierarchialをtrueにすると階層として使える。falseにすると、タグのように使える。</p>
+
+<p>function drink_meta_boxと記述して、カスタムフィールドを設定。</p>
+
+<p>カスタムメニューの編集と追加デモ。カテゴリ、カスタムタクソノミー、記事など、階層構造を気にせずに、必要なものをメニューに追加可能。<br />
+【参考記事】 <a href="http://memorandum.yamasnet.com/archives/Post-693.html">Wordpress 3.0　カスタムメニュー作成編集機能とwp_nav_menu() | Yama&apos;s Memorandum</a></p>
+
+<p>次に、header.phpとfooter.phpを作成。index.phpからこのふたつを読み込む。</p>
+
+<p>&lt;?php header_image(); ?&gt;を使って、カスタムイメージ画像を表示</p>
+
+<p>query_posts('post_type=Drink');で、リストアップする記事条件を指定する。<br />
+【参考記事】<a href="http://wpcms.jp/166/">スゴク便利な万能タグ「query_posts」ただし...【WordPressカスタマイズメモ】</a></p>
+
+<p>get_post_custom_values('plice'); などと書くことによって、カスタムフィールドの値を表示。</p>
+
+<p>マルチサイト機能の設定。wp-config.phpにdefine('WP_ALLOW_MULTISITE', true);を書く。次に管理画面から、マルチサイトの設定。管理画面の指示により、必要なディレクトリを作成して、書き込み権限を与える。.htaccessの設定も必要。</p>
+
+<p>マルチサイト設定が上手くできると、管理画面左上に「特権管理者」というプルダウンメニューが表示される。その中の「サイト」を使って新規サイトを作成する。テーマやプラグインは、サイトごとに設定が必要。サイトごとに権限のあるユーザーを設定することができる。</p>
+
+<p>マルチサイト機能は、まだちょっと安定していないので、すぐ仕事で使う感じではないかもしれない。もしかしたら、マルチサイトを使うとカスタムタクソノミーが動かなくなるかも？（未調査）</p>
+
+<h2>テーマとプラグイン</h2>
+
+<p>ECサイトを作りたい<br />
+<a href="http://www.welcart.com/">Welcart Home ショッピングカート for Wordpress</a></p>
+
+<p>コミュニティサイトを作りたい<br />
+<a href="http://buddypress.org/">BuddyPress.org | Home</a></p>
+
+<p>リアルタイムに更新するサイトを作りたい<br />
+<a href="http://wordpress.org/extend/themes/p2">WordPress ? P2 ? Free WordPress Themes</a></p>
+
+<p>多言語サイトを作りたい<br />
+<a href="http://wpml.org/">WPML - The WordPress Multilingual Plugin</a></p>
+
+<p>携帯サイトを作りたい<br />
+<a href="http://wordpress.org/extend/plugins/ktai-style/">WordPress ? Ktai Style ? WordPress Plugins</a></p>
+
+<p>iPhoneサイトを作りたい<br />
+<a href="http://www.bravenewcode.com/products/wptouch-pro/">WPtouch 2.0 Pro - The mobile theme solution for WordPress - optimized for iPhone, iPod Touch, Blackberry Storm, Android and More ? BraveNewCode Inc.</a></p>
+
+<div style="text-align: right;">photo by <a href="http://www.flickr.com/photos/stickergiant/">teamstickergiant</a></div>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/post_123.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/ipadia_writer.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Movable Typeでアーカイブのリンクをセレクトメニューにしてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Movable Typeでアーカイブのリンクをセレクトメニューにしてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Movable Typeでアーカイブのリンクをセレクトメニューにしてみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+東京は寒いですね。。。今年だけなんでしょうか。</p>
+<p>さて、linker journalのサイドバーがこんなかんじで長くなりすぎていたので、少し整理しようかと思いました。</p>
+<p><img src="http://linker.in/journal/images/120130-01.jpg" width="226" height="628" alt="120130-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まず手始めに月別アーカイブのリンクをリストではなくセレクトメニューにしてみました。</p>
+<p>もとのテンプレートはこんな感じですね</p>
+<pre class="brush:xml">
+&lt;MTArchiveList archive_type="Monthly"&gt;
+&lt;MTArchiveListHeader&gt;
+&lt;div class="menu"&gt;
+&lt;h2&gt;&lt;img src="&lt;$MTGetvar name="base_URL"$&gt;images/menutit-archives.gif" alt="Archives 月別アーカイブ" width="81" height="30" /&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;/MTArchiveListHeader&gt;
+&lt;li&gt;&lt;a href="&lt;$MTArchiveLink$&gt;"&gt;&lt;$MTArchiveTitle$&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;MTArchiveListFooter&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/MTArchiveListFooter&gt;
+&lt;/MTArchiveList&gt;?
+</pre>
+<p>んでこのリストの所を修正して、こんなかんじでしょうか。</p>
+<pre class="brush:xml">
+&lt;MTArchiveList archive_type="Monthly"&gt;
+&lt;MTArchiveListHeader&gt;
+&lt;div class="menu"&gt;
+&lt;h2&gt;&lt;img src="&lt;$MTGetvar name="base_URL"$&gt;images/menutit-archives.gif" alt="Archives 月別アーカイブ" width="81" height="30" /&gt;&lt;/h2&gt;
+&lt;select onchange="location.href=this.options[this.selectedIndex].value"&gt;
+&lt;/MTArchiveListHeader&gt;
+&lt;option value="&lt;$MTArchiveLink$&gt;"&gt;&lt;$MTArchiveTitle$&gt;&lt;/option&gt;
+&lt;MTArchiveListFooter&gt;
+&lt;/select&gt;
+&lt;/div&gt;
+&lt;/MTArchiveListFooter&gt;
+&lt;/MTArchiveList&gt;?
+</pre>
+<p>書き方としてはjsのところを分けるとか色々ありますね。</p>
+<p>見た目もこんなかんじで少しだけ短くなりましたね。</p>
+<p><img src="http://linker.in/journal/images/120130-02.jpg" width="426" height="510" alt="120130-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでもまだ長いので、色々調整したほうがよさそうですね。</p>
+<p>ということで、簡単ですがMTでやるならと言うときのメモでした。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/ben-shahn-hayama.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/illustrator_photoshop_book.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

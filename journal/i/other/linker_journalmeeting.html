@@ -1,0 +1,164 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>linker journalでこんぶだしmeetingの公開を始めました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>linker journalでこんぶだしmeetingの公開を始めました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;linker journalでこんぶだしmeetingの公開を始めました</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+連日雨ですね・・・雨はちょっとブルーになってしまいます。</p>
+<p>6月一杯でwithDさんの更新が終了となり、それに伴い「linkerのこんぶだしmeeting」 は今後こちらで配信していくことになりました。<br />
+今日はその移転の流れをメモがてら記しておこうかな、と思います。</p>
+<h2>withDで公開していたときの流れ</h2>
+<p>withDさんで「linkerのこんぶだしmeeting」を公開していたときは</p>
+<ol>
+  <li>収録</li>
+
+  <li>音声を編集して音声データと原稿データをwithDさんに送る</li>
+
+  <li>withDさんで記事更新、音声データアップ</li>
+
+  <li>podcast配信</li>
+</ol>
+<p>という流れでした。<br />
+podcastをlinker内で公開する流れも基本的に変わらないです。3と4の作業がこれから発生することになるのでそれに向けた作業が必要になります。<br />
+必要な作業は下記のものがあげられます。</p>
+<ul>
+  <li>podcast用のカテゴリを追加</li>
+
+  <li>podcastのプレーヤーの設置（MTテンプレートを修正）</li>
+
+  <li>配信feedの修正（MTテンプレートを追加）</li>
+</ul>
+<p>公開する方法としてはいくつかあるのですが、どのようにするのかはpodcast用のfeedをどのように作成するかによってきまります。podcastのみの配信であればmp3ファイルまでのリンクが記載されているfeedがあればいいのでそのfeedを作成する方法を考える必要があります。<br />
+ただ、音声だけでは伝えられないテキストデータとかもあるかと思うのでそれ用のブログも必要になることが多いですね。</p>
+<p>linkerではlinker journalにカテゴリを追加することにしました。そうすることでfeedはインデックステンプレートでpodcast用カテゴリのみを出力するようにすればＯＫです。</p>
+<h2>EasyPodcasting pluginをつかってpodcast対応に変更</h2>
+<p>podcastの配信を行うにあたってエムロジックさんで配布されているEasyPodcasting pluginを使用します。</p>
+<blockquote>
+  <p>エムロジック放課後プロジェクト: EasyPodcasting アーカイブ<br />
+  <a href="http://labs.m-logic.jp/cat2/easypodcasting/">http://labs.m-logic.jp/cat2/easypodcasting/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>プラグインのインストールは</p>
+<blockquote>
+  <p>EasyPodcastingプラグイン<br />
+  <a href="http://labs.m-logic.jp/plugins/mt-easypodcasting/docs/mt-easypodcasting.html">http://labs.m-logic.jp/plugins/mt-easypodcasting/docs/mt-easypodcasting.html</a></p>
+</blockquote>
+<p>を参考にすれば問題なくインストール出来ます。ブログ記事内にmp3ファイルへのリンクを埋め込む形になるので「アーカイブテンプレート＞ブログ記事」の</p>
+<pre class="brush:xml">
+&lt;$MTEntryBody EasyPodcasting="player"$&gt;
+</pre>
+<p>と変更します。<br />
+このように変更した上で記事内に</p>
+<p>[mp3:http://linker.in/podcastfile/20090611.mp3:6杯目：Podcastの大先輩、境祐司さんに訊く！]<br /></p>
+<p>と記載することでプレーヤーが表示されます。</p>
+<p><img src="http://linker.in/journal/images/090702-01.jpg" width="560" height="142" alt="090702-01.jpg" style="border:2px #808080 solid;" /></p>
+<p>こんぶだしmeetingのエントリーを見に来た人が、podcastを追加しやすいように、podcastカテゴリに記事を追加した際に自動で表示されたほうがいいとおもいましたので、</p>
+<pre class="brush:xml">
+&lt;mt:If tag="CategoryLabel" eq="こんぶだしmeeting"&gt;
+&lt;div id="podcastlink" class="pkg"&gt;
+&lt;a href="http://feeds.feedburner.jp/konbudashi"&gt;&lt;img src="/images/img-podcast.gif" alt="RSS Podcast"&gt;&lt;/a&gt;
+&lt;p&gt;ポッドキャスティングの受信ソフト（iTunesなど）にこちらのバナーをドラッグ＆ドロップしていただくと、番組が更新された時に自動でダウンロードされ、便利にお楽しみいただけます。&lt;a href="http://www.podcastjuice.jp/listen/step03.html"&gt;詳しくはこちら&lt;/a&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;$mt:EntryMore /&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>のような感じでカスタマイズしてあります。</p>
+<p><img src="http://linker.in/journal/images/090702-02.jpg" width="600" height="164" alt="090702-02.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>ここまででjournalにてpodcastの原稿をサイトで読むことができるようになり、サイトで音声を聞くことが可能になりました。</p>
+<h2>feed用テンプレートを作成</h2>
+<p>podcastですのでfeedも必要です。feedはインデックステンプレートで</p>
+<pre class="brush:xml">
+&lt;$MTHTTPContentType type="application/rss+xml"$&gt;&lt;?xml version="1.0" encoding="&lt;$MTPublishCharset$&gt;"?&gt;
+&lt;rss version="2.0"&gt;
+   &lt;channel&gt;
+      &lt;title&gt;linkerのこんぶだしmeeting&lt;/title&gt;
+      &lt;link&gt;&lt;$MTBlogURL$&gt;&lt;/link&gt;
+      &lt;description&gt;linkerのこんぶだしmeetingではいろいろな話題をゆるくお送りしております&lt;/description&gt;
+      &lt;language&gt;&lt;$MTBlogLanguage ietf="1"$&gt;&lt;/language&gt;
+      &lt;copyright&gt;Copyright &lt;$MTDate format="%Y"$&gt;&lt;/copyright&gt;
+      &lt;lastBuildDate&gt;&lt;MTEntries lastn="1"&gt;&lt;$MTEntryDate format_name="rfc822"$&gt;&lt;/MTEntries&gt;&lt;/lastBuildDate&gt;
+      &lt;generator&gt;http://www.sixapart.com/movabletype/&lt;/generator&gt;
+      &lt;docs&gt;http://blogs.law.harvard.edu/tech/rss&lt;/docs&gt; 
+
+      &lt;MTEntries lastn="15" category="こんぶだしmeeting"&gt;
+      &lt;item&gt;
+         &lt;title&gt;&lt;$MTEntryTitle remove_html="1" encode_xml="1"$&gt;&lt;/title&gt;
+         &lt;description&gt;&lt;$MTEntryExcerpt encode_xml="1" convert_breaks="1"$&gt;&lt;/description&gt;
+         &lt;link&gt;&lt;$MTEntryPermalink encode_xml="1"$&gt;&lt;/link&gt;
+         &lt;guid&gt;&lt;$MTEntryPermalink encode_xml="1"$&gt;&lt;/guid&gt;
+        &lt;MTEntryCategories&gt;
+          &lt;category domain="http://www.sixapart.com/ns/types#category"&gt;&lt;$MTCategoryLabel remove_html="1" encode_xml="1"$&gt;&lt;/category&gt;
+        &lt;/MTEntryCategories&gt;
+        &lt;MTEntryIfTagged&gt;&lt;MTEntryTags&gt;
+          &lt;category domain="http://www.sixapart.com/ns/types#tag"&gt;&lt;$MTTagName remove_html="1" encode_xml="1"$&gt;&lt;/category&gt;
+        &lt;/MTEntryTags&gt;&lt;/MTEntryIfTagged&gt;
+         &lt;pubDate&gt;&lt;$MTEntryDate format_name="rfc822"$&gt;&lt;/pubDate&gt;
+                                 &lt;$MTEasyPodcasting$&gt;
+      &lt;/item&gt;
+      &lt;/MTEntries&gt;
+   &lt;/channel&gt;
+&lt;/rss&gt;
+</pre>
+<p>という形でfeedファイルを作成します。<br />
+journalのうちこんぶだしmeetingのエントリーのみを出力するようにしてあります。<br />
+プラグインのドキュメントにも書いてありますが</p>
+<pre class="brush:xml">
+&lt;$MTEasyPodcasting$&gt;
+</pre>
+<p>を追加します。カスタマイズとしてはこのMTタグを追加することが必要になりますが、これを追加することでfeedにmp3ファイルが紐づけられます。</p>
+<h2>feedを移行する</h2>
+<p>さて、ここまででlinker.in内にpodcast用のfeedの準備ができました。 podcast用のfeedが変更になるのでリダイレクトの指定などが必要になります。<br />
+これまではwithDさんのfeedburnerのアカウントを間にはさんで管理されていたので、まずはそのフィードを移行します。<br /></p>
+<p>http://feeds.feedburner.com/konbudashi<br /></p>
+<p>をpodcastのfeedとして公開しているので、この管理をwithDさんからlinkerに移行します。<br />
+feedburnerのマイフィードで当該フィードを選択すると</p>
+<p><img src="http://linker.in/journal/images/090702-03.jpg" width="600" height="156" alt="090702-03.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>フィードを転送という欄があるので、こちらをクリックすると</p>
+<p><img src="http://linker.in/journal/images/090702-04.jpg" width="600" height="174" alt="090702-04.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>という欄が出てきます。こちらに移転したいfeedburnerアカウントをいれると、その旨のメールが届きます。今回の移行はこのあたりの作業はwithDさんの作業になります。<br />
+メールに書かれてあるとおりに移転を承認すると、linkerのfeedburnerのアカウントにこんぶだしmeetingが移転してきます。<br />
+出力元フィードはまだwithDさんにあるfeedを読みにいく設定になったままなので、先ほど作成したfeedに変更することで、</p>
+<p>http://feeds.feedburner.com/konbudashi<br /></p>
+<p>で読み込まれるfeedがlinker journalからのファイルに変更になります。<br />
+今回は間にfeedburnereをかませてあることでリダイレクトなどの細かい設定をすることがなく移行できたのがよかったです。&nbsp;&nbsp;</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/google_erth.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/twitteriphone.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

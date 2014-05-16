@@ -1,0 +1,105 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>印影をスキャンしてPDF請求書を作成する｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>印影をスキャンしてPDF請求書を作成する</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;印影をスキャンしてPDF請求書を作成する</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+<a href="http://linker.in/journal/2010/09/post-113.php">先日ご連絡</a>させていただきましたがいよいよ明日Londonに向けて出発ということでいろんな感情が入り交じりますね。</p>
+<p>さて、距離は離れてもネットのおかげでそこまで変わらずに仕事ができるわけですが、これまで郵送で送っていた請求書などをどうするか？という問題があります。<br />
+こちらの都合ではどうにもなりませんが、お客様の了承が得られてPDFで送って出力してもらうという方法をとるなら、ということでやってみたいと思います。</p>
+<h2>印影をスキャンする</h2>
+<p>何はともあれ、印影のデータが必要になります。ということで白紙に捺印したものをスキャンします。</p>
+<p>このタイミングで知ったのですがCS4以降のPhotoshopではScanに関係するTwainプラグインが標準では入っていないようですね。（うちの環境はCanonのMX850です）</p>
+<blockquote>
+  <p>mono-logue: Photoshop CS5 でスキャナ（TWAIN機器）を使う<br />
+  <a href="http://mono-logue.air-nifty.com/monolog/2010/05/photoshop-cs5-t.html">http://mono-logue.air-nifty.com/monolog/2010/05/photoshop-cs5-t.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ということでまずはプラグインをダウンロードします。（スキャナ周りのドライバは最新のものにしておきましょう）</p>
+<blockquote>
+  <p>Adobe - Photoshop : For Macintosh : Adobe Photoshop CS5 - プラグイン (オプション) - 日本語 <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=4743">http://www.adobe.com/support/downloads/detail.jsp?ftpID=4743</a><br /></p>
+</blockquote>
+<p>プラグインをダウンロードするとプラグイン（オプション）フォルダの32bitフォルダにいくつかプラグインが入っているかと思いますので、そのプラグインをphotoshopのplug-inフォルダにインストールします。</p>
+<p>Macの場合ですと「/Applications/Adobe Photoshop CS5/Plug-ins/Import-Export/TWAIN.plugin」となるかんじにインストールします。</p>
+<p>また、このプラグインは32bit用なのでPhotoshopを32bitで起動するようにします。</p>
+<p><img src="http://linker.in/journal/images/100923-01.jpg" width="553" height="584" alt="100923-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでPhotoshopを起動すると無事Twain関係のメニューが、読み込みで表示されるようになります。<br />
+ちなみに環境によってはこの<a href="http://pocket-base.com/blog/2010/06/photoshop-cs5-twain-plugin-scanner/">32bitのチェックを入れなくても動く場合</a>もあるようです。</p>
+<h2>スキャンしたものを加工する</h2>
+<p>さて、スキャンするまでが若干長かったですが、スキャンした印影のデータを加工しましょう。<br />
+加工といっても白の部分を抜くくらいです。</p>
+<p>特に透過にする必要が無いのであればこのままでも問題無いと思います。形だけ整えておきましょう。</p>
+<p>完成したらPDFとして保存します。<br />
+次にやるスタンプ登録の際にPDFが要求されるのでPDFとして保存します。</p>
+<h2>スタンプ登録してPDFに押す</h2>
+<p>さて、ここまでできたら完成した印影ファイルをスタンプとして登録しましょう。請求書のファイルがをPDFとして作成されている前提で話を進めます。僕自身の場合はExcelで請求書を作成しているのでそれをPDFとして保存しただけです。</p>
+<p>Acrobatでスタンプツールの「カスタムスタンプの管理」を選択するとファイル選択の画面が開きます</p>
+<p><img src="http://linker.in/journal/images/100923-02.jpg" width="523" height="366" alt="100923-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ここで使うファイルを選択します。使うファイルを選択すると印影が確認できますので次に進みます。そこで分類と名前を登録して保存します。</p>
+<p><img src="http://linker.in/journal/images/100923-03.jpg" width="598" height="383" alt="100923-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ここで登録した分類はスタンプツールのメニュー内で使用されます。</p>
+<p><img src="http://linker.in/journal/images/100923-04.jpg" width="600" height="339" alt="100923-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>請求書のPDFを開いてこのスタンプを押しましょう。<br />
+おしたい場所にもっていけば完成です。</p>
+<p>このように作成したPDFを印刷してみたところ、出力した請求書に押印するのとそこまでは変わらない感じでした。</p>
+<h2>少しだけ手を入れておく</h2>
+<p>とりあえずこのままお客様に送ってしまうとこの印影のデータを使うことができてしまいます。<br />
+（厳密にいえばスクリーンショットとったりすれば使えてしまうわけですし、使うソフトによっては対応できない場合もあります）</p>
+<h3>スタンプをロックする</h3>
+<p>まず印影を押したPDFファイルを開きます。印影部分を選択して右クリックでプロパティを開きます。</p>
+<p><img src="http://linker.in/journal/images/100923-05.jpg" width="446" height="431" alt="100923-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>表示方法のところにロックの項目があるので、ロックしてしまいます。</p>
+<h3>セキュリティ設定</h3>
+<p>つづいてセキュリティの設定をします。<br />
+「ファイル＞プロパティ＞セキュリティ」<br />
+と移動します。</p>
+<p>セキュリティ方法のところが「セキュリティなし」 になっていると思うのでパスワードによるセキュリティに変更します。</p>
+<p><img src="http://linker.in/journal/images/100923-06.jpg" width="600" height="579" alt="100923-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>設定では「文書の印刷および編集を制限。〜〜〜」のところにチェックを入れて権限パスワードの変更にパスワードを入れます。</p>
+<p><img src="http://linker.in/journal/images/100923-07.jpg" width="600" height="364" alt="100923-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>印刷はする可能性があるので「印刷を許可」を印刷できるようにしておき、「変更を許可」を「許可しない」にしておきます。<br />
+こんなかんじで設定しておけば少しはましかもしれません。</p>
+<h2>ということで</h2>
+<p>PDFを使うことがどうなのか？というのも当然話としてはありそうです。<br />
+jpgとかの画像にしてしまえばセキュリティとか考えずに終わるかもしれません。</p>
+<p>PDFをメールに添付して終わらせてしまいたい場合などはこの方法をつかって請求書を用意してもいいのかもしれませんね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_117.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_118.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>linker journal</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/" />
+    <link rel="self" type="application/atom+xml" href="http://linker.in/journal/atom.xml" />
+    <id>tag:linker.in,2009-01-30:/journal//2</id>
+    <updated>2013-05-10T18:16:19Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 5.06</generator>
+
+<entry>
+    <title>hara19.jp管理人が作ったパンケーキだらけのサイト「東京パンケーキ速報」</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/05/tokyo-pancake.php" />
+    <id>tag:linker.in,2013:/journal//2.1137</id>
+
+    <published>2013-05-09T17:57:23Z</published>
+    <updated>2013-05-10T18:16:19Z</updated>
+
+    <summary>ども。@cremaです。 今日は、友人が新しく立ち上げたWebサイトを、さらっとご紹介してみますね。その名も東京パンケーキ速報と言うのですが、title要素に添...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="blog" label="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="wordpress" label="WordPress" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。@cremaです。</p>
+
+<p>今日は、友人が新しく立ち上げたWebサイトを、さらっとご紹介してみますね。その名も<a href="http://pancake.tokyo.jp/" target="_blank">東京パンケーキ速報</a>と言うのですが、title要素に添えられた副題「ジタバタするほど美味しい東京のパンケーキたち」というのが、ちょっと可愛いのですw</p>
+
+<p><a href="http://pancake.tokyo.jp/" target="_blank"><img alt="pancake.png" src="http://linker.in/journal/assets_c/2013/05/pancake-thumb-500x629-4187.png" width="500" height="629" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>このサイトの管理人である<a href="https://twitter.com/ysakaki" target="_blank">@ysakaki</a>は、一部界隈では「パンケーキ神」と呼ばれるほどパンケーキ大好きな男性なのですが、本業は30min.さんのエンジニアで、元々<a href="http://hara19.jp/">hara19.jp</a>という人気原宿情報サイトを運営しているんですよね。</p>
+
+<p>hara19.jpはWordPressでできていまして、去年のWordCampでは、突如PVが上がった時の高速化対策やらブログ運営のコツなどのノウハウをじっくり語っていました。</p>
+
+<p><iframe src="http://www.slideshare.net/slideshow/embed_code/14303070" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/ysakaki/hara19jp-ysakaki" title="hara19.jpの裏側 〜地域情報サイトの構築・運営ノウハウ〜" target="_blank">hara19.jpの裏側 〜地域情報サイトの構築・運営ノウハウ〜</a> </strong> from <strong><a href="http://www.slideshare.net/ysakaki" target="_blank">ysakaki</a></strong> </div></p>
+
+<p><iframe width="560" height="315" src="http://www.youtube.com/embed/XSwuhVUE3Ng" frameborder="0" allowfullscreen></iframe></p>
+
+<p>hara19.jpを運営していく中で、パンケーキを食する才能に目覚め、パンケーキ部門を切り出して別サイトにしたという。</p>
+
+<p>@ysakakiの面白いところは、バリバリのエンジニア、かつ、コミュニケーションとおもてなし能力の高いブロガーであるところですかね。</p>
+
+<p>シズル感のある写真も撮れて、文章力と編集力もあり、フットワーク軽く取材に行ってしまい、アクセス解析もがっつりやり、なおかつサイトの実装とサーバの面倒は自分で見られるという、なんというか万能感のあるひとなので羨ましい。</p>
+
+<p>少しでも見習って、人気サイトを運営してみたいと思う今日この頃です。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Adobe Illustrator CCとPhotoshop CCの新機能をいくつかピックアップ</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/05/adobe-illustrator-ccphotoshop-cc.php" />
+    <id>tag:linker.in,2013:/journal//2.1135</id>
+
+    <published>2013-05-07T08:13:09Z</published>
+    <updated>2013-05-07T09:51:41Z</updated>
+
+    <summary>ども。 @crema です。 日本時間の昨夜アメリカ本国で始まったAdobe MAXでの発表を受け、本日東京でも「Create Now MAX 2013 速報 ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。 @crema です。</p>
+
+<p>日本時間の昨夜アメリカ本国で始まった<a href="http://max.adobe.com" target="_blank">Adobe MAX</a>での発表を受け、本日東京でも「Create Now MAX 2013 速報 スペシャルイベント」が開催されました。Ustreamでも中継されていましたので、ご覧になった方も多いかと思います。</p>
+
+<p>発表内容は、基本的には下記記事の通りなのですが、</p>
+
+<ul>
+	<li><a href="http://gihyo.jp/news/report/2013/05/0701">Adobe，同社のクリエイティブツール「Adobe Creative Cloud」のアップデートを発表――クラウドサービスとして生まれ変わり，2013年6月18日から提供開始予定：レポート｜gihyo.jp ... 技術評論社</a></li>
+</ul>
+
+<p>特に話題になっているのは、</p>
+
+<ol>
+	<li>今後の新バージョン提供はCreative Cloud上のみで行われることになり、新バージョンのパッケージでの販売が無くなる</li>
+	<li>製品名の最後につくのは「CS（Creative Suite）」ではなく「CC（Creative Cloud）」になる</li>
+	<li>Fireworksの新バージョン開発がされなくなる（バグフィックスと新OSへの対応はされる模様）</li>
+</ol>
+
+<p>といったあたりでしょうか。</p>
+
+<p>Fireworks関連では、長谷川恭久さんが素敵記事をさっそく公開されていますね。</p>
+
+<ul>
+	<li><a href="http://www.yasuhisa.com/could/article/fireworks-and-workflow/">Fireworks後のツールとワークフロー : could</a></li>
+</ul>
+
+<p>そんななか空気が読めない感じで（？）恐縮ですが、せっかくなので、特に自分が注目しているIllustratorとPhotoshopの新機能について、さっくりメモっておきたいと思います。</p>
+
+<h2>Adobe Illustrator CCの新機能いくつか</h2>
+
+<h3>文字タッチツール</h3>
+
+<p>アウトライン化せずに文字情報を保ったまま、一文字づつ選択して変形できるツールが追加されました。文字列に変形をかけた後、文字を打ち替えることも可能です。</p>
+
+<p><img alt="写真：文字タッチツールデモ" src="http://linker.in/journal/images/ICC1.jpg" width="500" height="375" style="display: block; margin: 0 auto 20px;" /></p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/18338/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>囲み罫を作りやすくなったブラシ</h3>
+
+<p>自分で作成するブラシで、コーナータイル（ブラシの角の部分）が自動生成されるようになったり、</p>
+
+<p><img alt="写真：コーナータイルデモ" src="http://linker.in/journal/images/ICC2.jpg" width="500" height="375" style="display: block; margin: 0 auto 20px;" /></p>
+
+<p>写真を使ったブラシ生成が可能になったり。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/18339/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>CSSの書き出し機能の強化</h3>
+
+<p>Illustratorで作成したアートワークから、CSSを書き出したりSVGとしてコードを生成したりできるようになったとのこと。個人的には、これで書き出されるコードの内容とワークフローの改善が可能かどうかを、今後重点的に検証していきたいと考えています。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/18340/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>エリア内文字とポイント文字を瞬間切換え</h3>
+
+<p>エリア内文字ツール右側をクリックすると、ポイント文字に瞬間的に切り替わる。逆も可能。地味ですが意外と役立ちそうな機能ですね。</p>
+
+<p><img alt="写真：エリア内文字とポイント文字を瞬間切換えデモ" src="http://linker.in/journal/images/ICC3.jpg" width="500" height="375" style="display: block; margin: 0 auto 20px;" /></p>
+
+<h3>全体的なIllustrator CCの紹介ビデオ</h3>
+
+<p>その他にも多くの新機能があるので、気になる方はこちらのビデオをどうぞ。長さは12分ほどです。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1272/17703/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h2>Photoshop CCの新機能いくつか</h2>
+
+<h3>「ぶれの軽減」で手ぶれ写真をシャープに補正</h3>
+
+<p>今日のデモで最も観客が湧いていた機能は、多分これ。新機能「ぶれの軽減」により、長めの露光（1秒とか）で生じた『手ぶれ』が、無かったことのようになっていました。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1276/18359/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>スマートシャープ機能の刷新</h3>
+
+<p>ネムい写真をシャープにする『スマートシャープ』機能のアルゴリズムが刷新されたそうで、ノイズやハロー効果が少ない状態で写真をしゃーぷにできるとのこと。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1276/18357/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h3>Camera Rawをフィルターメニューとして使用</h3>
+
+<p>これまではプラグインだった「Camera Raw」を、Photoshopの中でフィルターメニューとして使用できるようになりました。写真撮影好きのひとには、嬉しい機能かもしれませんね。</p>
+
+<p><iframe title="AdobeTV Video Player" width="515" height="296" src="http://tv.adobe.com/embed/1276/18358/" frameborder="0" allowfullscreen scrolling="no"></iframe></p>
+
+<h2>雑感</h2>
+
+<p>今日の『Fireworks開発終了』発表を受けて、一部では『脱Adobe！』という機運も盛り上がっているように見受けられますが、個人的には自分が適切と判断したツールを適切なシーンで使い分けしていけばいいのかなと思っています。</p>
+
+<p>のらりくらりとした態度のようですが、仕事としてIllustratorとPhotoshopの講義や書籍執筆をしているわりには、「なにがなんでもIllustratorとPhotoshopを使わなきゃ！」という考えでもなく、逆に「これからの時代は完全に脱Adobeだ！」というわけでもなく。</p>
+
+<p>性格的に食わず嫌いではなく、なんでもとりあえずは首を突っ込んでみたいのですよね。</p>
+
+<p>正解はいつもひとつではなく、時代と環境によって、常に揺れ動くものだと思いますので。</p>
+
+<p>ということで、今後も様々なツールをあちこち試しながら、メーカーさん、制作者の皆さん、そしてクライアントさんの想いや事情をうわばみのように飲み込みつつ、時代の流れに則った最適解を探していこうと考えています。</p>
+
+<p>当面の課題は、IllustratorをどのくらいWeb制作のワークフローに乗っけていけるかな、という実験ですかねー。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>4月20日はMTCafe Tokyo 2013 Springです</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/mtcafe-tokyo-2013-spring.php" />
+    <id>tag:linker.in,2013:/journal//2.1134</id>
+
+    <published>2013-03-28T12:14:53Z</published>
+    <updated>2013-03-28T12:17:47Z</updated>
+
+    <summary>4月20日にMTCafe Tokyoが開催されます。初めて会う方含めいろんな方達とMT話が出来るのを楽しみにしています。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="movabletype" label="movabletype" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />年度末進行というかんじで、気づいたら3月も終わりですね。<br />バタバタなこの頃です。</p>
+<p>さて、来週からは4月ですが、4月20日に<a href="http://kokucheese.com/event/index/75018/">MTCafe Tokyo</a>が開催されます。</p>
+<blockquote>
+<p>4月20日 MTCafe Tokyo 2013 Spring(東京都)<br /><a href="http://kokucheese.com/event/index/75018/">http://kokucheese.com/event/index/75018/</a></p>
+</blockquote>
+<p>去年は花見もー、とか話題になっていたような気がしますが、今年はその頃は桜の時期ではなさそうですね。</p>
+<p>今回のMTCafe Tokyoは勉強会形式ということで、2会場、2セッションずつとなっているようです。</p>
+<p>内容は以下のようなかんじだそうです。</p>
+<blockquote>
+<p>メイン会場</p>
+<p>デザイナーにもできる再構築の高速化／負荷分散<br /><a href="https://twitter.com/hjfuji">@hjfuji</a></p>
+<p>Movable Typeの実践的な管理画面カスタマイズ、検索カスタマイズ（仮)<br /><a href="https://twitter.com/tinybeans">@tinybeans</a></p>
+<p>サブ会場</p>
+<p>未定 （仮題：CMS構築案件で起こる「認識のすれ違い」)<br /><a href="https://twitter.com/naoaki011">@naoaki011</a></p>
+<p>変化に強いインフラを楽して構築するために考えること<br /><a href="https://twitter.com/yagishita">@yagishita</a></p>
+</blockquote>
+<p>全部ききたいなー、と思いますが。どれにしましょうか、、、<br />非常に悩ましいです。</p>
+<p>参加者のリストを見てみると、いつもの人達もですが、名前は知ってるけど会ったことがないという方がちらほらいるので、是非この機会にいろいろと話してみたいと思います。</p>
+<p>MTに興味ある方は是非参加してみてはどうでしょうか。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>【満員御礼】「仕事でちょこっと使えるPhotoshop講座」で喋ります。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/photoshop-lesson.php" />
+    <id>tag:linker.in,2013:/journal//2.1133</id>
+
+    <published>2013-03-22T14:54:07Z</published>
+    <updated>2013-03-22T15:37:15Z</updated>
+
+    <summary> ども。火曜／金曜担当の@cremaです。 今日は「こういうこともやってまーす」というご紹介を。 公私に渡って仲良しなepoch seedの森下さんが企画してく...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="photoshop" label="photoshop" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="ttl20130322.png" src="http://linker.in/journal/images/ttl20130322.png" width="640" height="250" class="mt-image-none" style="" /></p>
+
+<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p>今日は「こういうこともやってまーす」というご紹介を。</p>
+
+<p>公私に渡って仲良しな<a href="http://epochseed.jp/" target="_blank">epoch seed</a>の森下さんが企画してくださったちょっと変わった講座、「<a href="http://peatix.com/event/11578" target="_blank">【広報・マーケ向け】仕事でちょこっと使えるAdobe Photoshop講座</a>」が開催されるのですよ。</p>
+
+<p>ときは2013年4月5日（金）、ところはデジタルハリウッドさんのStudio新宿。</p>
+
+<p>ということで、本当はこの記事で「参加者募集しております！」と書きたいところだったのですが、なんと先ほど募集開始後1時間で15人の定員が埋まってしまいまして！　ありがとうございます！</p>
+
+<p>イベントの企画意図としては、「デザインが本業ではない広報やマーケティング担当者が、ブログやFacebookページに写真をアップする際、基本的な修正や加工をできるようになる！」というもの。</p>
+
+<p>広報やマーケの方は、なにかと業務で写真を扱うことがあるものなんですね。商品写真、イベントレポート写真、ポートレイト写真などなど。バタバタなスケジュールの中で急いで撮影したもの、光線の具合が悪かったもの、ヘアスタイルがちょっと乱れてしまったものなど、見栄えを良くしておきたい写真も多々ありそうです。</p>
+
+<p>そこで今回は、そんな「Photoshopをちょこっと使いたい」というライトユーザー層に向けた講座を準備することにしました。</p>
+
+<p>ポートレイト写真の色補正、後れ毛などを綺麗に消す、少し小顔／デカ目に補正など、自分で写真をいじって「こんなことができるんだー！」と感じていただく、ワークショップ形式。さらにデモンストレーションで、補正した写真をIllustratorに配置して、ポストカードっぽくレイアウトしていきます。</p>
+
+<p><a href="http://www.rokunana.com/" target="_blank">ロクナナ</a>さんで月に1回開講している<a href="http://67.org/ws/workshop/detail/084design.html">黒野明子のIllustratorとPhotoshop基本講座</a>でも、「突然会社の広報担当（Web担当）になって、IllustratorとPhotoshopを使う必要がある！」という受講生の方が度々おいでになるので、一定のライトユーザー需要があるなぁという肌感覚がありまして。</p>
+
+<p>学生さんやデザイナー志望の方に講義をするのも有意義で楽しいのですが、こういう講座にも今後様々な形で関わっていけたらいいなと思っております。</p>
+
+<p>こういった講師のお仕事がありましたら、お気軽にお声掛けくださいませ（笑）。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>WDF vol.8＠金沢にて「ソーシャル系Webサービスのつくり方」というお題で話してきました。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/wdf-vol8.php" />
+    <id>tag:linker.in,2013:/journal//2.1132</id>
+
+    <published>2013-03-12T10:57:38Z</published>
+    <updated>2013-03-12T16:38:14Z</updated>
+
+    <summary>ども。火曜／金曜担当の@cremaです。 先日当journalで告知しておりました通り、金沢のWeb系勉強会「WDF vol.8」にて、「ソーシャル系Webサー...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="イベント" label="イベント" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p><a href="http://linker.in/journal/2013/02/wdf-vol8.php" target="_blank">先日当journalで告知</a>しておりました通り、金沢のWeb系勉強会「<a href="http://wdf.jp/vol08/" target="_blank">WDF vol.8</a>」にて、「ソーシャル系Webサービスのつくり方」というお題の60分の講演をしてきました。</p>
+
+<p><a href="http://linker.in/journal/images/wdf-kurono.jpg"><img alt="wdf-kurono.jpg" src="http://linker.in/journal/assets_c/2013/03/wdf-kurono-thumb-500x375-4172.jpg" width="500" height="375" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>内容は、私のクライアントさんである<a href="http://agilemedia.jp/" target="_blank">アジャイルメディア・ネットワーク</a>にて週3回常駐しながら、ディレクターTさん＋エンジニアMさんと3人組で、「Webサービスの中の人」業務をどのようにやっているかというもの。</p>
+
+<p>これまでこういったナマな仕事内容を語ったことは無く、受講者のみなさまに受け入れていただけるかどうか若干不安があったのですが、終わってみると概ねご満足いただけたようで、ほっとしているところです。</p>
+
+<p>「まだまだこれから」「いま試行錯誤中」という部分も多く含まれていましたが、このように仕事をしている人達もいるのかという一例として、1mmでも参考にしていただければ、とても喜びます。</p>
+
+<p>同時に講演した古瀬美香さん（ウォークスコミュニケーションズ）と、最後にパネルディスカッションもさせていただきました。</p>
+
+<p><a href="http://linker.in/journal/images/wdf-panel.jpg"><img alt="wdf-panel.jpg" src="http://linker.in/journal/assets_c/2013/03/wdf-panel-thumb-500x333-4174.jpg" width="500" height="333" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>話題の中心は、「スマートフォンとECサイト」「O2O」など。この先モバイル端末に合わせたWebサイト／サービスをどのように構築していくか、会場のみなさまも交えてイメージを膨らませていきました。</p>
+
+<p>当日の参加者のみなさまのつぶやきをまとめたTogetterは、こちら。</p>
+
+<ul>
+	<li><a href="http://togetter.com/li/468629">WDF Vol.8 ツイートまとめ - Togetter</a></li>
+</ul>
+
+<p>わざわざ大阪から金沢まで参加しにきてくれた出口さんの素敵ブログ記事は、こちら。</p>
+
+<ul>
+	<li><a href="http://funnis.net/blog/activity/wdf-vol-8/">WDF Vol.8「これからのWebサイトディレクションに欠かせない充実のセッションが揃いました。」に参加してきました。｜ふにろぐ</a></li>
+</ul>
+
+<p>当日ご参加くださった受講者のみなさま、一緒に講演してくださったみなさま、そしてもちろん主催のみなさま、全てに感謝です。ありがとうございました！</p>
+
+<p>ということで、こういった新ネタを作る講師は、これにてしばらく打ち止め。私が出せるネタは出し尽くしてしまった感がありますので、しばし充電期間に入りますね。いずれパワーアップして戻ってくる予定ですので、またその時はかまってやってください。</p>
+
+<p>あ、IllustratorとPhotoshopの講師やイベントは引き続き色々やっていきますので、そちらもどうぞよろしくお願いいたします！</p>
+
+<p>※講演／パネルディスカッション中の写真は、WDF主催者の方の許諾を得て、<a href="https://www.facebook.com/wdfinfo" target="_blank">Facebookページ</a>から転載させていただきました。ありがとうございます！</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>LivePreviewTemplateとMTML CompletionsでMTMLの編集作業を効率化</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/livepreviewtemplate.php" />
+    <id>tag:linker.in,2013:/journal//2.1131</id>
+
+    <published>2013-03-11T09:00:00Z</published>
+    <updated>2013-03-11T09:12:03Z</updated>
+
+    <summary>「LivePreviewTemplate」を使うとローカルで編集中のMTMLをプレビュー出来るようになります。MTML Completionsもさらに便利に使えそうです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="movabletype" label="movabletype" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mtml" label="mtml" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />この週末の東京は夏のように暑くなったり、空が黄色くなったりなんか色々でしたね。<br />年度末ですし寒暖の差などで体調崩さないようにしないといけないですね。</p>
+<h2>ローカルで編集中のMTMLをプレビューできるLivePreviewTemplate</h2>
+<p>ToI企画の天野さんが、ST2と<a href="https://github.com/bit-part/MTML-ST2">MTML Completions</a>の組み合わせをさらに便利にして、MTML編集が出来るようになる拡張「<a href="http://tec.toi-planning.net/mt-column/plugin/livepreviewtemplate/">LivePreviewTemplate</a>」を作成されていました。</p>
+<blockquote>
+<p>LivePreviewTemplate とは - ToI<br /><a href="http://tec.toi-planning.net/mt-column/plugin/livepreviewtemplate/">http://tec.toi-planning.net/mt-column/plugin/livepreviewtemplate/</a></p>
+</blockquote>
+<p>こちらにある動画を見て頂くと分かるのですが、ローカルで編集したMTMLの内容をブラウザでプレビュー出来るという拡張になります。</p>
+<p>まず、テンプレートを編集したいMTの管理画面で登録したBookmarkletを起動します。<br />そうするとこんな感じでDrag&amp;Dropするエリアが開くので、ローカルで編集しているファイルを持って行きます。</p>
+<p><img style="border: 2px solid #999;" title="130311-01.png" src="http://linker.in/journal//images/130311-01.png" alt="130311 01" width="600" height="325" border="0" /></p>
+<p>ファイルをもっていくと、プレビューのウィンドウがポップアップで開きます。<br />（PopupをBlockしてると開かないかもしれないので、そのあたりは環境を確認してください。）</p>
+<p>適当にローカルのファイルを編集して保存します。そうするとこのような感じでPopup内では編集内容が反映されています。</p>
+<p><img style="border: 2px solid #999;" title="130311-02.png" src="http://linker.in/journal//images/130311-02.png" alt="130311 02" width="561" height="348" border="0" /></p>
+<p>シンプルなインデックステンプレート、個別記事アーカイブ、月別アーカイブで動作確認してみましたが、問題なくプレビューできました。<br />テンプレートモジュールもインデックステンプレートが読み込まれて表示の確認ができました。<br />MTは5.2が必要で、ブラウザはGoogle Chrome、Firefox、Safari が対応しているようです。</p>
+<p>コンテキストの内容によって表示を変える場合などはうまくでなそうなきもしますが、基本的な動作確認には全く問題なさそうです。<br />あと気になるとしたら、Dynamic関係、cgi関係あたりでしょうか、、、</p>
+<p>PopupウィンドウでPreviewしているテンプレートについては、確認してみて問題がなければ管理画面側でちゃんと保存してあげる必要があるので、これは忘れないようにしないといけませんね。<br />ローカルのファイルとしては保存されていますが、MT側のデータとしてはまだ保存されていない状況になっていますので。</p>
+<h2>MTMLの編集環境を徐々に改良していきたいと思います</h2>
+<p>最近、MTMLの編集作業としては、ローカルでの編集作業をGitで管理するということと管理画面へのコピペという流れをファイルリンクにするか、テーマにするかなど色々考えていたところではあるので、この拡張機能のおかげでだいぶ改善されそうです。</p>
+<p>MTML Completionsも小さな機能追加を予定してますし、少しずつ改善していきたいと思います。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>ポッドキャスト上手くなりたい。</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/podcast.php" />
+    <id>tag:linker.in,2013:/journal//2.1130</id>
+
+    <published>2013-03-08T15:30:02Z</published>
+    <updated>2013-03-08T15:50:47Z</updated>
+
+    <summary> ども、火曜／金曜担当の@cremaです。 完全なる趣味で、毎週日曜深夜に「純喫茶エピソード」というポッドキャストをやっているわけなのですが。 現時点での最新公...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="podcast" label="podcast" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><a href="http://linker.in/journal/images/logo-episode.png"><img alt="logo-episode.png" src="http://linker.in/journal/assets_c/2012/02/logo-episode-thumb-300x286-3633.png" width="300" height="286" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></a></p>
+
+<p>ども、火曜／金曜担当の@cremaです。</p>
+
+<p>完全なる趣味で、毎週日曜深夜に「<a href="http://cafe-episode.tumblr.com/" target="_blank">純喫茶エピソード</a>」というポッドキャストをやっているわけなのですが。</p>
+
+<p><a href="http://cafe-episode.tumblr.com/post/44456744873/vol-58" target="_blank">現時点での最新公開分</a>の自分の喋りが、相当グダグダで悲しいので、今後気をつけようと思う点をリストアップしてみました。</p>
+
+<p>当たり前のことなんですけどね......。なかなかできておりませんで......（涙目）。</p>
+
+<ul>
+	<li>何かを話しはじめる前には、できるだけ要点を提示してから詳細を語る。</li>
+	<li>自分だけ話さず、相方さんたちに適度に話をふる。その際、話が続くようにクローズドクエスチョンを適度に混ぜる。</li>
+	<li>相方さん達の考えを引き出して盛り上げる工夫を、もっと考える。</li>
+	<li>聴取者の人には分からないので、「あれ」とか「これ」とかの指示代名詞を使わないようにする。特にブログ記事を引用して紹介する時は、タイトルや要点を簡潔に提示する。</li>
+	<li>Skype録音なので難しいのだけれど、できるだけ相方さん達と話を被せないようにする。</li>
+	<li>テーマに対して、もう少し予習する。</li>
+	<li>そもそも、ゆるゆるがテーマなので、それに見合った話題選定やムード作りを見直す。</li>
+</ul>
+
+<p>うむー。今年は頑張らない宣言をした上に、番組コンセプトは「ゆるゆる」ではありますが、せっかくやっているからには、もう少し自分の話術クオリティを上げていきたい！</p>
+
+<p>練習用に、自分一人だけのポッドキャストをやってみるのもいいのかも？ と、相変わらず悩めるアラフォーでした。</p>
+
+<p>手のかからない<a href="http://audioboo.fm/" target="_blank">AudioBoo</a>とかで試そうかな...（妄想）</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>藤本さんの新著『改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕』プレゼントキャンペーンが開催されています</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/css3book.php" />
+    <id>tag:linker.in,2013:/journal//2.1129</id>
+
+    <published>2013-03-04T09:00:00Z</published>
+    <updated>2013-03-04T08:45:26Z</updated>
+
+    <summary>藤本さんの新著『改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕』プレゼントキャンペーンが3月10日まで行われているとのことです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="book" label="book" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="css" label="CSS" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="css" label="css" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="css3" label="CSS3" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />いつもMTのプラグインでお世話になってる<a href="http://www.h-fj.com/blog/">藤本さん</a>が新著『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154865/mersys-22/ref=nosim">改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕</a>』を書かれました。</p>
+<p>現在、この書籍の<a href="http://www.h-fj.com/blog/archives/2013/03/01-143836.php">プレゼントキャンペーン</a>を行っているとのことでそれに乗っかってみます。</p>
+<blockquote>
+<p>「改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕」プレゼントキャンペーン延長 - The blog of H.Fujimoto<br /><a href="http://www.h-fj.com/blog/archives/2013/03/01-143836.php">http://www.h-fj.com/blog/archives/2013/03/01-143836.php</a></p>
+</blockquote>
+<div class="mm-middle" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154865/mersys-22/ref=nosim" target="_blank"><img title="改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕" src="http://ecx.images-amazon.com/images/I/51vsMmU2URL._SL160_.jpg" alt="改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕" width="109" height="160" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 15px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154865/mersys-22/ref=nosim" target="_blank">改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕</a></div>
+<div class="mm-detail" style="margin-top: 10px;">藤本 壱<br />技術評論社 ( 2013-01-24 )<br />ISBN: 9784774154862<br />
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=4774154865" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>
+<p>ブログでこの書籍を紹介すると、抽選で3名にこの本がプレゼントされるとのことです。</p>
+<p>書籍の内容は</p>
+<blockquote>
+<p>スタイルシート(CSS)の記述に必要な知識を体系立ててコンパクトに整理しました。もちろん最新のCSS3に対応。デザイン・クオリティの決め手となるスタイルシート―その構成要素である多数のプロパティや設定値、セレクタだけでなく、基本的な構文まで網羅的に解説します。目的別に整理しているので、使いたい項目を辞書のようにぱっと引けるのが特徴。また、多様化するブラウザ環境に配慮し、スマートフォンでの対応状況も調査しました。Webデザイナーからエンジニアまで、多くの方に、手元に置いていただきたい一冊。</p>
+</blockquote>
+<p>というかんじです。</p>
+<p>細かいブラウザの対応状況などは日々変わってしまうかもしれませんが、CSSの基本は変わらないので、書籍として一冊持っていると便利かもしれませんね。</p>
+<p>---------</p>
+<p>ちなみに、最近藤本さんのプラグイン類でお世話になったのは（プラグインじゃないですが）</p>
+<blockquote>
+<p>MTOSインストール済みAMIの使い方(その1・AWSのアカウントの取得) - The blog of H.Fujimoto<br /><a href="http://www.h-fj.com/blog/archives/2012/12/26-103708.php">http://www.h-fj.com/blog/archives/2012/12/26-103708.php</a></p>
+</blockquote>
+<p>で紹介されているAMIですね。<br />AWSでさくっと環境が出来てしまいます。</p>
+<p>AWSでMT環境の構築は先日読んだ『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822211983/mersys-22/ref=nosim">Amazon Web Services クラウドデザインパターン実装ガイド</a>』でも補足で書かれていたので参考になるかもしれません。</p>
+<div class="mm-small" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822211983/mersys-22/ref=nosim" target="_blank"><img title="Amazon Web Services クラウドデザインパターン実装ガイド" src="http://ecx.images-amazon.com/images/I/51eOjTPsYtL._SL75_.jpg" alt="Amazon Web Services クラウドデザインパターン実装ガイド" width="58" height="75" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 10px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822211983/mersys-22/ref=nosim" target="_blank">Amazon Web Services クラウドデザインパターン実装ガイド</a></div>
+<div class="mm-detail" style="margin-top: 10px;">大澤 文孝 / 日経BP社 ( 2013-02-07 )
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=4822211983" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>(Power) MTML CompretionsでMTタグのフォーマットを指定出来るようになりました</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/power-mtml-compretionsmt.php" />
+    <id>tag:linker.in,2013:/journal//2.1128</id>
+
+    <published>2013-02-28T02:00:00Z</published>
+    <updated>2013-02-28T01:44:31Z</updated>
+
+    <summary>先日公開したMTML Completions、PowerMTML Completionsで、MTタグのフォーマットを指定出来るようになりました。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="powercms" label="PowerCMS" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="st2" label="st2" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="sublimetext" label="Sublime Text" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />2月も最終日ですね。早いですねぇ。。。（焦</p>
+<p>すでに<a href="https://twitter.com/tinybeans">@tinybeans</a>が書いてますが、先日公開した、<a href="https://github.com/bit-part/MTML-ST2">MTML Completions</a>と<a href="https://github.com/bit-part/PowerMTML-ST2">PowerMTML Completions</a> でMTタグのフォーマットが指定出来るようになりました。<br /><a href="https://twitter.com/tinybeans">@tinybeans</a>が機能追加してくれました！</p>
+<blockquote><p>MTML Completions（MTタグを補完する Sublime Text 2 用パッケージ）でタグの書式が変更可能になりました | かたつむりくんのWWW<br /><a href="http://www.tinybeans.net/blog/2013/02/28-095121.html">http://www.tinybeans.net/blog/2013/02/28-095121.html</a></p></blockquote>
+
+<h2>Packageのupgrade方法</h2>
+<p>まずはPackageをupgradeしておいてください。</p>
+<p>Command Palette（Command + Shift + P）で「Package Control : Upgrade Package」を選択します。</p>
+<p><img title="130228-01.png" src="http://linker.in/journal//images/130228-01.png" alt="130228 01" width="464" height="264" border="0" /></p>
+<p>UpgradeがあるPackageが表示されるので選択すればUpgradeされます。</p>
+<p><img title="130228-02.png" src="http://linker.in/journal//images/130228-02.png" alt="130228 02" width="430" height="216" border="0" /></p>
+<h2>設定方法</h2>
+<p>Preferences &gt; Settings - User（command + ,）に以下の項目を設定するとこでテンプレートタグの書式等を変更できます。</p>
+<h3>接頭辞の設定方法【mtml_prefix】</h3>
+<p>ここで設定した値がテンプレートタグの接頭辞になります。mtml_prefix を設定しない場合は mt: になります。</p>
+<pre><code>設定無し =&gt; &lt;mt:EntryTitle /&gt; <br />"mtml_prefix": "MT:" =&gt; &lt;MT:EntryTitle /&gt; <br />"mtml_prefix": "MT" =&gt; &lt;MTEntryTitle /&gt; </code></pre>
+<h3>ファンクションタグの書式を変更方法【mtml_function_tag_type】</h3>
+<p>ファンクションタグの書式を変更できます。設定できる値は dollar または none です。</p>
+<pre><code>設定無し =&gt; &lt;mt:EntryTitle /&gt; <br />"mtml_function_tag_type": "dollar" =&gt; &lt;$mt:EntryTitle$&gt; <br />"mtml_function_tag_type": "none" =&gt; &lt;mt:EntryTitle&gt; </code></pre>
+<p></p>
+<p>これからも少しずつ機能追加等していきたいと思います。</p>
+<p>ST2をお使いのかたで、まだ使ってない方は是非試してみて感想を頂けるとありがたいです。<br /><a href="https://www.facebook.com/bit.part.net">bit part</a>ともどもどうぞよろしくお願いします。</p>
+<h2>関連リンク</h2>
+<p>MTML Completions（MTタグを補完する Sublime Text 2 用パッケージ）でタグの書式が変更可能になりました | かたつむりくんのWWW<br /><a href="http://www.tinybeans.net/blog/2013/02/28-095121.html">http://www.tinybeans.net/blog/2013/02/28-095121.html</a></p>
+<p></p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Sublime Text 2でMTタグ、PowerCMSのタグを補完できるPackageを作成しました #powercms #movabletype #st2</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/mtmlst2.php" />
+    <id>tag:linker.in,2013:/journal//2.1127</id>
+
+    <published>2013-02-25T00:00:00Z</published>
+    <updated>2013-02-24T21:37:55Z</updated>
+
+    <summary>SublimeTextでMTタグ、PowerCMSのタグ補完ができるPackageをbit partで作成しました。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="powercms" label="PowerCMS" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="st2" label="st2" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="sublimetext" label="Sublime Text" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />積雪量で酸ヶ湯がニュースになってますね。東京もここ数日寒い日が続いてますし、出来るだけ引きこもっていたいと思う日々です。</p>
+<p>さて、<a href="https://www.facebook.com/bit.part.net">bit part</a>で<a href="http://www.sublimetext.com/">Sublime Text 2</a> 用のpackageを作成しました。</p>
+<h2>MTタグの入力補完ができるMTML Completions</h2>
+<p><a href="https://github.com/bit-part/MTML-ST2">MTML Completions</a>はSublime TextでMovable Typeのタグ入力補完を行えるものです。</p>
+<blockquote>
+<p>MTML Completions<br /><a href="https://github.com/bit-part/MTML-ST2">https://github.com/bit-part/MTML-ST2</a></p>
+</blockquote>
+<p>モディファイアやDynamicMTMLのタグなどが入っています。</p>
+<h3>MTタグ</h3>
+<p><img title="130225-02.png" src="http://linker.in/journal//images/130225-02.png" alt="130225-02" width="426" height="291" border="0" /></p>
+<p>BlockタグやFunctionタグなどの分類がわかるようになってます。</p>
+<h3>モディファイア</h3>
+<p><img title="130225-01.jpg" src="http://linker.in/journal//images/130225-01.jpg" alt="130225-01" width="600" height="207" border="0" /></p>
+<p>モディファイアも補完できます。</p>
+<h2>PowerCMSのタグを補完するPowerMTML Completions</h2>
+<p>あわせて<a href="http://www.powercms.jp/">PowerCMS</a>用の<a href="https://github.com/bit-part/PowerMTML-ST2">PowerMTML Completions</a>も作成しました</p>
+<blockquote>
+<p>PowerMTML Completions<br /><a href="https://github.com/bit-part/PowerMTML-ST2">https://github.com/bit-part/PowerMTML-ST2</a></p>
+</blockquote>
+<h3>PowerCMSのタグ</h3>
+<p><img title="130225-03.png" src="http://linker.in/journal//images/130225-03.png" alt="130225-03" width="457" height="248" border="0" /></p>
+<p>PowerCMS独自のタグを補完できます。<br />こちらは漏れがありそうなので随時追加していければと思っています。</p>
+<h2>ということで</h2>
+<p>これらのPackageは<a href="https://github.com/dreamseeker/ST2MovableType">@BUNさんが作成された物</a>をベースに作成しました。<br />許可頂きどうもありがとうございました！</p>
+<p>・ブロックタグを補完する際は改行を入れたい<br />・mtタグの入力フォーマット<br />などを指定出来るようにといった要望を頂いているので、そのあたりも今後、機能追加していければと思っています。</p>
+<p>使ってみて要望やバグなどありましたら、Issueやpull request、<a href="https://www.facebook.com/bit.part.net">Facebookページ</a>や<a href="https://twitter.com/bit_part_net">Twitterアカウント</a>に連絡頂ければと思います。<br />（readmeの英語がおかしいとかも、、、）</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>「デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕」レビュー</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/fireworks-cs6.php" />
+    <id>tag:linker.in,2013:/journal//2.1126</id>
+
+    <published>2013-02-22T16:59:46Z</published>
+    <updated>2013-02-22T17:28:49Z</updated>
+
+    <summary> ども。@cremaです。 いつもとってもお世話になっている株式会社エフシーゼロ(#fc0)のお二人、山本和泉さんと藤川麻夕子さんから、ご著書の「デザインの学校...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="レビュー" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="fireworks" label="fireworks" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="644338_10151265182906791_305725335_n.jpg" src="http://linker.in/journal/images/644338_10151265182906791_305725335_n.jpg" width="403" height="403" class="mt-image-left" style="float: left; margin: 0 20px 20px 0;" /></p>
+
+<p>ども。@cremaです。</p>
+
+<p>いつもとってもお世話になっている<a href="http://fc0.vc/" target="_blank">株式会社エフシーゼロ(#fc0)</a>のお二人、山本和泉さんと藤川麻夕子さんから、ご著書の「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕</a>」を頂戴しました！　ありがとうございます！</p>
+
+<p>というわけで、さらっとレビューなど。</p>
+
+<p>実はわたくし、Webデザイナーに転職する以前から、ずーっとPhotoshop LOVERでした。いまもWebサイトのパーツやバナー作成などをする際、やっぱり一番手に馴染むのはPhotoshop。</p>
+
+<p>ただ昨今ではFireworksの人気が非常に高く、宗旨替えしたり両刀使いになったりする方もとっても多いですよね。</p>
+
+<p>そんなわけで私も、「その魅力を知りたい！」と、ぼちぼちFireworksを使い始めている昨今なのです。</p>
+
+<p>そんな私にとって、この本は「Fireworksでできること」をさらっと概観するのに、とてもいい感じ。</p>
+
+<p>もちろん「Webデザインがはじめて」という方が手にとってもしっかり分かるように構成されている内容なのですが、Photoshop使いが転向するためにも、Photoshopではできない（機能が異なる）部分をざっくり知ることができます。</p>
+
+<p>Fireworksでは、ガイドとガイドの間の長さを簡単に確認できたり、オブジェクトに設定するテクスチャが豊富に揃えられていたり、マスターページと呼ばれる共通部分を登録できたり、オブジェクトの角丸を後からサイズ変更したり、さすがWebデザインに特化されたソフトウェアならではの、便利機能が詰め込まれているのですよね（私としては「あ、この機能、Photoshopにもあればいいのに」なーんて思ってしまったりすることもあるのですがw）。</p>
+
+<p>そのような「ならではの機能」を盛り込みながら、平易でコンパクトな解説がなされているので、Webデザインに慣れているひとが短時間でさっくりFireworksに慣れるのにも、なかなかいい感じ。</p>
+
+<p>一冊を通して架空のショッピングサイト内の数ページを作る演習形式で書かれているので、実際のWebデザイン作業に沿ってよく使う機能を一通り知ることができるのも、良い構成かと思います。</p>
+
+<p>というわけで、これからWebデザインを学びたい方はもちろんのこと、私のようなPhotoshopからの転向組にもなかなか使える、Fireworks最初の教則本としてふさわしいものだと思った次第。</p>
+
+<p>気になる方は、チェックしてみてはいかがでしょうか？</p>
+
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;margin:0px 12px 1px 0px;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51GVkhQWO-L._SL160_.jpg" alt="デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕" style="border: none;" /></a></div><div class="amazlet-info" style="line-height:120%; margin-bottom: 10px"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">デザインの学校 これからはじめるFireworksの本 〔CS6対応版〕</a><div class="amazlet-powered-date" style="font-size:80%;margin-top:5px;line-height:120%">posted with <a href="http://www.amazlet.com/" title="amazlet" target="_blank">amazlet</a> at 13.02.22</div></div><div class="amazlet-detail">#fc0 山本 和泉 藤川 麻夕子 <br />技術評論社 <br />売り上げランキング: 200,140<br /></div><div class="amazlet-sub-info" style="float: left;"><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154989/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jpで詳細を見る</a></div></div></div><div class="amazlet-footer" style="clear: left"></div></div>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>空き時間にドットインストールを見てると楽しいですね</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/post-208.php" />
+    <id>tag:linker.in,2013:/journal//2.1125</id>
+
+    <published>2013-02-21T10:10:01Z</published>
+    <updated>2013-02-21T10:12:20Z</updated>
+
+    <summary>Webの勉強をしていて、本を読んでも理解出来ないときはドットインストールの様な動画をみてみて、切り替えて勉強してみるのもよさそうですね。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="study" label="study" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="webservice" label="webservice" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />最近は風呂での読書が楽しみになりつつあります。</p>
+<p>ちょっとVPSまわりの設定を少し反復してやってみようと思ったので、「<a href="http://dotinstall.com/">ドットインストール</a>」を見てみました。</p>
+<p><img style="border: 2px solid #333;" title="130221-01.png" src="http://linker.in/journal//images/130221-01.png" alt="130221 01" width="600" height="504" /></p>
+<blockquote>
+<p>3分動画でマスターする初心者向けプログラミング学習サイト - ドットインストール<br /><a href="http://dotinstall.com/">http://dotinstall.com/</a></p>
+</blockquote>
+<p>さくらのVPSを触ったのでコチラのレッスンを見ました。</p>
+<blockquote>
+<p>さくらのVPSの基礎 (全21回) - プログラミングならドットインストール<br /><a href="http://dotinstall.com/lessons/basic_sakura_vps">http://dotinstall.com/lessons/basic_sakura_vps</a></p>
+</blockquote>
+<p>ドットインストールは知ってましたが、ちゃんと見たことはありませんでした。<br />今回いくつか見てみましたが、１つ１つが短いので、初めて触れる人にとっては凄く良さそうですね。</p>
+<p>たとえば、<a href="http://dotinstall.com/lessons/basic_sublimetext/10501">Sublime Text</a>の話とか、<a href="http://dotinstall.com/lessons/basic_twitter_bootstrap_v3">TwitterBootstrap</a>の話とか</p>
+<blockquote>
+<p>#01 Sublime Text 2とはなにか？ | Sublime Text 2の基礎 - プログラミングならドットインストール<br /><a href="http://dotinstall.com/lessons/basic_sublimetext/10501">http://dotinstall.com/lessons/basic_sublimetext/10501</a></p>
+<p>Twitter Bootstrapの基礎 (全18回) - プログラミングならドットインストール<br /><a href="http://dotinstall.com/lessons/basic_twitter_bootstrap_v3">http://dotinstall.com/lessons/basic_twitter_bootstrap_v3</a></p>
+</blockquote>
+<p>自分でダウンロードして触ってみればわかる物もあるでしょうが、こういう動画でどんな物なのかを知るのも悪くなさそうです。<br />空き時間になんとなく気になった物をちょっと見てみると楽しいですね。</p>
+<p>Webの場合、Webにも英語、日本語の情報がありますし、本もありますし、こうやって動画もありますし。<br />色々な勉強手段があるので、挫折したらとりあえず他の方法を試してみると、つまづいたハードルはクリア出来るかもしれませんね。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>検索結果内にエントリーの著者情報を出すように設定だけしておいた</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/post-207.php" />
+    <id>tag:linker.in,2013:/journal//2.1124</id>
+
+    <published>2013-02-11T07:00:00Z</published>
+    <updated>2013-02-11T06:41:36Z</updated>
+
+    <summary>Googleの検索結果にGoogle+から著者情報を引っ張って表示させるようにしてみました。Google+ページも問題なさそうなかんじです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Tips" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="google" label="google" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="html" label="html" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="search" label="search" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />3連休はいかがお過ごしですか？次の連休はGWのようですね。</p>
+<p>さて、検索結果での上位表示について、</p>
+<blockquote>
+<p>Google会長エリック・シュミット、本人確認の取れた作成者のコンテンツをより上位に表示する | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/">http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/</a></p>
+</blockquote>
+<p>みたいな話もあるので、今更ですが設定しておこうとおもったのでテンプレートいじってみました。</p>
+<p>この辺の情報については<a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">ウェブマスターツールの方にもかいてありますね</a>。</p>
+<blockquote>
+<p>検索結果内の著者情報 - ウェブマスター ツール ヘルプ<br /><a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986</a></p>
+</blockquote>
+<p>とりあえずなにも設定していない状況で、<a href="http://www.google.com/webmasters/tools/richsnippets">テストツール</a>で試してみると</p>
+<blockquote>
+<p>Google Structured Data Testing Tool<br /><a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></p>
+</blockquote>
+<p>このような感じですね。</p>
+<p><img style="border: 2px solid #000;" title="130211-01.png" src="http://linker.in/journal//images/130211-01.png" alt="130211 01" width="599" height="430" /></p>
+<p>情報を入れていないので、こんな感じですね。<br />ということで、少し追加してみましょう。</p>
+<h2>HTMLにlinkを追加してGoogle+側でも設定を追加しておく</h2>
+<p>HTML側には</p>
+<pre>&lt;link rel="author" href="https://plus.google.com/112387447202401710035" /&gt;</pre>
+<p>みたいなかんじで、Google+のプロフィールページで確認出来るID（数字のところ）を入れておきましょう。<br />あわせて、Google+のプロフィールの設定に「Contributor to」みたいなところがあると思うので、そこにサイトのURLを追加しておきます。</p>
+<p>これを入れた状態で、再度テストツールにかけてみます。</p>
+<p><img style="border: 2px solid #000;" title="130211-02.png" src="http://linker.in/journal//images/130211-02.png" alt="130211 02" width="600" height="517" /></p>
+<p>このような感じで、画像などの著者情報が表示されましたね。</p>
+<p>linker journalのように複数人で記事を書いてる場合は&lt;$MTEntryAuthorUsername$&gt;で条件分岐して直接いれるとか、&lt;$MTEntryAuthorURL$&gt;にGoogle+のURLを入れるとかすることでもいいかもしれませんね。</p>
+<h2>Google+ページでも問題なさそう</h2>
+<p>@crema,@taku-workとそれぞれGoogle+のプロフィールページがある場合はいいですが、企業のブログの場合、名前まで出さないなどで、ない場合もありそうです。<br />ということで、Google+ページとかでもいけるかどうかためしてみました。</p>
+<p>linker.in のトップには特に指定してないので、何も表示されてないですね。</p>
+<p><img style="border: 2px solid #000;" title="130211-03.png" src="http://linker.in/journal//images/130211-03.png" alt="130211 03" width="600" height="430" /></p>
+<p>ということで、<a href="https://plus.google.com/u/0/115886449885491436878/posts">linker のGoogle+ページ</a>のiDを</p>
+<pre>&lt;link rel="author" href="https://plus.google.com/115886449885491436878" /&gt;</pre>
+<p>このような感じで入れてみて、再度テストツールにて見てみます。</p>
+<p><img style="border: 2px solid #000;" title="130211-04.png" src="http://linker.in/journal//images/130211-04.png" alt="130211 04" width="600" height="536" /></p>
+<p>ということで、表示が確認出来ますね。<br />Google+のページに飛んだところでそこまで活用していないのではありますが、、、、</p>
+<p>テストツールでは反映されてますが、実際の検索結果の方はすぐには反映されなさそうなので、気長に待ってみようと思います。</p>
+<p>ということで、ちょろっと試してみたメモでした。</p>
+<h2>参考リンク</h2>
+<ul>
+<li>検索結果内の著者情報 - ウェブマスター ツール ヘルプ<br /><a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986</a></li>
+<li>Google Structured Data Testing Tool<br /><a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></li>
+<li>Google会長エリック・シュミット、本人確認の取れた作成者のコンテンツをより上位に表示する | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/">http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/</a></li>
+<li>Googleの著者情報を乗せたページがより検索結果の上位に表示されるようになるらしい | Film Goes With Net ネット館<br /><a href="http://another.hotakasugi-jp.com/2013/02/09/rel-authorseo/">http://another.hotakasugi-jp.com/2013/02/09/rel-authorseo/</a></li>
+<li>rel="author" link要素で著者情報をGoogle検索結果に表示させる方法 〜 WordPressプラグインあり | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/rel-author-link-element-to-display-your-authorship/">http://www.suzukikenichi.com/blog/rel-author-link-element-to-display-your-authorship/</a></li>
+<li>自分が管理しないサイトでもコンテンツ著者情報をGoogle検索に表示させる方法 | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/how-to-display-authorship-by-using-rel-author-parameter/">http://www.suzukikenichi.com/blog/how-to-display-authorship-by-using-rel-author-parameter/</a></li>
+<li>個人ブロガーなら今すぐ設定したい、著者情報(Authorship)が遂に日本のGoogleでも導入開始 | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/authorship-available-in-google-japan/">http://www.suzukikenichi.com/blog/authorship-available-in-google-japan/</a></li>
+</ul>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>【2013年3月9日】金沢でWebサービスの裏舞台について話します。【WDF vol.8】</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/wdf-vol8.php" />
+    <id>tag:linker.in,2013:/journal//2.1123</id>
+
+    <published>2013-02-08T17:36:43Z</published>
+    <updated>2013-02-11T03:15:17Z</updated>
+
+    <summary> お久しぶりです。@cremaです。 今日は、講演の告知をさせてください。 来る2013年3月9日（土）WDF vol.8という金沢の勉強会で、最初で最後な新ネ...</summary>
+    <author>
+        <name>黒野明子</name>
+        <uri>http://cremadesign.jp/</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p><img alt="ttl20130208.png" src="http://linker.in/journal/images/ttl20130208.png" width="640" height="200" class="mt-image-none" style="" /></p>
+
+<p>お久しぶりです。@cremaです。</p>
+
+<p>今日は、講演の告知をさせてください。</p>
+
+<p>来る2013年3月9日（土）<a href="http://wdf.jp/vol08/" target="_blank">WDF vol.8</a>という金沢の勉強会で、最初で最後な新ネタの講演をさせていただきます。</p>
+
+<p>そのお題は「ソーシャル系Webサービスのつくり方　〜デザイナーとして、SNSの発言と位置情報を活用したWebサービス開発に関わる〜」というものです。</p>
+
+<p>私がこういう話をするというのも、ちょっと珍しいでしょう。</p>
+
+<p>せっかく講演のご依頼をいただいたので、いままでの繰り返しではなく新しいことをお話したくなり、主催のみなさまにお願いしたのです。</p>
+
+<p>なんと言っても今年のテーマは「<a href="http://linker.in/journal/2013/01/boredom.php" target="_blank">人生に飽きない工夫をしようかな。</a>」ですのでね。</p>
+
+<p>っで、何をお話するかというと、いま仕事の中で最も時間を割いて取り組んでいる「Webサービスの中の人業務」についてなのです。</p>
+
+<p>実は私、<a href="http://agilemedia.jp/" target="_blank">アジャイルメディア・ネットワーク</a>さんという会社で週3回×5時間づつ、常駐のお仕事をさせていただいておりまして。</p>
+
+<p>お仕事の内容は、自社開発Webサービスの企画段階から色々混ぜていただき、UIをデザインしたり、コーディングしたり、テストしたり、改善したり、何から何まで話し合ったりetc......。</p>
+
+<p>ディレクターTさん＋エンジニアMさん＋デザイナー私という最小単位の3人組で、どのようにスピード感を持ってビジネスを動かしているか、という裏舞台をお話する予定なのです。</p>
+
+<p>いわゆる「見た目のデザイン」についてのお話はとても少ないと思うのですが、「ビジネスとしてWebサービスを回すチームに、デザイナーとしてどう貢献するか」ということを、守秘義務の範囲内で事細かにお話させていただくつもりで準備を進めています。</p>
+
+<p>少人数でのWebサービス開発に興味のある方には、色々面白いヒントを持って帰っていただけるように全力を尽くしますので、金沢方面のみなさま、よろしければ遊びにきてください。</p>
+
+<p>もちろん、私以外の4人のみなさまのセッションも、超充実ですよ！　私はそっちが楽しみですw</p>
+
+<dl>
+	<dt>女性向けECサイトコンバージョンアップ術　〜ECで利益を出す為に担当者が身につけたい3つの基本と応用〜</dt>
+	<dd>株式会社ウォークスコミュニケーションズ Webデザイナー　古瀬美香さん</dd>
+	<dt>大規模サイトにおける本当は怖いCSSの話</dt>
+	<dd>株式会社DMM.comラボ Webデザイナー　井上誠さん</dd>
+	<dt>韓国のICTとソーシャルメディアから学べるソーシャルWeb時代</dt>
+	<dd>株式会社シーピーユー　金聖弼さん</dd>
+	<dt>パネルディスカッション</dt>
+	<dd>モデレータ：株式会社ウーマンスタイル　村中ゆかりさん</dd>
+</dl>
+
+<p>ということで、この講演を最後に、しばらく講演系のお仕事はお休みして充電予定のわたくし。滅多にしないお話になると思いますので、ぜひいらしてくださいませ！</p>
+
+<p>（あ、各種ソフトウェアの講師仕事はもちろん続けますが、人前で講演するのはちょっとネタ切れの感があるので、しばし仕込みの期間に入るということで、よろしくお願いいたします。当分じっくりネタ貯金します！）</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>『ウェブ配色 決める! チカラ』の刊行記念イベントでコミュニケーションについて考えてきたいと思います</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/post-206.php" />
+    <id>tag:linker.in,2013:/journal//2.1122</id>
+
+    <published>2013-02-07T11:00:00Z</published>
+    <updated>2013-02-11T03:17:53Z</updated>
+
+    <summary>色の提案とかってなかなか難しい、というイメージはあります。その辺をうまくやる方法とかについて聞きつつ、自分の考え方、コミュニケーションにいかすために、イベントに行ってきたいと思います。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="book" label="book" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="event" label="event" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />週2回、継続的にblog書いてるとなんてことないのですが、少しでも休んでしまうとなかなか書けないもんですね。</p>
+<p>さて。<br />来週の2月14日に『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267139X/mersys-22/ref=nosim">ウェブ配色 決める! チカラ</a>』の刊行記念イベントがあるというのでそちらに行ってみようかな、と思っています。</p>
+<blockquote>
+<p>坂本邦夫著「ウェブ配色 決める！チカラ」刊行記念イベント　2月に東京・名古屋・大阪で開催　−株式会社ワークスコーポレーション ブログ<br /><a href="http://www.wgn.co.jp/store/blog/item-1285.html">http://www.wgn.co.jp/store/blog/item-1285.html</a></p>
+<p>【東京】坂本邦夫「ウェブ配色 決める！チカラ」刊行記念セミナー<br /><a href="https://www.facebook.com/events/457576377624342/">https://www.facebook.com/events/457576377624342/</a></p>
+</blockquote>
+<div class="mm-middle" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267139X/mersys-22/ref=nosim" target="_blank"><img title="ウェブ配色 決める! チカラ - 問題を解決する色彩とコミュニケーション" src="http://ecx.images-amazon.com/images/I/51ojl0aAc6L._SL160_.jpg" alt="ウェブ配色 決める! チカラ - 問題を解決する色彩とコミュニケーション" width="112" height="160" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 15px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267139X/mersys-22/ref=nosim" target="_blank">ウェブ配色 決める! チカラ - 問題を解決する色彩とコミュニケーション</a></div>
+<div class="mm-detail" style="margin-top: 10px;">坂本邦夫<br />ワークスコーポレーション ( 2013-02-13 )<br />ISBN: 9784862671394<br />
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=486267139X" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>
+<p>普段の制作案件でこの辺の提案をしたり、決めることが最近少なかったりはしますが、時々、色の話とかを見聞きするとそれ個人の好みだよね、と思うことが多いです。<br />個人的にもその様に主観で言ってるだけのこともあるなー、と反省することもあるのでこのイベントを通じて少し考えてきたいな、と思っています。</p>
+<p>明日は大阪、明後日が名古屋で、開催されるようですね。</p>]]>
+        
+    </content>
+</entry>
+
+</feed>

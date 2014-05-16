@@ -1,0 +1,128 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>サーバー移転にあわせてMTをMT5にバージョンアップするメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>サーバー移転にあわせてMTをMT5にバージョンアップするメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;サーバー移転にあわせてMTをMT5にバージョンアップするメモ</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+本日よりGWで長期休暇の方はうらやましいですね。多くの人が休んでいるときに頑張って仕事してしまいたいところです！</p>
+
+<p>さて、今日はサーバー移転をかねてMT5にアップグレードする流れを自分の備忘録がてらメモしておきます。<br />
+ちょうど１年くらい前に<a href="http://linker.in/journal/2009/03/linkermt.php">linkerのサーバーも移転した</a>のですが、それに加えてMT4からMT5のバージョンアップも含まれています。<br />
+MT5から<a href="http://www.movabletype.jp/documentation/system_requirements.html">サーバー要件としてMySQL5</a>ということなので、その辺も考えておきます。</p>
+
+<p>簡単な手順はこんな感じでしょうか。</p>
+
+<ol>
+	<li>既存のMT環境をバックアップ</li>
+	<li>新サーバーを用意してMySQLを用意する</li>
+	<li>新サーバーに既存環境と同じMTをインストール</li>
+	<li>新サーバーのMTをMT5にバージョンアップする</li>
+	<li>DNSを切り替える</li>
+</ol>
+
+<h2>既存MTの環境をバックアップ</h2>
+
+<p>既存のMTのデータをバックアップします。バックアップにはMT4のバックアップの機能をつかうかphpMyAdminからMySQLをエクスポートするかどちらかの方法があります。</p>
+
+<p>MTの標準機能のバックアップを使う方法は下記が参考になるでしょう。<br />
+<blockquote><p>ブログの完全バックアップと、データベースのバックアップ | Movable Type 4 ドキュメント<br />
+<a href="http://www.movabletype.jp/documentation/start_backup.html">http://www.movabletype.jp/documentation/start_backup.html<br />
+</a></p></blockquote><br />
+よくtmpフォルダではまることがありますがmt-config.cgiに<br />
+TempDir hoge/tmp<br />
+こんな感じで記述しておきましょう。詳しくは下記を参照してください。<br />
+<blockquote><p>バックアップの保存先を変更したい | Movable Type 4 FAQ<br />
+<a href="http://www.movabletype.jp/faq/post-21.html">http://www.movabletype.jp/faq/post-21.html</a></p></blockquote></p>
+
+<p>MT標準のバックアップ機能の他に、phpMyAdminからMySQLのバックアップをとる方法があります。<br />
+この方法については、「<a href="http://www.koikikukan.com/archives/2006/06/12-005023.php">小粋空間: MySQL + phpMyAdmin によるバックアップ</a>」が参考になるでしょう。<br />
+今回はphpMyAdminからMySQLをバックアップしました。</p>
+
+<p>CSSやJSなどをFTPなどでアップしている場合はそのあたりもバックアップしておきます。<br />
+あわせて、MTのアップロード機能でアップした画像や自動生成されたサムネイル画像、プラグインもバックアップが必要です。</p>
+
+<h2>新サーバーを準備してMySQLを用意する</h2>
+
+<p>バックアップより先にやっても良いかもしれませんが、新サーバーにMySQLを用意しましょう。ここで用意するMySQLはver5にしておきます。<br />
+用意したMySQLにバックアップした既存のMySQLをインポートします。</p>
+
+<p>インポートについては「<a href="http://www.koikikukan.com/archives/2006/06/12-005023.php">小粋空間: MySQL + phpMyAdmin によるバックアップ</a>」の２を参考にすれば良いでしょう。</p>
+
+<p>エクスポートしたときとインポートした時のフィールドの数が合っているか確認しておきましょう。時々うまくインポートできない時があるようです。<br />
+また、サーバーによってはインポートするファイルサイズの制限がある場合もあるので確認しておきます。</p>
+
+<h2>新サーバーに既存環境と同じMTをインストール</h2>
+
+<p>新サーバーに既存環境で使っていたMTと同じバージョンのMTをインストールしましょう。<br />
+DBの接続情報を設定するときは上記で作った新しいMySQLの情報を指定するようにします。<br />
+問題なくインストールが終われば、これまでと同じユーザー情報でログインすることが可能になります。</p>
+
+<h2>新サーバーのMTをMT5にバージョンアップする</h2>
+
+<p>新サーバーのMT4で問題なく動くことを確認したら、次はMT5にバージョンアップします。<br />
+MT5のファイル群をアップロードします。<br />
+MT5のmt-config.cgiをMT4のものから移します。<br />
+その際にmt-config.cgiに<br />
+DefaultLanguage ja<br />
+を追加しておきます。</p>
+
+<p>あわせて使用していたプラグインもMT5対応の物にアップしましょう。</p>
+
+<p>MT5側のmt.cgiにアクセスするとMTのバージョンアップがスタートします。<br />
+問題なくアップグレードが終了すればMT5の管理画面にこれまでと同じユーザー情報でログインすることが可能になります。<br />
+バックアップファイルは最初にとってあるので、新サーバー側でうまくいかなかったなどあったら、また最初からやり直してみることも出来ますね。<br />
+ここではまる可能性があるとすれば、ウェブサイトとブログの公開URLなどの設定があるかも知れません。</p>
+
+<p>MySQLをインポートして復元したので、記事内で使用している画像へのリンクなどは既存と同じままになっています。<br />
+新サーバーのテスト環境で問題なく動いていることを確認しましょう。<br />
+このテスト環境で記事を書いたりした場合はアップする画像のリンクなどはテスト環境のリンクになっているはずです。<br />
+このリンク部分は最終的に検索／置換で本番環境のURLに変更します。</p>
+
+<h2>DNSを切り替える</h2>
+
+<p>ここまで完了したらドメインのDNSを切り替えます。ドメインのDNSをきりかえつつ、MT5の公開URLを本番用に切り替えましょう。</p>
+
+<p>これで作業自体は終了です。あとはDNSの切り替えが完了するのを待つだけです。</p>
+
+<p>MT4からMT5へのアップグレードと、サーバー移転をやるのでどうしたらいいか考えてしまうかも知れませんが、上記のような手順でやれば概ね問題なく動くと思います。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_88.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_89.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

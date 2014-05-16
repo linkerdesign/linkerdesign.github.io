@@ -1,0 +1,73 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ectoが記事保存時や起動直後に固まってしまうのを解決する方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ectoが記事保存時や起動直後に固まってしまうのを解決する方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;ectoが記事保存時や起動直後に固まってしまうのを解決する方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+錦織選手が<a href="http://www.atpworldtour.com/Rankings/Singles.aspx">最新のランキングで18位</a>になりましたね。日本人男子最高位をさらに更新してきましたね！<br />
+今後の活躍がさらに楽しみです。&nbsp;&nbsp;</p>
+<p>さて、普段このjournalを更新するのにectoというブログエディタを使っているのですが、ここのところectoを起動して記事を保存する時によく固まってしまってほとほと困っていました。<br />
+解決策を色々しらべてみて、現状同じようにはなっていないので、その方法を一応メモしておこうと思います。</p>
+<p>ちなみに環境としては Mac OS 10.6.8 で ecto 3.0.2 です</p>
+<h2>updateチェックを外す</h2>
+<p>Settings &gt; General &gt; Startup<br />
+のところにある、起動時にupdateをチェックするのを無効にします。</p>
+<p><img src="http://linker.in/journal/images/120213-01.jpg" width="481" height="354" alt="120213-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>起動時にupdateをチェックしにいってるのだけど、何らかの不具合があってupdateの情報を受け取れなくなって固まってしまうとか、そういうのがなくなります。</p>
+<p>自動でチェックしてくれないので時々自分でチェックしないといけないですね。</p>
+<h2>起動時に新規ページを立ち上げない</h2>
+<p>同じ設定のところで、新しいページを開くかどうか？という設定があります。<br />
+この設定で何もしないようにしておきます。</p>
+<p><img src="http://linker.in/journal/images/120213-02.jpg" width="477" height="351" alt="120213-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>多分、新しいページを開いていても問題ないような気がするのですが、起動時に新しいページに書いた物を保存しようとしたときに固まってしまうので、新しいページは起動が完了してから自分で開いた方がよさそうです。</p>
+<h2>キャッシュを消す</h2>
+<p>画像関係のキャッシュが多くて固まる、ということもあるようです。</p>
+<p>ユーザー/hogehoge/ライブラリ/Application Support/ecto 3/cache<br />
+の中身を空にしておきます。</p>
+<p><img src="http://linker.in/journal/images/120213-03.jpg" width="535" height="322" alt="120213-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>このキャッシュを消すことでどの程度効果あったのかは定かじゃないのですが、キャッシュを消してみると解決出来る場合もあるようです。</p>
+<h2>ということで</h2>
+<p>なんだか自分の観測範囲ではMars Editを使う方が増えてきているようですが、個人的にはしばらくectoです。</p>
+<p>同じような悩みにぶつかってしまった人の参考になれば幸いです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/wordpress_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/page2012_kami_labo.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

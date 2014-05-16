@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="overflow:hiddenでfloatがclearできるとかあったりします。個人的にはoverflow自体を滅多に使わないんですが（最近の案件でやむを得ず使ったな・・）挙動がどうなるかイメージできなかったのがあったので少し書いてみました。" />
+<meta name="keywords" content="linker" />
+<meta name="author" content="柳谷 真志" /><link rel="author" href="https://plus.google.com/112387447202401710035" />
+<meta name="copyright" content="linker" />
+<meta name="company" content="linker" />
+<link rel="apple-touch-icon" href="/logo2.png" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta property="fb:app_id" content="107697189262112" />
+<link rel="canonical" href="/journal/2009/04/overflowhidden.php"/>
+<meta property="og:site_name" content="linker"/>
+<meta property="og:title" content="特に用途はないけどoverflow:hiddenの話とか"/>
+<meta property="og:description" content='overflow:hiddenでfloatがclearできるとかあったりします。個人的にはoverflow自体を滅多に使わないんですが（最近の案件でやむを得ず使ったな・・）挙動がどうなるかイメージできなかったのがあったので少し書いてみました。'/>
+<meta property="og:url" content="/journal/2009/04/overflowhidden.php"/>
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/images/logo-og.jpg">
+<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>
+<script type="text/javascript" src="/journal/mt.js"></script>
+<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
+<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
+<title>特に用途はないけどoverflow:hiddenの話とか｜linker journal｜linker</title>
+<!-- favicon -->
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="prev" href="/journal/2009/04/af2009.php" title="「アーティスト・ファイル2009 -現代の作家たち」展にいく" />
+<link rel="next" href="/journal/2009/04/7.php" title="「初心者の方にものを教えるときの7つのポイント」" />
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/styles-site.css" />
+<link rel="stylesheet" title="one-column" type="text/css" href="/css/layout/two-column-right.css" />
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAboveKzPdj4cCY33y_AFXrhTFON1NPSXOuC_9HjyQZ4DJK5Lf2hTCmI5fEJiyfCZRvZW8RAMvV-wVRg"></script>
+<link rel="alternate" type="application/atom+xml" title="linker 更新情報" href="http://feeds2.feedburner.com/linker-news" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6930174-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div class="section" id="container">
+<div id="header" class="pkg">
+    <p id="logo"><a href="/"><img src="/images/logo.gif" alt="linker" width="148" height="53" /></a></p>
+    <ul>
+      <li><a href="/about/"><img src="/images/menu-about.gif" alt="linkerについて" width="111" height="22" class="onimage" /></a></li>
+      <li><a href="/profile/"><img src="/images/menu-profile.gif" alt="3人のプロフィール" width="129" height="22" class="onimage" /></a></li>
+      <li><a href="/works"><img src="/images/menu-works.gif" alt="linkerの実績" width="97" height="22" class="onimage" /></a></li>
+      <li><img src="/images/menu-journal_cur.gif" alt="linker&amp;nbsp;journal" width="104" height="22" /></li>
+      <li><a href="/contact/"><img src="/images/menu-contact.gif" alt="お問い合わせ" width="101" height="22" class="onimage" /></a></li>    </ul>
+</div>
+  <div id="pageheadArea">
+    <p><img src="/images/txt-lead.gif" alt="linkerは「人と人」「人と情報」「人と物」をつなぐデザインユニットです。" width="386" height="21" /></p>
+        <ul id="sitenavi">
+          <li><a href="/">top</a></li><li><a href="/journal/">linker journal</a></li><li>特に用途はないけどoverflow:hiddenの話とか</li>
+        </ul>
+  </div>
+<div id="mainArea" class="pkg">
+  <div id="contentsArea">
+  <div id="entryjournal">
+    <div id="navientry">
+        <span class="navipreviousentry"><a href="/journal/2009/04/af2009.html">前の記事</a></span>｜
+        <span class="navinextentry"><a href="/journal/2009/04/7.html">次の記事</a></span>
+      </div>
+      <h1>特に用途はないけどoverflow:hiddenの話とか</h1>
+      <div class="entrymeta pkg">
+      <span class="entrydate">2009年04月23日</span>
+      <span class="entrycategory"><a href="/journal/xhtmlcss/">HTML/CSS/JavaScript</a></span>
+      <span class="entryauthor"><img src="/images/img-mersy-thumb16.jpg" alt="柳谷 真志" /><a href="/journal/author/mersy/">柳谷 真志</a></span>
+      </div>
+      <div class="entrymain">
+      <p>みなさん、こんにちは！まーしーです。<br />
+本日免許更新したんですが前回の更新をすっぽかしてしまったため次の更新もまた3年後。<br />
+ゴールドへの道は遠いです。。</p>
+<p>前回もとくに使えない話をしてしまったのですが、今日も特に使えなそうです・・・<br />
+個人的に気になったことを書いてみようかな、と思います。<br />
+ネタ元は先日お手伝いさせてもらった新人研修です。Ｔさんありがとう。<br />
+頭が柔らかいってすばらしいですね！！</p>
+<h2>まずゴール</h2>
+<p>とりあえず、今回作りたいものっていうのが</p>
+<p><img src="/journal/images/sample00.jpg" width="550" height="545" alt="sample00.jpg" /></p>
+<p>こんなかんじのデザインだとします。メニュー部分はul , li でfloatで作ってあります。<br />
+（プレビューでPNGをjpgにしたらかなりにじんでるな・・・）</p>
+<p><a href="/journal/2009/04/23/090423-00.html">demoはこちら</a>（以下、Firefoxでのみ確認してます）</p>
+<p>HTML（抜粋）は</p>
+<pre class="brush:xml">
+<div id="wrapper">
+  <h1>サンプル１</h1>
+  <ul>
+    <li><a href="#">ああああ</a></li>
+    <li><a href="#">ああああ</a></li>
+  </ul>
+  <div id="maincontent">
+    <p>サンプル原稿１サンプル原稿２サンプル原稿３サンプル原稿４サンプル原稿５サンプル原稿６サンプル原稿７サンプル原稿８サンプル原稿９サンプル原稿１０サンプル原稿１１サンプル原稿１２サンプル原稿１３サンプル原稿１４サンプル原稿１５サンプル原稿１６サンプル原稿１７サンプル原稿１８サンプル原稿１９サンプル原稿２０</p>
+  </div>
+  <div id="subcontent">
+    <p>次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落</p>
+    <p>次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落次の段落</p>
+  </div>
+</div>
+</pre>
+<p>なかんじで、CSS（抜粋）は</p>
+<pre class="brush:css">
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+ul li{
+	margin:0;
+	padding:0;
+	width:120px;
+	text-align:center;
+	float:left;
+	border:1px solid #111;
+}
+ul li a{
+	display:block;
+}
+ul li a:hover{
+	background:#CCCCFF;
+}
+#maincontent{
+	clear:both;
+	background:red;
+}
+</pre>
+<p>となりますね。<br />
+#maincontentの clear:both; で全てが解決するので、普通の場合はそういうことで完了です。</p>
+<h2>clear:both; の代わりに overflow:hidden;</h2>
+<p>clear:both;がなかったらどうなるか？はおわかりだと思いますが、<br />
+その代わりにoverflow:hidden;がついてたらどうなるかと思います？&nbsp;&nbsp;</p>
+<p><img src="/journal/images/sample01.jpg" width="546" height="639" alt="sample01.jpg" /></p>
+<p>こんな感じになるんですよね。<br />
+回り込みを解除してないのでまず回り込んで、div#maincontentがそこの幅になるようです。<br />
+width: auto;ということで。<br />
+ほ〜、ってなかんじです。</p>
+<p>cssはこんな感じですね。</p>
+<pre class="brush:css">
+#maincontent{
+        background:red;
+        overflow:hidden;
+}
+</pre>
+<p><a href="/journal/2009/04/23/090423-01.html">demoはこちら</a></p>
+<p>これってのは結局div#maincontentの幅が ul の右の余白サイズより小さい場合とほぼ同じですね。</p>
+<p><br />
+<img src="/journal/images/sample02.jpg" width="546" height="662" alt="sample02.jpg" /></p>
+<p>おおむね、同じですね。<br />
+cssはこんな感じです。</p>
+<pre class="brush:css">
+#maincontent{
+        width:230px;
+        background:red;
+        overflow:hidden;
+}
+</pre>
+<p><a href="/journal/2009/04/23/090423-02.html">demoはこちら。</a></p>
+<p>なるほどなるほど、っていうかんじです。</p>
+<h2>開始位置次第</h2>
+<p>なんとなく開始位置次第っぽい、ということなので div#maincontent に margin-top が指定されてれば？というと</p>
+<p><img src="/journal/images/sample03.jpg" width="547" height="554" alt="sample03.jpg" /></p>
+<p>こうなりますね。幅全部に揃うことになるので自動的に広がりますよね。</p>
+<p>cssはこんな感じ。</p>
+<pre class="brush:css">
+#maincontent{
+        margin-top:4em;
+        background:red;
+        overflow:hidden;
+}
+</pre>
+<p><a href="/journal/2009/04/23/090423-03.html">demoはこちら</a></p>
+<p>ということで、overflow:hidden をつかうとこういう動きになるんだ〜、という感じだったので書いてみました。</p>
+<h2>前回のもoverflow:hiddenでいけるかも</h2>
+<p>とやりながら思ったのが、<a href="/journal/2009/04/dldtdd.php">前回</a>のなかで最後のものがoverflow:hidden; でいけるのかも？とおもったのでやってみたところ、こんな感じです。</p>
+<p><img src="/journal/images/sample04.jpg" width="410" height="245" alt="sample04.jpg" /></p>
+<p>HTMLはこんなかんじ</p>
+<pre class="brush:xml">
+<dl>
+  <dt>あいうえお</dt>
+  <dd>あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお</dd>
+  <dt>あいうえおあいうえお</dt>
+  <dd>あいうえおあいうえおあいうえおあいうえお</dd>
+  <dt>あいうえおあい</dt>
+  <dd>あいうえお</dd>
+</dl>
+</pre>
+<p>CSSはこんな感じ</p>
+<pre class="brush:css">
+dl{
+        width:400px;
+}
+dt{
+        margin-bottom:0.5em;
+        float:left;
+        margin-right:10px;
+}
+dd{
+        border-left:2px solid #376122;
+        padding-left:10px;
+        margin-bottom:0.5em;
+        overflow:hidden;
+}
+</pre>
+<p><a href="/journal/2009/04/23/090423-04.html">demoはこちら</a></p>
+<p>ということです。</p>
+<p>これがわかったから、なんなんだ？というのがあったりもしますが、<br />
+最初これに出会ったときに「なんでだろうな？」とおもったりもしたので書いてみました。</p>
+<p>今回は<a href="http://withd.jp/web/trend/020207/4115.html">「overflowが好き」といってたtaku-workさんの件</a>とは関係ありません（笑</p>
+<h2>参考リンク</h2>
+<ul>
+  <li>overflow:hiddenでfloatをclear - とその理由 | Takazudo Clipping*<br />
+  <a href="http://gyauza.egoism.jp/clip/archives/2007/06/070602-overflow-hidden-clear/">http://gyauza.egoism.jp/clip/archives/2007/06/070602-overflow-hidden-clear/</a>&nbsp;&nbsp;</li>
+  <li>包容要素にoverflow:hidden;を使う際の注意点メモ - Rewish<br />
+  <a href="http://rewish.org/xhtml_css/link_hidden">http://rewish.org/xhtml_css/link_hidden</a></li>
+  <li>overflowをhiddenにしてレイアウトをクリアしようよ！ - tukihatuの技術日記<br />
+  <a href="http://d.hatena.ne.jp/tukihatu/20090312/1236825400">http://d.hatena.ne.jp/tukihatu/20090312/1236825400</a>&nbsp;&nbsp;</li>
+  <li>鰯のテクニカルノート: IEで overflow: hidden と、 position: relative。<br />
+  <a href="http://104tech.blogspot.com/2007/08/ie-overflow-hidden-position-relative.html">http://104tech.blogspot.com/2007/08/ie-overflow-hidden-position-relative.html</a>&nbsp;&nbsp;</li>
+</ul>
+      </div>
+      <div class="entrymetafoot pkg">
+      <p class="entrydate"><span>2009年04月23日</span></p>
+<fb:like href="http%3A%2F%2Flinker.in%2Fjournal%2F2009%2F04%2Foverflowhidden.php" layout="standard" show_faces="false"></fb:like></p>
+</div>
+<div id="entrynavifoot">
+      <p id="entrypreviousfoot"><a href="/journal/2009/04/af2009.html">「アーティスト・ファイル2009 -現代の作家たち」展にいく</a></p>
+        <p id="entrynextfoot"><a href="/journal/2009/04/7.html">「初心者の方にものを教えるときの7つのポイント」</a></p>
+      </div>
+    </div><!-- /#entryjournal -->
+  </div><!-- /id="contentsArea" -->
+<div id="menuArea">
+<div class="menu">
+<h2><img src="/images/menutit-category.gif" alt="Category カテゴリーアーカイブ" width="102" height="30" /></h2>
+<ul>
+<li><a href="/journal/cat45/">アート</a></li>
+<li><a href="/journal/design/">デザイン</a></li>
+<li><a href="/journal/xhtmlcss/">HTML/CSS/JavaScript</a></li>
+<li><a href="/journal/movabletype/">Movable Type</a></li>
+<li><a href="/journal/tips/">Tips</a></li>
+<li><a href="/journal/review/">レビュー</a></li>
+<li><a href="/journal/workstyle/">ワークスタイル</a></li>
+<li><a href="/journal/event/">イベント</a></li>
+<li><a href="/journal/cms/">その他CMS全般</a></li>
+<li><a href="/journal/casestudy/">ケーススタディ</a></li>
+<li><a href="/journal/direction/">ディレクション</a></li>
+<li><a href="/journal/mobile/">モバイル</a></li>
+<li><a href="/journal/podcast/">こんぶだしmeeting</a></li>
+<li><a href="/journal/other/">その他</a></li>
+</ul>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-archives.gif" alt="Archives 月別アーカイブ" width="81" height="30" /></h2>
+<select onchange="location.href=this.options[this.selectedIndex].value">
+<option value="/journal/2013/05/">2013年5月</option>
+<option value="/journal/2013/03/">2013年3月</option>
+<option value="/journal/2013/02/">2013年2月</option>
+<option value="/journal/2013/01/">2013年1月</option>
+<option value="/journal/2012/12/">2012年12月</option>
+<option value="/journal/2012/11/">2012年11月</option>
+<option value="/journal/2012/10/">2012年10月</option>
+<option value="/journal/2012/09/">2012年9月</option>
+<option value="/journal/2012/08/">2012年8月</option>
+<option value="/journal/2012/07/">2012年7月</option>
+<option value="/journal/2012/06/">2012年6月</option>
+<option value="/journal/2012/05/">2012年5月</option>
+<option value="/journal/2012/04/">2012年4月</option>
+<option value="/journal/2012/03/">2012年3月</option>
+<option value="/journal/2012/02/">2012年2月</option>
+<option value="/journal/2012/01/">2012年1月</option>
+<option value="/journal/2011/12/">2011年12月</option>
+<option value="/journal/2011/11/">2011年11月</option>
+<option value="/journal/2011/10/">2011年10月</option>
+<option value="/journal/2011/09/">2011年9月</option>
+<option value="/journal/2011/08/">2011年8月</option>
+<option value="/journal/2011/07/">2011年7月</option>
+<option value="/journal/2011/06/">2011年6月</option>
+<option value="/journal/2011/05/">2011年5月</option>
+<option value="/journal/2011/04/">2011年4月</option>
+<option value="/journal/2011/03/">2011年3月</option>
+<option value="/journal/2011/02/">2011年2月</option>
+<option value="/journal/2011/01/">2011年1月</option>
+<option value="/journal/2010/12/">2010年12月</option>
+<option value="/journal/2010/11/">2010年11月</option>
+<option value="/journal/2010/10/">2010年10月</option>
+<option value="/journal/2010/09/">2010年9月</option>
+<option value="/journal/2010/08/">2010年8月</option>
+<option value="/journal/2010/07/">2010年7月</option>
+<option value="/journal/2010/06/">2010年6月</option>
+<option value="/journal/2010/05/">2010年5月</option>
+<option value="/journal/2010/04/">2010年4月</option>
+<option value="/journal/2010/03/">2010年3月</option>
+<option value="/journal/2010/02/">2010年2月</option>
+<option value="/journal/2010/01/">2010年1月</option>
+<option value="/journal/2009/12/">2009年12月</option>
+<option value="/journal/2009/11/">2009年11月</option>
+<option value="/journal/2009/10/">2009年10月</option>
+<option value="/journal/2009/09/">2009年9月</option>
+<option value="/journal/2009/08/">2009年8月</option>
+<option value="/journal/2009/07/">2009年7月</option>
+<option value="/journal/2009/06/">2009年6月</option>
+<option value="/journal/2009/05/">2009年5月</option>
+<option value="/journal/2009/04/">2009年4月</option>
+<option value="/journal/2009/03/">2009年3月</option>
+<option value="/journal/2009/02/">2009年2月</option>
+<option value="/journal/2009/01/">2009年1月</option>
+</select>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-author.gif" alt="Author 執筆者別アーカイブ" width="101" height="30" /></h2>
+<ul id="menu-authorlist">
+  <li id="crema"><a href="/journal/author/crema/"><span>黒野 明子</span></a></li>
+  <li id="taku-work"><a href="/journal/author/taku-work/"><span>秋野 琢</span></a></li>
+  <li id="mersy"><a href="/journal/author/mersy/"><span>柳谷 真志</span></a></li>
+</ul>
+</div>
+<!-- /id="menuArea" -->
+</div>
+<script type="text/javascript">
+jQuery(function($){
+$("iframe.twitter-share-button").css("vertical-align","bottom");
+});
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<!-- id="mainArea" -->
+</div>
+<div id="footerArea">
+<div class="section pkg" id="footer">
+<p class="contact"><a href="/contact/"><img src="/images/img-footer-contact.gif" alt="お問い合わせ" width="153" height="74" class="onimage" /></a></p>
+  <ul id="footernavi">
+    <li id="footernavitop"><a href="/">トップページ</a></li>
+      <li><a href="/about/">linkerについて</a></li>
+      <li><a href="/profile/">3人のプロフィール</a></li>
+      <li><a href="/works/">linkerの実績</a></li>
+      <li><a href="/journal/">linker journal</a></li>
+    </ul>
+<address>copyright &copy; 2008-2014 linker all rights reserved.</address>
+  <!-- id="footer" -->
+  </div>
+</div>
+<!-- id="container" -->
+</div>
+<script type="text/javascript" src="/js/function.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = '/js/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+</body>
+</html>
+

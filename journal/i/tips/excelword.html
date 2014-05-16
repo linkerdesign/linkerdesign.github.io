@@ -1,0 +1,141 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ExcelとWordで宛名シールを作成してみた。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ExcelとWordで宛名シールを作成してみた。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;ExcelとWordで宛名シールを作成してみた。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-001.jpg" src="http://linker.in/journal/images/20100105-001.jpg" width="600" height="195" class="mt-image-none" style="" /></span></p>
+
+<p>火曜／金曜担当の@cremaです。昨日より通常営業モードになっております。</p>
+
+<p>皆さまからお年賀状を頂戴しまして、誠にありがとうございました。</p>
+
+<p>linkerの方も<a href="http://linker.in/journal/2010/01/post-73.php">このような年賀状</a>を作ってお送りしたのですが、住所シール作成を手元にあるソフトだけでできてしまったので、来年のメモがわりに書いておこうと思います（<a href="http://twitter.com/threepennie/status/6956354894">ネタ元の@threepennieさんに感謝</a>）。</p>
+
+<p>既にご存知の方も多いでしょうし、私が使ったのはWord2003なので、2007の方だとちょっと違うかもしれませんし、色々すみません（と事前にお詫びしておきます）。</p>
+
+<p>それでは、作業スタート。</p>
+
+<h2>Excelで住所録を作成する</h2>
+
+<p>まずは、昨年お会いした方々の名刺をデータ化します。</p>
+
+<p>名刺データ化サービスも世の中には沢山あったので（<a href="http://www.bcreate-outsourcing.com/meishi/index.html">これ</a>とか<a href="http://maysee.jp/">これ</a>とか）、外注してもよかったのですが、諸事情があって自分たちで入力してみました。</p>
+
+<ul>
+	<li>郵便番号</li>
+	<li>住所</li>
+	<li>会社名</li>
+	<li>部署名</li>
+	<li>名前</li>
+</ul>
+
+<p>というように、項目ごとに入力しておきます。（キャプチャのデータはダミーですのでご安心を）<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-002.jpg" src="http://linker.in/journal/images/20100105-002.jpg" width="600" height="221" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<h2>Wordでひな形を作る</h2>
+
+<p>Wordを起動して、新規文書を作ったら［ツール→はがきと差し込み印刷→差し込み印刷］を選択します。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-003.jpg" src="http://linker.in/journal/images/20100105-003.jpg" width="488" height="324" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>右側の「文書の種類を選択」で「ラベル」を選びます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-004.jpg" src="http://linker.in/journal/images/20100105-004.jpg" width="251" height="298" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>下部の「次へ：ひな型の選択」をクリックします。</p>
+
+<p>「文書レイアウトの変更」を選択し、「ラベルオプション」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-005.jpg" src="http://linker.in/journal/images/20100105-005.jpg" width="251" height="298" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>ここで、自分が買ってきたラベルのメーカー名を選択し、型番を選びます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-006.jpg" src="http://linker.in/journal/images/20100105-006.jpg" width="442" height="303" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>下部の「次へ：宛先の選択」をクリックします。</p>
+
+<p>「既存のリストを使用」を選択し、「参照...」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-007.jpg" src="http://linker.in/journal/images/20100105-007.jpg" width="251" height="298" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>ここで、さきほど作ったExcelデータを選択します。</p>
+
+<p>複数シートがある場合には「表の選択」を促されますので、自分がデータを入力したシートを選び、OKをクリックします。（先程のデータは、1行目を見出しにしていたので「先頭行をタイトル行として使用する」にチェックを入れておきます。こうするとラベル印刷の対象外になります）<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-008.jpg" src="http://linker.in/journal/images/20100105-008.jpg" width="497" height="224" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>「差し込み印刷の宛先」とウィンドウにて、印刷するデータの選択や並べかえをするように言われますが、特にしない場合は「OK」をクリック。</p>
+
+<p>そして右下の「次へ：ラベルの配置」をクリックします。</p>
+
+<p>「差し込みフィールドの挿入...」をクリック。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-009.jpg" src="http://linker.in/journal/images/20100105-009.jpg" width="251" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>「データベースフィールド」にチェックが入ったままで、挿入する情報を順番にダブルクリックしていきます。（ここでは、郵便番号→住所→会社名→部署名→名前の順番）<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-010.jpg" src="http://linker.in/journal/images/20100105-010.jpg" width="439" height="339" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>終わったら「閉じる」をクリック。</p>
+
+<p>適宜改行し、&laquo;名前&raquo;の後ろに「様」と入れておきます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-011.jpg" src="http://linker.in/journal/images/20100105-011.jpg" width="297" height="199" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>書体を変えたい場合は、全てを選択し、［書式→フォント］で使いたい書体を選びます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-011-002.jpg" src="http://linker.in/journal/images/20100105-011-002.jpg" width="600" height="447" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>行間が変わってしまって困る場合は、［書式→段落］で、調整しておきます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-011-003.jpg" src="http://linker.in/journal/images/20100105-011-003.jpg" width="600" height="447" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<h2>入力データを反映させる</h2>
+
+<p>前の手順で基本のレイアウトがOKであれば、右側の「すべてのラベルを更新」をクリックします。これで、全てのラベルに同じレイアウトが反映されます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-012.jpg" src="http://linker.in/journal/images/20100105-012.jpg" width="251" height="233" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>下部の「次へ：ラベルのプレビュー表示」をクリックします。</p>
+
+<p>Excelのデータが、全て同じ体裁で反映されます。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-013.jpg" src="http://linker.in/journal/images/20100105-013.jpg" width="600" height="403" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>「次へ：差し込み印刷の完了」をクリックし、「印刷...」をクリック。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="20100105-014.jpg" src="http://linker.in/journal/images/20100105-014.jpg" width="251" height="290" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>「プリンタに差し込み」で「すべて」にチェックが付いた状態で「OK」をクリック。</p>
+
+<p>あとはプリンタにセットしたラベル用紙に印刷するだけです。</p>
+
+<p>来年の私にこの記事が役に立ちますように。<br />
+</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/mobile/mobifyiphone.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/iphonepastebotmy.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>サーバーの容量が一杯になるとMovable Typeで再構築できなくなりサイトは真っ白に。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>サーバーの容量が一杯になるとMovable Typeで再構築できなくなりサイトは真っ白に。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;サーバーの容量が一杯になるとMovable Typeで再構築できなくなりサイトは真っ白に。</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+久しぶりにテニスの大会に出ました。普段やっていることを全くやれずに結果は散々な感じに。。。<br />
+楽しくやるのもいいですが緊張感のある中でもやらないといけないな〜、と思いました。</p>
+<p>さて、先日お客様からサイトが真っ白になってしまって見れなくなってしまった、という連絡を受けました。</p>
+<p>そのサイトはMT4で構築されていて、特に何もやっていないのだけど真っ白になった、ということでこちらで情報を集めたりしていました。<br />
+あわせて、MTの画像ってどんな形式でもアップできるんですよね？というのも聞かれました。</p>
+<p>この時に気づけば良かったのですが、サイトを見てみると言われたとおり真っ白。<br />
+はてこれはどうしたんだろう？？<br />
+どっかがエラーなのか？<br />
+とか思いつつ、違うところを再構築してみたらそっちも真っ白に。<br /></p>
+<p>あれ、なんでだろうなー、、、、とおもってFTPで直接ファイルをみてみたらファイルは出来てるけど0kbになってる。<br />
+（変な汗もかき始める・・）</p>
+<p>なんだかおかしいことになってるな〜、ということでMTのログをみてみたら</p>
+<blockquote>
+  <p><span>公開中にエラーが発生しました: パス('/home/************')を作成できません: mkdir /home/</span>************<span>: Disk quota exceeded at lib/MT/FileMgr/Local.pm line 107</span></p>
+</blockquote>
+<p><span>なんて書いてありました。</span></p>
+<p><span>なるほど、サーバーが一杯になっちゃうとそういうことになるのか、というのを知りました。</span></p>
+<p><span>その後はなんでサーバーが一杯になってるのか、という調査をしてそれを解決させたら再構築で問題無くサイトが表示されました。</span></p>
+<p>アップロードする画像の話をしたときは、エラーの詳細まで聞いていませんでした。<br />
+ファイル形式が問題無ければアップ出来るので、そこまで深く確認はしなかったのですが、その時点で既に一杯になっていたからアップできなかったんでしょうね。<br />
+ここの当たりをちゃんと聞けばもっと早く原因がわかったのになぁ、と反省です。</p>
+<p><span>最近はサーバーの容量自体はかなり多いですし、一杯になることに遭遇するのは少ないのですが、再構築したらサイトが真っ白になってしまった、という時の原因の1つにはこういうこともあるかもしれませんね。</span></p>
+<p><span>サーバーによるのかもしれませんが、個人的なメモでした。</span></p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/d47_musiumnippon_design_travel_47.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/womans_web_fes.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

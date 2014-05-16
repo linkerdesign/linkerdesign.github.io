@@ -1,0 +1,105 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「ifttt」を使ってプログラムを書かずにWebサービスを連携させてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>「ifttt」を使ってプログラムを書かずにWebサービスを連携させてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;「ifttt」を使ってプログラムを書かずにWebサービスを連携させてみる</p>
+
+<p><img src="http://linker.in/journal/images/110922-01.jpg" width="600" height="220" alt="110922-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+日本は台風が通過しているようですが、お住まいの所は大丈夫だったでしょうか？？<br />
+今年は災害が多い様な気がするのは気のせいでしょうか。。。</p>
+<p>先日、<a href="http://www.pressa.jp/magazine/index.html">佐々木俊尚さん</a>のTwitterでみかけた<a href="http://ifttt.com/">ifttt</a>ですがなかなか便利ですね。</p>
+<blockquote>
+  <p>ifttt<br />
+  <a href="http://ifttt.com/">http://ifttt.com/</a></p>
+</blockquote>
+<p>「if this then that」ということでトリガーとアクションを紐づけてあげれば自動で色々なことが出来そうです。<br />
+かなり便利そうなサービスです。</p>
+<h2>トリガーを選択</h2>
+<p>いくつかのWebサービスの中からトリガーを選択します。</p>
+<p><img src="http://linker.in/journal/images/110922-02.jpg" width="600" height="412" alt="110922-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h3>WebサービスとしてTwitterを選んだ場合のトリガー</h3>
+<p><img src="http://linker.in/journal/images/110922-03.jpg" width="600" height="398" alt="110922-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>特定のTweetをEvernoteに転記するサンプル</h2>
+<p>たとえば自分のTweetの中でメモ代わりのものをEvernoteにポストしておくといったものを作ってみます。</p>
+<p>上記のTwitterのトリガーから「New tweet by you with hashtag」を選択します。<br />
+例えば#memoが付いているものとしてみましょう。</p>
+<p><img src="http://linker.in/journal/images/110922-04.jpg" width="555" height="324" alt="110922-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでTriggerの選択が終わりです。</p>
+<p>続いて「that」をクリックしてアクションを指定します。</p>
+<p><img src="http://linker.in/journal/images/110922-05.jpg" width="590" height="240" alt="110922-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h3>Evernoteを選択</h3>
+<p>今回はEvernoteにノートを作成します。<br /></p>
+<p><img src="http://linker.in/journal/images/110922-06.jpg" width="600" height="396" alt="110922-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h3>Activateする</h3>
+<p>Evernoteを選択するとアカウントをActivateする必要があります。</p>
+<p><img src="http://linker.in/journal/images/110922-07.jpg" width="565" height="179" alt="110922-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h3>Actionを選択</h3>
+<p>Evernoteで行うActionを選択します。<br />
+今回はノートを作成します。</p>
+<p><img src="http://linker.in/journal/images/110922-08.jpg" width="600" height="286" alt="110922-08.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h3>ノート設定</h3>
+<p>作成するノートの設定です。</p>
+<p><img src="http://linker.in/journal/images/110922-09.jpg" width="600" height="381" alt="110922-09.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ノートのタイトル、本文、ノートブックを指定します。</p>
+<p>右にあるプルダウンメニューからどういう物を挿入するかも選択出来ます。</p>
+<h3>作成完了</h3>
+<p>作成が完了したら名前を付けて保存しておきます。</p>
+<p><img src="http://linker.in/journal/images/110922-10.jpg" width="520" height="398" alt="110922-10.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Task一覧の中ではこのように表示されています。</p>
+<p><img src="http://linker.in/journal/images/110922-11.jpg" width="599" height="154" alt="110922-11.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h3>Evernoteのサンプル</h3>
+<p>Evernoteには個のような感じで保存されています。</p>
+<p><img src="http://linker.in/journal/images/110922-12.jpg" width="575" height="341" alt="110922-12.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>レシピもあります</h2>
+<p>作ったTaskはレシピとして登録することが可能です。</p>
+<p>他の人が作ったレシピも見ることが出来ますね。</p>
+<p><img src="http://linker.in/journal/images/110922-13.jpg" width="600" height="393" alt="110922-13.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>ということで</h2>
+<p>このサービスを使えば色々なことが出来てしまいそうです。<br />
+ここであげたサンプル以外にもブログに投稿があった場合にFacebookページに流すとか、Twitterに流すとかを作ってみました。<br />
+組み合わせ次第ではかなりのことができそうですね。</p>
+<p>Twitterを検索してごにょごにょするとか、そういったものを作ろうと思うとプログラムを書くなどが必要な気がします。<br />
+プログラムを書ける人にとってはこれまでも出来ていたことなのかもしれませんが、そういったことを簡単に実現できるこのサービスはこれからも色々使ってみたいです。</p>
+<p>サービス同士を連携させてやってみたいことがあっても実現方法がわからないとかいう場合に試してみてはどうでしょうか？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/xhtmlcss/compass_sass_scout.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/swapskillsdoubbble.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

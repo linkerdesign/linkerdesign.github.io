@@ -1,0 +1,115 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>条件分岐の方法をDreamweaverとMovable Typeで比べてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>条件分岐の方法をDreamweaverとMovable Typeで比べてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;条件分岐の方法をDreamweaverとMovable Typeで比べてみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+東京近郊の方はこの週末はいいお花見日和だったんじゃないでしょうか？</p>
+
+<p>最近の仕事ではCMSを使う事が多いので、条件分岐はCMSのタグなどを使って行うことが多いのですが、CMSを使わないWebサイト制作もあります。<br />
+MTもDreamweaverもがしがし使ってる方にとっては当たり前すぎることかもしれませんが、この条件分岐についてDreamweaverを使った場合と並べてみようかと思います。</p>
+
+<p>今回はカテゴリに応じて表示を変える方法をみてみましょう。</p>
+
+<h2>サンプルソース</h2>
+
+<p>ではサンプルソースを見てみます。<br />
+ナビゲーションがあって当該カテゴリの時の表示を変えるためにクラスを振る場合を想定してみます。</p>
+
+<pre class="brush:xml">
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/catA/&quot;&gt;CategoryA&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/catB/&quot;&gt;CategoryB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/catC/&quot;&gt;CategoryC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/catD/&quot;&gt;CategoryD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p>こういうリストがあったときにli要素にclass="cur"を振るということにしてみましょう。</p>
+
+<h2>MTの場合</h2>
+
+<p>MTの場合、使うテンプレートによっても微妙に違いますが、ブログ記事だと１例としては</p>
+
+<pre class="brush:xml">
+&lt;MTSetVarBlock name=&quot;bodyID&quot;&gt;&lt;MTEntryCategories&gt;Cat&lt;$MTCategoryBasename$&gt;&lt;/MTEntryCategories&gt;&lt;/MTSetVarBlock&gt;
+&lt;MTCategories&gt;
+&lt;MTSetVarBlock name=&quot;catID&quot;&gt;Cat&lt;$MTCategoryBasename$&gt;&lt;/MTSetVarBlock&gt;
+&lt;li&lt;MTIf name=&quot;bodyID&quot; eq=&quot;$catID&quot;&gt; class=&quot;cur&quot;&lt;/MTIf&gt;&gt;&lt;a href=&quot;&lt;$MTCategoryArchiveLink$&gt;&quot;&gt;&lt;$MTCategoryLabel$&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/MTCategories&gt;
+</pre>
+
+<p>こんな感じですね。<br />
+続いてDreamweaverの場合を見てみます。</p>
+
+<h2>Dreamweaverの場合</h2>
+
+<p>Dreamweaverの場合、テンプレート（.dwt）に</p>
+
+<pre class="brush:xml">
+&lt;!-- TemplateParam name=&quot;category&quot; type=&quot;text&quot; value=&quot;&quot; --&gt;
+</pre>
+
+<p>というソースを書くことでcategoryを指定することが可能になります。（categoryは好きな変数名でOKです）<br />
+この記述が書かれたテンプレートを適用したHTMLファイルでは<br />
+「修正」→「テンプレートプロパティ」<br />
+といくことで</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/100405-01.jpg"><img alt="100405-01.jpg" src="http://linker.in/journal/assets_c/2010/04/100405-01-thumb-500x366-1747.jpg" width="500" height="366" class="mt-image-none" style="" /></a></span></p>
+
+<p>このような感じでカテゴリを指定することが可能です。<br />
+テンプレートに書かれているリスト部分は</p>
+
+<pre class="brush:xml">
+&lt;ul&gt;
+&lt;li&lt;!-- TemplateBeginIf cond=&quot;category==&#039;catA&#039;&quot; --&gt; class=&quot;cur&quot;&lt;!-- TemplateEndIf --&gt;&gt;&lt;a href=&quot;/catA/&quot;&gt;CategoryA&lt;/a&gt;&lt;/li&gt;
+&lt;li&lt;!-- TemplateBeginIf cond=&quot;category==&#039;catB&#039;&quot; --&gt; class=&quot;cur&quot;&lt;!-- TemplateEndIf --&gt;&gt;&lt;a href=&quot;/catB/&quot;&gt;CategoryB&lt;/a&gt;&lt;/li&gt;
+&lt;li&lt;!-- TemplateBeginIf cond=&quot;category==&#039;catC&#039;&quot; --&gt; class=&quot;cur&quot;&lt;!-- TemplateEndIf --&gt;&gt;&lt;a href=&quot;/catC/&quot;&gt;CategoryC&lt;/a&gt;&lt;/li&gt;
+&lt;li&lt;!-- TemplateBeginIf cond=&quot;category==&#039;catD&#039;&quot; --&gt; class=&quot;cur&quot;&lt;!-- TemplateEndIf --&gt;&gt;&lt;a href=&quot;/catD/&quot;&gt;CategoryD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p>このような感じでかくことで、変数categoryの値と同じかどうかを判定して表示させるかどうかを切り替えます。</p>
+
+<p>このようにやることで同様の効果がMTでもDreamweaverでも出来ますね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/_lifeworks-projects.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/movie-books.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

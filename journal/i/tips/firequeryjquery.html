@@ -1,0 +1,91 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>FireQueryでjQuery開発も楽々！｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>FireQueryでjQuery開発も楽々！</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;FireQueryでjQuery開発も楽々！</p>
+
+<p><img src="http://linker.in/journal/images/090709.gif" width="600" height="200" alt="090709.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+<a href="http://www.sixapart.jp/press_releases/2009/07/08-1330.html">MT5についての発表がありましたね</a>。来月にはβらしいです。</p>
+<p>先日<a href="http://h2ham.seesaa.net/">ハムさん</a>にFirequeryを教えてもらったのがすごく便利でした。<br />
+ハムさんは札幌で勉強会を色々企画されたりしてます。その向上心を見習って頑張らないとなぁ。<br />
+FireQuery自体は</p>
+<blockquote>
+  <p>MOONGIFT: ? jQueryを使った開発に便利！Firebug + jQuery「FireQuery」:オープンソースを毎日紹介<br />
+  <a href="http://www.moongift.jp/2009/06/firequery/">http://www.moongift.jp/2009/06/firequery/</a><br /></p>
+</blockquote>
+<p>とかで紹介されていてブックマークしていたのですが、いまいち使い方がわからずどうしたものかな？というレベルでした。<br />
+Firequeryがわからない、というよりもFirebugを全然わかっていないんだと思います。<br />
+skypeで色々教えてもらいながら試してたら「これ、すげぇ！」と思ったので今日はその話でも。<br />jQuery勉強中の身ですのでそれを前提に読んでいただければと思います。</p>
+<h2>FireQueryのインストール</h2>
+<p>FireQueryのインストールはこちらから。</p>
+<blockquote>
+  <p>FireQuery :: Add-ons for Firefox<br />
+  <a href="https://addons.mozilla.org/en-US/firefox/addon/12632">https://addons.mozilla.org/en-US/firefox/addon/12632</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>Firebugを起動してコンソールタブを開くとこんな感じになってるかもしれません。</p>
+<p><a href="http://linker.in/journal/images/090709-01.gif"><img src="http://linker.in/journal/090709-01-tm.gif" width="600" height="225" alt="090709-01.gif" /></a><br /></p>
+<p>コンソールとスクリプトが使用できないと使えないので使えるようにチェックを入れて「××で選択された機能を有効にします」をクリックして有効化します。</p>
+<p>コマンドラインパッドが表示されていない場合は表示させます。上にある「オプション＞コマンドラインパッドを表示」をクリックするか下のアイコンをクリックして表示させます。</p>
+<p><a href="http://linker.in/journal/images/090709-02.gif"><img src="http://linker.in/journal/090709-02-tm.gif" width="600" height="421" alt="090709-02.gif" /></a></p>
+<p>これで準備完了です。</p>
+<p>コマンドラインパッドに入力して、実行をクリックすると結果がコンソールに反映されます。<br />
+そのサイトにjQueryが読み込まれてるかどうかで表示される結果が変わってきます。</p>
+<p>▼jQueryが読み込まれているサイト</p>
+<p><a href="http://linker.in/journal/images/090709-03.gif"><img src="http://linker.in/journal/090709-03-tm.gif" width="600" height="418" alt="090709-03.gif" /></a></p>
+<p>▼jQueryが読み込まれていないサイト<br /></p>
+<p><a href="http://linker.in/journal/images/090709-04.gif"><img src="http://linker.in/journal/090709-04-tm.gif" width="600" height="420" alt="090709-04.gif" /></a></p>
+<p>console.logを書く必要はないようです。</p>
+<p>jQueryが読み込まれていないサイトではjQuerifyをクリックしてjQueryが使えるようにします</p>
+<p><a href="http://linker.in/journal/images/090709-08.gif"><img src="http://linker.in/journal/090709-08-tm.gif" width="600" height="387" alt="090709-08.gif" /></a></p>
+<p>使えるようになると一瞬ですがこのように表示されます<br /></p>
+<p><a href="http://linker.in/journal/images/090709-06.gif"><img src="http://linker.in/journal/090709-06-tm.gif" width="600" height="186" alt="090709-06.gif" style="border:2px #808080 solid;" /></a></p>
+<p>使えるようになると表示される結果も当然変わります。</p>
+<p><a href="http://linker.in/journal/images/090709-05.gif"><img src="http://linker.in/journal/090709-05-tm.gif" width="600" height="420" alt="090709-05.gif" /></a></p>
+<p>あとはjQueryを書いて色々試していきましょう。</p>
+<p>$('div.entrymeta').html("&lt;span &gt;Hello Again&lt;/span&gt;")<br /></p>
+<p>を書くとこんな感じになります。</p>
+<p><a href="http://linker.in/journal/images/090709-07.gif"><img src="http://linker.in/journal/090709-07-tm.gif" width="600" height="300" alt="090709-07.gif" style="border:2px #797979 solid;" /></a></p>
+<p>さぁ、環境は整いました。やるかどうかはあなた次第！！<br />
+と自分自身に言いきかせたいと思います。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/firefoxresizeable_textareadragdropupload.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/action_bloggers_night_2009.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

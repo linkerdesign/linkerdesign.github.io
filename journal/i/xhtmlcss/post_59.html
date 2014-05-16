@@ -1,0 +1,85 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>共通部分のモジュール化の話｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>共通部分のモジュール化の話</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;共通部分のモジュール化の話</p>
+
+<p><img src="http://linker.in/journal/images/091029.gif" width="600" height="200" alt="091029.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+前ふり論が熱いらしいですね（笑<br />
+@cremaは辞めるor記事の最後で。@taku-workはとりあえず続ける。どちらの言い分ももっともだし。<br />
+さぁ、ボールは自分にきたわけでどうしたもんか！？まるで三国志のような世界ですね。。。<br />
+３人いるメリットというか、自分の決断で過半数が決まってしまいますしね。<br />
+（この辺の３人である、という話はいつか書きたいなぁと思ってます）</p>
+<p>前ふり書くのを楽しんでいるところもあるので、個人的にはとりあえず続けておこうかな、と思います。<br />
+そこに人間が見えればいいのかな〜、と。</p>
+<p>はてブに対応させるのは・・・まぁ、はてブに期待する感じで。<br />
+それ以外はちゃんと概要を書くようにしましょう、ってことで。&nbsp;&nbsp;</p>
+<p>さて、まえふりが長くなってしまいましたが、ネットみてて気になる記事があったので取り上げてみたいと思います。</p>
+<h2>共通のパーツをどう組み込むか？</h2>
+<blockquote>
+  <p>スグラボ ? jQuery.jsを使ってhtmlを外部読み込み<br />
+  <a href="http://blog.sugulab.com/?p=14">http://blog.sugulab.com/?p=14</a><br /></p>
+</blockquote>
+<p>こちらで紹介されているのは、jQueryをつかって外部のHTMLを読み込む方法になります。<br />
+JSがオフの時の対応をしないといけないことを考えると、どうなのかな〜、と思いますね。<br />
+ありかもしれませんが、自分では使わない気がします。</p>
+<p>表示されない可能性があっても良いものであれば使用してもいいかもしれません。<br />
+ただ、ほんと優先度が低いモノとかになりそうです。</p>
+<h2>PHPインクルードもしくはCMSの機能で</h2>
+<p>許されるのであればPHPとかでインクルードするのが良いのかな〜、と思ったりします。<br />
+ただ実際の仕事ではCMSを使うことが多いので、そうなるとそちら側でincludeさせるということがあるかもしれません。<br />
+MTのIncludeとかそういう感じですね。再構築のスピードなり何なりを考えるとまた別の問題もでてきたりします。</p>
+<p>サイトの構築にCMSを使用しないのであれば、共通モジュールの管理ツール、HTML生成ツールとして<br />
+ローカルになにかしらのCMSをインストールして量産する、という方法があるのかもしれません。<br />
+実際、納品物はHTMLのみだけど、MTとかつくって量産した方が早い、という場合がありそうです。</p>
+<h2>DWのテンプレートやライブラリという選択肢</h2>
+<p>あとは普通にDreamweaverのライブラリやテンプレートとかを使う、という選択肢でしょうね。<br />
+個人的にはCodaも使いますが、DWを使うほうがまだまだ多いですね。<br />
+他のかたもDWをつかっていて共同でやりやすいとかそういったモノもあります。<br />
+今まさにそんなかんじで共通部分はDWでお互いに管理し合う、というのをやったりしていますし。</p>
+<p>この辺の共通パーツの管理は、作る側の手間軽減、そのうえでのコスト削減につながっていくので、<br />
+分量が多い場合などは結構重要な問題なのかもしれません。</p>
+<p>と、少し考えてみましたが、実際、みなさんどうやっていますか？<br />
+個人的には<a href="http://twitter.com/necoze/">@necoze</a>さんや<a href="http://twitter.com/takazudo">@Takazudo</a>さんにどうやっている、やっていたのか聞いてみたいな、と思ったりしています。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/web_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/twitter140.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

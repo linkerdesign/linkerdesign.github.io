@@ -1,0 +1,83 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>iPad、iPhoneで読んでいるPDFのハイライトを同期する｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>iPad、iPhoneで読んでいるPDFのハイライトを同期する</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;iPad、iPhoneで読んでいるPDFのハイライトを同期する</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+２年以上積読になっていた『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4270002484/mersys-22/ref=nosim">マイクロソフトでは出会えなかった天職 僕はこうして社会起業家になった</a> 』をようやく読んだのですが、読んでいてワクワクする感じでした。</p>
+<p>さて、PDFやePubをiPhoneで読んでいるときに、ePubですとiBooksなどでiTunes経由で読んだ箇所やメモを同期出来るのですが、PDFだとうまくいかないなぁ、と思うことが多いです。<br />
+<a href="http://linker.in/journal/2010/05/pdfepubipad.php">ePubに変換</a>してもいいのですが直接PDFを読む場合も多いのでPDFのみでどうにかならないかなと思いいくつか試してみました。<br />
+（最近、ePub変換をやっていないので近々あらためてやってみたいところです）</p>
+<h2>iBooksでPDFを読む</h2>
+<p>iBooksでもPDFが読めるのでiBooksを使うとどこまで読んだか？というのをiPhoneやiPadをitunes経由でsyncすることで共有しておくことが可能です。</p>
+<p>iBooksですとbookmarkを共有出来るのですが、ハイライトなどはつけることが出来ないようです。<br />
+なので、ハイライトをつけたりしたいという人は若干物足りないところもあるでしょう。</p>
+<p>普段本を読んでいて、ページの角を折るだけの人にとってはこれでも問題なさそうです。</p>
+<h2>GoodReaderを使って読む</h2>
+<p>iPhone / iPadでPDFを読む場合にGoodReaderを使う事が多いと思います。GoodReaderだとiTunes経由で同期ができないっぽい？のでsync機能を利用してみます。</p>
+<h3>iPadで読む</h3>
+<p>Dropboxに入れてあるファイルを読み込む場合になりますが、Dropbox内のPDFを選択して、syncをクリックします。</p>
+<p><img src="http://linker.in/journal/images/110404-01.jpg" width="480" height="360" alt="110404-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>syncをタップするとこのようなかんじで、自分のドキュメント一覧が出てきますので、Download Item のところをクリックします。</p>
+<p><img src="http://linker.in/journal/images/110404-02.jpg" width="480" height="360" alt="110404-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>syncが完了するとこのような感じでアイコン付きで表示されます。</p>
+<p><img src="http://linker.in/journal/images/110404-03.jpg" width="480" height="360" alt="110404-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>あとは普通にファイルを開いて読んでみます。例えばこのような感じでハイライトをつけたとします。</p>
+<p><img src="http://linker.in/journal/images/110404-04.png" width="480" height="360" alt="110404-04.PNG" style="border:2px #7c7c7c solid;" /></p>
+<p>つけて保存して、再度先ほどの画面で緑色のsyncをクリックするとファイルがsyncされます。</p>
+<h3>iPhoneで読む</h3>
+<p>iPhoneでも同様の手順でDropboxのファイルをsyncするようにしておきます。</p>
+<p><img src="http://linker.in/journal/images/110404-06.jpg" width="320" height="480" alt="110404-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>My Documents内にも表示されています。</p>
+<p><img src="http://linker.in/journal/images/110404-05.png" width="320" height="480" alt="110404-05.PNG" style="border:2px #7c7c7c solid;" /></p>
+<p>このファイルを開いてみるとこのような感じでハイライトされています。</p>
+<p><img src="http://linker.in/journal/images/110404-07.png" width="320" height="480" alt="110404-07.PNG" style="border:2px #7c7c7c solid;" /></p>
+<p>iPhoneでハイライトの追加をしてsyncをしておけばiPadでもsyncすると同様の状態にすることができます。</p>
+<p>読む前、おわった後にsyncをしないといけないというのが若干の手間なのと、syncをすると読んでいたところの情報がリセットされてしまうのか、毎回最初のページに戻ってしまいます。</p>
+<p>このあたりはなにか回避する方法がないかもう少し見てみたいところです。</p>
+<h2>ということで</h2>
+<p>ちょっとうまくいっていないところもあるのですが、どこまで読んだかが重要と言うよりはハイライトつけておければ問題無い場合などはこの方法を使う事が出来そうです。</p>
+<p>根本的に別アプリとかで何か対応できないかというのも今後調べてみたいです。</p>
+<p>ロンドンに来てからは日本の書籍を今までのように買うのは若干控えているところもあるので、こういう風にダウンロードしてiPhoneやiPadで読める書籍がもっと増えてほしいなぁ、と思ったりしています。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/2011.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/skypestyle.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

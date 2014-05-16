@@ -1,0 +1,84 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTの日付に関するモディファイア、tsとrelativeを試してみた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTの日付に関するモディファイア、tsとrelativeを試してみた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTの日付に関するモディファイア、tsとrelativeを試してみた</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+全仏オープン、男子の決勝は雨の順延のためまだ終わってないですね。。。<br />
+女子ではシャラポワが生涯グランドスラムを達成しましたね。</p>
+<p>さて先日、@riatwさんが書いてたエントリー「<a href="http://studio-weekend.com/blog/mt_tips_yearentries.html">たった4行で今年1年のブログ記事を出力する方法(for MovableType)</a> 」を読んでいて、なるほどこんなフォーマットがあるのか、と一人感動していました。</p>
+<blockquote>
+  <p>たった4行で今年1年のブログ記事を出力する方法(for MovableType) | Weeekend STUDIO<br />
+  <a href="http://studio-weekend.com/blog/mt_tips_yearentries.html">http://studio-weekend.com/blog/mt_tips_yearentries.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>普通に考えたらYearlyアーカイブとか使いそうな気がします。</p>
+<p>%jについてドキュメント「<a href="http://www.movabletype.jp/documentation/appendices/date-formats.html">日付に関するテンプレートタグのモディファイアリファレンス</a>」を改めて見てみました。</p>
+<blockquote>
+  <p>Movable Type 4 ドキュメント<br />
+  <a href="http://www.movabletype.jp/documentation/appendices/date-formats.html">http://www.movabletype.jp/documentation/appendices/date-formats.html</a></p>
+</blockquote>
+<p>普段使う物って大体決まっていて（そうはいってもモディファイアを忘れるのでこのリファレンスを参照しますが）同じような使い方しかしていないのですが、今回は%jに感動したので、このリファレンスページを改めて見てみました。</p>
+<p>そんな中でtsモディファイア、relativeモディファイアってそう言えば使った事無いなぁ、とおもったので眺めてみたわけです。</p>
+<p>サンプルで試してみたページは</p>
+<p>&lt;mt:Date ts="hogehoge" relative="fuga"&gt;</p>
+<p>みたいなかんじで指定して結果を見てみました。</p>
+<h2>relativeモディファイアのみ</h2>
+<p>まず、tsモディファイアなしでrelativeモディファイアだけ値を指定すると下記の様な感じになります。</p>
+<p><img src="http://linker.in/journal/images/20120611-01.jpg" width="304" height="128" alt="20120611-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>再構築したタイミングなのでこの様な表示になりますよね。<br />
+基本はJavaScriptと組み合わせるんでしょうね。</p>
+<h2>tsモディファイアに日付を入れた場合</h2>
+<p>次に日付を入れた場合は以下のようになります。</p>
+<p><img src="http://linker.in/journal/images/20120611-02.jpg" width="304" height="361" alt="20120611-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>relativeの値が2,3の場合は範囲が決まってて、表示されませんね。<br />
+範囲は1週間だった気がします。</p>
+<h2>tsモディファイアの年が今年とは違う場合</h2>
+<p><img src="http://linker.in/journal/images/20120611-03.jpg" width="304" height="116" alt="20120611-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>tsモディファイアの年が違う場合はrelative="1"の時には月日だけではなくて、年も表示される用です。<br /></p>
+<h2>ということで</h2>
+<p>jsをつかうなどしてリアルタイムに時間の感覚を表示させたりするには使いやすいかもしれませんが、そのほかに用途が思いつきませんでした。<br />
+モディファイアがあるのだから、なにかもっと特別な使い方がありそうです。</p>
+<p>tsモディファイアで指定した日からの日数を数えるとかができるのかな？と一瞬思ったのですが、範囲外だとそう言うわけにも行かないみたいでした。<br />
+その方法は別途またあるような気がするから日を改めて考えてみようかと思います。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/co-working-at-tokyo.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/mushinoko.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

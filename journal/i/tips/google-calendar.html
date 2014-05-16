@@ -1,0 +1,79 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>海外旅行の時差をGoogleカレンダー上に表現する話。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>海外旅行の時差をGoogleカレンダー上に表現する話。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;海外旅行の時差をGoogleカレンダー上に表現する話。</p>
+
+<p><img alt="gcal-ttl.jpg" src="http://linker.in/journal/images/gcal-ttl.jpg" width="640" height="200" class="mt-image-none" style="" /></p>
+
+<p>ども。火曜／金曜担当の@cremaです。</p>
+
+<p>私事ですが、8月28日から9月8日までお休みをいただいて、「<a href="http://www.nycsalsacongress.com/" target="_blank">New York International Salsa Congress</a>」というイベントに参加するため、ニューヨークに行ってまいります。</p>
+
+<p>その予定をGoogleカレンダーに記入しようとしていたのですが、ちょっと戸惑ったことがありまして。</p>
+
+<p>東京とニューヨークの時差の関係上、飛行機の羽田出発が6:50a.m.→ニューヨーク到着が同日の6:30a.m.になってしまうのです。見かけ上、時間を遡ってしまうのですよね。</p>
+
+<p>これをどうやってGoogleカレンダーに記入すればよいのか。</p>
+
+<p>ナチュラルに下記のように入力すると、「作成する予定の終了日を開始日より前に指定することはできません」と怒られました。そこで注目したいのが、赤丸で囲った「タイムゾーン」のリンク。</p>
+
+<p><img alt="gcal-001.jpg" src="http://linker.in/journal/images/gcal-001.jpg" width="582" height="333" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>「タイムゾーン」のテキストリンクをクリックすると下記のようなダイアログボックスが現れるので、「開始日時と終了日時に異なるタイムゾーンを使用する」をクリックします。</p>
+
+<p><img alt="gcal-002.jpg" src="http://linker.in/journal/images/gcal-002.jpg" width="536" height="270" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>すると、予定の開始時間と終了時間に異なるタイムゾーンを割り当てることができるようになるのです。今回は、上のプルダウンメニューで「アメリカ合衆国」を選んだあと、「下部の（GMT-05:00）東部時間」を選択します。そして［完了］をクリック。</p>
+
+<p><img alt="gcal-003.jpg" src="http://linker.in/journal/images/gcal-003.jpg" width="520" height="386" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>そうすると、開始時刻と終了時刻が異なる背景色で囲まれ、別々のタイムゾーンで表現される訳なのです。知らなかった！</p>
+
+<p><a href="http://linker.in/journal/images/gcal-004.jpg"><img alt="gcal-004.jpg" src="http://linker.in/journal/assets_c/2012/07/gcal-004-thumb-640x226-4018.jpg" width="640" height="226" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>ちなみにこの予定を保存して一覧表示に戻ると、下記のようにすべて日本時間（JST）で表現されていました。カレンダーの基本的なタイムゾーンが日本時間だからなんでしょうね。</p>
+
+<p><img alt="gcal-005.jpg" src="http://linker.in/journal/images/gcal-005.jpg" width="484" height="279" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>海外旅行を頻繁にされる方はご存知かとは思うのですが、たまにしかしない私には、ちょっと勉強になった経験でした。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/macbook_air.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cat45/lixil.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

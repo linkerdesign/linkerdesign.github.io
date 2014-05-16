@@ -1,0 +1,81 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Movable Typeでsprintfモディファイアをつかって整数をとりだす｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Movable Typeでsprintfモディファイアをつかって整数をとりだす</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Movable Typeでsprintfモディファイアをつかって整数をとりだす</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+本日より7/16まで夏休みを頂いて宮古島にきています。</p>
+<p>MTでエントリー一覧を作る場合に、下記のようなソースを作りたい場合どうします？</p>
+<pre class="brush:xml">
+&lt;ul&gt;
+&lt;li class="group0"&gt;list01&lt;/li&gt;
+&lt;li class="group0"&gt;list02&lt;/li&gt;
+&lt;li class="group1"&gt;list03&lt;/li&gt;
+&lt;li class="group1"&gt;list04&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>色々作り方はあるかもしれませんが、その例の１つとしてsprintfモディファイアを使う方法を紹介します。</p>
+<blockquote>
+  <p>sprintf | グローバル・モディファイアリファレンス<br />
+  <a href="http://www.movabletype.jp/documentation/appendices/modifiers/sprintf.html">http://www.movabletype.jp/documentation/appendices/modifiers/sprintf.html</a></p>
+</blockquote>
+<p>サンプルはこのようなMTテンプレートになるかと思います。</p>
+<pre class="brush:xml">
+&lt;mt:SetVar name="entcount" value="0" /&gt;
+&lt;ul&gt;
+&lt;mt:Entries&gt;
+&lt;li class="group&lt;mt:GetVar name="entcount" op="/" value="2" sprintf="%d" /&gt;"&gt;&lt;mt:EntryTitle /&gt;&lt;/li&gt;
+&lt;mt:SetVar name="entcount" op="++" /&gt;
+&lt;/mt:Entries&gt;
+&lt;/ul&gt;
+</pre>
+<p>entcountという変数を設定して、初期値を0にしておきます。MTEntries内で各エントリーを表示する際にentcountを2で割った値を整数にして返します</p>
+<p>sprintfのdは整数値（10進法）をかえします。他の型指定のサンプルはこちら。</p>
+<blockquote>
+  <p>フォーマット（書式整形）関数（sprintf） / 【超初心者のホームページ作成】<br />
+  <a href="http://beginners.atompro.net/faqphp_sprintf.shtml">http://beginners.atompro.net/faqphp_sprintf.shtml</a></p>
+</blockquote>
+<p>似たような例として偶数奇数は__odd__、__even__をつかえば問題ないかと思います。</p>
+<p>場合によってどのように設定するのがちがうのでそのあたりはカスタマイズしながら使うことになるかと思いますが、何かの参考になれば幸いです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/photoshoptipsquicksilver.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/twitter.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

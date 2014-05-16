@@ -1,0 +1,98 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MT5勉強会に行ってきた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MT5勉強会に行ってきた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MT5勉強会に行ってきた</p>
+
+<p><img src="http://linker.in/journal/images/091130.gif" width="600" height="200" alt="091130.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+はやいもので今日で11月もおわりですね。<br />
+2009年も残り1ヶ月。頑張っていきましょう。</p>
+<p>さて、この週末MT5勉強会に行ってきました。MT5が出たばかりのすごくいいタイミングでした。この日にしていた<a href="http://www.dakiny.com/">Dakinyさん</a>がすごすぎですね（笑</p>
+<h2>管理画面をカスタマイズする</h2>
+<p>今回の勉強会はセミナー（プレゼン）形式のあとに４つのテーマにわかれてワークショップということで、野田さんがテーブルリーダーの「管理画面をカスタマイズする」に参加させてもらいました。</p>
+<p>テーブルリーダーの野田さん<br />
+<img src="http://linker.in/journal/images/091130-03.jpg" width="267" height="200" alt="091130-03.jpg" style="border:2px #7b7b7b solid;" />&nbsp;&nbsp;&nbsp;</p>
+<p>資料等は「<a href="http://junnama.alfasado.net/online/2009/11/cmscontext.html">CMSContextプラグインとか今日の勉強会の資料とか。 - Junnama Online</a>」でも公開されているので、こちらを確認していただくだけでかなりわかるかと思います。</p>
+<p>内容としては、エントリー編集画面のカスタマイズ、ダッシュボードウィジェットのカスタマイズでした。<br />
+alt-tmplを使うと管理画面の元ファイルをいじらなくてもエントリー編集画面等は色々出来る、というのは何となくわかってはいたのですが、そこまで使いこなせていませんでした。</p>
+<p>alt-tmplはmtをインストールしたフォルダの直下にありますね。<br />
+tmplフォルダに入っているものをコピペしてalt-tmplフォルダにいれてあげるとそちらを優先的に読み込んでくれます</p>
+<h2>プラグイン的なものをサクッと</h2>
+<p>エントリー編集画面のカスタマイズではタグ入力インターフェースを作ってみました。</p>
+<p><img src="http://linker.in/journal/images/091130-02.jpg" width="419" height="99" alt="091130-02.jpg" style="border:2px #7b7b7b solid;" /><br />
+（Junnamaさんのところから画像を借りました）&nbsp;&nbsp;</p>
+<p>作ったといってもサンプルをインストールして、そのソースを読んだというかんじです。<br />
+タグの入力補完についてはプラグインとして既にいくつかありますよね。個人的によく使わせてもらっているのは<a href="http://blog.aklaswad.com/2008/000434.html">TaggingHelper For MT4.2 - blog.aklaswad.com</a>ですね</p>
+<p>これと似たようなものがプラグインをつくらずとも作れてしまいました。<br />
+JavaScript周りの知識がそれなりに必要なので、それはそれということになりますが。<br />
+テーブルは違いましたが、勉強会でご一緒させてもらった<a href="http://www.tinybeans.net/blog/">tinybeansさん</a>が作られているプラグインもJavaScript,jQueryオンリーとかで作られているものもあるということなので、JavaScriptで色々できるとかなり幅が広がりそうですね。</p>
+<h2>ダッシュボードウィジェットのカスタマイズはかなり簡単</h2>
+<p>ダッシュボードウィジェットってこれ（↓）ですね。</p>
+<p><a href="http://linker.in/journal/images/091130-01.jpg"><img src="http://linker.in/journal/images/091130-01-tm.jpg" width="500" height="272" alt="091130-01.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>ダッシュボードウィジェットは最初のひな形さえ用意してあればかなり簡単にカスタマイズが可能でした。<br />
+（エントリー編集画面のカスタマイズもあわせて、Junnamaさんの<a href="http://junnama.alfasado.net/online/2009/11/cmscontext.html">CMSContextプラグイン</a>のおかげですが）</p>
+<p>勉強会中にJunnamaさんは再構築を行えるウィジェットを作成していました。<br />
+個人的にはダッシュボード内のメニュー（ブログ記事、ウェブページ、設定、ツールとか）の表示／非表示を切り替えるものを作ってみたりしました。</p>
+<p>ダッシュボードウィジェットを作っていて思ったのは、MTの管理画面にログインした場合、作業の大部分は記事編集等になります。<br />
+ということはダッシュボードが見えない所にいる時間が長くなるわけです。<br />
+あまり滞在時間が長くない中で、どういうものがあると使いやすさを向上できるのか？というかなりアイデア勝負だなぁ、と思いました。<br />
+使う人のことをどれだけ考えられるか。そこにかかってそうです。</p>
+<h2>ということで</h2>
+<p>MT5がでたばかりで、MT5のなかでも注目のTheme機能についてのテーブルが人気でした。<br />
+最初に関さんがプレゼンされ、そのあとに<a href="http://www.slideshare.net/goodpic/movable-type-5-how-to-create-theme">金子さんが話された内容もthemeについて</a>でした。</p>
+<p>関さん、金子さん<br />
+<img src="http://linker.in/journal/images/091130-04.jpg" width="600" height="200" alt="091130-04.jpg" style="border:2px #7b7b7b solid;" /></p>
+<p>Themeはこれからどう広がっていくかはまだまだ未知数ですが、管理画面まわりと同時にしっかり研究しておかないといけないな、と思いました。</p>
+<p>企画・運営をしてくださったDakinyさん、大変有意義な時間でした。 どうもありがとうございました。</p>
+<h2>他の方の参加レポート</h2>
+<ul>
+  <li><a href="http://www.sixapart.jp/pressroom/2009/11/mt5_study_society.html">【第1回MT5勉強会】の参加レポート : 広報ブログ - Six Apart</a></li>
+
+  <li><a href="http://www.dream-creation.biz/slog/2009/11/1mt5.html">第1回MT5勉強会　参加してきました - slog</a></li>
+
+  <li><a href="http://tec.toi-planning.net/mt-column/event/1mt5/">MT-column &gt; Event &gt; 第1回MT5勉強会に参加しました - ToI</a></li>
+
+  <li><a href="http://www.h-fj.com/blog/archives/2009/11/29-135644.php">第1回MT5勉強会に参加しました - The blog of H.Fujimoto</a></li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/webprism.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/graceau_vitaminwater.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

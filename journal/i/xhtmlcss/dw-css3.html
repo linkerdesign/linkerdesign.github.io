@@ -1,0 +1,77 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「ブラウザ固有の接頭辞(プレフィックス)のあるCSS3プロパティをまとめて挿入するコードヒント」｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>「ブラウザ固有の接頭辞(プレフィックス)のあるCSS3プロパティをまとめて挿入するコードヒント」</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;「ブラウザ固有の接頭辞(プレフィックス)のあるCSS3プロパティをまとめて挿入するコードヒント」</p>
+
+<p>火曜／金曜担当の@cremaです。本日は、さらっと短いエントリにて失礼。</p>
+
+<p>鳥取にお住まいの凄腕Webクリエーター<a href="http://twitter.com/akira_maru">丸山章さん</a>が、Dreamweaverで使える素敵なコードヒントを発表されていましたので、早速導入してみました。</p>
+
+<ul>
+	<li><a href="http://dwlog.net/2010/09/css3-setwithprefix.html">ブラウザ固有の接頭辞(プレフィックス)のあるCSS3プロパティをまとめて挿入するコードヒントを作りました - dwlog.net</a></li>
+</ul>
+
+<blockquote>
+
+<p>で作業してて思ったのが、まだCSS3は正式勧告ではないし、ブラウザ対応のためにまだ多くのプロパティに接頭辞付きプロパティを追加しないといけない現状があります。となるとプロパティによっては各ブラウザ毎に3-4つくらい、さらには値も指定してやる必要があります。</p>
+
+<p>ということで多少の入力補助になるかもと思って、接頭辞付きもまとめて挿入するコードヒント拡張機能を作ってみました。</p>
+
+</blockquote>
+
+<p>とご本人もおっしゃっている、なかなかに素敵機能なので、試してみましょう。</p>
+
+<p>上記ページから「css3_setwithprefix_v100.zip」をダウンロードし、.zipを解凍してできた「css3_setwithprefix_v100.mxp」をダブルクリック、Extention Managerでインストールします。</p>
+
+<p>Dreamweaverを再起動し、CSSを書いてみます。</p>
+
+<p><img alt="dwcss3-001.jpg" src="http://linker.in/journal/images/dwcss3-001.jpg" width="338" height="348" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>最初の数文字をタイプすると候補のプロパティが出てきます。ここでは「box-shadow」を使おうとしています。「box-shadow」が2つ候補で出てきますが、お尻に「+」がついている方を選択しましょう。</p>
+
+<p><img alt="dwcss3-002.jpg" src="http://linker.in/journal/images/dwcss3-002.jpg" width="338" height="341" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>「-moz-」と「-webkit-」の接頭辞がついたプロパティがまとめて挿入されました。値はひとつずつ設定する必要がありますが、ちょっと作業時間を得した気分になれる素敵拡張機能です！</p>
+
+<p>さすが丸山さん！　使わせていただき感謝です☆</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphone_7.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_115.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

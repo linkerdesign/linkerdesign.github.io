@@ -1,0 +1,101 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GitをGUIで管理できるTowerを使ってPull Requestを受け取ってみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GitをGUIで管理できるTowerを使ってPull Requestを受け取ってみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;GitをGUIで管理できるTowerを使ってPull Requestを受け取ってみる</p>
+
+<p><img src="http://linker.in/journal/images/110214.png" width="600" height="200" alt="110214.png" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+今日はバレンタインですね。こちらでは男性から女性にプレゼントを贈るのだとか。なるほどそういうルールとは知らずでしたので、来年こそはどうにかしたいところです。</p>
+<p>さて、ソースコードの管理にgitを使ってる人も多いのではないでしょうか。ブランチとか細かい使い方について<a href="http://twitter.com/#!/rewish">@rewさん</a>に以前教えてもらったのですが、まだまだ使いこなしているとは言い難いところです。</p>
+<p>そんな中、<a href="http://twitter.com/#!/tinybeans">@tinybeansさん</a>とGitHubでのやりとりの練習をしつつ、forkしてもらったのでそれを<a href="http://www.git-tower.com/">Tower</a>で受け取ってみようかと思います。<br />
+Towerについては以前何回か書いてみました。</p>
+<blockquote>
+  <p>GUIでGitを使える「Tower」をさらっと触ってみた｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2010/12/gitguitower.php">http://linker.in/journal/2010/12/gitguitower.php</a>&nbsp;&nbsp;</p>
+
+  <p>TowerでGitHubをつかってみる｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2010/12/towergithub.php">http://linker.in/journal/2010/12/towergithub.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ターミナルでやる場合はこちらを参考にしてこのままやれば問題無くいけます。</p>
+<blockquote>
+  <p>githubでpull requestもらったのでmergeしてみる - 狐の王国<br />
+  <a href="http://d.hatena.ne.jp/KoshianX/20080616/1213581933">http://d.hatena.ne.jp/KoshianX/20080616/1213581933</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>今回の作業の流れもほぼこれと同じです。</p>
+<h2>Pull Requestの通知</h2>
+<p>まず、Pull Requestを受け取るとこのようなメールが届きます</p>
+<p><img src="http://linker.in/journal/images/110214-01.jpg" width="594" height="223" alt="110214-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>TowerでRemote Repositoryの追加</h2>
+<p>Towerをひらきます。<br />
+まずはforkされたリモートのリポジトリを追加しておきましょう</p>
+<p><img src="http://linker.in/journal/images/110214-03.jpg" width="600" height="333" alt="110214-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p><img src="http://linker.in/journal/images/110214-02.jpg" width="477" height="624" alt="110214-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>リモートのリポジトリはforkしてくれた@tinybeansさんのところにいくとわかります。</p>
+<p><img src="http://linker.in/journal/images/110214-04.jpg" width="601" height="342" alt="110214-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>問題無く追加されるとこのようにREMOTESのところにリポジトリが追加されます。</p>
+<p><img src="http://linker.in/journal/images/110214-05.jpg" width="580" height="310" alt="110214-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>Remote RepositoryをFetch &amp; Pullする</h2>
+<p>次にREMOTEのリポジトリの内容をfetchします。</p>
+<p><img src="http://linker.in/journal/images/110214-06.jpg" width="600" height="412" alt="110214-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>FetchがおわったらPullします</p>
+<p><img src="http://linker.in/journal/images/110214-07.jpg" width="554" height="423" alt="110214-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでローカルのリポジトリを確認してみます。</p>
+<p><img src="http://linker.in/journal/images/110214-08.jpg" width="599" height="519" alt="110214-08.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>追加されてたファイルがコミットされていますね。</p>
+<p>FetchしてPullしたときにファイルとかの中身を多分確認しないといけないのでしょう。。。<br />
+それをスルーしてPullするとこのようなかんじでコミットまでおわっています。</p>
+<p>Historyを確認してみると変更を見ることが確認出来ますね。</p>
+<p><img src="http://linker.in/journal/images/110214-09.jpg" width="600" height="509" alt="110214-09.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>@tinybeansさんのイケメン写真が「commitよろしく！」と言ってるようですね。</p>
+<h2>最後にPushして終了</h2>
+<p>ということでここまでおわったらRemoteのリポジトリにPushして終了です。</p>
+<p><img src="http://linker.in/journal/images/110214-10.jpg" width="600" height="365" alt="110214-10.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>問題無くPushもおわればGitHub上でもこのように反映されていますね。</p>
+<p><img src="http://linker.in/journal/images/110214-11.jpg" width="600" height="441" alt="110214-11.jpg" style="border:2px #7c7c7c solid;" /></p>
+<h2>ということで</h2>
+<p>今回はFetchしてすぐPullしたら即座にコミットされてしまっていたのですが、FetchしてPullする間にDiffをみてMergeするという流れがあると思います。<br />
+多分ローカルのリポジトリにブランチを切って一旦そこに持ってきた物をローカルでMergeするという作業になるのかな、と思います。</p>
+<p>何も考えずに自分のブランチにPullしてしまいましたが1つのソースを色々編集してたりすると、Mergeするときに色々あるんだろうな、、とおもうので次やるときはもう少し手順を変えてやってみたいところです。</p>
+<p>GitをさわるのにTowerを使った方がいいのか、Terminalでやったほうがいいのかなかなか判断に悩むところですが、ツールを使い分けて使いやすい方でそれぞれいければと思いますね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/webui_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/crema-bookmark-Feb3.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

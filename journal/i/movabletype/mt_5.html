@@ -1,0 +1,149 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTの共通モジュール内に個別に読み込む物を指定する｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTの共通モジュール内に個別に読み込む物を指定する</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTの共通モジュール内に個別に読み込む物を指定する</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="100412.gif" src="http://linker.in/journal/images/100412.gif" width="600" height="200" class="mt-image-none" style="" /></span></p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+早起きも早すぎるとほぼ夜なので早起きもほどほどに、と反省した月曜日です。今週も頑張っていきましょう。<br />
+さて、今日はMTのテンプレートをカスタマイズするときに忘れないでおきたい小ネタでも。</p>
+
+<h2>共通モジュール内のheadに読み込む物を指定する</h2>
+
+<p>HTMLの大枠はこのような感じになる場合で考えてみます。</p>
+
+<pre class="brush:xml">
+&lt;html&gt;
+&lt;head&gt;head&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;header&quot;&gt;header部分&lt;/div&gt;
+&lt;div id=&quot;main&quot;&gt;main部分&lt;/div&gt;
+&lt;div id=&quot;sub&quot;&gt;sub部分&lt;/div&gt;
+&lt;div id=&quot;footer&quot;&gt;footer部分&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>個人的には良く作るのはテンプレートモジュール：ヘッダーとして</p>
+
+<pre class="brush:xml">
+&lt;html&gt;
+&lt;head&gt;head&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;header&quot;&gt;header部分&lt;/div&gt;
+&lt;div id=&quot;main&quot;&gt;
+</pre>
+
+<p>こんなかんじで、テンプレートモジュール：フッターとして</p>
+
+<pre class="brush:xml">
+&lt;/div&gt;
+&lt;div id=&quot;sub&quot;&gt;sub部分&lt;/div&gt;
+&lt;div id=&quot;footer&quot;&gt;footer部分&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>このような感じにきりわけて、</p>
+
+<pre class="brush:xml">
+&lt;$MTInclude module=&quot;ヘッダー&quot;$&gt;
+main部分
+&lt;$MTInclude module=&quot;フッター&quot;$&gt;
+</pre>
+
+<p>と読み込むことが多いです。<br />
+ヘッダー、フッターが全ページで概ね同じであればこれで問題ないのですが、ページによってはヘッダー、フッターの中にいれたいものがあったりする場合があるかと思います。</p>
+
+<p>そういうときはテンプレートモジュールのヘッダー、フッターに変数を読み込むように設定しておきます。<br />
+デフォルトではHTMLヘッダーというテンプレートモジュールが用意されていますが、これに近い事を変数でやります。</p>
+
+<p>テンプレートモジュールのヘッダーはこんなかんじで、変数html_headを読み込みます。</p>
+
+<pre class="brush:xml">
+&lt;html&gt;
+&lt;head&gt;head
+&lt;$MTVar name=&quot;html_head&quot;$&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;header&quot;&gt;header部分&lt;/div&gt;
+&lt;div id=&quot;main&quot;&gt;
+</pre>
+
+<p>フッターは変数html_footを読み込みます。</p>
+
+<pre class="brush:xml">
+&lt;/div&gt;
+&lt;div id=&quot;sub&quot;&gt;sub部分&lt;/div&gt;
+&lt;div id=&quot;footer&quot;&gt;footer部分&lt;/div&gt;
+&lt;$MTVar name=&quot;html_foot&quot;$&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p>こうしておくことでテンプレートは</p>
+
+<pre class="brush:xml">
+&lt;MTSetVarBlock name=&quot;html_head&quot; append=&quot;1&quot;&gt;
+&lt;MTInclude module=&quot;hoge.js&quot;&gt;
+&lt;/MTSetVarBlock&gt;
+&lt;MTSetVarBlock name=&quot;html_foot&quot; append=&quot;1&quot;&gt;
+&lt;MTInclude module=&quot;hogehoge.js&quot;&gt;
+&lt;/MTSetVarBlock&gt;
+&lt;$MTInclude module=&quot;ヘッダー&quot;$&gt;
+main部分
+&lt;$MTInclude module=&quot;フッター&quot;$&gt;
+</pre>
+
+<p>こんなかんじで共通パーツのヘッダーを読み込みながら、ページごとにheadやbodyの閉じタグ直前に必要なものを挿入することが可能になりますね。</p>
+
+<h2>よく使う物はテーマにしておくなどもありそうです</h2>
+
+<p>人それぞれの作り方があるかと思いますが、MTのテンプレートをカスタマイズするときは一旦まっさらな状態から作り始める事が多いかと思います。<br />
+読み込む順番や場所などを考えるともうすこし細分化するなどもありそうです。</p>
+
+<p>デフォルトをベースに作る場合はhtmlヘッダーというのがあってそれを使ったりするかも知れませんが、個人的に時々忘れてしまうことがあるのでメモもかねて書いておこうと思います。</p>
+
+<p>こういうよく使う物はテーマを使って標準セットにしておく等の工夫もいいかも知れませんね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/web_5.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/ustream002.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTタグの入れ子とかとか｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTタグの入れ子とかとか</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTタグの入れ子とかとか</p>
+
+<p>みなさん、こんにちは、まーしーです<br />友人の結婚式で今日から初ハワイです。イミグレを一人で抜けられるかドキドキです。</p>
+<p>さて、先日「<a href="http://www.akinakano.com/mt/2012/10/mtmt.php">MTタグの中にMTタグは駄目のようー自分用覚書 - Blog | AKINAKANO</a>」というエントリーを読んでいて、同じようにやってしまうなぁ、ということがあったので。</p>
+<pre>&lt;MTIf name="AA"&gt;
+　　&lt;MTEntryIfTagged&gt;
+&lt;MTElse&gt;
+　　&lt;MTPageIfTagged&gt;
+&lt;/MTIf&gt;
+ーーーーー中身ーーーーー
+&lt;MTIf name="AA"&gt;
+　　&lt;/MTEntryIfTagged&gt;
+&lt;MTElse&gt;
+　　&lt;/MTPageIfTagged&gt;
+&lt;/MTIf&gt;
+</pre>
+<blockquote>
+<p>MTタグの中にMTタグは駄目のようー自分用覚書 - Blog | AKINAKANO<br /><a href="http://www.akinakano.com/mt/2012/10/mtmt.php">http://www.akinakano.com/mt/2012/10/mtmt.php</a></p>
+</blockquote>
+<p>こういう書き方を間違って書いちゃったりしますが、時々したくなりますね。</p>
+<p>システム的にできないのかもしれませんが、MTの管理画面でテンプレートの記述チェックに引っかかってるだけなのかなぁ、と思ったりもします。</p>
+<p>結局</p>
+<pre>&lt;MT:SetVarTemplate name="中身"&gt;
+ーーーーー中身ーーーーー
+&lt;/MT:SetVarTemplate&gt;
+&lt;MTIf name="AA"&gt;
+　　&lt;MTEntryIfTagged&gt;&lt;mt:GetVar name="中身"&gt;&lt;/MTEntryIfTagged&gt;
+&lt;MTElse&gt;
+　　&lt;MTPageIfTagged&gt;&lt;mt:GetVar name="中身"&gt;&lt;/MTPageIfTagged&gt;
+&lt;/MTIf&gt;</pre>
+<p>こんな感じで書くしかなさそうですね。</p>
+<p>テンプレートモジュールをincludeさせたりするときに、includeさせるテンプレートで一度loop等を回してそれを一旦変数にいれて、その内容をincludeしたモジュールの方で使用するということがあったりします。</p>
+<p>どういう書き方が、わかりやすさや再構築の時間とかでトータルで良いのかとかは、考えたいところですね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/amazonurldpexecobidosasin.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/mcdonalds-menu.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

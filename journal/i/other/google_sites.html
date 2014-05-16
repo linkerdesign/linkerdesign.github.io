@@ -1,0 +1,125 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ガイドラインをつくるにあたってgoogle sitesを使ってみました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ガイドラインをつくるにあたってgoogle sitesを使ってみました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;ガイドラインをつくるにあたってgoogle sitesを使ってみました</p>
+
+<p><img src="http://linker.in/journal/images/090402.gif" width="600" height="200" alt="090402.gif" /></p>
+<p>みなさん、こんにちは。まーしーです。<br />
+世間的には新年度。環境が変わったり等々様々な4月ですね。</p>
+<p>今日はlinker用のHTMLガイドラインを作るにあたってなにを使おうか？と考えていたのを少し書いてみようかと思います。<br />
+みなさんは何を使ってどのように作ってますか？もしよかったら教えてください。</p>
+<h2>ルールを明文化するためのツールを考える</h2>
+<p>linkerとして活動するようになって３ヶ月くらい。<br />
+今まではそれぞれのマイルールでやっていたのですが、今後は効率を上げたり質を高めるためにも共通ルールの確立が必要じゃないかな、と思っています。<br />
+そこでまずはコーディングガイドラインをつくろうかな、と動き出してみました。</p>
+<p>動き出そうと決めたんですが、んじゃ何をつかって作ろうか？というところで詰まってしまいました。<br />
+本当に重要なのはガイドラインの内容であって、何を使って作られているか？というのはそこまで重要じゃないはずなんですが、<br />
+性格的にそこからスタートしてしまいます。</p>
+<p>とりあえず何をつかって作ろうかなぁ?と思ったときに<br /></p>
+<ul>
+  <li>HTML</li>
+
+  <li>MovableType</li>
+
+  <li>Wordpress</li>
+
+  <li><a href="http://modxcms-jp.com/">MODx</a></li>
+
+  <li><a href="http://www.soycms.net/">SOY CMS</a></li>
+
+  <li><a href="http://www.a-blogcms.jp/">a-blog CMS</a></li>
+
+  <li><a href="http://sites.google.com">Google Sites</a></li>
+
+  <li><a href="http://pbwiki.com/">PBwiki</a></li>
+</ul>
+<p>あたりがパパパットでてきて、docwikiとかあげればもっとあるかとはおもいますが、とりあえず自分の持ちネタとこれらから選ぶことにしました。</p>
+<h2>一番優先すべきは自分以外もつかうということ</h2>
+<p>自分が使うだけなら書いた内容とかは覚えてるのでいいかもしれないのですが、共同でつかうとなると目次的にどういうものが書いてあるかの一覧が絶対に必要だなぁと思い、HTMLのみでつくるのは若干面倒かな?ということで回避。<br />
+リンクも手で貼ってあげないといけないですからね・・</p>
+<p>MODx,SOY CMS, a-blog CMSは使ってみたい、という願望がかなり含まれていてこのリストに載っているんだろうと。<br />
+つかってみたいという願望を満たすのとガイドライン作成を同時に進行したらどっちも破綻しちゃうかも？とおもってちょっと今回は使わない方がよさそう、ということに落ち着きました。</p>
+<p>MTかWPかなぁと落ち着きかけたんですが、並び替えするのにわざわざ管理画面に入るのもやっぱり面倒、ということで却下。<br />
+ちなみにMTの並び替えだと<br /></p>
+<blockquote>
+  <p>カテゴリ／フォルダ／ブログ記事／ウェブページを並べ替えるプラグイン（SuperSort）の使い方 - The blog of H.Fujimoto<br />
+  <a href="http://www.h-fj.com/blog/mtplgdoc/supersort.php">http://www.h-fj.com/blog/mtplgdoc/supersort.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>を使ってみてもいいかな?と思ったりしてます。<br />
+これは別の機会につかってみたいところです。日付で並び替えるとかしなくてＯＫですしね。</p>
+<p>ということで残ったのがGoogle SitesとPBwiki。<br />
+以前<a href="http://linker.in/journal/2009/03/google.php">cremaさんが紹介してましたがGoogle Docsで色々ドキュメント管理</a>することが多いので、Google Sitesを使うのが流れ的に良さそうですが、<br />
+どちらも似たような感じなので、機能を見て判断しました。<br />
+（容量はGoogle Sitesが100MB、PBwikiが2GBです 2009.4.2時点）</p>
+<h2>現時点ではGoogle Sitesに軍配があがってます</h2>
+<p>さて、長くなりましたがGoogle SitesとPBwikiのどちらにしようか？というところに来たのですが、結果としてはGoogle Sitesに落ち着きそうです。</p>
+<p>サイドバーで目次をうまいこと（自動で）つくれないかな？と色々試行錯誤したんですが、残念ながらうまくできませんでした。<br />
+うまく作れる方法を知ってる方がいたら教えてもらいたいです。<br />
+んじゃ別の方法を考えないとな、とおもっていたらGoogle Sitesには目次を挿入する機能がありました。<br />
+これをいれてみたら見出しをh2,h3,h4とつけていけば自動でページ内の目次が作成されるようです。<br />
+この機能でもう決まりですね。</p>
+<p>簡単に流れだけ書いておくと<br />
+▼まずはページを編集して二段組みにする（これは好みで）<br />
+<a href="http://linker.in/journal/images/090402-01.gif"><img src="http://linker.in/journal/090402-01-tm.gif" width="600" height="348" alt="090402-01.gif" /></a><br /></p>
+<p>▼目次を挿入する<br />
+<a href="http://linker.in/journal/images/090402-02.gif"><img src="http://linker.in/journal/090402-02-tm.gif" width="600" height="348" alt="090402-02.gif" /></a></p>
+<p>▼目次挿入してページを保存するとこんな感じ<br />
+<a href="http://linker.in/journal/images/090402-04.gif"><img src="http://linker.in/journal/090402-04-tm.gif" width="600" height="348" alt="090402-04.gif" /></a></p>
+<p>目次がスクロールしても右に固定されてたりしたらいいんですが、それは難しそうなので各項目にTOPへ戻るリンクをつけてあげて対処してあげることにしました。&nbsp;&nbsp;&nbsp;</p>
+<h2>課題や理想とかまとめて</h2>
+<p>理想や課題を言うと、</p>
+<ul>
+  <li>各見出しにも番号が振られてほしい、</li>
+
+  <li>Google Sitesの機能としてコメントがあるんですが、それをうまくつかえないかな？</li>
+
+  <li>exportする必要性がないか、必要性があるならその方法がないかを考える<br />
+  →HTMLにexportして置換かな。</li>
+
+  <li>バックアップ云々</li>
+</ul>とかあたりもどうにかしたいところですね。
+
+<p>まぁ、なんとなく箱はきまったので後は中身を整備しないとですね。ここで終了してしまっては本末転倒。<br />
+さ、ガイドラインを考えていきましょうか・・・<br /></p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/kougei001.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/web.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

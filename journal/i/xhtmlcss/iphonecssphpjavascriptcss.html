@@ -1,0 +1,94 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>iPhone用にCSS/PHP/JavascriptでCSSを切り替える基本的な方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>iPhone用にCSS/PHP/JavascriptでCSSを切り替える基本的な方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;iPhone用にCSS/PHP/JavascriptでCSSを切り替える基本的な方法</p>
+
+<p><img src="http://linker.in/journal/images/100304.jpg" width="600" height="200" alt="100304.jpg" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+週末の不摂生がたたって唇が荒れるやら口内炎やら。食事がつらくてげんなりなこの頃です。</p>
+<p>さて、Webサイトを多メディアに対応させるという話は先日の「<a href="http://www.mdn.co.jp/webcre/d2s/">webデザインNight!</a>」でも話題にあがっていました。その簡単な例としてiPhoneとPCとで分ける方法を考えてみます。</p>
+<p>仕様によってどういう方法でどんなWebサイトにするのかを考える必要がありますが、とりあえずCSS、PHP、JavaScriptの3つで読み込むレイアウトCSSを切り替える、という方法を考えてみます。</p>
+<h2>CSSのみで切り替える</h2>
+<p>まずは簡単にCSSだけで切り替える方法です。</p>
+<pre class="brush:css">
+&lt;link rel="stylesheet" type="text/css" media="only screen and (max-device-width:480px)" href="./layout/iphone.css"/&gt;
+&lt;link rel="stylesheet" type="text/css" media="screen and (min-device-width:481px)" href="./layout/pc.css" /&gt;
+</pre>
+<p>デバイスの幅を基準に判定してCSSを切り替えています。</p>
+<h2>PHPで切り替える</h2>
+<p>次にPHPで切り替える方法です。まずはUAを調べます。</p>
+<pre class="brush:xml">
+&lt;?php
+  $browser = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+    if ($browser == true){
+    $browser = 'iphone';
+  }
+?&gt;
+</pre>
+<p>HTMLの最初に記述してUAを判定しておきます。<br /></p>
+<pre class="brush:xml">
+&lt;?php if($browser == 'iphone'){ ?&gt;
+&lt;link rel="stylesheet" type="text/css" href="./layout/iphone.css"/&gt;
+&lt;?php }else{ ?&gt;
+&lt;link rel="stylesheet" type="text/css" href="./layout/pc.css" /&gt;
+&lt;?php } ?&gt;
+</pre>
+<p>UAがiPhoneならiPhone用のCSSを読み込む、という感じです。</p>
+<h2>JavaScriptで切り替える</h2>
+<p>次に、JavaScriptで切り替える方法です。</p>
+<pre class="brush:xml">
+&lt;script type="text/javascript"&gt;
+if (navigator.userAgent.indexOf('iPhone') != -1) {
+document.write('&lt;link rel="stylesheet" type="text/css" href="./layout/iphone.css"&gt;');
+}else {
+document.write('&lt;link rel="stylesheet" type="text/css" href="./layout/pc.css"&gt;');
+}
+&lt;/script&gt;
+</pre>
+<p>UAをJavaScriptで判定して読み込むCSSを切り替えています。<br /></p>
+<h2>ということで</h2>
+<p>簡単な紹介ですが、本当に基本の基本はこんな感じです。<br />
+画像サイズ等々考えないといけないことはWebサイトによって色々ありますが、それはまた別の時にでも。</p>
+<p>最低限の対応が必要なときなどの参考程度に。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/pdfacrobatcom.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/scannerproevernote.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

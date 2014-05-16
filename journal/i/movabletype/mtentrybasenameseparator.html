@@ -1,0 +1,73 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTのEntryBasenameのseparatorモディファイア｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTのEntryBasenameのseparatorモディファイア</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTのEntryBasenameのseparatorモディファイア</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>MTで記事の出力ファイル名はアーカイブマッピングのパスで色々カスタマイズ出来ます。<br />
+EntryBasenameを使う事が多いかとはおもいますが、どうやってそこに入れるかで微妙に変わってきます。</p>
+<p><img src="http://linker.in/journal/images/100617-01.jpg" width="381" height="251" alt="100617-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ブログ記事のページで出力ファイル名の欄を見ると</p>
+<p>hogehoge_hoge</p>
+<p>の様にアンダーバー（ _ ）になっています。これがデフォルトの様です。</p>
+<h2>%f</h2>
+<p>%fは出力ファイル名の通りに出てきます（拡張子も含まれます）。なので区切り文字はアンダーバーになります。</p>
+<p>hogehoge_hoge.html</p>
+<p>パスの欄に</p>
+<p>&lt;$MTEntryBasename$&gt;.html</p>
+<p>と書いた場合とイコール、ということです。</p>
+<h2>%-f</h2>
+<p>%-fの場合は区切り文字がハイフンになります。</p>
+<p>hogehoge-hoge.html</p>
+<p>これと同じ物をMTタグで表す場合はseparatorというモディファイアを使います。</p>
+<blockquote>
+  <p>MTEntryBasename | テンプレートタグリファレンス <a href="http://www.movabletype.jp/documentation/appendices/tags/entrybasename.html">http://www.movabletype.jp/documentation/appendices/tags/entrybasename.html</a><br /></p>
+</blockquote>
+<p>このモディファイアをつかって</p>
+<p>&lt;$MTEntryBasename separator="-" $&gt;.html</p>
+<p>となります。</p>
+<h2>ということで</h2>
+<p>テンプレート内からリンクを張るときは&lt;$MTEntryPermalink$&gt;などを使う事が多いんじゃないかと思います。</p>
+<p>EntryBasenameは条件分岐の判断用に使ったりするかも知れませんが、a要素のhref属性に直接MTEntryBasenameを使うことは少ないかも知れません。<br />
+そのためseparatorというモディファイアがなかなか記憶に残りにくいので、今回はそんな時がきた時に備えてのエントリーでした。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/ipad.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i//linkermovable_type_community_solution.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,98 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Ticketベースにすることでプロジェクトも社内も見える化できないものかを考えてみた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Ticketベースにすることでプロジェクトも社内も見える化できないものかを考えてみた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;Ticketベースにすることでプロジェクトも社内も見える化できないものかを考えてみた</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />もう10月ですか。。。。はやいですねぇ。今年もあと3ヶ月ですね。</p>
+<p>先日、『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125067/mersys-22/ref=nosim">チケット駆動開発</a>』という本を読みました。<br />プロジェクトのマネジメントやタスク管理とかなんとなくこなしている中でどういう方法があるのだろう？というのを知るために読みました。</p>
+<div class="mm-small" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125067/mersys-22/ref=nosim" target="_blank"><img title="チケット駆動開発" src="http://ecx.images-amazon.com/images/I/51WmzLJ1u6L._SL75_.jpg" alt="チケット駆動開発" width="59" height="75" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 10px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125067/mersys-22/ref=nosim" target="_blank">チケット駆動開発</a></div>
+<div class="mm-detail" style="margin-top: 10px;">小川 明彦, 阪井 誠 / 翔泳社 ( 2012-08-24 )
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=4798125067" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>
+<p>この本自体は最近よく名前をみる<a href="http://www.sonicgarden.jp/">株式会社ソニックガーデン</a>の代表さんのブログで紹介されていたのを見て購入しました。</p>
+<blockquote>
+<p>書籍『チケット駆動開発』が出版されました - Social Change!<br /><a href="http://kuranuki.sonicgarden.jp/2012/08/post-88.html">http://kuranuki.sonicgarden.jp/2012/08/post-88.html</a></p>
+</blockquote>
+<h2>全ての作業をTicketに書いてから作業する</h2>
+<p>内容としてはRedmineをつかって、作業をチケットに起こしていく感じの話で、システム構築とかプログラムとかそういう開発ではよくありそうチケット駆動開発な話です。</p>
+<blockquote>
+<p>No Ticket, No Commit!</p>
+</blockquote>
+<p>というルールで、作業することは全てTicket化されそれに対してコミットしていくことでプロジェクトがどんどん完成に近づいていきます。</p>
+<p>このルールをとることで作業内容もTicketで明確になるでしょうし、コミットする人が明確になるので、プロジェクトの貢献度も明確にできます。<br />（コミットできない貢献度ももちろんあると思いますが・・・）</p>
+<p>Web制作なんかだとどこまで（どの粒度で）Ticketにするのかとかは少々判断に悩むところな気がしています。<br />自分自身まだ試行錯誤の段階ではあるので「これが」というのは見つかっていないです。<br />プロジェクトの度にメンバーからいろいろ言われて改善しながらやっているところです。</p>
+<p>上記の「No Ticket, No Commit!」ルールで考えれば作業漏れとかをなくす意味でも細かい方がいいでしょうが、書籍にも書かれてるように細かすぎると返って煩雑になってしまうという問題もあります。</p>
+<h2>日報代わりのTicket処理</h2>
+<p>本を読み始めているときは「あるプロジェクト」という視点で読んでいたのですが、会社全体でも作業などをTicketにするなどしておけばいいのではないかと思ったりしました。</p>
+<p>定期的に日報を書くくらいなら、タスク等をTicketに起こしてそれに記載していった方が集計できそうな気がします。<br />（と書くだけなら簡単ですが、Ticketにしにくいものも当然ありそうです）</p>
+<p>Ticketの内容によっては1日とかで終わらない場合とかがありそうなので、そのあたりは進捗度の変更やコメントとかでフォローできないものかな？などとも思いますね。</p>
+<p>それらを日付と編集者とかでフィルタリングできると、日報的に確認することができそうな気がしています。</p>
+<p>個人的には、毎日顔を合わせている環境であったとしても報告などは文書にするなどの一手間をとったほうが証拠としてしっかり残せるのでいいのではないかと思っているのですが、（僕自身が忘れやすいというのもありますが）<br />毎日顔を合わせない場合などこういったTicketベースで作業をするとか報告や議論をするとかがいいのではないかと思います。<br />（議論はTicketでは難しいところもあるかもしれませんので他のツールに頼ることもあるかもしれませんね。）</p>
+<h2>Ticketだけでは補えない空気をSkypeなどで補う</h2>
+<p>Ticketとかで作業ははっきりしてくるかと思いますが、そこにいる人の状況はなかなか見えないですよね。</p>
+<blockquote>
+<p>リモート勤務のようすを紹介します - give IT a try<br /><a href="http://junichiito.hateblo.jp/entry/2012/09/28/083205">http://junichiito.hateblo.jp/entry/2012/09/28/083205</a></p>
+</blockquote>
+<p>こちらの記事のなかでSkypeを常時つないで（多分音声だと思いますが）開発し合う、というスタイルが紹介されていました。</p>
+<p>何気ない会話やそこから生まれている空気などそれらが生み出すものはあるかとおもいます。<br />それがオフィスに集まるメリットのような気がしています。</p>
+<h2>ツールを組み合わせて見える化</h2>
+<p>Ticketとかで場所を選ばず仕事をもれなくこなすことができるようになったとしても、なかなかそこに人間を感じるのは難しいのではないかと思います。</p>
+<p>テキストベースのやりとりはなかなか感情を込めにくいですし読み手にどうとられるかは結構難しいと思っています。<br />いろいろ便利なツールがあるのですから、こういったリモートの環境を用意できればどこでも仕事ができるのかなーと思います。</p>
+<p>話した方が楽という面も少なからずありますが、各個人・チームでのツールの使い方次第でかなり見える化できて全体としていい方向に進めそうだなぁ、と思ったりしました。</p>
+<div class="mm-middle" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125067/mersys-22/ref=nosim" target="_blank"><img title="チケット駆動開発" src="http://ecx.images-amazon.com/images/I/51WmzLJ1u6L._SL160_.jpg" alt="チケット駆動開発" width="126" height="160" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 15px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798125067/mersys-22/ref=nosim" target="_blank">チケット駆動開発</a></div>
+<div class="mm-detail" style="margin-top: 10px;">小川 明彦, 阪井 誠<br />翔泳社 ( 2012-08-24 )<br />ISBN: 9784798125060<br />
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=4798125067" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_200.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/mba11pdf.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

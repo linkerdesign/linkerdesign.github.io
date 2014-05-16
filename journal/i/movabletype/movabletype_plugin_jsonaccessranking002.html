@@ -1,0 +1,107 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>試しました＞「Movabletype Plugin アクセスランキングプラグイン: JSONAccessRanking」｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>試しました＞「Movabletype Plugin アクセスランキングプラグイン: JSONAccessRanking」</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;試しました＞「Movabletype Plugin アクセスランキングプラグイン: JSONAccessRanking」</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>前回の記事で、<a href="http://linker.in/journal/2010/03/movabletype-plugin-jsonaccessranking.php">「『Movabletype Plugin アクセスランキングプラグイン: JSONAccessRanking』を次回試すぜ！」</a>と宣言したのですが、お約束通り実行しました！　えっへん（違）。</p>
+
+<p>プラグイン作者の<a href="http://twitter.com/cool_ni_ikou">@cool_ni_ikouさん</a>は、<a href="http://weblibrary.s224.xrea.com/weblog/mt/movabletype_plu_1.html">当該記事</a>の中で手順を以下のように書かれていますので、引用してみます。</p>
+
+<blockquote>
+
+<p>JSONAccessRankingの実装について</p>
+<p>実装は簡単です。以下のような流れになります。</p>
+<ol style="list-style-type: decimal;">
+<li>プラグインフォルダにJSONAccessRankingフォルダを追加します。</li>
+<li>プラグインページにて必要情報を設定。（ログインアカウント名、パスワード、レポートID、最大表示件数）</li>
+<li>新規テンプレート作成JSONデータ用（インデックステンプレート）。</li>
+<li>ヘッダー部分にjQueryコードを追加。</li>
+<li>フッター部分に外部スクリプト読み込みコードを追加。</li>
+<li>jQueryスクリプトをjsフォルダ（任意）にアップ。</li>
+<li>新規でウィジットテンプレートを作成。</li>
+<li>作成したウィジットテンプレートをウィジットセットの任意の位置に追加。</li>
+<li>最後に再構築するだけとなります。</li>
+</ol>
+
+</blockquote>
+
+<p>私は、これをちょっと変えて、以下のようにしてみました。</p>
+
+<ol style="list-style-type: decimal;">
+<li>プラグインフォルダにJSONAccessRankingフォルダを追加。</li>
+<li>プラグインページにて必要情報を設定。（ログインアカウント名、パスワード、レポートID、最大表示件数）</li>
+<li>新規テンプレート作成JSONデータ用（インデックステンプレート）。</li>
+<li>新規テンプレート作成ランキング表示用HTML（インデックステンプレート）。</li>
+<li>ランキング表示用HTMLのヘッダー部分にjQueryコードを追加。</li>
+<li>ランキング表示用HTMLのフッター部分に外部スクリプト読み込みコードを追加。</li>
+<li>新規テンプレート作成jQueryスクリプト用（インデックステンプレート）。</li>
+<li>ランキング表示用HTMLのインデックステンプレートを再構築。</li>
+</ol>
+
+<p>変えたポイントは、jQueryスクリプトやウィジェットを全ページに入れるのではなく、ある特定の「ランキング表示用HTML」だけに入れたことですね。テストなので、とりあえず1ページ作りたかっただけです。</p>
+
+<p>jQueryスクリプト用の新規インデックステンプレートを作成したのは、単に気分です（笑）。それだけMTと関係ないところでアップロードすると、あとで削除するときなどに忘れそうな気がしたので。</p>
+
+<p>以上のような手順を経て、「Google Analyticsのデータを使ったlinker.inここ1ヶ月間のアクセス数ランキング」ができました。</p>
+
+<ul>
+	<li><a href="http://linker.in/journal/json-access-lanking.html">linker.in ここ一ヶ月のアクセスランキング</a></li>
+</ul>
+
+<h2>2010年3月23日現在、上記ページの出力結果は、こうなってます。</h2>
+
+<ul class="rk_list"><li class="rk_item">1 : <a href="/journal/2010/02/aquos-sh03b.php">シャープAQUOSケータイ「SH-03B」を触ってきました！｜linker journal｜linker</a></li><li class="rk_item">2 : <a href="/">「人と人」「人と情報」「人と物」をつなぐデザインユニット linker（リンカー）</a></li><li class="rk_item">3 : <a href="/journal/2009/08/iphoneair-mouse-pro.php">iphoneがタッチパッドになるアプリ「Air Mouse Pro」｜linker journal｜linker</a></li><li class="rk_item">4 : <a href="/journal/2010/03/iphonecssphpjavascriptcss.php">iPhone用にCSS/PHP/JavascriptでCSSを切り替える基本的な方法｜linker journal｜linker</a></li><li class="rk_item">5 : <a href="/profile/">3人のプロフィール｜linker</a></li><li class="rk_item">6 : <a href="/journal/2010/02/teamviewerpc.php">TeamViewerをつかってPC操作をサポート｜linker journal｜linker</a></li><li class="rk_item">7 : <a href="/journal/2010/03/css3.php">CSS3で追加になったセレクタを改めて見直してみる｜linker journal｜linker</a></li><li class="rk_item">8 : <a href="/journal/2009/04/dldtdd.php">dl,dt,ddでデザインを整える方法とか[追記 2009.04.21 12:15]｜linker journal｜linker</a></li><li class="rk_item">9 : <a href="/journal/">linker journal｜linker</a></li><li class="rk_item">10 : <a href="/works/">linkerの実績｜linker</a></li></ul>
+
+<p>これを見ると、私の書いた記事って1位のものひとつだけなんですよね......。</p>
+
+<p>最近、自分の記事の質が低いんだなぁと、こんなところで実感してしまいました。精進したいと思います。</p>
+
+<p></p>
+
+<p></p>
+
+<p><br />
+</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/finder.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/radikojpaudio_hijack_proprismip.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

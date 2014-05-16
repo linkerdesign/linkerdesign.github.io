@@ -1,0 +1,132 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>OmniGraffleのtips：変数と共通レイヤーを使ったテンプレートで楽をする｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>OmniGraffleのtips：変数と共通レイヤーを使ったテンプレートで楽をする</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;OmniGraffleのtips：変数と共通レイヤーを使ったテンプレートで楽をする</p>
+
+ <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090801_00.jpg" src="http://linker.in/journal/images/090801_00.jpg" width="640" height="195" class="mt-image-none" style="" /></span></p>
+
+<p>
+こんにちは、taku-workです。<br />
+エアコンと早くも夏疲れで喉が荒れています。みなさんもお気をつけて。
+</p>
+
+<p>
+さて今回はOmniGraffleのtipsです。<br />
+といってもcouldさんで変数と共通レイヤーが紹介されていてとても便利だったので使ってみたという話です。
+</p>
+
+<blockquote><p>
+OmniGraffleを使ったテンプレート作り:could<br />
+<a href="http://www.yasuhisa.com/could/article/omnigraffle-template/">http://www.yasuhisa.com/could/article/omnigraffle-template/</a>
+</p></blockquote>
+
+<h2>テンプレを作る</h2>
+
+<p>
+プレゼンシートやワイヤーフレームなど、複数のページを作る場合ヘッダーやフッターなどのパーツは共通化したいところです。<br />
+他のプレゼン作成ツールでは当たり前のようにできると思いますが、OmniGraffleでは共通レイヤーというものを使います。<br />
+共通レイヤーを作っておくと、新規キャンバスを作ると共通レイヤーが自動的に挿入されます。<br />
+そして、変数を挿入しておくと指定した項目を変数として読み込んでくれます。<br />
+たとえばページ数やキャンバス名などです。
+</p>
+
+<p>
+まずは共通レイヤーを作ります。
+</p>
+
+<p>
+キャンバスを作成し、<br />
+[メニュー] → [ファイル] → [編集] → [新規共通レイヤー]<br />
+で共通レイヤーを作成します。
+</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090801_01.jpg" src="http://linker.in/journal/images/090801_01.jpg" width="400" height="304" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+オレンジのプレビューと文字のレイヤーが作成されます。<br />
+これが共通レイヤーです。<br />
+追加で新規キャンバスを作った場合はこの共通レイヤーは一緒に作成されるようになります。
+</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090801_02.jpg" src="http://linker.in/journal/images/090801_02.jpg" width="400" height="336" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+次に変数を入れていきます。<br />
+変数はテキストエリアに対して挿入することができます。<br />
+テキストエリアを作成して<br />
+[メニュー] → [ファイル] → [編集] → [変数を挿入]<br />
+から項目を選びます。
+</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090801_03.jpg" src="http://linker.in/journal/images/090801_03.jpg" width="400" height="461" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+ヘッダーなどには以下のようなものを変数として入れておくと便利です。
+</p>
+
+<dl>
+     <dt>キャンバス名：<%Canvas%></dt>
+     <dd>キャンバス名をページタイトルとして入れておけばヘッダーで使ったりメインコンテンツの大見出しに使ったりと便利です。</dd>
+     <dt>ページ番号 / ページ総数：<%#%> / <%TotalPages%></dt>
+     <dd>ページ数は打ち合わせなど相手に説明する時に必要なので入れておきます。<br />
+変数のページ数、とページ総数をつかって 「1 / 12」のような形が便利かも。</dd>
+     <dt>書類の変更日：<%ModificationDate%></dt>
+     <dd>これは作成日時でも良いのですが、どのバージョンかわかる必要がある場合は更新日時の方がよいかもしれません。</dd>
+</dl>
+           
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090801_04.jpg" src="http://linker.in/journal/images/090801_04.jpg" width="367" height="259" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090801_05.jpg" src="http://linker.in/journal/images/090801_05.jpg" width="383" height="280" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+あとはレイアウトなどを決めてテンプレートとして保存しておけば書類作成が楽になります。<br />
+以前紹介した「<a href="http://linker.in/journal/2009/06/omnigraffle.php">OmniGraffleの小わざ：インスペクタのスタイル画像</a>」と組み合わせればもっと楽になるかもしれません。
+</p>
+
+<p>
+ということで、<br />
+なんとかして作業時間を短縮してデザインする時間を確保したいと思うフリーランスのOmniGraffleユーザーにはとても便利な機能でした。
+</p>
+
+    
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_39.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/mt_3.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

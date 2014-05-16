@@ -1,0 +1,82 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTプラグイン「FBWallPost」を使ってFacebookページに更新情報を流してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTプラグイン「FBWallPost」を使ってFacebookページに更新情報を流してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTプラグイン「FBWallPost」を使ってFacebookページに更新情報を流してみる</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+ウィンブルドンは本日から準決勝。女子はシード上位がだいぶ負けてしまいましたし、男子はフェデラーが負けてしまいましたし。誰が勝つか分からなくなってきましたね。<br />
+ロンドンにいるのでMurrayが勝ってくれるのが個人的にはベストですね。</p>
+<p>さて、何回かlinker journalでもFacebookにfeedを流してみる話などは書いたりしました。</p>
+<blockquote>
+  <p>Facebook groupにfeedを流す際はNetworkedBlogsで｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2011/03/facebook-groupfeednetworkedblogs.php">http://linker.in/journal/2011/03/facebook-groupfeednetworkedblogs.php</a>&nbsp;&nbsp;</p>
+
+  <p>【2011年1月31日14:45追記】NetworkedBlogsやRSS Graffitiを使ってFacebookにfeedを流してみる｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2011/01/networkedblogsrss-graffitifacebookfeed.php">http://linker.in/journal/2011/01/networkedblogsrss-graffitifacebookfeed.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>NetworkedBlogsやRSS Graffitiについて、特に不満はないのですが、MTのプラグインでFacebookページにも投稿できる「FBWallPost」がありますので、それを試してみました。</p>
+<blockquote>
+  <p>Movable type用Facebookウォール投稿プラグイン FBWallPost ページ対応 - BSDあれこれ<br />
+  <a href="http://www.macminiosx.com/2011/05/mt_facebook_fbwallpost.html">http://www.macminiosx.com/2011/05/mt_facebook_fbwallpost.html</a></p>
+</blockquote>
+<p>必須モジュールは</p>
+<blockquote>
+  <p>必須モジュール：Crypt::SSLeay若しくはIO::Socket::SSL</p>
+</blockquote>
+<p>とのことですが、こちらのサーバーでも問題なく使えました。</p>
+<p><img src="http://linker.in/journal/images/110630-01.jpg" width="561" height="395" alt="110630-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>必要なモジュールがはいっているかどうかをこうやって管理画面でチェックできるのは細かいところですが、すごくありがたいですね。</p>
+<p>細かい設定などはブログ記事に書かれてある通りに進めていけば問題無く設定が出来ます。<br /></p>
+<p>テスト投稿してみると、このようにlinkerのFacebookページに問題無く投稿できました。</p>
+<p><img src="http://linker.in/journal/images/110630-02.jpg" width="548" height="186" alt="110630-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>気になるところといえば、設定した人がキーになっているようなので、下記のプラグインの設定画面で投稿するページを選ぶ場合などに、自分が管理者になっているページが多分他のブログ管理者にも見えていそうな気がする、ということくらいでしょうか。</p>
+<p><img src="http://linker.in/journal/images/110630-03.jpg" width="389" height="87" alt="110630-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まぁ、linkerの２人に見られてこまるような物は全くないので、そこまで問題ではないですが、何となく気になりそうな気がしました。</p>
+<p>あと、普段journalに投稿するときはectoをつかって、日時指定で公開しています。<br />
+どこに問題があるのか分かっていないのですが、カテゴリーがうまくわたせなかったり、下書きで投稿しても公開状態で投稿されているけど、公開はされていないみたいなことになっていたりします。<br />
+なので、管理画面にいって、カテゴリを指定して、記事を日時指定に変更して、ということを設定しています。</p>
+<p>その辺がこのプラグインの場合どのような感じで扱われるのか？というのも微妙に気になるところではあります。<br />
+この記事を投稿した際にどうなったか、というのも見てみたいところです。</p>
+<p>気になるところはほんとそのくらいの細かいところだけで、設置も簡単ですので、Movable TypeからFacebookに投稿したいと考えている時はこのプラグインを使ってみてはどうでしょうか？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_157.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/20117.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

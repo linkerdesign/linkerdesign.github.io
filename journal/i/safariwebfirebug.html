@@ -1,0 +1,100 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>SafariのWebインスペクタはFirebugの代わりになるのか？？｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>SafariのWebインスペクタはFirebugの代わりになるのか？？</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;&nbsp;&raquo;&nbsp;SafariのWebインスペクタはFirebugの代わりになるのか？？</p>
+
+<p>みなさん、こんにちは、まーしーです</p>
+<p>仕事で使うブラウザが最近FirefoxからSafariやChromeになりつつあります。<br />
+Macを使い始めてからずっとFirefoxだったのでSafariはまだまだ使いこなせていないです。</p>
+<p>FirefoxだとFirebugはよく使ってるのでFirebugのためだけにFirefoxにもどってることが多かったのですが、<br />
+それはSafariのWebインスペクタでもできるんじゃない？<br />
+ということでハムさんが最近書かれたFirebugの使い方を参考にしながら見てみたいと思います。</p>
+<blockquote>
+  <p><a href="http://h2ham.seesaa.net/article/154387441.html">意外と知られていない機能が多い！？Firebugの使い方 | THE HAM MEDIA</a><br />
+  <a href="http://h2ham.seesaa.net/article/158589624.html">これも知らない！？知っていると便利なFirebugの使い方 | THE HAM MEDIA</a></p>
+</blockquote>
+<p>とりあえず今回は前半のスタイル調整のあたりを。</p>
+<h2>HTML &amp; CSSの確認</h2>
+<p>まずはSafariのWebインスペクタを開きます。</p>
+<p><a href="http://linker.in/journal/images/100809-01.jpg"><img src="http://linker.in/journal/images/100809-01-tm.jpg" width="480" height="363" alt="100809-01.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<p>HTMLが表示されています。左下にある虫眼鏡をクリックすれば特定の要素について表示させることができます。</p>
+<p><a href="http://linker.in/journal/images/100809-02.jpg"><img src="http://linker.in/journal/images/100809-02-tm.jpg" width="480" height="395" alt="100809-02.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<p>スタイル情報がでます。</p>
+<p><a href="http://linker.in/journal/images/100809-03.jpg"><img src="http://linker.in/journal/images/100809-03-tm.jpg" width="480" height="360" alt="100809-03.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<h2>スタイルの累計表示</h2>
+<p>Firebugのこの機能自体使ったことがなかったのですが、Webインスペクターでは「計算済みのスタイル」で見ることができるようです。</p>
+<p><a href="http://linker.in/journal/images/100809-04.jpg"><img src="http://linker.in/journal/images/100809-04-tm.jpg" width="480" height="395" alt="100809-04.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<h2>スタイルの適用・未適用</h2>Firebugではプロパティをクリックすると停止マークが表示されますが、Webインスペクターの場合は右側にあるチェックボックスのチェックを外します。
+
+<p><a href="http://linker.in/journal/images/100809-05.jpg"><img src="http://linker.in/journal/images/100809-05-tm.jpg" width="480" height="395" alt="100809-05.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<p><span style="font-size: 18px; font-weight: bold;">値の変更</span><br /></p>
+<p>プロパティ部分をクリックすると値を変更することができます</p>
+<p><a href="http://linker.in/journal/images/100809-06.jpg"><img src="http://linker.in/journal/images/100809-06-tm.jpg" width="480" height="399" alt="100809-06.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<h2>プロパティの追加</h2>
+<p>プロパティの追加もできます。場所が若干わかりにくい気がしますが、プロパティの前あたりをクリックすれば入力欄が出てきます。</p>
+<p><a href="http://linker.in/journal/images/100809-07.jpg"><img src="http://linker.in/journal/images/100809-07-tm.jpg" width="480" height="395" alt="100809-07.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<h2>レイアウトタブ</h2>
+<p>レイアウトタブと同様の情報はメトリックスの項目を開けば見ることができます。</p>
+<p><a href="http://linker.in/journal/images/100809-08.jpg"><img src="http://linker.in/journal/images/100809-08-tm.jpg" width="480" height="395" alt="100809-08.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<h2>以下の要素はできない？</h2>
+<p>Firebugではあった</p>
+<ul>
+  <li>:hover</li>
+
+  <li>HTMLタブの表示を変更</li>
+
+  <li>クイック情報ボックスでの表示</li>
+</ul>
+<p>あたりと同等の機能は見つけられませんでした。どっかにあるのかな。</p>
+<p>とはいえ必要そうな機能はおおむねカバーできているようです。<br />
+今回は簡単な使い方のみですが、Safariでもほぼ同様のことはできますね。</p>
+<h2>Safariの情報</h2>
+<p>Safariに関する情報は</p>
+<ul>
+  <li><a href="http://safarirealized.com/">Safari Realized</a></li>
+
+  <li><a href="http://extensions.apple.com/">Apple - Safari - Safari Extensions Gallery</a><br /></li>
+</ul>
+<p>あたりを見たりするといいかもしれませんね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_105.php">&laquo;&nbsp;前の記事へ</a></p>
+
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

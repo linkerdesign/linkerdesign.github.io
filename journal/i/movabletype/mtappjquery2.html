@@ -1,0 +1,83 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTAppjQueryの小ネタを2つほど｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTAppjQueryの小ネタを2つほど</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTAppjQueryの小ネタを2つほど</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>今日はCSS Nite in Ginza, Vol.58が開催されていました。</p>
+<blockquote>
+  <p>CSS Nite in Ginza, Vol.58（2011年8月18日開催）<br />
+  <a href="http://cssnite.jp/ginza/vol58/">http://cssnite.jp/ginza/vol58/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>どんなかんじだったかTwitterでしか見れませんでしたが、書籍を買っていただいた方、CSS Niteに参加された方にとって何かしら得るものがあればいいなぁ、と思う次第です。</p>
+<p>さて、MTを使うんだったら<a href="http://www.powercms.jp/">PowerCMS</a>をつかうか<a href="http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html">MTAppjQuery</a>をつかうかどっちか！？くらいになっているこの頃です。<br />
+今日はそんなマイ標準プラグインになりつつあるMTAppjQueryの小ネタでも。</p>
+<h2>フリーエリアでMTタグが使えるのでモジュールとしてincludeする</h2>
+<p><a href="http://linker.in/journal/2011/07/mtappjquery.php">先日も書きました</a>が、MTAppjQueryはプラグイン設定のフリーエリアでも記述が可能です。</p>
+<p>フリーエリアに書いた物はそのブログだけに反映されます。<br />
+まぁ、user.jsにかいてblogid等で判定すれば同様の事も可能です。</p>
+<p>このフリーエリアではMTタグが使えます。なので、例えば</p>
+<p><strong>&lt;mt:Include module="incMTAppjquery" parent="1"&gt;</strong></p>
+<p>とかを書いておいて必要になりそうな共通設定はウェブサイトのテンプレートモジュール：incMTAppjQueryで管理する、という使い方も可能です。</p>
+<p>user.jsに書く場合は明示的にblog_idを書く必要がありますが、その代わりにプラグインの設定のほうでincludeしておいてそのブログにだけ読み込ませる、ということになりますね。<br />
+要件次第でどっちが工数的に適しているのかなどは変わってくるかもしれませんが、必要に応じてこういう使い方も可能でしょうね。</p>
+<h2>$.MTAppMultiCheckbox()をさらに使い込む</h2>
+<p>テキストフィールドを擬似的にチェックボックスグループに変えてくれる「$.MTAppMultiCheckbox()」という機能があります。</p>
+<blockquote>
+  <p>$.MTAppMultiCheckbox() の使い方 - MTAppjQuery でマルチチェックボックスも簡単に作成 - かたつむりくんのWWW<br />
+  <a href="http://www.tinybeans.net/blog/2010/07/06-115554.html">http://www.tinybeans.net/blog/2010/07/06-115554.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>テキストフィールド欄でありながら固定値をいくつか入力させることが出来たりとすごく便利です。</p>
+<p>指定はlabelオプションに<br />
+<strong>label: 'Moveble Type,TypePad,MTOS,VOX',</strong><br />と書くだけです。</p>
+<p>ただ、例えば表示させる文言はわかりやすくしたうえで、入力させる値はシンプルにしたい、という場合もあるでしょう。</p>
+<p>そういう場合はlabelオプションに<br />
+<strong>label:{'key1':'value1','key2':'value2'},</strong><br />と書くことが可能です。</p>
+<p>こうやって書いておくと表示されるチェックボックスのラベルはvalue1、value2と表示され、入力される値はkey1,key2が入っていきます。</p>
+<p>ほんと細かい所まで行き届いています！</p>
+<p>シンプルなlabelオプションの書き方だとカンマ区切りのものをラベルとして表示できませんでしたが、この書き方だと可能ですね。</p>
+<h2>ということで</h2>
+<p>すごく細かいネタなので必要な人は限られているかもしれませんが、なんかの時に使ってみてはどうでしょうか。</p>
+<p>もっともっとMTAppjQueryを使い込んで色々フィードバックしてさらによくなっていってほしいと思いますね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_168.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/css_nite_in_ginza_vol58_1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

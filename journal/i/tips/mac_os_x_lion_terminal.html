@@ -1,0 +1,90 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Mac OS X LionのTerminalにてnanoを使ってhostsファイルを書き換える話（画像付き）。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Mac OS X LionのTerminalにてnanoを使ってhostsファイルを書き換える話（画像付き）。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Mac OS X LionのTerminalにてnanoを使ってhostsファイルを書き換える話（画像付き）。</p>
+
+<p>@cremaです。実に2ヶ月ぶりぐらいにブログを更新しますが、みなさま、あけましておめでとうございます。今年はどうかみなさまにとって、穏やかで実りのある一年でありますように。</p>
+
+<p><img alt="2012-new-year.jpg" src="http://linker.in/journal/images/2012-new-year.jpg" width="500" height="338" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>さて、早速本題に入りますね。</p>
+
+<p>近頃お仕事でサイトのリニューアルをするにあたり、開発中はテスト環境に接続して表示確認をすることが多いのです（多いですよね）。その際、リンクの都合上などの理由で、本番ドメインでテスト環境に接続したい場合があります（ありますよね）。</p>
+
+<p>そんな時比較的楽にそれを実現するのが、ローカル環境にある「hostsファイル」を書き換えることだと思います。hostsファイルはテキストファイルで、1行づつIPアドレスとホスト名の対応を記述してあるのです。</p>
+
+<p>Mac OS XにてTerminalを起動して、その「hostsファイル」を書き換えてみたいと思います。</p>
+
+<p>参考にしたのは、<a href="http://teardropcafe.seesaa.net/article/107149688.html">Mac OSX(10.5)でhostsファイルを編集する。: TEAR DROP CAFE</a>という記事ですが、スクリーンショットが全く無いので、私の方ですべて撮ってみました。</p>
+
+<h2>「sudo nano /private/etc/hosts」と入力する。</h2>
+
+<p>Terminalを起動したら、「sudo nano /private/etc/hosts」と入力します。パスワードをきかれるので、システムに対して設定してあるパスワードを入力します。</p>
+
+<p><a href="http://linker.in/journal/images/20120107_010169-CapturFiles.png"><img alt="20120107_010169-CapturFiles.png" src="http://linker.in/journal/assets_c/2012/01/20120107_010169-CapturFiles-thumb-500x377-3500.png" width="500" height="377" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>Terminal内で、nanoという名前のエディタが起動します。すでにhostsファイルが開かれていますので、上下矢印キーを使って、一番下の行まで移動します。</p>
+
+<p><a href="http://linker.in/journal/images/20120107_010103-CapturFiles.png"><img alt="20120107_010103-CapturFiles.png" src="http://linker.in/journal/assets_c/2012/01/20120107_010103-CapturFiles-thumb-500x377-3501.png" width="500" height="377" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>テスト環境のIPアドレスを入力し、タブを一つ入れて、本番ドメインを入力します。これで、両者がひもづけられることになります。nanoから抜けるために、キーボードで「control + x」を押します。</p>
+
+<p><a href="http://linker.in/journal/images/20120107_010190-CapturFiles.png"><img alt="20120107_010190-CapturFiles.png" src="http://linker.in/journal/assets_c/2012/01/20120107_010190-CapturFiles-thumb-500x377-3502.png" width="500" height="377" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>ファイルを保存するかどうかきかれるので「y」を入力し、ファイルを保存します。</p>
+
+<p><a href="http://linker.in/journal/images/20120107_010112-CapturFiles.png"><img alt="20120107_010112-CapturFiles.png" src="http://linker.in/journal/assets_c/2012/01/20120107_010112-CapturFiles-thumb-500x377-3506.png" width="500" height="377" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>次の画面では「return」キーを押します。</p>
+
+<p><a href="http://linker.in/journal/images/20120107_010136-CapturFiles.png"><img alt="20120107_010136-CapturFiles.png" src="http://linker.in/journal/assets_c/2012/01/20120107_010136-CapturFiles-thumb-500x377-3508.png" width="500" height="377" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>これにて、「hostsファイル」の書き換えは終了ですので、Terminalを終了してOK。</p>
+
+<p>ブラウザで本番ドメインにアクセスすると、テスト環境に接続するはずです。</p>
+
+<p>平行して現行環境にアクセスしたい場合は私は別マシンを使ってしまっていますが、VMware等の仮想環境を用意しておいてそちらからアクセスするのもよいかと思います。</p>
+
+<p>それでは、復帰第一作なので、かるーい感じで失礼いたします。<br />
+</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/tw_2012.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/n.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

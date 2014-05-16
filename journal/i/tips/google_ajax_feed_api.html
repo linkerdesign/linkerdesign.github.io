@@ -1,0 +1,165 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>はてブでの人気エントリーをGoogle AJAX Feed APIを使って表示する｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>はてブでの人気エントリーをGoogle AJAX Feed APIを使って表示する</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;はてブでの人気エントリーをGoogle AJAX Feed APIを使って表示する</p>
+
+<p><img src="http://linker.in/journal/images/090831.gif" width="600" height="200" alt="090831.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+昨日の選挙ではいろいろ代わってしまったようですね。<br />
+どっちに転んだとしても日本で生活していくことになりますし、その枠組みの中でがんばるっきゃないよな〜、<br />
+と改めて決意して仕事することにした月曜日です。</p>
+<p>今日は勉強がてら人気記事を表示する方法を調べてみました。</p>
+<h2>linker journalの人気記事を表示してみました</h2>
+<p>linker journalの人気記事をサイドバーに表示してみました。<br />
+今回ははてブのブックマーク数をベースに表示させています。</p>
+<p>結果としてハムさんがわかりやすいエントリーを書いてくれていたので、それを参考にしたらささっと出来てしまいました。</p>
+<blockquote>
+  <p>はてなブックマークでの人気のエントリーが自動的に表示されるようにしてみた | THE HAM MEDIA<br />
+  <a href="http://h2ham.seesaa.net/article/101931075.html">http://h2ham.seesaa.net/article/101931075.html</a></p>
+</blockquote>
+<p>ソース部分は下にまとめておきます。</p>
+<p>最初にjQueryとGoogle AJAX Feed APIを使う設定を事前にしておきます。<br />
+はてブでのjournalのブックマークされてる記事一覧は</p>
+<blockquote>
+  <p>http://b.hatena.ne.jp/entrylist?mode=rss&amp;url=http%3A%2F%2Flinker.in%2Fjournal%2F&amp;sort=count&amp;threshold=3</p>
+</blockquote>
+<p>というfeedでわかるので</p>
+<blockquote>
+  <p>var feed = new google.feeds.Feed("http://b.hatena.ne.jp/entrylist?mode=rss&amp;url=http%3A%2F%2Flinker.in%2Fjournal%2F&amp;sort=count&amp;threshold=3");</p>
+</blockquote>
+<p>としてあげることで変数のfeedをつかって記事一覧のfeedを扱うことが可能になります。<br />
+このあたりはGoogle AJAX Feed APIのリファレンスに書いてあります。</p>
+<blockquote>
+  <p>Feed(url) 指定されたフィード URL をダウンロードできる新しい Feed インスタンスを作成します。</p>
+
+  <p>クラス リファレンス - Google AJAX Feed API - Google Code<br />
+  <a href="http://code.google.com/intl/ja/apis/ajaxfeeds/documentation/reference.html">http://code.google.com/intl/ja/apis/ajaxfeeds/documentation/reference.html</a></p>
+</blockquote>
+<p>読み込む数はsetNumEntries(num)で指定します。</p>
+<blockquote>
+  <p>setNumEntries(num)</p>
+
+  <p>このフィードによってロードされるフィード エントリの数を num に設定します。デフォルトで、Feed クラスは 4 つのエントリをロードします。</p>
+
+  <p>クラス リファレンス - Google AJAX Feed API - Google Code<br />
+  <a href="http://code.google.com/intl/ja/apis/ajaxfeeds/documentation/reference.html">http://code.google.com/intl/ja/apis/ajaxfeeds/documentation/reference.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>そしてその指定した数だけリピートするために</p>
+<blockquote>
+<p>for (var i = 0; i &lt; result.feed.entries.length; i++) {<br />
+}</p>
+</blockquote>
+<p>となります。result.feed.entries.lengthとかけるかどうか、ですね。<br />
+ドキュメントに書いてありますが、個人的にはココでつっかかるような気がします。</p>
+<p>で、その繰り返しの中でエントリーを一件ずつ取得して 記事のタイトル（entry.title）やリンク（entry.link）を取得しています。<br />
+取得したものはuseFeedに代入されているのですが<br />
+useFeed += &lt;li&gt;~~~&lt;/li&gt;<br />
+というところでuseFeedに繰り返した数だけの &lt;li&gt;~~~~&lt;/li&gt;が追加されていきます。</p>
+useFeed += &lt;li&gt;~~~&lt;/li&gt;;<br />
+は<br />
+&nbsp;&nbsp;useFeed = useFeed + &lt;li&gt;~~~&lt;/li&gt;;<br />
+と同義です。</p>
+<p>最後の</p>
+<blockquote><p>$("#hatenalist").html('&lt;ul&gt;' + useFeed + '&lt;/ul&gt;');</p></blockquote>
+<p>でHTML内の#hatenalistに&lt;ul&gt;&lt;li&gt;~~~&lt;/li&gt;&lt;/ul&gt;を追加しています。</p>
+<h2>メモ</h2>
+<p>今回の人気リストを表示させるに当たってどうやって表示させようかな〜と考え始めて、はてブのAPIのドキュメントとかをみたりしたんですがちんぷんかんぷん。<br />
+ん〜。勉強がてらJSONとかでやれるのかな〜？？とか素人頭で考えてみたりしました。<br />
+１つのPermalinkに対して色々ゲットできる、というのはわかったのですが、その先が詰まってしまいました。</p>
+<p>JSONといったらハムさんが記事書いてたな、とおもってハムさんのサイトにいったらはてブの一覧がありまして。<br />
+お、と思いサイト内検索してみたら、今回の方法があったという感じでした。<br />
+流石ですね。</p>
+<p>JSONだとどうやるのかな？いまいちその辺ができるのかどうなのかもわかってないので、JSONは改めて勉強しようと思います。。</p>
+<h2>今後の課題</h2>
+<p>今回やってみてとりあえずの課題は</p>
+<ul>
+  <li>全然わかってないキャッシュとかその辺</li>
+
+  <li>他の方法がないか？</li>
+
+  <li>はてブ以外も含める方法を考える</li>
+</ul>
+<p>このあたりでしょうか。</p>
+<h2>まとめ</h2>
+<p>結果として、特定URL以下の人気記事一覧のFeedがhttp://b.hatena.ne.jp/entrylist?mode=rss&amp;url=http%3A%2F%2Flinker.in%2F&amp;sort=count&amp;threshold=3のfeedを知ってるかどうかなのかな、という気がしています。<br />
+まだまだWebサイトを見てない、つかってないですね。</p>
+<p>んで表示される記事一覧をみると、ぎりぎり最後に自分のが滑り込んでるレベル。<br />
+差を感じますね〜。<br />
+ここからいなくなるのも時間の問題というところではありますが、上に目標がいるので頑張るのみです。</p>
+<h2>ソース</h2>
+<pre class="brush:xml">
+&lt;script type="text/javascript"&gt;
+//&lt;![CDATA[
+google.load("feeds", "1");
+$(document).ready(function(){
+        var feed = new google.feeds.Feed("http://b.hatena.ne.jp/entrylist?mode=rss&amp;url=http%3A%2F%2Flinker.in%2Fjournal%2F&amp;sort=count&amp;threshold=3");
+        feed.setNumEntries(10);
+        feed.load(function(result) {
+                if (!result.error) {
+                        var useFeed = "";
+                        for (var i = 0; i &lt; result.feed.entries.length; i++) {
+                                var entry = result.feed.entries[i];
+                                var Title = entry.title.replace("｜linker journal｜linker" , "");
+                                useFeed += '&lt;li&gt;&lt;a href="' + entry.link + '"&gt;'+ Title + '&lt;/a&gt;&lt;a href="http://b.hatena.ne.jp/entry/'+ entry.link + '"&gt;&lt;img src="http://b.hatena.ne.jp/entry/image/'+ entry.link + '" /&gt;&lt;/a&gt;&lt;a href="http://b.hatena.ne.jp/append?'+ entry.link + '"&gt;&lt;img src="http://linker.in/images/icon-b_entry.gif" alt="このエントリーをはてなブックマークする" title="このエントリーをはてなブックマークする" width="16" height="12" /&gt;&lt;/a&gt;&lt;/li&gt;';
+                        }
+                        $("#hatenalist").html('&lt;ul&gt;' + useFeed + '&lt;/ul&gt;');
+    }
+        });
+});
+//]]&gt;
+&lt;/script&gt;
+&lt;div id="hatenalist"&gt;&lt;/div&gt;
+</pre>
+<h2>参考記事</h2>
+<ul>
+  <li>Google AJAX Feed APIではてなブックマークの人気エントリーを表示<br />
+  <a href="http://weboook.blog22.fc2.com/blog-entry-122.html">http://weboook.blog22.fc2.com/blog-entry-122.html</a></li>
+
+  <li><a href="http://weboook.blog22.fc2.com/blog-entry-122.html"></a>Google AJAX Feed API を使ってJavaScriptでサイトにRSSフィードを表示する方法 | THE HAM MEDIA<br />
+  <a href="http://h2ham.seesaa.net/article/100840896.html">http://h2ham.seesaa.net/article/100840896.html</a></li>
+
+  <li><a href="http://h2ham.seesaa.net/article/100840896.html"></a>はてなブックマークでの人気のエントリーが自動的に表示されるようにしてみた | THE HAM MEDIA<br />
+  <a href="http://h2ham.seesaa.net/article/101931075.html">http://h2ham.seesaa.net/article/101931075.html</a>&nbsp;&nbsp;</li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/photoshoptips3d.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/firefox.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

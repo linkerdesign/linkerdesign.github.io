@@ -1,0 +1,82 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Fireworksでマルチアイコンのfavicon.icoを書き出す。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Fireworksでマルチアイコンのfavicon.icoを書き出す。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Fireworksでマルチアイコンのfavicon.icoを書き出す。</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>今日書こうと思った記事の前半は<a href="http://blog.webcreativepark.net/2010/06/09-103729.html">to-Rの西畑さんが書いてらっしゃること</a>と同じなのですが、後半は自分なりに情報を追加して書いてみたいと思います。</p>
+
+<p>先日<a href="http://linker.in/journal/2010/08/fwug001.php">「Fireworks Users Group第一回勉強会」に行ってきたよ。</a>というメモを書きましたが、そこで教えていただいた<a href="http://johndunning.com/fireworks/about/ExportAsFavicon">johndunning.comのFireworks Favicon書き出し拡張機能</a>を使ってみました。</p>
+
+<p>この拡張機能は、Fireworksデフォルトでは作成できないfavicon.icoを書き出す機能を追加してくれるものです。</p>
+
+<p>当該ページの「Download 1.0.0」というリンクから「ExportAsFavicon-100.mxp」をダウンロードし、ダブルクリックして、Adobe Extension Managerでインストールします。</p>
+
+<p>Fireworksを起動すると、メニューバーの「コマンド」に「Favicon」という項目が追加されています。ここでは、16x16、32x32、64x62の3種類の大きさを持った.icoファイルを作成したいので、「New Favicon - 16X16, 32X32 and 64X64」を選択してみましょう。<br />
+<img alt="favicon001.jpg" src="http://linker.in/journal/images/favicon001.jpg" width="500" height="323" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>すると、「ページ」パネルに、自動で3つのページが作成されます。<br />
+<img alt="favicon002.jpg" src="http://linker.in/journal/images/favicon002.jpg" width="243" height="163" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>それぞれのサイズで一番きれいに見えるように、アイコンを作成していきましょう。</p>
+
+<p>64x64<br />
+<img alt="favicon003.jpg" src="http://linker.in/journal/images/favicon003.jpg" width="500" height="196" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>32x32<br />
+<img alt="favicon004.jpg" src="http://linker.in/journal/images/favicon004.jpg" width="500" height="195" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>16x16<br />
+<img alt="favicon005.jpg" src="http://linker.in/journal/images/favicon005.jpg" width="500" height="194" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>ここまでできたら、メニューバーの［コマンド→Favicon→Export as Favicon］を選択します。<br />
+<img alt="favicon006.jpg" src="http://linker.in/journal/images/favicon006.jpg" width="500" height="319" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>ファイル保存場所を指定すると、ほらこの通りfavicon.icoとして生成されています。<br />
+<img alt="favicon007.jpg" src="http://linker.in/journal/images/favicon007.jpg" width="84" height="101" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>この.icoファイルは3つのサイズの画像を持っていますので、ブラウザのナビゲーションツールバーなどに表示される場合は16x16、デスクトップなどでは32x32か64x64などが使われます。</p>
+
+<p>Webサイトのfaviconとしてだけでなく、アプリケーションなどのアイコンとしても使えますよ。ぜひお試しあれ。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/workstyle/post_113.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_114.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

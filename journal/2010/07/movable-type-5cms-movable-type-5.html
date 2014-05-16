@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="火曜／金曜担当（なのに最近更新が遅れ気味）の@cremaです。 今日は「CMSとして使う Movable Type 5 ガイドブック」をご紹介したいと思います。..." />
+<meta name="keywords" content="linker" />
+<meta name="author" content="黒野明子" /><link rel="author" href="https://plus.google.com/109998610443378078260" />
+<meta name="copyright" content="linker" />
+<meta name="company" content="linker" />
+<link rel="apple-touch-icon" href="/logo2.png" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta property="fb:app_id" content="107697189262112" />
+<link rel="canonical" href="/journal/2010/07/movable-type-5cms-movable-type-5.php"/>
+<meta property="og:site_name" content="linker"/>
+<meta property="og:title" content="Movable Type 5でサイトを作ってみたい人に最適な「CMSとして使う Movable Type 5 ガイドブック」"/>
+<meta property="og:description" content='火曜／金曜担当（なのに最近更新が遅れ気味）の@cremaです。 今日は「CMSとして使う Movable Type 5 ガイドブック」をご紹介したいと思います。...'/>
+<meta property="og:url" content="/journal/2010/07/movable-type-5cms-movable-type-5.php"/>
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/journal/images/cmsmtbook5.jpg">
+<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>
+<script type="text/javascript" src="/journal/mt.js"></script>
+<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
+<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
+<title>Movable Type 5でサイトを作ってみたい人に最適な「CMSとして使う Movable Type 5 ガイドブック」｜linker journal｜linker</title>
+<!-- favicon -->
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="prev" href="/journal/2010/07/mtmtappjquery.php" title="MTの管理画面を「MTAppjQueryプラグイン」で簡単にカスタマイズ" />
+<link rel="next" href="/journal/2010/07/ipadiphonezinio.php" title="iPad、iPhoneの電子雑誌リーダーアプリ「Zinio」" />
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/styles-site.css" />
+<link rel="stylesheet" title="one-column" type="text/css" href="/css/layout/two-column-right.css" />
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAboveKzPdj4cCY33y_AFXrhTFON1NPSXOuC_9HjyQZ4DJK5Lf2hTCmI5fEJiyfCZRvZW8RAMvV-wVRg"></script>
+<link rel="alternate" type="application/atom+xml" title="linker 更新情報" href="http://feeds2.feedburner.com/linker-news" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6930174-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div class="section" id="container">
+<div id="header" class="pkg">
+    <p id="logo"><a href="/"><img src="/images/logo.gif" alt="linker" width="148" height="53" /></a></p>
+    <ul>
+      <li><a href="/about/"><img src="/images/menu-about.gif" alt="linkerについて" width="111" height="22" class="onimage" /></a></li>
+      <li><a href="/profile/"><img src="/images/menu-profile.gif" alt="3人のプロフィール" width="129" height="22" class="onimage" /></a></li>
+      <li><a href="/works"><img src="/images/menu-works.gif" alt="linkerの実績" width="97" height="22" class="onimage" /></a></li>
+      <li><img src="/images/menu-journal_cur.gif" alt="linker&amp;nbsp;journal" width="104" height="22" /></li>
+      <li><a href="/contact/"><img src="/images/menu-contact.gif" alt="お問い合わせ" width="101" height="22" class="onimage" /></a></li>    </ul>
+</div>
+  <div id="pageheadArea">
+    <p><img src="/images/txt-lead.gif" alt="linkerは「人と人」「人と情報」「人と物」をつなぐデザインユニットです。" width="386" height="21" /></p>
+        <ul id="sitenavi">
+          <li><a href="/">top</a></li><li><a href="/journal/">linker journal</a></li><li>Movable Type 5でサイトを作ってみたい人に最適な「CMSとして使う Movable Type 5 ガイドブック」</li>
+        </ul>
+  </div>
+<div id="mainArea" class="pkg">
+  <div id="contentsArea">
+  <div id="entryjournal">
+    <div id="navientry">
+        <span class="navipreviousentry"><a href="/journal/2010/07/mtmtappjquery.html">前の記事</a></span>｜
+        <span class="navinextentry"><a href="/journal/2010/07/ipadiphonezinio.html">次の記事</a></span>
+      </div>
+      <h1>Movable Type 5でサイトを作ってみたい人に最適な「CMSとして使う Movable Type 5 ガイドブック」</h1>
+      <div class="entrymeta pkg">
+      <span class="entrydate">2010年07月06日</span>
+      <span class="entrycategory"><a href="/journal/movabletype/">Movable Type</a></span>
+      <span class="entryauthor"><img src="/images/img-crema-thumb16.jpg" alt="黒野明子" /><a href="/journal/author/crema/">黒野明子</a></span>
+      </div>
+      <div class="entrymain">
+      <p>火曜／金曜担当（なのに最近更新が遅れ気味）の@cremaです。</p>
+<p>今日は「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798121061/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">CMSとして使う Movable Type 5 ガイドブック</a>」をご紹介したいと思います。</p>
+<p><img alt="cmsmtbook5.jpg" src="/journal/images/cmsmtbook5.jpg" width="400" height="268" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+<p>先日、この本の著者の一人である<a href="http://www.koikikukan.com/">小粋空間</a>の荒木勇次郎さんより、ご献本いただきました。（ありがとうございました！＆ご紹介が遅れてしまい、申し訳ございません！）</p>
+<p>この本の前のバージョンである「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798113174/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">CMSとして使うMovable Typeガイドブック</a>」という本があるのですが、そちらは私も執筆に参加させていただいていたのですよね。執筆時にはまだ荒木さんとはお目にかかったことがなく、完成後に初めてお会いできたのも、いまとなっては良い思い出です。</p>
+<p>そしてMovable Type 5発表を受け、満を持しての改訂版発売！　残念ながら私はスケジュールの都合で執筆に参加できなかったのですが、こちらを拝見して以前のバージョンより数段パワーアップしていると思っております！！　素敵です！</p>
+<p>中身をちょっと見ていきましょう。</p>
+<p><img alt="cmsmtbook5-002.jpg" src="/journal/images/cmsmtbook5-002.jpg" width="400" height="268" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+<h2>CHAPTER-01 基本操作</h2>
+<p>CHAPTER-01では、「Movable Typeのインターフェイス」「ウェブページ／ブログ記事を作成／編集する」「カスタムフィールド」という節に分かれて、基本操作が解説されています。</p>
+<p>Movable Type 5から導入された概念「ウェブサイト」や、実装された「リビジョン管理」「カテゴリとカスタムフィールドの関連づけ」などにも触れられているので、Movable Type 4からバージョンアップできずに悩んでいた人にも、初めてMovable Typeに触る人にも、分かりやすいのではないかと思います。</p>
+<h2>CHAPTER-02 テンプレート／テンプレートタグ／テーマ</h2>
+<p>この章には「テンプレートの仕組み」「テンプレートの種類と役割」「テンプレートタグの種類と役割」「テーマとスタイル」という節があります。Movable Typeのカスタマイズにチャレンジしようとする人にとっては避けられないこの壁（？）ですが、図版入りで丁寧に語られています。とても分かりやすいので、私自身、再度復習のために熟読してしまいました。</p>
+<h2>CHAPTER-03 テンプレートタグによるプログラミング</h2>
+<p>「プログラミング！？」と腰が引けてしまう方もいるかもしれませんが、本当にMovable Typeを使いこなそうと思ったら、絶対にこの呪文（笑）は欠かせません。「変数を利用したカスタマイズ」「コンディショナルブロックタグを利用した条件分の作成」「テンプレートをモジュール化する」という節で、さまざまな条件に応じた出力内容の切り替えを学ぶことができます。</p>
+<p>「記事を書いたのがAさんのときだけ、特定のバナーを出力したい」「カテゴリごとに出力するテンプレートを変えたい」などの要望も、この「条件分岐」が分かっていれば解決できるのです。初級者から中級者になるために、ぜひ取り組んでいただきたい章ですね。</p>
+<h2>CHAPTER-04 からCHAPTER-07</h2>
+<p>CHAPTER-04 からCHAPTER-07は、以下のような実際のサイトの実例とテンプレートが収められています。</p>
+<ul>
+	<li>CHAPTER-04 ECサイトを制作する</li>
+	<li>CHAPTER-05 コミュニティサイトを制作する</li>
+	<li>CHAPTER-06 ケータイサイトを制作する</li>
+	<li>CHAPTER-07 iPhoneサイトを制作する</li>
+</ul>
+<p>前回の書籍で私が担当していた部分を高山一登さんという方が代わりに執筆なさっているのですが、もう前回より2000%ぐらいパワーアップした内容かと思います！　素晴らしいです！</p>
+<p>特に、前回掲載されていなかった「ケータイサイト」「iPhoneサイト」に関しては、いまの世の中では「設置するのが常識」ぐらいになりつつありますので、必読かと。</p>
+<p>「コミュニティサイト」に関しては、この本で基礎を学んだ後に我々の本をお読みいただくと、より理解が深まるかもしれません（ちょっと宣伝w）</p>
+<p>というわけで、Movable Type 5を学習するための最初の一冊を誰かに聞かれたら、この本を推しておきたいと思う私でした。</p>
+<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798121061/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://ecx.images-amazon.com/images/I/512ot5lEM7L._SL160_.jpg" alt="CMSとして使う Movable Type 5 ガイドブック" style="border: none;" /></a></div><div class="amazlet-info" style="float:left;margin-left:15px;line-height:120%"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798121061/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">CMSとして使う Movable Type 5 ガイドブック</a><div class="amazlet-powered-date" style="font-size:7pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/4798121061/cremadesign-22/ref=nosim/" title="CMSとして使う Movable Type 5 ガイドブック" target="_blank">amazlet</a> at 10.07.07</div></div><div class="amazlet-detail">荒木 勇次郎 高山 一登 菱川 由理 <br />翔泳社 <br />売り上げランキング: 19676<br /></div><div class="amazlet-review" style="margin-top:10px; margin-bottom:10px"><div class="amazlet-review-average" style="margin-bottom:5px">おすすめ度の平均: <img src="http://images-jp.amazon.com/images/G/09/x-locale/common/customer-reviews/stars-5-0.gif" alt="5.0" /></div><img src="http://images-jp.amazon.com/images/G/09/x-locale/common/customer-reviews/stars-5-0.gif" alt="5" /> 非常に実用的。MT5でサイト作りを行うなら外せない一冊。<br /></div><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798121061/cremadesign-22/ref=nosim/" name="amazletlink" target="_blank">Amazon.co.jp で詳細を見る</a></div></div><div class="amazlet-footer" style="clear: left"></div></div>
+      </div>
+      <div class="entrymetafoot pkg">
+      <p class="entrydate"><span>2010年07月06日</span></p>
+      <p class="entrytag"><span>book&nbsp;,&nbsp;Movable Type</span></p>
+<fb:like href="http%3A%2F%2Flinker.in%2Fjournal%2F2010%2F07%2Fmovable-type-5cms-movable-type-5.php" layout="standard" show_faces="false"></fb:like></p>
+</div>
+<div id="entrynavifoot">
+      <p id="entrypreviousfoot"><a href="/journal/2010/07/mtmtappjquery.html">MTの管理画面を「MTAppjQueryプラグイン」で簡単にカスタマイズ</a></p>
+        <p id="entrynextfoot"><a href="/journal/2010/07/ipadiphonezinio.html">iPad、iPhoneの電子雑誌リーダーアプリ「Zinio」</a></p>
+      </div>
+    </div><!-- /#entryjournal -->
+  </div><!-- /id="contentsArea" -->
+<div id="menuArea">
+<div class="menu">
+<h2><img src="/images/menutit-category.gif" alt="Category カテゴリーアーカイブ" width="102" height="30" /></h2>
+<ul>
+<li><a href="/journal/cat45/">アート</a></li>
+<li><a href="/journal/design/">デザイン</a></li>
+<li><a href="/journal/xhtmlcss/">HTML/CSS/JavaScript</a></li>
+<li><a href="/journal/movabletype/">Movable Type</a></li>
+<li><a href="/journal/tips/">Tips</a></li>
+<li><a href="/journal/review/">レビュー</a></li>
+<li><a href="/journal/workstyle/">ワークスタイル</a></li>
+<li><a href="/journal/event/">イベント</a></li>
+<li><a href="/journal/cms/">その他CMS全般</a></li>
+<li><a href="/journal/casestudy/">ケーススタディ</a></li>
+<li><a href="/journal/direction/">ディレクション</a></li>
+<li><a href="/journal/mobile/">モバイル</a></li>
+<li><a href="/journal/podcast/">こんぶだしmeeting</a></li>
+<li><a href="/journal/other/">その他</a></li>
+</ul>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-archives.gif" alt="Archives 月別アーカイブ" width="81" height="30" /></h2>
+<select onchange="location.href=this.options[this.selectedIndex].value">
+<option value="/journal/2013/05/">2013年5月</option>
+<option value="/journal/2013/03/">2013年3月</option>
+<option value="/journal/2013/02/">2013年2月</option>
+<option value="/journal/2013/01/">2013年1月</option>
+<option value="/journal/2012/12/">2012年12月</option>
+<option value="/journal/2012/11/">2012年11月</option>
+<option value="/journal/2012/10/">2012年10月</option>
+<option value="/journal/2012/09/">2012年9月</option>
+<option value="/journal/2012/08/">2012年8月</option>
+<option value="/journal/2012/07/">2012年7月</option>
+<option value="/journal/2012/06/">2012年6月</option>
+<option value="/journal/2012/05/">2012年5月</option>
+<option value="/journal/2012/04/">2012年4月</option>
+<option value="/journal/2012/03/">2012年3月</option>
+<option value="/journal/2012/02/">2012年2月</option>
+<option value="/journal/2012/01/">2012年1月</option>
+<option value="/journal/2011/12/">2011年12月</option>
+<option value="/journal/2011/11/">2011年11月</option>
+<option value="/journal/2011/10/">2011年10月</option>
+<option value="/journal/2011/09/">2011年9月</option>
+<option value="/journal/2011/08/">2011年8月</option>
+<option value="/journal/2011/07/">2011年7月</option>
+<option value="/journal/2011/06/">2011年6月</option>
+<option value="/journal/2011/05/">2011年5月</option>
+<option value="/journal/2011/04/">2011年4月</option>
+<option value="/journal/2011/03/">2011年3月</option>
+<option value="/journal/2011/02/">2011年2月</option>
+<option value="/journal/2011/01/">2011年1月</option>
+<option value="/journal/2010/12/">2010年12月</option>
+<option value="/journal/2010/11/">2010年11月</option>
+<option value="/journal/2010/10/">2010年10月</option>
+<option value="/journal/2010/09/">2010年9月</option>
+<option value="/journal/2010/08/">2010年8月</option>
+<option value="/journal/2010/07/">2010年7月</option>
+<option value="/journal/2010/06/">2010年6月</option>
+<option value="/journal/2010/05/">2010年5月</option>
+<option value="/journal/2010/04/">2010年4月</option>
+<option value="/journal/2010/03/">2010年3月</option>
+<option value="/journal/2010/02/">2010年2月</option>
+<option value="/journal/2010/01/">2010年1月</option>
+<option value="/journal/2009/12/">2009年12月</option>
+<option value="/journal/2009/11/">2009年11月</option>
+<option value="/journal/2009/10/">2009年10月</option>
+<option value="/journal/2009/09/">2009年9月</option>
+<option value="/journal/2009/08/">2009年8月</option>
+<option value="/journal/2009/07/">2009年7月</option>
+<option value="/journal/2009/06/">2009年6月</option>
+<option value="/journal/2009/05/">2009年5月</option>
+<option value="/journal/2009/04/">2009年4月</option>
+<option value="/journal/2009/03/">2009年3月</option>
+<option value="/journal/2009/02/">2009年2月</option>
+<option value="/journal/2009/01/">2009年1月</option>
+</select>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-author.gif" alt="Author 執筆者別アーカイブ" width="101" height="30" /></h2>
+<ul id="menu-authorlist">
+  <li id="crema"><a href="/journal/author/crema/"><span>黒野 明子</span></a></li>
+  <li id="taku-work"><a href="/journal/author/taku-work/"><span>秋野 琢</span></a></li>
+  <li id="mersy"><a href="/journal/author/mersy/"><span>柳谷 真志</span></a></li>
+</ul>
+</div>
+<!-- /id="menuArea" -->
+</div>
+<script type="text/javascript">
+jQuery(function($){
+$("iframe.twitter-share-button").css("vertical-align","bottom");
+});
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<!-- id="mainArea" -->
+</div>
+<div id="footerArea">
+<div class="section pkg" id="footer">
+<p class="contact"><a href="/contact/"><img src="/images/img-footer-contact.gif" alt="お問い合わせ" width="153" height="74" class="onimage" /></a></p>
+  <ul id="footernavi">
+    <li id="footernavitop"><a href="/">トップページ</a></li>
+      <li><a href="/about/">linkerについて</a></li>
+      <li><a href="/profile/">3人のプロフィール</a></li>
+      <li><a href="/works/">linkerの実績</a></li>
+      <li><a href="/journal/">linker journal</a></li>
+    </ul>
+<address>copyright &copy; 2008-2014 linker all rights reserved.</address>
+  <!-- id="footer" -->
+  </div>
+</div>
+<!-- id="container" -->
+</div>
+<script type="text/javascript" src="/js/function.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = '/js/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+</body>
+</html>
+

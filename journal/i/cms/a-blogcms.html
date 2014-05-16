@@ -1,0 +1,182 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>a-blog cms 勉強会に参加しました。今回はハンズオンで実際にやってみる勉強会です。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>a-blog cms 勉強会に参加しました。今回はハンズオンで実際にやってみる勉強会です。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;a-blog cms 勉強会に参加しました。今回はハンズオンで実際にやってみる勉強会です。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090513_00.jpg" src="http://linker.in/journal/images/090513_00.jpg" width="600" height="200" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+こんにちは、taku-workです。<br />
+鉢植えにしていたユーカリがすごい勢いで成長しています。夏の終わり頃にはオーストラリアになれるんじゃないかな。
+</p>
+
+<p>
+先日、a-blogcms 勉強会に参加しました。<br />
+今回の勉強会はハンズオンということで、実際に作業しながらどのように使うのかを勉強するというものです。
+</p>
+
+<p>
+全体の流れは以下のような感じでした。
+</p>
+
+<ul>
+<li>
+インストール（実作業）
+</li>
+<li>
+機能の簡単な説明
+<ul>
+	<li>     テーマ（デザインのテーマセット）</li>
+	<li>     サイトの管理・アカウント</li>
+	<li>     コンフィグの設定</li>
+	<li>     テンプレート</li>
+	<li>     インクルード</li>
+	<li>     グローバル変数</li>
+	<li>     構成オプション</li>
+	<li>     画像のパスの書き換え</li>
+	<li>     ルール管理</li>
+	<li>     モジュールID</li>
+</ul>
+</li>
+<li>
+実習課題
+<ul>
+	<li>     商品紹介と新着情報のあいだに新着情報の内容を商品紹介の見た目にしたものを表示させる</li>
+</ul>
+</li>
+<li>フォームについて
+<ul>
+	<li>     説明と実習</li>
+</ul>
+</li>
+<li>カスタムフィールドについて
+<ul>
+	<li>説明と実習</li>
+</ul>
+</li>
+</ul>
+
+<p>
+ということで、ざっくりと気になったことなどを。
+</p>
+
+<h2>インストール簡単</h2>
+
+<p>
+まずインストールですが、これはアップロードしてある状態でスタートしました。<br />
+ブラウザのセットアップ画面からナビゲーションに従って進めていくだけで簡単です。<br />
+現時点では特別な設定は無くデータベースの情報をいれるだけです。
+</p>
+
+<p>
+すべて入力し終わったらsetup用のディレクトリを削除して完成です。
+</p>
+
+<h2>テーマ</h2>
+
+<p>
+テンプレートのデータや画像データはthemesディレクトリ以下に入れていきます。<br />
+元々静的htmlで作られたサイトをここにすべて入れて、CMS化したい部分のhtmlにモジュール呼び出し用のタグをいれるということもできるようです。
+</p>
+
+<h2>グローバル変数と校正オプション</h2>
+
+<p>
+html側に書き込むタグにはグローバル変数と校正オプションというものがあります。<br />
+グローバル変数は、表示中のページが持つ情報を出力するものです。<br />
+校正オプションはテンプレートに細かく指示を追加するものです。変数の[]のあとに入れることで機能します。<br />
+たとえば「最初の何文字を表示する」とか、「西暦を和暦に変える」なんてのもありました。
+</p>
+
+<p>
+この辺りはMTでもモディファイヤなどでおなじみなのですんなりと理解できます。
+</p>
+
+<h2>ルール管理とモジュールID</h2>
+
+<p>
+この辺りが少しややこしいかなと思いました。<br />
+ルール管理は条件分岐にあたるもので、モジュールに対して「ルールAのときはaをする」、「ルールBのときはbをする」といった指定ができます。<br />
+MTではタグの書き方で条件指定をしますが、a-blog cmsではルールを管理画面から作成する感じですね。<br />
+「カテゴリがNEWSのときはルールを適応」とルールを作成しておいて、このルールの管理画面からコンフィグの設定へ行き、「表示数は４」などを指定する感じです。<br />
+この辺りは管理画面がすこし迷いやすいです。ただβ版なので近々改善されるとのことでした。
+</p>
+
+<p>
+モジュールIDは指定したモジュールのIDがふられている場合に○○するといった使い方です。<br />
+ちょっとルール管理との差がわかりづらいのですが、ルールがカテゴリーIDやエントリーIDといったものに適応されるのにたいして、モジュールIDは指定しているモジュール単体にかかるといったところです。
+</p>
+
+<h2>フォームとカスタムフィールド</h2>
+
+<p>
+フォームは簡単でフォーム用のテンプレートを任意の場所に表示するようにインクルードすればOKです。<br />
+また、カスタムフィールドもフォームと同じような記述をテンプレートにかけばそれで表示されます。<br />
+管理画面にカスタムフィールドを追加するカスタムをしておけば、任意のフィールドの値を表示することができるようです。
+</p>
+
+<h2>管理画面のカスタマイズ</h2>
+
+<p>
+管理画面のカスタマイズは結構よさそうだなと思うところでした。<br />
+a-blog cmsは管理画面もカスタムできるので必要に応じてカスタムフィールドを付け加えて拡張することができます。<br />
+拡張自体はMovableTypeでもできますが、管理画面のレイアウト変更などがhtmlの編集で簡単にできることはノンプログラマにとっては非常に扱いやすいと思いました。
+</p>
+
+<p>
+テンプレートとなるhtmlはテーマフォルダにコピーすればそちらを優先するそうです。<br />
+システム側にある管理画面用のhtmlをthemesディレクトリー以下にコピーして編集すればサイトごとの管理画面が可能です。
+</p>
+
+<h2>まとめ：結構いろいろカスタムできる感じです</h2>
+
+<p>
+勉強会で実際に説明を受けながら使ってみて、管理画面のカスタムが多く必要な案件に向きそうだなという印象でした。<br />
+不動産物件とか物販とかですかね。<br />
+それから、プログラムかけなくても管理画面変更できるのは、やはりありがたい。
+</p>
+<p>
+β版ということでこれからまだまだいろいろと実装される機能があるそうですし、UIももっと使いやすくなるとのことでしたので、期待しています。
+</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/popin.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cms/a-blog_cms_3.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

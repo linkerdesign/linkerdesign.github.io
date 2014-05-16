@@ -1,0 +1,81 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTで本文（entrybody）から画像のURLをとりだしてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTで本文（entrybody）から画像のURLをとりだしてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTで本文（entrybody）から画像のURLをとりだしてみる</p>
+
+<p><img src="http://linker.in/journal/images/090706.gif" width="600" height="200" alt="090706.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+なんかMTに関係しそうなのが続いています。<a href="http://www.tinybeans.net/blog/2009/07/06-055945.html">こちら</a>とかに刺激を受けたわけじゃないんですがね。仕事の延長ってのもありますね。<br /></p>
+<h2>AssetTHumbnailURLをつかって画像のURLを取り出す</h2>
+<p>MTの管理画面から画像をアップロードして本文に画像などを挿入している場合、その画像をアーカイブなどでサムネイルとして表示するのはそこまで難しくないですよね。<br /></p>
+<pre class="brush:xml">
+&lt;mt:Entries lastn="20"&gt;
+&lt;mt:EntriesHeader&gt;
+&lt;ul&gt;
+&lt;/mt:EntriesHeader&gt;
+&lt;li&gt;&lt;a href="&lt;mt:EntryPermalink /&gt;"&gt;&lt;mt:EntryAssets lastn="1"&gt;&lt;img src="&lt;mt:AssetThumbnailURL width="100" square="1" /&gt;" /&gt;&lt;/mt:EntryAssets&gt;&lt;/li&gt;
+&lt;mt:EntriesFooter&gt;
+&lt;/ul&gt;
+&lt;/mt:EntriesFooter&gt;
+&lt;/mt:Entries&gt;
+</pre>
+<p>こういう感じにしておけば、とりあえず幅100pxの画像一覧を取得できます。厳密には画像がある場合とない場合の条件分岐も必要なので、そのあたりは適宜入れてもらうとして。</p>
+<p>MTの管理画面からアップしたアイテムを使用しているのでmt:asset系のタグが使えるわけですが、画像をMTで管理していない場合はなかなかめんどいなぁ、と思うことがありました。<br />
+担当がFTPでアップした方がいい、とかいう場合もあるかもしれません。（まぁこのあたりは<a href="http://powercms.alfasado.net/kinou/wysiwyg.html">こちら</a>とかで色々解決できちゃいそうです）</p>
+<h2>正規表現で画像のURLを取り出す</h2>
+<p>ということでmt:entrybodyを使うときに、imgタグから画像のURLを引っ張り出して100pxで表示させるという感じで近いところまで持っていこうと。<br />
+実際のところは画像を無理矢理小さくして表示させているのだけなので、生のサイズをそのまま一度引っ張る分重くなってしまうとかもあります。<br />
+そもそもこういうちょっと無理な書き方をすることで再構築がどのくらいかわるか？とかも意識しないと行けないところかもしれません。</p>
+<p>なんだかんだで正規表現について調べながらたどり着いたサンプルはこんな感じなわけです。</p>
+<pre class="brush:xml">
+&lt;img src="&lt;mt:EntryBody convert_bleaks="1" strip_linefeeds="1" encode_html="1" regex_replace="/(.*)?src="(.*)?(\.jpg|\.gif|\.png|\.jpeg|\.JPG|\.PNG|\.GIF).*/","$2$3" /&gt;" width="100" /&gt;
+</pre>
+<p>正規表現をちゃんとやろう、と決意したのは言うまでもないです。<br />
+なにかあったら読みなおすことにしている<a href="http://junnama.alfasado.net/online/2007/08/markup_engineer_5.html">このエントリー</a>にも正規表現についてはかかれてあるのですが。<br />
+行動遅いですねぇ。。反省。。</p>
+<p>最初のサンプルみたいに正方形でということになればimgをdivとかでくくってあふれた部分はoverflow:hiddenとかそういう方法で解決できますね。</p>
+<p>画像自体のサムネイルをサーバー側で作成しておくとか解決方法は他にもあるような気がするのですが、手持ちのコマでできることがこのくらいだったので現時点の解がこのくらいになってしまいました。<br />
+まだまだ勉強不足ですね。<br /></p>
+<p>このあたりの若干無理矢理な解決方法をしながら、MTでサイトを作る場合の設計などの重要性を再認識しましたし、運用段階でのリニューアルにあたって気をつけないといけないところが結構あるなぁ、と改めて思ったりしました。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/fastfinga.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/cremavol2.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

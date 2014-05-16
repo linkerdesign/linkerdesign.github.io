@@ -1,0 +1,87 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>FeedWordPressをつかってRSSをコンテンツとして表示させる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>FeedWordPressをつかってRSSをコンテンツとして表示させる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;FeedWordPressをつかってRSSをコンテンツとして表示させる</p>
+
+<p><img src="http://linker.in/journal/images/100118.jpg" width="600" height="200" alt="100118.jpg" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+先日<a href="http://linker.in/journal/2010/01/diigo.php">@taku-workが紹介したdiigo</a>が楽しくて仕方ないです。これをしっかりいかしていきたいと思うこの頃です。</p>
+<p>今日はRSSをつかって情報収集する話でも。</p>
+<h2>RSSを読み込んでコンテンツを生成</h2>
+<p>TumblrやFriendfeedをつかってRSSを読み込んで再利用する、というのは良くあると思います。RSSを眺めるだけであれば問題ないかもしれませんが、Tumblrだと取り込めるRSSの数が決まっていたり、Friendfeedだと分類がしにくいなど用途によっては使いにくい場合があるかと思います。</p>
+<p>であればブログ記事を生成するに当たって、読み込んだRSSをコンテンツに変換してくれるものを使えればいいのでは？ということでプラグインを探してみました。</p>
+<h2>Wordpressのプラグイン、FeedWordPressを使用する</h2>
+<p>それらを解決するのがFeedWordPressというWordpressのプラグインです。RSS吐き出し元の日付やタグを使って情報を分類することが可能になります。</p>
+<blockquote>
+  <p>FeedWordPress | simple and flexible Atom/RSS syndication for WordPress<br />
+  <a href="http://feedwordpress.radgeek.com/">http://feedwordpress.radgeek.com/</a></p>
+
+  <p>WordPress ? FeedWordPress ? WordPress Plugins<br />
+  <a href="http://wordpress.org/extend/plugins/feedwordpress/">http://wordpress.org/extend/plugins/feedwordpress/</a></p>
+</blockquote>
+<p>WordPressのプラグインを「wp-content」以下の「plugins」フォルダにアップしてFeedWordPressを有効化すれば使えるようになります。</p>
+<p><a href="http://linker.in/journal/images/100118-01.jpg"><img src="http://linker.in/journal/images/100118-01-tm.jpg" width="500" height="318" alt="100118-01.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>プラグインを有効化すると、ダッシュボードにSyndicationが追加されます。</p>
+<p><img src="http://linker.in/journal/images/100118-02.jpg" width="280" height="290" alt="100118-02.jpg" style="border:2px #7b7b7b solid;" /></p>
+<h2>FeedWordPressを設定する</h2>
+<p>基本的にはRSSを追加すればOKですが、簡単に設定を見ていきましょう。</p>
+<p>Syndicationの画面はこんな感じです。</p>
+<p><a href="http://linker.in/journal/images/100118-03.jpg"><img src="http://linker.in/journal/images/100118-03-tm.jpg" width="500" height="379" alt="100118-03.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>Add new sourceからRSSを追加していきましょう。feedを追加するとそれを分析してくれます。</p>
+<p><a href="http://linker.in/journal/images/100118-04.jpg"><img src="http://linker.in/journal/images/100118-04-tm.jpg" width="500" height="392" alt="100118-04.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>このような感じで、Feedの情報と読み込んだ場合の画面が出てきます。問題なければUse this feedをクリックします。</p>
+<p>メニュー「Feeds &amp; Updates」で更新のタイミングなどを設定します。</p>
+<p><a href="http://linker.in/journal/images/100118-05.jpg"><img src="http://linker.in/journal/images/100118-05-tm.jpg" width="500" height="413" alt="100118-05.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>動的生成なのでページを読み込んだ後、読み込む前などの指定も可能です。</p>
+<p>「Posts &amp; Links」のメニューでは新しい記事の公開状態や、記事一覧からのリンク先をどこにするか？などを指定できます。</p>
+<p><a href="http://linker.in/journal/images/100118-06.jpg"><img src="http://linker.in/journal/images/100118-06-tm.jpg" width="500" height="511" alt="100118-06.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>「Categories &amp; Tags」で分類をカテゴリにするかタグにするかを指定できます。</p>
+<p><a href="http://linker.in/journal/images/100118-07.jpg"><img src="http://linker.in/journal/images/100118-07-tm.jpg" width="500" height="427" alt="100118-07.jpg" style="border:2px #7b7b7b solid;" /></a></p>
+<p>分類は基本、カテゴリーかタグのどちらかになります。RSSにもよるようですが、カテゴリとして読み込むようにするとfeed内のタグの箇所もカテゴリとして認識されるようです。</p>
+<p>投稿日などもRSSに次第なものも少しあるようでした。</p>
+<h2>あくまで自分用もしくは自サイトでの利用がよさそうです</h2>
+<p>Feedを読み込んであたかもエントリーの様に表示させることが可能なので、簡単にサイトができてしまうわけですね。個人でいくつもブログを書いたりしていて、それをまとめて表示させる、という使用法が１つあるでしょう。</p>
+<p>あとはRSSリーダーのように自分以外のブログやfeedをまとめて読みたい、などの場合にも使うかもしれませんが、コンテンツを作ったのはあくまで元ブログ、feed元なのでそのあたりは良識の範囲内で使用した方がよさそうですね。<br />
+自分で使う場合はクロールさせる必要もないでしょうから、そのあたりの設定をしておいて使用するのが良さそうです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/gosquared.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/excelword002.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

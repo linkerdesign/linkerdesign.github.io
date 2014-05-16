@@ -1,0 +1,195 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Web担当者Forum × CSS Nite「実践ワークショップ」第3回「アクセス解析」に行きました。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Web担当者Forum × CSS Nite「実践ワークショップ」第3回「アクセス解析」に行きました。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;レビュー&nbsp;&raquo;&nbsp;Web担当者Forum × CSS Nite「実践ワークショップ」第3回「アクセス解析」に行きました。</p>
+
+<p>こんばんは！@cremaです。</p>
+
+<p>先ほど、私たちlinkerが連載している雑誌「web creators」の今月号のコンテンツを再掲載したWebページが公開されました！よろしければご覧ください。</p>
+
+<ul>
+	<li><a href="http://www.mdn.co.jp/content/view/9367/129/">表現力に差をつけよう！WEBデザインスタイルアップTips第15回</a></li>
+</ul>
+
+<p>変わりまして、今日の話題。2009年9月2日（水）に開催された「<a href="http://cssnite.jp/workshop/vol03/">Web担当者Forum × CSS Nite『実践ワークショップ』第3回</a>」に出席したレポートを、軽めにお届けします。http://cssnite.jp/workshop/vol03/</p>
+
+<h2>Web担当者Forum × CSS Nite「実践ワークショップ」第3回「アクセス解析」</h2>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/webtan_cssnite.jpg"><img alt="webtan_cssnite.jpg" src="http://linker.in/journal/assets_c/2009/09/webtan_cssnite-thumb-300x400-711.jpg" width="300" height="400" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>第1回が「<a href="http://cssnite.jp/workshop/vol01/">発注者と受注者の"すり合わせ"のためのチェックリスト</a>」、第2回が「<a href="http://cssnite.jp/workshop/vol02/">サイト設計の切り札『ペルソナ』開発工程を体験！</a>」というテーマだったこのシリーズ。</p>
+
+<p>第3回のテーマは「アクセス解析」ということで、<a href="http://ibukuro.blogspot.com/">Insight for WebAnalytics</a>を書かれている衣袋宏美（いぶくろひろみ）さんが、講師をなさいました。<a href="http://agilemedia.jp/">AMN</a>ブロガーさんなのでブログは拝見していたのですが、お目にかかるのが初めてで、非常に嬉しかった私です。</p>
+
+<p>このワークショップは、実在のサイトのアクセス解析データを元に行うということで、お題になったのは自然保護NGOの<a href="http://www.wwf.or.jp/">WWFジャパン</a>のサイトでした。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://www.wwf.or.jp/"><img alt="20090904215848.png" src="http://linker.in/journal/assets_c/2009/09/20090904215848-thumb-500x422-712.png" width="500" height="422" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<h2>プログラムの進め方は、こんな感じ</h2>
+
+<dl>
+<dt>テーマ</dt>
+<dd>WWFジャパンのサイト及びデータを見て、サイトの問題点を抽出する。</dd>
+<dt>進め方</dt>
+<dd>サイトの目的や内容の理解</dd>
+<dd>サイトからユーザー像や行動を予想</dd>
+<dd>アクセス解析からサイトの問題点を考察</dd>
+<dd>改善提案</dd>
+</dl>
+
+<p>使用するアクセス解析ツールはGoogle Analyticsですが、どの解析ツールを使っても「サイト改善に繋がる問題点の抽出や仮説構築能力を身につける」というのがポイント、とのことでした。</p>
+
+<h2>サイトの目的</h2>
+
+<p>WWFジャパンは民間のNGO団体で、サイトの目的は「会員を増やす（会費で継続的な金銭的支援を増やす）」と「寄付を増やす（都度の支援を増やす）」というものです。具体的な目標数値もあったのですが、そこはオフレコで。</p>
+
+<h2>サイトの内容の理解と利用者像の策定</h2>
+
+<p>参加者は6つのグループに別れ、ワークショップに取り組みます。私たちのグループは男性2名＋女性3名のグループ。衣袋先生の「データを解析する前に、WWFジャパンのサイトの利用者像を考察して、仮説検証型のアクセス解析をしましょう」とのご指導により、まずはこのサイトの利用者像をディスカッションして決定しました。</p>
+
+<p>私たちのグループでは、「このサイトは、人々が率先して頻繁に訪問するサイトというわけではない」と考え、利用者像を以下の二つに定めました。</p>
+
+<ul>
+	<li>自然や環境問題のテレビ番組やセミナーで興味を持った方</li>
+	<li>企業のCSR担当者の方（社会貢献をするために寄付先を探している）</li>
+</ul>
+
+<p>ここでは、想像だけで利用者像を勝手に決めてサイトの運営をしていくということがポイントなのではなく、仮説を立てた利用者像と実際のアクセスログとのずれをはっきりさせ、「いかにサイト制作者や運営者が利用者のことを知らないかということを体感する」というのがポイントのようでした（間違っていたらご指摘ください）。</p>
+
+<p>「<strong>仮説力をつける事が大事！</strong>」と、おっしゃっていたように思います。</p>
+
+<h2>利用者のサイト利用パターンを考察</h2>
+
+<p>まだアクセスログは見ず、次の作業としては、先ほど仮説を立てた利用者のサイト利用パターン（シナリオ）を考察していきます。考えるのは、以下の項目です。</p>
+
+<ul>
+	<li>どうやってサイトに訪問するのか？参照元は？</li>
+	<li>どういうキーワードで？</li>
+	<li>人気のコンテンツは？</li>
+	<li>サイト内の導線は？</li>
+	<li>寄付する人のきっかけは？</li>
+	<li>寄付した人のサイト内行動は？</li>
+</ul>
+
+<p>私たちのグループで考察したのは「自然や環境問題のテレビ番組やセミナーで興味を持った方」のシナリオで、以下の様にまとまりました。</p>
+
+<blockquote>
+
+<p>参照元は、Yahoo!やGoogleなどの検索エンジン。テレビやセミナーに触れて「パンダ　絶滅」「森林伐採」などのキャンペーン的な（？）キーワードで検索する。「WWF」という団体名を指名した検索ではない。「WWFの活動」コンテンツが充実しているので個別のページがヒットする。ざっと見て、どう移動すればいいのか分らないので、トップページに戻る。トップページに掲載されている「四川省の地震」関連のページなどを見て、世界で起きている現状を知る。そこであるいは離脱するかもしれないが、数回サイトに訪れて、「お金を払おうかな？」という気持になる。きちんとした団体なのかを知るために、組織の概要のページなどを見る。お試しで単発の寄付をする。あるいは、活動の実感を味わうために、入会する。</p>
+
+</blockquote>
+
+<p>ここまで考えて、いよいよ次は、アクセスログを見る過程に入ります。衣袋先生いわく「アクセス解析の前の準備が非常に大事！」とのことでした。</p>
+
+<h2>アクセス解析の5つのプロセス</h2>
+
+<p>の説明を受けました。</p>
+
+<ul>
+	<li>アクセス状況を把握する。ピーク、利用時間や曜日を見る。（ベンチマーク、基準）</li>
+	<li>訪問原因を見る。参照元、キーワードを見る。（流入）</li>
+	<li>利用状況を見る。人気ページ、直帰率、閲覧経路。（回遊）</li>
+	<li>目的達成状況を見る。成果にいたる経路、離脱状況。（コンバージョン）</li>
+	<li>ロイヤルティを高める。リピート率、再訪問。（リテンション）</li>
+</ul>
+
+<h2>いよいよログを見て考える</h2>
+
+<p>次の課題は想定ターゲットやマーケティング施策と、実際の閲覧パターンデータから、サイトの作りと現状の施策の問題点を考えよ、というもの。</p>
+
+<p>用意していただいた「WWFジャパンサイトのPV／セッションの月次・日次トレンドのデータ／新規とリピータのデータ」を見つつ、先ほどの想定シナリオとのギャップも考えます。</p>
+
+<p>私たちのグループで考えたのは、以下のような問題点です。</p>
+
+<ul>
+	<li>全てのペルソナ向けになっている。※ジェネラルに作りすぎている</li>
+	<li>法人向けのナビゲーションはあるが、個人の方向けの内容は？「はじめての方へ」「寄付をしたい」「活動を知りたい」要求別のナビゲーションなどを置いてもいいのでは？</li>
+	<li>平日だけPVが多い？</li>
+	<li>RSSを設置してない。</li>
+	<li>リピーターが少ない</li>
+	<li>メルマガ入力フォーム（障壁の低い申し込み）をもっと目立つ場所に？</li>
+</ul>
+
+<p>そして、流入から回遊までのデータから読み取れるサイトの問題点を考察していきます。ここで見るデータは「参照元、キーワード／PV数上位のディレクトリ、URL／閲覧開始ページ／ピーク時の流入元、コンテンツ」です。</p>
+
+<p>そこで、私たちが考えた問題点は、こんな感じ。</p>
+
+<ul>
+	<li>ヤフーニュースからのアクセスの直帰率が高い。回遊させるナビゲーション不足。</li>
+	<li>トップ含め、目的にあったナビゲーションがない。ページを読んだ後、横移動するリンクがない。</li>
+	<li>アドワーズからの直帰率が高い。トップページにランディングさせているのは問題なのでは？キーワードに合ったランディングページを準備すべき。</li>
+</ul>
+
+<p>次の課題では、コンバージョンまでのデータから読み取れるサイトの問題点を挙げていきます。見るデータは「寄付のページを見た人の閲覧開始ページ／コンバージョンまでの訪問回と日数／上位閲覧ページ」です。</p>
+
+<p>で、私たちが考えた問題点。</p>
+
+<ul>
+	<li>トップページの作り。寄付までのナビゲーションがわかりにくい。</li>
+	<li>紙媒体（パンフレット）はしっかり「WWFとは」などと書いているが、サイトのトップのFLASHなどで訴求できれば。「あなたにもできる」みたいなキーワードからコンバージョンしてもらうのがよいのではないか。</li>
+	<li>各ページ、例えば「マグロ」「オランウータン」などのページフッターやサイドにもキーワードでの寄付への誘導が有効だろう。（「マグロを救え！」的な）</li>
+</ul>
+
+<p>もう少し具体的数値の含まれる問題点も挙げたのですが、それは公にできないので割愛します。</p>
+
+<h2><a href="http://web-tan.forum.impressrd.jp/">Web担当者Forum</a>安田編集長の総括</h2>
+
+<p>最後に安田さんからのまとめが、以下のようにありました。</p>
+
+<ul>
+	<li>サイトの目的は何のために？を、明確に！当たり前なのに忘れがち。</li>
+	<li>自分のサイトだと思い込みが強い。今回の自分に全く関係のないWWFジャパンのように、客観的に見られるようにすること。</li>
+	<li>数値ベースの話を習慣づけること。感覚ではなく、客観的な数値で考える。</li>
+</ul>
+
+<p>本当に、これを守ろうと思います。</p>
+
+<h2>参加してみた感想</h2>
+
+<p>実際のサイトのデータを見させていただいて手を動かすワークショップは、今まで参加したアクセス解析のセミナーの中で、一番有効だと思いました。ただ、まだ慣れるまでには至っていないので、linker三人で同じようなことを実際のサイトのデータで行ってみたいと思っています。</p>
+
+<p>講師の衣袋先生は、「とにかくシナリオを作るのが大事！アクセス解析でも、こういったセミナーの進め方でも！」と懇親会でおっしゃっていたのが印象的でした。そして、カラオケで鍛えられたという美声と無駄の無いワークショップの進行具合が素晴らしかったので、そちらも非常に参考になりました。</p>
+
+<p>ありがとうございました！<br />
+</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/casestudy/post_47.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cat45/postalco_up_until_now----.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

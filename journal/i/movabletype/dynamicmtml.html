@@ -1,0 +1,134 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>DynamicMTMLをつかってページ分割をしてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>DynamicMTMLをつかってページ分割をしてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;DynamicMTMLをつかってページ分割をしてみる</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+Wimbledonはフェデラーの優勝でしたね。マレーは残念でした。。。<br />
+今月末にはオリンピックがありますが、そこでは誰が優勝するんでしょうね？？</p>
+<p>さて、<a href="http://linker.in/journal/2012/07/powercms-powercms-movabletype.php">先日の勉強会</a>で、<a href="https://github.com/movabletype/DynamicMTML">DynamicMTML</a>を使ったページ分割の話を少し聞いたので、試しに作ってみました。</p>
+<h2>表示例</h2>
+<h3>全件</h3>
+<p>まず、全件というか20件を表示させた状態がこんな感じです。</p>
+<p><img src="http://linker.in/journal/images/120709-01.png" width="334" height="542" alt="120709-01.png" style="border:2px #7c7c7c solid;" /></p>
+<p>とりあえず3件ずつに分けてみます。</p>
+<h3>1ページ目</h3>
+<p><img src="http://linker.in/journal/images/120709-02.png" width="369" height="205" alt="120709-02.png" style="border:2px #7c7c7c solid;" /></p>
+<h3>2ページ目</h3>
+<p><img src="http://linker.in/journal/images/120709-03.jpg" width="337" height="211" alt="120709-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>20件のエントリーを3つずつなので7ページになってますね。</p>
+<h2>テンプレート</h2>
+<p>ではテンプレートを考えていきます。<br />
+（DynamicMTMLがインストールされてる必要があります）</p>
+<p>もうすこし上手い方法がありそうなきがしますが、全体はこんなかんじでしょうか。</p>
+<h3>全体のテンプレート</h3>
+<pre>
+&lt;MTDynamicMTML&gt;
+&lt;mt:SetVarBlock name="page"&gt;&lt;MTQuery key="page" escape="html"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:If name="page" eq=""&gt;&lt;mt:SetVar name="page" value="1"&gt;&lt;/mt:If&gt;
+&lt;mt:SetVar name="limit" value="3"&gt;
+&lt;mt:SetVarBlock name="offset"&gt;&lt;mt:SetVar name="page" op="-" value="1"&gt;&lt;mt:GetVar name="page" op="*" value="$limit"&gt;&lt;/mt:SetVarBlock&gt;
+
+&lt;mt:Entries limit="$limit" offset="$offset"&gt;&lt;MTEntriesHeader&gt;&lt;h2&gt;page分割&lt;/h2&gt;&lt;ul&gt;&lt;/MTEntriesHeader&gt;
+&lt;li&gt;&lt;mt:EntryTitle&gt;&lt;/li&gt;
+&lt;MTEntriesFooter&gt;&lt;/ul&gt;&lt;/MTEntriesFooter&gt;&lt;/mt:Entries&gt;
+
+&lt;mt:SetVar name="total" value="20"&gt;
+&lt;mt:SetVarBlock name="pager"&gt;&lt;mt:GetVar name="total" op="/" value="$limit"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:SetVarBlock name="pager2"&gt;&lt;mt:GetVar name="total" op="%" value="$limit"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:If name="pager2" ne="0"&gt;&lt;mt:SetVar name="pager" op="++"&gt;&lt;/mt:If&gt;
+&lt;p&gt;&lt;a href="./test.html"&gt;1&lt;/a&gt;&lt;mt:for from="1" to="$pager"&gt;&lt;mt:Unless name="__first__"&gt; | &lt;a href="./test.html?page=&lt;mt:GetVar name="__counter__"&gt;"&gt;&lt;mt:GetVar name="__counter__"&gt;&lt;/a&gt;&lt;/mt:Unless&gt;&lt;/mt:for&gt;&lt;/p&gt;
+&lt;/MTDynamicMTML&gt;
+</pre>
+<p>全体を&lt;MTDynamicMTML&gt;でくくっておきます。</p>
+<p>次に表示させるための計算をしていきます。</p>
+<h3>page数の取得と1ページ当たりの表示数を指定する</h3>
+<p>今回は「test.html?page=2」といったかんじで、pageのパラメータの値で何ページ目かを指定します。</p>
+<pre>
+&lt;mt:SetVarBlock name="page"&gt;&lt;MTQuery key="page" escape="html"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:If name="page" eq=""&gt;&lt;mt:SetVar name="page" value="1"&gt;&lt;/mt:If&gt;
+&lt;mt:SetVar name="limit" value="3"&gt;
+&lt;mt:SetVarBlock name="offset"&gt;&lt;mt:SetVar name="page" op="-" value="1"&gt;&lt;mt:GetVar name="page" op="*" value="$limit"&gt;&lt;/mt:SetVarBlock&gt;
+</pre>
+<p>まず、MTQueryでpageの値を受け取って、変数pageに入れます。<br />
+1ページ目は「test.html」となっている可能性があるので、このMTQueryで値をとれない場合は1ページ目なので、pageが空の場合1をセットします。<br />
+（ここは他の条件が色々ありそうです。数字以外が入ったときとか予想外の数字がはいるとか。。。）</p>
+<p>あと、limitに1ページあたりの表示件数を指定します。</p>
+<p>1ページ目は1〜3番目が表示されます。2ページ目は3つ分が表示されず、4〜6番目が表示されます。<br />
+なのでpageの値から1を引いて1ページ当たりの表示件数をかけたものがoffsetされます。<br />
+この値を変数offsetに入れておきます。</p>
+<h3>指定した件数毎に表示させる</h3>
+<p>実際に表示させる部分を見てみます。</p>
+<pre>
+&lt;mt:Entries limit="$limit" offset="$offset"&gt;&lt;MTEntriesHeader&gt;&lt;h2&gt;page分割&lt;/h2&gt;&lt;ul&gt;&lt;/MTEntriesHeader&gt;
+&lt;li&gt;&lt;mt:EntryTitle&gt;&lt;/li&gt;
+&lt;MTEntriesFooter&gt;&lt;/ul&gt;&lt;/MTEntriesFooter&gt;&lt;/mt:Entries&gt;
+</pre>
+<p>mt:Entriesのlimitモディファイアにlimitの値を。offsetモディファイアにoffsetの値をセットします。</p>
+<p>これだけでいいのでMTQueryの力は偉大ですね。。。</p>
+<h3>ページリンク部分の表示</h3>
+<p>次に、各ページへのリンク部分を見ていきます。</p>
+<pre>
+&lt;mt:SetVar name="total" value="20"&gt;
+&lt;mt:SetVarBlock name="pager"&gt;&lt;mt:GetVar name="total" op="/" value="$limit"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:SetVarBlock name="pager2"&gt;&lt;mt:GetVar name="total" op="%" value="$limit"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:If name="pager2" ne="0"&gt;&lt;mt:SetVar name="pager" op="++"&gt;&lt;/mt:If&gt;
+&lt;p&gt;&lt;a href="./test.html"&gt;1&lt;/a&gt;&lt;mt:for from="1" to="$pager"&gt;&lt;mt:Unless name="__first__"&gt; | &lt;a href="./test.html?page=&lt;mt:GetVar name="__counter__"&gt;"&gt;&lt;mt:GetVar name="__counter__"&gt;&lt;/a&gt;&lt;/mt:Unless&gt;&lt;/mt:for&gt;&lt;/p&gt;
+</pre>
+<p>ひとまず、20件の中から表示するので、変数totalに20をセットします。<br />
+実際に使う場合は&lt;$MTBlogEntryCount$&gt;の値などを使う感じになるでしょう。</p>
+<p>変数totalの値を1ページ当たりの件数で割って総頁数を出します。ひとまずpagerにセットしておきます。<br />
+totalをlimitで割って割り切れればそのまま頁数となるのですが、割り切れない場合もあります。<br />
+変数pager2にひとまず剰余をセットしておきます。pager2が0じゃないときはもう1ページ余計にあることになるので、pagerに1を足しておきます。</p>
+<p>それらが揃ったところで、各ページへのリンクを表示させます。</p>
+<p>1ページ目は必ず表示させる事にしておきます。2ページ目からの表示をmt:forを使って考えます。</p>
+<p>mt:forでは1ページ目から変数pagerに入ってる頁数分繰り返します。<br />
+ただ、1ページ目は表示させているので、__first__以外ということでセットしています。<br />
+forのなかでの繰り返し分については__counter__で取得出来るので「?page=」 の部分やリンクテキストの部分に使用しています。<br />
+ここはfromを2からにしてpagerの値が2以上の時のみ、みたいな判定の方がいいのかもしれないです</p>
+<p>ということでザックリこんなかんじで作ってみたのですが、まだ相当無駄がありそうです。<br />
+（あとは考えられる条件の漏れとか）<br />
+リンクを作る部分とかもっとスマートに計算できそうな気がします。</p>
+<p>スタティックにページ分割させてもいいですが、こんな形で動的にページ分割させるのも良さそうですね。<br />DynamicMTMLはまだまだ奥が深そうです。。。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/event/adobe_photoshop_2012.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/luz_de_la_musica.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

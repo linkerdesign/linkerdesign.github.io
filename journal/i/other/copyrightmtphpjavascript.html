@@ -1,0 +1,171 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>copyrightの年表示はMTタグ？　PHP？　javascript？[追記：5/26 20:45]｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>copyrightの年表示はMTタグ？　PHP？　javascript？[追記：5/26 20:45]</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;copyrightの年表示はMTタグ？　PHP？　javascript？[追記：5/26 20:45]</p>
+
+<p><img src="http://linker.in/journal/images/090525.gif" width="600" height="100" alt="090525.gif" /></p>
+<p>みなさん、こんにちは、まーしーです</p>
+<p>websiteを作られてる方だと、(c) 2008-2009 hogehoge.inc.,All rights reserved.とかそういう文言入れたりしますよね。<br />
+この一行自体がどういう意味をもつのか？とか、なにに基づいて書かれるのか？どのように書くのか？というところも考えるべき所なのですが、<br />
+今日はそのあたりの話はおいておいて、この年数表示のところを自動表示する方法を考えてみたいと思います。</p>
+<p>考えてみたい、というよりMTでサイトを構築する際に考える機会があったのでそのメモです。<br />
+（なので話の前提にはMTがあると思ってください。）<br />
+以下のサンプルはとりあえず動いたというレベルで、もっとスマートな書き方があるはずですし皆さんの方がご存じかと思いますので そのあたりを頭の片隅にいれて読んでいただければと思います。使う際は自己責任でお願いします。</p>
+<p>年に一回更新するところだけど、年に一回だと、確実に忘れちゃうよね？年末年始に仕事とかしたくないよね？だったら年越しと同時に自動でやってほしいよね？と思う人は考えてみる必要があるかもしれないですね。<br /></p>
+<h2>MTタグを使用する方法</h2>
+<p>ソース例</p>
+<pre class="brush:xml">
+&lt;mt:setvar name="startyear" value="2008" /&gt;
+&lt;mt:date format="%Y" setvar="thisyear" /&gt;
+&lt;mt:if name="thisyear" gt="$startyear"&gt;
+(c) &lt;mt:getvar name="startyear"&gt; - &lt;mt:getvar name="thisyear"&gt; hogehoge,Inc.
+&lt;mt:else&gt;
+(c) &lt;mt:getvar name="thisyear"&gt; hogehoge,Inc.  
+&lt;/mt:if&gt;
+</pre>
+<p>こんなモジュールがフッターのモジュールに読み込まれてるような感じでしょうか？<br />
+もうすこしまとめるとしたら年数表記のみをmt:getvarでだせるようにmt:setvarblockの中でやったほうがいいのかな、くらいでしょうか。</p>
+<p>この後で紹介する方法全てそうですが、１年だけかどうか？という判定が必ず必要になりますね。</p>
+<p>メリット</p>
+<ul>
+  <li>MTがわかってれば、PHP,JavaScriptでかくよりも簡単（なきがする）</li>
+</ul>
+<p>デメリット</p>
+<ul>
+  <li>作り方によっては年に一度サイト全体の再構築が必要（cronとかありますが）</li>
+
+  <li>埋め込まれたページが再構築された日を返すんだよなぁ？？</li>
+</ul>
+<h2>PHPを使用する方法</h2>
+<p>ソース例</p>
+<pre class="brush:php">
+&lt;?php
+function copyright($startyear){
+$thisyear = date("Y");
+if( $thisyear &gt; $startyear){
+print "$startyear - $thisyear";
+}else{
+print "$startyear";
+};
+}
+?&gt;
+（C）&lt;?php copyright(2009);?&gt; hogehoge,Inc.
+</pre>
+<p>引数をうまくつかう、という方法を試したかっただけ、というのも半分くらいあるのですが・・・</p>
+<p>メリット</p>
+<ul>
+  <li>一度導入されれば手を加えなくてもよい</li>
+</ul>
+<p>デメリット</p>
+<ul>
+  <li>サーバーでPHPが使えないといけない</li>
+</ul>
+<h2>JavaScriptを使用する</h2>
+<p>ソース例</p>
+<pre class="brush:js">
+&lt;script type="text/javascript"&gt;
+function copyright(startyear){
+var thisyear = new Date();
+if(thisyear.getFullYear() &gt; startyear){
+document.write( startyear + " - " + thisyear.getFullYear() );
+}else{
+document.write(startyear);
+}
+}
+&lt;/script&gt;
+
+（C）&lt;script type="text/javascript"&gt;copyright(2009);&lt;/script&gt; hogehoge.Inc.
+</pre>
+<p>PHPにあわせて引数で、というのをやったらそもそも引数どう使うのかわかってない、という事実に直面してすごくしんどかった。<br />
+JavaScriptが全然わかってないです。。。<br />
+returnってのをうまく使いこなせるようになった方がいい気がしました。</p>
+<p>メリット</p>
+<ul>
+  <li>PCに絞って考えると、おおむねどの環境でも見ることができそう</li>
+</ul>
+<p>デメリット</p>
+<ul>
+  <li>JavaScriptがOffだと表示されない</li>
+
+  <li>見た目に年数が出るけれども、ソース上に年数が表示されないのは問題にならないか？</li>
+</ul>
+<h2>まとめ</h2>
+<p>あげてみるとこんな感じですね。<br />
+ほんとメモ書きになってしまいました。</p>
+<p>個人的にはPHPが使えればPHPを使った方法が一番いいのかな？とか思ったりもするのですが、<br />
+MTを使ってるとPerlでうごくページも少しありますよね？<br />
+そこでの代替手段を用意しておかないといけない、というのが少し気になります。<br />
+まぁ、代替手段はJavaScriptを使った方法でも用意しておかないといけないので、これが正解、というのははかる物差しによって変わってくるはずです。</p>
+<p>ちなみに今回この３通りの方法を試してみたところ、紹介した順に書きやすかったです。<br />
+JavaScriptはしっかりやりたいなぁとおもいながら惰性で勉強している（つもりの）レベルなので、<br />
+もっとちゃんと理解した上で使いこなせるようにならないとですね。</p>
+<h2>おまけ</h2>
+<p>最初にも書いたように、このcopyrightを記載する云々の話が自分のなかですごくあいまいになってるなぁ、<br />
+と今回考えながら気づいたのです。<br />
+そもそもこの年数って何をあらわしてるの？<br />
+サイトができたときから今まで？その会社なりの継続期間？ 継続期間という考えだと変だよな。<br />
+う〜ん。<br />
+ということで、これはちゃんと調べよう！と思いました。<br />
+（残念だけど、６月になったら）</p>
+<h2>追記しました：5月26日 20時45分</h2>
+<p><a href="http://www.i81.co.jp/koba/">小林さん</a>にコメントをいただいたのでサイトを参考にいくつか見てみました。</p>
+<blockquote><p>マークを表記する際は、"©マーク"と"最初の発表年""著作権者名"の3要素が必要です。<br />
+「©」マークとは何でしょう？ | クリエイティブ・タブロイド withD（ウィズ・ディー）<br />
+<a href="http://withd.jp/dtp/trend/030303/4103.html?page=2">http://withd.jp/dtp/trend/030303/4103.html?page=2</a></p></blockquote>
+<p>表記としては発表年のみっぽいですね。法的な力というよりも慣習的にという感じに捉えられているようです。<br />
+だとしたら表示させる方法はもっと簡単にできますね〜</p>
+<ul>
+<li>小龍的徒話 正しい著作権表記<br />
+<a href="http://shaoron.blog.shinobi.jp/Entry/133/">http://shaoron.blog.shinobi.jp/Entry/133/</a></li>
+<li>「©」マークとは何でしょう？ | クリエイティブ・タブロイド withD（ウィズ・ディー）<br />
+<a href="http://withd.jp/dtp/trend/030303/4103.html">http://withd.jp/dtp/trend/030303/4103.html</a></li>
+<li>著作権の保護期間 - Wikipedia<br />
+<a href="http://ja.wikipedia.org/wiki/%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AE%E4%BF%9D%E8%AD%B7%E6%9C%9F%E9%96%93">http://ja.wikipedia.org/wiki/%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AE%E4%BF%9D%E8%AD%B7%E6%9C%9F%E9%96%93</a></li>
+</ul>
+<p>「簡単に〜」とか書いたんですが、そもそも発表年のみであれば、自動で取得する必要がないのか。そもそも。<br />
+websiteでかんがえると、このページは今つくってるからこのページに表記されるものは2009かもしれない。<br />
+来年の記事のページは2010かもしれないんだよな〜。<br />
+来年の時点で考えるとサイト全体として考えれば2009かもしれないし、ページ単体でみれば　２０１０ってことか。</p>
+<p>本とかであれば執筆してる時点というよりも、世に出たタイミングという明確なものがあるんだろうけど。<br />
+本でいうところの改訂とかがwebsiteにちかいのかな〜？？？</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/-ta.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/movable_type.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

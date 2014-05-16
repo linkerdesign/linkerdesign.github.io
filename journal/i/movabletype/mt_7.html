@@ -1,0 +1,90 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTタグの値に文言を追加して出力する方法のメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTタグの値に文言を追加して出力する方法のメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTタグの値に文言を追加して出力する方法のメモ</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+この週末からサマータイムが始まり日本との時差は8時間になりました。最近は朝も真っ暗じゃないので少しは仕事もはかどりそうです。</p>
+<p>さて、Movable Typeをつかってサイトを構築しているときに、MTタグで何かしらの値を出力する際に文言を追加して出力したい場合などがあるかもしれません。</p>
+<p><b>&lt;p&gt;タイトル："linker journal"&lt;/p&gt;</b></p>
+<p>みたいなものを出したくて、このタイトル情報が各ブログ記事のタイトル欄に入力されていた場合は</p>
+<p><b>&lt;p&gt;タイトル："&lt;$MTEntryTitle$&gt;"&lt;/p&gt;</b><br /></p>
+<p>とMTのテンプレートに書けば問題無く出力されますね。</p>
+<h2>値が必ずしも無い場合はMTIfでタグの内容を判定</h2>
+<p>MTEntryTitleの値が無い場合はないですが、値、フィールドの種類によっては値が無い場合もあるでしょう。<br />
+その場合</p>
+<p><b>&lt;p&gt;タイトル："&lt;$MTEntryTitle$&gt;"&lt;/p&gt;</b><br /></p>
+<p>と書いてあると</p>
+<p><b>&lt;p&gt;タイトル：""&lt;/p&gt;</b><br /></p>
+<p>と出力されてしまってマズイですね。なのでこれを回避するためには</p>
+<p><b>&lt;MTIf tag="EntryTitle"&gt;&lt;p&gt;タイトル："&lt;$MTEntryTitle$&gt;"&lt;/p&gt;&lt;/MTIf&gt;</b></p>
+<p>とMTIfでtagの値を判定して書く形になります。<br />
+まぁ、MTElseもいれて値が無い場合の条件なども入れたりするでしょう。</p>
+<h2>catモディファイアを使ってタグの後に値を追加する</h2>
+<p>値の有無を抜きにして、テンプレートタグの出力に定型文を付与して出力することは可能です。<br />
+グローバルモディファイアのcatを使う方法です。</p>
+<blockquote>
+  <p>cat | グローバル・モディファイアリファレンス<br />
+  <a href="http://www.movabletype.jp/documentation/appendices/modifiers/cat.html">http://www.movabletype.jp/documentation/appendices/modifiers/cat.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>これを使うと<br /></p>
+<p><b>&lt;p&gt;タイトルは&lt;$MTEntryTitle cat="です"$&gt;&lt;/p&gt;</b><br /></p>
+<p>というMTテンプレートは</p>
+<p><b>&lt;p&gt;タイトルはlinker journalです&lt;/p&gt;</b><br /></p>
+<p>といった形で出力することが可能になります。</p>
+<h2>regex_replaceモディファイアを使って前後に出したい</h2>
+<p>catモディファイアは後ろにしか追加出来ません。使う場合は前にも出したいという場合もあるでしょう。<br />
+そういうときはregex_replaceモディファイアを使って解決します。</p>
+<p><b>タイトルは&lt;$MTEntryTitle$&gt;です</b><br /></p>
+<p>という文言を出したい場合</p>
+<p><b>&lt;$MTEntryTitle regex_replace='/^/','タイトルは' regex_replace='/$/','です' $&gt;</b></p>
+<p>という感じで、regex_replaceモディファイアを二度書くことで出力することが可能です。<br />
+ただし、この方法も先ほどのcatモディファイアを使った場合も値が入っていなくても指定した文言は出力されてしまいます。</p>
+<p><b>タイトルはです</b></p>
+<p>先ほどのMTIfで条件分岐するかどうかという方法になりますがregex_replaceを書く際に正規表現を使って</p>
+<p><b>&lt;$MTEntryTitle regex_replace='/^(.+)$/','タイトルは$1です' $&gt;</b></p>
+<p>と指定すれば値が無い場合は何も出力されません。</p>
+<h2>ということで</h2>
+<p>素直にMTIfタグを書く方がいいかもしれませんが、使い方次第ということで書いておきました。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/post_144.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/tabsterforcoda.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

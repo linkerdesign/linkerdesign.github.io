@@ -1,0 +1,80 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Movable Typeでのjsonの出力にはto_jsonを使うのがよさそうです｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Movable Typeでのjsonの出力にはto_jsonを使うのがよさそうです</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Movable Typeでのjsonの出力にはto_jsonを使うのがよさそうです</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+東京はかなり暑いみたいですが、ロンドンも日がかなり照っていると外は暑いな〜とおもったりします。とはいえ家の中はクーラーがなくても十分ですし、時々寒かったりするのでこれは家の造りの問題なのかなとも思ったりしますね。</p>
+<p>さて、ちょっと遊びでMTを触っていたときにjsonのエンコードとかってどうするのがいいのだろう？とおもったのでMTでjsonファイルを生成する場合の話でも。</p>
+<p>Movable Typeで入力した内容を表示する際にはMTタグを使用しますが、出力するときに必要に応じてエンコードをすることが可能です。<br />
+MTにはデフォルトでいくつかがグローバルモディファイアとして用意されていますね。</p>
+<ul>
+  <li><span class="Apple-tab-span" style="white-space:pre"><span style="white-space: normal;"><a href="http://www.movabletype.jp/documentation/appendices/modifiers/encode_html.html">encode_html</a><br /></span></span></li>
+
+  <li><a href="http://www.movabletype.jp/documentation/appendices/modifiers/encode_js.html">encode_js</a></li>
+
+  <li><a href="http://www.movabletype.jp/documentation/appendices/modifiers/encode_php.html">encode_php</a></li>
+
+  <li><a href="http://www.movabletype.jp/documentation/appendices/modifiers/encode_sha1.html">encode_sha1</a></li>
+
+  <li><a href="http://www.movabletype.jp/documentation/appendices/modifiers/encode_url.html">encode_url</a></li>
+
+  <li><a href="http://www.movabletype.jp/documentation/appendices/modifiers/encode_xml.html">encode_xml</a></li>
+</ul>
+<p>必要に応じてこれらのエンコードを使いますが、jsonを生成する場合はどうしたものかとふとおもったので、色々調べてみると「<a href="http://www.tinybeans.net/blog/2010/12/22-230131.html">flexibleSearch.js で読み込む JSON を Movable Type で出力する - かたつむりくんのWWW</a> 」で紹介されている「to_json="1"」を使用するのが良さそうです。</p>
+<blockquote>
+  <p>flexibleSearch.js で読み込む JSON を Movable Type で出力する - かたつむりくんのWWW<br />
+  <a href="http://www.tinybeans.net/blog/2010/12/22-230131.html">http://www.tinybeans.net/blog/2010/12/22-230131.html</a></p>
+</blockquote>
+<p>ハッシュをjsonの形にしてくれ、エンコードもしてくれます。<br />
+MTを使ってjsonに出力してごにょごにょやる場合などは覚えておいた方が良さそうです。</p>
+<p>この記事のflexibleSearch.jsは以前にjournalでも書いていましたね。</p>
+<blockquote>
+  <p>jQueryプラグインflexibleSearch.jsで高速検索を試してみた｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2011/01/jqueryflexiblesearchjs.php">http://linker.in/journal/2011/01/jqueryflexiblesearchjs.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>この時はただ単にこのプラグインを使ってみるということだけを考えていて、jsonファイルの生成などは単純にコピペをして実行してみていました。<br />
+jsonファイルの生成の箇所などハッシュを使って出力しているなぁ、というくらいで完全に思考停止していましたね。</p>
+<p>もうすこし自分の頭で考える様にしないといけないなぁとも思った次第です。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/ipadfontbook.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/peatix.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

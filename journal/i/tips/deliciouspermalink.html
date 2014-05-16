@@ -1,0 +1,85 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>del.icio.usのブックマーク数とPermalinkの話でも｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>del.icio.usのブックマーク数とPermalinkの話でも</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;del.icio.usのブックマーク数とPermalinkの話でも</p>
+
+<p><img src="http://linker.in/journal/images/091119.gif" width="600" height="200" alt="091119.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+今日はすごく寒かったですね。寒いとキーボードを打つ手も鈍くなって仕事に支障が出てしまいますね。</p>
+<p>さて、今日はdel.icio.usのpermalinkやbookmark数の話とかでも。<br />
+先日</p>
+<blockquote>
+  <p>MTでMD5を扱う３つの方法｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/08/mtmd5.php">http://linker.in/journal/2009/08/mtmd5.php</a></p>
+</blockquote>
+<p>というのを書いて、del.icio.usのpermalinkをMD5を使って取得する方法を紹介しました。</p>
+<h2>JavaScriptを使ってdel.icio.usのブックマーク数を取得する</h2>
+<p>先日さらっと書きましたがJavaScriptを使った方法をMTを例にメモがてらまとめておきます。<br />
+紹介したmd5.jsを事前に読み込んでおいて</p>
+<pre class="brush:js">
+&lt;script type="text/javascript"&gt;
+url = MD5_hexhash('&lt;mt:EntryPermalink /&gt;'); 
+document.write('&lt;a href="http://del.icio.us/url/' + url + '"&gt;');
+document.write('&lt;img src="http://labs.creazy.net/sbm/delicious/textimg/&lt;$MTEntryPermalink$&gt;" alt="" /&gt;');
+document.write("&lt;/a&gt;");
+&lt;/script&gt;
+</pre>
+<p>このような感じでうめこめばdel.icio.usのブックマーク数を画像で取得することができ、del.icio.usの個別のページへ飛ぶことが出来ます。ここで使っているのは</p>
+<blockquote>
+  <p>Delicious2.0 の被ブックマーク数画像取得APIを作りました [C!]<br />
+  <a href="http://creazy.net/2008/08/delicious20_counter_image_api.html">http://creazy.net/2008/08/delicious20_counter_image_api.html</a>&nbsp;&nbsp;</p>
+</blockquote>で紹介されているツールになります。
+
+<h2>del.icio.usのPermalinkはdelicious.com/url/?url=でも取得可能</h2>
+<p>del.icio.us内でのPermalinkは前回紹介したMD5を使用する方法で取得するモノだと思っていたのですが、<a href="http://rewish.org/">Rewish</a>のrewさんに教えてもらった方法ですと</p>
+<p>http://delicious.com/url/?url=example.com</p>
+<p>http://delicious.com/url/view?url=example.com</p>
+<p>でいけるようです。MTの個別記事ページだとこんなかんじでしょうか。</p>
+<pre class="brush:xml">
+http://delicious.com/url/?url=&lt;$MTEntryPermalink$&gt;
+</pre>
+<p>こちらを使うと問題なくPermalinkを取得できますね。<br />
+rewさん、ありがとうございました！</p>
+<p>ということで、Permalinkと画像取得のPermalink部分に&lt;$MTEntryPermalink$&gt;など記事のURLが挿入されるようにしておくと問題なさそうですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_63.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_64.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

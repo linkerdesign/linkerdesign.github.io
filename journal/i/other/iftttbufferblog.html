@@ -1,0 +1,75 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>iftttとbufferを使って定時にBlogの更新通知を流してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>iftttとbufferを使って定時にBlogの更新通知を流してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;iftttとbufferを使って定時にBlogの更新通知を流してみる</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+初場所も終盤ですね。把瑠都の初優勝なるか気になるところです。<br />
+全豪オープンの錦織選手も気になるところです。</p>
+<p>さて、Blogの更新をTwitterやFacebookに流したりする事があると思います。</p>
+<p><a href="http://twitterfeed.com/">Twitterfeed</a>を使ったりすることで更新したときに流したりする事ができますが、毎日の特定の時間に流すようにする方法のメモです。<br />
+使うサービスは<a href="http://ifttt.com/">ifttt</a>と<a href="http://bufferapp.com/">buffer</a>です。<br /></p>
+<p>bufferを使うことで指定した時間にTweetを流したりする事が出来ます。<br />
+iftttを使う事でRSSなどからbufferにとばすことが出来ます。</p>
+<h2>bufferの設定</h2>
+<p>まずはbufferの設定をしておきます。</p>
+<p><img src="http://linker.in/journal/images/120119-02.jpg" width="550" height="396" alt="120119-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>設定の中で時間を指定するところがあるので、ここで投稿したい時間を指定しておきます。</p>
+<p><img src="http://linker.in/journal/images/120119-01.jpg" width="500" height="349" alt="120119-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これで毎10時に流れるようになりました。</p>
+<h2>iftttの設定</h2>
+<p>次にiftttの方の設定をしておきます。</p>
+<p>triggerはfeedを選択して、New feed itemを選択します。</p>
+<p><img src="http://linker.in/journal/images/120119-03.jpg" width="550" height="263" alt="120119-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>feedを指定指定して、actionにbufferを指定します。</p>
+<p><img src="http://linker.in/journal/images/120119-04.jpg" width="550" height="342" alt="120119-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>初めての場合はiftttとbufferをつなげておく必要がありますね。</p>
+<p>表示させる文言を設定しておきます。</p>
+<p><img src="http://linker.in/journal/images/120119-05.jpg" width="550" height="298" alt="120119-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでtaskの作成が完了です。</p>
+<p>Blogを更新して問題無く動作していれば、こんな感じでTwitterに流れてきます。</p>
+<p><br />
+<img src="http://linker.in/journal/images/120119-06.jpg" width="550" height="275" alt="120119-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ということで、同じようなことをしたい時の参考になれば幸いです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_179.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/web_jquery.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

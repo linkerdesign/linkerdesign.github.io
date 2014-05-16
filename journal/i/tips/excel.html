@@ -1,0 +1,95 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>インポートデータ作成によく使いそうな基本的なExcel関数と正規表現｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>インポートデータ作成によく使いそうな基本的なExcel関数と正規表現</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;インポートデータ作成によく使いそうな基本的なExcel関数と正規表現</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+遅めの夏休みを満喫していますが皆さんいかがお過ごしですか？</p>
+<p>さて、CMSを利用したりしているときはデータを整形してインポート用のデータを作ったりすることはよくあるのではないかと思います。<br />
+プログラム書いてガリガリできる人たちは色々魔法を使えたりするのかもしれませんが、そうもいかない場合もあるでしょう。</p>
+<p>よく使いそうなのはExcelをつかってCSVを編集して、それをテキストエディタで置換とかではないでしょうか？<br />
+すごく基本的な話ばかりですが、まずは簡単なExcelの話からでも。</p>
+<p><span style="font-size: 18px; font-weight: bold;">ROW()で行番号を取得する</span><br /></p>
+<p>例えば連番をつくって値を設定したいとします。</p>
+<p>その場合にセル自体の行番号を取得するにはROW()を使います。</p>
+<p><b>=ROW()</b></p>
+<p>と書けばそのセルの行番号を取得することが出来ます。</p>
+<p><img src="http://linker.in/journal/images/110825-01.jpg" width="362" height="270" alt="110825-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>特定のセルの行番号取得はROW(A1)みたいな感じでセル番地を指定すればいいでしょう。</p>
+<p>実際のところ単純な連番であれば、1,2,3と1行ずつ入れた物を繰り返せば（ドラッグすれば）できますね。</p>
+<h2>行番号を元に計算する</h2>
+<p>取得した行番号や値を元に計算したりする場合があるかと思います。<br />
+計算した結果の値を整える関数としては&nbsp;&nbsp;</p>
+<p>四捨五入：ROUND(数値,桁数)<br />
+切り上げ：ROUNDUP(数値,桁数)<br />
+剰余：MOD()</p>
+<p>使いそうなのはこのあたりではないでしょうか？</p>
+<p>四捨五入、切り上げなどは桁数をゼロにして整数にすることが多いのではないかと思いますので書くとしたら</p>
+<p><b>=ROUNDUP((ROW()/3),0)</b></p>
+<p>こんなかんじで、行番号の値を割って切り上げるとかも可能ですね。<br />
+この場合だと1,1,1,2,2,2みたいになっていきます。</p>
+<p><img src="http://linker.in/journal/images/110825-02.jpg" width="357" height="292" alt="110825-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>同じ番号を繰り返してやりたいときに使えますね。</p>
+<h2>セルを統合</h2>
+<p>CSVにもともとあった定型文とExcelで計算した値などをセル同士で統合することがあるかもしれません。</p>
+<p>セルの値を統合するにはたとえばC1のセルで</p>
+<p><b>=A1&amp;B1</b><br /></p>
+<p>みたいに書けば値が統合できますね。</p>
+<p><img src="http://linker.in/journal/images/110825-03.jpg" width="349" height="282" alt="110825-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>この辺はなんかもっとうまい方法がありそうなきはしますが、連番等で取得した値と定型文をつなげることが出来ます。</p>
+<h2>正規表現で行頭、行末に追加。</h2>
+<p>CSVが出来てしまえばそこまで大変じゃないかと思います。<br />
+魔法が使える人はすごいことできそうな気はしますが、置換するためのキーワードさえ入れておけばそれを検索・置換でいけると思います。</p>
+<p>テキストエディタで開いたCSVファイルを編集置換していくと思います。</p>
+<p>行頭に何かを入れるという場合は</p>
+<p><b>^</b></p>
+<p>行末に何かを入れたいという場合は</p>
+<p><b>$</b></p>
+<p>を指定するだけです。<br />
+行頭、行末に定型句を入れる場合はこれで簡単に出来ますね。</p>
+<p>行頭、行末にも置換用のキーワード入れておけば上記のことなんかは普通に検索・置換でできますが、正規表現を使ってみるというのもわるくないもんです。</p>
+<h2>ということで</h2>
+<p>基本的な話ばかりですが、この辺が分かるとデータの修正もだいぶやりやすくなりますね。<br />
+Excelは関数が膨大にあるので使い方を覚えるともっと色々出来そうな気がします。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_169.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/game.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

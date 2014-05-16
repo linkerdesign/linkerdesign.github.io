@@ -1,0 +1,114 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>WebSig 24/7 MT4分科会に参加してきました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>WebSig 24/7 MT4分科会に参加してきました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;WebSig 24/7 MT4分科会に参加してきました</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090518.jpg" src="http://linker.in/journal/images/090518.jpg" width="600" height="200" class="mt-image-none" style="" /></span></p>
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>5月16日に秋葉原で開催されたWebSig 24/7 MT4分科会に参加してきました。</p>
+<h2>第１部：「Publishing PlatformとしてのMovable Typeと、ウェブサイトの情報設計」</h2>
+<p>第１部はシックスアパートの金子さんによるMTの話やMotionの話とかでした。<br />
+「コンテンツ発射マシーン」的な表現をされていましたが、<br />
+MTを使うことでいろいろな使い方が可能ですよね。</p>
+<p><img src="http://linker.in/journal/images/090518-02.jpg" width="600" height="450" alt="090518-02.jpg" /></p>
+<h2>第２部：ワークショップ「フィールドの追加と管理画面のカスタマイズ」</h2>
+<p>第２部は３テーブルに分かれてのワークショップで、<a href="http://www.h-fj.com/blog/">藤本さん</a>の「フィールドの追加と管理画面のカスタマイズ」に参加させてもらいました。<br />
+藤本さんのMT本も買ってざっと読んでいたのですが、まだまだ実践が足りなかったのですごくいい時間でした。<br />
+途中抜けだったのが残念ですが、それでもすごく満足がいくものでした。<br />
+普段仕事をしていると、MTOSを使うことがおおいので、今回のものを参考にして仕事に生かせるといいなぁ、と思っています。</p>
+<p><img src="http://linker.in/journal/images/090518-03.jpg" width="600" height="450" alt="090518-03.jpg" /></p>
+<p>今回のワークショップでやったフィールド追加の話は</p>
+<ul>
+  <li>カスタムフィールドとは若干違う</li>
+
+  <li>カスタマイズの余地が広い（＝手間がかかる）</li>
+
+  <li>カスタムフィールドとはデータの保存先が違う</li>
+
+  <li>検索や並べ替えが行いやすい</li>
+</ul>
+<p>ということでした。</p>
+<h2>以下、プラグインをつくりながら教えてもらったメモ</h2>
+<p>MTの管理画面には各ブログごとのプラグインの一覧とシステムからの一覧があるのですが、ブログの中のプラグインに表示させるためにはもう少しカスタマイズが必要とのこと。</p>
+<p>schema_versionが定義されていることでMTがDBをカスタマイズするんだと判断するそうです。<br />
+「DBをアップグレードします」 と出るアレですね。<br />
+テーブル増やすとかフィールド増やすというのはMTだと意外と簡単にできるんですが、他のCMSは少し難しめとのことでした。（SQLを直接書くとかそういう話らしい）</p>
+<p>一点気をつけるとすれば、フィールド名・テーブル名は重複してしまってもアラートが出たりは当然しないので、<br />
+その辺に気をつけなければいけない、ということと、<br />
+作り方によってはアップグレードのたびに書き換えが必要になる、とのことです。<br />
+そのためのtransformとかを教えてもらったのですが、時間の関係でそこが聞けなかったので<br />
+そのあたりについては復習しておかないとな、と思っています。</p>
+<p>そんな感じでつくってみたのが、サブタイトルを入力するフィールドを追加するプラグインでした。</p>
+<p><img src="http://linker.in/journal/images/090518-01.jpg" width="463" height="126" alt="090518-01.jpg" style="border:1px #000000 solid;" /></p>
+<p>こう書けばいい、というのにのっとってやったのもありますが、思ったよりも簡単にできてしまってびっくりするくらいでした。<br />
+もっともっとトレーニングしてつかっていきたいな、と思いました。</p><iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=mersys-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=4899772386&amp;md=1X69VDGQCMF7Z30FM082&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+<p>The blog of H.Fujimoto : Movable Type Developer's Guide特設ページ<br />
+<a href="http://www.h-fj.com/blog/mtdevguide/index.php">http://www.h-fj.com/blog/mtdevguide/index.php</a>&nbsp;&nbsp;</p>
+<p>今回の分科会も非常に有意義な時間でした。</p>
+<p>忙しい中準備されてたDakinyさんを始めテーブルリーダーの方々には感謝感謝ですね。<br />
+どうもありがとうございました！！</p>
+<h2>関連リンク</h2>
+<ul>
+  <li>WebSig 24/7 MT4分科会終了 - The blog of H.Fujimoto<br />
+  <a href="http://www.h-fj.com/blog/archives/2009/05/17-173629.php">http://www.h-fj.com/blog/archives/2009/05/17-173629.php</a>&nbsp;&nbsp;</li>
+
+  <li>WebSig24/7 MT4分科会の第3回勉強会 終了！ - WolaWola<br />
+  <a href="http://www.zelazny.mydns.jp/archives/001509.php">http://www.zelazny.mydns.jp/archives/001509.php</a>&nbsp;&nbsp;</li>
+
+  <li>MT4分科会第3回勉強会終了しました。 (WebSig24/7)<br />
+  <a href="http://websig247.jp/committee/mt/000138.html">http://websig247.jp/committee/mt/000138.html</a>&nbsp;&nbsp;</li>
+
+  <li>次期Movable Typeは相当に期待できるらしい。WebSig24/7 MT4分科会第3回勉強会: 世界中の１％の人々へ<br />
+  <a href="http://www.dakiny.com/archives/movable-type/movable_typemt43/index.php">http://www.dakiny.com/archives/movable-type/movable_typemt43/index.php</a>&nbsp;&nbsp;</li>
+
+  <li>Publishing PlatformとしてのMovable Typeと、ウェブサイトの情報設計 （WebSig24/7 MT4勉強会）：Goodpic<br />
+  <a href="http://www.goodpic.com/mt/archives2/2009/05/publishing_plat.html">http://www.goodpic.com/mt/archives2/2009/05/publishing_plat.html</a>&nbsp;&nbsp;</li>
+
+  <li>WebSig24/7 MT4分科会の第3回勉強会 - slog<br />
+  <a href="http://www.dream-creation.biz/slog/2009/05/websig247_mt43_1.html">http://www.dream-creation.biz/slog/2009/05/websig247_mt43_1.html</a>&nbsp;&nbsp;</li>
+
+  <li>WebSig24/7 MT分科会(MovaMotion?)。 (Junnama Online (Mirror))<br />
+  <a href="http://junnama.alfasado.net/online/2009/05/post_204.html">http://junnama.alfasado.net/online/2009/05/post_204.html</a>&nbsp;&nbsp;</li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/motion_graphics.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/casestudy/illustrator.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Movable Type 5.2.2がリリースされましたね｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Movable Type 5.2.2がリリースされましたね</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Movable Type 5.2.2がリリースされましたね</p>
+
+<p><img title="121206-01-1.png" src="http://linker.in/journal//images/121206-01-1.png" alt="121206 01 1" width="600" height="200" border="0" /></p>
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>昨日、12月5日にMTの5.2.2がリリースされましたね。</p>
+<blockquote>
+<p>Movable Type 5.2に対応した 「Movable Type Advanced」出荷開始 、同時に定型文機能等を搭載したMovable Type 5.2.2もリリース | Movable Type<br /><a href="http://www.sixapart.jp/movabletype/news/2012/12/05-1100.html">http://www.sixapart.jp/movabletype/news/2012/12/05-1100.html</a></p>
+</blockquote>
+<p>MT5.2、Windows Azureに対応したMovable Type Advancedの出荷に併せてという感じのようですね。</p>
+<h2>5.2.2の新機能</h2>
+<p>5.2.2の新しい機能として</p>
+<ul>
+<li>定型文機能</li>
+<li>新しいテーマ「Rainier」をデフォルトテーマ</li>
+</ul>
+<p>があるようです。</p>
+<p>定型文機能はなかなか便利そうなかんじですね。色々な使い方ができそうです。</p>
+<blockquote>
+<p>Movable Type 5.2.2 の定型文機能が便利 | WWW WATCH<br /><a href="http://hyper-text.org/archives/2012/12/movable_type_formatted_text.shtml">http://hyper-text.org/archives/2012/12/movable_type_formatted_text.shtml</a></p>
+</blockquote>
+<p>早速個人ブログにRainierを当ててみました。<br />久々にどうでもいいことでもブログ書くかなー、という気分なのでこれをきっかけにもっと書いてみようと思います。</p>
+<h2>Rainierの機能</h2>
+<p>Rainierの機能としては</p>
+<blockquote>
+<ul>
+<li>タイトル表示を、アップロードした任意のロゴ画像に置き換えることができます。</li>
+<li>カバー画像を、アップロードした任意の画像に置き換えることができます。</li>
+<li>アイテムアップロード機能を使って favicon を設定できます。</li>
+<li>特定のウェブページをメインナビゲーションに追加できます。</li>
+<li>og:image を、アップロードした任意の画像に置き換えることができます。</li>
+<li>トップページには最新10件の記事がリスト表示されます。mt-search.cgiを利用してページ分割され、10件ずつページ送りが行われます。</li>
+<li>パンくずナビゲーションが表示されます。(トップページ、エラーページ、検索結果ページを除く)</li>
+<li>テーマの適用後、エディタ用のスタイルシートファイルが設定され、ブログ記事の編集画面にRainierのスタイルが適用されます。</li>
+<li>Classic Blog テーマで利用可能だったデザイン(Cityscape シリーズや、Minimalist シリーズなど)も、Media Querisによりマルチデバイス対応となります。(ただし、どのレイアウトを選んでも右側にサイドバーの2カラムレイアウト固定になります)</li>
+</ul>
+<p>レスポンシブWebデザインテーマ 「Rainier」 : Movable Type 5 ドキュメント<br /><a href="http://www.movabletype.jp/documentation/mt5/design/themes/rainier.html">http://www.movabletype.jp/documentation/mt5/design/themes/rainier.html</a></p>
+</blockquote>
+<p>という感じのようです。</p>
+<h2>og:image周りを見てみる</h2>
+<p>デフォルトのOGPはこんな感じのグレーの画像です。</p>
+<p><img title="121206-02.png" src="http://linker.in/journal//images/121206-02.png" alt="121206 02" width="485" height="124" border="0" /></p>
+<p>なので、自分で好きな画像をアップすれば良さそうですね。</p>
+<p>ブログ記事のog:imageのコードはこんな感じになってました。</p>
+<p>&lt;meta property="og:image" content="&lt;mt:EntryAssets type="image" limit="1"&gt;&lt;$mt:AssetThumbnailURL height="320" square="1" encode_html="1"$&gt;&lt;mt:Else&gt;&lt;mt:Assets type="image" tag="@SITE_ICON" limit="1"&gt;&lt;$mt:AssetThumbnailURL height="320" square="1" encode_html="1"$&gt;&lt;mt:Else&gt;&lt;$mt:SupportDirectoryURL encode_html="1"$&gt;theme_static/&lt;$mt:BlogThemeID$&gt;/img/siteicon-sample.png&lt;/mt:Assets&gt;&lt;/mt:EntryAssets&gt;"&gt;</p>
+<p>こういう使い方ができるとは知りませんでした。</p>
+<p>&lt;mt:EntryAssets type="image" limit="1"&gt;<br />記事に画像があるときの処理<br />&lt;mt:Else&gt;&lt;mt:Assets type="image" tag="@SITE_ICON" limit="1"&gt;<br />@SITE_ICONの画像があるときの処理<br />&lt;mt:Else&gt;<br />どっちもないときの処理<br />&lt;/mt:Assets&gt;&lt;/mt:EntryAssets&gt;</p>
+<p>言われてみれば確かにできそうな気がしますが、使ったことがなかったのでこれからMTMLを編集する際に参考にさせてもらおうと思います。</p>
+<p>中の人が書いたコードみると勉強になりますね！</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/basecamp-nagoya-crema.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/mt_516.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

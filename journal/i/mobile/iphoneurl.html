@@ -1,0 +1,111 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>iPhone用ページに同一URLでリダイレクトするメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>iPhone用ページに同一URLでリダイレクトするメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;モバイル&nbsp;&raquo;&nbsp;iPhone用ページに同一URLでリダイレクトするメモ</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+
+<p>先日、「<a href="http://linker.in/journal/2010/03/iphonecssphpjavascriptcss.php">iPhone用にCSS/PHP/JavascriptでCSSを切り替える基本的な方法</a>」というエントリーをかいて、WebサイトをiPhone対応用にする簡単な方法を紹介しました。</p>
+
+<p>読み込むCSSを切り替えることを中心におくとこういう方法になるかとおもいますが、HTML部分をiPhone用とPC用で変えたい、と思う場合もあるでしょう。<br />
+そうなったときはiPhone用のHTMLとPC用のHTMLが２つ存在することになります。</p>
+
+<p>たとえば<br />
+PC用：/hogehoge.html<br />
+iPhone用：/i/hogehoge.html<br />
+となっているとしましょう。</p>
+
+<p>簡単に書くと.htaccessではこんなかんじですね。<br />
+（mod_rewriteがつかえるという前提です。）</p>
+
+<pre class="brush:xml">
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (iPhone|iPod)
+RewriteCond %{REQUEST_URI} !^/i/
+RewriteRule ^(.*)\.html$ /i/$1.html [L]
+</pre>
+
+<p>UAを判定してiPhoneで閲覧している場合は/hogehoge.htmlにアクセスすると/i/hogehoge.htmlの内容が表示されます。</p>
+
+<h2>サーバーによってはうまくいかない場合も？</h2>
+
+<p>テストで試したサーバー（heteml）では以下のようなかんじで書かないとうまく動きませんでした。</p>
+
+<pre class="brush:xml">
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (iPhone|iPod)
+RewriteCond %{REQUEST_URI} !^/i/
+RewriteRule ^(.*)\.html$ /i/$1.html [L]
+</pre>
+
+<p>Options +FollowSymLinks<br />
+の記述が必要でした。</p>
+
+<p>これに加えてhttp://www.hoge.com/にアクセスするときにうまく動かなかったので</p>
+
+<pre class="brush:xml">
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !\.css$
+RewriteCond %{REQUEST_URI} !\.js$
+RewriteCond %{REQUEST_URI} !\.jpg$
+RewriteCond %{REQUEST_URI} !\.gif$
+RewriteCond %{REQUEST_URI} !\.png$
+RewriteCond %{REQUEST_URI} !\.swf$
+RewriteCond %{REQUEST_URI} !\.inc$
+RewriteCond %{REQUEST_URI} !\.cgi$
+RewriteCond %{HTTP_USER_AGENT} (iPhone|iPod)
+RewriteCond %{REQUEST_URI} !^/i/
+RewriteRule ^(.*)$ /i/$1 [L]
+</pre>
+
+<p>こんな感じでリダイレクトをかけて、リダイレクトさせないファイルを設定してみました。<br />
+一番最初の方法でうまくいく場合が多いと思われますが、なぜかうまくいかなかった場合の参考になればと思います。</p>
+
+<h2>リダイレクトさせて終わりではない</h2>
+
+<p>リダイレクトで表示させる方法だと、有無を言わさずiPhone用のページを見ることになってしまいます。</p>
+
+<p>PC用のページをみる、という選択肢も残しておいた方が良いとおもいますので、そのあたりも調整しておく必要がありますね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphonetype_warkern.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/form-selection.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

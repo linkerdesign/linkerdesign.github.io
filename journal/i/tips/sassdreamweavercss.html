@@ -1,0 +1,112 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>SassとDreamweaverのコードヒントでCSSをさらに効率的に｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>SassとDreamweaverのコードヒントでCSSをさらに効率的に</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;SassとDreamweaverのコードヒントでCSSをさらに効率的に</p>
+
+<p><img src="http://linker.in/journal/images/101025.gif" width="600" height="200" alt="101025.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+朝晩はだいぶ冷え込むようになってきました。気づけば10月も最終週ですね。。。</p>
+<p><a href="http://linker.in/journal/2010/08/lesscss.php">以前、lessの話</a>を書きました。これと似たようなもので<a href="http://sass-lang.com/">Sass</a>というものがあります。lessはSassから派生したようです。</p>
+<p><img src="http://linker.in/journal/images/101025-01.png" width="593" height="280" alt="101025-01.png" style="border:2px #7c7c7c solid;" /><br /></p>
+<p>@kotarokさんが広めている様子はtwitter等でも見かけました。ちらほらとblogに書かれている人もいるので、えいや、っと試してみました。<br />
+導入すれば変数やセレクタの入れ子、プロパティグループのインクルード、演算などが使える様になります。</p>
+<h2>Sassのインストール</h2>
+<p>まずはSassを使えるようにします。macのターミナルで話を進めていきます。 Windowsについては<a href="http://www.hamashun.me/archives/1294573.html">hamashunさんが書かれている</a>のを参考にすればよいかと思います。</p>
+<p>ターミナルを起動したらこんな感じでhamlをインストールします。</p>
+<blockquote>
+  <p>$ sudo gem install haml</p>
+</blockquote>
+<p>macはrubyがインストールされているようです。問題無くインストールが完了したらターミナルで該当のフォルダに移動します。<br />
+たとえばこんな感じのcssフォルダに移動して、hoge.scssファイルを編集したいとします。</p>
+<p><img src="http://linker.in/journal/images/101025-02.jpg" width="487" height="322" alt="101025-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<blockquote>
+  <p>$ sass --watch hoge.scss:hoge.css</p>
+</blockquote>
+<p>とやることで、hoge.scssで変更があった時にhoge.cssが生成／上書きされるようになります。<br /></p>
+<h3>フォルダ単位で管理</h3>
+<p>ただ、ファイル単位でwatchさせるのは手間なので、フォルダごと指定してしまいます。<br />
+その場合は</p>
+<blockquote>
+  <p>$ sass --watch pathtofolder</p>
+</blockquote>
+<p>というかんじで書けばOKです。</p>
+<blockquote>
+  <p>&gt;&gt;&gt; Sass is watching for changes. Press Ctrl-C to stop.</p>
+</blockquote>
+<p>みたいな文言がでるので、scssファイルを編集すればcssが生成されます。</p>
+<h3>scssファイルだけまとめる</h3>
+<p>scssファイルだけをまとめておいて別のcssフォルダに出力させる際は</p>
+<blockquote>
+  <p>$ sass --watch foo/sass:foo/css<br /></p>
+
+  <p><a href="http://f-stream.net/2010/10/sass-01/">CSSをもっと便利に ? はじめてのSass。 - ウェブデザインのヒント F*stream</a><br /></p>
+</blockquote>
+<p>と書けばOKです</p>
+<h2>Dreamweaverでも編集できるようにする</h2>
+<p>さて、Sassが使えるようになりました。使い慣れたテキストエディタで編集すれば問題ないですね。<br />
+Dreamweaverでつかうにあたってはまずコードビューで開く拡張子を追加しておきます。</p>
+<p>環境設定＞ファイルタイプ／エディタ＞コードビューで開く</p>
+<p>に拡張子scss を追加しておきます。追加してscssファイルを開きます。</p>
+<p><img src="http://linker.in/journal/images/101025-03.jpg" width="437" height="224" alt="101025-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>問題無く開くことができました。ただcssとしては認識されていないのでコードヒントなどが使えません。</p>
+<h2>Dreamweaverのコードヒントを使える様にする</h2>
+<p>ということで、コードヒントが使えるようにしてみます。このカスタマイズは他のカスタマイズとかとぶつかりそうな気もするので、自己責任でお願いしますね。</p>
+<p>コードビューが表示される様に指定してあるファイルを開きます。macだとこんなかんじでしょうか。</p>
+<p>/Applications/Adobe Dreamweaver CS5/Configuration/DocumentTypes/MMDocumentTypes.xml<br /></p>
+<p>このファイルをどこか別の場所（同じフォルダではなくて）にバックアップをとっておきます。</p>
+<p>ファイルを開くとmacfileextension="css"とwinfileextension="css"という部分があるのでこれを</p>
+<p><strong>macfileextension="css,scss"</strong>と<strong>winfileextension="css,scss"</strong>という感じに置き換えます。<br /></p>
+<p>Dreamweaverを起動していたら再起動してみてscssファイルを開くとコードヒントが使えるようになります。</p>
+<p><img src="http://linker.in/journal/images/101025-04.jpg" width="292" height="365" alt="101025-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでコードビューもつかいながらSassもつかえて便利になりますね。</p>
+<p>このカスタマイズをすればlessのファイルでもコードヒントが使える様になりそうですね。</p>
+<p>最初にwatchしないといけないのが若干手間ではありますけど、Sassの多くの便利な機能を使えるようになることを考えるとかけてもいい手間なのかもしれません。<br /></p>
+<p>Dreamweaverで編集するサイトを変更したらそのフォルダをwatchしてくれるとかできたりすると良さそうですね。</p>
+<h2>関連リンク</h2>
+<p><a href="http://d.hatena.ne.jp/seiunsky/20090708/1247075132">Sass のトップページを日本語でわかるようにしてみた - まさにっき（コードで世界を変えたい人の記録）</a><br /></p>
+<p><a href="http://www.infoq.com/jp/news/2009/08/dry-css-less-yass">InfoQ: LESS と Sass で CSS をより簡潔にする</a><br /></p>
+<p><a href="http://www.hamashun.me/archives/1312277.html">hamashun.me : Sassのサンプルコード</a><br /></p>
+<p><a href="http://d.hatena.ne.jp/tagomoris/20100914/1284459965">俺が本当のsassの書き方を教えてやる - tagomorisのメモ置き場</a><br /></p>
+<p><a href="http://www.visual28.com/articles/less-scss-syntax-highlighting-in-dreamweaver">LESS/SCSS Syntax Highlighting in Dreamweaver ? Visual28</a><br /></p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/red_bull.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/give-me-good-word.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

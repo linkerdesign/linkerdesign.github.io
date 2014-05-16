@@ -1,0 +1,86 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Dreamweaverのコマンドで画像の幅と高さを指定してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Dreamweaverのコマンドで画像の幅と高さを指定してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Dreamweaverのコマンドで画像の幅と高さを指定してみる</p>
+
+<p><img src="http://linker.in/journal/images/110207.gif" width="600" height="200" alt="110207.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+日本では大相撲の春場所が開催中止になったそうですね。相撲好きにとっては若干悲しいニュースでありますが、仕方ないところでしょうね。。。</p>
+<p>さて、そんな暗いニュースばかりではなくてちょっとは個人的にどうにかしたかった事が解決できたささやかなニュースでも。</p>
+<h2>コードビューで画像の幅・高さを挿入する</h2>
+<p>普段Dreamweaverを使ってるわけですが画像をリンクさせるときにwidth,heightがコードビューだとうまくはいらないんですよね。<br />
+それを解決出来るコマンドを見つけることが出来ました。</p>
+<blockquote>
+  <p>Dreamweaver 画像の幅と高さをリセットするコマンド ? きんくまデザイン<br />
+  <a href="http://www.kuma-de.com/blog/2009-01-27/298">http://www.kuma-de.com/blog/2009-01-27/298</a></p>
+</blockquote>
+<p>ん〜、だいぶ前からあったようですね・・・<br />
+何度か探してみたのに見つけられなかった自分の検索能力不足を嘆くばかりです。。。</p>
+<h2>Drag&amp;DropならOK</h2>
+<p>コードビューで画像をDrag&amp;Dropしてくる場合。</p>
+<p><img src="http://linker.in/journal/images/110207-01.jpg" width="304" height="173" alt="110207-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>もちろん問題無くwidth,heightも入ってきますね。</p>
+<p><img src="http://linker.in/journal/images/110207-02.jpg" width="355" height="181" alt="110207-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>コードビューで作業しているときに、サイドにあるファイル一覧から画像をDrag&amp;Dropとかするのは個人的にはちょっとやりたくないところではあるのですが、、、</p>
+<h2>コード補完のみだとNG</h2>
+<p>では次、imgと打ってコード補完</p>
+<p><img src="http://linker.in/journal/images/110207-03.jpg" width="312" height="210" alt="110207-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>残念でした</p>
+<p><img src="http://linker.in/journal/images/110207-04.jpg" width="269" height="177" alt="110207-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まぁ、これは残念というより、そういうものなので当然ですよね。</p>
+<h2>コマンドを使う</h2>
+<p>ということで紹介したコマンドの登場です。<br />
+サンプルはこんな感じになってるとします。</p>
+<p><img src="http://linker.in/journal/images/110207-05.jpg" width="318" height="212" alt="110207-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>もちろん、このときにデザインビューで「サイズのリセット」をクリックすれば解決します。</p>
+<p><img src="http://linker.in/journal/images/110207-06.jpg" width="476" height="634" alt="110207-06.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>解決しますが、画像が多いときはあまりに単純作業過ぎます。<br />
+bodyを選択してコマンドを実行してみます</p>
+<p><img src="http://linker.in/journal/images/110207-07.jpg" width="598" height="332" alt="110207-07.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>そうするとこんなかんじでwidth,heightが入力されてます。</p>
+<p><img src="http://linker.in/journal/images/110207-08.jpg" width="396" height="222" alt="110207-08.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ん〜、感動ものですね。</p>
+<p>デザインビューで画像を入れたときはwidth、heightはいってくるので、デザインビューで作業している場合はそこまで問題にはならないですよね。<br />
+なので細かいところでしか使わないですが、あると便利なコマンドの紹介でした。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/bbciplayer.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/facebook_real_name.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

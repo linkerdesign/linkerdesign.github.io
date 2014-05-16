@@ -1,0 +1,62 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>エクセルの書式設定でインポート用データの日付フォーマットを揃えてしまう簡単なメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>エクセルの書式設定でインポート用データの日付フォーマットを揃えてしまう簡単なメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;エクセルの書式設定でインポート用データの日付フォーマットを揃えてしまう簡単なメモ</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+紙のノートのかわりにiPadの手書きメモを試してみようとPC脇に置いて使い始めてみました。元々、字が綺麗ではないので正確に書けなくてもそこまで気にならないかなと思いつつ、しばらくして見返したときに愕然とする様な気もしています。</p>
+<p>さて、CMSなどをつかってサイトを構築する際に、csvで取り込む用のデータを作ったりするかと思います。<br />
+csvを作る前段階として、Excelにデータを入れたりしませんか？</p>
+<p>個人的にはそんな感じで作る事が多いです。魔法使いになるとインポート用のデータとかあっという間に作ってしまうのでしょうが、テキストエディタで検索・置換で必要な要素を抜き出していったりします。</p>
+<p>簡単な正規表現を使って必要な所だけとりだしたり、不要な物は消したり。<br />
+そのうえでインポート用にフォーマットを揃えるために形式を変えたりすることもあるでしょう。</p>
+<p>例えば日付部分が「 2012年12月16日」となっているのを「20121216190000」と置き換える必要があったとします。</p>
+<p>「年」「月」「日」を消して最後に190000を入れるという形でもいいんでしょうが、Excelの設定で日時が「20120216190000」のように表示されるようにしておけば解決しますよね。</p>
+<p>エクセルのセルの書式設定で「表示形式」を「ユーザー定義」にして「yyyymmddhhmmss」としておけば日付を貼り付けると自動で<br />
+20120216000000<br />
+のように置き換えてくれます。</p>
+<p><img src="http://linker.in/journal/images/120216-01.jpg" width="555" height="524" alt="120216-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>大した作業量ではないので、検索・置換で置き換えてしまってもいいでしょうが、覚えておくと楽になるかもしれませんね。</p>
+<p>ちなみに、年・月・日が2012.02.16とかになっているとこれは日付として認識してくれないようなので、2012/02/16と変更してあげる必要があるようです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_182.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cat45/post_184.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

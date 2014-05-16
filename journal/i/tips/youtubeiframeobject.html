@@ -1,0 +1,71 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>YouTubeの動画を貼り付けるiframeとobjectのメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>YouTubeの動画を貼り付けるiframeとobjectのメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;YouTubeの動画を貼り付けるiframeとobjectのメモ</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+英会話の例文で「heroは誰か」と聞かれる例文があるのですが「そんなのいない」と答えると「困った」みたいな顔をされてこちらも困ってしまいます。文章を理解してないだけですかね？？</p>
+<p>さて、YouTubeの動画をブログ記事に貼り付けて利用することがあるかと思います。</p>
+<p>ブログなどのエディタから直接とか色々やり方はあるかもしれませんが、YouTubeのページで用意されている「Share &gt; Embed」はデフォルトがiframeを使ったコードになっているようです。</p>
+<p><img src="http://linker.in/journal/images/110505-02.jpg" width="503" height="403" alt="110505-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<pre>
+&lt;iframe width="425" height="349" src="http://www.youtube.com/embed/pE-hZl0fdrg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+</pre>
+<p>実際に貼り付けるとこのような感じです。</p><iframe width="425" height="349" src="http://www.youtube.com/embed/pE-hZl0fdrg" frameborder="0"></iframe>
+<hr />
+<p>iframeでもよいですが、エディタによってはiframeを受け付けない場合もあり保存時に削除されてしまう場合もあるでしょう。<br />
+そういったときは「Enable privacy-enhanced mode」にチェックをいれてobjectを使うコードにしておくと良いです。</p>
+<p><img src="http://linker.in/journal/images/110505-01.jpg" width="509" height="303" alt="110505-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<pre>
+&lt;object width="425" height="349"&gt;&lt;param name="movie" value="http://www.youtube-nocookie.com/v/pE-hZl0fdrg?fs=1&amp;amp;hl=en_US"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube-nocookie.com/v/pE-hZl0fdrg?fs=1&amp;amp;hl=en_US" type="application/x-shockwave-flash" width="425" height="349" allowscriptaccess="always" allowfullscreen="true"&gt;&lt;/embed&gt;&lt;/object&gt;
+</pre><object width="425" height="349">
+  <param name="movie" value="http://www.youtube-nocookie.com/v/pE-hZl0fdrg?fs=1&amp;hl=en_US" />
+  <param name="allowFullScreen" value="true" />
+  <param name="allowscriptaccess" value="always" />
+  <embed src="http://www.youtube-nocookie.com/v/pE-hZl0fdrg?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" width="425" height="349" allowscriptaccess="always" allowfullscreen="true" />
+</object>
+<hr />
+<p>これでもダメな場合は古いバージョンのコードを使う方法でも対応できるかもしれません。</p>
+<p>iframeがNGてobjectがOKとかは普通に使っていると気づきにくい場合もあるかもしれないので、エディタ側で対応すべきところもあるでしょうが、もしデフォルトのコードを貼ってうまく表示されなかった場合などは試してみてはどうでしょうか？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_149.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cat45/post_150.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

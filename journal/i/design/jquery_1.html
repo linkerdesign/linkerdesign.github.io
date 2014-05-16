@@ -1,0 +1,88 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>jQueryのカレンダー・期間選択のプラグインなど、あれこれ。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>jQueryのカレンダー・期間選択のプラグインなど、あれこれ。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;デザイン&nbsp;&raquo;&nbsp;jQueryのカレンダー・期間選択のプラグインなど、あれこれ。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="100217_00.jpg" src="http://linker.in/journal/images/100217_00.jpg" width="640" height="195" class="mt-image-none" style="" /></span></p>
+<p>こんにちは、taku-workです。<br />
+iPhoneのデフォルトのカレンダーアプリで月表示のとき、次の月に移動するには左右の矢印をタップして移動するわけですが、画面的にはカレンダーが上下にスライドするわけです。<br />
+これがなんか妙だなぁと思っています。左右に移動すれば良いのに。</p>
+<p>ということで、今回はjQueryのカレンダー・期間選択プラグインのおはなし。<br />
+いろいろとプラグインが出ているので使い勝手を試してみるのもよいですね。</p>
+
+<h2>Date Range Picker</h2>
+<blockquote><p>Date Range Picker using jQuery UI 1.7 and jQuery UI CSS Framework | Filament Group, Inc., Boston, MA <br />
+<a href="http://www.filamentgroup.com/lab/date_range_picker_using_jquery_ui_16_and_jquery_ui_css_framework">http://www.filamentgroup.com/lab/date_range_picker_using_jquery_ui_16_and_jquery_ui_css_framework</a></p>
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="100217_01.jpg" src="http://linker.in/journal/images/100217_01.jpg" width="400" height="221" class="mt-image-none" style="" /></span></p>
+</blockquote>
+<p>こちらはいろいろと選択肢のある日付け選択のカレンダーです。<br />
+このプラグインでは「先月」などをはじめ、いろいろとプリセットを作成できそうです。</p>
+
+<h2>DatePicker</h2>
+<blockquote><p>DatePicker - jQuery plugin<br />
+<a href="http://www.eyecon.ro/datepicker/">http://www.eyecon.ro/datepicker/</a><br /></p>
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="100217_02.jpg" src="http://linker.in/journal/images/100217_02.jpg" width="400" height="143" class="mt-image-none" style="" /></span></p>
+</blockquote>
+<p>こちらも期間指定のカレンダープラグインです。<br />
+こちらの面白いのは年の表示への導線でカレンダーのヘッダー部分の月名をクリックすると年の階層に移動するという具合になっています。<br />
+長期間をまたぐ月を選ぶ時には開始日または最終日の片方を表示したまま日付けを選択できるのはよさそうです。</p>
+
+<h2>selectToUISlider</h2>
+<blockquote><p>Update: jQuery UI Slider from a Select Element - now with ARIA Support | Filament Group, Inc., Boston, MA<br />
+<a href="http://www.filamentgroup.com/lab/update_jquery_ui_slider_from_a_select_element_now_with_aria_support">http://www.filamentgroup.com/lab/update_jquery_ui_slider_from_a_select_element_now_with_aria_support</a><br /></p>
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="100217_03.jpg" src="http://linker.in/journal/images/100217_03.jpg" width="400" height="168" class="mt-image-none" style="" /></span></p></blockquote>
+<p>このプラグインでは横のスライドバーで期間指定をします。<br />
+簡単に期間を調整できるのは良さそうです。ただスライドバーと日時選択がイメージ的に結びつかない可能性もあると思うので、カレンダーをつかったUIと表示を切り替えられるようにしておくとよさそうな気がします。</p>
+
+<h2>Multiday Calendar Datepicker</h2>
+<blockquote><p>overset - Multiday Calendar Datepicker JQuery Plugin<br />
+<a href="http://www.overset.com/2008/05/12/multiday-calendar-datepicker-jquery-plugin/">http://www.overset.com/2008/05/12/multiday-calendar-datepicker-jquery-plugin/</a></p></blockquote>
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="100217_04.jpg" src="http://linker.in/journal/images/100217_04.jpg" width="400" height="229" class="mt-image-none" style="" /></span></p></blockquote>
+<p>こちらは期間をあらかじめ区切っての日時選択が可能です。<br />
+4日間ならその分だけカレンダー上でマスが埋まった状態で日時を選択します。<br />
+利用される場面は限定的になりそうですが日時選択の行程がぐっと少なくてすみそうです。</p>
+
+<h2>ということで</h2>
+<p>カレンダーの日時指定のUIはどうしたら使い勝手がよくなるのか、サンプルを試しながらいろいろと考えてみるのも楽しいですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/aquos-sh03b.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_77.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

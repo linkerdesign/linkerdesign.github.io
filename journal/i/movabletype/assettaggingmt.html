@@ -1,0 +1,72 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>AssetTaggingプラグインを使ってMTのカスタムフィールドからアップするときにタグを付ける｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>AssetTaggingプラグインを使ってMTのカスタムフィールドからアップするときにタグを付ける</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;AssetTaggingプラグインを使ってMTのカスタムフィールドからアップするときにタグを付ける</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+週末から夏休みをもらっています。来週の月曜日はイギリスは祝日なので少しだけ長めの夏休みになりそうです。<br />
+（大事な連休が吸収されてしまったとも言いますが・・・）</p>
+<p>さて、Movable Typeでカスタムフィールドを使う場合は多いと思います。<br />
+画像のカスタムフィールドをよく使うのですが、このカスタムフィールドからアップした場合画像のアップのみで詳細な情報の指定などが出来ません。 （アイテムに追加されたあとに編集すればできます。）</p>
+<p>そんな話をしていたら@tinybeansさんがさくっとプラグインを作ってくれました。</p>
+<blockquote>
+  <p>tinybeans/mt-plugin-AssetTagging - GitHub<br />
+  <a href="https://github.com/tinybeans/mt-plugin-AssetTagging">https://github.com/tinybeans/mt-plugin-AssetTagging</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>このプラグインをインストールして、プラグインの設定画面で、</p>
+<p>basename:taglabel<br />
+basename2:taglabel2<br /></p>
+<p>みたいなかんじで画像のカスタムフィールドのベースネームと付けたいタグをセットで指定するとカスタムフィールドからアップするときにタグが付けられます。</p>
+<h2>ということで</h2>
+<p>カスタムフィールドでアップした画像自体はmt:hogehogeAssetというMTタグで取得出来ますが、アップするときにタグを指定しておきたいという場合にはすごく便利なプラグインです。</p>
+<p>あと画像のカスタムフィールドに関係した話として、カスタムフィールドの画像を削除してもブログ記事アイテムには画像がのこっている、というのがあります。</p>
+<p>これを解決するプラグインを@yujiroさんが作成されていました。</p>
+<blockquote>
+  <p>アイテムのカスタムフィールド削除動作を改善する「DeleteAssetWithDeleteCFAssetプラグイン」: 小粋空間<br />
+  <a href="http://www.koikikukan.com/archives/2011/08/16-000300.php">http://www.koikikukan.com/archives/2011/08/16-000300.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>EntryAssetとかつかって画像を表示させるタグを書いていたときに、画像を削除したのになぜか古いのが表示されてしまうというのではまったりするときが時々あったりします。<br />
+このプラグインを使えばそういうのを解消できますね。</p>
+<p>こういうかゆいところに手が届くプラグインを作って公開してくれる方々には本当に感謝感謝です。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/event/css_nite_in_ginza_vol58_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/maki-nin.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

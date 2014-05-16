@@ -1,0 +1,82 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Gitで複数のリポジトリにPushしてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Gitで複数のリポジトリにPushしてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;Gitで複数のリポジトリにPushしてみる</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+この週末はチャーチルの生家を見に行ってきたのですがなんか別世界でしたね。。<br />
+世界史とかほとんど覚えていないので、色々訪れる度に本などを読んでも楽しいのかも、と思いますね。<br /></p>
+<p>さて、先日Gitで複数のリポジトリにPushしてみるのを<a href="http://twitter.com/#!/tinybeans">@tinybeansさん</a>の協力のもと試してみました。<br />
+とりあえず今回はGithub上で複数のリポジトリに試してみます。</p>
+<h2>remote リポジトリの用意</h2>
+<p>まずメインリポジトリを作ります。</p>
+<p>tinybeans/test - GitHub<br />
+<a href="https://github.com/tinybeans/test">https://github.com/tinybeans/test</a>&nbsp;&nbsp;</p>
+<p>今回はGithub上だけで完結させるので、forkさせて別のリポジトリを作成します。</p>
+<p>mersy/test - GitHub<br />
+<a href="https://github.com/mersy/test">https://github.com/mersy/test</a></p>
+<p>このリポジトリをローカルにCloneで持ってきます。<br />
+Cloneしてpublishもしておけば普通に使う様に問題無く使えます。</p>
+<h2>configの修正</h2>
+<p>ローカルのリポジトリを指定したフォルダ内に「.git/config」というファイルがあると思います。<br />
+その中にremoteのリポジトリを指定してある場所があります。</p>
+<pre>
+[remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = git@github.com:mersy/test.git
+</pre>
+<p>これをこんな感じで、もう一個urlを追加してあげれば両方のリポジトリにpushすることが出来ますね。</p>
+<pre>
+[remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = git@github.com:mersy/test.git
+        url = git@github.com:tinybeans/test.git
+</pre>
+<p>pullされるのは先に書かれてあるリポジトリの様です。<br />
+別のリポジトリ（この場合はtinybeans/test.git）の編集権限がないとpushする際にエラーが出てしまうので事前に設定が必要です。<br /></p>
+<h2>ということで</h2>
+<p>今回は両方ともGithub上でやっているのでメリットはなさそうですが、pushする際に別の開発環境にもまとめてpushしてしまうとかも可能になりそうな気がします。<br />
+macのGithub for macだとどうなるのかなどはちょっと分かりませんが、そのあたりについても調べてみようと思います。</p>
+<p>GUIで使えるツールの1つとしてGithub for macが無料で使えるので管理としてはGithubになってしまいそうですが、それを複数に出来るとGitを使う敷居も下がりそうですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/workstyle/gray-zone.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/adobe_css3_mobile_packfireworks.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

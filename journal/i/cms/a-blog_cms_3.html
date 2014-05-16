@@ -1,0 +1,116 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>a-blog cms ハンズオンに参加してきました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>a-blog cms ハンズオンに参加してきました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;a-blog cms ハンズオンに参加してきました</p>
+
+<p><img src="http://linker.in/journal/images/090514.gif" width="600" height="200" alt="090514.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+今日は北では雪がふったらしいですよ。びっくりですね。</p>
+<p>昨日、@taku-workも書いてましたが、<a href="http://www.a-blogcms.jp/">a-blog cms</a>のハンズオン勉強会に参加してきました。<br />
+linkerの３人はβが出る少しまえにa-blog cmsについて聞いてきたのは以前も書きましたね。</p>
+<blockquote>
+  <p>「a-blog CMS勉強会」に参加してきました。｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/03/a-blog-cms.php">http://linker.in/journal/2009/03/a-blog-cms.php</a></p>
+
+  <p>a-blog cmsのベータテストはじりました。あとfirefoxのアドオンのIt's All Text!とか｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/03/a-blog-cms-1.php">http://linker.in/journal/2009/03/a-blog-cms-1.php</a></p>
+
+  <p>a-blog CMS について聞いてきました｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/03/a-blog-cms-2.php">http://linker.in/journal/2009/03/a-blog-cms-2.php</a></p>
+</blockquote>
+<p>今回も<a href="http://kazumich.com/">アップルップルのかずみちさん</a>が直接手ほどきしてくれました。</p>
+<h2>a-blog cms はコーディングからCMS導入までが早い</h2>
+<p>a-blog cmsはhtmlでつくられたサイトにCMSを導入しやすい、という作りが強みですね。<br />
+インストールは簡単なので（わは嵌ったんですが・・）インストールが終わったらthemesのフォルダにhtmlファイルなどを入れてしまえば<br />
+cms化の第一歩は終了です。</p>
+<p>あとは必要なところにモジュールとかをはめ込んでいく形になります。<br />
+設定の仕方は違えど、おなじようなCMSと同等の機能はもちろん兼ね備えてあります。</p>
+<p><a href="http://linker.in/journal/images/090514-02.jpg"><img src="http://linker.in/journal/090514-02-tm.jpg" width="400" height="300" alt="090514-02.jpg" /></a></p>
+<p>モジュールをとモジュールIDを紐づけつつ、そのこまかい管理自体は管理画面で行う、といったかんじです。<br />
+同じモジュールを読み込むにしても、読み込むページによっては出力を替えたいときっていうのは多いですよね。<br />
+管理画面からこのあたりのルールを設定するのも組み合わせ次第でかなり柔軟にできそうでした。<br />
+PHPで動的に生成されますが、PHPをしらないとカスタマイズできない、という事も全然ありません。</p>
+<h2>柔軟すぎるカスタムフィールド</h2>
+<p>カスタムフィールド、ときいてどういうもの、どういう画面をイメージされるでしょうか？<br />
+Movable TypeやWordpressを使うことがおおい人だと、入力欄やファイル選択などが縦に並んだものをイメージするかと思います。</p>
+<p>a-blog cmsのカスタムフィールドはこれらとは一線を画しており、普通のhtmlファイルがそのままカスタムフィールドになります。</p>
+<p><a href="http://linker.in/journal/images/090514-01.jpg"><img src="http://linker.in/journal/090514-01-tm.jpg" width="400" height="300" alt="090514-01.jpg" /></a></p>
+<p>これは表組みのカスタムフィールドです。<br />
+こんなのをサクッと作れてしまうようです。<br />
+更新担当者もこれだとつかいやすいですよね。</p>
+<p>いろんな業種・業態のwebsiteがあるとおもいますが、それらでは使い方・見せ方が全然違いますよね?<br />
+そういう要望をこの柔軟なカスタムフィールドはうまく吸収できるんじゃないでしょうか？</p>
+<h2>（ほぼ）ノンプログラミングな管理画面カスタマイズ</h2>
+<p>カスタムフィールドも管理画面の一部なんですが。<br />
+カスタムフィールドがつくりやすい、ということは管理画面もカスタマイズしやすい、という事です。<br />
+必要な項目を必要なだけ増やしていけばＯＫ。</p>
+<p><a href="http://linker.in/journal/images/090514-03.jpg"><img src="http://linker.in/journal/090514-03-tm.jpg" width="400" height="300" alt="090514-03.jpg" /></a></p>
+<p>こういうファイル構成になっていて、いじるファイルだけを優先順位が高いところにおいておけば、自動的にそちら側が先に読み込まれる、という作りのようです。<br />
+MTのalt-tmplと同じようなイメージですね。</p>
+<h2>まとめ</h2>
+<p>慣れていないとなかなか取っつきにくいところは当然あるかと思います<br />
+ただ、a-blog cmsの導入にあたっての障壁はかなり低いと思いますね。</p>
+<p>CMSにつかうタグとかのコード補助とかができてきたりすると、制作者側がつかいやすいかもしれないですし、<br />
+ドキュメントやコミュニティさえ揃ってしまえば、一気に広まる可能性もありますね。<br />
+あとは当日も話がでてましたが、エバンジェリスト的な人の存在とかですかね？</p>
+<p>いろんなCMSをさわらせてもらう機会がここの所多いのですが、<br />
+どれも甲乙つけがたい、というのが正直なところです。<br />
+（そんな偉そうなことを言えた立場ではないのは重々承知ですが）&nbsp;&nbsp;<br />
+お仕事のメインはMovable Typeというのが現状ではありますが、自分の手を動かしてa-blog cmsをはじめとして色々いじりながら、<br />
+その時々にあったCMSを選択・提案できるようになることが必要ですね。</p>
+<h2>関連リンク</h2>
+<ul>
+  <li>a-blog cmsレビュー（その1） - The blog of H.Fujimoto<br />
+  <a href="http://www.h-fj.com/blog/archives/2009/05/13-103615.php">http://www.h-fj.com/blog/archives/2009/05/13-103615.php</a>&nbsp;&nbsp;</li>
+
+  <li>a-blog cmsカスタマイズ勉強会 in 東京 − kazumich.log<br />
+  <a href="http://kazumich.com/index.php?ID=4794">http://kazumich.com/index.php?ID=4794</a>&nbsp;&nbsp;</li>
+
+  <li>a-blog cms 勉強会に参加しました。今回はハンズオンで実際にやってみる勉強会です。｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/05/a-blogcms.php">http://linker.in/journal/2009/05/a-blogcms.php</a>&nbsp;&nbsp;</li>
+
+  <li>a-blog cmsは、Web制作会社によるWeb制作者のためのCMSである: 世界中の１％の人々へ<br />
+  <a href="http://www.dakiny.com/archives/cms/a-blog_cmswebwebcms/">http://www.dakiny.com/archives/cms/a-blog_cmswebwebcms/</a></li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/a-blogcms.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/post_29.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

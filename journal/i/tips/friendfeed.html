@@ -1,0 +1,120 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>FriendFeedのグループ機能でブログのネタ帳を作る。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>FriendFeedのグループ機能でブログのネタ帳を作る。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;FriendFeedのグループ機能でブログのネタ帳を作る。</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>最近は、当linker journalだけではなく、女の子だけのWebマガジン「<a href="http://nylongirls.jp/">東京ナイロンガールズ</a>」にも頻繁に記事を書いているワタクシです。そのため、いかに効率的にブログ記事のネタを探すかというのが、非常に大きな課題になっています。</p>
+
+<p>RSSリーダで気になるブログをいくつか登録しておいてもいいのですが、その場合の記事の並び方は、こうなると思うのです。</p>
+
+<ul>
+	<li>ブログA
+<ul>
+	<li>ブログAの1番目に新しい記事</li>
+	<li>ブログAの2番目に新しい記事</li>
+	<li>ブログAの3番目に新しい記事</li>
+	<li>...</li>
+</ul></li>
+	<li>ブログB
+<ul>
+	<li>ブログBの1番目に新しい記事</li>
+	<li>ブログBの2番目に新しい記事</li>
+	<li>ブログBの3番目に新しい記事</li>
+	<li>...</li>
+</ul></li>
+<li>以下ブログごとに新しい記事から並ぶ</li>
+</ul>
+
+<p>でも私は、登録しているブログ全部を混ぜて、一番新しい記事から並べたいのです。例えばこんな風に。</p>
+
+<ul>
+	<li>全体を通して、1番目に新しい記事（ブログA）</li>
+	<li>全体を通して、2番目に新しい記事（ブログB）</li>
+	<li>全体を通して、3番目に新しい記事（ブログD）</li>
+	<li>全体を通して、4番目に新しい記事（ブログC）</li>
+	<li>全体を通して、5番目に新しい記事（ブログA）</li>
+	<li>...</li>
+</ul>
+
+<p>この方が、常に全体を見渡して、一番新鮮なネタを探しやすいと思うのですよね。</p>
+
+<p>そういう訳で、もうご存知の方も多いかと存じますが、FriendFeedという色々なフィード集約＋SNS的Webサービスを使って、これを実現してみたいと思います。（手順画面を小さめに入れてありますので、よく見たい方はクリックしていただくと、拡大します。）</p>
+
+<p>まず、<a href="http://friendfeed.com/">http://friendfeed.com/</a>にて、右上の「FriendFeedに登録」というリンクをクリックし、手順に従ってアカウントを取得します。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed001.png"><img alt="FriendFeed001.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed001-thumb-200x119-1725.png" width="200" height="119" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>「友達を探す」というステップはとりあえずとばし、「次へ：自分のFriendFeedを見てみましょう」をクリックします。するとこんな画面になりますので、右下の「グループ」というセクションの「グループを表示/作成」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed002.png"><img alt="FriendFeed002.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed002-thumb-200x106-1726.png" width="200" height="106" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>次の画面で、右上の「グループを作成」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed0025.png"><img alt="FriendFeed0025.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed0025-thumb-200x125-1734.png" width="200" height="125" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>グループ作成画面になりますので、「名前（全角でも半角でも）」と「ユーザー名（半角英数字）」を入力します。個人的なブログのネタ帳を他人に見られたくなければ、「プライベート グループ」にチェックをしておきましょう。最後に「フィードを作成」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed003.png"><img alt="FriendFeed003.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed003-thumb-200x208-1727.png" width="200" height="208" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>作成したグループの画面になります。ここに登録したい各種ブログのフィードを追加していきましょう。グループ名右側の「設定を編集」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed004.png"><img alt="FriendFeed004.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed004-thumb-200x123-1728.png" width="200" height="123" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>次の画面最下部の「サービスをインポート」をクリック。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed005.png"><img alt="FriendFeed005.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed005-thumb-200x161-1729.png" width="200" height="161" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>各種サービスを登録する画面になります。通常のブログのフィードを登録したければ、「ブログ作成」セクションの「Blog」をクリックします。気になるあの人のdeliciousやはてブのフィードをとうろくしたければ、「ブックマーキング」セクションのそれぞれのサービス名をクリックしましょう。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed006.png"><img alt="FriendFeed006.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed006-thumb-200x112-1730.png" width="200" height="112" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>通常のブログを登録する場合は、URLを入力し「Blogをインポート」をクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed007.png"><img alt="FriendFeed007.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed007-thumb-200x106-1731.png" width="200" height="106" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>オススメなのは、deliciousやはてブで気になる特定のタグをインポートしておくことです。自分がきになる分野の最新情報が、ここに集約されます。例としてdeliciousの場合の、特定のタグのフィードのとり方を見ておきましょう。<a href="http://delicious.com/">http://delicious.com/</a>にアクセスします。Explore Tagsタブの右側の方に「Type a Tag」という入力欄がありますので、そこに気になるタグを入力し、右側の矢印ボタンをクリックします。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/Delicious008.png"><img alt="" src="http://linker.in/journal/assets_c/2010/04/Delicious008-thumb-400x179-1723.png" width="400" height="179" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>入力したタグの最近の該当記事一覧になります。ページ最下部に「 RSS feed for these Bookmarks」というリンクがありますので、右クリックでこのリンクのURLをコピーしておきます。http://feeds.delicious.com/v2/rss/tag/（入力したタグ）?count=15というようなURLになっているはずです。これを、先ほどのFriendFeedの「ブログ作成」の下の「Blog」をクリックしたあとに、ペーストして、「Blogをインポート」します。<br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/Delicious009.png"><img alt="Delicious009.png" src="http://linker.in/journal/assets_c/2010/04/Delicious009-thumb-200x160-1724.png" width="200" height="160" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>この調子で、ネタ元ブログをいくつか登録しておきましょう。あまり多すぎてもネタを見逃す原因になるので、適度に調整しましょう。いくつか登録したあと、グループのトップページ（http://friendfeed.com/ユーザー名）を見ると、このように、登録した全てのブログを混ぜて、新しい順に上から記事タイトルが並んでいるのが分かります。これが望んだ状態です。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/FriendFeed011.png"><img alt="FriendFeed011.png" src="http://linker.in/journal/assets_c/2010/04/FriendFeed011-thumb-500x466-1733.png" width="500" height="466" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></span></p>
+
+<p>あとは、お好みの時にこのグループを眺めて、面白そうなネタがないかどうか探してみると良いと思います。では、良いブログライフを！</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/posterousmovable_type.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/_lifeworks-projects.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

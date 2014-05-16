@@ -1,0 +1,112 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>WordPressでRSSImportを使って別ブログの最新情報を表示させてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>WordPressでRSSImportを使って別ブログの最新情報を表示させてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;WordPressでRSSImportを使って別ブログの最新情報を表示させてみる</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>WordPressで作っているサイトで、別ブログのFeedを読み込んでリンクを表示させたかったのでその方法を調べてみました。<br />
+プラグインがいくつかあるようなのですが、今回は「<a href="http://wordpress.org/extend/plugins/rss-import/">RSSImport</a>」というプラグインを使ってみました。</p>
+<blockquote>
+  <p>WordPress &#8250; RSSImport &laquo; WordPress Plugins<br />
+  <a href="http://wordpress.org/extend/plugins/rss-import/">http://wordpress.org/extend/plugins/rss-import/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>まずはプラグインをインストールしておきます。</p>
+<h2>表示箇所にコードを挿入</h2>
+<p>実際に表示させる所に</p>
+<pre>
+&lt;?php RSSImport(3,"http://i-pairs.com/feed"); ?&gt;
+</pre>
+<p>こんな感じで書いておきます。</p>
+<p>最初のパラメータは表示件数。<br />
+2つめのパラメータはfeedのURLになります。</p>
+<h2>表示部分を修正する</h2>
+<p>デフォルトの設定だと思った様に表示されないので、プラグインを書き換えてみます。</p>
+<p>編集するファイルは「rssimport.php」になります。</p>
+<p>「$before_date」「$date」「$after_date」「$start_items」「$end_items」「 $start_item」「 $end_item」などが最初に設定されているのでこのあたりを調整してしまいます。<br /></p>
+<p>まずは日次を表示させるために</p>
+<pre>
+$date = 1
+</pre>
+<p>にしておきます。</p>
+<p>表示させた日付の前後になにかタグをいれたりするのであれば「$before_date」「$after_date」にタグなどをセットすればいいでしょう。</p>
+<pre>
+$before_date = ''
+$after_date = ''
+</pre>
+<p>今回は特に不要だったので空にしておきます。</p>
+<p>3件表示させる時に、そのエリア全体を囲うタグを使ったりすることがあると思います。</p>
+<pre>
+&lt;ul&gt;
+&lt;li&gt;hogehoge&lt;/li&gt;
+&lt;li&gt;fugafuga&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>みたいなときの ul タグみたいなものですね。<br />
+そういうのがあるときは 「$after_date」「$start_items」にセットしておけばいいでしょう。</p>
+<p>今回は特にそういうのが無いので</p>
+<pre>
+$start_items = ''
+$end_items = ''
+</pre>
+<p>としておきました。</p>
+<p>3件表示するときにそれぞれの前後に何かタグを入れたい場合は「 $start_item」「 $end_item」にセットしておきます。</p>
+<pre>
+$start_item = ''
+$end_item = ''
+</pre>
+<p>今回は特にないので空にしておきました。&nbsp;&nbsp;</p>
+<p>続いて、同じファイルの中に</p>
+<pre>
+if ( isset($pubDate) &amp;&amp; $date &amp;&amp; $pubDate != '' )
+</pre>
+<p>という部分があります。この後に表示させる部分が続きます。</p>
+<pre>
+$echo .= '&lt;dt&gt;&lt;span&gt;'. $pubDate .'&lt;/span&gt;&lt;/dt&gt;';
+$echo .= '&lt;dd&gt;&lt;div&gt;&lt;a' . $target . $rel . ' href="' . $href . '" title="'. $atitle . '"&gt;' . $title . '&lt;/a&gt;&lt;/div&gt;&lt;/dd&gt;';
+</pre>
+<p>今回はこのような感じで表示させました。</p>
+<p><img src="http://linker.in/journal/images/120628-01.jpg" width="573" height="138" alt="120628-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>とりあえずは問題なさそうです。</p>
+<p>MTでいうところのFeeds.Appみたいなもんですね。<br />
+結構簡単に導入できて便利でした。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_192.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/amen.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,172 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>CSS3で追加になったセレクタを改めて見直してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>CSS3で追加になったセレクタを改めて見直してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;CSS3で追加になったセレクタを改めて見直してみる</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>すこしずつHTML5やCSS3を使ったWebサイトが増えてきていますね。<br />
+今日はCSS3で追加になったセレクタを見直してみたいと思います。</p>
+<blockquote>
+  <p>Web Designers' Browser Support Checklist, Web Designers' Browser Support Checklist : FindMeByIP<br />
+  <a href="http://www.findmebyip.com/litmus">http://www.findmebyip.com/litmus</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>にのっているものを見てみましょう。一覧はこんな感じです。</p>
+<ul>
+  <li>CSS3: Begins with</li>
+
+  <li>CSS3: Ends with</li>
+
+  <li>CSS3: Matches</li>
+
+  <li>CSS3: Root</li>
+
+  <li>CSS3: nth-child</li>
+
+  <li>CSS3: nth-last-child</li>
+
+  <li>CSS3: nth-of-type</li>
+
+  <li>CSS3: nth-last-of-type</li>
+
+  <li>CSS3: last-child</li>
+
+  <li>CSS3: first-of-type</li>
+
+  <li>CSS3: last-of-type</li>
+
+  <li>CSS3: only-child</li>
+
+  <li>CSS3: only-of-type</li>
+
+  <li>CSS3: empty</li>
+
+  <li>CSS3: target</li>
+
+  <li>CSS3: enabled</li>
+
+  <li>CSS3: disabled</li>
+
+  <li>CSS3: checked</li>
+
+  <li>CSS3: not</li>
+
+  <li>CSS3: General Sibling</li>
+</ul>
+<h2>CSS3: Begins with</h2>
+<p>E[foo^="bar"]{ }</p>
+<p>よくこんなかんじでかかれますが、<strong>属性fooがbarからはじまる属性値をもつもの</strong>に対してスタイルを指定。</p>
+<h2>CSS3: Ends with</h2>
+<p>E[foo$="bar"]{ }<br /></p>
+<p>よくこんな感じで書かれます。<strong>属性fooがbarで終わる属性値をもつもの</strong>に対してスタイルを指定します。</p>
+<h2>CSS3: Matches</h2>
+<p>E[foo*="bar"]{ }</p>
+<p>良くこんな感じで書かれます。<strong>属性fooの属性値にbarが含まれているもの</strong>に対してスタイルを指定します。</p>
+<h2>CSS3: Root</h2>
+<p>E:root{ }</p>
+<p>良くこんな感じで書かれます。ルートです。(X)HTMLだとhtml要素がルートということになりますが、html要素にスタイルを指定します。<br /></p>
+<h2>CSS3: nth-child</h2>
+<p>E:nth-child(n){ }</p>
+<p>こんな感じで書かれます。<strong>n番目の子要素E</strong>に対してスタイルを指定します。<br />
+nのところは2nとすれば偶数番目ですし、evenも同様です。oddや3n+1などなども可能です。<br /></p>
+<h2>CSS3: nth-last-child</h2>
+<p>E:nth-last-child(n){ }</p>
+<p>こんなかんじで書かれますが、nth-childとの違いは<strong>後ろからn番目</strong>、ということですね。その要素にスタイルを指定します。</p>
+<h2>CSS3: nth-of-type</h2>
+<p>E:nth-of-type(n){ }</p>
+<p>こんな感じで書かれます。要素Eの<strong>兄弟関係にあるもののうちn番目の要素</strong>にスタイルを指定します。<br /></p>
+<h2>CSS3: nth-last-of-type</h2>
+<p>E:nth-last-of-type(n){ }</p>
+<p>こんな感じで書かれます。おわかりかと思いますが、兄弟関係にある物のうち、<strong>後ろからn番目の要素</strong>、ということですね。</p>
+<h2>CSS3: last-child</h2>
+<p>E:last-child{ }</p>
+<p>このような感じでかかれますね。<strong>最後の子要素E</strong>に対してスタイルを指定します。</p>
+<h2>CSS3: first-of-type</h2>
+<p>E:first-of-type{ }</p>
+<p>このような感じで書かれます。nth-of-type,nth-last-of-typeと似てるのでわかるかと思いますが、<strong>兄弟関係にあるもののうち最初の要素</strong>、ということですね。<br /></p>
+<h2>CSS3: last-of-type</h2>
+<p>E:last-of-type{ }</p>
+<p>このような感じで書かれます。<strong>兄弟関係にあるもののうち最後の要素</strong>、ということですね。<br /></p>
+<h2>CSS3: only-child</h2>
+<p>E:only-child{ }</p>
+<p>このような感じで書かれます。<strong>兄弟関係の要素がない子要素</strong>にスタイルを指定します<br /></p>
+<h2>CSS3: only-of-type</h2>
+<p>E:only-of-type{ }</p>
+<p>このような感じで書かれます。<strong>親要素に対して唯一の要素E</strong>に対してスタイルを指定します。</p>
+<h2><strong>CSS3: empty</strong></h2>
+<p>E:empty{ }</p>
+<p>このような感じで書かれます。<strong>要素Eのうち子要素をもたないもの</strong>にスタイルを指定します。</p>
+<h2>CSS3: target</h2>
+<p>E:target{ }</p>
+<p>このような感じでかかれます。<strong>アンカーで飛んだ先の要素</strong>にスタイルを指定します。</p>
+<h2>CSS3: enabled</h2>
+<p>E:enabled{ }<br /></p>
+<p>このような感じで書かれます。<strong>要素のスタイルが有効になっている状態の時</strong>にスタイルを指定します。</p>
+<h2>CSS3: disabled</h2>
+<p>E:disabled{ }</p>
+<p>このような感じで書かれます。<strong>要素のスタイルが無効になっている状態の時</strong>にスタイルを指定します。<br /></p>
+<h2>CSS3: checked</h2>
+<p>E:checked{ }</p>
+<p>このような感じで書かれます。まぁイメージはわくかと思いますが、<strong>radioボタン、checkboxのチェックが入ったとき</strong>にスタイルを指定します。</p>
+<h2>CSS3: not</h2>
+<p>E:not(s){ }</p>
+<p>このような感じで書かれます。notですから<strong>sとは一致しないもの</strong>に対してスタイルを指定します。sの部分は属性を指定したりすることが可能です。<br /></p>
+<h2>CSS3: General Sibling</h2>
+<p>E ~ F{ }</p>
+<p>このように書かれます。<strong>要素Eの後に表れる要素F（＝弟要素）</strong>に対してスタイルを指定します。</p>
+<h2>ということで</h2>
+<p>結構ありますね。これらが使えるようになると結構便利です。</p>
+<blockquote>
+  <p>Web Designers' Browser Support Checklist, Web Designers' Browser Support Checklist : FindMeByIP<br />
+  <a href="http://www.findmebyip.com/litmus">http://www.findmebyip.com/litmus</a>&nbsp;&nbsp;<br /></p>
+</blockquote>
+<p>をみると使えるブラウザも増えてきています。使えそうなときは積極的に使っていきたいですね。</p>
+<h3>参考リンク</h3>
+<ul>
+  <li>Selectors Level 3<br />
+  <a href="http://www.w3.org/TR/css3-selectors/#selectors">http://www.w3.org/TR/css3-selectors/#selectors</a></li>
+
+  <li>セレクタ｜CSS HappyLife ZERO<br />
+  <a href="http://css-happylifezero.com/selectors/">http://css-happylifezero.com/selectors/</a>&nbsp;&nbsp;</li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_80.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/spgra.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

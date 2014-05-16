@@ -1,0 +1,85 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>概要を手入力で入れたかどうかで出力を変えたい。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>概要を手入力で入れたかどうかで出力を変えたい。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;概要を手入力で入れたかどうかで出力を変えたい。</p>
+
+<p><br />
+<img src="http://linker.in/journal/images/090216.gif" alt="090216.gif" style="font-size: 11px;" height="230" width="640" /></p>
+<p>複数人で書いてるので、色々ルールを作っているこのlinker journal。<br />
+ルールがあったほうがブレが減るので楽ですが、ルールにしなくてもいいように作っておくのがベストだよなぁ、と思います。</p>
+<h2>journalの一覧部分の概要表示をごにょごにょ</h2>
+<p>まだまだボロが多くて恥ずかしいのですが、概要部分のpタグがいまいちよくなかったのでそこを修正しました。</p>
+<p>MTで概要を表示させるには&lt;$MTEntryExcerpt$&gt;を使うわけなんですが、<br />
+概要欄に直接入力したかどうかを内容の有無によって判断することはできないんですよね。</p>
+<p>モディファイアとしては convert_breaks が用意されていますが、これは改行を無視するかどうかくらい。<br />
+改行を外す設定はできればしたくなかったのですが、pタグでくくってしまうと、pが入れ子になっちゃう。<br />
+あんまよろしくないよなぁ、と。</p>
+<p>ちょうど同じようなことは以前も詰まってて、</p>
+<blockquote>
+  <p>[MT]概要欄の有無で条件分岐 - mersy's lab<br />
+  <a href="http://wp.mersy.jp/?p=283">http://wp.mersy.jp/?p=283</a></p>
+</blockquote>
+<p>とかでも考えていました。<br />
+とりあえず、linker journalではこのときに<a href="http://www.zelazny.mydns.jp/">oscar</a>さんに教えてもらった no_generate を使うことにして、<br />
+手入力で書かれている場合、excerpttextにその中身を入れるようにして条件分岐してみました。</p>
+<pre class="brush:xml">&lt;MTSetVarBlock name="excerpttext"&gt;&lt;$MTEntryExcerpt no_generate="1"$&gt;&lt;/MTSetVarBlock&gt;
+&lt;MTIf name="excerpttext"&gt;
+&lt;$MTEntryExcerpt convert_breaks="1"$&gt;
+&lt;MTElse&gt;
+&lt;p&gt;&lt;$MTEntryExcerpt$&gt;&lt;/p&gt;
+&lt;/MTIf&gt;
+</pre>
+<p>とりあえず、これで問題なくはうごいてるので、しばし様子見ってな感じです。</p>
+<p>excerpttextに初期値をセットしておいて、その初期値と同じ場合はpタグをつけて、<br />
+初期値と違う場合はpタグをつけずに概要を表示、という条件分岐の方が良かったのかなぁ？となんとなく思ったりもしてます。<br />
+なんかスマートじゃないなぁという気もするので、また機会を見つけて考えてみたいところです。<br />
+モディファイア追加にならないかなぁ。<br />
+（余談：新たに追加になったモディファイアとかってfeedとかでおっかけられないんですかね？？）<br /></p>
+<p>というか、そもそももっとスマートな方法を知ってたら是非とも教えてもらいたいです。</p>
+<h2>作る前にしっかり設計が重要</h2>
+<p>管理画面から直接編集してるのか、とか<a href="http://illuminex.com/ecto/">ecto</a>とか使ってるのか?とか<br />
+（ちなみにわはectoで更新してます。複数人でやってみたりして、色々新発見もあったりしてます）<br />
+どういう感じで3人が更新してるかによっても、もろもろの設定だったり色々かわってくるので、<br />
+そのあたりも含めて、事前にしっかり設計しておくことが必要ですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_5.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/avimpeg-4.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

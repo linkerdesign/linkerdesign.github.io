@@ -1,0 +1,141 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MT4分科会第3回勉強会の成果発表として、プラグインを書いてみたよ。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MT4分科会第3回勉強会の成果発表として、プラグインを書いてみたよ。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MT4分科会第3回勉強会の成果発表として、プラグインを書いてみたよ。</p>
+
+<p>こんばんは！</p>
+<p>いよいよ月末にて、納期が迫る案件のラストスパートをしている@cremaです。</p>
+<p>ここのところlinker journalではすっかり「やわらか担当」になってしまっているワタクシ、今日は割と頑張ってみたいと思います。</p>
+<h2>WebSig会議MT4分科会第3回勉強会</h2>
+<p>2009年５月16日（土）に開催された<a href="http://websig247.jp/committee/mt/000138.html">WebSig会議MT4分科会第3回勉強会</a>ですが、私と@mersyは、<a href="http://www.h-fj.com/blog/">藤本壱さん</a>をリーダーとした「フィールドの拡張と管理画面のカスタマイズ」というワークショップに参加しました。</p>
+<p>そこでは、藤本さんが丁寧かつツボを押さえた指導をしてくださり、Perl未経験者のワタクシでも、資料を拝見しながらなんとか<strong>ブログ記事</strong>に新たなフィールドを追加することができた訳なのですが。。。</p>
+<h2>CategoryTextプラグイン</h2>
+<p>その後自宅に戻り、自習がてら、<strong>カテゴリ</strong>に新たなフィールドを追加するプラグインを書いてみようと思い立ちました。</p>
+<p>案件で頻繁に求められるのが、「ブログ記事リストのページにカテゴリごとの独自文章を追加したい！」というオーダーだからです。カテゴリの「説明」入力欄はmetaタグ用に使うので、別途入力欄が欲しいということなのです。</p>
+<p>ということで、藤本さんの著書「<a href="http://www.amazon.co.jp/o/ASIN/4899772386/cremadesign-22/ref=nosim">MTOS活用テクニック―カスタムフィールドで本格的なCMS機能を実現!</a>」をじーーーっと拝見しながら、自分なりに「CategoryText」というプラグインを書いてみました！</p>
+<pre class="brush:js">
+package MT::Plugin::CategoryText;
+use base 'MT::Plugin';
+
+use strict;
+
+use MT;
+use MT::Plugin;
+use MT::Template::Context;
+use MT::Category;
+
+# register plugin
+my $plugin = __PACKAGE__->new({
+    name => 'CategoryText',
+    key => 'category_text',
+    version => '1.00',
+    author_name => 'Akiko Kurono',
+    description => 'Add text field to category.',
+    schema_version => '1.00',
+});
+MT->add_plugin($plugin);
+
+sub init_registry {
+    my $plugin = shift;
+    $plugin->registry({
+        object_types => {
+            'category' => {
+                'category_text' => 'text',
+            },
+        },
+        tags => {
+            function => {
+                CategoryText => \&category_text,
+            },
+        },
+        callbacks => {
+            'MT::App::CMS::template_param.edit_category' =>
+                \&add_category_text_field,
+        },
+    });
+}
+
+sub category_text {
+    my ($ctx, $args) = @_;
+
+    my $cat = $ctx->stash('category') || $ctx->stash('archive_category')
+        or return $ctx->error(MT->translate(
+        "You used an [_1] tag outside of the proper context."),
+        '<$MT' .$ctx->stash('tag').'$));
+    $cat->category_text || '';
+}
+
+sub add_category_text_field {
+    my ($eh, $app, $cat, $orig_cat) = @_;
+
+    my $node = $tmpl->createElement('app:setting');
+    $node->setAttribute('id', 'category_text');
+    $node->setAttribute('label', 'カテゴリー本文');
+    $node->setAttribute('label_class', 'left-label');
+    require MT::Util;
+    my $category_text = MT::Util::encode_html($param->{category_text});
+    my $innerHTML = <<HERE;
+<input name="category_text" id="category_text" value="$category_text" maxlength="255" mt:watch-change="1" class="full-width" />
+HERE
+    $node->innerHTML($innerHTML);
+    my $host_node = $tmpl->getElementById('description') or return;
+    $tmpl->insertAfter($node, $host_node);
+}
+
+1;
+</pre>
+<p>Transformerプラグインとして、自動的に入力欄を追加できるようにしたりとか、できるんじゃないのー？などと張り切ってみましたが。。。</p>
+<p>これが果たして動くのか？</p>
+<p>実は、まだ怖くて試していません。。。</p>
+<p>壊してもいいMTOS環境を準備して、試してみなければ！</p>
+<p>というわけで、これはまだ使ったりしないでくださいね。きっと何か間違いがある気がするので。</p>
+<p>じーっと見直したあと、動かしてみて、またご報告or配布などしたいと思います。</p>
+<p>しかしワタクシ、Perlバージンを奪われてしまいましたよ。うふふ。</p>
+<p>藤本さんのこの本、デザイン畑の人でも十分取り組める難易度だと思います！</p>
+<blockquote>
+<p><a href="http://www.amazon.co.jp/o/ASIN/4899772386/cremadesign-22/ref=nosim">MTOS活用テクニック―カスタムフィールドで本格的なCMS機能を実現!</a></p>
+<p><a href="http://ecx.images-amazon.com/images/I/31IguBLF68L.jpg" title="拡大画像を表示"><img src="http://ecx.images-amazon.com/images/I/31IguBLF68L._SL75_.jpg" alt="MTOS活用テクニック―カスタムフィールドで本格的なCMS機能を実現!" /></a></p>
+<ul><li>ASIN: 4899772386</li><li>[単行本]</li><li>価格: ￥ 2,940</li><li>ラトルズ</li></ul>
+<p><a href="http://www.amazon.co.jp/o/ASIN/4899772386/cremadesign-22/ref=nosim">Amazon.co.jp で詳細を見る</a></p>
+</blockquote>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/movabletype/mt.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/codatips.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

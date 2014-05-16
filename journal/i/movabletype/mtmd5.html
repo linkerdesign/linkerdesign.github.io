@@ -1,0 +1,122 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTでMD5を扱う３つの方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTでMD5を扱う３つの方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTでMD5を扱う３つの方法</p>
+
+<p><img src="http://linker.in/journal/images/090820.gif" width="600" height="200" alt="090820.gif" /></p>
+<hr />
+<p>関連エントリーを書きました。（2009年11月19日）</p>
+<p>del.icio.usのブックマーク数とPermalinkの話でも｜linker journal｜linker<br />
+<a href="http://linker.in/journal/2009/11/deliciouspermalink.php">http://linker.in/journal/2009/11/deliciouspermalink.php</a></p>
+<hr />
+<p>みなさん、こんにちは、まーひーです<br />
+顔面麻痺も大分治ってきたような気がします。<br />
+再来週病院に行く頃にはもう普通に笑えるようになってそうな。。。</p>
+<p>MD5ってご存じですか？<br />
+SBMのブックマーク数とかを取得する方法は色々あるかと思います。<br />
+del.icio.us内の個別ページはpermalinkをMD5に変換する必要があります。</p>
+<h2>MD5とは？</h2>
+<p>MD5とは</p>
+<blockquote>
+  <p>MD5（エムディーファイブ、Message Digest Algorithm 5）とは、与えられた入力に対して128ビットのハッシュ値を出力するハッシュ関数である。&nbsp;&nbsp;</p>
+
+  <p>MD5 - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/MD5">http://ja.wikipedia.org/wiki/MD5</a></p>
+</blockquote>
+<p>ということらしいです。<br />
+del.icio.usのブックマーク数を取得したいと思うまで知りませんでした。<br />
+MTのEntryPermalinkとかをMD5ハッシュに変換するして出力できればいいんですが、それは標準では用意されていないようですね。</p>
+<p>del.icio.us内のpermalinkはMD5ハッシュに変換されているようなので、http://linker.inのページは<br />
+http://del.icio.us/url/http://linker.in&nbsp;&nbsp;<br />
+ではなくて<br />
+http://del.icio.us/url/＜http://linker.inをMD5ハッシュに変換したもの＞<br />
+になります。</p>
+<p>http://delicious.com/url/5b6dba3acf54ea5c84b94cb3fd20c90b</p>
+<p>がそのページのようです。</p>
+<p>ではそのMD5ハッシュするにはどうするか？ということで</p>
+<ul>
+  <li>MTのプラグインを使う方法</li>
+
+  <li>PHPを使用する方法</li>
+
+  <li>JavaScriptを使用する方法</li>
+</ul>
+<p>の３つの方法があります。</p>
+<h2>プラグインを使って</h2>
+<p>解決策の１つとしてプラグインが用意されているようです</p>
+<blockquote>
+  <p>Movable TypeのMD5フィルタ・プラグイン/楽<br />
+  <a href="http://tech.bayashi.jp/archives/entry/movabletype-plugin/2008/002062.html">http://tech.bayashi.jp/archives/entry/movabletype-plugin/2008/002062.html</a>&nbsp;&nbsp;<br /></p>
+</blockquote>
+<p>で紹介されていますが、このプラグインを使うことでMD5ハッシュに変換が可能なようです。</p>
+<h2>PHPを使って</h2>
+<p>PHPにはMD5を扱う関数が用意されています。</p>
+<blockquote>
+  <p>ＰＨＰリファレンス（crypt()、md5()、sha1()、str_rot13()）<br />
+  <a href="http://www.php-ref.com/bapi/02_crypt.html">http://www.php-ref.com/bapi/02_crypt.html</a></p>
+</blockquote>
+<p>なので、</p>
+<pre class="brush:xml">
+&lt;?php
+$url="&lt;mt:EntryPermalink&gt;";
+echo 'href="http://del.icio.us/url/' . md5($url) ;
+?&gt;
+</pre>
+<p>こんなかんじにすればMD5化されたものが出来ます。</p>
+<h2>JavaScriptを使う方法</h2>
+<p>PHPが使える場合は、上記の方法が良いかと思いますが、PHPが使えない場合は他の方法が必要になります。<br />
+その１つとしてJavaScriptを使った方法を。</p>
+<p>JavaScript++かも日記: 【暗号】md5.jsをPHPのmd5()と並べてみる<br />
+<a href="http://jsgt.org/mt/archives/01/000301.html">http://jsgt.org/mt/archives/01/000301.html</a></p>
+<p>で紹介されていますmd5.jsを使ってみたいと思います。&nbsp;&nbsp;</p>
+<p>その場合はmd5.jsを読み込んでおいて</p>
+<pre class="brush:xml">
+&lt;script type="text/javascript"&gt;
+url = MD5_hexhash('&lt;mt:EntryPermalink /&gt;');
+document.write("http://del.icio.us/url/"+url);
+&lt;/script&gt;
+</pre>
+<p>こんな感じでやってあげると良さそうです。</p>
+<p>ということで、MD5を使わないといけないというまれな場合に遭遇したらこんなのもあったよな〜、と頭の片隅にでも。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphoneair_mouse_pro.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/wish2009_1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

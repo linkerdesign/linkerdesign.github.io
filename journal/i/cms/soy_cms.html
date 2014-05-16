@@ -1,0 +1,113 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title> 「みんなで、SOY CMSを使って語ろう勉強会」に参加してきました。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1> 「みんなで、SOY CMSを使って語ろう勉強会」に参加してきました。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp; 「みんなで、SOY CMSを使って語ろう勉強会」に参加してきました。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ttl20090327.jpg" src="http://linker.in/journal/images/ttl20090327.jpg" width="600" height="200" class="mt-image-none" style="" /></span></p>
+
+<p>こんばんは！火曜／金曜担当の@cremaです。</p>
+
+<p>先日からCMS勉強会づくしな、我々linker。本日は、京都の<a href="http://www.n-i-agroinformatics.com/">日本情報化農業研究所</a>さんが開発しているCMS「<a href="http://www.soycms.net/">SOY CMS</a>」の勉強会に、3人で参加してまいりました。</p>
+
+<p>SOY CMSはPHPで開発されているCMSで、データベースはMySQLとSQLiteを選択できます。そして、無料で公開されています。</p>
+
+<p>今日は代表取締役／開発者の古荘貴司さんが東京にいらっしゃり、渋谷某所でクローズドな勉強会が行われました（勉強会を企画してくださったのは「<a href="http://www.dakiny.com/">世界中の1％の人々へ</a>」の蒲生トシヒロさんです）。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="SANY0003.jpg" src="http://linker.in/journal/images/SANY0003.jpg" width="400" height="300" class="mt-image-none" style="" /></span><br />
+熱心に解説してくださった古荘王子。</p>
+
+<p>今日の勉強会は、事前に古荘さんが人数分だけアカウントを準備しておいてくださり、ハンズオンで全員作業をしながらの説明となりました。そのため、口頭で説明を受けるだけより非常に分かりやすく、ソフトウェア製品を少人数に紹介するには良い方法だと感じました。</p>
+
+<h2>SOY CMSの特徴</h2>
+
+<p>古荘さんが最初に説明してくれたSOY CMSの特徴は、以下の通りです。</p>
+
+<blockquote>
+
+<p>HTMLさえ分っていれば、それ以上の知識がなくても更新できるCMSを目指している。<br />
+出来上がった静的HTMLに必要な部分だけblockなどを組み込んでいくイメージ。</p>
+
+</blockquote>
+
+<p>この点は、先日お話を伺った<a href="http://www.a-blogcms.jp/">a-blog CMS</a>にも通じるものがありますね。</p>
+
+<p>確かに、SOY CMSテンプレート内に挿入するタグは、コメントタグの形をしたタグとHTML要素の属性っぽい形で記述するものなので、テンプレートファイルをブラウザやDreamweaverなどで編集する際に、表示が崩れないのが大きな特徴なんですよね。</p>
+
+<h3>テンプレートの記述例</h3>
+
+<pre class="brush:xml">
+&lt;ul&gt;
+&lt;!-- block:id="news" --&gt;
+&lt;li&gt;&lt;span cms:id="create_date" cms:format="Y.m.d"&gt;2008.8.16&lt;/span&gt;&lt;span cms:id="title"&gt;ここに新着情報が入ります&lt;/span&gt;&lt;/li&gt;
+&lt;!-- cms:ignore --&gt;
+&lt;li&gt;2008.8.16 ここに新着情報が入ります&lt;/li&gt;
+&lt;li&gt;2008.8.16 ここに新着情報が入ります&lt;/li&gt;
+&lt;!-- /cms:ignore --&gt;
+&lt;!-- /block:id="news" --&gt;
+&lt;/ul&gt;
+</pre>
+
+<p>「<strong>2008.8.16 ここに新着情報が入ります</strong>」というアタリの文字列は、ページが出力される際には本物の文章と置き換わるのですが、そのような動作はMovable Type脳になっていると、慣れなくてちょっと戸惑います。でも、テンプレートの中にアタリの文章を入れっぱなしにしておけるのって、実はすごく使いやすいと思うのです。これは私にとっては新鮮でした。</p>
+
+<p>また、テンプレートを特定のディレクトリにファイル出力できるので、そのファイルをDreamweaverで編集して同期できるのも、実作業としてはやりやすいですね（MTでもほぼ同じことができますが）。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/tmpl.jpg"><img alt="tmpl.jpg" src="http://linker.in/journal/assets_c/2009/03/tmpl-thumb-500x295-141.jpg" width="500" height="295" class="mt-image-none" style="" /></a></span></p>
+
+<p>それから、管理画面上からCSSを編集できる専用エディタがあったり、</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/css.jpg"><img alt="css.jpg" src="http://linker.in/journal/assets_c/2009/03/css-thumb-500x294-145.jpg" width="500" height="294" class="mt-image-none" style="" /></a></span></p>
+
+<p>分りやすい画像ファイルマネージャーがあったりするのは、ぐっと来るポイントでした。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><a href="http://linker.in/journal/images/file_manager.jpg"><img alt="file_manager.jpg" src="http://linker.in/journal/assets_c/2009/03/file_manager-thumb-500x436-143.jpg" width="500" height="436" class="mt-image-none" style="" /></a></span></p>
+
+<p>そうそう、ページは動的生成ですが、mod_rewriteによって静的ページのように見せています。</p>
+
+<h2>おわりに</h2>
+
+<p>ちょっと時間が遅くなってしまったので、ファーストインプレッションはこの辺で。</p>
+
+<p>他の参加者の皆さんからは、「管理画面のUIがまだ分りにくい」「CMSの内部構造にUIが引っ張られている」「ラベリングが分りにくい」などのご意見が出ていまして、それは確かにその通りだとは感じました。</p>
+
+<p>しかしそれらを差し引いても、俄然大きな魅力のある製品だと感じておりますので、今後インストールからひとつづつ行って、linker jounalでもレビューしていきたいと思います。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/a-blog_cms_2.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cms/soy_cmscmsui.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

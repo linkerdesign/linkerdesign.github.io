@@ -1,0 +1,78 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Movable Type 5.1リリースとふと気になったカテゴリの指定方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Movable Type 5.1リリースとふと気になったカテゴリの指定方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Movable Type 5.1リリースとふと気になったカテゴリの指定方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+アイスランドの噴火の影響も受けずに久しぶりに日本に来ました。今日はどうも眠い気がしますが、なんとか乗り越えたいところです。</p>
+<h2>Movable Type 5.1リリース</h2>
+<p>さて、昨日MT5.1がリリースされていました。<br /></p>
+<blockquote>
+  <p>[重要] Movable Type 5.1 および、5.05、4.29 セキュリティーアップデートの提供を開始 | MovableType.jp<br />
+  <a href="http://www.movabletype.jp/blog/_movable_type_51_505429.html">http://www.movabletype.jp/blog/_movable_type_51_505429.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>大きなところはカテゴリ・フォルダの並び替えなどリスティングフレームワークでしょう。</p>
+<p>あわせて4.29,5.05もリリースされているようです。似たようなかんじでバージョン違いがいくつか平行で出始めているのが若干分かりにくいところでもありますが、バージョンにあわせてアップデートしておかないといけませんね。</p>
+<h2>記事にカテゴリを指定するときは親カテゴリも指定する？</h2>
+<p>大した話じゃないのですが、リンク先でのプレゼン資料をみていて、ブログ記事にカテゴリを親カテゴリと子カテゴリ両方指定していました。</p>
+<div style="width:425px" id="__ss_4999073">
+  <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/sakk/movable-type-51-whats-new" title="Movable Type 5.1 : What's New">Movable Type 5.1 : What's New</a></strong> <iframe src="http://www.slideshare.net/slideshow/embed_code/4999073?startSlide=13" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+  <div style="padding:5px 0 12px">
+    View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/sakk">Six Apart KK</a>
+  </div>
+</div>
+<p>ドリンクの子カテゴリであるコーヒーを指定するときに、ドリンクのカテゴリも指定していますね。</p>
+<p>+親A<br />
+++子A-a<br />
+++子A-b<br />
++親B<br />
+++子B-a<br />
+++子B-b<br />
+++子B-c</p>
+<p>みたいなかんじでカテゴリがあって、子B-bを指定したいとした場合、どういう風にカテゴリを選択するのが多いんでしょうね。</p>
+<p>個人的には子B-bのみを選択するイメージでした。<br />
+このような感じで親と子が両方ある場合は親はどちらかというと分類用に近いのかと思っていました。</p>
+<p>この設定自体で大きく変わることはありませんが、たまたま見てそのように選択するかなぁ、とも思ったりしました。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_153.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/ia_writer_for_mac.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

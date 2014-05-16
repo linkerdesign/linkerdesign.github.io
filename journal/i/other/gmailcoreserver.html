@@ -1,0 +1,112 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GmailとCORESERVERと我々。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GmailとCORESERVERと我々。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;GmailとCORESERVERと我々。</p>
+
+<p>こんばんは！火曜／金曜担当の@cremaです！</p>
+
+<p>今夜は、いま私たちが困っていることを書いてみようと思います。</p>
+
+<p>そう。あわよくば、誰か同じ目に合っている人と情報共有させていただきたいとの思いを込めてw</p>
+
+<h2>Gmailからlinkerのメールアドレスに、メールを送れないことがある！</h2>
+
+<p>まず結論から書いてしまいますと、Gmailで設定した独自ドメインのメールアドレスのアカウントから、linker@linker.inにメールした際に、rejectされることがあるのです。</p>
+
+<blockquote>
+
+<p>This is an automatically generated Delivery Status Notification</p>
+
+<p>Delivery to the following recipient failed permanently:</p>
+
+<p>linker@linker.in</p>
+
+<p>Technical details of permanent failure:<br />
+Google tried to deliver your message, but it was rejected by the recipient domain. We recommend contacting the other email provider for further information about the cause of this error. The error that the other server returned was: 552 552 sorry, your domain isn't in my list of allowed senderhosts (#5.7.1) (state 13).</p>
+
+</blockquote>
+
+<p>とまぁ、こんな感じのお返事が、mailer-daemonさんから届く訳ですね。しかも、毎回ではなく「時々」というのがポイントです。気まぐれ屋さん＞＜</p>
+
+<h2>CORESERVERが問題っぽい。</h2>
+
+<p><a href="http://www.geekpage.jp/">あきみちさんに</a>色々アドバイスをいただいて調べていましたら、どうもCORESERVERやXREAユーザで、同じことでお困りの方が多いらしいのです。</p>
+
+<ul>
+	<li><a href="http://sb.xrea.com/showthread.php?t=13480">独自ドメインをfromに設定したgmailから送信したメールが同じ独自ドメインから受信拒否される - XREA&amp;CORE SUPPORT BOARD</a></li>
+	<li><a href="http://groups.google.co.jp/group/gmail-basics-ja/browse_thread/thread/5400a1dadee53abb/1402a2437d4221e3?pli=1">Gmailから、特定のxreaサーバーのメールアカウントに届かない - Gmail の使い方 | Google グループ</a></li>
+</ul>
+
+<p>そう、このhttp://linker.in/は、<a href="http://www.coreserver.jp/">CORESERVER</a>というレンタルサーバをお借りして公開しています。メールサーバも、何も考えずに CORESERVERのものを使っています。（なお、linker@linker.inというドメインは、<a href="http://www.onamae.com/">お名前.com</a>で管理しています。）</p>
+
+<p>そして、@crema個人のメールアドレス（dummy@cremadesign.jp）を使ってGmailから送信できるようにアカウント設定しているのですが、そこからlinker@linker.inにメールしようとするとrejectされることがあります。</p>
+
+<p>上記のフォーラムなどを見ていると、Gmailで独自ドメインのメールアドレスを使う際にfromが偽装されているのが原因？っぽい感じなのですが、どうなのでしょう？</p>
+
+<p>うーむ。困った。</p>
+
+<p>linker@linker.in<strong>から</strong>、Gmail（＋独自ドメイン）<strong>に</strong>メールが送信できないのであれば、まぁ、色々代替手段を考えることもできるのですが...。</p>
+
+<p>Gmail（＋独自ドメイン）<strong>から</strong>、linker@linker.in<strong>に</strong>メールが送信できないとなると、お客様からのメールが受信できないケースも出てきます。</p>
+
+<h2>とりあえず、我々が考えている解決策は2つ。</h2>
+
+<p>まずは応急処置です。</p>
+
+<p>万が一linker@linker.inにメールを送ってrejectされてしまった方がいらっしゃいましたら、恐れ入りますが、<a href="mailto:linkerdesign@gmail.com">linkerdesign@gmail.com</a>に再送お願いできますでしょうか。こちらのメールアドレスも、きちんと3人で共有していますので。</p>
+
+<p>それから抜本的対策。</p>
+
+<p>上記のフォーラムによるとどうにも解決策が無さそう？な気がするので、メールサーバだけ別のサービスに引っ越そうかなぁと、三人で話し合っています。</p>
+
+<p>そのためには、お名前.comの管理画面から、DNSの設定でMXレコードをごにょごにょしなければいけないんだろう、というところまで考えて、とりあえず時間切れ。</p>
+
+<p>近々になんとかしようと思っています。</p>
+
+<p>【追伸】<br />
+ちなみに、Gmail（＋独自ドメイン）を使っている人側の対策としては、以下のような物もあるみたいです（あきみちさん、情報ありがとうございます！）。</p>
+
+<ul>
+	<li><a href="http://www.yamayuri-w.net/item/895">Why Is the Sky Blue? &raquo; XREA/CORESERVERとGmailの相性</a></li>
+</ul>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/cms.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cat45/post_5.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

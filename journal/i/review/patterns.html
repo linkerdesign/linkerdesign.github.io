@@ -1,0 +1,69 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Patternsを使って簡単に正規表現チェックを行ってみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Patternsを使って簡単に正規表現チェックを行ってみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;レビュー&nbsp;&raquo;&nbsp;Patternsを使って簡単に正規表現チェックを行ってみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+「貝とビール＝痛風」というのが最近我が家の流行りです。健康には気をつけたいものです。。。</p>
+<p>さて、先日<a href="http://itunes.apple.com/jp/app/patterns-the-regex-app/id429449079?mt=12">Patterns</a>というMac Appをいつもお世話になっている<a href="http://tinybeans.net/blog/">奥脇さん</a>教えてもらいました。</p>
+<blockquote>
+  <p>Patterns<br />
+  <a href="http://itunes.apple.com/jp/app/patterns-the-regex-app/id429449079?mt=12">http://itunes.apple.com/jp/app/patterns-the-regex-app/id429449079?mt=12</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>正規表現のチェックなどが行えるMacアプリです。</p>
+<h2>Matchの画面サンプル</h2>
+<p><img src="http://linker.in/journal/images/110627-01.jpg" width="550" height="433" alt="110627-01.jpg" style="border:2px #7c7c7c solid;" /><br /></p>
+<p>Matchしているところがカラーリングされてわかりやすいです</p>
+<h2>Replaceの画面サンプル</h2>
+<p><img src="http://linker.in/journal/images/110627-02.jpg" width="550" height="432" alt="110627-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Copy Codeをクリックすると試してみたコードがコピーされてきます。</p>
+<pre>
+$searchText =~ s/[\S\s]*src="(https?:\\/\\/.+?)(\.jpe?g|\.gif|\.png)"[\S\s]*\n/$1$2/gi;
+</pre>
+<p>なんかスクロールがうまく動きませんでしたが、Reference Sheetもありました。</p>
+<h2>ということで</h2>
+<p>正規表現自体は普段お使いのエディタなどでも問題無く使えるとおもいますが、ささっと正規表現のチェックだけしてみたい、というときなどにはよさそうです。</p>
+<p>正規表現を覚えるとかなり便利になるんだろうなぁとおもっていますが、大体使う時になると忘れてしまっていつも調べながら使ったりしています。<br /></p>
+<p>さらっとつかってみただけですが、簡単につかえるので正規表現を試すのには良さそうですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/ipad7notes.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_157.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

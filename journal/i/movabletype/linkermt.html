@@ -1,0 +1,95 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>linkerのサーバー移転にともないMTで躓いたことなど｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>linkerのサーバー移転にともないMTで躓いたことなど</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;linkerのサーバー移転にともないMTで躓いたことなど</p>
+
+<p><img src="http://linker.in/journal/images/090312.gif" width="600" height="200" alt="090312.gif" /></p>
+<p>みなさん、こんにちは。<br />
+最近はベランダ菜園で野菜の生長を見るのがたのしみな、まーしーです</p>
+<h2>linkerのサーバーを移転しました</h2>
+<p>先日cremaさんも書いていましたがlinkerでつかっているサーバーとメールの調子がどうも悪かったです。</p>
+<blockquote>
+  <p>GmailとCORESERVERと我々。｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/02/gmailcoreserver.php">http://linker.in/journal/2009/02/gmailcoreserver.php</a></p>
+</blockquote>
+<p>サーバーを移転したからメールの調子が良くなるか？というのもありますが、なにもしないわけにはいかないのでサーバー移転を実施しました。&nbsp;&nbsp;&nbsp;</p>
+<p>このlinkerのサイトはMTOS4.23を使っていて、サーバー移転のタイミングで4.24に切り替えました。<br />
+移動する前に色々考えてスタートしたのですが、結局ぼろぼろとミスが出てしまったりしたので自分のためにも書いておこうかな、と思います。</p>
+<h2>バックアップ／復元、のバージョンは同じMTで</h2>
+<p>当初4.23で運用していて、最新版の4.24を新サーバーにインストールしました。<br />
+4.23からバックアップしたものを4.24で復元しようとしましたが、それはだめだよ、とエラーが出ます。</p>
+<p>このことはちゃんとマニュアルにも書いてありますね。</p>
+<blockquote>
+  <p>バックアップしたブログの復元 | Movable Type 4 ドキュメント<br />
+  <a href="http://www.movabletype.jp/documentation/start_restore.html">http://www.movabletype.jp/documentation/start_restore.html</a></p>
+</blockquote>
+<p>例は4.1と4.2になっていますが、4.23と4.24も同じように別物です。<br />
+なので、それまでのMTOSを4.24にアップしてからバックアップ→新サーバーで復元、という流れをとりました。</p>
+<h2>複数ブログ立ち上げているときどうやるか</h2>
+<p>DBをなんとかしてとかいう方法もあるはずなんですが、自分自身で試していないものをココでやるわけにはいかないので、その方法は却下。&nbsp;&nbsp;<br />
+（DBをさわるのはまだまだ抵抗ありますね・・・）<br />
+ただそのまま全体をバックアップして復元ってやるとすでにブログが一個あってBlogIDがずれちゃう（はずな）ので、メイン以外の二つをそれぞれバックアップして復元、という方法をとりました。<br />
+（んじゃブログ１つしかない場合はこの方法とれないことになっちゃうから、もしやBlogIDはずれないのか？？）</p>
+<p>これでID=1以外のものはすんなりいきます。<br />
+グローバルテンプレートを上書きしますか？みたいなチェックが出るんですが、そこにチェックをいれないと同じ内容のグローバルテンプレート、ウィジェットが複数できてしまいます（経験談）。</p>
+<p>グローバル周りまでもってきてるとは思ってなかったので移行してから気づきました。<br />
+あらかじめグローバルテンプレートのみはコピペで移していたので、その作業自体が無駄になりましたね。</p>
+<p>あとユーザーの情報も上書きされるようですね。</p>
+<p>新MTに他のユーザーを追加しておいたのですが、それぞれのパスワードなりは仮のものをあたえておいてあとで変えてもらうつもりでいました。<br />
+復元してる間に同名のユーザー情報は上書きされているようでパスワードなど全ての情報が引き継がれていました。<br />
+仮パスワードで入れないわけですよね。。<br />
+ユーザーの情報は何で判断してるのかなぁ？ユーザー名？？</p>
+<p>マルチブログのトリガーも引き継がれてましたね・・・<br />
+引き継いでくれてたのはこれも想定外。どこを復元した際に引き継がれたのかわからないので、調べておかないとですね。</p>
+<p>ID=1のブログについてはエクスポート、インポートで移動したのですが、あたりまえですがこの方法だとID=1のアイテムなどを引き継げないのが問題ですね。<br />
+テンプレートなどは当然コピペで移動なのですが、そもそもその方法は単純作業でミスが発生しそうなところですので愚かですよね。<br />
+DB自体を持って行く場合どこまできれいに復元できるのかわからないのですが、これはできるようにならないとなとおもったわけです。</p>
+<p>DBのバージョンが違うときとかどうなっちゃうの？とか知らないことはあげたらきりないですが、あげたら１つずつつぶしていかないとですね。</p>
+<h2>反省多し</h2>
+<p><img src="http://linker.in/journal/images/090312-01.gif" width="600" height="392" alt="090312-01.gif" /></p>
+<p>やることリストをあげておいて（理想は順番に並べるべきですが）作業を進めましたが、自分の事前準備がいかにあまいか・知識がたりないかを露呈した感じのサーバー移転でした。<br /></p>
+<p>MTでサーバー移転をする経験はあまり無かったので結構躓きました。（機会は自分でつくりましょう）<br />
+それを晒すのも恥ずかしいですが、今後誰かの参考になればとあげておきます。 &nbsp;&nbsp;<br />
+反省が多いですがよい経験でした。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_12.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_13.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

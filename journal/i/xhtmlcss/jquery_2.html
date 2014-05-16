@@ -1,0 +1,82 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>jQueryでリストに数字を振る場合の基本的メモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>jQueryでリストに数字を振る場合の基本的メモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;jQueryでリストに数字を振る場合の基本的メモ</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+こちらで見るテレビ番組で好きなのは<a href="http://www.jamieoliver.com/">Jamie Oliver</a>の30分でつくる料理番組です。なんとも言えない雑！？な感じと味付けがほとんど同じなのがいいです。<br />
+作りながら"Beautiful", "Delicious" , "Lovely"とか自分で言っているのも好印象です。そういう姿勢は見習いたいです。</p>
+<p>さて、今日は自分用メモですが、jQueryでリストに数字を振る話でも。</p>
+<p>ol / liの順列リストで数字を表示させることが出来ますが、この数字だけをCSSで調整したいと思うと&lt;li&gt;&lt;/li&gt;の中を&lt;span&gt;&lt;/span&gt;でくくってどうこうするとかなにかしらの方法で対応することが出来ます。</p>
+<p>どの方法を使うべきかは場合に応じて変えるとおもいますが、jQueryで対応することが出来る場合のメモです。</p>
+<h2>やるとしたらeach()で</h2>
+<p>再現したいことをやるにはこのようなかんじですね。<br />
+（サンプルはulにしてますが、普通はolです）</p>
+<div class="bpJsdoit" style="text-align:center; width:465px;">
+  <iframe scrolling="no" src="http://jsdo.it/blogparts/tce8" width="465" height="546" style="border:1px #CCC solid; width: 465px; margin: 0px;"></iframe>
+</div>
+<p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;"><a href="http://jsdo.it/mersy/tce8" title="listに番号を振るサンプル">listに番号を振るサンプル - jsdo.it - share JavaScript, HTML5 and CSS</a></p>
+<p>まぁ、とりあえずこんな感じで対応出来ます。<br />
+Thanks <a href="https://twitter.com/#!/5509">@5509さん</a>。</p>
+<h2>親子セレクタで</h2>
+<p>似たようなことをやろうとするとセレクタでどうにかしようとする事も考えられます。</p>
+<div class="bpJsdoit" style="text-align:center; width:465px;">
+  <iframe scrolling="no" src="http://jsdo.it/blogparts/yOkg" width="465" height="546" style="border:1px #CCC solid; width: 465px; margin: 0px;"></iframe>
+</div>
+<p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;"><a href="http://jsdo.it/mersy/yOkg" title="listに番号を振るサンプル2">listに番号を振るサンプル2 - jsdo.it - share JavaScript, HTML5 and CSS</a></p>
+<p>全ての&lt;li&gt;をカウントしてるので表示させたい方法にはなっていませんね。</p>
+<p>んじゃ入れ子に対応しようとしてこんなかんじでやってみます。</p>
+<div class="bpJsdoit" style="text-align:center; width:465px;">
+  <iframe scrolling="no" src="http://jsdo.it/blogparts/7dwk" width="465" height="546" style="border:1px #CCC solid; width: 465px; margin: 0px;"></iframe>
+</div>
+<p class="ttlBpJsdoit" style="width: 465px; margin: 0; text-align: right; font-size: 11px;"><a href="http://jsdo.it/mersy/7dwk" title="listに番号を振るサンプル3">listに番号を振るサンプル3 - jsdo.it - share JavaScript, HTML5 and CSS</a></p>
+<p>入れ子になっているのは把握してくれていますが、入れ子部分がまた違いますね。<br />
+そもそもこの方法だと２階層以降の入れ子に対応出来ないのでNGなわけですね。&nbsp;&nbsp;</p>
+<h2>ということで１つめの方法で</h2>
+<p>ということで１つめの方法に落ち着きます。</p>
+<p>はじめに書いたみたいに&lt;li&gt;&lt;/li&gt;の中を&lt;span&gt;&lt;/span&gt;でくくるために&lt;li&gt;&lt;/li&gt;のテキストを取り出して云々、という方法もあるかもしれません。<br />
+似たようなことであれば数字を追加する方法を選択する、というスタートの仕方次第で色々変えられるということです。</p>
+<p>最初これをやろうとおもったときにspanでなんとかくくれないかな、とおもいながらも入れ子部分をどうしたものか、とか考えてて１つめの方法になったわけですが。</p>
+<p>どういう風にするかと考え始めるときに間違えるとなかなか答えにたどりつかない例ですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphone_10.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cms/2011510_a-blog_cms_14.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

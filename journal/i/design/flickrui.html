@@ -1,0 +1,96 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>flickrがテスト中の新UIをちょっとだけチェックしてみた。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>flickrがテスト中の新UIをちょっとだけチェックしてみた。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;デザイン&nbsp;&raquo;&nbsp;flickrがテスト中の新UIをちょっとだけチェックしてみた。</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>先日flickrを見ていたら、こんなメッセージが出ていたのです。</p>
+
+<p><img alt="We're introducing a new photo page, and you can check it out early. Take me to the future!" src="http://linker.in/journal/images/flickr-ui-001.gif" width="497" height="32" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>ということで、迷わず「Take me to the future!」をクリックした私です。</p>
+
+<p>きっとみなさんもご覧になっていることとは思いますが、この写真ページ新規UIについてちょっと記事化してみますね。</p>
+
+<p>これが、新UI（クリックで拡大します）。<br />
+<a href="http://linker.in/journal/images/flickr-ui-002.jpg"><img alt="flickr-ui-002.jpg" src="http://linker.in/journal/assets_c/2010/07/flickr-ui-002-thumb-600x710-2109.jpg" width="600" height="710" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>ちなみに、これが旧UI（クリックで拡大します）。<br />
+<a href="http://linker.in/journal/images/flickr-ui-003.jpg"><img alt="flickr-ui-003.jpg" src="http://linker.in/journal/assets_c/2010/07/flickr-ui-003-thumb-600x710-2111.jpg" width="600" height="710" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>さて、どこが変わったでしょうか？　変更点を、ざざっと書き出してみましょう。</p>
+
+<ul>
+	<li>写真のタイトルが、写真の下になった。</li>
+	<li>全体の横幅が、790pxから975pxになった。</li>
+	<li>写真の横幅が、500pxから640pxになった。</li>
+	<li>写真の上にあった操作アイコンと、右上にあった「Shere this」が、プルダウンメニューになった（下記キャプチャ参照）。</li>
+	<li>右上に地図がついた。</li>
+	<li>前後写真への移動のサムネイルが、2枚から5枚になった。</li>
+	<li>この写真が属しているセットの前後写真は表示されなくなり、「This photo also belongs to:」という文言が、「This photo also appears in」になった。</li>
+	<li>favが個別写真ページ内に表示されるようになった。</li>
+	<li>Tagが、縦並びでなく横並びになった。</li>
+	<li>フッタのナビゲーションにあった「You」というセクションが無くなり、写真移動用のキーボードショートカットのアイコンがはいった。</li>
+</ul>
+
+<p>写真の上のプルダウンメニューを開くと格納されているメニューは、こんな感じです。項目が増えて、横一列に並べきれなくなったのでしょうか。<br />
+<img alt="flickr-ui-004.jpg" src="http://linker.in/journal/images/flickr-ui-004.jpg" width="264" height="515" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>右上の地図をクリックすると、こんなUIで写真を地図上の地点にマッピングできます（この地図の場所はダミーです）。<br />
+<a href="http://linker.in/journal/images/flickr-ui-005.jpg"><img alt="flickr-ui-005.jpg" src="http://linker.in/journal/assets_c/2010/07/flickr-ui-005-thumb-600x787-2114.jpg" width="600" height="787" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>写真を拡大するアイコンをクリックすると、いままでは別ページに遷移していたのが、同じページ内にモーダルウィンドウが開き、背景黒の締まった感じで写真を閲覧できます。<br />
+<a href="http://linker.in/journal/images/flickr-ui-007.png"><img alt="flickr-ui-007.png" src="http://linker.in/journal/assets_c/2010/07/flickr-ui-007-thumb-600x587-2116.png" width="600" height="587" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>というわけで、全体的に推察できることは、こんな感じでしょうか？</p>
+
+<ul>
+	<li>世間的にスクリーンの横幅が広くなっている（解像度が高くなっている）ことを受け、全体の横幅が広くなった。</li>
+	<li>それに伴い、写真の横幅も広くなった。</li>
+	<li>機能が増えたので、プルダウンメニューでまとめた。</li>
+	<li>写真の位置情報を全面に出すようになってきた。</li>
+</ul>
+
+<p>今後もじっくり両方使い比べてみて、違いを検証していきたいと思います。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/slimtimer_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_99.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

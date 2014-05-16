@@ -1,0 +1,77 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>webやUIのデザイン、とくにグラフィックまわりで気をつけたい細かなところ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>webやUIのデザイン、とくにグラフィックまわりで気をつけたい細かなところ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;デザイン&nbsp;&raquo;&nbsp;webやUIのデザイン、とくにグラフィックまわりで気をつけたい細かなところ</p>
+
+<p><img alt="110212_00.jpg" src="http://linker.in/journal/images/110212_00.jpg" width="640" height="195" class="" style="" /></p>
+<p>こんにちは、taku-workです。<br />
+仕事部屋のホワイトボードの位置を変えました。縦横の向きを変えたらぴったりと収まる場所を見つけたときの嬉しさときたら。</p>
+<p>ということで、今回はwebやUIのデザイン、とくにグラフィックまわりで気をつけたい細かなところのおはなし。制作していてついつい見落としてしまいがちな細かな部分のお話です。</p>
+<h2>テキストの上下のマージン</h2>
+<p><img alt="110212_01.jpg" src="http://linker.in/journal/images/110212_01.jpg" width="500" height="253" class="" style="" /></p>
+<p>これがずれていると結構気持ち悪いですね。<br />
+line-heightなどの設定でずれてしまっていることがあるので注意です。<br />
+とくにボタンの場合はずれていると気持ち悪さ倍増です。<br />
+CSS3などが普及すればテキストとCSSでボタンを作ることも多くなります。気をつけるポイントですね。</p>
+<h2>矩形などのボケ、にじみ</h2>
+<p><img alt="110212_02.jpg" src="http://linker.in/journal/images/110212_02.jpg" width="500" height="318" class="" style="" /></p>
+<p>これもロゴなどをillustratorから不用意にコピペしたりするとなりがちです。<br />
+デザイナーさんが結構苦労して考えたロゴなどが、webサイトになったらボケているなんてちょっと切ないですね。<br />
+ピクセルへのスナップやガイドを使ってきちんとデータを作って、切り出しの際にも気を抜かずに。</p>
+<h2>グラデーションの階調</h2>
+<p><img alt="110212_03.jpg" src="http://linker.in/journal/images/110212_03.jpg" width="500" height="293" class="" style="" /></p>
+<p>設定をきちんと調整せずにgifなどで切り出すとグラデーションの階調がつぶれることがあります。<br />
+fireworksなどで切り出す場合はきちんと設定をチェックです。<br />
+とくに薄いグレーの階調などは３段階くらいにつぶれてしまうこともありますのでお気をつけて。</p>
+<h2>1pxの線</h2>
+<p><img alt="110212_04.jpg" src="http://linker.in/journal/images/110212_04.jpg" width="500" height="220" class="" style="" /></p>
+<p>少し前からwebサイトでも多く見られる小技ですが、 1pxのハイライトなどの線を色面の間に入れて際立たせている場合があります。<br />
+mac系アプリのUIでもグレーのボーダーに白い1pxの線を置くことで、ちょっとした段差に見えるようにしてアクセントにするなんて小技も多くみられますね。</p>
+<p>これをそのまま１色の色面で実装されたりすると、あのぉ、ホントすいません、実はここに白い1pxありましてぇ。なんてあとで言ったりすることになりまして、結構照れます。どうか気づいてあげてください。</p>
+<h2>ということで</h2>
+<p>いろいろと細かな部分ですが、デザインとコーディングの作業を別の人がやる場合には起こりうる部分かと思います。<br />
+もちろん細か過ぎて意味の無いデザインなのでは？なんて思う場合もあるかもしれません。<br />
+そのあたりはお互いに確認をしつつ、クオリティと効率とのバランスですね。</p>
+<p>細かいところにも気を配れるようにいつも心がけたいものです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/its_snowing.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/gitguitowerpull_request.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

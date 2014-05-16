@@ -1,0 +1,133 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>エディタの小ネタ（TeraPadとJedit X）｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>エディタの小ネタ（TeraPadとJedit X）</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;エディタの小ネタ（TeraPadとJedit X）</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ttl20090605.jpg" src="http://linker.in/journal/images/ttl20090605.jpg" width="600" height="100" class="mt-image-none" style="" /></span></p>
+
+<p>こんばんは！@cremaです。</p>
+
+<p>今日は<a href="http://twitter.com/commonstyle">@commonstyle</a>こと教育デザイナーの<a href="http://iddy.jp/profile/monkeyish/">境祐司先生</a>と、相互にポッドキャストを録音しあってきました。</p>
+
+<p>境先生の鞄からガジェットが出てくるたびに、@taku-workの眼がかつてないほどキラキラ輝いてゆくのを見逃さなかったワタクシですw</p>
+
+<p>さてさて今日は、エディタの小ネタをお送りします。</p>
+
+<p>きっと90%ぐらいの方がご存知の内容だと思いますが、残り10%の方に向けて書きますです＞＜</p>
+
+<h2>Dreamweaverで全角アキを視覚化したい</h2>
+
+<p>DreamweaverでCSSを書く初心者の方が「CSSが効いていないんです！」と訴える時に頻繁に見受けられるケースとして、要らぬ場所に全角アキが入っているというものがあります。</p>
+
+<p>Dreamweaverのコードビューは、デフォルトでは全角半角アキやタブなどを表示していませんので、ついうっかり全角アキを入れてしまうんですよね。そこでDreamweaverの［表示オプションアイコン→非表示の文字］でチェックを入れてみます。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-001.jpg" src="http://linker.in/journal/images/ph20090605-001.jpg" width="600" height="200" class="mt-image-none" style="" /></span></p>
+
+<p>すると、一応こんな見栄えになり、どこにアキが入っているかは一応見えるのですが...（このスクリーンショットだと4行目のおしりに全角アキがあります）。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-002.jpg" src="http://linker.in/journal/images/ph20090605-002.jpg" width="600" height="200" class="mt-image-none" style="" /></span></p>
+
+<p>半角アキを示す場所に「・」が入っているのもちょっとどきっとしますし、全角アキを示す「□」が通常の文字と同じ色なので、本当の文字の「□」と見分けがつかない等、ちょっと気になる点が多いのです。</p>
+
+<h2>そんなときにTeraPad</h2>
+
+<p>そこで私は、Windows環境の時は<a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">TeraPad</a>をついオススメしてしまいます。</p>
+
+<p>不可視文字を表示させるには、書類を開いたあと、［表示→オプション］を選択します。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-004.jpg" src="http://linker.in/journal/images/ph20090605-004.jpg" width="600" height="330" class="mt-image-none" style="" /></span></p>
+
+<p>さらに「表示」タブをクリックして、「マーク」欄にて表示させたいものにチェックをつけます。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-005.jpg" src="http://linker.in/journal/images/ph20090605-005.jpg" width="600" height="470" class="mt-image-none" style="" /></span></p>
+
+<p>そして、先ほどと同じCSSを見るとこんな感じです。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-006.jpg" src="http://linker.in/journal/images/ph20090605-006.jpg" width="600" height="200" class="mt-image-none" style="" /></span></p>
+
+<p>半角アキの部分は上向きの小さな「コの字」ですし、全角アキを示す「□」も文字とは違う薄いグレーで、アキが見やすいと思うのですがいかがでしょう。動きもさくっと軽いですしね。</p>
+
+<h2>MacならJedit X</h2>
+
+<p>Mac環境の場合は、<a href="http://www.artman21.com/jp/jedit_x/">Jedit X</a>がとてもいい感じです。</p>
+
+<p>不可視文字を表示させるには、メニューバーの［表示→不可視文字の表示］で、表示させたいものを選択します。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-007.jpg" src="http://linker.in/journal/images/ph20090605-007.jpg" width="600" height="447" class="mt-image-none" style="" /></span></p>
+
+<p>そして、先ほどと同じCSSを見るとこんな感じ。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-008.jpg" src="http://linker.in/journal/images/ph20090605-008.jpg" width="510" height="410" class="mt-image-none" style="" /></span></p>
+
+<p>不可視文字が薄いグレーになっていることに加えて、セレクタやプロパティの部分もカラーリングが見やすいですね。</p>
+
+<h2>Jedit Xの「全角半角置換」と「書類の比較」が素敵</h2>
+
+<p>話は少し変わりますが、Jedit Xで私が大好きな機能が、高機能な全角半角の置換とプラグイン（JDiff X）を使った書類の比較です。</p>
+
+<p>Webサイト制作の際、クライアントさんからWordなどのデータをいただいた時、どうしても全角英数文字が混ざっていることがあります。</p>
+
+<p>これを半角英数に統一したいのですが。。。</p>
+
+<p>全角を半角に置換するエディタもあったりしますが、書類全体（または選択範囲全体）に効いてしまうため、カタカナも半角になってしまうのが悩みどころだったりします（私が知らないだけかも）。</p>
+
+<p>Jedit Xの場合、［ツール→全角→半角...］を選択すると、こんなダイアログボックスが現れます。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-009.jpg" src="http://linker.in/journal/images/ph20090605-009.jpg" width="504" height="402" class="mt-image-none" style="" /></span></p>
+
+<p>どの文字を半角に置換するかを細かく設定することができ、さくっと書類全体に反映させることができるので、とってもらくちん。半角全角入り混じった原稿をいただいても、笑顔で対応できますw</p>
+
+<p>最後に、似通ったファイルのわずかな違いを発見したい場合には、有料のプラグイン「JDiff X」を使います。</p>
+
+<p>［ファイル→書類を比較する...］を選ぶと、こんな2カラムのウィンドウが現れますので、比較したい書類をそれぞれ左右の空欄にドロップします。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-010.jpg" src="http://linker.in/journal/images/ph20090605-010.jpg" width="600" height="460" class="mt-image-none" style="" /></span></p>
+
+<p>それだけで、違う部分をしっかり教えてくれるわけですよ。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="ph20090605-011.jpg" src="http://linker.in/journal/images/ph20090605-011.jpg" width="600" height="456" class="mt-image-none" style="" /></span></p>
+
+<p>プログラマの皆さんは普通にDiffをとっていらっしゃると思うのですが、私のようなデザイナーには色々難しいことが多いので、こういうらくちん機能はありがたいのです。</p>
+
+<p>というわけで、今日の小ネタもやわらかな感じでお送りしました。まる。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_32.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/exceliphoneroambi.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

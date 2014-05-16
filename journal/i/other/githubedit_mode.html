@@ -1,0 +1,164 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GithubのEdit Modeをながめてみた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GithubのEdit Modeをながめてみた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;GithubのEdit Modeをながめてみた</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+なにかしらの条件下で話すような簡単な日常会話レベルの英会話なら何となく言ってることはわかる（間違うときもありますが）けど、こちらから伝えたい事がすっとでてこないもどかしさを感じる日々です。</p>
+<p>さて、GithubのWikiを編集するときにEdit Modeがいくつかあるのですが、あまり見たことが無いものがあったので少し調べてみました。<br />
+使えるモードは以下の物があります。</p>
+<ul>
+  <li>AsciiDoc</li>
+
+  <li>Creole</li>
+
+  <li>Markdown</li>
+
+  <li>MediaWiki</li>
+
+  <li>Org-mode</li>
+
+  <li>Pod</li>
+
+  <li>RDoc</li>
+
+  <li>Textile</li>
+
+  <li>reStructuredText</li>
+</ul>
+<p>これらのEdit Modeは軽量マークアップ言語（lightweight markup language）と呼ばれているようです。</p>
+<blockquote>
+  <p>軽量マークアップ言語 - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/%E8%BB%BD%E9%87%8F%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E8%A8%80%E8%AA%9E">http://ja.wikipedia.org/wiki/%E8%BB%BD%E9%87%8F%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E8%A8%80%E8%AA%9E</a></p>
+</blockquote>
+<p>それぞれの記法については、Wikiの編集ページでhelpを表示させる事ができるのでそれをみればOKですね。</p>
+<h2>AsciiDoc</h2>
+<p>サーバー関係とかでよく使われる記法なのでしょうか？？</p>
+<blockquote>
+  <p>AsciiDoc Home Page<br />
+  <a href="http://www.methods.co.nz/asciidoc/">http://www.methods.co.nz/asciidoc/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ソースとか用に「----」で囲うとかすればよいみたいです。<br />
+改行は反映されないみたいですね。</p>
+<h2>Creole</h2>
+<p>初めて見た記法です。</p>
+<blockquote>
+  <p>WikiCreole: Creole 1.0<br />
+  <a href="http://www.wikicreole.org/wiki/Creole1.0">http://www.wikicreole.org/wiki/Creole1.0</a>&nbsp;&nbsp;</p>
+
+  <p>Wiki Creoleの文法<br />
+  <a href="http://www.antenna.co.jp/xml/xmllist/WikiCreole-grammar.html">http://www.antenna.co.jp/xml/xmllist/WikiCreole-grammar.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>書き方としては「=」で見出しとなったりとわかりやすそうです。<br />
+改行は明示的に「\\」を入れてあげる必要があります。</p>
+<p>コードなんかは「{{{」「}}}」で囲ってあげるかんじですね。</p>
+<h2>Markdown</h2>
+<p>なんとなく一番構造的に書きやすいのはこのMarkdownじゃないでしょうか。<br />
+見出しは「#」の数で調整するとかわかりやすいですね。</p>
+<blockquote>
+  <p>Markdown - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/Markdown">http://ja.wikipedia.org/wiki/Markdown</a></p>
+</blockquote>
+<p>改行を半角スペース2つでいれる、というのが慣れが必要そうですね。<br />
+codeを書く場合は「`code`」このようなかんじですね。<br /></p>
+<h2>MediaWiki</h2>
+<p>Wikipediaとかで使われている記法ですね。</p>
+<blockquote>
+  <p>Help:目次 マークアップ - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/Help:%E7%9B%AE%E6%AC%A1_%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97">http://ja.wikipedia.org/wiki/Help:%E7%9B%AE%E6%AC%A1_%E3%83%9E%E3%83%BC%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>大体の要素は用意されているみたいですが、HTMLを直接書いたほうがはやいかもしれないです。。</p>
+<h2>Org-mode</h2>
+<p>このモードの時は特にボタンなどが表示されませんが。</p>
+<blockquote>
+  <p>org-mode - Wikipedia, the free encyclopedia<br />
+  <a href="http://en.wikipedia.org/wiki/Org-mode">http://en.wikipedia.org/wiki/Org-mode</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>Emacsとかで使われたりする物なのでしょうか。<br />
+ちょっといまいち分かりませんでした・・・</p>
+<h2>Pod</h2>
+<p>Podとあっても何かよくわかりませんでしたが、Plain Old Documentationの略みたいですね。</p>
+<blockquote>
+  <p>Plain Old Documentation - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/Plain_Old_Documentation">http://ja.wikipedia.org/wiki/Plain_Old_Documentation</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>「サンプルコードを含めるのが簡単である。」という特徴が挙げられていますが、HTMLタグを覚える少し手前くらいの書き方を覚えないといけなさそうな感じでしょうか。</p>
+<h2>RDoc</h2>
+<p>このRDocはRuby系のものみたいですね。</p>
+<blockquote>
+  <p>RDoc - Wikipedia, the free encyclopedia<br />
+  <a href="http://en.wikipedia.org/wiki/RDoc">http://en.wikipedia.org/wiki/RDoc</a>&nbsp;&nbsp;</p>
+
+  <p>Ruby Document format - Wikipedia, the free encyclopedia<br />
+  <a href="http://en.wikipedia.org/wiki/Ruby_Document_format">http://en.wikipedia.org/wiki/Ruby_Document_format</a>&nbsp;&nbsp;</p>
+
+  <p>Ruby Document format - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/Ruby_Document_format">http://ja.wikipedia.org/wiki/Ruby_Document_format</a></p>
+</blockquote>
+<p>ソースコードや入れ子なんかはindent（半角スペース）で判定しているようです。<br />
+改行は自動で判定してくれないようです。</p>
+<h2>Textile</h2>
+<p>初めてつかってみてますが、このTextileがつかいやすい、という気もしています。</p>
+<blockquote>
+  <p>Textile (markup language) - Wikipedia, the free encyclopedia<br />
+  <a href="http://en.wikipedia.org/wiki/Textile_(markup_language)">http://en.wikipedia.org/wiki/Textile_(markup_language)</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>見出しが「h1.」「h2.」というのは「#」と書くのに比べたら若干引っかかりますが。<br />
+「#」はリストに割り当てられているので仕方ないのでしょう。。。</p>
+<h2>reStructuredText</h2>
+<p>なんか書き方としてはそこまで指定が無いのかな。。。<br /></p>
+<blockquote>
+  <p>reStructuredText - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/ReStructuredText">http://ja.wikipedia.org/wiki/ReStructuredText</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>Pythonが関係してるとかなんとか。。。<br />
+ちょっとまだ使い方まで把握できてないです。</p>
+<h2>ということで</h2>
+<p>個人的にはTextileが使いやすいきがします。<br />
+Markdownは改行を明示しないといけないのが少し気になりますが、慣れの問題というのもそこそこあるきがしますし、よく見る記法なのでもう少し使ってみようと思います。</p>
+<p>色々なプログラム言語とかサーバー関係であるとか、Githubを使う人が使いそうなものが色々網羅されているようだ、というのが調べてみて分かりました。</p>
+<p>普段は滅多に使わないものばかりですが、個人的にはGithubのWikiをつかうとしたらMarkdown、Textileあたりがメインになりそうです。<br />
+Creole、RDocとかはもう少し触ってみてもいいのかも？といった気がしました。</p>
+<p>みなさんGithubのWikiを編集する際は何をお使いですか？？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_171.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/facebookfacebook.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

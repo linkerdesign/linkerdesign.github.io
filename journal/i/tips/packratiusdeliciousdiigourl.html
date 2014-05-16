@@ -1,0 +1,108 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Packrati.usを使ってDeliciousではなくDiigoにURLをポストしておく｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Packrati.usを使ってDeliciousではなくDiigoにURLをポストしておく</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Packrati.usを使ってDeliciousではなくDiigoにURLをポストしておく</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+週末郊外まで足を伸ばしてみました。ベストシーズンが本当に待ち遠しいです。&nbsp;&nbsp;&nbsp;</p>
+<p>さて、SBMを使ってる方はそのサービス用のBookmarkletやブラウザ用の拡張を使ってSBMにポストしてるかと思います。<br />
+またメモ用にTwitterにメモしておきたいURLをpostしておく、という場合もあるでしょう。<br />
+その辺に関係しそうな話を少し。</p>
+<h2>Tweetに含まれるURLをSBMにPostする</h2>
+<p>Twitterを使用している場合は「Packrati.us」を使うことでポストしたtweetに含まれるURLをSBMに自動でポストしておくことが可能になります。</p>
+<blockquote>
+  <p>Packrati.us = Twitter + Delicious<br />
+  <a href="http://packrati.us/">http://packrati.us/</a></p>
+</blockquote>
+<p>登録は簡単で、まずここからTwitterのアカウントでサインインしておきます。</p>
+<p><img src="http://linker.in/journal/images/110124-01.jpg" width="394" height="301" alt="110124-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>サインインが完了すると、このような感じで登録できるサービス一覧が表示されます。</p>
+<p><img src="http://linker.in/journal/images/110124-02.jpg" width="345" height="594" alt="110124-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>登録できるサービスは名前からわかるようにDeliciousがありますが、他にも「<a href="http://historio.us/">historious</a>」「<a href="http://www.instapaper.com/">Instapaper</a> 」「<a href="http://pinboard.in/">Pinboard</a> 」「<a href="http://www.diigo.com/">Diigo</a> 」があります。<br />
+このサービス一覧の中にDiigoが入っているのは個人的にすごく大きいですね！！</p>
+<h2>RSSリーダーとDiigoを結びつけてみる</h2>
+<p>と、ちょっと前置きが長くなりましたが。<br />
+RSSリーダーなどでfeedを読んでいて、後で読むためやSBMにポストしている人もいるでしょう。&nbsp;&nbsp;&nbsp;</p>
+<p>個人的には今Diigoを使っています。PCのブラウザでみているときはそれほど問題ではないのですが、iPhoneやiPadでfeedを読んでいるとき、DiigoにPostするのがどうしても手間だったのでどうにかならないか、と方法を模索していました。</p>
+<p>「Packrati.us」を使うことで一応Diigoにまとめるフローみたいなのができました。<br />
+ざっくりとした流れはこんな感じです。</p>
+<p><img src="http://linker.in/journal/images/110124-03.jpg" width="480" height="398" alt="110124-03.JPG" style="border:2px #7c7c7c solid;" /><br /></p>
+<p>（iPadできれいに書けなかったので、この辺は<a href="http://twitter.com/#!/taku_work">@taku-work</a>にいい方法を聞いてみたいところです。。。）</p>
+<p>RSSリーダーの使い方は様々だとおもいますが、個人的にはReederで読みながら後回しにしておくものや気になったものはStarをつけています。<br />
+Starをつけたものは<a href="http://mediastech.com/InstaReader/">InstaReader</a>を使ってInstapaperに取り込んでいます。ReederからInstapaperに直接Postすることもできるのですが、Reeder上ではStarをつける動作の方が楽なので、この方法をとっています。</p>
+<p>Instapaperに取り込むとUnreadのfeedがはき出されます。そのfeedをfeedburnerを経由してTwitterにpostしておきます。<br />
+ReederでStarをつけたものはGoogle ReaderでStarがついているので、Starのfeedをそのまま使うことが出来そうなのですが、なんかFeedburnerを介したのが原因なのかわかりませんが、うまくTwitterに流れていなかったのでInstapaperを経由させています。</p>
+<p>Instapaperを経由にしていると、Twitterでみかけたリンク類もInstapaperに投げておくことができるので、それも含めておくことができたりと一石二鳥だったりするかもしれません。</p>
+<p>その上でそのTwitterアカウントにpostされたものを<a href="http://packrati.us/">Packrati.us</a>を使って自分が使いたいサービスに放り込む事ができる様になります。<br />
+ここでDiigoを指定できるので、Diigoに流しています。<br />
+（ここでInstapaperとかを指定すると無限ループしそうなかんじですが、どうなんだろう。 ）</p>
+<p>個人的にReederからとりあえずDiigoに投げる、というのがうまいことできていなかったので、色々なサービスを経由しながらもDiigoにpost出来るこのサービス自体はすごく楽です。</p>
+<p>Starをつけておいたものは後で読むものかDiigoにPostしたいもののどちらかなので、後で読みたい場合はiPadやiPhoneであればReederのStarを選択すればよいでしょう。<br />
+PCのブラウザで読み直すのであればfeedlyの「Saved For Later」がそれにあたるので、それを読んでいけば良いですね。</p>
+<div class="mm-small" style="margin-bottom:0px;">
+  <div class="mm-image" style="float:left;">
+    <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844329103/mersys-22/ref=nosim" target="_blank"><img src="http://ecx.images-amazon.com/images/I/41l25TG9zhL._SL75_.jpg" alt="iPhone×iPad クリエイティブ仕事術 本当に知りたかった厳選アプリ＆クラウド連携テクニック" title="iPhone×iPad クリエイティブ仕事術 本当に知りたかった厳選アプリ＆クラウド連携テクニック" width="51" height="75" border="0" /></a>
+  </div>
+
+  <div class="mm-content" style="float:left;margin-left:10px;line-height:120%">
+    <div class="mm-title" style="line-height:120%">
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4844329103/mersys-22/ref=nosim" target="_blank">iPhone×iPad クリエイティブ仕事術 本当に知りたかった厳選アプリ＆クラウド連携テクニック</a>
+    </div>
+
+    <div class="mm-detail" style="margin-top:10px;">
+      倉園佳三 / インプレスジャパン ( 2010-08-23 )
+
+      <div style="margin:7px 0px">
+        <a href="http://mediamarker.net/u/mersy/?asin=4844329103" target="_blank">mersy's bookshelfで詳細を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear:left"></div>
+</div>
+<p>この本などでも紹介されているのですが、feedを読む前に読むモノか読まないモノかの選別をしてしまってから読む、という方法があります。GTDの収集と実行に近い感じといえば伝わる感じでしょうか。<br />
+Instapaperなどがそれ用のツールの例として紹介されているのですが、Instapaperの一覧からページを開く作業は若干手間だったのでReederのStarを使って絞り込むようにしてみました。</p>
+<p>ここまでする必要があるのかどうかなど根本的なところも改めて考えてみる必要はありますが、なにかの参考になれば幸いです。<br />
+個人的には他のサービスからの連携がまだあまりよくないと思っているDiigoとこういう形で連携出来たのがすごくよかったです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/engus_tryrs.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/spacesillustrator.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

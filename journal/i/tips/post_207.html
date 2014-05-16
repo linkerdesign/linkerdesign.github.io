@@ -1,0 +1,92 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>検索結果内にエントリーの著者情報を出すように設定だけしておいた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>検索結果内にエントリーの著者情報を出すように設定だけしておいた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;検索結果内にエントリーの著者情報を出すように設定だけしておいた</p>
+
+<p>みなさん、こんにちは、まーしーです<br />3連休はいかがお過ごしですか？次の連休はGWのようですね。</p>
+<p>さて、検索結果での上位表示について、</p>
+<blockquote>
+<p>Google会長エリック・シュミット、本人確認の取れた作成者のコンテンツをより上位に表示する | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/">http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/</a></p>
+</blockquote>
+<p>みたいな話もあるので、今更ですが設定しておこうとおもったのでテンプレートいじってみました。</p>
+<p>この辺の情報については<a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">ウェブマスターツールの方にもかいてありますね</a>。</p>
+<blockquote>
+<p>検索結果内の著者情報 - ウェブマスター ツール ヘルプ<br /><a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986</a></p>
+</blockquote>
+<p>とりあえずなにも設定していない状況で、<a href="http://www.google.com/webmasters/tools/richsnippets">テストツール</a>で試してみると</p>
+<blockquote>
+<p>Google Structured Data Testing Tool<br /><a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></p>
+</blockquote>
+<p>このような感じですね。</p>
+<p><img style="border: 2px solid #000;" title="130211-01.png" src="http://linker.in/journal//images/130211-01.png" alt="130211 01" width="599" height="430" /></p>
+<p>情報を入れていないので、こんな感じですね。<br />ということで、少し追加してみましょう。</p>
+<h2>HTMLにlinkを追加してGoogle+側でも設定を追加しておく</h2>
+<p>HTML側には</p>
+<pre>&lt;link rel="author" href="https://plus.google.com/112387447202401710035" /&gt;</pre>
+<p>みたいなかんじで、Google+のプロフィールページで確認出来るID（数字のところ）を入れておきましょう。<br />あわせて、Google+のプロフィールの設定に「Contributor to」みたいなところがあると思うので、そこにサイトのURLを追加しておきます。</p>
+<p>これを入れた状態で、再度テストツールにかけてみます。</p>
+<p><img style="border: 2px solid #000;" title="130211-02.png" src="http://linker.in/journal//images/130211-02.png" alt="130211 02" width="600" height="517" /></p>
+<p>このような感じで、画像などの著者情報が表示されましたね。</p>
+<p>linker journalのように複数人で記事を書いてる場合は&lt;$MTEntryAuthorUsername$&gt;で条件分岐して直接いれるとか、&lt;$MTEntryAuthorURL$&gt;にGoogle+のURLを入れるとかすることでもいいかもしれませんね。</p>
+<h2>Google+ページでも問題なさそう</h2>
+<p>@crema,@taku-workとそれぞれGoogle+のプロフィールページがある場合はいいですが、企業のブログの場合、名前まで出さないなどで、ない場合もありそうです。<br />ということで、Google+ページとかでもいけるかどうかためしてみました。</p>
+<p>linker.in のトップには特に指定してないので、何も表示されてないですね。</p>
+<p><img style="border: 2px solid #000;" title="130211-03.png" src="http://linker.in/journal//images/130211-03.png" alt="130211 03" width="600" height="430" /></p>
+<p>ということで、<a href="https://plus.google.com/u/0/115886449885491436878/posts">linker のGoogle+ページ</a>のiDを</p>
+<pre>&lt;link rel="author" href="https://plus.google.com/115886449885491436878" /&gt;</pre>
+<p>このような感じで入れてみて、再度テストツールにて見てみます。</p>
+<p><img style="border: 2px solid #000;" title="130211-04.png" src="http://linker.in/journal//images/130211-04.png" alt="130211 04" width="600" height="536" /></p>
+<p>ということで、表示が確認出来ますね。<br />Google+のページに飛んだところでそこまで活用していないのではありますが、、、、</p>
+<p>テストツールでは反映されてますが、実際の検索結果の方はすぐには反映されなさそうなので、気長に待ってみようと思います。</p>
+<p>ということで、ちょろっと試してみたメモでした。</p>
+<h2>参考リンク</h2>
+<ul>
+<li>検索結果内の著者情報 - ウェブマスター ツール ヘルプ<br /><a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986</a></li>
+<li>Google Structured Data Testing Tool<br /><a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></li>
+<li>Google会長エリック・シュミット、本人確認の取れた作成者のコンテンツをより上位に表示する | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/">http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/</a></li>
+<li>Googleの著者情報を乗せたページがより検索結果の上位に表示されるようになるらしい | Film Goes With Net ネット館<br /><a href="http://another.hotakasugi-jp.com/2013/02/09/rel-authorseo/">http://another.hotakasugi-jp.com/2013/02/09/rel-authorseo/</a></li>
+<li>rel="author" link要素で著者情報をGoogle検索結果に表示させる方法 〜 WordPressプラグインあり | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/rel-author-link-element-to-display-your-authorship/">http://www.suzukikenichi.com/blog/rel-author-link-element-to-display-your-authorship/</a></li>
+<li>自分が管理しないサイトでもコンテンツ著者情報をGoogle検索に表示させる方法 | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/how-to-display-authorship-by-using-rel-author-parameter/">http://www.suzukikenichi.com/blog/how-to-display-authorship-by-using-rel-author-parameter/</a></li>
+<li>個人ブロガーなら今すぐ設定したい、著者情報(Authorship)が遂に日本のGoogleでも導入開始 | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/authorship-available-in-google-japan/">http://www.suzukikenichi.com/blog/authorship-available-in-google-japan/</a></li>
+</ul>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/event/wdf-vol8.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_208.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

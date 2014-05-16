@@ -1,0 +1,167 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>dl,dt,ddでデザインを整える方法とか[追記 2009.04.21 12:15]｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>dl,dt,ddでデザインを整える方法とか[追記 2009.04.21 12:15]</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;dl,dt,ddでデザインを整える方法とか[追記 2009.04.21 12:15]</p>
+
+<p>みなさん、こんにちは！まーしーです。<br />
+先週末、また１つ歳をとってしまいました。<br />
+誕生日に食べるケーキは大好きです。</p>
+<p>今日は最近どうやってやろうかな？と考えてたもののマークアップについて書いてみようかな？と思います。<br />
+jQueryの勉強も兼ねてる感じです。<br />
+（注：mac firefoxのみで検証してます。）</p>
+<p><img src="http://linker.in/journal/images/090420-01.gif" width="400" height="200" alt="090420-01.gif" /></p>
+<p>まぁ、こんなデザインがあったとします。<br />
+これをどんなかんじでマークアップするか？というのもあるんですが、<br />
+とりあえずdl,dt,ddでマークアップする方法で考えてみたいとおもいます。<br />
+（左の見出し部分は垂直センターの方がよかったかもなぁ・・・）</p>
+<p>とりあえずhtmlは</p>
+<pre class="brush:xml">
+<dl>
+	<dt>あいうえお</dt>
+	<dd>あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお
+	</dd>
+	<dt>あいうえおあいうえお</dt>
+	<dd>あいうえおあいうえおあいうえおあいうえお</dd>
+	<dt>あいうえおあい</dt>
+	<dd>あいうえお</dd>
+</dl>
+</pre>
+<p>こんな感じになりますね。</p>
+<h2>全ての項目でdtの幅を揃える場合</h2>
+<p>いくつか方法があるかと思いますが、文字数で幅を指定すればこんな感じになりますかね。&nbsp;&nbsp;</p>
+<p>▼ css</p>
+<pre  class="brush:css">
+dl{
+	width:400px;
+}
+dt{
+	width:10em;
+	margin-bottom:0.5em;
+	float:left;
+}
+dd{
+	border-left:2px solid #376122;
+	padding-left:10px;
+	margin-left:11em;
+	margin-bottom:0.5em;
+}
+</pre>
+<p><a href="http://linker.in/journal/2009/04/20/090420-01.html">demo</a></p>
+<p>これはこれでありかも？とか思うのでＯＫかもしれないですね。<br />
+fontの種類、ブラウザによって若干emのサイズが違うのが気になってるところではあるんですが、<br />
+そのあたりも今後の課題ということで。</p>
+<p>幅をpxで揃えることも可能ですね。<br />
+その場合はdtの文字数が多い場合は改行されるだけですね。</p>
+<p>dtに入る文字数がある程度見えているけど、最大文字数に揃えたいと思ったので<br />
+jQueryとか使ってやってみると</p>
+<p>こんな感じで書けばいけそうな感じです。</p>
+<p>▼ css</p>
+<pre  class="brush:css">
+dl{
+	width:400px;
+}
+dt{
+	margin-bottom:0.5em;
+	float:left;
+}
+dd{
+	border-left:2px solid #376122;
+	padding-left:10px;
+	margin-bottom:0.5em;
+}
+</pre>
+<p>▼ javascript</p>
+<pre class="brush:js">
+$(document).ready(function() {
+    var max = 0;
+    $("dt").each(function(){
+        if ($(this).width() > max)
+            max = $(this).width();   
+    });
+    $("dt").width(max);
+		var margin = max + 10;
+		$("dd").css("margin-left",margin);
+});
+</pre>
+<p><a href="http://linker.in/journal/2009/04/20/090420-02.html">demo</a></p>
+<p>んでこれをベースに</p>
+<h2>見出しのサイズで揃える</h2>
+<p>こういうデザインだったらどうすりゃいいかなぁ？というのを考えてました</p>
+<p><img src="http://linker.in/journal/images/090420-02.gif" width="400" height="200" alt="090420-02.gif" /></p>
+<p>dtの横幅+αをddの左マージンに指定してあげればよいわけですね。</p>
+<p>とりあえずjQueryはこんなかんじでかいてみました。</p>
+<p>▼ javascript</p>
+<pre class="brush:js">
+$(document).ready(function() {
+	$("dt").each(function(){
+		var dtwidth = $(this).width();
+		$(this).css("width",dtwidth);
+		var ddmargin = $(this).width() + 10;
+		$(this).next().css("margin-left", ddmargin);
+	});
+});
+</pre>
+<p><a href="http://linker.in/journal/2009/04/20/090420-03.html">demo</a></p>
+<p>なんかもっとスマートにする方法があるような気がするんですが、わの現時点のスキルではこれが限界でした。<br />
+ふぅ・・・<br />
+dtの次の要素、ってのをどうやってやるんだろうな？？というのでかなり詰まりましたね。</p>
+<p>ここまでつくってから、dtの中身は垂直センタリングしたいな〜、と思ったので、<br />
+それはまた今度やりますか・・<br />
+なんとなく垂直センタリングってやりにくいよな〜、というのが個人的な感覚なんですが 、<br />
+みなさんどんなかんじでマークアップしてるんでしょうね。<br />
+気になるところです。</p>
+<p>参考リンク<br /></p>
+<ul>
+  <li>Justify elements using jQuery and CSS<br />
+  <a href="http://www.jankoatwarpspeed.com/post/2008/07/09/Justify-elements-using-jQuery-and-CSS.aspx">http://www.jankoatwarpspeed.com/post/2008/07/09/Justify-elements-using-jQuery-and-CSS.aspx</a>&nbsp;&nbsp;</li>
+</ul>
+<h2>追記 2009.04.21 12:15</h2>
+<p>ハムさんからコメントを頂いていますが、上記のcssだとIE6で微妙にずれます。<br />
+そのあたりについては</p>
+<blockquote>
+float関連の問題で覚えておくべき５つの対策 | THE HAM MEDIA<br />
+<a href="http://h2ham.seesaa.net/article/109568808.html">http://h2ham.seesaa.net/article/109568808.html</a>
+</blockquote>
+<p>を参考にしてみてください。<br />
+ハムさん、ご指摘ありがとうございます！！</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_22.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_23.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

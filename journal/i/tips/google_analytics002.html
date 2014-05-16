@@ -1,0 +1,75 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>【試行一週間レポ】「Google Analyticsで本当の直帰率を計測する方法」｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>【試行一週間レポ】「Google Analyticsで本当の直帰率を計測する方法」</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;【試行一週間レポ】「Google Analyticsで本当の直帰率を計測する方法」</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>本日は、ちょうど一週間前に試し始めた「<a href="http://www.suzukikenichi.com/blog/the-way-to-measure-real-bounce-rate-in-google-analytics/">Google Analyticsで本当の直帰率を計測する方法</a>」の簡単なレポートを書いてみますね。</p>
+
+<p>まだ一週間前の記事をお読みでない方は、こちらから。</p>
+
+<ul>
+	<li><a href="http://linker.in/journal/2010/03/google-analytics.php">「Google Analyticsで本当の直帰率を計測する方法」を試します。</a></li>
+</ul>
+
+<h2>本当の直帰率を計測し始めて、とりあえず50ポイント程度減少。</h2>
+
+<p>まずは単刀直入に、直帰率のグラフをお見せしましょう。</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="analytics.gif" src="http://linker.in/journal/images/analytics.gif" width="588" height="138" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>2010年3月9日に、トラッキングコードに手を加えたのですが、翌日からどーんと直帰率が減少しています。</p>
+
+<p>それまでの直帰率は、ずーーーーーーっと長い間、こわいほど平均77%近辺をキープしていました。</p>
+
+<p>トラッキングコードをいじって「10秒以上滞在せず、内部リンクを何もクリックしなかった（他のページを見なかった）」ユーザを計測し始めたところ、直帰率が22％から28％程度に下がり、とりあえず50ポイント程度減少していることが分かりました（上の図の薄い赤の部分）。</p>
+
+<p>これにより50％程度のユーザが11秒以上はページを閲覧してくれていたのだな、ということが類推出来るのかな、と。</p>
+
+<p>この「10秒」という数字が妥当かどうかは、今後色々調整してテストしていきたいとおもっています。11秒目にページを閉じているユーザさんがどのくらいいるかということも、分かりませんものね。</p>
+
+<p>加えて、この「本当の直帰率」そのものを減らす施策も必要ですし。</p>
+
+<p>Google Analyticsに関しては今後も色々試して、またご報告します。今日はここまで。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/mobile/iphone_5.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/iphonetips-100.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

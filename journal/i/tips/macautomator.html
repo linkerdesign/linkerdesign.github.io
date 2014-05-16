@@ -1,0 +1,82 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MacのAutomatorを使って選択したファイルのパスをコピーしたい。できればコンテキストメニューから。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MacのAutomatorを使って選択したファイルのパスをコピーしたい。できればコンテキストメニューから。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;MacのAutomatorを使って選択したファイルのパスをコピーしたい。できればコンテキストメニューから。</p>
+
+<p><img alt="100519_00.jpg" src="http://linker.in/journal/images/100519_00.jpg" width="640" height="195" class="mt-image-none" style="" /></p>
+<p>こんにちは、taku-workです。<br />
+最近やんごとなき事情によりグリーン車の乗ってその移動時間を使って作業したりするのですが、これがかなりはかどります。<br />
+お金を余計に払っているのと、制限時間があるおかげですかね。グリーン車開発、おすすめです。</p>
+<p>ということで、今回はMacのAutomatorを使ってファイルのパスを取得するお話。<br />
+macでファイルまでのパスをコピーしたい場合の参考になればと。</p>
+<p>まずは下記のサイトからAutomatorアクション「Get File Path Automator Action」をダウンロードします。</p>
+<blockquote>
+  <p>Get File Path Automator Action<br />
+  <a href="http://www5.wind.ne.jp/miko/mac_soft/automator_actions/pgs/GetFilePathAMA.html">http://www5.wind.ne.jp/miko/mac_soft/automator_actions/pgs/GetFilePathAMA.html</a></p>
+</blockquote>
+<p>この「Get File Path Automator Action」をAutomatorにインストールするとファイルパスを使うワークフローが作成できるようです。</p>
+<p>Automatorにインストールするにはアクションのファイルを起動するか、Automator上で[メニュー] → [ファイル] → [アクションを読み込む]でおこないます。</p>
+<p>インストールが完了するとAutomatorのライブラリのファイルとフォルダに「ファイルパスを取得」というアクションが表示されるようになります。</p>
+<p><img alt="100519_02.jpg" src="http://linker.in/journal/images/100519_02.jpg" width="400" height="387" class="mt-image-none" style="" /></p>
+<p>次に、Automatorのメニューから[ファイル] → [新規] で新規ワークフロー作成画面を開きます。<br />
+テンプレートは「サービス」を選択します。「サービス」を選ぶことでサービスメニューとしてワークフローを使用することができるようになります。これでコンテキストメニューに表示できるというわけです。</p>
+<p><img alt="100519_01.jpg" src="http://linker.in/journal/images/100519_01.jpg" width="400" height="253" class="mt-image-none" style="" /></p>
+<p>ヘッダ部分にある設定を</p>
+<blockquote><p>"サービス"は、次の選択項目を受け取ります：ファイルまたはフォルダ<br />
+検索対象：すべてのアプリケーション</p></blockquote>
+<p>としたら左カラムのライブラリからアクション「ファイルパスを取得」をドラックしてワークフローに追加します。<br />
+アクション「ファイルパスを取得」では短縮パスなどの指定もできるので便利です。</p>
+<p><img alt="100519_03.jpg" src="http://linker.in/journal/images/100519_03.jpg" width="400" height="235" class="mt-image-none" style="" /></p>
+<p>次にライブラリのユーティリティーにある「クリップボードにコピー」をドラッグしてワークフローの次の段に追加します。</p>
+<p><img alt="100519_04.jpg" src="http://linker.in/journal/images/100519_04.jpg" width="400" height="206" class="mt-image-none" style="" /></p>
+<p>あとは任意の名前を付けて保存するだけです。<br />
+ファイルやフォルダを選択した状態で右クリックのコンテキストメニューを開くと、サービスの項目に保存したワークフローが表示されます。<br />
+クリックすれば選択しているファイルやフォルダのパスがクリップボードにコピーされます。<br />
+これでファイルのパスを簡単にコピーすることができます。</p>
+<p>作成したワークフローの使用未使用の設定は[システム環境設定] → [キーボード] → [キーボードショートカット] → [サービス]内のチェックボックスで行えます。<br />
+また、ワークフローのファイル自体は[ユーザー] → [ライブラリ] → [Services] ディレクトリ内に保存されています。</p>
+<p>というわけで、<br />
+ファイルやディレクトリパスを誰かに伝えるときなどわざわざ手打ちしなくてすむので、とても便利です。<br />
+ファイルのパスの取得方法は他にもあるかもしれませんが、とりあえず、Automatorでの使い方でした。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/adobe_cs5morisawa_passport_one.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/git.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ソフトリンクあれこれ。シンボリックリンク、エイリアス、ショートカットとか。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ソフトリンクあれこれ。シンボリックリンク、エイリアス、ショートカットとか。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他&nbsp;&raquo;&nbsp;ソフトリンクあれこれ。シンボリックリンク、エイリアス、ショートカットとか。</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />3連休が終わってしまいましたね。なんか今年は連休が少ないみたいなので、貴重な連休でしたが。。。</p>
+<p>さて。<br />Macにはエイリアスという機能があってファイルやフォルダを別のところから参照（リンク）できますね。<br />Windowsだとショートカットとかが似ている機能でしょうか。<br />（ジャンクションというのもあるみたいですね。）</p>
+<p>個人的にシンボリックリンクとエイリアスを混同していたので、少し調べてみました。<br />調べるきっかけになったのはDropboxが /Dropbox/ 以下以外も共有する設定ができるという話のなかで、シンボリックリンクを張る話が出ていたことでした。<br />コマンドをうってシンボリックリンクを張っていたのですが、だったらエイリアスでいいんじゃないか？と思ったので試してみました。</p>
+<h2>Finder上のエイリアスとシンボリックリンク</h2>
+<p>Finder上でエイリアスを作成した状態とシンボリックリンクを張った状態でアイコンの見た目は全く同じです。<br />それぞれの情報を見てみるとこのような感じでした。</p>
+<p><img title="120917-01.png" src="http://linker.in/journal//images/120917-01.png" alt="120917 01" width="456" height="470" border="0" /></p>
+<p>左がエイリアス、右がシンボリックリンクです。<br />ほとんど同じで違うのは容量とか少し違いますね。<br />シンボリックリンクも種類としてはエイリアスになっていますね・・・</p>
+<p>ぱっと見は同じですが、Dropboxの管理下には入りませんでした。<br />ということで、次はWeb上のDropboxから見てみました。</p>
+<h2>Web上のDropboxでの違い</h2>
+<p><img title="120917-02.png" src="http://linker.in/journal//images/120917-02.png" alt="120917 02" width="599" height="183" border="0" /></p>
+<p>エイリアスは単なるファイルとしてしか認識されていませんね。<br />シンボリックリンクの方はフォルダとして認識されていました。</p>
+<p>この違いがあるので、シンボリックリンクを張ればDropboxの管理下におけるんですね。<br />エイリアスがMac OS独自の機能であるということをわかってれば、Dropboxのファイルとかがそうなってないのは想像できそうなもんでした。</p>
+<p>シンボリックリンクはUNIXで、エイリアスはMac OSの機能でシンボリックリンクの機能に加えて、元ファイルの移動も追えるというところが違います。</p>
+<p>そもそも、エイリアスをWindowsのショートカットと同じ機能だと認識していて、元を移動したらリンクは切れるもんだと思っていたのですが、切れないんものだということが新たな発見でした。</p>
+<p>Windowsのショートカットがシンボリックと同じ感じで、単純に参照している状態に近く、Macのエイリアスは参照もしているうえに元ファイルが移動したりしてもリンクが切れません。</p>
+<p>Windowsのショートカットにエイリアスのような機能がついたのがジャンクションのようです。<br />ジャンクションは試したことがないのであってるかどうかも怪しいですが。<br />Windows、Mac OS、UNIXと似た感じでもファイルシステムとかが微妙に違うところがある感じがこの違いの原因のようでした。</p>
+<p>些細なことでも知らないことは調べてみるとおもしろいですね。</p>
+<h2>参考リンク</h2>
+<ul>
+<li>ソフトリンク - Wikipedia<br /><a href="http://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%95%E3%83%88%E3%83%AA%E3%83%B3%E3%82%AF">http://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%95%E3%83%88%E3%83%AA%E3%83%B3%E3%82%AF</a></li>
+<li>MacWiki - UNIXの基本コマンド<br /><a href="http://macwiki.sourceforge.jp/wiki/index.php/UNIX%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89#ln_.E2.80.A6.E3.83.AA.E3.83.B3.E3.82.AF.E3.82.92.E4.BD.9C.E6.88.90.E3.81.99.E3.82.8B">http://macwiki.sourceforge.jp/wiki/index.php/UNIX%E3%81%AE%E5%9F%BA%E6%9C%AC%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89#ln_.E2.80.A6.E3.83.AA.E3.83.B3.E3.82.AF.E3.82.92.E4.BD.9C.E6.88.90.E3.81.99.E3.82.8B</a></li>
+<li>ファイルシステムの概要<br /><a href="http://potting.syuriken.jp/potting_conv/BPFileSystem_J/Aliases.html">http://potting.syuriken.jp/potting_conv/BPFileSystem_J/Aliases.html</a></li>
+<li>エイリアスとシンボリックリンク: ひまつぶしろぐ<br /><a href="http://tomneko.cocolog-nifty.com/blog/2004/01/post_2.html">http://tomneko.cocolog-nifty.com/blog/2004/01/post_2.html</a></li>
+<li>iPhoneのバックアップエラーで思い出したシンボリックリンクとエイリアスの違い - fatmount's story<br /><a href="http://blog.livedoor.jp/aohyama/archives/1656138.html">http://blog.livedoor.jp/aohyama/archives/1656138.html</a></li>
+</ul>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/newyork-snap.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/css3macgradient.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

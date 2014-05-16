@@ -1,0 +1,149 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ローカルのMTにDynamic MTMLをインストールして動かしてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ローカルのMTにDynamic MTMLをインストールして動かしてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;ローカルのMTにDynamic MTMLをインストールして動かしてみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+ロンドンの暴動はだいぶ落ち着いたようですが、他の街に広がってイギリスの暴動になっているみたいです。<br />
+理解に苦しむところもありますが、まずは1日も早く収まってほしいと祈るのみです。</p>
+<p>さて、何回かここでもさらっと<a href="http://www.powercms.jp/">PowerCMS</a>の話は書いた気がしますが、その機能のひとつに Dynamic MTMLがあります。<br />
+静的に生成されるHTMLなどの一部にMTタグを出力しておいてアクセスの度にその内容を構築するといったかんじの機能です。</p>
+<p>このDynamic MTML自体はGithubでも公開されています。</p>
+<blockquote>
+  <p>alfasado/DynamicMTML - GitHub<br />
+  <a href="https://github.com/alfasado/DynamicMTML">https://github.com/alfasado/DynamicMTML</a></p>
+</blockquote>
+<p>こちらをダウンロードしてローカルのMTにインストールしてみました。</p>
+<h2>Dynamic MTMLをインストール</h2>
+<p>インストール方法はダウンロードしたファイルのaddonsフォルダにはいっているDynamicMTML.packフォルダをMTをインストールしたフォルダ直下にあるaddonsフォルダにコピーすれば完了です。</p>
+<p>あとはドキュメントにあるように設定画面で「DynamicMTMLを有効にする」にチェックをいれます。</p>
+<p>ドキュメントには</p>
+<blockquote>
+  <p>ブログのサイト・パス直下に.htaccess, .mtview.phpを生成します。 mtディレクトリ直下にpowercms_filesディレクトリを作成し、MTから書き込み可能なパーミッションを設定してください。</p>
+</blockquote>
+<p>と書いてあるのですが、有効にするチェックをいれたらこれらは出来ていました。<br />
+.htaccessも生成されるので、もともと.htaccessを用意してある場合などは注意が必要です。</p>
+<p>ということでここまでいったらインストールも基本設定も完了。<br />
+早速 Dynamic MTML を試してみます。</p>
+<h2>Dynamic MTMLを試してみる</h2>
+<p>Githubで公開されているドキュメントに「権限があるときには編集タグを表示させる」サンプルコードがあるのでこれを試してみましょう。<br />
+ソースはこんなかんじです。</p>
+<pre>
+&lt;mt:dynamicmtml&gt;
+&lt;mt:IfUserHasPermission permission="edit_all_posts"&gt;
+    &lt;$mt:setvar name="can_post" value="1"$&gt;
+&lt;mt:Else&gt;
+    &lt;mt:IfUserHasPermission permission="publish_post"&gt;
+        &lt;$mt:entryAuthorId setvar="entry_author_id"$&gt;
+        &lt;$mt:AuthorId setvar="client_author_id"$&gt;
+        &lt;mt:if name="entry_author_id" eq="client_author_id"&gt;
+           &lt;$mt:setvar name="can_post" value="1"$&gt; 
+        &lt;/mt:if&gt;
+    &lt;/mt:IfUserHasPermission&gt;
+&lt;/mt:Else&gt;
+&lt;/mt:IfUserHasPermission&gt;
+&lt;mt:if name="can_post"&gt;
+    &lt;p&gt;
+        &lt;a href="&lt;$mt:CGIPath$&gt;&lt;$mt:AdminScript$&gt;?__mode=view&amp;amp;_type=entry&amp;amp;id=&lt;$mt:entryid$&gt;&amp;amp;blog_id=&lt;$mt:blogid$&gt;"&gt;編集
+        &lt;/a&gt;
+    &lt;/p&gt;
+&lt;/mt:if&gt;
+&lt;/mt:dynamicmtml&gt;
+</pre>
+<p>権限の判定はどうやっているのかちょっとわからないのですが、インデックステンプレートに書いたからか書き方がまずかったのか権限があるときと権限がないときでかわらなかったので、ログインしているかどうか感じで書き換えてみました。<br />
+（多分、これも後述するMTentriesの中に書いたのが原因かもしれません）</p>
+<p>インデックステンプレートのMTEntriesのループ内に上記のコードを埋め込んでいますが、htmlに出力されている時はコンテキストがないかと思うので、Blogidなどは置き換わるのですがEntryidが置き換わりませんでした。<br />
+これをどうやってやるのがいいんだろうとか考えていて変数で渡す方法にしてみました。</p>
+<p>MTMLタグのtagパラメータに生成したファイルに表示させたいMTタグを指定して、paramsでそのときにあわせて使うモディファイア類を指定出来ます。（日本語が分かりにくいですね・・）<br />
+ということでこんなかんじで、変数にセットするところとかを書いておきました。</p>
+<pre>
+&lt;MTML tag="MTSetVarBlock" params='name="editlinkurl"'&gt;&lt;$mt:CGIPath$&gt;&lt;$mt:AdminScript$&gt;?__mode=view&amp;amp;_type=entry&amp;amp;id=&lt;$mt:entryid$&gt;&amp;amp;blog_id=&lt;$mt:blogid$&gt;&lt;MTML tag="/MTSetVarBlock"&gt;
+</pre>
+<p>これらの修正をいれてDynamic MTMLに関するところはこのような感じになりました。</p>
+<pre>
+&lt;MTML tag="MTSetVarBlock" params='name="editlinkurl"'&gt;&lt;$mt:CGIPath$&gt;&lt;$mt:AdminScript$&gt;?__mode=view&amp;amp;_type=entry&amp;amp;id=&lt;$mt:entryid$&gt;&amp;amp;blog_id=&lt;$mt:blogid$&gt;&lt;MTML tag="/MTSetVarBlock"&gt;
+&lt;mt:dynamicmtml&gt;
+&lt;mt:IfLogin&gt;
+    &lt;$mt:setvar name="can_post" value="1"$&gt;
+&lt;/mt:IfLogin&gt;
+&lt;mt:if name="can_post"&gt;
+    &lt;p&gt;
+        &lt;a href="&lt;$MTGetVar name='editlinkurl'$&gt;"&gt;編集&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/mt:if&gt;
+&lt;/mt:dynamicmtml&gt;
+</pre>
+<p>ここから生成されたHTMLはこのような感じになっています。</p>
+<pre>
+&lt;MTSetVarBlock name="editlinkurl"&gt;http://local.mttest/mt/mt.cgi?__mode=view&amp;amp;_type=entry&amp;amp;id=1517&amp;amp;blog_id=2&lt;/MTSetVarBlock&gt;
+&lt;MTDynamicMTML&gt;
+&lt;mt:IfLogin&gt;
+    &lt;$mt:setvar name="can_post" value="1"$&gt;
+&lt;/mt:IfLogin&gt;
+&lt;mt:if name="can_post"&gt;
+    &lt;p&gt;
+        &lt;a href="&lt;$MTGetVar name='editlinkurl'$&gt;"&gt;編集&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/mt:if&gt;
+&lt;/MTDynamicMTML&gt;
+</pre>
+<p>MTタグが表示されている状態になっていますが、このHTMLにアクセスしたときにMT部分が書き出されます。</p>
+<p>静的なHTMLファイルにアクセスしていますが、ログインしている時はこのようなかんじで編集画面へのリンクが表示されています。</p>
+<p><img src="http://linker.in/journal/images/110811-01.jpg" width="425" height="236" alt="110811-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ログインしていないときは当然このようなかんじでリンクが表示されていません。</p>
+<p><img src="http://linker.in/journal/images/110811-02.jpg" width="425" height="246" alt="110811-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>MTViewでの判定を挟んでいるので、状況に応じて表示が切り替わっていますね。</p>
+<h2>ということで</h2>
+<p>Githubに載っているDynamic MTMLのドキュメントをみただけでもかなり設定出来る内容がありそうです。<br />
+MTタグやphpとの関係でのオプションやDynamic MTML自体を拡張？する話等々があるみたいです。</p>
+<p>全てを使いこなすのはなかなか大変そうですが、Dynamic MTMLを使う事でかなり出来る事が増えそうな気もします。</p>
+<p>MTのダイナミックパブリッシングでできそうなこともかなりありそうな気がしていますが、このDynamic MTMLも使っていきたいと思います。<br />
+Githubにて公開されているので一度使ってみてはいかがでしょう。</p>
+<hr />
+<h2>インストール時にはまったメモ</h2>
+<p>大したことじゃないですが、インストールしたときに一人はまったメモも。</p>
+<p>addonsフォルダにDynamicMTML.packフォルダをもっていってさて、設定にチェック入れようかとおもったら、不正な操作です的に怒られてしまってローカルの設定の問題なのかなのか、とか色々調べたりしてみるもよく分からず。<br />
+mt.cgiにアクセスしなおしたらDBのアップグレードが走って無事解決、というかんじでした。</p>
+<p>DBのアップグレードがあるときは大体リダイレクトされていたような気がするのですが、この時はされなかったので、ローカルの設定か何かがちょっと間違ってるのかもしれないですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/2011_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/n700bb.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

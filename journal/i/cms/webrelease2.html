@@ -1,0 +1,138 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>WebRelease2をさわってきました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>WebRelease2をさわってきました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;WebRelease2をさわってきました</p>
+
+<p><br />
+<img src="http://linker.in/journal/images/090223.gif" width="640" height="250" alt="090223.gif" /></p>
+<p>こんにちは。<br />
+どたばた会議に参加できなかったまーしーです。<br />
+このかりはいつかのこんぶだしミーティングでお願いします。。 。。</p>
+<h2>WebRelease2のセミナーに参加してきました</h2>
+<p>少し間が開いてしまいましたが2/12,13に開催されたロフトワークさん主催の</p>
+<blockquote>
+  <p>ロフトワーク　CMSテンプレートコーディングハンズオンセミナー | 株式会社ロフトワーク<br />
+  <a href="http://www.loftwork.jp/seminar/2009/20090213WR.html">http://www.loftwork.jp/seminar/2009/20090213WR.html</a></p>
+</blockquote>
+<p>に参加してきました。</p>
+<blockquote>
+  <p>CMS （コンテンツマネジメントシステム） WebRelease 2<br />
+  <a href="http://www.frameworks.co.jp/">http://www.frameworks.co.jp/</a></p>
+</blockquote>
+<p>WebRelease2はこの規模では費用対効果も高く導入実績もかなりあるようです。<br />
+名前は知ってましたが、まったくさわったことはありませんでした。<br /></p>
+<p>今までいくつかCMSはさわったりしてましたが、WebRelease2はなかなか障壁が高かったので（主に金額面。500ページまで50万）、今回は凄く楽しみなセミナーでした。<br />
+参加するまでどういう形態なのかもあまり頭に入っていなかったので、参加して実際にさわってみての感想を。<br />
+（WebReleaseは完全にパッケージ納品です）</p>
+<h2>CMSの携わり方がMovableType、WordPressとかとは違う</h2>
+<p>まず、今まで自分がしてきた仕事の規模では導入は難しいかな、というのが率直な感想です。<br />
+このCMSを使った仕事はCMSへの埋め込みのみを外注として請ける、という形になりそうな感じがしました。<br />
+（実際にロフトワークさんからの仕事もそういう形が多いらしいのですが）<br />
+デザイン〜コーディング、埋め込みというところの癖もあるかもしれないので、そのあたりはある程度経験しないとまずそうなかんじです。</p>
+<p>たしかにMTやWPを使うにしても、しっかり安全なものをつくるにはサーバー周りの知識など、必要な知識、環境はあるかもしれないのですが、<br />
+それ以上かな、という感覚でした。</p>
+<p>WebRelease2のライセンス料が自分の感覚では高いというのもありますが、それを使うための環境もやはり安くはないですし、運用のためのスキルも今の自分では手に負えないレベルなんだな、というのを感じました。<br />
+ラックを借りてどうこうするとか、というのはそれ担当の方にアサインしてもらうとしても、それだけの予算があることが大前提だなぁ、と言うのがあります。<br />
+（他には、WebRelease2がインストールされたＰＣを納入という方法もあるようです）</p>
+<p>個人的にはCMSを利用するなら</p>
+<blockquote>
+  <p>Power CMS for MT Professional (ホームページ制作会社 アルファサード - アクセシビリティ, ユニバーサルデザイン, ブログ・CMS, モバイル)<br />
+  <a href="http://alfasado.net/contents/power_cms/index_pro.html">http://alfasado.net/contents/power_cms/index_pro.html</a></p>
+</blockquote>
+<p>という選択もアリなのかなぁと思っているところなので、仕事でつかうツールとしてはPower CMSもなんかの機会で使ってみてからの判断になるのかな?と思います。すぐ使うとすればPoweCMSの方が導入は容易そうな気がしました。<br />
+（あくまでどちらも仕事として使ったことがないという前提での話になってしまいますが）</p>
+<h2>実際のテンプレートカスタマイズ感</h2>
+<p>カスタマイズ方法としては、大体ＭＴと同じような感じで、特定のタグを入れていけば、情報が表示されるっていう感じです。</p>
+<p>ＭＴだと標準でタイトルとか本文とかの欄がありますが、WebRelease２は全てがカスタムフィールドみたいなもんで、フィールドを追加して、名前つけていって入力用のテンプレートをまず作成というところからスタートです。<br />
+これは手間がかかりますが、柔軟性はあると思いますね。<br />
+あらかじめテンプレートセットみたいなモノを使っておけば流用も可能とのことでした。</p>
+<p>入力フォーム的なものを作った後で、そのテンプレートの値を表示させるように埋め込んでいきます。<br />
+他のテンプレートにあるモノはドットでつないでいってアクセスする様な感じでした。</p>
+<p>cssとかも基本的には管理画面から１枚のテンプレートとして登録しておいて、そのテンプレートをベースに１ページを作成する、というながれでした。<br />
+そのcssも共通テンプレートからリンクをした上でそれぞれのファイルからリンクするみたいなかんじで、若干独特のルールがある感じでした。<br />
+ここを理解するまでかなりワケわからなくなってましたが、現時点で既に忘れてしまってる感があるので、かなりあやふやです。<br />
+こういう時にすぐさわれない、というのが少し参入障壁ですね。</p>
+<p>●なんとなくいいな〜と思ったところ<br /></p>
+<ul>
+  <li>標準で公開サーバーとＣＭＳサーバーが分かれている
+
+    <ul>
+      <li><span style="font-family: Arial; font-size: 13px;">可用性が高い（万が一CMSサーバーがとまっても）</span></li>
+    </ul>
+  </li>
+
+  <li><span style="font-family: Arial; font-size: 13px;">セキュリティが高い</span></li>
+
+  <li><span style="font-family: Arial; font-size: 13px;">csvアップロードでページ作成<br /></span></li>
+</ul>
+<p>×なんとなく気になったところ</p>
+<ul>
+  <li>コストとサーバー要件の高さ。</li>
+
+  <li>モジュールがつくれない<br />
+  なんとなくMT的発想ですが、全てテンプレートを作らないといけない。<br />
+  共通部分の修正は全テンプレートを行うらしい。（もしかしたら効率的にやる方法はあるかも）</li>
+</ul>
+<p>△良いとも悪いとも言えないけど気になったところ</p>
+<ul>
+  <li>管理画面のカスタマイズはできない</li>
+</ul>
+<p>静的生成であるということから</p>
+<ul>
+  <li><span style="font-family: Arial; font-size: 13px;">SEOの効果が高い</span></li>
+
+  <li><span style="font-family: Arial; font-size: 13px;">アクセス解析が容易</span></li>
+
+  <li><span style="font-family: Arial; font-size: 13px;">公開サーバの負荷が軽い</span></li>
+</ul>
+<h2>もうすこし時間をとっていじってみたいところです</h2>
+<p>今回のセミナーは3時間×2日ということで、時間がかなり足りない感じでした。<br />
+テンプレートをつくって、それをベースにページを作成。<br />
+というところまではできたのですが、それらのアーカイブなどはほとんど作り込む時間が無かった感じです。<br />
+このあたりをどういう感じで実装していくのかをもう少ししらないと、どれだけ使いやすいのかとかも見えてこない気がします。</p>
+<p>そういう意味では、先に書いた良いと思われるところ、なんとなく引っかかるところ、判断しかねるところ、というのを決めるのははやすぎるのかもしれないのですが、できればまたさわる機会を得ていじってみたいCMSだな、とは思います。</p>
+<p>最近は気になるCMSが多いですね。<br />
+最適なツールを提示できるようにこちらもしっかり勉強しないといけませんね〜。</p>
+<p>次回のセミナーが今から楽しみです。<br /></p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/linker_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_7.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

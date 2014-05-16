@@ -1,0 +1,101 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GithubのCommit通知をlingr、メール、Boxcarで受け取る｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GithubのCommit通知をlingr、メール、Boxcarで受け取る</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;GithubのCommit通知をlingr、メール、Boxcarで受け取る</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+英会話のイディオムを習うのですが、スッと頭に入ってこないのがもどかしい日々です。</p>
+<p>さて、仕事で<a href="https://github.com/">Github</a>をつかいますがCommitとかあった時に通知が来るといいなぁ、と思ったので方法を調べてみました。</p>
+<p>Git関係の話だと、最近は<a href="http://fjord.jp/">FJORDさん</a>の取り組みを色々見ることが多いのではないかと思います。</p>
+<blockquote>
+  <p>FJORD, LLC（合同会社フィヨルド）<br />
+  <a href="http://fjord.jp/">http://fjord.jp/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>lingrにCommit通知などを流している、というのを見たことがあったので、いいな〜とおもったのでまずはそれを調べてみました</p>
+<h2>lingrでCommit通知を受け取る</h2>
+<p>調べてみたらあまりにも簡単に設定ができてびっくりでした。<br />
+細かい方法は下記の記事を参考にすれば良いと思います。</p>
+<blockquote>
+  <p>github service hooks on lingr | Under Construction Always!<br />
+  <a href="http://blog.netblue.jp/2011/02/25/github-service-hooks-on-lingr/">http://blog.netblue.jp/2011/02/25/github-service-hooks-on-lingr/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>チャットにbotを追加するだけといってもいいくらいです。</p>
+<p>lingrを日常的に使っていればいいのですが、現状はそうではないので、何かしら更新があった際に別ルートで通知がほしいところです。</p>
+<p>なので、<a href="http://radar.lingr.com/">Lingr Radar for Mac</a>をインストールして、Growlで通知を受け取ってみるようにしてみるのがいいでしょう。</p>
+<blockquote>
+  <p>Lingr Tools<br />
+  <a href="http://radar.lingr.com/">http://radar.lingr.com/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>Growlの通知だけだと見落としたら、とか色々あるかもしれませんが、そこは今後の課題の1つになりそうです。</p>
+<h2>メールでCommit通知を受け取る</h2>
+<p>Githubの設定ではメールでも受け取れるようです</p>
+<p>リポジトリの設定、adminの設定にあるService HooksにEmailがあります。</p>
+<p><img src="http://linker.in/journal/images/110915-01.jpg" width="454" height="443" alt="110915-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>送り先は1つみたいですが、案件ごとなどにMLがあったりする場合はこれもよさそうです。</p>
+<h2>BoxcarでCommit通知を受け取る</h2>
+<p>通知といえば、<a href="http://boxcar.io/">Boxcar</a>が思い浮かぶ方もいるのではないでしょうか？</p>
+<p><img src="http://linker.in/journal/images/110915-02.jpg" width="580" height="411" alt="110915-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ということで、Boxcarの設定もしてみました。<br />
+Boxcar側でGithubをサービス追加しておきます。</p>
+<p>Github側はadminの設定で指定します。</p>
+<p><img src="http://linker.in/journal/images/110915-03.jpg" width="449" height="382" alt="110915-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでBoxcarに通知がとんできます。<br />
+Boxcarの<a href="http://boxcar.io/download">iPhoneアプリ</a>はBoxcarのサイトから落とせます。</p>
+<blockquote>
+  <p>Download Boxcar ? Boxcar<br />
+  <a href="http://boxcar.io/download">http://boxcar.io/download</a></p>
+</blockquote>
+<p>mac用もβですがあるようです。</p>
+<blockquote>
+  <p>Download Boxcar ? Boxcar<br />
+  <a href="http://boxcar.io/download_mac">http://boxcar.io/download_mac</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>入れてみましたが、自動で更新されないのかちょっと望んだ感じにはなっていません。<br />
+まぁ、iPhoneはほぼ確実に手元にあるのでiPhoneアプリでもいいかな、と思いますね。</p>
+<p>BoxcarについてはiPhoneとmacとで設定を変えられたりするといいな、と思いました。</p>
+<h2>ということで</h2>
+<p>Githubを使った場合の通知の方法をまとめてみました。<br />
+自分でGitを使える様にたてると、このあたりの通知の方法とかは難しいのかもしれないですね。</p>
+<p>Github、Gitをもっともっと使いこなしていきたいところです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/web_10.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/min-biz.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

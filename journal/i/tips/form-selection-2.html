@@ -1,0 +1,190 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ブログ記事に貼るアンケートフォームを探しています（その2）｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ブログ記事に貼るアンケートフォームを探しています（その2）</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;ブログ記事に貼るアンケートフォームを探しています（その2）</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p><a href="http://linker.in/journal/2010/04/form-selection.php">前回</a>に引き続き、アンケートフォームについて考察をしていきます。</p>
+
+<p>今回は、実際にそれぞれのアンケートシステムをここに貼付け、見本帳としてみたいと思います。少々ページの読み込みが遅くなりそうですが、お許しください。</p>
+
+<p>今回比較してみるのは、この6種類のサービス。</p>
+
+<ul>
+	<li>PollDaddy</li>
+	<li>FC2投票</li>
+	<li>どうなのねっと</li>
+	<li>Googleドキュメントのフォーム＋スプレッドシート</li>
+	<li>忍者アンケートフォーム</li>
+	<li>フォームメーラー</li>
+</ul>
+
+<p>フォームに欲しい機能一覧は、こんな感じです（再掲）。</p>
+
+<ul>
+	<li>１）複数の選択肢を設定でき、ラジオボタンやチェックボックスで回答できる＋自由に投稿できるコメント欄が必要。</li>
+	<li>２）管理者ではなく回答者が、必要な選択肢がない場合項目を増やすことが可能。</li>
+	<li>３）アンケートの結果を、管理者だけでなく誰でも閲覧できること。選択肢を使った回答は、グラフなどで表示されるものが望ましい。</li>
+	<li>４）広告や企業ロゴがなるべく出ないこと。</li>
+	<li>５）できれば無料もしくは低価格の方が望ましいが、有料でも良いものがあれば、教えていただければ。</li>
+
+<p>	<li>６）日本のサービスでも海外のサービスでも構いません。</li><br />
+	<li>様々な事情で自分のサーバに設置するのが困難なので、できればレンタルの方が望ましいと思っています。</li><br />
+</ul></p>
+
+<h2>PollDaddy</h2>
+
+<p>無料版／年に200ドル版／年に899ドル版の3種類が用意されている、「<a href="http://polldaddy.com/">PollDaddy</a>」。「Poll（投票）」と「Survey（調査）」の2種類のフォームが用意されています。</p>
+
+<p>「Poll（投票）」の方は、1つの質問のみ。「Survey（調査）」の方は、複数の質問を含めることができます。</p>
+
+<p>私が使っている無料版では「Survey（調査）への回答が月に100まで」「ひとつのSurvey（調査）には10個の質問まで」などの制限があります。年に200ドル版では「Survey（調査）への回答が月に1000まで」に増え、年に899ドル版では回答数無制限となります。無料版では、PollDaddyへのリンクが下部に表示されることにも一応言及しておきます（個人的には、ほとんど気になりませんけども）。</p>
+
+<p>「Poll（投票）」のサンプルは以下に。自分の答えたい選択肢がない人向けに、自由記述欄があるのが良いですね。と思ったのですが、どんな記述をしても「Other」というグラフにまとめられてしまうのが残念。管理者ページからは、その他の回答で何があったのかを閲覧できるのですが......。</p>
+
+<p>「View Results」をクリックすると、横向きの棒グラフで答えを集計してみせてくれます。全体的には、かなり素敵な動作なのですが、無料版では自由コメント欄が作成できないのが残念です。（もしかすると年に200ドル版以上でしたら、できるかも？）</p>
+
+<p><script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/3118130.js"></script><br />
+<noscript><br />
+	<a href="http://answers.polldaddy.com/poll/3118130/">あなたの好きな果物は？</a><span style="font-size:9px;"><a href="http://polldaddy.com/features-surveys/">online survey</a></span><br />
+</noscript></p>
+
+<p>「Survey（調査）」のサンプルも作ってみました。こちらは、リンクをクリックした後に、モーダルウィンドウで回答ができるタイプしか作れない気がします（おそらく）。また無料版では、回答を一般に公開できない模様です（年に200ドル版以上では「Share Your Survey Results」という記述があるので、恐らくできそう）。</p>
+
+<p><script type="text/javascript">var PDF_surveyID = "143755A56F74F7D2";var PDF_openText = "「Survey（調査）」のサンプルを見る。";</script><br />
+<script type="text/javascript" src="http://polldaddy.com/s.js"></script><br />
+<noscript><a href="http://surveys.polldaddy.com/s/143755A56F74F7D2/">View Survey</a></noscript></p>
+
+<h2>FC2投票</h2>
+
+<p>ブログをはじめとする様々なWebサービスを展開している「FC2」さんの無料投票レンタルサービスが、「<a href="http://vote1.fc2.com/" target="_blank">FC2投票</a>」。アカウントを作成する際のパスワードチェックが、かなり念入りなのが印象的でした（余談）。</p>
+
+<p>選択肢がない時に回答者が足せる機能がついています。これは、作成者がアンケートを作成する際、「選択肢の追加：最大xx件まで許可する 」という記入欄で設定します（選択肢の追加は上限50）。コメントの投稿ができるのも、求めている機能なので嬉しいです。</p>
+
+<p>タイトルと下部に広告っぽいのが表示されるのは、無料だから仕方ありませんね。デザインは、PollDaddyに比べると、うむむ......、という感じでしょうか。「投票結果」をクリックするとFC2投票のサイトにジャンプしてしまうので、注意が必要です。</p>
+
+<p>というわけで、サンプルを1つ設置しておきます。</p>
+
+<p> <!-- PC 用投票フォーム No.1 --><br />
+<SCRIPT type="text/javascript" charset="shift_jis" src="http://vote1.fc2.com/poll.php?uid=7035138&amp;mode=js&amp;no=1"></SCRIPT><br />
+<NOSCRIPT><br />
+<a href="http://vote1.fc2.com/" target="_blank">FC2投票</a><br />
+</NOSCRIPT><br />
+<div style="text-align:center;"><br />
+<a href="http://analysis.fc2.com" target="_blank">無料</a><a href="http://analysis.fc2.com" target="_blank">アクセス解析</a><br />
+</div><br />
+<!-- PC 用投票フォーム No.1 END --> </p>
+
+<h2>どうなのねっと</h2>
+
+<p><a href="http://q.hatena.ne.jp/1271697390#a1010063">「人力検索はてな」への質問</a>で教えていただいた、私が全く初めて触るサービスが「<a href="http://www.dounano.net/">どうなのねっと</a>」です。</p>
+
+<p>このサービスも、適切な選択肢がない時に回答者が増やすことが可能です。ここまで３つのサービスを検証してみて、前回の記事で、「特に2番目の条件（回答者が選択肢を増やす）に当てはまるものがほとんど無い」と書いたのは、間違いだったようです（反省）。</p>
+
+<p>さらに、自由コメント入力欄があるのも、良いポイント。周りを囲む罫線や余白・背景色などはアンケート作成時にカスタマイズ可能なので、かなり自分のブログのデザインに合わせることができそうです。</p>
+
+<p>やはり惜しむらくは、「結果を見る」をクリックすると、「どうなのねっと」さんのページに飛んでしまうことでしょうか......。まぁ、無料でお借りしているので、仕方がないのですが。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://www.dounano.net/answer/form.php?url=4fQRH1444&amp;c=UTF-8&amp;w=500&amp;ch=FFFFFF&amp;cs=10-10&amp;cb=1&amp;cbt=dotted&amp;cbc=000000&amp;ph=FFFFFF&amp;ps=10-10&amp;pb=1&amp;pbt=none&amp;pbc=000000&amp;pf=15&amp;pfw=bold&amp;pfc=000000&amp;qh=FFFFFF&amp;qs=10-10&amp;qb=1&amp;qbt=dotted&amp;qbc=000000&amp;qf=15&amp;qfw=normal&amp;qfc=000000&amp;ah=FFFFFF&amp;ab=1&amp;abt=none&amp;abc=000000&amp;asn=1&amp;af=12&amp;afw=normal&amp;afc=000000&amp;vh=FFFFFF&amp;vs=10-10&amp;vb=1&amp;vbt=dashed&amp;vbc=000000&amp;vf=13&amp;vfc=000000&amp;vsw=100&amp;vp=left&amp;vt=b&amp;cm=on&amp;cmh=FFFFFF&amp;cms=10-10&amp;cmb=1&amp;cmbt=dashed&amp;cmbc=000000&amp;cmf=13&amp;cmfc=000000&amp;bs=150&amp;bf=15&amp;bp=center&amp;rf=13&amp;rfc=000000&amp;r=center"></script><p  style="width:500px;margin:5px auto 0;text-align:right;"><a href="http://www.dounano.net" target="_blank" style="font-size:11px;">無料アンケートサイトどうなの.ねっと</a></p></p>
+
+<h2>Googleドキュメントのフォーム＋スプレッドシート</h2>
+
+<p>ご存知<a href="http://docs.google.com/">Googleドキュメント</a>でも、フォームを作成できます。回答一覧はスプレッドシートに蓄積されていきますので、ウェブページとして公開してしまいiframeでの埋め込みを選択すれば、一覧を表示させることが可能です。</p>
+
+<p>デザインのカスタマイズが困難、選択肢がない時に増やせない、回答一覧の設置場所は、場合によっては別ページ公開するなどの配慮が必要、というあたりが注意点かと思われます。</p>
+
+<p><iframe src="http://spreadsheets.google.com/embeddedform?formkey=dFNNQXU1VGRFSnZEX2VwMGtwSkNFU3c6MQ" width="500" height="524" frameborder="0" marginheight="0" marginwidth="0" style="border:1px solid #cccccc;">読み込み中...</iframe><br />
+<iframe width='500' height='300' frameborder='0' src='http://spreadsheets.google.com/pub?key=tSMAu5TdEJvD_ep0kpJCESw&output=html&widget=true' style="border:1px solid #cccccc;"></iframe></p>
+
+<h2>忍者アンケートフォーム</h2>
+
+<p>Twitterで教えていただいた、初めて知ったサービス「<a href="http://www.ninja.co.jp/enqueteform/">忍者アンケートフォーム</a>」です。</p>
+
+<p>表示が小さくてシンプル、適切な選択肢がない時に「回答追加」で増やすことも可能です。ただし、「投票する」「結果」「回答追加」をクリックした時に、全て「忍者アンケートフォーム」のサイトにジャンプしてしまいます。</p>
+
+<p><script src="http://crema.enq1.shinobi.jp/js/81482/" type='text/javascript' charset="UTF-8"><noscript><a href="http://www.ninja.co.jp/enqueteform/">アンケート</a></noscript></script></p>
+
+<h2>フォームメーラー</h2>
+
+<p>自分が個人的に気になっていたサービス「<a href="http://www.form-mailer.jp/">フォームメーラー</a>」も試してみました。</p>
+
+<p>コメント欄は設置できますが、適切な選択肢がない時には、残念ながら自由に増やせませんね。回答後のグラフ表示などは、「フォームメーラー」のページにジャンプします。</p>
+
+<form action="https://ssl.form-mailer.jp/fm/service/Forms/confirm" method="post" name="form1" ENCTYPE="multipart/form-data">
+<input type="hidden" name="key" value="eaaa977d100079" >
+<h3>あなたの好きな果物は？</h3>
+<p>回答お願いいたします。</p>
+*は必須項目です
+<!-- vote -->
+<p>*好きな果物</p>
+<p><select name="vote_field">
+<option value="">------</option>
+<option value="0">いちご</option>
+<option value="1">みかん</option>
+<option value="2">りんご</option>
+<option value="3">ばなな</option>
+</select>
+</p>
+<!-- vote -->
+<!-- textarea -->
+<p>コメントもください！</p>
+<p><textarea name="field_772352" cols="30" rows="5"></textarea></p>
+<!-- charset -->
+<!-- charset -->
+<p><input name="submit" type="submit" value="確認画面へ"></p>
+<p><a href="http://www.form-mailer.jp/" target="_blank" id="powered" align="">Powered by FormMailer.</a></p>
+</form>
+
+<h2>まとめ</h2>
+
+<p>どのサービスも細かい部分で違いがあり、残念ながら今回の候補の中には、全ての要件を完全に満たすものはありませんでした。</p>
+
+<p>デザイン性と外部へのページ遷移のなさを考えると「PollDaddy」の「Poll」が良さそうですが、無料版では自由コメント欄が作成できず、回答者が追加した答えを他の回答者が見られないので、年間200ドル版のサービス内容を精査してみるのも良さそうです（いま、この記事を書くにあたっては予算がありませんが......）。</p>
+
+<p>その他日本産のサービスは、どれもわりと動作の雰囲気は似ていそうです。あとはデザインのお好みで選択してみてもいいかもしれません。</p>
+
+<p>いずれのサービスも「結果を見る」等の動作でサービスの方のWebサイトに誘導されますので、そこは考慮すべき点かもしれませんね。</p>
+
+<p>私、これからどれを選択するか、悩んでみたいと思います。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/mobile/iphone_6.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_88.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

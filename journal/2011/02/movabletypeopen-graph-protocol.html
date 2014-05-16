@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="index,follow" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="MTで作成される個別記事にOGPを入れるなら、というのでやってみました。" />
+<meta name="keywords" content="linker" />
+<meta name="author" content="柳谷 真志" /><link rel="author" href="https://plus.google.com/112387447202401710035" />
+<meta name="copyright" content="linker" />
+<meta name="company" content="linker" />
+<link rel="apple-touch-icon" href="/logo2.png" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta property="fb:app_id" content="107697189262112" />
+<link rel="canonical" href="/journal/2011/02/movabletypeopen-graph-protocol.php"/>
+<meta property="og:site_name" content="linker"/>
+<meta property="og:title" content="MovableTypeでOpen Graph Protocolを実装したい"/>
+<meta property="og:description" content='MTで作成される個別記事にOGPを入れるなら、というのでやってみました。'/>
+<meta property="og:url" content="/journal/2011/02/movabletypeopen-graph-protocol.php"/>
+<meta property="og:type" content="article" />
+<meta property="og:image" content="/images/logo-og.jpg">
+<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>
+<script type="text/javascript" src="/journal/mt.js"></script>
+<link type="text/css" rel="stylesheet" href="/styles/shCore.css" />
+<link type="text/css" rel="stylesheet" href="/styles/shThemeDefault.css" />
+<title>MovableTypeでOpen Graph Protocolを実装したい｜linker journal｜linker</title>
+<!-- favicon -->
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="prev" href="/journal/2011/02/iphone-9.php" title="デザイナーにオススメのiPhoneアプリなど、あれこれ" />
+<link rel="next" href="/journal/2011/02/color-book.php" title="坂本邦夫さんの「ウェブ配色コーディネイトカタログ」献本いただきました。" />
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="/css/styles-site.css" />
+<link rel="stylesheet" title="one-column" type="text/css" href="/css/layout/two-column-right.css" />
+<!-- Javascript -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAboveKzPdj4cCY33y_AFXrhTFON1NPSXOuC_9HjyQZ4DJK5Lf2hTCmI5fEJiyfCZRvZW8RAMvV-wVRg"></script>
+<link rel="alternate" type="application/atom+xml" title="linker 更新情報" href="http://feeds2.feedburner.com/linker-news" />
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-6930174-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body>
+<div class="section" id="container">
+<div id="header" class="pkg">
+    <p id="logo"><a href="/"><img src="/images/logo.gif" alt="linker" width="148" height="53" /></a></p>
+    <ul>
+      <li><a href="/about/"><img src="/images/menu-about.gif" alt="linkerについて" width="111" height="22" class="onimage" /></a></li>
+      <li><a href="/profile/"><img src="/images/menu-profile.gif" alt="3人のプロフィール" width="129" height="22" class="onimage" /></a></li>
+      <li><a href="/works"><img src="/images/menu-works.gif" alt="linkerの実績" width="97" height="22" class="onimage" /></a></li>
+      <li><img src="/images/menu-journal_cur.gif" alt="linker&amp;nbsp;journal" width="104" height="22" /></li>
+      <li><a href="/contact/"><img src="/images/menu-contact.gif" alt="お問い合わせ" width="101" height="22" class="onimage" /></a></li>    </ul>
+</div>
+  <div id="pageheadArea">
+    <p><img src="/images/txt-lead.gif" alt="linkerは「人と人」「人と情報」「人と物」をつなぐデザインユニットです。" width="386" height="21" /></p>
+        <ul id="sitenavi">
+          <li><a href="/">top</a></li><li><a href="/journal/">linker journal</a></li><li>MovableTypeでOpen Graph Protocolを実装したい</li>
+        </ul>
+  </div>
+<div id="mainArea" class="pkg">
+  <div id="contentsArea">
+  <div id="entryjournal">
+    <div id="navientry">
+        <span class="navipreviousentry"><a href="/journal/2011/02/iphone-9.html">前の記事</a></span>｜
+        <span class="navinextentry"><a href="/journal/2011/02/color-book.html">次の記事</a></span>
+      </div>
+      <h1>MovableTypeでOpen Graph Protocolを実装したい</h1>
+      <div class="entrymeta pkg">
+      <span class="entrydate">2011年02月17日</span>
+      <span class="entrycategory"><a href="/journal/movabletype/">Movable Type</a></span>
+      <span class="entryauthor"><img src="/images/img-mersy-thumb16.jpg" alt="柳谷 真志" /><a href="/journal/author/mersy/">柳谷 真志</a></span>
+      </div>
+      <div class="entrymain">
+      <p><img src="/journal/images/110217.png" width="600" height="200" alt="110217.png" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+先日今の家を小冊子で紹介するということでインタビューを受けました。カメラ向けられたりするとどうも恥ずかしいですね。</p>
+<p>さて、いつもお世話になってる<a href="http://twitter.com/#!/5509">noriさん</a>が先日「<a href="http://5509.me/log/wordpress-with-ogp">WordPressでOpen Graph Protocolを実装したい :: 5509</a>」という記事を書いていたのでMTでもやっておこうかな、という感じでちょっとやってみました。</p>
+<h2>サンプルソース</h2>
+<pre class="brush: xml;">
+&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:site_name" content="hogehoge" /&gt;
+&lt;meta property="og:title" content="hogehoge" /&gt; 
+&lt;meta property="og:url" content="記事のURL" /&gt; 
+&lt;meta property="og:description" content="hogehoge" /&gt; 
+&lt;meta property="og:image" content="画像パス" /&gt; 
+</pre>
+<p>が基本必要なかんじで、ブログ記事テンプレートだと</p>
+<pre class="brush: xml;">
+&lt;mt:If name="entry_archive"&gt;
+&lt;meta property="og:type" content="article" /&gt;
+&lt;meta property="og:site_name" content="&lt;mt:BlogName/&gt;" /&gt;
+&lt;meta property="og:title" content="&lt;mt:EntryTitle /&gt;" /&gt;
+&lt;meta property="og:url" content="&lt;mt:EntryPermalink /&gt;" /&gt;
+&lt;meta property="og:description" content="&lt;mt:EntryDescription /&gt;" /&gt;
+&lt;meta property="og:image" content="画像パス" /&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>といった感じになります。</p>
+<p>&lt;mt:If name="entry_archive"&gt;〜〜&lt;/mt:If&gt;の条件分岐はこれを書く場所に応じて入れて下さい。ブログ記事テンプレートに直接書く場合は不要です。<br /></p>
+<p>画像パスの部分は特に指定しないければ、ページ内で使用している画像を適当に拾って使ってくれるようです。</p>
+<p><img src="/journal/images/110217-01.jpg" width="484" height="129" alt="110217-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まぁ、likeしてPickupがでるのはいいのですが・・・さすがに違うので修正してみましょう。</p>
+<h2>画像を使用しているかどうかで表示させる画像を切り替える</h2>
+<p>画像部分についてはこのような感じになりますね。</p>
+<pre class="brush: xml;">
+&lt;MTSetvarblock name="ogimage"&gt;&lt;MTEntryAssets sort_order="ascend" lastn="1"&gt;&lt;$MTAssetURL$&gt;&lt;/MTEntryAssets&gt;&lt;/MTSetvarblock&gt;
+&lt;meta property="og:image" content="&lt;mt:If name='ogimage'&gt;&lt;$MTGetvar name='ogimage'&gt;&lt;mt:Else&gt;/images/logo-og.jpg&lt;/mt:If&gt;"&gt;
+</pre>
+<p>記事内で使用している画像のうち1つをとりだしてその画像パスをogimageにセットします。<br />
+最初に使用しているものを取り出すために sort_order="ascend"をしておきました。</p>
+<p>各記事ごとにカスタムフィールドで専用の画像をアップするなどする場合は</p>
+<pre class="brush: xml;">
+&lt;MTEntryAssets sort_order="ascend" lastn="1"&gt;&lt;$MTAssetURL$&gt;&lt;/MTEntryAssets&gt;
+</pre>
+<p>の部分をカスタムフィールドからの出力に変更すればいいでしょう。</p>
+<p>記事内で画像を使用していない場合もあるかと思うので、そのときに使用する画像は別途アップしておきます。<br />
+そして画像パスの部分を</p>
+<pre class="brush: xml;">
+&lt;meta property="og:image" content="&lt;mt:If name='ogimage'&gt;&lt;$MTGetvar name='ogimage'&gt;&lt;mt:Else&gt;/images/logo-og.jpg&lt;/mt:If&gt;"&gt;
+</pre>
+<p>こんな感じで書き換えておいて、ogimageに画像のパスが入っている場合はそれを使い、セットされていない場合はアップしたロゴ画像のパスを使うという形になります。</p>
+<h3>画像を使っているとき</h3>
+<p><img src="/journal/images/110217-02.jpg" width="473" height="153" alt="110217-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>最初に使用しているヘッダ画像が表示されています。</p>
+<h3>画像を使っていないとき</h3>
+<p><img src="/journal/images/110217-03.jpg" width="483" height="151" alt="110217-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>指定したロゴが表示されていますね。</p>
+<h2>ということで</h2>
+<p>こうみるとどちらの場合がいいかは少々悩むのですが、ロゴで統一してしまうのであればそれでもいいかもしれません。</p>
+<p>MTのAssetでサムネイルを作成して表示させることも可能です。正方形に切り出して使うことも出来るのですが、意図したところが切り出されるとは限らないので、とりあえず今回は使っている画像をそのまま入れてあります。</p>
+<p>OGP用の画像をアップするのは面倒なんだけど、記事内の画像を使用するのではなくて、ロゴを使いたいという場合などがあるのであれば、チェックボックスのカスタムフィールドを用意したり、特定のprivate tagを使うなどといった方法もありそうです。</p>
+<p>Facebookは日々色々変わっているようなので、これが常に使えるとは限らないですし、そもそも文法的にとか色々な話もありますが、likeを押してもらったときに、少しは関係のある画像が出た方がいいかもしれないですね。</p>
+<p>Thanks <a href="http://twitter.com/#!/5509">noriさん</a></p>
+<hr />
+<p>2011.2.17 21:15追記<br/>
+ブログ記事のog:typeはblogではなくarticleなので修正。コメントいただきありがとうございました！</p>
+      </div>
+      <div class="entrymetafoot pkg">
+      <p class="entrydate"><span>2011年02月17日</span></p>
+      <p class="entrytag"><span>facebook&nbsp;,&nbsp;html&nbsp;,&nbsp;Movable Type</span></p>
+<fb:like href="http%3A%2F%2Flinker.in%2Fjournal%2F2011%2F02%2Fmovabletypeopen-graph-protocol.php" layout="standard" show_faces="false"></fb:like></p>
+</div>
+<div id="entrynavifoot">
+      <p id="entrypreviousfoot"><a href="/journal/2011/02/iphone-9.html">デザイナーにオススメのiPhoneアプリなど、あれこれ</a></p>
+        <p id="entrynextfoot"><a href="/journal/2011/02/color-book.html">坂本邦夫さんの「ウェブ配色コーディネイトカタログ」献本いただきました。</a></p>
+      </div>
+    </div><!-- /#entryjournal -->
+  </div><!-- /id="contentsArea" -->
+<div id="menuArea">
+<div class="menu">
+<h2><img src="/images/menutit-category.gif" alt="Category カテゴリーアーカイブ" width="102" height="30" /></h2>
+<ul>
+<li><a href="/journal/cat45/">アート</a></li>
+<li><a href="/journal/design/">デザイン</a></li>
+<li><a href="/journal/xhtmlcss/">HTML/CSS/JavaScript</a></li>
+<li><a href="/journal/movabletype/">Movable Type</a></li>
+<li><a href="/journal/tips/">Tips</a></li>
+<li><a href="/journal/review/">レビュー</a></li>
+<li><a href="/journal/workstyle/">ワークスタイル</a></li>
+<li><a href="/journal/event/">イベント</a></li>
+<li><a href="/journal/cms/">その他CMS全般</a></li>
+<li><a href="/journal/casestudy/">ケーススタディ</a></li>
+<li><a href="/journal/direction/">ディレクション</a></li>
+<li><a href="/journal/mobile/">モバイル</a></li>
+<li><a href="/journal/podcast/">こんぶだしmeeting</a></li>
+<li><a href="/journal/other/">その他</a></li>
+</ul>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-archives.gif" alt="Archives 月別アーカイブ" width="81" height="30" /></h2>
+<select onchange="location.href=this.options[this.selectedIndex].value">
+<option value="/journal/2013/05/">2013年5月</option>
+<option value="/journal/2013/03/">2013年3月</option>
+<option value="/journal/2013/02/">2013年2月</option>
+<option value="/journal/2013/01/">2013年1月</option>
+<option value="/journal/2012/12/">2012年12月</option>
+<option value="/journal/2012/11/">2012年11月</option>
+<option value="/journal/2012/10/">2012年10月</option>
+<option value="/journal/2012/09/">2012年9月</option>
+<option value="/journal/2012/08/">2012年8月</option>
+<option value="/journal/2012/07/">2012年7月</option>
+<option value="/journal/2012/06/">2012年6月</option>
+<option value="/journal/2012/05/">2012年5月</option>
+<option value="/journal/2012/04/">2012年4月</option>
+<option value="/journal/2012/03/">2012年3月</option>
+<option value="/journal/2012/02/">2012年2月</option>
+<option value="/journal/2012/01/">2012年1月</option>
+<option value="/journal/2011/12/">2011年12月</option>
+<option value="/journal/2011/11/">2011年11月</option>
+<option value="/journal/2011/10/">2011年10月</option>
+<option value="/journal/2011/09/">2011年9月</option>
+<option value="/journal/2011/08/">2011年8月</option>
+<option value="/journal/2011/07/">2011年7月</option>
+<option value="/journal/2011/06/">2011年6月</option>
+<option value="/journal/2011/05/">2011年5月</option>
+<option value="/journal/2011/04/">2011年4月</option>
+<option value="/journal/2011/03/">2011年3月</option>
+<option value="/journal/2011/02/">2011年2月</option>
+<option value="/journal/2011/01/">2011年1月</option>
+<option value="/journal/2010/12/">2010年12月</option>
+<option value="/journal/2010/11/">2010年11月</option>
+<option value="/journal/2010/10/">2010年10月</option>
+<option value="/journal/2010/09/">2010年9月</option>
+<option value="/journal/2010/08/">2010年8月</option>
+<option value="/journal/2010/07/">2010年7月</option>
+<option value="/journal/2010/06/">2010年6月</option>
+<option value="/journal/2010/05/">2010年5月</option>
+<option value="/journal/2010/04/">2010年4月</option>
+<option value="/journal/2010/03/">2010年3月</option>
+<option value="/journal/2010/02/">2010年2月</option>
+<option value="/journal/2010/01/">2010年1月</option>
+<option value="/journal/2009/12/">2009年12月</option>
+<option value="/journal/2009/11/">2009年11月</option>
+<option value="/journal/2009/10/">2009年10月</option>
+<option value="/journal/2009/09/">2009年9月</option>
+<option value="/journal/2009/08/">2009年8月</option>
+<option value="/journal/2009/07/">2009年7月</option>
+<option value="/journal/2009/06/">2009年6月</option>
+<option value="/journal/2009/05/">2009年5月</option>
+<option value="/journal/2009/04/">2009年4月</option>
+<option value="/journal/2009/03/">2009年3月</option>
+<option value="/journal/2009/02/">2009年2月</option>
+<option value="/journal/2009/01/">2009年1月</option>
+</select>
+</div>
+<div class="menu">
+<h2><img src="/images/menutit-author.gif" alt="Author 執筆者別アーカイブ" width="101" height="30" /></h2>
+<ul id="menu-authorlist">
+  <li id="crema"><a href="/journal/author/crema/"><span>黒野 明子</span></a></li>
+  <li id="taku-work"><a href="/journal/author/taku-work/"><span>秋野 琢</span></a></li>
+  <li id="mersy"><a href="/journal/author/mersy/"><span>柳谷 真志</span></a></li>
+</ul>
+</div>
+<!-- /id="menuArea" -->
+</div>
+<script type="text/javascript">
+jQuery(function($){
+$("iframe.twitter-share-button").css("vertical-align","bottom");
+});
+</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<!-- id="mainArea" -->
+</div>
+<div id="footerArea">
+<div class="section pkg" id="footer">
+<p class="contact"><a href="/contact/"><img src="/images/img-footer-contact.gif" alt="お問い合わせ" width="153" height="74" class="onimage" /></a></p>
+  <ul id="footernavi">
+    <li id="footernavitop"><a href="/">トップページ</a></li>
+      <li><a href="/about/">linkerについて</a></li>
+      <li><a href="/profile/">3人のプロフィール</a></li>
+      <li><a href="/works/">linkerの実績</a></li>
+      <li><a href="/journal/">linker journal</a></li>
+    </ul>
+<address>copyright &copy; 2008-2014 linker all rights reserved.</address>
+  <!-- id="footer" -->
+  </div>
+</div>
+<!-- id="container" -->
+</div>
+<script type="text/javascript" src="/js/function.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.config.clipboardSwf = '/js/scripts/clipboard.swf';
+SyntaxHighlighter.all();
+</script>
+</body>
+</html>
+

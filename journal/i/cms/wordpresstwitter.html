@@ -1,0 +1,84 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>【自分用メモ】WordPressテンプレートに「Twitterへの投稿ボタン」を追加してみた。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>【自分用メモ】WordPressテンプレートに「Twitterへの投稿ボタン」を追加してみた。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;その他CMS全般&nbsp;&raquo;&nbsp;【自分用メモ】WordPressテンプレートに「Twitterへの投稿ボタン」を追加してみた。</p>
+
+<p><img alt="20100730.jpg" src="http://linker.in/journal/images/20100730.jpg" width="600" height="70" class="mt-image-none" style="" /></p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>最近ようやく、個人的かつ日常的にWordPressのテンプレートを書くようになってきました。1mmぐらい進歩でしょうか。</p>
+
+<p>で、今日は自分用メモとして、WordPressテンプレートに「Twitterへの投稿ボタン」を追加するコードを書いておきます。「こんな基本的なこと書いてばかじゃねーの！？」という声が聞こえてくる幻聴に悩まされますが、1人ぐらいに役立つこともあったらいいな、程度のノリで。</p>
+
+<pre class="brush:xml">
+&lt;p&gt;&lt;a href="http://twitter.com/home?status=
+linker%e5%a4%a7%e5%a5%bd%e3%81%8d%ef%bc%81+
+&lt;?php echo urlencode( the_title( "" , "" , 0 ) ); ?&gt;+
+&lt;?php urlencode( the_permalink() ); ?&gt;+%20%40linkerdesign"&gt;
+この記事をTwitterに投稿する
+&lt;/a&gt;&lt;/p&gt;
+</pre>
+
+<p>見やすいようにテキトーに改行してますので、実際にお使いになる際には、1行に戻しちゃって結構だと思われます。</p>
+
+<p>これがきちんと動くと、</p>
+
+<p>&lt;p&gt;&lt;a href="http://twitter.com/home?status=（投稿させたい文字列をURLエンコードしたもの）+（記事タイトルをURLエンコードしたもの）+（記事のパーマリンク）+（@linkerdesignの＠をURLエンコードしたもの）"&gt;この記事をTwitterに投稿する&lt;/a&gt;&lt;/p&gt;</p>
+
+<p>という風になる訳ですね。</p>
+
+<p>そして、ちょっとだけ解説します。</p>
+
+<p>このリンクを挿入したいのは個別の「投稿」なので、single.phpのどこかお好きな場所などに足せばいいのだと思いますが、そのあたりはよしなに。</p>
+
+<p>「?status=」の後の「linker%e5%a4%a7%e5%a5%bd%e3%81%8d%ef%bc%81」は、ユーザーに投稿してほしい文字列をURLエンコードしたものを入れています。このサンプルコードによって出力されたテキストリンクをクリックすると「linker大好き！」という文字列になりますので、適当にお好きなものに変えてください。<a href="http://www.tagindex.com/tool/url.html">URLエンコード・デコードフォーム</a>などを使うといいのではないでしょうか。</p>
+
+<p>「&lt;?php echo urlencode( the_title( "" , "" , 0 ) ); ?&gt;」の部分で、記事タイトルをURLエンコードしたものを出力しています。</p>
+
+<p>「&lt;?php urlencode( the_permalink() ); ?&gt;+%20%40linkerdesign"&gt;」の行で、記事のパーマリンク（URL）の後ろに「@linkerdesign」を入れております。ここにハッシュタグなどを入れても便利でしょう。よしなに。</p>
+
+<p>ということで、自分用メモでした。もっとWordPressいじろう。誰か仲間いないかなー。</p>
+
+<p>あと、もっとエレガントな書き方があったら、突っ込みくださいませ（他力本願）。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_102.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/fireworks.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

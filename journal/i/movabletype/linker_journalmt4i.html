@@ -1,0 +1,95 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>linker journalにMT4iをいれてみました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>linker journalにMT4iをいれてみました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;linker journalにMT4iをいれてみました</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+先日届いたONE PIECE の誘惑にかなり負けてます・・・反省しきりです。</p>
+<p>先日ネタフルにMT4iが導入されたのをみて凄く感動してしまったので、linker journalにも入れてみました（遅<br />
+まだネタフルをご覧になってない方は是非とも見てみた方が良いと思います！MT4iでもこんなにできるんだ！というのを教えてもらいました。</p>
+<blockquote>
+  <p>ネタフルのモバイル版｢ネタフルズ｣のデザインリニューアルを行いました | [M] mbdb<br />
+  <a href="http://mbdb.jp/?eid=1671">http://mbdb.jp/?eid=1671</a></p>
+</blockquote>
+<p>まじ凄いです。&nbsp;&nbsp;</p>
+<h2>MT4iを導入する</h2>
+<p>MT4iをダウンロード</p>
+<blockquote>
+  <p>MT4i/3.0 - t2o2-Wiki<br />
+  <a href="http://www.hazama.nu/pukiwiki/index.php?MT4i%2F3.0">http://www.hazama.nu/pukiwiki/index.php?MT4i%2F3.0</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p><img src="http://linker.in/journal/images/090622-01.jpg" width="480" height="348" alt="090622-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>まずはこちらからダウンロードしてみます。<br />
+現時点（2009.6.22）の最新バージョンは3.0.8のようです</p>
+<p>ダウンロードしたファイルを解凍して任意のフォルダにアップします。<br />
+linker.in/m/<br />
+というアドレスにとりあえずしたので mt4i フォルダをアップして m にリネームします。<br />
+cgi周りのパーミションは各サーバーにあわせて設定しましょう。</p>
+<p>あとはmtをインストールしてあるフォルダ（mt.cgiと同階層）に指定のフォルダを作成しましょう</p>
+<p><img src="http://linker.in/journal/images/090622-02.jpg" width="509" height="258" alt="090622-02.jpg" style="border:2px #7f7f7f solid;" /></p>
+<blockquote>
+  <p>MT4i/3.0/インストール - t2o2-Wiki<br />
+  <a href="http://www.hazama.nu/pukiwiki/index.php?MT4i%2F3.0%2F%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB">http://www.hazama.nu/pukiwiki/index.php?MT4i%2F3.0%2F%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ここまでおわったら /m/mt4imgr.cgi にアクセスして初期設定します。ブログが複数ある場合は少し設定が必要になりますね。linker.inは現時点ではjournalを標準にしてあります。あと、標準ではmt4i.cgiというcgiにアクセスすることで携帯サイトが見ることが出来るのですが、これをindex.cgiにしてlinker.in/m/でアクセスした際に見れるようにしました。</p>
+<p>ここまで完了してlinker.in/m/にアクセスすると無事携帯版のサイトが見ることが出来ますね。</p>
+<h2>XHTML対応テンプレートを導入してみる</h2>
+<p>ネタフルの携帯サイトを手がけられたcazukiさんがXHTML対応テンプレートを配布されているというのでそれも導入してみます。</p>
+<blockquote>
+  <p>MTのケータイ向け変換プログラム｢MT4i｣のXHTML対応改変版を公開します | [M] mbdb<br />
+  <a href="http://mbdb.jp/?eid=1685">http://mbdb.jp/?eid=1685</a></p>
+</blockquote>
+<p>こちらからダウンロードしてmt4iをインストールしたフォルダに上書きします。ほんとそれだけです。</p>
+<p>現時点でのテンプレートは初期テンプレートなのでこれは@taku-workか@cremaにデザインをつくってもらって（笑）、がしがし差し替えたいモノです。<br />
+それまでにどうやっていじるのか？どういうつくりになっているのか？を勉強しておこうと思います。</p>
+<p>@cremaが配布しているiPhoneテンプレートを導入したときも凄いな〜と思いましたし、ネタフルズを見たときもすごい感動してしまいました。<br />
+ネタフルズを見たときの感動がさめないうちに導入してしまうくらいフットワーク軽くなりたいモノですね。</p>
+<h2>今後の課題</h2>
+<ul>
+  <li>linker.inにアクセスしたキャリアごとに表示されるURLを代える<br />
+  →現在はlinker.in/m/にアクセスした際に表示、というかんじのを変更しようかと考え中。これがいいのかどうなのかが正直判断しかねているのですが、その方法くらいは身につけておきたいものです</li>
+
+  <li>デザインを変更する</li>
+</ul><br />
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/max_huber.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cms/rcmslinker.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

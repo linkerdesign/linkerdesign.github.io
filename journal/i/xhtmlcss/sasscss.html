@@ -1,0 +1,171 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Sassの記述を覚えてCSSを効率的に書くための基本的メモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Sassの記述を覚えてCSSを効率的に書くための基本的メモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;Sassの記述を覚えてCSSを効率的に書くための基本的メモ</p>
+
+<p><img src="http://linker.in/journal/images/101209.gif" width="600" height="200" alt="101209.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+英会話学校の友人が話す言葉が聞き取れなくて、向こうがあきらめモードになるたびにへこむ日々です。&nbsp;&nbsp;</p>
+<p>さて、先日「<a href="http://linker.in/journal/2010/10/sassdreamweavercss.php">SassとDreamweaverのコードヒントでCSSをさらに効率的に</a>」というのを書いて、Sassを使っています。<br />
+がっつり使う機会がなかなか無かったのですが、使う度にその便利さに感動しています。</p>
+<h2>変数（$）と演算</h2>
+<p>まず基本は変数。</p>
+<pre class="brush:css">
+$blue: #3bbfce;
+$margin: 16px;
+</pre>
+<p>という記述を先にしておけば色やmarginの指定の際に変数の値を利用することができます。</p>
+<pre class="brush:css">
+.hoge{
+  color:$blue;
+  margin:$margin;
+}
+</pre>
+<p>と書けば</p>
+<p>.hoge{<br />
+color:#3bbfc3;<br />
+margin:16px;<br />
+}</p>
+<p>となります。<br />
+fontサイズの%とかを指定しておくと良さそうな気がします。</p>
+<p>続いて演算。演算はまだつかうことがないのですが。</p>
+<pre class="brush:css">
+.hoge{
+  margin:$margin / 2;
+}
+</pre>
+<p>とかくと</p>
+<p>.hoge{<br />
+margin:8px;<br />
+}</p>
+<p>と計算してくれます。<br />
+fontサイズも変数にいれないで、基準値の値で割って計算、ということも可能ですね。<br />
+（切り捨てるかどうかとかがあるので、この辺は検証が必要なのかも？）&nbsp;&nbsp;</p>
+<h2>ネスト</h2>
+<p>CSSを入れ子で記述していくことができます。</p>
+<pre class="brush:css">
+#box{
+  margin:10px;
+  .text{
+    font-weight:bold;
+  }
+}
+</pre>
+<p>と書くと</p>
+<p>#box{<br />
+margin:10px;<br />
+}<br />
+#box .text{<br />
+font-weight:bold;<br />
+}</p>
+<p>となります。<br />
+最初の入れ子が見にくい、というのがありますが、見通しよく書くことができそうです。</p>
+<h2>組み合わせ（@mixin , @include）</h2>
+<p>変数の拡大版に近いかんじですが、プロパティをまとめて読み込めてしまえます。</p>
+<pre class="brush:css">
+@mixin moduleText{
+  color:#441A00;
+  font-size:$f16;
+  font-weight:bold;
+}
+</pre>
+<p>みたいな感じで書いた上で</p>
+<pre class="brush:css">
+h2{
+  @include moduleText;
+  margin-bottom:20px;
+}
+</pre>
+<p>と書くとこんなかんじで出力されます。</p>
+<p>h2{<br />
+color:#441A00;<br />
+font-size:$f16;<br />
+font-weight:bold;<br />
+margin-bottom:20px;<br />
+}<br /></p>
+<p>共通要素が多い場合などは記述が早くなりますね。<br />
+@include hoge;<br />
+というのを忘れないようにしないとです。</p>
+<h2>セレクタの再利用（@extend）</h2>
+<p>再利用、という日本語が正しいかどうかは少々疑問ですが。</p>
+<pre class="brush:css">
+.error {
+  border: 1px #f00;
+  background: #fdd;
+}
+</pre>
+<p>という記述を先にしておいた上で</p>
+<pre class="brush:css">
+.badError {
+  @extend .error;
+  border-width: 3px;
+}
+</pre>
+<p>と書くことで、.badErrorでも.errorに指定した物をそのまま利用できます。<br />
+これはclearfixとかで使いやすい感じになりますね。</p>
+<p>.badError {<br />
+border: 1px #f00;<br />
+background: #fdd;<br />
+border-width: 3px;<br />
+}</p>
+<p>となるのではなく<br /></p>
+<p>.error,.badError {<br />
+border: 1px #f00;<br />
+background: #fdd;<br />
+}<br /></p>
+<p>.badError {<br />
+border-width: 3px;<br />
+}<br /></p>
+<p>となります。</p>
+<h2>ということで</h2>
+<p>ということで、Sassを使えばほんと効率的にCSSが書けますね。<br />
+.scssファイルをDWで修正していると、.cssが変更されました、的なアラートが何度も出るのがちょっと気になるところではありますね。。</p>
+<p>まぁ、便利ではあるけれども組み合わせて使ったりすると複雑になったりもするので、少し慣れも必要なのかな？とも思います。<br /></p>
+<p>Sassについては年明けのイベントで小久保さんが話すようですね。</p>
+<blockquote>
+  <p>CPI x CSS Nite「After Dark」（1）<br />
+  <a href="http://cssnite.jp/afterdark/cpi/vol01/">http://cssnite.jp/afterdark/cpi/vol01/</a></p>
+</blockquote>
+<p>この内容も気になるところです。ustもあるので楽しみですね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/web_9.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/kinect.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

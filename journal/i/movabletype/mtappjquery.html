@@ -1,0 +1,150 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>機能追加されたMTAppjQueryプラグインで管理画面をカスタマイズ！｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>機能追加されたMTAppjQueryプラグインで管理画面をカスタマイズ！</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;機能追加されたMTAppjQueryプラグインで管理画面をカスタマイズ！</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+今週末はF1、来週はゴルフとビックイベントが目白押しなイギリスです。</p>
+<p>さて、Movable Typeでサイトを構築する際に必ず使うプラグインがいくつかあるかと思いますが、「<a href="http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html">MTAppjQuery</a>」は管理画面をカスタマイズするのには欠かせないプラグインですね。</p>
+<blockquote>
+  <p>MTAppjQuery - Movable Type 5 の管理画面をjQueryでカスタマイズしやすくするプラグイン - かたつむりくんのWWW<br />
+  <a href="http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html">http://www.tinybeans.net/blog/download/mt-plugin/mtapp-jquery.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>linker journalでも何度か紹介しました。</p>
+<blockquote>
+  <p>MTの管理画面を「MTAppjQueryプラグイン」で簡単にカスタマイズ｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2010/07/mtmtappjquery.php">http://linker.in/journal/2010/07/mtmtappjquery.php</a>&nbsp;&nbsp;</p>
+
+  <p>MTAppjQueryをつかってTag一覧を出力する｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2010/09/mtappjquerytag.php">http://linker.in/journal/2010/09/mtappjquerytag.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>現在、MT5.1対応を徐々に進めているところのようです。</p>
+<p>先日のMTDDCでも紹介があったようです。<br />
+そのときのスライドはslideshareで公開されていますね。</p>
+<div style="width:425px" id="__ss_8440533">
+  <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/tinybeans/mtddc-followup" title="クライアントの満足度を高める！管理画面の簡単カスタマイズ！" target="_blank">クライアントの満足度を高める！管理画面の簡単カスタマイズ！</a></strong> <object id="__sse8440533" width="425" height="355">
+    <param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=mtddc-follow-up-110627184553-phpapp02&amp;rel=0&amp;stripped_title=mtddc-followup&amp;userName=tinybeans" />
+    <param name="allowFullScreen" value="true" />
+    <param name="allowScriptAccess" value="always" />
+    <embed name="__sse8440533" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=mtddc-follow-up-110627184553-phpapp02&amp;rel=0&amp;stripped_title=mtddc-followup&amp;userName=tinybeans" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355" />
+  </object>
+
+  <div style="padding:5px 0 12px">
+    View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/tinybeans" target="_blank">Tomohiro Okuwaki</a>
+  </div>
+</div>
+<p>バージョンアップで追加された物も含めて、これ便利！と個人的に思っているところを紹介していきます。</p>
+<h2>user.jsを毎回アップするのがメンドクサイ。そんなあなたにフリーエリア</h2>
+<p>MTAppjQueryプラグインの設定画面にフリーエリアというtextfieldがあります。これをつかうことで、user.jsを毎回アップしなくてもMTの管理画面からら設定が可能になります。</p>
+<p>user.jsに記載した内容は&lt;/body&gt;の直前に挿入されてきますが、このフリーエリアに記載した内容はheader.tmplに追加されて&lt;head&gt;に入ってきます。</p>
+<p>変数の話はさっきのスライドの19ページで紹介されています。</p>
+<div style="width:425px" id="__ss_8440533">
+  <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/tinybeans/mtddc-followup" title="クライアントの満足度を高める！管理画面の簡単カスタマイズ！" target="_blank">クライアントの満足度を高める！管理画面の簡単カスタマイズ！</a></strong> <object id="__sse8440533" width="425" height="355">
+    <param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=mtddc-follow-up-110627184553-phpapp02&amp;rel=0&amp;startSlide=19&amp;stripped_title=mtddc-followup&amp;userName=tinybeans" />
+    <param name="allowFullScreen" value="true" />
+    <param name="allowScriptAccess" value="always" />
+    <embed name="__sse8440533" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=mtddc-follow-up-110627184553-phpapp02&amp;rel=0&amp;startSlide=19&amp;stripped_title=mtddc-followup&amp;userName=tinybeans" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355" />
+  </object>
+
+  <div style="padding:5px 0 12px">
+    View more <a href="http://www.slideshare.net/" target="_blank">presentations</a> from <a href="http://www.slideshare.net/tinybeans" target="_blank">Tomohiro Okuwaki</a>
+  </div>
+</div>
+<p>このあたりを使うわけですが、フリーエリアに</p>
+<pre>
+&lt;mt:setvarblock name="mtapp_footer_jq" append="1"&gt;
+  if(mtappVars.screen_id == 'edit-entry' &amp;&amp; mtappVars.blog_id == 3){
+    $.MTAppFieldSort({ sort: 'title,tag?s,keywords' });
+  }
+&lt;/mt:setvarblock&gt;
+</pre>
+<p>みたいに書けばmtapp_footer_jqにappendされるのでOKですね。</p>
+<h2>$.MTAppFieldSort()とjquery_ready.js</h2>
+<p>MTAppjQueryといったら$.MTAppFieldSort()で簡単に入力欄を並び替えることが出来ます。<br />
+いつのまにやらjquery_ready.jsというのが導入されていて、これでさらにカスタマイズすることが可能になります。</p>
+<p>スライドに紹介されていますが、フィールドを並び替えしておいて後は自由な並び替えが不要なときとかは並び替え機能を無効にしてしまうなどが可能になります。</p>
+<pre>
+jQuery(function($){
+  if(mtappVars.blog_id ==3 &amp;&amp; mtappVars.screen_id == 'edit-entry'){
+        $('div.sort-enabled').removeClass('sort-enabled');
+  }
+});
+</pre>
+<p>こんな感じのコードをjquery_ready.jsに書いておくと並び替えが出来ない様に指定出来たりしますね。</p>
+<h2>$(foo).MTAppTabSpace()でtabを半角スペースに置き換え</h2>
+<p>$(foo).MTAppTabSpace()という機能が追加されているようです。<br /></p>
+<p>テンプレートの編集画面でCodemirrorを無効にしていても、tabを押すと次の入力欄などに移ってしまいます。当然の挙動なのですが、テンプレートを書いていると癖でtabを押してしまいますよね。<br />
+そのときにtab（半角スペース）を挿入できるようになります。</p>
+<p>user.jsに</p>
+<pre>
+$('textarea?').MTAppTabSpace();
+</pre>
+<p>を追加しておくだけで可能です。（Codemirrorは無効にしておく必要があります）<br />
+これでtabが半角4つに置き換わります。</p>
+<p>テンプレートの編集画面のみとかにする場合は</p>
+<pre>
+if (mtappVars.template_filename == 'edit_template') {
+$('textarea').MTAppTabSpac e({text:' '});
+}
+</pre>
+<p>のようにuser.jsに書いておくといいでしょう。</p>
+<p>インデントは半角スペース4つではなくて、半角スペース2つがいい、という方もいるでしょう。この辺は好みがでるところで細かいところですが、その設定も可能です。</p>
+<p>$('textarea').MTAppTabSpac?e({text:' '});<br /></p>
+<p>このようにかいて、textオプションに文字列を渡すことでカスタマイズが可能です。いや〜、便利です。</p>
+<h2>見やすくなった$.MTAppDebug()とmtappVars</h2>
+<p>管理画面の全てではなく、色々な条件分岐をして表示させると思います。これまではid等を指定してとなっていましたが変数が指定されているので、変数の値を判定して条件分岐させると良さそうです。</p>
+<p>$.MTAppDebug()をuser.jsに指定してあげると変数の一覧なども含めた情報を表示させることが可能です。</p>
+<p><img src="http://linker.in/journal/images/110707-01.jpg" width="555" height="332" alt="110707-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>この表示部分もバージョンが上がって見やすくなっていますね。</p>
+<p>いくつかあげたコードにも書いてありますが、条件分岐する際に</p>
+<pre>
+if (mtappVars.template_filename == 'edit_template') {
+}
+</pre>
+<p>こんなかんじで判定すると処理も早くなりますね。</p>
+<h2>ということで</h2>
+<p>すでにかなり機能満載になってきている感じがしますね。<br />
+Blogのドキュメント（Github上？）も今後ますます充実していきそうです。</p>
+<p>alt-tmplを書き換えるとかでもできることですが、手軽にカスタマイズ出来ますので使ったことがない方は一度使ってみるのをおすすめします！</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphone_11.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/workstyle/post_159.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

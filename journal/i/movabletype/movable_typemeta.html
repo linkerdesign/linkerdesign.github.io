@@ -1,0 +1,100 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Movable Typeでのmeta周りの指定方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Movable Typeでのmeta周りの指定方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Movable Typeでのmeta周りの指定方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+アイスコーヒー＆牛乳の消費量が半端ないです。1リットルずつを二日持たずに消費しそうな勢いなので少し自重しようかと思ってます。</p>
+<p>MTでmeta descriptionやmeta keywordsを設定する場合どのように指定していますか？<br />
+どのような内容を指定するか？という議論もありますし、MTタグをつかってどのように設定するか?というのもあるかと思います。<br />
+どのような内容にすべきか？というのは今回はおいておいて、MTタグ、テンプレートをどのように使い分けるか？というのは試行錯誤している所ではあるのですが、現時点での個人的なやり方をまとめておこうかな、と思います</p>
+<h2>_defaultとともに変数を読み込む様にしてしまう</h2>
+<p>多くの場合、テンプレートモジュールのヘッダー、フッターを読み込んでいるので、ヘッダー内に</p>
+<pre class="brush:xml">
+&lt;meta name="description" content="&lt;mt:GetVar name="page_description" _default="デザインユニット「linker」のwebsiteです。" /&gt;" /&gt;
+</pre>
+<p>みたいな感じでまずは指定してしまいます。</p>
+<p>「テンプレートモジュール＞ヘッダー」で色々条件分岐させて、とやることが多かったのですが、条件分岐が複雑になってしまいますし、「もし○○アーカイブだったら」とかの条件分岐をいれるのも無駄かもな？と思ったのと、テンプレートの数（インデックス、ブログ記事、ウェブページ、ブログ記事リスト etc.）くらいであれば各テンプレートでやってしまった方が見通しも良さそうと判断しました。</p>
+<p>_defaultモディファイアで値（この場合はpage_description）がなかった場合に表示されるモノを指定してあります。</p>
+<h2>各テンプレートアーカイブ、インデックステンプレートで値をセット</h2>
+<p>とりあえずこのような感じで書いておいて各テンプレートで</p>
+<pre class="brush:xml">
+&lt;mt:SetVar name="page_description" value="○○のdescriptionです" /&gt;
+</pre>
+<p>とか書いて指定してしまいます。まぁ、多くの場合、１テンプレートから１htmlとはならないので条件分岐させて内容を変えるか、valueの部分にmtタグがくるようになるはずですね。</p>
+<pre class="brush:xml">
+&lt;mt:SetVarBlock name="page_description"&gt;&lt;mt:EntryExcerpt /&gt;&lt;/mt:SetVarBlock&gt;
+</pre>
+<p>とか</p>
+<pre class="brush:xml">
+&lt;mt:SetVars&gt;
+page_description=&lt;mt:EntryExcerpt /&gt;
+&lt;/mt:SetVars&gt;
+</pre>
+<p>細かいところは好みになってしまうかと思いますが、descriptionにあわせてkeywordsを指定することもあるかとおもうので&lt;mt:SetVars&gt;のほうがよいのかもしれません。</p>
+<p>一点気をつけるとすれば、mt:SetVarsの場合は</p>
+<pre class="brush:xml">
+&lt;mt:SetVars&gt;
+変数名=変数の値
+変数名=変数の値
+&lt;/mt:SetVars&gt;
+</pre>
+<p>となる関係上、変数の値には複数行の値を入力することが出来ません。問題になることはないかもしれませんが、上記のサンプル</p>
+<pre class="brush:xml">
+&lt;mt:SetVarBlock name="page_description"&gt;&lt;mt:EntryExcerpt /&gt;&lt;/mt:SetVarBlock&gt;
+</pre>
+<p>のように概要が自動的に入るように指定してある場合など、自動で入ってくるモノに改行が入ってしまう場合があるかもしれません。そうなると再構築時にエラーとなってしまうので、</p>
+<pre class="brush:xml">
+&lt;mt:SetVars&gt;
+page_description=&lt;$MTEntryExcerpt convert_breaks="0" remove_html="1" strip_linefeeds="1"$&gt;
+&lt;/mt:SetVars&gt;
+</pre>
+<p>というかんじで、strip_linefeedsで改行を削除する必要があります。<br />
+ここで軽く嵌ってしまったので個人的にも備忘録として残しておきたいと思います。概要に限らずですが、ものによっては入力モードが複数あるので担当者が複数名いたりするとそのも考慮しておく必要がありますね。</p>
+<h2>ルールを作りつつ方法を模索</h2>
+<p>linker内ではまだまだルール作りができていないのですが、標準テンプレートなどを作る際に、このような細々したところをを考慮できたら効率よく仕事ができるのかも？とか思ったりしています。<br />
+効率よく作っていける方法を模索するのは、見通しよく作る方法と近いところがあるのかも？という気がするので、試行錯誤を怠ってはいけないな、と痛感しています。</p>
+<p>linker のhtml自体もっと直さないといけないところが多く恥ずかしい限りなのですが、仕事にかこつけて後手後手になってしまっています。<br />
+色々直しながらjournalにも書いていきたいところです。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cms/css_nite_lp6.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/cms/css_nite_lp6_1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

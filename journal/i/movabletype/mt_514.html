@@ -1,0 +1,67 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTタグだけでカテゴリアーカイブでのカテゴリの階層を調べてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTタグだけでカテゴリアーカイブでのカテゴリの階層を調べてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTタグだけでカテゴリアーカイブでのカテゴリの階層を調べてみる</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>MTでテンプレートを書く際にカテゴリアーカイブで現在のカテゴリの階層（深さ）を調べたいと思ったのですが、うまいタグがなかったからなにか方法がないものかと考えてみました。</p>
+<p>ひとまずこんな感じで書いてみました。</p>
+<pre>&lt;mt:SetVarBlock name="catDepth"&gt;&lt;mt:ParentCategories&gt;a&lt;/mt:ParentCategories&gt;&lt;/mt:SetVarBlock&gt;<br />&lt;mt:If name="catDepth" eq="aaaaa"&gt;<br />〜〜〜〜<br />&lt;mt:Else&gt;<br />〜〜〜〜<br />&lt;/mt:If&gt;</pre>
+<p>aの数を階層の数ととらえて作ってみたのですが、階層の深さを固定してやるならこれでもやれないことはなさそうです。</p>
+<p>ただ、</p>
+<pre>&lt;mt:If name="catDepth" eq="aaaaa"&gt;</pre>
+<p>がどうもかっこわるいなぁと思っていたのですが、「count_characters」というグローバルモディファイアがあるのを教えてもらいました。</p>
+<blockquote>
+<p>count_characters | グローバル・モディファイアリファレンス<br /><a href="http://www.movabletype.jp/documentation/appendices/modifiers/count_characters.html">http://www.movabletype.jp/documentation/appendices/modifiers/count_characters.html</a></p>
+</blockquote>
+<p>これをつかって</p>
+<pre>&lt;mt:SetVarBlock name="catDepth"&gt;&lt;mt:ParentCategories&gt;a&lt;/mt:ParentCategories&gt;&lt;/mt:SetVarBlock&gt;<br />&lt;mt:SetVarBlock name="catDepth"&gt;&lt;mt:GetVar name="catDepth" count_characters="1"&gt;&lt;/mt:SetVarBlock&gt;</pre>
+<p>のようにすれば、catDepthを数字に置き換えられるので使いやすくできそうですね。</p>
+<p>とはいっても、まだどうも使いにくそうなのでこのあたりについては「<a href="http://www.tinybeans.net/blog/2012/06/16-075413.html">カンマ区切りの文字列をプラグインなしで配列のようにループで取り出すTips | かたつむりくんのWWW</a>」を参考にしてみるといいかもしれません。</p>
+<blockquote>
+<p>カンマ区切りの文字列をプラグインなしで配列のようにループで取り出すTips | かたつむりくんのWWW<br /><a href="http://www.tinybeans.net/blog/2012/06/16-075413.html">http://www.tinybeans.net/blog/2012/06/16-075413.html</a></p>
+</blockquote>
+<p>階層の深さと各カテゴリを配列に入れておいた方がなにかと便利なこともありそうなきがします。</p>
+<p>こんなことを書くとプラグインとか書いてくれちゃいそうな気もしますね（笑</p>
+<p>MTタグもそうですが、モディファイア、<a href="http://www.movabletype.jp/documentation/appendices/modifiers/">グローバルモディファイア</a>は使わないと知らないものが多いというのを再認識させられました。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/usopentennis2012.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/iphonethe_cocktail_app.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

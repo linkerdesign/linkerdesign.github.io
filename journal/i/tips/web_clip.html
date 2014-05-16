@@ -1,0 +1,65 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Web Clipについてのメモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Web Clipについてのメモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Web Clipについてのメモ</p>
+
+<p>みなさん、こんにちは、まーしーです。</p>
+<p>iPadやiPhoneなどでWebサイトへのリンクをホーム画面に追加（Web Clip）出来ます。</p>
+<p><img src="http://linker.in/journal/images/100628-03.jpg" width="240" height="360" alt="100628-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>このサイズは今後変わる可能性もあるんだろうなぁ、とも思いつつ現状129px四方が良さそうな気がしています。<br />
+<a href="http://www.apple.com/apple-touch-icon.png">apple基準</a>です。</p>
+<p>このWeb Clipのアイコンは「apple-touch-icon.png」というファイル名でルートにアップすると自動で認識してくれますが</p>
+<p>&lt;link rel="apple-touch-icon" href="/logo2.png" /&gt;<br /></p>
+<p>という記述を加えておくとファイル名はどのようなものでも使う事が可能になります。</p>
+<h2>link要素で指定した方が優先</h2>
+<p>では、混在しているときはどちらが優先されるのだろう？と思いつつ一応試してみると予想通り</p>
+<p>&lt;link rel="apple-touch-icon" href="/logo2.png" /&gt;<br /></p>
+<p>の記述をした方が優先されるようです。</p>
+<h2>RSSリーダーでも使用される</h2>
+<p>またこのWeb Clipのアイコンは<a href="http://itunes.apple.com/jp/app/reeder/id325502379?mt=8">Reeder</a>でRSSを読むときにも表示される様になります。</p>
+<p><img src="http://linker.in/journal/images/100628-01.png" width="480" height="360" alt="100628-01.PNG" style="border:2px #7c7c7c solid;" /></p>
+<p>いくつか読んでるweb系のサイトでも表示されているところがありますね。</p>
+<p><img src="http://linker.in/journal/images/100628-02.png" width="480" height="360" alt="100628-02.PNG" style="border:2px #7c7c7c solid;" /></p>
+<p>Safari Realizedも@Stlyeもさすがですね。</p>
+<p>feedのアイコンが表示されてるから読まれるというよりも全てはコンテンツ次第でしょうが、iPhone向け、iPad向けのサイトをつくらないにしても、このあたりのアイコンだけであればすぐおけるでしょうから忘れないようにしましょう、と自戒エントリーでした。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/anatomy-of-keitai.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/movable_type_community_solution.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

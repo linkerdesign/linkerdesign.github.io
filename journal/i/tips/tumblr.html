@@ -1,0 +1,124 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Tumblrをつかって自分のサイトをまとめてみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Tumblrをつかって自分のサイトをまとめてみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;Tumblrをつかって自分のサイトをまとめてみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+16連休とかまさに夢のような休みをとってた方は本日から社会復帰ですね。<br />
+復帰初日はちゃんと仕事できましたか？？わはそんなに休みとったら復帰できないだろうなぁ・・・</p>
+<p>最近なにかとTumblrを使う機会が増えてきました。<br />
+増えてきたと言っても使いこなしている、というにはほど遠いレベルなのですが、<br />
+自分のfeedを読み込んで表示させることが可能、ということなのでそれをやってみたのをメモがてら。</p>
+<p>いままではこんな感じでいくつかあるサイトへリンクを張ってただけでした。</p>
+<p><img src="http://linker.in/journal/images/mersy-1.jpg" width="367" height="369" alt="mersy-1.jpg" style="border:1px #000000 solid;" /></p>
+<h2>まずはfeedを読み込む</h2>
+<p>Tumblrのdashboardから今回のため用に作ったtumblelogのCustomizeをクリックします。</p>
+<p><img src="http://linker.in/journal/images/Tumblr.jpg" width="223" height="128" alt="Tumblr.jpg" /></p>
+<p>クリックして上部メニューのFeedsをクリックすると読み込むfeedを設定できます。<br />
+現時点（2009.5.11 20:50）ではうまく読み込めてないみたいです。<br />
+（このあたりはhelpを熟読してみないとです）</p>
+<p><br />
+<img src="http://linker.in/journal/images/CustomizeTumblr.jpg" width="381" height="469" alt="CustomizeTumblr.jpg" /></p>
+<p>読み込むfeedは5つまでみたいなんですが、それを増やすにはメールでみたいなことが英語で書かれてます。<br />
+（英語なのでとりあえず今はすっ飛ばしてます。訳も違うかもしれません。）<br />
+メールすればいいよ？だと勝手に解釈してるので、ちゃんと読んでみて、英語でメールしてみようかな・・・</p>
+<h2>themeを設定する</h2>
+<p>色々読み込んでみたのでthemeもなにか設定したいな、とおもったので</p>
+<blockquote>
+  <p>Tumblr Themes<br />
+  <a href="http://tumblrthemes.com/">http://tumblrthemes.com/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>でいくつかthemeを探してみて、今回は</p>
+<p><a href="http://tumblrthemes.com/chocolate-con-leche/"><img src="http://linker.in/journal/images/Tumblr%20Themes%20%C2%BB%20Blog%20Archive%20%C2%BB%20Chocolate%20Con%20Leche.jpg" width="355" height="203" alt="Tumblr Themes ? Blog Archive ? Chocolate Con Leche.jpg" /></a></p>
+<p>を使わせてもらうことにしました。</p>
+<h2>独自ドメインを設定する</h2>
+<p>とりあえずココまで設定したのですが、いままでのhttp://mersy.orgで見れた方がいいな、ということで独自ドメインを設定します。</p>
+<p>詳しい記述は</p>
+<blockquote>
+  <p>独自ドメインで Tumblr を使う | WWW WATCH<br />
+  <a href="http://hyper-text.org/archives/2009/04/tumblr_custom_domain.shtml">http://hyper-text.org/archives/2009/04/tumblr_custom_domain.shtml</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>にもかいてあるので、こちらを見ても良いかもしれません。<br />
+Tumblr側の独自ドメインの設定と、ドメインのaレコードの設定を変えてあげる必要があるそうなのでそれをやってみます</p>
+<p>aレコードの前にTumblr側の設定で独自ドメインを設定します。<br />
+CustomizeのInfoの中に独自ドメインの設定画面があるので、<br />
+「Use a custom domain name」にチェックをいれて独自ドメインを設定します。</p>
+<p><img src="http://linker.in/journal/images/CustomizeTumblr-1-1.jpg" width="390" height="557" alt="CustomizeTumblr-1-1.jpg" /></p>
+<p>これでTumblr側の設定は終わりです</p>
+<h2>domain管理側の設定</h2>
+<p>次にdomainを管理してる側の設定です。<br />
+mersy.orgはvalue domainで管理してるのですが、今までが<br /></p>
+<blockquote>
+  <p>a * 111.111.111.111</p>
+</blockquote>
+<p>みたいなかんじだったのを</p>
+<blockquote>
+  <p>a @ 72.32.231.8<br />
+  a * 111.111.111.111<br /></p>
+</blockquote>
+<p>と設定します。</p>
+<blockquote>
+  <p>Using a custom domain name | Tumblr<br />
+  <a href="http://www.tumblr.com/help/custom_domains">http://www.tumblr.com/help/custom_domains</a></p>
+</blockquote>
+<p>に設定するドメインの事が書かれています。</p>これで設定は終了なんですが、これだけだと<a href="http://mersy.org">http://mersy.org</a>へアクセスしても先ほどのTumblrにリンクしません。
+
+<p>mersy.orgはサブドメインを運用している関係でそれにあわせた設定も必要になります。<br />
+mersy.orgはvaluedomain &amp; coreserverという組み合わせなので、coreserverの管理画面から<br />
+mersy.orgのドメインについて設定してあげる必要があります。</p>
+<p><img src="http://linker.in/journal/images/CORESERVER.JP_%E3%82%B3%E3%82%A2%E3%82%B5%E3%83%BC%E3%83%8F%E3%82%99%E3%83%BC.jpg" width="561" height="156" alt="CORESERVER.JP_コアサーハ?ー.jpg" /></p>
+<p>coreserverのドメインウェブでMainの部分には今まで「mersy.org」がはいっていたのですがここを「blank」に指定しました。<br /></p>
+<p>この設定をしたら無事<a href="http://mersy.org">http://mersy.org</a>へアクセスするとTumblrの方が開きました。<br />
+もちろん、サブドメインも問題なく使えています。</p>
+<h2>まとめ</h2>
+<p>便利なサイトをつかえば楽ちん。</p>
+<p>今までリンクだけ貼ってたのをどうにかしないとなぁ、と思っていたところでしたのでTumblrにしてみて良かった気がしています。<br />
+Tumblrだけでなく色々便利なサイト・Webserviceがあるのでそれらをうまく使えば簡単にwebsiteが作れるかもしれませんね。&nbsp;&nbsp;&nbsp;<br />
+ほかにもいくつかカスタマイズしてみたのですが、そのあたりはまた今度ということで。</p>
+<h2>参考URL</h2>
+<ul>
+  <li>DNSレコードの書き方について質問です。ワイルドカードを指定し、かつサブドメインを運用することは可能でしょうか。 （したいこと） example.com -&gt; 10.0.0.1 *.example.c.. - 人力検索はてな<br />
+  <a href="http://q.hatena.ne.jp/1206756527">http://q.hatena.ne.jp/1206756527</a>&nbsp;&nbsp;</li>
+</ul>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/tips/things.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/popin.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,91 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>CODAの小わざをいくつか。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>CODAの小わざをいくつか。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;CODAの小わざをいくつか。</p>
+
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090218.jpg" src="http://linker.in/journal/images/090218.jpg" class="mt-image-center" style="margin: 0pt auto 20px; text-align: center; display: block;" width="600" height="183" /></span>
+<p>こんにちは、花粉センサーこと、taku-workです。<br />
+花粉症のこの時期、誰よりも花粉に反応すると思います。</p>
+
+<p>さて、みなさんはサイト制作に必要なエディターツールは何をお使いでしょうか。<br />
+僕は最近CODAを試しています。軽くて良いですね。</p>
+<p>ただ、あまり情報が見つからないので今後のためになにか使えそうな情報があればこちらでお伝えしていきたいなと思っている次第です。<br />
+ということで、いくつか簡単な小わざを参考までに。</p>
+
+<h2>コードを登録して使う「clips（クリップ）」</h2>
+<p>
+CODAにはclips（クリップ）という機能があります。他のエディターでいうところのスニペットと同じ機能です。CODA（ver1.6.2）のクリップでは以下のことができます。</p>
+<ul>
+	<li>グローバルとサイト単位での管理</li>
+	<li>グルーピング</li>
+	<li>プレースホルダーの挿入</li>
+	<li>インポート／エキスポート</li>
+	<li>TABトリガーの設定</li>
+</ul>
+<p>clips（クリップ）に良く使うコードを登録してTABトリガーで呼び出して、といった具合で作業短縮できますね。</p>
+<p>インポート／エキスポートはいまいち情報がなくよくわからないのですが、「codaclips URL ハンドラ」というものを使うことでweb上からもインポート出来るようです。</p>
+
+<p>お試しにサンプルをのせておきます。<br />
+以下のコードがインポートしたいコードだとします。</p>
+<pre class="brush:xml"><img src="*" alt="" title="" />
+</pre>
+<p>「<a href="codaclips://%3C%3C**Title:%E3%82%A4%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%88%E3%83%86%E3%82%B9%E3%83%88**%3E%3E%3Cimg%20src=%22%3C%3C**SelectionInsertionPlaceholder**%3E%3E%22%20alt=%22%22%20title=%22%22%20/%3E">インポートする</a>」←クリックするとCODAが起動してインポートされます。</p>
+<p>「*」はプレースホルダーの位置でCODA上では&lt;&lt;**SelectionInsertionPlaceholder**&gt;&gt;とすることで挿入部分となります。また、インポートするclipsのタイトルも&lt;&lt;**Title:xxxx**&gt;&gt;とするとインポートされます。</p>
+
+<p>それからCODAのクリップのサンプルを登録したりそれらをインポートできるサイトもあります。<br /></p><ul><li>
+CODAのクリップのサンプルサイト「 <a href="http://coda-clips.com/">Coda Clips</a> 」</li></ul><p>
+もっと増えると便利ですね。とくにMTのサブテンプレとか、MTタグとか。</p>
+
+<h2>ブックマーク構文でコードナビゲータを便利に</h2>
+
+<p>コード内にコメント挿入する際に頭に「!」をつけることでコードナビゲーターに表示されます。<br />
+Coda デベロッパ ゾーンの「<a href="http://www.panic.com/jp/coda/developer/quicktip/5.php">ブックマーク構文について</a>」にて記述例が詳しく書いてあります。
+<br />これを使うと少しだけ探しやすくなります。</p><p>コメントでコードを管理している方には使いやすいかもしれません。<br /></p>
+
+<h2>まだまだこれからが楽しみなエディターです</h2>
+
+<p>今回はちょっとだけ便利になるかもしれない小わざでした。<br />
+他にも気になっているのは同時に編集できるコラボレーション機能です。<br />
+試したらレポートしたいと思います。</p>
+<p>まだまだDreamweaverなどと比べると機能的に見劣りするかもしれませんが、ver1.5でsubversionに、ver1.6からはサードパーティー製のpluginにも対応しましたので、今後まだまだ使いやすくなりそうです。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/avimpeg-4.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/_movabletype.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

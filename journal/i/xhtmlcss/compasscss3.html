@@ -1,0 +1,180 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Compassを触ってみて、CSS3のモジュールを眺めてみる。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Compassを触ってみて、CSS3のモジュールを眺めてみる。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;Compassを触ってみて、CSS3のモジュールを眺めてみる。</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+ロンドンオリンピックまで１年を切ったようです。問題がちらほらあるようですが1年後がどんな感じになるのか今から楽しみです。</p>
+<p>さて、Sassの話を以前何回か書きました。<br />
+その拡張みたいなもので<a href="http://compass-style.org/">Compass</a>というのがあるのでそれをためしてみました。</p>
+<blockquote>
+  <p>Compass Home | Compass Documentation<br />
+  <a href="http://compass-style.org/">http://compass-style.org/</a></p>
+</blockquote>
+<h2>Compassのインストール</h2>
+<p>Sassが入ってればCompassのインストール自体は簡単です。</p>
+<pre>
+$ gem update --system
+$ gem install compass
+</pre>
+<p>CompassのCoreは</p>
+<p>@import "compass"</p>
+<p>をscssとかで読み込むところからスタートします。</p>
+<p>これを読み込むと以下３つのモジュールが使えます。</p>
+<ul>
+  <li><a href="http://compass-style.org/reference/compass/css3/">CSS3</a>【@import "compass/css3"】</li>
+
+  <li><a href="http://compass-style.org/reference/compass/typography/">Typegraphy</a>【@import "compass/typography"】</li>
+
+  <li><a href="http://compass-style.org/reference/compass/utilities/">Utilities</a>【@import "compass/utilities"】</li>
+</ul>
+<p>以下２つのモジュールはCoreを読み込んだだけでは使えないみたいです。</p>
+<ul>
+  <li><a href="http://compass-style.org/reference/compass/layout/">Layout</a>【@import "compass/layout"】</li>
+
+  <li><a href="http://compass-style.org/reference/compass/reset/">Reset</a>【@import "compass/reset"】</li>
+</ul>
+<p>例えば、Resetを使いたいときは個別に読み込むようです。</p>
+<h2>CSS3のモジュールを見てみる</h2>
+<p>とりあえずこの中での肝はCSS3のモジュールかと思います。</p>
+<ul>
+  <li><a href="http://compass-style.org/reference/compass/css3/appearance/">Appearance</a>【@import "compass/css3/appearance"】</li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/background_clip/">Background Clip</a>【@import "compass/css3/background-clip"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/background_origin/">Background Origin</a>【@import "compass/css3/background-origin"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/background_size/">Background Size</a>【@import "compass/css3/background-size"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/border_radius/">Border Radius</a>【@import "compass/css3/border-radius"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/box/">Box</a>【@import "compass/css3/box"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/box_shadow/#mixin-box-shadow">Box Shadow</a>(β)【@import "compass/css3/box-shadow"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/box_sizing/">Box Sizing</a>【@import "compass/css3/box-sizing" 】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/columns/">Columns</a>【@import "compass/css3/columns"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/font_face/">Font Face</a>【@import "compass/css3/font-face"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/images/">Images</a>(β)【@import "compass/css3/images"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/inline_block/">Inline Block</a>【@import "compass/css3/inline-block"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/opacity/">Opacity</a>【@import "compass/css3/opacity"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/text-shadow/">Text Shadow</a>(β)【@import "compass/css3/text-shadow"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/transform/">Transform</a>(β)【@import "compass/css3/transform"】<br /></li>
+
+  <li><a href="http://compass-style.org/reference/compass/css3/transition/">Transition</a>【@import "compass/css3/transition"】<br /></li>
+</ul>
+<p>βだけどCSS3 Pieなんかも想定してるっぽいですね。<br />
+いくつか使いそうな指定を見てみます。</p>
+<h3>Border Radius</h3>
+<p>以下の様に書くと</p>
+<pre>
+.simple { @include border-radius(); }
+</pre>
+<p>以下の様に出力されます。</p>
+<pre>
+.simple {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+</pre>
+<h3>Box Shadow</h3>
+<p>以下の様に書くと<br /></p>
+<pre>
+.simple   { @include box-shadow(); }
+</pre>
+<p>以下の様に出力されます。<br /></p>
+<pre>
+.simple {
+  -moz-box-shadow: 0px 0px 5px #333333;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -o-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+}
+</pre>
+<h3>Background Image</h3>
+<p>以下の様に書くと<br /></p>
+<pre>
+.simple   { @include background-image(linear-gradient(#FFFFFF,#000000));}
+</pre>
+<p>以下の様に出力されます。<br /></p>
+<pre>
+.simple {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #000000));
+  background-image: -webkit-linear-gradient(#ffffff, #000000);
+  background-image: -moz-linear-gradient(#ffffff, #000000);
+  background-image: -o-linear-gradient(#ffffff, #000000);
+  background-image: -ms-linear-gradient(#ffffff, #000000);
+  background-image: linear-gradient(#ffffff, #000000);
+}
+</pre>
+<h3>Opacity</h3>
+<p>以下の様に書くと<br /></p>
+<pre>
+.simple   { @include opacity(0.1); }
+</pre>
+<p>以下の様に出力されます。<br /></p>
+<pre>
+.simple {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=10);
+  opacity: 0.1;
+}
+</pre>
+<h2>ということで</h2>
+<p>CoreのCSS3モジュールのメインはブラウザ用のプレフィックス付きの指定を入れてくれるのと、書き方を調整してくれるところのようです。<br />
+上記はデフォルト値での指定をまずしてみましたが、それぞれの値を指定することで出力を修正することも出来ます。<br />
+（自動で入れてくれることについては色々な考えや気になるところがあるかもしれませんが。。）&nbsp;&nbsp;</p>
+<p>サイトを見ていても機能が豊富過ぎるようでどこから手をつけようか？？と躊躇してしまいます。<br />
+まずは「Sassを使う際に少し指定をしやすくなった」 くらいに考えて使ってみようかと思います。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_164.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/takeo-city-facebook.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

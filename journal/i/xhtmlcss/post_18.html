@@ -1,0 +1,95 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>画像置換について考えてみました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>画像置換について考えてみました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;画像置換について考えてみました</p>
+
+<p>こんにちは、テニスっ子のまーしーです<br />
+この週末もしっかりテニスしてきました。徐々に日焼けし始めてます。</p>
+<p>普段読んでるブログで画像置換について書いてあったので少し書いてみようかなと思います。</p>
+<blockquote>
+  <p>画像置換乱用してませんか？ | THE HAM MEDIA<br />
+  <a href="http://h2ham.seesaa.net/article/115925272.html">http://h2ham.seesaa.net/article/115925272.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<h2>画像置換は使いません</h2>
+<p>まず結論から言うと画像置換は滅多に使わないです。<br />
+SEO効果のほどがいまいちわからないかった昔は使ってたこともあります。<br />
+ただあくまでも指示されたときのみでしたね。</p>
+<p>現在も使う場合は指定をされたときだけです。<br />
+imgでやってたら戻しで画像置換になってた、とか。そういう意図ならそれにあわせて作ってあげるしかないかな、という感じです。<br />
+（そのような戻しがある時点で直接お客さんとというワケではないので・・・）</p>
+<p>画像置換するところにidとかふったうえで、cssで画像指定するとかめんどくさいよなぁとか思ってしまったりしますね。<br />
+ブラウザでぱっと見ただけだと画像置換なのか画像テキストなのかはわかりませんが、そいう問題でもないよなぁ、と。</p>
+<p>altもちゃんと認識されるから画像置換しても意味ないんじゃん？となったとしても、altにめちゃくちゃうめこんじゃうことが可能になっちゃう気がするから、そのあたりは判断材料にはなりえないきがするんだよな。<br />
+（そういえばfirefoxでimgのwidth,height,borderってなんか挙動変？とか思ったのは気のせい？？）</p>
+<p>ブラウザの日本語fontの種類が豊富じゃないし、バラバラなのでテキストベースできれいに見せるのはなかなか難しいところがあるのは仕方がない気がします。<br />
+そのあたりできれいになれば問題ないような気もするんですがねぇ。</p>
+<h2>他の切り口から見てみます</h2>
+<p>なんか書いていていまいちなので、あげられてたメリットとかに対して少し考えてみます・・・</p>
+<p>＜メリット＞</p>
+<p>一枚のHTMLファイルからいろんなデザインを再現可能<br />
+→その必要性があるかどうか？</p>
+<p>HTML自体が軽くなる<br />
+→HTMLしか読まないならそうだけど。何に対して見せるのか？というところもありそうな。<br />
+普通に見る人にとってはcssもくっついてこないと意味ない気がするし・・・<br />
+データ量としてどっちが軽いのかしら。</p>
+<p>再利用性が高くなる<br />
+→確かにそうかも？？画像差し替えくらいでいけるのであればあまりかわらなそう。<br />
+imgの場合はwidthとかも変更する必要あり。画像置換の場合はcssを変更する必要あり。<br />
+どっちが楽かしら。デザインのみを修正という事があるのであれば、か。。。。</p>
+<p>＜デメリット＞</p>
+<p>SEOスパムとされる可能性があるかもしれない<br />
+→スパムの様な気がする、という以前に気持ち悪いから自分じゃやらないけど、altに埋め込んでしまっても同じ事？？</p>
+<p>何もしていない場合の印刷時など、CSSオン・画像オフ環境で表示されない<br />
+→そうですね。<br />
+（別な話題ですが、印刷の場合はmediaをallにすれば済む話じゃないような気がするんだけど。普通に組んだら印刷も問題なしなのがあたりまえなのかしら・・）</p>
+<p>おっと、数だけならデメリットの方が少ないじゃん（苦笑</p>
+<p>自分自身の勉強不足を露呈してる感がありますね・・・<br />
+なんとなく 使わない方がよさそう、というのはあるんですが、<br />
+測る物差しにもよるのかなぁ、という感じもしてきました。</p>
+<p>===========</p>
+<p>画像置換乱用してませんか？ | THE HAM MEDIA<br />
+<a href="http://h2ham.seesaa.net/article/115925272.html">http://h2ham.seesaa.net/article/115925272.html</a>&nbsp;&nbsp;</p>
+<p>画像置換について ? grandes cedro<br />
+<a href="http://grandes-cedro.net/2009/03/%e7%94%bb%e5%83%8f%e7%bd%ae%e6%8f%9b%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/">http://grandes-cedro.net/2009/03/%e7%94%bb%e5%83%8f%e7%bd%ae%e6%8f%9b%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6/</a>&nbsp;&nbsp;</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_17.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/movable_type425_mtnosearch.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

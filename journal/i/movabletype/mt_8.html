@@ -1,0 +1,65 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTで複数記事のカテゴリをまとめて変える方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTで複数記事のカテゴリをまとめて変える方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTで複数記事のカテゴリをまとめて変える方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+同じ睡眠時間でも早く（ほぼ深夜）に起きすぎるとひどく眠い気がするのはどうしてなんでしょうか？</p>
+<p>さて、今日はMovable Typeで複数記事のメインカテゴリをまとめて変える簡単な方法でも。</p>
+<h2>記事一覧画面から編集</h2>
+<p>まず記事の一覧画面を開きます</p>
+<p><img src="http://linker.in/journal/images/110428-01.jpg" width="600" height="379" alt="110428-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>編集したい記事にチェックをいれて、アクションから記事の一括編集を選択します。</p>
+<h2>jQueryで修正</h2>
+<p>その上でコンソールを開いて</p>
+<p>$(".category select").each(function(){<br />
+$(this).val("hogehoge");<br />
+});<br /></p>
+<p>と入力。hogehogeの部分がブログで使用しているカテゴリラベルですね。</p>
+<p><img src="http://linker.in/journal/images/110428-02.jpg" width="600" height="318" alt="110428-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>これでカテゴリ部分がこのような感じで指定したカテゴリに変更されます。</p>
+<p><img src="http://linker.in/journal/images/110428-03.jpg" width="600" height="406" alt="110428-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>この状態で保存を押すとカテゴリが保存されます。プラグインとか作らなくてもさくっと出来るのでお手軽です。</p>
+<p>管理画面上でもjQueryで色々やれると思うので他にもやれることがありそうな気がしますね。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/gw_2.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/macbbt2.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

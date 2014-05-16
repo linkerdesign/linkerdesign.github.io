@@ -1,0 +1,121 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>iphoneアプリのServersManを試してみた。iphoneがサーバーになるって聞いたもので。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>iphoneアプリのServersManを試してみた。iphoneがサーバーになるって聞いたもので。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;レビュー&nbsp;&raquo;&nbsp;iphoneアプリのServersManを試してみた。iphoneがサーバーになるって聞いたもので。</p>
+
+ <p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090815_00.jpg" src="http://linker.in/journal/images/090815_00.jpg" width="640" height="195" class="mt-image-none" style="" /></span></p>
+
+<p>
+こんにちは、taku-workです。<br />
+近所にお寺さんが多いので、散歩するとお線香のにおいが。夏も半ばを過ぎたようで。
+</p>
+
+<p>
+今回は、iphoneアプリのServersManのお話。<br />
+なにやらiphoneをサーバー化してくれるアプリとのことで試してみました。
+</p>
+
+<p>
+ServersMan<br />
+<a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=302133974&mt=8">
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090815_01.jpg" src="http://linker.in/journal/images/090815_01.jpg" width="110" height="110" class="mt-image-none" style="" /></span><br />
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="appStoreBadge40.png" src="http://linker.in/journal/images/appStoreBadge40.png" width="122" height="40" class="mt-image-none" style="" /></span></a>
+</p>
+
+<p>
+アプリを起動してとユーザー登録します。<br />
+で確認メールでパスワードが送られてきます。<br />
+サイトの方でメールアドレスとパスワードで自分のアカウントにログインできます。
+</p>
+
+<p>
+アプリを起動して初期設定アイコンから「webサーバー」の項目で「webアクセスを公開」を「オン」にするとサーバーとして公開されます。
+</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090815_02.jpg" src="http://linker.in/journal/images/090815_02.jpg" width="320" height="480" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+iphoneで使う場合はwifiでも3G通信接続可能ということで、どこでもつながるということになります。<br />
+ただiphoneがスリープになると接続は切れてしまうので、スリープしないようにしてアプリも終了しないようにするなり、脱獄してバックグラウンドでもアプリが動くようにしたりしないと常時接続は難しいかも。
+</p>
+
+<p>
+またサーバーですのでサイトとして公開もできるようです。<br />
+アプリを起動した画面には「public_html」というメニューがあってその中にhtmlデータを入れれば自前サーバーでの公開ということになるようです。
+</p>
+
+<p>
+しかもhtmlはアプリ内で編集ができるので、修正はiphone上でもできるようです。
+</p>
+
+<p>
+<span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090815_04.jpg" src="http://linker.in/journal/images/090815_04.jpg" width="320" height="480" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span>
+</p>
+
+<p>
+ほかにもカメラアイコンを選択するとiphoneのカメラを使って写真を撮ることやカメラロールから画像を選んで公開することができます。<br />
+公開された写真は「public_html」の下のphotosに入ります。
+</p>
+
+<p><span class="mt-enclosure mt-enclosure-image" style="display: inline;"><img alt="090815_05.jpg" src="http://linker.in/journal/images/090815_05.jpg" width="320" height="480" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></span></p>
+
+<p>
+photosフォルダ内にあるphotos.htmlも編集できるので自由な見せ方が可能ですね。
+</p>
+
+<p>
+というわけで、<br />
+オンラインストレージとして自分のiphone自体を使えることや、サイトとして公開することが可能なアプリのようです。<br />
+レンタルサーバーを借りたりしているのでわざわざiphoneをサーバーにすることは無いような気もしますが、APIをつかったツール開発なども今後あるようなのでこれからの進化に期待という感じです。
+</p>
+
+<p>
+先日iDiskアプリも公開されましたし、Dropboxアプリも開発中ということで、iphoneとオンラインストレージの連携の選択肢がどんどん増えていますね。<br />
+ServersManもオンラインストレージとして割り切って使うのも良いかも知れません。
+</p>
+
+<p>
+ちなみに僕が使っているストレージ系のアプリは「<a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=312686749&mt=8">Air Sharing Pro 2.0</a>」です。<br />
+シンプルでわかりやすく、iDiskも取り込めて便利です。
+</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_45.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/tbjquery_plugin_6.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

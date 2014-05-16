@@ -1,0 +1,122 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>jQueryでページング｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>jQueryでページング</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;jQueryでページング</p>
+
+<p><img src="http://linker.in/journal/images/090427.gif" width="600" height="100" alt="090427.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+めがねをかけてるときは小木に似てるらしいです。<br />
+前回journalを書いたと思ったらまた今日担当です。週末はどこへいったのやら？です。。</p>
+<h2>jQueryでページング</h2>
+<p>リスト項目の様な繰り返しの項目が増えてくると、ページ繰りをつけて複数ページに分けたりしますよね。<br />
+その方法もいくつかありますが、先日jQueryでやってみたのでその流れを書いてみようかな、と思います。</p>
+<p>今回使用するのは<a href="http://rikrikrik.com/jquery/pager/">jQuery pager plug-in</a>になります。<br />
+本家で用意されているdemoをみていただければどういうものかはわかるかと思います。</p>
+<blockquote>
+  <p>rikrikrik.com - jQuery pager plug-in<br />
+  <a href="http://rikrikrik.com/jquery/pager/#examples">http://rikrikrik.com/jquery/pager/#examples</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>こちらをつかえば簡単にページングができます。<br />
+自分で使っていて引っかかったのが、高さが固定されてしまっている点でした。<br />
+heightのオプションでmin-heightが設定できるようなのですが</p>
+<blockquote>
+  <p>height</p>
+
+  <p>&nbsp;&nbsp; Sets a min-height (height in IE) for your content. Default works out largest content automagically</p>
+
+  <p>rikrikrik.com - jQuery pager plug-in<br />
+  <a href="http://rikrikrik.com/jquery/pager/">http://rikrikrik.com/jquery/pager/</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>うちの環境だけかもしれませんが、heightを設定してみてIE7でうまくいきませんでした・・・<br />
+そこでjquery.pager.jsの87行目あたり</p>
+<pre class="brush:js">
+function sizePanel () {
+        if($.browser.msie) {
+                $(me).find(clas).not(navid).css( {
+                        height: settings.height
+                });     
+        } else {
+                $(me).find(clas).not(navid).css( {
+                        minHeight: settings.height
+                });
+        }
+}
+</pre>
+<p>を</p>
+<pre class="brush:js">
+function sizePanel () {
+        if($.browser.msie) {
+                if ($.browser.version.substr(0, 1) == "6") {
+                        $(me).find(clas).not(navid).css( {
+                                height: settings.height
+                        });
+                } 
+        } else {
+                $(me).find(clas).not(navid).css( {
+                        minHeight: settings.height
+                });
+        }
+}
+</pre>
+<p>このようなかんじに変更してみました。<br />
+IE6の時はheightになるように、という感じにしてみたつもりです。&nbsp;&nbsp;</p>
+<p><a href="http://linker.in/journal/2009/04/27/">サンプル</a></p>
+<p>あんまりわからず書いているところがあるので、<br />
+そのあたりはもっと突き詰めないといけないですね。</p>
+<h2>まとめ</h2>
+<p>ページングはそもそも必要かどうか？という所の検討も必要ですし、<br />
+検討の上で、どういう方法でページングを実現させるか？というところも検討しないといけないと思います。<br />
+用法・用量を守ってお使い下さい、という感じでしょうね。</p>
+<h2>おまけ::ページング？ページネーション？</h2>
+<p>ページ繰り、ってページングですかね？ ページネーションですかね？<br /></p>
+<blockquote>
+  <p>ページング - Google 検索<br />
+  <a href="http://www.google.co.jp/search?hl=ja&amp;q=%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0&amp;lr=">http://www.google.co.jp/search?hl=ja&amp;q=%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%B3%E3%82%B0&amp;lr=</a></p>
+
+  <p>ページネーション - Google 検索<br />
+  <a href="http://www.google.co.jp/search?hl=ja&amp;q=%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3&amp;lr=">http://www.google.co.jp/search?hl=ja&amp;q=%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3&amp;lr=</a>&nbsp;&nbsp;&nbsp;</p>
+</blockquote>なんとなくページングだとおもっていたのですが、ページネーションという言葉を@cremaに教えてもらいました。<br />
+ページネーションっていうのは初耳でした。 言葉自体しらないと、そもそも検索もできないですよね。<br />
+このあたりの検索スキルも高めていかないとな〜、と思った次第です。
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/fc0.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_24.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

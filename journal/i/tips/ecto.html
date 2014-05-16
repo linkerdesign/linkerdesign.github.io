@@ -1,0 +1,77 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ectoのショートカット登録の話｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>ectoのショートカット登録の話</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;ectoのショートカット登録の話</p>
+
+<p><img src="http://linker.in/journal/images/090914.gif" width="600" height="200" alt="090914.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+土曜日は<a href="http://lp7.cssnite.jp/">LP7</a>、本日は<a href="http://www.amazon.co.jp/%E8%A6%96%E8%A6%9A%E3%83%9E%E3%83%BC%E3%82%B1%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E5%AE%9F%E8%B7%B5%E8%AC%9B%E5%BA%A7-%E3%83%96%E3%83%AD%E3%82%B0%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%81%A7%E8%87%AA%E5%88%86%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E3%82%92%E9%AD%85%E3%81%9B%E3%82%8B-%E3%82%A6%E3%82%B8%E3%83%88%E3%83%A2%E3%82%B3/dp/4844327518/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1252938829&amp;sr=8-1">シカマケ実践講座</a>出版記念セミナー、とアウトプットがインプットに追いついていない状態です。<br />
+これはよろしくないですね。。。</p>
+<p>今日はectoの簡単なカスタマイズの話です。</p>
+<h2>ブログ書くときどうやって書いてますか？</h2>
+<p>みなさんブログを書いている方はどういう風に書いてるのでしょうか？<br />
+管理画面から？Bookmarklet経由？メール投稿？ブログエディタ？色々あるかと思います。<br />
+個人的にlinker journalを更新する際は、<a href="http://illuminex.com/ecto/">ecto</a>を使うことが多いです。</p>
+<p>ectoは普通にWYSIWYGのエディタなのでこれで問題ないのですが、見出しレベルのマークアップがなかったりします<br />
+それらをカスタムタグでカスタマイズすれば使い勝手も良くなるかと思います。</p>
+<p>個人的にはDreamweaverのデザインビューの様な感じがいまのところ使いやすい気がしています。<br />
+そのつもりで「Cmd + 2」とかを設定してもうまく動かなかったんですよね。<br />
+「Cmd + Ctrl + 2」とかにすれば動いたので、なんかのショートカットとぶつかっているのかもしれませんね。<br /></p>
+<h2>h2等に変換するショートカットを追加しよう</h2>
+<p>まず「Cmd + Shift + alt(option) + T」でカスタムタグの編集画面を開きます</p>
+<p><img src="http://linker.in/journal/images/090914-01.jpg" width="546" height="454" alt="090914-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>左下の+をクリックしてカスタムタグの新規追加を開き、追加したいタグを入力します。<br />
+今回はh4を追加してみます。</p>
+<p><img src="http://linker.in/journal/images/090914-02.jpg" width="546" height="454" alt="090914-02.jpg" style="border:2px #7f7f7f solid;" /></p>
+<p>開始タグ、終了タグを入力し、ショートカットをクリックして、設定したいショートカットを入力します。<br />
+先にも書いたように、「Cmd + 4」ではうまく動かないので「Cmd + Ctrl + 4」に設定します。</p>
+<p><img src="http://linker.in/journal/images/090914-03.jpg" width="504" height="412" alt="090914-03.jpg" style="border:2px #7e7e7e solid;" /></p>
+<p>記事編集の画面でタグを変更したい文字列を選択して、設定したショートカットを入力すると（今の場合は「Cmd + Ctrl + 4」）選択した文字がh4で囲われます。</p>
+<p><img src="http://linker.in/journal/images/090914-04.jpg" width="393" height="250" alt="090914-04.jpg" style="border:2px #828282 solid;" /></p>
+<p>HTMLもちゃんとh4になっています</p>
+<p><img src="http://linker.in/journal/images/090914-05.jpg" width="415" height="183" alt="090914-05.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>こんなかんじでやればエディタ部分だけでも見出し等を簡単にマークアップできますね。<br />
+決まったタグがあればそれ専用にカスタマイズすることも可能そうです。<br />
+ectoをお使いの方で、カスタマイズされてない方は一度試してみてはいかがでしょうか？&nbsp;&nbsp;</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/css_nite_lp7.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_48.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

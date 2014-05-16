@@ -1,0 +1,69 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>BacklogのGitを試してみた｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>BacklogのGitを試してみた</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;レビュー&nbsp;&raquo;&nbsp;BacklogのGitを試してみた</p>
+
+<p>みなさん、こんにちは、まーしーです</p>
+<p>先日からBacklogでGitを扱えるようになっていました。</p>
+<blockquote>
+<p>BacklogにGitが登場！Gitで楽々バージョン管理！<br /><a href="http://www.backlog.jp/blog/2012/07/git-release.html">http://www.backlog.jp/blog/2012/07/git-release.html</a></p>
+</blockquote>
+<p>先日のメンテナンスではまだ使えなかったのですが、本日linkerで使っているBacklogでも使えるようになったので早速試してみました。</p>
+<p>Projectの設定にGitの設定が加わっていますね</p>
+<p><img title="120719-01.png" src="http://linker.in/journal//images/120719-01.png" alt="120719 01" height="307" border="0" width="600" /></p>
+<p>こんな感じで簡単にリポジトリが作成できます</p>
+<p><img title="120719-02.png" src="http://linker.in/journal//images/120719-02.png" alt="120719 02" height="351" border="0" width="599" /></p>
+<p>リポジトリを作成して最初のCommitがこんな感じでProjectのUpdateに表示されています。</p>
+<p><img title="120719-03.png" src="http://linker.in/journal//images/120719-03.png" alt="120719 03" height="297" border="0" width="598" /></p>
+<p>公開鍵の設定も自分の設定ページから行います</p>
+<p><img title="120719-04.png" src="http://linker.in/journal//images/120719-04.png" alt="120719 04" height="260" border="0" width="599" /></p>
+<p>Commit時にissue名を入れておいたらcommitメッセージがコメントとしてissueに追加されました。</p>
+<p><img title="120719-05.png" src="http://linker.in/journal//images/120719-05.png" alt="120719 05" height="261" border="0" width="598" /></p>
+<p>試しにGITTEST-1というissue用に#GITTEST-1というメッセージをつけてみたらこのような感じになりました。</p>
+<p>issueの方を確認してみるとこんな感じですね。</p>
+<p><img title="120719-06.png" src="http://linker.in/journal//images/120719-06.png" alt="120719 06" height="431" border="0" width="600" /></p>
+<p>コメントとして登録されています。<br />#は認識されていないかもしれないので、Commitメッセージに書く正確な書き方がありそうな気がします。</p>
+<p>これまではBacklogとGithubという組み合わせかGithub単体で完結させる、ということが多かったのですが、これだとすべてをBacklogで管理してもいいのかもしれませんね。</p>
+<p>また、1つのプロジェクトに複数のリポジトリを設定できるようです。</p>
+<p>なんだかんだでバージョン管理しておいた方が安全そうなので、次からはBacklogで管理してみようかと思っています。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/gabi.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/css_nite_in_ginza_vol64.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTでカテゴリアーカイブの記事一覧を月別に分けて表示する方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTでカテゴリアーカイブの記事一覧を月別に分けて表示する方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTでカテゴリアーカイブの記事一覧を月別に分けて表示する方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+英会話に行って文法をならうと文法自体の言葉が難しくて、文法がいまいちわからないこの頃です。まだまだ英語に触れる機会が少ないですね。。。<br /></p>
+<p>さて、MTのテンプレートでカテゴリアーカイブに表示したカテゴリーの記事一覧を月ごとに分ける、という知っていればなんてことない基本的な話です。</p>
+<h2>カテゴリアーカイブでCategory-MonthlyのArchiveListを使用する</h2>
+<p>カテゴリアーカイブ内でアーカイブリストを出すようにして、archive_typeにはCategory-Monthlyを指定します。</p>
+<pre>
+&lt;mt:ArchiveList archive_type="Category-Monthly"&gt;
+〜〜〜〜
+&lt;/mt:ArchiveList&gt;
+</pre>
+<p>ソース例としてはこんな感じですね。</p>
+<pre>
+&lt;mt:ArchiveList archive_type="Category-Monthly"&gt;
+&lt;h2&gt;&lt;$mt:ArchiveTitle$&gt;&lt;/h2&gt;
+&lt;mt:Entries&gt;&lt;mt:EntriesHeader&gt;
+&lt;ul&gt;&lt;/mt:EntriesHeader&gt;
+&lt;li&gt;&lt;$mt:EntryTitle$&gt;&lt;/li&gt;
+&lt;mt:EntriesFooter&gt;&lt;/ul&gt;
+&lt;/mt:EntriesFooter&gt;&lt;/mt:Entries&gt;
+&lt;/mt:ArchiveList&gt;
+</pre>
+<p>これの出力例がこのような感じです。</p>
+<p><img src="http://linker.in/journal/images/110519-01.jpg" width="600" height="475" alt="110519-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>カテゴリアーカイブが月ごとになりました。</p>
+<h2>カテゴリアーカイブでMonthlyのArvhiceListを使用した場合</h2>
+<p>ちなみに、カテゴリアーカイブ内で月別アーカイブのアーカイブリストをやると動きそうな気もします。</p>
+<pre>
+&lt;mt:ArchiveList archive_type="Monthly"&gt;
+</pre>
+<p>使うとしたらこのような感じですね。<br />
+これだとカテゴリーのコンテキストを無視して、 単純に月別の一覧になります。</p>
+<p>以前、年別アーカイブで月ごとの表示は書いたのですが、なんかあんまりスマートじゃないですよね。。。</p>
+<blockquote>
+  <p>MTの年別アーカイブで月毎にグルーピングされた記事一覧を表示｜linker journal｜linker<br />
+  <a href="http://linker.in/journal/2009/06/mt-1.php">http://linker.in/journal/2009/06/mt-1.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>これも、もう少しシンプルにかけないものかと思ってしまいます。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/cat45/post_152.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/html5hype.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

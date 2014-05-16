@@ -1,0 +1,71 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「backlog-template-issue-gas」をつかってBacklogにタスクを一括登録してみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>「backlog-template-issue-gas」をつかってBacklogにタスクを一括登録してみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;「backlog-template-issue-gas」をつかってBacklogにタスクを一括登録してみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+本日から新年度がスタートですね。新入社員がきて会社の雰囲気などが変わっているのでしょうか？</p>
+<p>さて、linker journalでは何回かBacklogの話が出てきていますが、 <a href="http://www.backlog.jp/api/application/">Backlogのサイト</a>で紹介されている「backlog-template-issue-gas」が非常に便利でした。</p>
+<blockquote>
+  <p>概要 ? ikikko/backlog-template-issue-gas Wiki<br />
+  <a href="https://github.com/ikikko/backlog-template-issue-gas/wiki">https://github.com/ikikko/backlog-template-issue-gas/wiki</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>こちらを使うとGoogle Spreadsheetからタスクを一気に追加出来ます。</p>
+<p>まず、このようなかんじでタスクを記入しておきます。</p>
+<p><img src="http://linker.in/journal/images/120402-01.jpg" width="600" height="341" alt="120402-01.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>メニューにBacklogというのが追加されていると思いますので、こちらをクリックすると下のようなかんじで、「課題一括登録」というメニューが表示されます。</p>
+<p><img src="http://linker.in/journal/images/120402-02.jpg" width="600" height="376" alt="120402-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>（初めての時はScriptを使う関係での確認画面が出ます。）<br />
+一括登録のボタンを押すと、別のシートが追加され、下のようなかんじで登録された様子が分かります。</p>
+<p><img src="http://linker.in/journal/images/120402-03.jpg" width="600" height="332" alt="120402-03.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>Backlogの画面を確認してみても、問題無くタスクが追加されていますね。</p>
+<p><img src="http://linker.in/journal/images/120402-04.jpg" width="600" height="404" alt="120402-04.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>ということで、Backlogにタスクを追加する前に、Excelなどで作業リストが出ている場合などは一気にタスクを登録する事ができるので、１つ１つ登録するよりも早く出来ると思います。</p>
+<p>Backlogにタスクを追加するのはAPIからもできるのですが、その辺の話は『CSS Nite in Ginza, Vol.58』でも取り上げてありましたね。</p>
+<blockquote>
+  <p>CSS Nite in Ginza, Vol.58フォローアップ #cssnite_ginza58 | CSS Nite公式サイト<br />
+  <a href="http://cssnite.jp/archives/post_2136.html">http://cssnite.jp/archives/post_2136.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>APIをつくるまでは出来ないけど、タスクが一覧表になっている場合が多い方は試してみてはいかがでしょうか？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post187.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/blog-technic-book.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>はてブの人気エントリーを表示してみる（改）｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>はてブの人気エントリーを表示してみる（改）</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;はてブの人気エントリーを表示してみる（改）</p>
+
+<p><img src="http://linker.in/journal/images/091214.gif" width="600" height="200" alt="091214.gif" /></p>
+<p>みなさん、こんにちは、まーしーです。<br />
+今年ももう残り半月ですね。</p>
+<p>以前、<a href="http://linker.in/journal/2009/08/google-ajax-feed-api.php">はてブでの人気エントリーをGoogle AJAX Feed APIを使って表示する</a> というエントリーではてブの人気記事を表示する方法を書きました。<br />
+はてブの人気エントリーについては、はてなに用意されてるウィジェットがあるんですね。気づきませんでした。<br />
+ということで自分用のメモもかねてエントリー。</p>
+<h2>はてなブックマークウィジェットを使う</h2>
+<p><a href="http://linker.in/journal/images/091214-01.gif"><img src="http://linker.in/journal/images/091214-01-tm.gif" width="500" height="333" alt="091214-01.gif" style="border:2px #7b7b7b solid;" /></a></p>
+<p>はてなに「はてなブックマークウィジェット」が用意されているので、項目を選ぶと埋め込み用のJavaScriptを生成してくれます。</p>
+<blockquote>
+  <p>はてなブックマークウィジェット<br />
+  <a href="http://b.hatena.ne.jp/entrylist/widget">http://b.hatena.ne.jp/entrylist/widget</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>このページで</p>
+<ul>
+  <li>URL</li>
+
+  <li>タイトル</li>
+
+  <li>新着or人気</li>
+
+  <li>幅</li>
+
+  <li>エントリー数</li>
+
+  <li>テーマ</li>
+</ul>
+<p>を指定すれば埋め込みコードが生成されます。<br />
+テーマをなしにして、CSSをカスタマイズしてあげればデザインのテイストをWebサイトと揃えることも出来ますね。</p>
+<p>RSSをごにょごにょして表示させる、というのは勉強としてはいいと思います。<br />
+それはおいといて、そもそもこのウィジェットについてってどこにあったのかなぁ、と探してみたら</p>
+<blockquote>
+  <p>ブログの人気記事を貼り付ける<br />
+  <a href="http://b.hatena.ne.jp/help/widget">http://b.hatena.ne.jp/help/widget</a></p>
+</blockquote>
+<p>この辺に書かれてありますね。はてブのヘルプから行けるようです。</p>
+<p>はてブの人気エントリーを使用したい場合に使ってみてはどうでしょう、ということでした。<br /></p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphonemomo.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_70.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,111 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>SassとModernizrを組み合わせる場合の基本的な書き方メモ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>SassとModernizrを組み合わせる場合の基本的な書き方メモ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;HTML/CSS/JavaScript&nbsp;&raquo;&nbsp;SassとModernizrを組み合わせる場合の基本的な書き方メモ</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+週末にようやく大英博物館に行ってきました。これが無料なんだからスゴイですね。</p>
+<p>さて、CSSを書くときに<a href="http://sass-lang.com/">Sass</a>を使って書くとすごく楽ですね。<br />
+例えばこんな感じで色々書いていくとします。</p>
+<pre class="brush:css">
+blockquote{
+  background:#F8F7E5;
+  -moz-border-image: url(../images/line-blockquote.gif) 1 repeat;
+  -webkit-border-image: url(../images/line-blockquote.gif) 1 repeat;
+  -o-border-image: url(../images/line-blockquote.gif) 1 repeat;
+  border-image: url(../images/line-blockquote.gif) 1 repeat;
+  p{
+    font-weight:bold;
+  }
+}
+</pre>
+<p>対応しているブラウザはいいのですが、世の中それほどうまくは回っていないので何かしらの対応が必要になります。</p>
+<p>CSS3まわりに対応していないブラウザの対策としてはいくつかの方法があります。<br />
+たとえば<a href="http://www.modernizr.com/">Modernizr</a>を使う場合、このスクリプトを読み込むと対応しているかを判定してclassをふってくれます。</p>
+<blockquote>
+  <p>Modernizr<br />
+  <a href="http://www.modernizr.com/">http://www.modernizr.com/</a><br /></p>
+</blockquote>
+<p>border-imageに対応していない場合はno-borderimageというクラスが振られます。<br />
+例えば先ほどの例だと以下のような感じで指定します。</p>
+<pre class="brush:css">
+.no-borderimage blockquote{
+  border:1px dashed #E9D97C;
+}
+</pre>
+<p>Sassを普通につかって書いていると入れ子は簡単なのですが、親などに指定を追加するためにひとまとまりのところから外してしまうのは若干見通しが悪くなります。<br />
+（このあたりは色々な考え方があるかと思いますので、分けてしまう方がいい場合もあるでしょう）</p>
+<p>同じ中で書いていく場合は「&amp;」を使います。</p>
+<pre class="brush:css">
+blockquote{
+  .no-borderimage &amp;{
+    border:1px dashed #E9D97C;
+  }
+}
+</pre>
+<p>このように書くことで</p>
+<pre class="brush:css">
+.no-borderimage blockquote{
+  border:1px dashed #E9D97C;
+}
+</pre>
+<p>というCSSが生成されます。</p>
+<p>「&amp;」については</p>
+<pre class="brush:css">
+a {
+  text-decoration: none;
+  &amp;:hover { text-decoration: underline; }
+}
+</pre>
+<p>とかくことで</p>
+<pre class="brush:css">
+a {text-decoration: none;}
+a:hover{text-decoration: underline; }
+</pre>
+<p>というCSSができますね。<br />
+より効率的にCSSが書けそうです。</p>
+<h2>参考URL</h2>
+<p>File: SASS_REFERENCE<br />
+<a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#referencing_parent_selectors_">http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#referencing_parent_selectors_</a><br /></p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/macmars_edit.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/crema-bookmark-Mar1.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

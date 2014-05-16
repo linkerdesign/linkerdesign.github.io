@@ -1,0 +1,4 @@
+@charset "utf-8";body{text-align:center;}div#container{width:100%;margin:0;text-align:left;}div#header,
+div#footer,
+div#aboutArea,
+div#memberArea{width:900px;margin:0 auto;text-align:left;}div#mainArea{margin:28px auto;}div#footerArea{clear:both;width:100%;}

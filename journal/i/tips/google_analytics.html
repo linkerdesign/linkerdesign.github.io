@@ -1,0 +1,80 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>「Google Analyticsで本当の直帰率を計測する方法」を試します。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>「Google Analyticsで本当の直帰率を計測する方法」を試します。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;「Google Analyticsで本当の直帰率を計測する方法」を試します。</p>
+
+<p>火曜／金曜担当の@cremaです。本日の変則小ネタ2つめは、アクセス解析のお話。</p>
+
+<p>当linker journalでも、当然アクセス解析をしており、Google Analyticsのトラッキングコードを埋め込んでいます。</p>
+
+<p>1年間3人で試行錯誤しながらブログを書き続けてきて、お陰さまでページビューやセッション数は確実に増えているのですが、ほとんど変わらないのが直帰率。ある一定のパーセンテージを、かたくなにキープし続けています（他の2人の許可が出たら、数字を公開します）。</p>
+
+<p>この数字はかなり直帰率が高いと思われるのですが、その理由として次のような仮説を立てています。</p>
+
+<ul>
+	<li>1年分貯まった記事に検索エンジン経由で訪問して、必要なページだけを見ていかれる方が多い。</li>
+	<li>Twitterなどに流した更新情報を経由して、その日の記事だけを見に来てくださる常連さんが多い。</li>
+</ul>
+
+<p>そういう方々に関しては、きちんと記事を読んでくださっているのであれば、それほど問題ではないと思うのです（前者に対しては、もっと関連情報ページへの動線を強化する必要があると思いますが）。</p>
+
+<p>本当に知りたいのは、「このサイトは必要ではない！」と一瞬で判断して、すぐにページを閉じて帰ってしまわれる方の数なのですよね。</p>
+
+<p>ということで、「<a href="http://www.suzukikenichi.com/blog/">海外SEO情報ブログ</a>」さんの「<a href="http://www.suzukikenichi.com/blog/the-way-to-measure-real-bounce-rate-in-google-analytics/">Google Analyticsで本当の直帰率を計測する方法</a>」を試してみることにしました。</p>
+
+<blockquote>
+
+<p>そこで、Google Analyticsにちょっと細工を施して、滞在時間を指標に取り入れた本当の直帰率を調べる方法をお伝えします。</p>
+
+<p>padicodeの"The Real Bounce Rate in Google Analytics"という記事で、知った設定です（正確に言うと、Google AnalyticsチームのAvinash Kaushik氏のツイートで知りました）。</p>
+
+<p>setTimeout('pageTracker._trackEvent(\'NoBounce\', \'NoBounce\', \'Over 10 seconds\')',10000);</p>
+
+<p>上のコードを、Google Analyticsのトラッキングタグの"pageTracker._trackPageview();"の下に挿入します。</p>
+
+</blockquote>
+
+<p>詳しい説明は上記ページで読んでいただくとして、先程、このコードをlinker.in全ページに埋め込んでみました。さて、計測結果はどうなりますでしょうか。</p>
+
+<p>数週間後に、またご報告しますね。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/spgra.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/post_82.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

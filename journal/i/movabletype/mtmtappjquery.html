@@ -1,0 +1,87 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTの管理画面を「MTAppjQueryプラグイン」で簡単にカスタマイズ｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTの管理画面を「MTAppjQueryプラグイン」で簡単にカスタマイズ</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTの管理画面を「MTAppjQueryプラグイン」で簡単にカスタマイズ</p>
+
+<p>みなさん、こんにちは、まーしーです</p>
+<p>今日たまたまtwitterをながめた時に（たまたまですよ）、Tinybeansさんが</p>
+<blockquote>
+  <p><span class="status-body"><span class="status-content"><span class="entry-content">MTAppjQuery 0.01 リリース - Movable Type 5 の管理画面をjQueryでカスタマイズしやすくするプラグイン (<a href="http://tinyurl.com/2awb3ld%29" class="tweet-url web" rel="nofollow" target="_blank">http://tinyurl.com/2awb3ld)</a></span></span></span><br /></p>
+
+  <p><a href="http://twitter.com/tinybeans/status/17757718948">http://twitter.com/tinybeans/status/17757718948</a></p>
+</blockquote>
+<p>こんなことをつぶやかれてたもんだからはやいところ触ってみなければ、と言うことで早速入れてみました。</p>
+<h2>MTAppjQueryプラグインをいれてみる</h2>
+<p>プラグインを入れてみるとこんな感じになっています。</p>
+<p><a href="http://linker.in/journal/images/100705-01.jpg"><img src="http://linker.in/journal/images/100705-01-tm.jpg" width="480" height="435" alt="100705-01.jpg" style="border:2px #7c7c7c solid;" /></a></p>
+<ul>
+  <li>入力欄のラベルカスタマイズ</li>
+
+  <li>マウスオーバーしたときのメッセージ</li>
+
+  <li>その他メッセージ表示</li>
+</ul>
+<p>ができるようです。 いやはや、すごいですね。</p>
+<p>Tinybeansさんが以前作られてた<br /></p>
+<blockquote>
+  <p>Movable Type のブログ記事編集画面をウィザート形式にするプラグイン - Edit Entry Wizard - かたつむりくんのWWW<br />
+  <a href="http://www.tinybeans.net/blog/2009/07/17-172127.html">http://www.tinybeans.net/blog/2009/07/17-172127.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>とかもすごいなぁ、と思ってはいたんですが今回のMTAppjQueryプラグインで管理画面が色々出来ちゃいますね。管理画面のテンプレートを触るよりは格段にわかりやすいです。</p>
+<h2>MTAppjQueryに同梱されているプラグイン</h2>
+<p>MTAppjQueryはMTの管理画面をjQueryで簡単にカスタマイズすることが出来る様になります。必要なjQueryプラグインを読み込ませたりといったかゆいところにも手が届いています。<br /></p>
+<p>MTAppjQuery自体もいくつかjQueryのプラグインを同梱してあります。<br /></p>
+<ul>
+  <li><a href="http://www.tinybeans.net/blog/2010/07/05-123330.html">$.MTAppCustomize();</a></li>
+
+  <li>$.MTAppMultiCheckbox();</li>
+
+  <li>$.MTAppMsg();<br /></li>
+</ul>
+<p>どれもこれも気になる所ですが、個人的には入力欄の並び替えが簡単にできるという所が一番便利そうな気がしています。</p>
+<p>$.MTAppFieldSort({sort: 'keywords,c:textfield,title'});<br /></p>
+<p>サンプルファイルを見てみると、このような記述をuser.jsにすることで並び替えが自由に出来ます。本文／追記の所は「text」と書けばいいようですね。</p>
+<p><img src="http://linker.in/journal/images/100705-02.jpg" width="480" height="553" alt="100705-02.jpg" style="border:2px #7c7c7c solid;" /></p>
+<p>カスタムフィールドにも対応していて至れり尽くせりです。<br />
+すばらしいプラグインですね！<br /></p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/ipadifontmaker.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/movabletype/movable_type_5cms_movable_type_5.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

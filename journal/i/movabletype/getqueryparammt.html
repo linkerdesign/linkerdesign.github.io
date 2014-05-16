@@ -1,0 +1,95 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>GetQueryParamプラグインを使ってMTでカテゴリ＆タグのアーカイブを作ってみる｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>GetQueryParamプラグインを使ってMTでカテゴリ＆タグのアーカイブを作ってみる</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;GetQueryParamプラグインを使ってMTでカテゴリ＆タグのアーカイブを作ってみる</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+台風という噂だった東京ですが、そこまでひどくならなかったようでほっと一安心です。台風の季節にはまだ少し早いですよね。。&nbsp;&nbsp;</p>
+<p>さて、MTなどのCMSを使っている場合、運用のルールによってはタグアーカイブを作る事があると思います。<br />
+MTのタグアーカイブは検索をベースにして動的に生成されます。ただ、例えば特定のカテゴリ内にあるエントリーのタグが、、、などとそういう話もあるでしょう。</p>
+<h2>カテゴリと関連したタグアーカイブを作る</h2>
+<p>カテゴリアーカイブ内でタグをベースにとか言う場合はなかなかうまい方法がないので、タグアーカイブ内でカテゴリを固定するなど、そのような方法を代替手段としてとることになるかと思います。</p>
+<p>動的に生成することが可能ですので、どのページからきたか？という物を判断して、カテゴリAからきた場合はタグアーカイブのうち、そのカテゴリに該当する物を表示させることで代用ができそうです。</p>
+<p>となると、どこからきたかというのをどのように取得するか？という事になりますが、今回は藤本さんが公開されている<a href="http://www.h-fj.com/blog/archives/2008/02/19-134955.php">GetQueryParamプラグイン</a>を使ってみます。</p>
+<blockquote>
+  <p>メールフォームプラグインV2.0・その12（ラジオボタン／セレクトの追加） - The blog of H.Fujimoto<br />
+  <a href="http://www.h-fj.com/blog/archives/2008/02/19-134955.php">http://www.h-fj.com/blog/archives/2008/02/19-134955.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>このプラグインを使う事で、リンク内のパラメータを取得して使用することが可能になります。</p>
+<h2>リンク内のパラメータから値取得してみるサンプル</h2>
+<p>例えば、タグ一覧を作成する場合</p>
+<pre>
+&lt;ul&gt;
+&lt;mt:Tags&gt;
+&lt;li&gt;&lt;a href="&lt;$mt:TagSearchLink$&gt;"&gt;&lt;$mt:TagName$&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/mt:Tags&gt;
+&lt;/ul&gt;
+</pre>
+<p>のような書き方をすると思います。</p>
+<p>このリンク先である検索結果のテンプレート内でタグアーカイブの見た目を調整します。その際に元ページに応じて切り替えるパラメータを設定しておきます。</p>
+<p>先ほどのタグ一覧のサンプルに</p>
+<pre>
+&lt;ul&gt;
+&lt;mt:Tags&gt;
+&lt;li&gt;&lt;a href="&lt;$mt:TagSearchLink$&gt;&amp;category=&lt;$mt:CategoryBasename$&gt;"&gt;&lt;$mt:TagName$&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/mt:Tags&gt;
+&lt;/ul&gt;
+</pre>
+<p>といったかんじで、categoryというパラメータを追加してみます。この記述がカテゴリアーカイブ内で書かれていれば、CategoryBasenameのところがその値に応じて変化することになります。</p>
+<p>このようにパラメータを渡しておくと、検索結果のテンプレートで</p>
+<pre>
+&lt;mt:SetVars&gt;
+search_category=&lt;$MTGetQueryParam name="category"$&gt;
+&lt;/mt:SetVars&gt;
+</pre>
+<p>というかんじで取得することが可能になります。<br />
+一度取得出来れば、</p>
+<pre>
+&lt;mt:If name="search_category" eq="hoge"&gt;
+〜〜〜
+&lt;/mt:If&gt;
+</pre>
+<p>といったかんじで条件に応じて記述をすることが可能になりますね。</p>
+<p>スマートな方法ではないですが、テンプレートとプラグインで見た目をカテゴリベースにしたうえで、タグアーカイブ的なテンプレートも実装することができます。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/ia_writer_for_mac.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/iphonekeynote.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

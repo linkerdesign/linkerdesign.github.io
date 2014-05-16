@@ -1,0 +1,217 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTの500エラー改善の経過報告と再構築時間改善方法等を教えてもらいました｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTの500エラー改善の経過報告と再構築時間改善方法等を教えてもらいました</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTの500エラー改善の経過報告と再構築時間改善方法等を教えてもらいました</p>
+
+<p><img src="http://linker.in/journal/images/090727.gif" width="600" height="200" alt="090727.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br /></p>
+<p>先日、<a href="http://linker.in/journal/2009/07/mt500.php">500エラーに対応中</a> という記事を書いたら各所で色々教えていただきました。<br />
+どうもありがとうございます。この場を借りてお礼を述べさせてもらいます。</p>
+<p>先日の記事でも紹介した</p>
+<blockquote>
+  <p>Six Apart - Movable Type アップグレード 秘話ブログ - :GIZMODO JAPAN編 - :第三話　MT4高速化しよう！講座の巻<br />
+  <a href="http://www.sixapart.jp/promotions/upgrade/gizmodomovable_type_03.html">http://www.sixapart.jp/promotions/upgrade/gizmodomovable_type_03.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>でも教えていたSix Apartの柳下さんから改善の方法や日々の確認方法を教えていただきました。<br />
+ちなみに、CGIの実行時間を延ばしてもらった効果が出ているのか前回以降500エラーは出ていないような感じです。</p>
+<p>まず、改善するに当たっての３分類は</p>
+<ul>
+  <li>Movable Type</li>
+
+  <li>Apache</li>
+
+  <li>DataBase</li>
+</ul>
+<p>ということでした。<br />
+Movable Typeの部分もわかっていないことが多いのですが、Movable Type部分で教えてもらってもらったことをまとめてみようと思います。</p>
+<h2>Movable Type周りを改善する</h2>
+<p>Movable Type周りについて出来ることをとりあえず羅列してみます。</p>
+<ul>
+  <li>mt-config.cgiをきれいにする</li>
+
+  <li>デバッグモードにする</li>
+
+  <li>使っていないプラグインを外す</li>
+
+  <li>カテゴリーを使わず、Blogを分割する</li>
+
+  <li>SSIを使う</li>
+
+  <li>公開キューを設定する<br /></li>
+
+  <li>MTのアクティビティログを見る</li>
+
+  <li>mt-tmpl-testを使う</li>
+
+  <li>パフォーマンスログを見る</li>
+
+  <li>FastCGIを使う</li>
+</ul>
+<p>ではそれぞれについて見ていきましょう。</p>
+<h3>mt-config.cgiをきれいにする</h3>
+<p>どのくらい効果があるのか、ちょっとわかっていないところでもありますが。<br />
+きれいにしておいて損はないですね。</p>
+<h3>デバッグモードにする</h3>
+<p>これはデバッグ用のメッセージを見るための設定ですね。</p>
+<blockquote>
+  <p>DebugMode | 環境変数リファレンス<br />
+  <a href="http://www.movabletype.jp/documentation/appendices/config-directives/debugmode.html">http://www.movabletype.jp/documentation/appendices/config-directives/debugmode.html</a></p>
+</blockquote>
+<p>これらの値を</p>
+<pre class="brush:xml">
+DebugMode 1
+</pre>
+<p>のような感じで、mt-config.cgiに記載しておきます</p>
+<p>恥ずかしながら今まで知りませんでした。<br />
+お客さんが使用するMTで設定するわけにはいかないですが、<br />
+自分で使用する場合は見ておくとよいかもしれません。&nbsp;&nbsp;</p>
+<h3>使っていないプラグインを外す</h3>
+<p>MTをインストールするとプラグインがいくつか入っていますよね。<br />
+どのプラグインがどの様に必要なプラグインか判断して、不要なモノを削除してしまいましょう。<br />
+例えば</p>
+<p><b>WXR Importer 1.1</b></p>
+<blockquote>
+  <p>「WordPressからエクスポートされたRSSをMTにインポートします。」</p>
+</blockquote>
+<p>ということなので、Wordpressから入れないのであれば不要ですね。</p>
+<p><b>SpamLookup</b><br /></p>
+<p>スパムをはじくためのプラグインなんですがTypePad AntiSpamプラグインもあるので、どちらかは不要ですね。</p>
+<blockquote>
+  <p>Movable Type 3.3 マニュアル - SpamLookup<br />
+  <a href="http://www.sixapart.jp/movabletype/manual/3.3/05_preinstalled_plugins/spamlookup.html">http://www.sixapart.jp/movabletype/manual/3.3/05_preinstalled_plugins/spamlookup.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p><b>Textile 2.05</b><br /></p>
+<blockquote>
+  <p>Six Apart - Movable Type プラグインディレクトリ: MT-Textile<br />
+  <a href="http://www.sixapart.jp/movabletype/plugins/mt_textile.html">http://www.sixapart.jp/movabletype/plugins/mt_textile.html</a></p>
+</blockquote>
+<p>Markdownと似たようなものですが。Textileの入力方法が不要なのであれば不要ですね。</p>
+<p><b>Markdown</b><br /></p>
+<blockquote>
+  <p>Six Apart - Movable Type プラグインディレクトリ: Markdown<br />
+  <a href="http://www.sixapart.jp/movabletype/plugins/markdown.html">http://www.sixapart.jp/movabletype/plugins/markdown.html</a></p>
+</blockquote>
+<p>Markdownの入力方式がいいという人もいますね。<br />
+ただ、Markdownで入力しなければ特に不要ですね。</p>
+<p>上記であげたようなプラグインは使わなくても、メモリに展開されているようで、使わないのであれば削除してしまった方が負荷を減らすことが可能なようです。<br />
+このあたりの話は、言われたものを「はい、そうなんですか」というレベルなのでどうにかしないといけないとこです。</p>
+<h3>カテゴリーをつかわず、Blogを分割するとか</h3>
+<p>１つのブログでサイトを構築した方が良い場合と複数ブログで構築した方が良い場合があるかと思います。<br />
+前回紹介した記事のGIZMODEのような大量のエントリーがあるサイトとかの場合は、ブログを分けた方が再構築を短くすることが可能になる場合もあります。</p>
+<p>サイトマップが最初にきまって、どのようにMTを使うか？という感じで進めていくかと思うのですが、将来的に記事が増えた場合にどうなりそうか？という視点も持ちながら考えてみる必要がありそうです。</p>
+<p>パッと考えてみると、１記事に対して複数カテゴリ指定したい場合とかは１カテゴリ＝１ブログみたいな作りだと難しいのかも？とか思ったりもしています。</p>
+<h3>SSIを使う</h3>
+<p>共通パーツでそこまで変更がない部分はSSIにしてしまうことで再構築の負荷を減らすことが可能です。</p>
+<blockquote>
+  <p>サーバーサイドインクルード | Movable Type 4 ドキュメント<br />
+  <a href="http://www.movabletype.jp/documentation/server-side-includes.html">http://www.movabletype.jp/documentation/server-side-includes.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>このあたりに関係してきそうなモノとしてテンプレートモジュールのキャッシュがありますね。</p>
+<blockquote>
+  <p>テンプレートモジュールのキャッシュ | Movable Type 4 ドキュメント<br />
+  <a href="http://www.movabletype.jp/documentation/module-caching.html">http://www.movabletype.jp/documentation/module-caching.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>モジュールのキャッシュを使えば、時間がかかってしまうmt-includeも少し早くなるらしいです。<br />
+ここは早めにためしてみないといけないところです。。<br /></p>
+<h3>公開キューを設定する</h3>
+<p>ブログ記事やindexページは更新したらすぐ表示された方が良いかもしれないですが、カテゴリアーカイブや日付アーカイブとかは場合によっては更新してすぐ必要、というモノでもないかもしれません。</p>
+<p>そういうときは公開キューをしてサーバーの軽い時間で更新する選択肢もありますね。</p>
+<blockquote>
+  <p>指定日投稿や公開キュー等のスケジュール処理の設定 | Movable Type 4 ドキュメント<br />
+  <a href="http://www.movabletype.jp/documentation/schedule_task_framework.html">http://www.movabletype.jp/documentation/schedule_task_framework.html</a></p>
+</blockquote>
+<p>あとはリクエストがあったときにアーカイブを作るとかのプラグインを入れる、という方法がありますね。<br /></p>
+<blockquote>
+  <p>Perl版ダイナミック・パブリッシング（MT4用） - The blog of H.Fujimoto<br />
+  <a href="http://www.h-fj.com/blog/archives/2007/07/06-095902.php">http://www.h-fj.com/blog/archives/2007/07/06-095902.php</a>&nbsp;&nbsp;</p>
+</blockquote>
+<h3>MTアクティビティログを見る</h3>
+<p>多分、これはいわゆるMT管理画面にあるログのことなんだと思っているのですが。<br />
+mt-search.cgiがどのくらいたたかれてるか？とかを見ておくときに使う、という感じでしょうか。</p>
+<h3>mt-tmpl-testをつかう</h3>
+<p>こういうものがあると言うことを初めて知りました。</p>
+<blockquote>
+  <p>コマンドラインから、Movable Type の特定のテンプレートをデバグできる mt-tmpl-test now というツール<br /></p>
+  <p><span style="font-size: 12px; font-weight: normal;">小粋空間: コマンドラインから特定のテンプレートをデバグできる mt-tmpl-test<br />
+  <a href="http://www.koikikukan.com/archives/2008/10/31-120300.php">http://www.koikikukan.com/archives/2008/10/31-120300.php</a>&nbsp;&nbsp;</span></p>
+</blockquote>
+<p><span style="font-size: 12px; font-weight: normal;">どのテンプレートにどれくらいの時間がかかっているか？というのを知ることが出来るようです。<br />
+全然知らなかったので、これは改めて調べ直しです。</span></p>
+<h3>パフォーマンスログをみる</h3>
+<p>こちらも初耳。<br />
+動作するにはPerlのモジュールで必要のものがあるかもしれないとのことでした。</p>
+<blockquote>
+  <p>再構築にかかった時間の表示や、パフォーマンスログを出力する機能も追加されているので、MT を使う環境に合わせて、テンプレートモジュールのキャッシング設定を調整するなどのチューニングを行い、さらに高速化を狙うこともできる。<br /></p>
+
+  <p>再構築などが高速化した Movable Type 4.2〜シックス・アパートに聞く「MT4.2」 - japan.internet.com Webマーケティング<br />
+  <a href="http://japan.internet.com/wmnews/20080623/3.html">http://japan.internet.com/wmnews/20080623/3.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>ちょっとわかってない部分があります。。<br /></p>
+<blockquote>
+  <p>MTOS 4.1.1 のパフォーマンスロギング機能について | MovableType.jp<br />
+  <a href="http://www.movabletype.jp/blog/performance-logging.html">http://www.movabletype.jp/blog/performance-logging.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>4.3ではシステムに入ってくるらしいですね。</p>
+<blockquote>
+  <p>小粋空間: Movable Type 4.3 α版レポート<br />
+  <a href="http://www.koikikukan.com/archives/2009/07/10-015555.php">http://www.koikikukan.com/archives/2009/07/10-015555.php</a></p>
+</blockquote>
+<p>ということは5でもシステム内に入ってくるんでしょうか？？</p>
+<h3>FastCGIを使う<br /></h3>
+<p>FastCGIっていう言葉自体は知っていましたが、使ったことがありませんでした。</p>
+<blockquote>
+  <p>FastCGIとは、CGIの動作方法の仕様の一つである。プロトコルは公開されている。<br /></p>
+
+  <p>FastCGI - Wikipedia<br />
+  <a href="http://ja.wikipedia.org/wiki/FastCGI">http://ja.wikipedia.org/wiki/FastCGI</a></p>
+</blockquote>
+<p>良い情報もありましたし、辞めた、という情報もありました。<br />
+どちらがいいのかを全然判断できないのでもう少し調べてみたいと思います</p>
+<h2>とりあえずまとめ</h2>
+<p>聞けば聞くほど知らないことがわっさわっさと出てきてしまって、自分の不勉強が恥ずかしくて仕方なかったです。<br />
+今回書いてる内容もちゃんとやってる人からしたら当たり前過ぎることなんだとおもうのですが・・・<br />
+今回は書いていませんが、ApacheやDBとかの話ももっと知る努力をしないといけませんね。</p>
+<p>前回の記事を書いてから色々かんがえていて、MT4iは原因ではなさそうだなぁ、と思ったらやはりMT4iは500エラーの原因としては違う路線の話とのことでした。<br />
+なので早めにMT4iは復活させないとな、と思っています。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/other/post_38.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/linker_2.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

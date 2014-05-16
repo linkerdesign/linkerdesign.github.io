@@ -1,0 +1,115 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>埋込み用Googleカレンダーの文字色を変える話。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>埋込み用Googleカレンダーの文字色を変える話。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Tips&nbsp;&raquo;&nbsp;埋込み用Googleカレンダーの文字色を変える話。</p>
+
+<p>火曜／金曜担当の@cremaです。</p>
+
+<p>かなり初歩的な話なのですが、先日「埋込み用Googleカレンダーの文字色を、予定の種類ごとに変えるのってどうすればいいの？」と悩み、皆さまに教えていただきましたので、メモがわりに書いておきますね。</p>
+
+<p>話の発端は、私のサルサのお師匠様のお師匠様（サンフランシスコ在住）のサイトを拝見していたとき、埋め込まれたGoogleカレンダーの文字色が、レッスンごとに違う色になっているのを発見したことでした。</p>
+
+<p><a href="http://linker.in/journal/images/calender001.png"><img alt="calender001.png" src="http://linker.in/journal/assets_c/2010/06/calender001-thumb-500x514-1953.png" width="500" height="514" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></a></p>
+
+<p>何気なく見ていて、「あ、これ私もやろう」と思った直後、「あれ？これってどうやるんだろう？」と悩み始めましてw</p>
+
+<p>例によって例のごとくTwitterでこんなふうにつぶやいてみました。</p>
+
+<blockquote>
+
+<p>【質問】Googleカレンダーの予定ごとの文字色を <a href="http://www.salsamania.org/calendar.html" target="_blank">http://www.salsamania.org/calendar.html</a> みたいに変えるのって、どうすればいいのでしょうか？もしご存知でしたら、教えていただけませんか？<br />posted at <a href="http://twitter.com/crema/status/15046811878" target="_blank">00:07:49</a></p>
+
+</blockquote>
+
+<p>すると、このような回答をいただくことができました。</p>
+
+<blockquote>
+
+<p>@crema 左のカレンダー毎の部分をクリックすれば、色変えられますよ？四角い色つきのがあると思いますが<br />posted at <a href="http://twitter.com/gaku/status/15046858638" target="_blank">12:08</a></p>
+
+</blockquote>
+
+<blockquote>
+
+<p>@crema カレンダー分けてるのでは？ <br />posted at <a href="http://twitter.com/crema/status/15046811878" target="_blank">12:09</a></p>
+
+<p> </blockquote></p>
+
+<blockquote>
+
+<p>@crema 右下の＋googleカレンダーというところクリックしてみて下さい。カレンダーが7つあるのが分かります。 <br />posted at <a href="http://twitter.com/crema/status/15046811878" target="_blank">12:18</a></p>
+
+</blockquote>
+
+<p>こんな感じですね。</p>
+
+<p><img alt="calender002.png" src="http://linker.in/journal/images/calender002.png" width="500" height="221" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>なるほどなるほど。私は、ひとつのカレンダーに登録した予定ひとつひとつに自分で任意の色をつけられるのかと勘違いしていたのですが、それぞれの予定は別々のカレンダーに登録されていて、埋込み用に複数のカレンダーをまとめたコードを取得してるってことなんですね。では、実際にどうやるのか、メモしておきましょう。</p>
+
+<p>まずは、複数のカレンダーを作成し、それぞれに属する予定を登録します。ここでは「ごはんの予定」と「サルサの予定」というふたつのカレンダーを作り、いくつか偽の予定を入れてみました。</p>
+
+<p><img alt="calender003.png" src="http://linker.in/journal/images/calender003.png" width="500" height="352" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>左側の「マイカレンダー」エリア内に表示されている当該カレンダーの矢印アイコンをクリックし、それぞれ好きな色を選択します。ここまでは、あまり悩むことはありません。</p>
+
+<p><img alt="calender006.png" src="http://linker.in/journal/images/calender006.png" width="359" height="360" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>さて、ここからふたつのカレンダーを含んだ埋込み用コードをどうやって取得するのか！</p>
+
+<p>マイカレンダー下部の「設定」をクリックし、「ごはんの予定」カレンダーを選択します。すると「このカレンダーを埋め込む」というセクションがありますね。</p>
+
+<p><img alt="calender004.png" src="http://linker.in/journal/images/calender004.png" width="500" height="326" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>その右側の「色やサイズなどをカスタマイズします」をクリックすると、こんな画面に遷移します。</p>
+
+<p><img alt="calender005.png" src="http://linker.in/journal/images/calender005.png" width="500" height="498" class="mt-image-center" style="text-align: center; display: block; margin: 0 auto 20px;" /></p>
+
+<p>左下の「表示するカレンダー」で、埋め込みたいカレンダーを好きなだけ選択し、上部の「下記のコードを貼り付けると、このカレンダーがウェブページに挿入されます」エリアに表示されるコードを取得するだけ。これを好きなWebページに張り付けるだけなんですよね......。</p>
+
+<p>この一連の作業で一番分かりにくいのは、「色やサイズなどをカスタマイズします」というラベリングなんじゃないかなと思ってしまったワタクシですが、みなさま日々スムーズにこの機能を使いこなされていますでしょうか？</p>
+
+<p>以上、ちょっと愚痴まじりの投稿でしたが、いつかどなたかのお役に立てば幸いです......（たつのかな）。</p>
+
+<p>教えてくださった<a href="http://twitter.com/chibicoo" target="_blank">@chibicoo</a>さん、<a href="http://twitter.com/_kasuke" target="_blank">@_kasuke</a>さん、<a href="http://twitter.com/aonoe" target="_blank">@aonoe</a>さん、<a href="http://twitter.com/kai4den" target="_blank">@kai4den</a>さん、<a href="http://twitter.com/RinX_Moon" target="_blank">@RinX_Moon</a>さん、<a href="http://twitter.com/gaku" target="_blank">@gaku</a>さん、いつもお世話になっております。ありがとうございました！</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/ipadpdf.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/design/ipadphaidon_design_classics.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

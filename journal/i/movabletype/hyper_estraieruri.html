@@ -1,0 +1,72 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Hyper Estraierを使う場合はURI属性が重複しないように細心の注意を。｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>Hyper Estraierを使う場合はURI属性が重複しないように細心の注意を。</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;Hyper Estraierを使う場合はURI属性が重複しないように細心の注意を。</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+だいぶ寒くなってきたので作業場所のところにヒーターを出してきました。<br />
+暖かくなると今度は睡魔との闘いですね。。。</p>
+<p>さて、Hyper Estraierを使っていて思わぬところではまったのでそのことでもメモ的に書いておこうかと思います。</p>
+<h2>Hyper Estraierをつかって全文検索</h2>
+<p>MTで検索を使うときはsearch.cgiなどをつかいますが、<a href="http://www.powercms.jp/">PowerCMS</a>を使っている場合には検索はいくつか方法があります。<br />そのなかでHyper Estraierを使って行うことがあります。</p>
+<blockquote>
+<p>Hyper Estraier - Wikipedia<br /><a href="http://ja.wikipedia.org/wiki/Hyper_Estraier">http://ja.wikipedia.org/wiki/Hyper_Estraier</a></p>
+</blockquote>
+<p>検索用のデータをそれぞれ用意しておきそれらをインデックスして、そのインデックスしたものを検索して結果を返すかんじです。<br />なので、検索用のデータは例えばブログ記事アーカイブで表に見えるものとは別のアーカイブとして用意したりします。</p>
+<p>その検索用のデータとして必要なのは以下のような項目です。</p>
+<blockquote>
+<p>@id : 文書をインデックスに登録した際に自動的に振られます。<br />@uri : 文書の参照方法を示します。全ての文書に必須です。<br />@digest : 文書のメッセージダイジェストを示します。登録時に自動算出されます。<br />@cdate : 文書の作成日時を示します。<br />@mdate : 文書の最終更新日時を示します。差分更新に使われます。<br />@adate : 文書の最終参照日時を示します。<br />@title : 文書のタイトルです。検索結果で見出しとして扱われます。<br />@author : 文書の著者です。<br />@type : 文書のメディアタイプです。<br />@lang : 文書の言語です。<br />@genre : 文書の様式です。<br />@size : 文書のサイズです。<br />@weight : 文書のスコアリングの重み付けです。<br />@misc : 文書の雑多な情報です。</p>
+<p>User's Guide of Hyper Estraier Version 1 (Japanese)<br /><a href="http://fallabs.com/hyperestraier/uguide-ja.html#attributes">http://fallabs.com/hyperestraier/uguide-ja.html#attributes</a></p>
+</blockquote>
+<p>ID属性は自動で振られるのですが、URI属性については検索用のデータを識別するものとして使われるので基本的には重複しない一意なものとなっています。<br />URI属性が重複している場合は検索用のデータ自体が上書きされてインデックスされてしまいます。</p>
+<h2>URI属性にどのような値を持たせるか？</h2>
+<p>URI属性は重複してはまずいのでMTで使うとしたら<br />@uri=&lt;$MTEntryPermalink$&gt;<br />などuniqueになるものが使われたりすることが多いかと思います。</p>
+<p>このURI属性に入れる値には気をつける必要がでてきます。</p>
+<p>「&lt;$MTEntryPemalink$&gt;」を使っている場合は基本basenameはuniqueになるようになっているので重複する可能性は低いですが、「&lt;$MTPagePermalink$&gt;」を使っているとuniqueにならない可能性もあります。<br />（EntryPermalinkも絶対に重複しないか？というとそうとも限りませんが・・・）</p><p>カスタムフィールドの値があったらその値を使う場合、カスタムフィールドに入れる値が他のPermalinkと重複してしまう可能性もあるでしょう。<br />個別のアーカイブを持たない場合などもあるのでその際にどうするか？ということも考える必要があります。</p>
+<p>今回はまっていたのはこのカスタムフィールドの場合なのですが、想定していない使い方だったところで重複して上書きされてしまい、元の方が検索されないという状況でした。<br />想定していないのも問題でしょうし、そういうことが起こりうる可能性をつぶしておかなかったことも問題だったとは思います。</p>
+<p>なのでURI属性の値については細心の注意を払わないといけませんね。</p>
+<h2>ミスが起こらない作り方を優先</h2>
+<p>このような制作側が想定していない運用というのは少なからず起こってしまう物だとは思いますが、制作の過程など判断が必要な際に「ミスをしない」「ミスが起こらない」というのを意識しないといけないと改めて思いました。</p>
+<p>ウェブサイトやブログの構成もURL、ディレクトリ構造ベースに構築してわかりやすいのも重要ですが、権限に応じた分割や運用の中で考えられる間違いを少しでも減らせる構成にするとかそういったことですね。</p>
+<p>失敗しないと成長しないことが多いですが、色々勉強になりました。</p>
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_203.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/tips/post_204.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

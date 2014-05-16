@@ -1,0 +1,137 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MTで複数のアーカイブの挙動をまとめて変えたい｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MTで複数のアーカイブの挙動をまとめて変えたい</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MTで複数のアーカイブの挙動をまとめて変えたい</p>
+
+<p><img src="http://linker.in/journal/images/100211.jpg" width="600" height="200" alt="100211.jpg" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+週の途中に祝日があるとなんかホッとしますね。</p>
+<p>今日はご存じの方もいらっしゃるかもしれませんが、個人的に知らなかったので情報共有と言うことで。</p>
+<h2>各アーカイブテンプレートには変数archive_classが設定されている</h2>
+<p>MTのアーカイブに指定されている予約変数を使ってアーカイブごとにそれぞれの挙動を分けることが多かったのですが、複数でまとめてやる場合どうしたものかと思っていました。</p>
+<p>ドキュメントをよく読んでみると</p>
+<blockquote>
+  <p>さらに全てのアーカイブテンプレートには、archive_class という変数が設定され、各々の出力するアーカイブをあらわす名前が値として代入されます。各アーカイブごとに代入される値は、以下の表を参照ください。</p>
+<p>アーカイブテンプレートに設定される予約変数<br />
+<a href="http://www.movabletype.jp/documentation/designer/archive-template-variable.html">http://www.movabletype.jp/documentation/designer/archive-template-variable.html</a></p>
+</blockquote>
+<p>ということでarchive_classという変数にアーカイブ名が指定されているとのこと。なので</p>
+<pre class="brush:xml">
+&lt;mt:if name="archive_class" like="^(entry_template | datebased_monthly_archive)"&gt;
+hogehoge
+&lt;/mt:If&gt;
+</pre>
+<p>と書くことで月別アーカイブとブログ記事という複数のアーカイブで挙動を何かする、という事が可能になりますね。</p>
+<h2>MTではアーカイブごとに予約変数が指定されている</h2>
+<p>MTのアーカイブテンプレートを使う際には予約変数があらかじめ指定されているのでそれを元に条件分岐するとアーカイブの種類ごとに挙動を変えることが可能です。</p>
+<p>例えば簡単に書くとこんな感じです。</p>
+<pre class="brush:xml">
+&lt;mt:if name="archive_listing"&gt;
+hogehoge
+&lt;/mt:If&gt;
+</pre>
+<p>全てのアーカイブの挙動を制限出来ます。これらの予約変数については</p>
+<blockquote>
+  <p>アーカイブテンプレートに設定される予約変数<br />
+  <a href="http://www.movabletype.jp/documentation/designer/archive-template-variable.html">http://www.movabletype.jp/documentation/designer/archive-template-variable.html</a></p>
+</blockquote>
+<p>を参照してもらうと色々と指定されているものがわかるかと思います。<br />
+<a href="http://www.movabletype.jp/documentation/files/arcive_variable.pdf">PDF</a>も用意されているのでそれを見るのもいいですね。</p>
+<p>個人的には</p>
+<div class="mm-small" style="margin:0 auto 1.5em auto;border:1px solid #ccc;padding:10px;width:500px;">
+  <div class="mm-image" style="float:left;">
+    <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839927561/mersys-22/ref=nosim" target="_blank"><img src="http://ecx.images-amazon.com/images/I/51VP1goaZ5L._SL75_.jpg" alt="Webプロフェッショナルのための黄金則 Movable Typeテンプレートタグ虎の巻 Movable Type 4.x対応" title="Webプロフェッショナルのための黄金則 Movable Typeテンプレートタグ虎の巻 Movable Type 4.x対応" width="58" height="75" border="0" /></a>
+  </div>
+
+  <div class="mm-content" style="float:left;margin-left:10px;line-height:120%">
+    <div class="mm-title" style="line-height:120%">
+      <a href="http://www.amazon.co.jp/exec/obidos/ASIN/4839927561/mersys-22/ref=nosim" target="_blank">Webプロフェッショナルのための黄金則 Movable Typeテンプレートタグ虎の巻 Movable Type 4.x対応</a>
+    </div>
+
+    <div class="mm-detail" style="margin-top:10px;">
+      エ・ビスコム・テック・ラボ / 毎日コミュニケーションズ ( 2008-03-15 ) /<img src="http://images-jp.amazon.com/images/G/09/x-locale/common/customer-reviews/stars-4-0.gif" border="0" alt="アマゾンおすすめ度" style="vertical-align:middle;" />
+
+      <div style="margin:7px 0px">
+        <a href="http://mediamarker.net/u/mersy/?asin=4839927561" target="_blank">mersy's bookshelfで詳細を見る</a>
+      </div>
+
+      <div style="text-align:right;font-size:7pt;font-family:verdana">
+        <a href="http://mediamarker.net/" target="_blank">MediaMarker</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear:left"></div>
+</div>
+<p>のリファレンスを見ることが多いです。</p>
+<h2>複数のアーカイブで挙動を変えるときに少しはまった</h2>
+<p>さて、これらのアーカイブごとに挙動を分けるとします。<br />
+・アーカイブ全体であればarchive_template<br />
+・月別アーカイブであればdatebased_monthly_archive<br />
+こんな感じを使えば条件分岐できます。</p>
+<p>たとえばウェブページ以外のアーカイブ全てでという場合は</p>
+<pre class="brush:xml">
+&lt;mt:Unless name="page_template"&gt;
+hogehoge
+&lt;/mt:Unless&gt;
+</pre>
+<p>とかけばいけそうですが、月別アーカイブとブログ記事の場合どうするか？と。</p>
+<pre class="brush:xml">
+&lt;mt:If name="entry_template"&gt;
+hoge1
+&lt;/mt:If&gt;
+&lt;mt:If name="datebased_monthly_archive"&gt;
+hoge1
+&lt;/mt:If&gt;  
+</pre>
+<p>と同じものを書くのは少し無駄な気がしたのですが</p>
+<pre class="brush:xml">
+&lt;mt:If name="entry_template OR datebased_monthly_archive"&gt;
+hoge1
+&lt;/mt:If&gt;
+</pre>
+<p>こんな書き方ができないものか？と考えていたわけです。</p>
+<p>ということで、先に書いたようにドキュメントを見てみると各アーカイブテンプレートにはarchive_classという変数が設定されてました。<br />
+今更ながら気づいたので情報の共有でも。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/workstyle/diigo_1.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/review/brian_eno.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

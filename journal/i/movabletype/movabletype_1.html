@@ -1,0 +1,130 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>MovableTypeの個別エントリーでそのエントリーの投稿月の前後の月へのリンクを表示する方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>MovableTypeの個別エントリーでそのエントリーの投稿月の前後の月へのリンクを表示する方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;MovableTypeの個別エントリーでそのエントリーの投稿月の前後の月へのリンクを表示する方法</p>
+
+<p><img src="http://linker.in/journal/images/090917.gif" width="600" height="200" alt="090917.gif" /></p>
+<p>みなさん、こんにちは、まーしーです<br />
+昨日はlinkerの打ち合わせがあってすごく濃い議論ができました。<br />
+改めて、linkerいいですよ！！</p>
+<h2>個別アーカイブで前後の月別アーカイブへリンクさせたい</h2>
+<p>ここのところMT関係で考えていたのがサイドバーに表示させるカレンダーと前後の月別アーカイブへのリンクでした。月別アーカイブでは問題なく出来ますが、個別エントリーの場合はどうしたものかな？と。そこで昨日、</p>
+<blockquote>
+  <p><span class="status-body"><span class="entry-content">個別エントリーでそのエントリーの投稿月の前後の月へのリンク。ふむ。簡単にはいかないんだっけかな<br />
+  <a href="http://twitter.com/mersy/status/4020477993">http://twitter.com/mersy/status/4020477993</a>&nbsp;&nbsp;</span></span></p>
+</blockquote>
+<p>と書いたら、<a href="http://twitter.com/junnama/status/4020651727">@junnama</a>さんや<a href="http://twitter.com/sivacchi/status/4020935805">@sivacchi</a>さん、<a href="http://twitter.com/apstar/status/4021943207">@apstar</a>さん、<a href="http://twitter.com/tinybeans/status/4043917922">@tinybeans</a>さん、<a href="http://twitter.com/kichi_robo/status/4044042976">@kichi_robo</a>さんがヒントとかを投げてくれました。<br />
+感謝感激です。ありがとうございます。<br />
+これを書いた後打ち合わせに出てしまって、反応が今日になってしまってほんと申し訳なかった感じです。<br />
+今朝から改めて考え直してこんな感じの未完成なソースまで作って、本日も打ち合わせへ。</p>
+<pre class="brush:xml">
+&lt;mt:ArchiveList archive_type="Monthly"&gt;
+&lt;MTSetVarBlock name="counter"&gt;&lt;$MTGetVar name="__counter__"$&gt;&lt;/MTSetVarBlock&gt;
+&lt;MTSetVarBlock name="monthlyarchive[$counter]"&gt;&lt;a href="&lt;mt:ArchiveLink /&gt;"&gt;&lt;mt:ArchiveTitle /&gt;&lt;/a&gt;&lt;/MTSetVarBlock&gt;
+&lt;mt:ArchiveListFooter&gt;
+&lt;mt:SetVarBlock name="lastarchive"&gt;&lt;$MTGetVar name="__counter__"$&gt;&lt;/mt:SetVarBlock&gt;
+&lt;/mt:ArchiveListFooter&gt;
+&lt;/mt:ArchiveList&gt;
+&lt;mt:SetVarBlock name="prevarchive"&gt;&lt;mt:GetVar name="$currentarchive" op="--"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:SetVarBlock name="nextarchive"&gt;&lt;mt:GetVar name="$currentarchive" op="++"&gt;&lt;/mt:SetVarBlock&gt;
+&lt;mt:If name="lastarchive" gt="1"&gt;
+&lt;mt:GetVar name="monthlyarchive[$prevarchive]" /&gt;
+&lt;/mt:If&gt;
+&lt;mt:If name="nextarchive" le="lastarchive"&gt;
+&lt;mt:GetVar name="monthlyarchive[$nextarchive]" /&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>このソースは中途半端で全然当てにならないので要注意。<br />
+打ち合わせおわってtwitterみてみると</p>
+<blockquote>
+  <p>Twitter / かたつむりくん: スタティックのテンプレートタグのみで出来ました！ h ...<br />
+  <a href="http://twitter.com/tinybeans/status/4048058464">http://twitter.com/tinybeans/status/4048058464</a></p>
+</blockquote>
+<p>というスバラシイのが。<br />
+帰宅してソースを見させてもらいました。う〜ん、スバラシイ。</p>
+<p>自分で途中まで作りながら、当月をどうやって取得しようか？と考えていたのですが、@tinybeansさんは</p>
+<pre class="brush:xml">
+&lt;mt:If name="archive_title" eq="$crt_month"&gt;
+        &lt;$mt:Var name="count" setvar="crt_index"$&gt;
+&lt;/mt:If&gt;
+</pre>
+<p>という形で解決されていました。なるほど！</p>
+<pre class="brush:xml">
+&lt;mt:Unless name="prev_index" eq="$arry_count"&gt;
+</pre>
+<p>の部分で現在のアーカイブが一番最後(例：index = 11)のとき、prevは12になり、キーの数12個（0 〜 11）と一致することになり、このときはprevは存在しません。</p>
+<pre class="brush:xml">
+&lt;mt:Unless name="next_index" eq="-1"&gt;
+</pre>
+<p>逆に最初だったとき（index = 0）のときnextは-1になりますので、mt:unlessで除いています。<br />
+これで、個別記事アーカイブでもそのエントリーが投稿された月の前後の月別アーカイブに移動することが出来ますね。</p>
+<p>あらためて自分のをみてみると、最初最後の取り方がなかなかめんどくさそうな感じになってますね。</p>
+<p>@tinybeansさんをはじめ、参考になる情報を頂いた皆様、どうもありがとうございました。<br />
+今回解決した方法以外で教えてもらった方法でもできないかを試してみたいと思います。</p>
+<h2>補足</h2>
+<p>記事を書き終わったら</p>
+<blockquote>
+  <p><span class="status-body"><span class="entry-content">@<a class="tweet-url username" href="http://twitter.com/mersy">mersy</a> 昨日のアレ（当該エントリの前後の月別アーカイブ）、MTSetVarTemplateつかって書いてみました <a href="http://bit.ly/OLIG6" class="tweet-url web" rel="nofollow" target="_blank">http://bit.ly/OLIG6<br /></a><a href="http://twitter.com/apstar/statuses/4051155826">http://twitter.com/apstar/statuses/4051155826</a></span></span></p>
+</blockquote>
+<p>と@apstarさんがサクッと作られてました。<br />
+皆さんすごすぎ。（自分しょぼすぎ）</p>
+<p>@apstarさんのはMT:ArchiveListのループの中で、当月の場合に</p>
+<pre class="brush:xml">
+&lt;MTIf name="LopDate" eq="$CurDate"&gt;
+        &lt;MTSetVarBlock name="strMonth[0]"&gt;&lt;MTArchivePrevious&gt;&lt;MTGetVar name="CreateData"&gt;&lt;/MTArchivePrevious&gt;&lt;/MTSetVarBlock&gt;
+        &lt;MTSetVarBlock name="strMonth[1]"&gt;&lt;MTGetVar name="CreateData"&gt;&lt;/MTSetVarBlock&gt;
+        &lt;MTSetVarBlock name="strMonth[2]"&gt;&lt;MTArchiveNext&gt;&lt;MTGetVar name="CreateData"&gt;&lt;/MTArchiveNext&gt;&lt;/MTSetVarBlock&gt;
+&lt;/MTIf&gt;
+</pre>
+<p>というかんじでstrMonthにセットするという方法が特徴的でスバラシイです。<br />
+<a href="http://twitter.com/apstar/status/4021943207">昨日は</a>このことをおっしゃってたんですね。</p>
+<p>う〜ん、みなさん、頭が柔らかいというか発想がすごいなぁ。</p>
+<h2>補足その２〜2009.9.18 6:30〜</h2>
+<p>@tinybeansさんもブログ記事にまとめてくれました。</p>
+<blockquote>
+<p>Movable Typeの個別のブログ記事にその記事の投稿月の前後の月別アーカイブへのリンクを表示するカスタマイズ - かたつむりくんのWWW<br /><a href="http://www.tinybeans.net/blog/2009/09/18-060406.html">
+http://www.tinybeans.net/blog/2009/09/18-060406.html</a></p>
+</blockquote>
+<p>こちらもすごく参考になります！</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/review/iphonegoogle_readerrss_flash_g.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/other/post_49.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

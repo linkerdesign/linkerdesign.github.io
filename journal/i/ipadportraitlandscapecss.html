@@ -1,0 +1,84 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>iPadでportraitとlandscapeでCSSを切り替える方法｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>iPadでportraitとlandscapeでCSSを切り替える方法</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;&nbsp;&raquo;&nbsp;iPadでportraitとlandscapeでCSSを切り替える方法</p>
+
+<p>みなさん、こんにちは、まーしーです<br />
+明日は日本でiPadが発売されますね。これでどう変わるのか楽しみやら色々な気持ちが混じり合っていますね。</p>
+<p>さて、そんなiPadですが、iPad用にサイトを作る場合があるかも知れません。iPhoneと異なりサイズがそれなりにあるので、PCに近い形で作れそうですが細かい微調整をしたいときはCSSのみで対応出来そうです。</p>
+<p>portraitとlandscapeで幅が異なるのでレイアウトを若干調整することが考えられます。リキッドレイアウトにしてしまうのも1つの手でしょう。あとはorientaitonを使ってportraitとlandscapeそれぞれサイズを指定しまってもいいでしょう。</p>
+<h2>読み込むCSSを切り替える</h2>
+<p>portraitとlandscapeで読み込むCSSを切り替える方法があります</p>
+<pre class="brush:xml">
+&lt;link rel=”stylesheet” media=”all and (orientation:portrait)” href=”portrait.css”&gt;
+&lt;link rel=”stylesheet” media=”all and (orientation:landscape)” href=”landscape.css”&gt;
+</pre>
+<p>このあたりはPCのブラウザでみてもブラウザサイズを元に切り替わります。</p>
+<h2>CSS内で変更する</h2>
+<p>読み込むCSSを切り替えるのと同じようなことを１つのCSSで書く方法もあります。</p>
+<pre class="brush:xml">
+@media all and (orientation:landscape){
+mainArea{
+width:900px;
+}
+}
+</pre>
+<p>このように書けばlandscapeの時だけスタイルが適用されます。</p>
+<h2>倍率を指定してしまう</h2>
+<p>ただ、このようにしてpx指定した場合不要な余白が生まれたりする場合があります。iPadが980px想定で表示させるので、そうならないようにviewportで表示を調整します。</p>
+<pre class="brush:xml">
+&lt;meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0" /&gt;
+&lt;meta name="viewport" content="width=768, initial-scale=1.0, maximum-scale=1.0"/&gt;
+</pre>
+<h2>その他メモ</h2>
+<h3>hilokiさんの記事を読めば万事ＯＫ</h3>
+<p>landscapeとportraitの話しか書きませんでしたが、他についてはhilokiさんの記事をよめば概ね解決するでしょう。</p>
+<blockquote>
+  <p>iPadに最適化したサイトがつくれるかもしれない5つの方法（基本編） - EC studio デザインブログ<br />
+  <a href="http://designblog.ecstudio.jp/htmlcss/ipad-lets-begin-optimize.html">http://designblog.ecstudio.jp/htmlcss/ipad-lets-begin-optimize.html</a></p>
+</blockquote>
+<h3>iPadなどでブックマークアイコンを指定する</h3>
+<p>iPadでブックマークをHOMEにおく場合は「apple-touch-icon.png」というファイル名でサイトのルートに画像をアップすると自動でこのアイコンを使ってくれます。<br />
+72px × 72pxで作成すればよいでしょう。</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/web_7.php">&laquo;&nbsp;前の記事へ</a></p>
+
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+

@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>linker journal - mersyの記事一覧 -</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/" />
+    <link rel="self" type="application/atom+xml" href="http://linker.in/journal/mersy.xml" />
+    <id>tag:linker.in,2009-02-04:/journal//2</id>
+    <updated>2013-03-28T12:17:47Z</updated>
+    
+    <generator uri="http://www.sixapart.com/movabletype/">Movable Type 5.06</generator>
+
+<entry>
+    <title>4月20日はMTCafe Tokyo 2013 Springです</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/mtcafe-tokyo-2013-spring.php" />
+    <id>tag:linker.in,2013:/journal//2.1134</id>
+
+    <published>2013-03-28T12:14:53Z</published>
+    <updated>2013-03-28T12:17:47Z</updated>
+
+    <summary>4月20日にMTCafe Tokyoが開催されます。初めて会う方含めいろんな方達とMT話が出来るのを楽しみにしています。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="movabletype" label="movabletype" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />年度末進行というかんじで、気づいたら3月も終わりですね。<br />バタバタなこの頃です。</p>
+<p>さて、来週からは4月ですが、4月20日に<a href="http://kokucheese.com/event/index/75018/">MTCafe Tokyo</a>が開催されます。</p>
+<blockquote>
+<p>4月20日 MTCafe Tokyo 2013 Spring(東京都)<br /><a href="http://kokucheese.com/event/index/75018/">http://kokucheese.com/event/index/75018/</a></p>
+</blockquote>
+<p>去年は花見もー、とか話題になっていたような気がしますが、今年はその頃は桜の時期ではなさそうですね。</p>
+<p>今回のMTCafe Tokyoは勉強会形式ということで、2会場、2セッションずつとなっているようです。</p>
+<p>内容は以下のようなかんじだそうです。</p>
+<blockquote>
+<p>メイン会場</p>
+<p>デザイナーにもできる再構築の高速化／負荷分散<br /><a href="https://twitter.com/hjfuji">@hjfuji</a></p>
+<p>Movable Typeの実践的な管理画面カスタマイズ、検索カスタマイズ（仮)<br /><a href="https://twitter.com/tinybeans">@tinybeans</a></p>
+<p>サブ会場</p>
+<p>未定 （仮題：CMS構築案件で起こる「認識のすれ違い」)<br /><a href="https://twitter.com/naoaki011">@naoaki011</a></p>
+<p>変化に強いインフラを楽して構築するために考えること<br /><a href="https://twitter.com/yagishita">@yagishita</a></p>
+</blockquote>
+<p>全部ききたいなー、と思いますが。どれにしましょうか、、、<br />非常に悩ましいです。</p>
+<p>参加者のリストを見てみると、いつもの人達もですが、名前は知ってるけど会ったことがないという方がちらほらいるので、是非この機会にいろいろと話してみたいと思います。</p>
+<p>MTに興味ある方は是非参加してみてはどうでしょうか。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>LivePreviewTemplateとMTML CompletionsでMTMLの編集作業を効率化</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/livepreviewtemplate.php" />
+    <id>tag:linker.in,2013:/journal//2.1131</id>
+
+    <published>2013-03-11T09:00:00Z</published>
+    <updated>2013-03-11T09:12:03Z</updated>
+
+    <summary>「LivePreviewTemplate」を使うとローカルで編集中のMTMLをプレビュー出来るようになります。MTML Completionsもさらに便利に使えそうです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="movabletype" label="movabletype" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mtml" label="mtml" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />この週末の東京は夏のように暑くなったり、空が黄色くなったりなんか色々でしたね。<br />年度末ですし寒暖の差などで体調崩さないようにしないといけないですね。</p>
+<h2>ローカルで編集中のMTMLをプレビューできるLivePreviewTemplate</h2>
+<p>ToI企画の天野さんが、ST2と<a href="https://github.com/bit-part/MTML-ST2">MTML Completions</a>の組み合わせをさらに便利にして、MTML編集が出来るようになる拡張「<a href="http://tec.toi-planning.net/mt-column/plugin/livepreviewtemplate/">LivePreviewTemplate</a>」を作成されていました。</p>
+<blockquote>
+<p>LivePreviewTemplate とは - ToI<br /><a href="http://tec.toi-planning.net/mt-column/plugin/livepreviewtemplate/">http://tec.toi-planning.net/mt-column/plugin/livepreviewtemplate/</a></p>
+</blockquote>
+<p>こちらにある動画を見て頂くと分かるのですが、ローカルで編集したMTMLの内容をブラウザでプレビュー出来るという拡張になります。</p>
+<p>まず、テンプレートを編集したいMTの管理画面で登録したBookmarkletを起動します。<br />そうするとこんな感じでDrag&amp;Dropするエリアが開くので、ローカルで編集しているファイルを持って行きます。</p>
+<p><img style="border: 2px solid #999;" title="130311-01.png" src="http://linker.in/journal//images/130311-01.png" alt="130311 01" width="600" height="325" border="0" /></p>
+<p>ファイルをもっていくと、プレビューのウィンドウがポップアップで開きます。<br />（PopupをBlockしてると開かないかもしれないので、そのあたりは環境を確認してください。）</p>
+<p>適当にローカルのファイルを編集して保存します。そうするとこのような感じでPopup内では編集内容が反映されています。</p>
+<p><img style="border: 2px solid #999;" title="130311-02.png" src="http://linker.in/journal//images/130311-02.png" alt="130311 02" width="561" height="348" border="0" /></p>
+<p>シンプルなインデックステンプレート、個別記事アーカイブ、月別アーカイブで動作確認してみましたが、問題なくプレビューできました。<br />テンプレートモジュールもインデックステンプレートが読み込まれて表示の確認ができました。<br />MTは5.2が必要で、ブラウザはGoogle Chrome、Firefox、Safari が対応しているようです。</p>
+<p>コンテキストの内容によって表示を変える場合などはうまくでなそうなきもしますが、基本的な動作確認には全く問題なさそうです。<br />あと気になるとしたら、Dynamic関係、cgi関係あたりでしょうか、、、</p>
+<p>PopupウィンドウでPreviewしているテンプレートについては、確認してみて問題がなければ管理画面側でちゃんと保存してあげる必要があるので、これは忘れないようにしないといけませんね。<br />ローカルのファイルとしては保存されていますが、MT側のデータとしてはまだ保存されていない状況になっていますので。</p>
+<h2>MTMLの編集環境を徐々に改良していきたいと思います</h2>
+<p>最近、MTMLの編集作業としては、ローカルでの編集作業をGitで管理するということと管理画面へのコピペという流れをファイルリンクにするか、テーマにするかなど色々考えていたところではあるので、この拡張機能のおかげでだいぶ改善されそうです。</p>
+<p>MTML Completionsも小さな機能追加を予定してますし、少しずつ改善していきたいと思います。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>藤本さんの新著『改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕』プレゼントキャンペーンが開催されています</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/03/css3book.php" />
+    <id>tag:linker.in,2013:/journal//2.1129</id>
+
+    <published>2013-03-04T09:00:00Z</published>
+    <updated>2013-03-04T08:45:26Z</updated>
+
+    <summary>藤本さんの新著『改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕』プレゼントキャンペーンが3月10日まで行われているとのことです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="book" label="book" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="css" label="CSS" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="css" label="css" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="css3" label="CSS3" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />いつもMTのプラグインでお世話になってる<a href="http://www.h-fj.com/blog/">藤本さん</a>が新著『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154865/mersys-22/ref=nosim">改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕</a>』を書かれました。</p>
+<p>現在、この書籍の<a href="http://www.h-fj.com/blog/archives/2013/03/01-143836.php">プレゼントキャンペーン</a>を行っているとのことでそれに乗っかってみます。</p>
+<blockquote>
+<p>「改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕」プレゼントキャンペーン延長 - The blog of H.Fujimoto<br /><a href="http://www.h-fj.com/blog/archives/2013/03/01-143836.php">http://www.h-fj.com/blog/archives/2013/03/01-143836.php</a></p>
+</blockquote>
+<div class="mm-middle" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154865/mersys-22/ref=nosim" target="_blank"><img title="改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕" src="http://ecx.images-amazon.com/images/I/51vsMmU2URL._SL160_.jpg" alt="改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕" width="109" height="160" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 15px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774154865/mersys-22/ref=nosim" target="_blank">改訂新版 スタイルシート ポケットリファレンス 〔CSS3対応〕</a></div>
+<div class="mm-detail" style="margin-top: 10px;">藤本 壱<br />技術評論社 ( 2013-01-24 )<br />ISBN: 9784774154862<br />
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=4774154865" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>
+<p>ブログでこの書籍を紹介すると、抽選で3名にこの本がプレゼントされるとのことです。</p>
+<p>書籍の内容は</p>
+<blockquote>
+<p>スタイルシート(CSS)の記述に必要な知識を体系立ててコンパクトに整理しました。もちろん最新のCSS3に対応。デザイン・クオリティの決め手となるスタイルシート―その構成要素である多数のプロパティや設定値、セレクタだけでなく、基本的な構文まで網羅的に解説します。目的別に整理しているので、使いたい項目を辞書のようにぱっと引けるのが特徴。また、多様化するブラウザ環境に配慮し、スマートフォンでの対応状況も調査しました。Webデザイナーからエンジニアまで、多くの方に、手元に置いていただきたい一冊。</p>
+</blockquote>
+<p>というかんじです。</p>
+<p>細かいブラウザの対応状況などは日々変わってしまうかもしれませんが、CSSの基本は変わらないので、書籍として一冊持っていると便利かもしれませんね。</p>
+<p>---------</p>
+<p>ちなみに、最近藤本さんのプラグイン類でお世話になったのは（プラグインじゃないですが）</p>
+<blockquote>
+<p>MTOSインストール済みAMIの使い方(その1・AWSのアカウントの取得) - The blog of H.Fujimoto<br /><a href="http://www.h-fj.com/blog/archives/2012/12/26-103708.php">http://www.h-fj.com/blog/archives/2012/12/26-103708.php</a></p>
+</blockquote>
+<p>で紹介されているAMIですね。<br />AWSでさくっと環境が出来てしまいます。</p>
+<p>AWSでMT環境の構築は先日読んだ『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822211983/mersys-22/ref=nosim">Amazon Web Services クラウドデザインパターン実装ガイド</a>』でも補足で書かれていたので参考になるかもしれません。</p>
+<div class="mm-small" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822211983/mersys-22/ref=nosim" target="_blank"><img title="Amazon Web Services クラウドデザインパターン実装ガイド" src="http://ecx.images-amazon.com/images/I/51eOjTPsYtL._SL75_.jpg" alt="Amazon Web Services クラウドデザインパターン実装ガイド" width="58" height="75" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 10px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4822211983/mersys-22/ref=nosim" target="_blank">Amazon Web Services クラウドデザインパターン実装ガイド</a></div>
+<div class="mm-detail" style="margin-top: 10px;">大澤 文孝 / 日経BP社 ( 2013-02-07 )
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=4822211983" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>(Power) MTML CompretionsでMTタグのフォーマットを指定出来るようになりました</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/power-mtml-compretionsmt.php" />
+    <id>tag:linker.in,2013:/journal//2.1128</id>
+
+    <published>2013-02-28T02:00:00Z</published>
+    <updated>2013-02-28T01:44:31Z</updated>
+
+    <summary>先日公開したMTML Completions、PowerMTML Completionsで、MTタグのフォーマットを指定出来るようになりました。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="powercms" label="PowerCMS" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="st2" label="st2" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="sublimetext" label="Sublime Text" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />2月も最終日ですね。早いですねぇ。。。（焦</p>
+<p>すでに<a href="https://twitter.com/tinybeans">@tinybeans</a>が書いてますが、先日公開した、<a href="https://github.com/bit-part/MTML-ST2">MTML Completions</a>と<a href="https://github.com/bit-part/PowerMTML-ST2">PowerMTML Completions</a> でMTタグのフォーマットが指定出来るようになりました。<br /><a href="https://twitter.com/tinybeans">@tinybeans</a>が機能追加してくれました！</p>
+<blockquote><p>MTML Completions（MTタグを補完する Sublime Text 2 用パッケージ）でタグの書式が変更可能になりました | かたつむりくんのWWW<br /><a href="http://www.tinybeans.net/blog/2013/02/28-095121.html">http://www.tinybeans.net/blog/2013/02/28-095121.html</a></p></blockquote>
+
+<h2>Packageのupgrade方法</h2>
+<p>まずはPackageをupgradeしておいてください。</p>
+<p>Command Palette（Command + Shift + P）で「Package Control : Upgrade Package」を選択します。</p>
+<p><img title="130228-01.png" src="http://linker.in/journal//images/130228-01.png" alt="130228 01" width="464" height="264" border="0" /></p>
+<p>UpgradeがあるPackageが表示されるので選択すればUpgradeされます。</p>
+<p><img title="130228-02.png" src="http://linker.in/journal//images/130228-02.png" alt="130228 02" width="430" height="216" border="0" /></p>
+<h2>設定方法</h2>
+<p>Preferences &gt; Settings - User（command + ,）に以下の項目を設定するとこでテンプレートタグの書式等を変更できます。</p>
+<h3>接頭辞の設定方法【mtml_prefix】</h3>
+<p>ここで設定した値がテンプレートタグの接頭辞になります。mtml_prefix を設定しない場合は mt: になります。</p>
+<pre><code>設定無し =&gt; &lt;mt:EntryTitle /&gt; <br />"mtml_prefix": "MT:" =&gt; &lt;MT:EntryTitle /&gt; <br />"mtml_prefix": "MT" =&gt; &lt;MTEntryTitle /&gt; </code></pre>
+<h3>ファンクションタグの書式を変更方法【mtml_function_tag_type】</h3>
+<p>ファンクションタグの書式を変更できます。設定できる値は dollar または none です。</p>
+<pre><code>設定無し =&gt; &lt;mt:EntryTitle /&gt; <br />"mtml_function_tag_type": "dollar" =&gt; &lt;$mt:EntryTitle$&gt; <br />"mtml_function_tag_type": "none" =&gt; &lt;mt:EntryTitle&gt; </code></pre>
+<p></p>
+<p>これからも少しずつ機能追加等していきたいと思います。</p>
+<p>ST2をお使いのかたで、まだ使ってない方は是非試してみて感想を頂けるとありがたいです。<br /><a href="https://www.facebook.com/bit.part.net">bit part</a>ともどもどうぞよろしくお願いします。</p>
+<h2>関連リンク</h2>
+<p>MTML Completions（MTタグを補完する Sublime Text 2 用パッケージ）でタグの書式が変更可能になりました | かたつむりくんのWWW<br /><a href="http://www.tinybeans.net/blog/2013/02/28-095121.html">http://www.tinybeans.net/blog/2013/02/28-095121.html</a></p>
+<p></p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Sublime Text 2でMTタグ、PowerCMSのタグを補完できるPackageを作成しました #powercms #movabletype #st2</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/mtmlst2.php" />
+    <id>tag:linker.in,2013:/journal//2.1127</id>
+
+    <published>2013-02-25T00:00:00Z</published>
+    <updated>2013-02-24T21:37:55Z</updated>
+
+    <summary>SublimeTextでMTタグ、PowerCMSのタグ補完ができるPackageをbit partで作成しました。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="powercms" label="PowerCMS" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="st2" label="st2" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="sublimetext" label="Sublime Text" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />積雪量で酸ヶ湯がニュースになってますね。東京もここ数日寒い日が続いてますし、出来るだけ引きこもっていたいと思う日々です。</p>
+<p>さて、<a href="https://www.facebook.com/bit.part.net">bit part</a>で<a href="http://www.sublimetext.com/">Sublime Text 2</a> 用のpackageを作成しました。</p>
+<h2>MTタグの入力補完ができるMTML Completions</h2>
+<p><a href="https://github.com/bit-part/MTML-ST2">MTML Completions</a>はSublime TextでMovable Typeのタグ入力補完を行えるものです。</p>
+<blockquote>
+<p>MTML Completions<br /><a href="https://github.com/bit-part/MTML-ST2">https://github.com/bit-part/MTML-ST2</a></p>
+</blockquote>
+<p>モディファイアやDynamicMTMLのタグなどが入っています。</p>
+<h3>MTタグ</h3>
+<p><img title="130225-02.png" src="http://linker.in/journal//images/130225-02.png" alt="130225-02" width="426" height="291" border="0" /></p>
+<p>BlockタグやFunctionタグなどの分類がわかるようになってます。</p>
+<h3>モディファイア</h3>
+<p><img title="130225-01.jpg" src="http://linker.in/journal//images/130225-01.jpg" alt="130225-01" width="600" height="207" border="0" /></p>
+<p>モディファイアも補完できます。</p>
+<h2>PowerCMSのタグを補完するPowerMTML Completions</h2>
+<p>あわせて<a href="http://www.powercms.jp/">PowerCMS</a>用の<a href="https://github.com/bit-part/PowerMTML-ST2">PowerMTML Completions</a>も作成しました</p>
+<blockquote>
+<p>PowerMTML Completions<br /><a href="https://github.com/bit-part/PowerMTML-ST2">https://github.com/bit-part/PowerMTML-ST2</a></p>
+</blockquote>
+<h3>PowerCMSのタグ</h3>
+<p><img title="130225-03.png" src="http://linker.in/journal//images/130225-03.png" alt="130225-03" width="457" height="248" border="0" /></p>
+<p>PowerCMS独自のタグを補完できます。<br />こちらは漏れがありそうなので随時追加していければと思っています。</p>
+<h2>ということで</h2>
+<p>これらのPackageは<a href="https://github.com/dreamseeker/ST2MovableType">@BUNさんが作成された物</a>をベースに作成しました。<br />許可頂きどうもありがとうございました！</p>
+<p>・ブロックタグを補完する際は改行を入れたい<br />・mtタグの入力フォーマット<br />などを指定出来るようにといった要望を頂いているので、そのあたりも今後、機能追加していければと思っています。</p>
+<p>使ってみて要望やバグなどありましたら、Issueやpull request、<a href="https://www.facebook.com/bit.part.net">Facebookページ</a>や<a href="https://twitter.com/bit_part_net">Twitterアカウント</a>に連絡頂ければと思います。<br />（readmeの英語がおかしいとかも、、、）</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>空き時間にドットインストールを見てると楽しいですね</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/post-208.php" />
+    <id>tag:linker.in,2013:/journal//2.1125</id>
+
+    <published>2013-02-21T10:10:01Z</published>
+    <updated>2013-02-21T10:12:20Z</updated>
+
+    <summary>Webの勉強をしていて、本を読んでも理解出来ないときはドットインストールの様な動画をみてみて、切り替えて勉強してみるのもよさそうですね。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="study" label="study" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="webservice" label="webservice" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />最近は風呂での読書が楽しみになりつつあります。</p>
+<p>ちょっとVPSまわりの設定を少し反復してやってみようと思ったので、「<a href="http://dotinstall.com/">ドットインストール</a>」を見てみました。</p>
+<p><img style="border: 2px solid #333;" title="130221-01.png" src="http://linker.in/journal//images/130221-01.png" alt="130221 01" width="600" height="504" /></p>
+<blockquote>
+<p>3分動画でマスターする初心者向けプログラミング学習サイト - ドットインストール<br /><a href="http://dotinstall.com/">http://dotinstall.com/</a></p>
+</blockquote>
+<p>さくらのVPSを触ったのでコチラのレッスンを見ました。</p>
+<blockquote>
+<p>さくらのVPSの基礎 (全21回) - プログラミングならドットインストール<br /><a href="http://dotinstall.com/lessons/basic_sakura_vps">http://dotinstall.com/lessons/basic_sakura_vps</a></p>
+</blockquote>
+<p>ドットインストールは知ってましたが、ちゃんと見たことはありませんでした。<br />今回いくつか見てみましたが、１つ１つが短いので、初めて触れる人にとっては凄く良さそうですね。</p>
+<p>たとえば、<a href="http://dotinstall.com/lessons/basic_sublimetext/10501">Sublime Text</a>の話とか、<a href="http://dotinstall.com/lessons/basic_twitter_bootstrap_v3">TwitterBootstrap</a>の話とか</p>
+<blockquote>
+<p>#01 Sublime Text 2とはなにか？ | Sublime Text 2の基礎 - プログラミングならドットインストール<br /><a href="http://dotinstall.com/lessons/basic_sublimetext/10501">http://dotinstall.com/lessons/basic_sublimetext/10501</a></p>
+<p>Twitter Bootstrapの基礎 (全18回) - プログラミングならドットインストール<br /><a href="http://dotinstall.com/lessons/basic_twitter_bootstrap_v3">http://dotinstall.com/lessons/basic_twitter_bootstrap_v3</a></p>
+</blockquote>
+<p>自分でダウンロードして触ってみればわかる物もあるでしょうが、こういう動画でどんな物なのかを知るのも悪くなさそうです。<br />空き時間になんとなく気になった物をちょっと見てみると楽しいですね。</p>
+<p>Webの場合、Webにも英語、日本語の情報がありますし、本もありますし、こうやって動画もありますし。<br />色々な勉強手段があるので、挫折したらとりあえず他の方法を試してみると、つまづいたハードルはクリア出来るかもしれませんね。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>検索結果内にエントリーの著者情報を出すように設定だけしておいた</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/post-207.php" />
+    <id>tag:linker.in,2013:/journal//2.1124</id>
+
+    <published>2013-02-11T07:00:00Z</published>
+    <updated>2013-02-11T06:41:36Z</updated>
+
+    <summary>Googleの検索結果にGoogle+から著者情報を引っ張って表示させるようにしてみました。Google+ページも問題なさそうなかんじです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Tips" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="google" label="google" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="html" label="html" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="search" label="search" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />3連休はいかがお過ごしですか？次の連休はGWのようですね。</p>
+<p>さて、検索結果での上位表示について、</p>
+<blockquote>
+<p>Google会長エリック・シュミット、本人確認の取れた作成者のコンテンツをより上位に表示する | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/">http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/</a></p>
+</blockquote>
+<p>みたいな話もあるので、今更ですが設定しておこうとおもったのでテンプレートいじってみました。</p>
+<p>この辺の情報については<a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">ウェブマスターツールの方にもかいてありますね</a>。</p>
+<blockquote>
+<p>検索結果内の著者情報 - ウェブマスター ツール ヘルプ<br /><a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986</a></p>
+</blockquote>
+<p>とりあえずなにも設定していない状況で、<a href="http://www.google.com/webmasters/tools/richsnippets">テストツール</a>で試してみると</p>
+<blockquote>
+<p>Google Structured Data Testing Tool<br /><a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></p>
+</blockquote>
+<p>このような感じですね。</p>
+<p><img style="border: 2px solid #000;" title="130211-01.png" src="http://linker.in/journal//images/130211-01.png" alt="130211 01" width="599" height="430" /></p>
+<p>情報を入れていないので、こんな感じですね。<br />ということで、少し追加してみましょう。</p>
+<h2>HTMLにlinkを追加してGoogle+側でも設定を追加しておく</h2>
+<p>HTML側には</p>
+<pre>&lt;link rel="author" href="https://plus.google.com/112387447202401710035" /&gt;</pre>
+<p>みたいなかんじで、Google+のプロフィールページで確認出来るID（数字のところ）を入れておきましょう。<br />あわせて、Google+のプロフィールの設定に「Contributor to」みたいなところがあると思うので、そこにサイトのURLを追加しておきます。</p>
+<p>これを入れた状態で、再度テストツールにかけてみます。</p>
+<p><img style="border: 2px solid #000;" title="130211-02.png" src="http://linker.in/journal//images/130211-02.png" alt="130211 02" width="600" height="517" /></p>
+<p>このような感じで、画像などの著者情報が表示されましたね。</p>
+<p>linker journalのように複数人で記事を書いてる場合は&lt;$MTEntryAuthorUsername$&gt;で条件分岐して直接いれるとか、&lt;$MTEntryAuthorURL$&gt;にGoogle+のURLを入れるとかすることでもいいかもしれませんね。</p>
+<h2>Google+ページでも問題なさそう</h2>
+<p>@crema,@taku-workとそれぞれGoogle+のプロフィールページがある場合はいいですが、企業のブログの場合、名前まで出さないなどで、ない場合もありそうです。<br />ということで、Google+ページとかでもいけるかどうかためしてみました。</p>
+<p>linker.in のトップには特に指定してないので、何も表示されてないですね。</p>
+<p><img style="border: 2px solid #000;" title="130211-03.png" src="http://linker.in/journal//images/130211-03.png" alt="130211 03" width="600" height="430" /></p>
+<p>ということで、<a href="https://plus.google.com/u/0/115886449885491436878/posts">linker のGoogle+ページ</a>のiDを</p>
+<pre>&lt;link rel="author" href="https://plus.google.com/115886449885491436878" /&gt;</pre>
+<p>このような感じで入れてみて、再度テストツールにて見てみます。</p>
+<p><img style="border: 2px solid #000;" title="130211-04.png" src="http://linker.in/journal//images/130211-04.png" alt="130211 04" width="600" height="536" /></p>
+<p>ということで、表示が確認出来ますね。<br />Google+のページに飛んだところでそこまで活用していないのではありますが、、、、</p>
+<p>テストツールでは反映されてますが、実際の検索結果の方はすぐには反映されなさそうなので、気長に待ってみようと思います。</p>
+<p>ということで、ちょろっと試してみたメモでした。</p>
+<h2>参考リンク</h2>
+<ul>
+<li>検索結果内の著者情報 - ウェブマスター ツール ヘルプ<br /><a href="http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986">http://support.google.com/webmasters/bin/answer.py?hl=ja&amp;answer=1408986</a></li>
+<li>Google Structured Data Testing Tool<br /><a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a></li>
+<li>Google会長エリック・シュミット、本人確認の取れた作成者のコンテンツをより上位に表示する | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/">http://www.suzukikenichi.com/blog/google-eric-schmidt-says-information-tied-to-verified-online-profiles-will-be-ranked-higher/</a></li>
+<li>Googleの著者情報を乗せたページがより検索結果の上位に表示されるようになるらしい | Film Goes With Net ネット館<br /><a href="http://another.hotakasugi-jp.com/2013/02/09/rel-authorseo/">http://another.hotakasugi-jp.com/2013/02/09/rel-authorseo/</a></li>
+<li>rel="author" link要素で著者情報をGoogle検索結果に表示させる方法 〜 WordPressプラグインあり | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/rel-author-link-element-to-display-your-authorship/">http://www.suzukikenichi.com/blog/rel-author-link-element-to-display-your-authorship/</a></li>
+<li>自分が管理しないサイトでもコンテンツ著者情報をGoogle検索に表示させる方法 | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/how-to-display-authorship-by-using-rel-author-parameter/">http://www.suzukikenichi.com/blog/how-to-display-authorship-by-using-rel-author-parameter/</a></li>
+<li>個人ブロガーなら今すぐ設定したい、著者情報(Authorship)が遂に日本のGoogleでも導入開始 | 海外SEO情報ブログ<br /><a href="http://www.suzukikenichi.com/blog/authorship-available-in-google-japan/">http://www.suzukikenichi.com/blog/authorship-available-in-google-japan/</a></li>
+</ul>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>『ウェブ配色 決める! チカラ』の刊行記念イベントでコミュニケーションについて考えてきたいと思います</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/02/post-206.php" />
+    <id>tag:linker.in,2013:/journal//2.1122</id>
+
+    <published>2013-02-07T11:00:00Z</published>
+    <updated>2013-02-11T03:17:53Z</updated>
+
+    <summary>色の提案とかってなかなか難しい、というイメージはあります。その辺をうまくやる方法とかについて聞きつつ、自分の考え方、コミュニケーションにいかすために、イベントに行ってきたいと思います。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="イベント" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="book" label="book" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="event" label="event" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />週2回、継続的にblog書いてるとなんてことないのですが、少しでも休んでしまうとなかなか書けないもんですね。</p>
+<p>さて。<br />来週の2月14日に『<a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267139X/mersys-22/ref=nosim">ウェブ配色 決める! チカラ</a>』の刊行記念イベントがあるというのでそちらに行ってみようかな、と思っています。</p>
+<blockquote>
+<p>坂本邦夫著「ウェブ配色 決める！チカラ」刊行記念イベント　2月に東京・名古屋・大阪で開催　−株式会社ワークスコーポレーション ブログ<br /><a href="http://www.wgn.co.jp/store/blog/item-1285.html">http://www.wgn.co.jp/store/blog/item-1285.html</a></p>
+<p>【東京】坂本邦夫「ウェブ配色 決める！チカラ」刊行記念セミナー<br /><a href="https://www.facebook.com/events/457576377624342/">https://www.facebook.com/events/457576377624342/</a></p>
+</blockquote>
+<div class="mm-middle" style="margin-bottom: 0px;">
+<div class="mm-image" style="float: left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267139X/mersys-22/ref=nosim" target="_blank"><img title="ウェブ配色 決める! チカラ - 問題を解決する色彩とコミュニケーション" src="http://ecx.images-amazon.com/images/I/51ojl0aAc6L._SL160_.jpg" alt="ウェブ配色 決める! チカラ - 問題を解決する色彩とコミュニケーション" width="112" height="160" border="0" /></a></div>
+<div class="mm-content" style="float: left; margin-left: 15px; line-height: 120%;">
+<div class="mm-title" style="line-height: 120%;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/486267139X/mersys-22/ref=nosim" target="_blank">ウェブ配色 決める! チカラ - 問題を解決する色彩とコミュニケーション</a></div>
+<div class="mm-detail" style="margin-top: 10px;">坂本邦夫<br />ワークスコーポレーション ( 2013-02-13 )<br />ISBN: 9784862671394<br />
+<div style="margin: 7px 0px;"><a href="http://mediamarker.net/u/mersy/?asin=486267139X" target="_blank">mersy's bookshelfで詳細を見る</a></div>
+</div>
+</div>
+<div style="clear: left;"></div>
+</div>
+<p>普段の制作案件でこの辺の提案をしたり、決めることが最近少なかったりはしますが、時々、色の話とかを見聞きするとそれ個人の好みだよね、と思うことが多いです。<br />個人的にもその様に主観で言ってるだけのこともあるなー、と反省することもあるのでこのイベントを通じて少し考えてきたいな、と思っています。</p>
+<p>明日は大阪、明後日が名古屋で、開催されるようですね。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>読みたい本がKindleで読めるようになったらTwitterで通知してくれるKindle Alert</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/01/kindlealert.php" />
+    <id>tag:linker.in,2013:/journal//2.1121</id>
+
+    <published>2013-01-28T01:00:00Z</published>
+    <updated>2013-01-28T00:56:53Z</updated>
+
+    <summary>Kindleで本を読むことが多いのですが、すべての本がKindleでは読めるわけではないです。読みたい本がKindleで読めるようになったら通知してくれるKindle Alertの紹介です。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="kindle" label="kindle" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。</p>
+<p>いつもいろいろなことを教えてもらっている、<a href="https://twitter.com/manabusakai">Manabu Sakaiさん</a>がとある会話のやりとりから、Amazonでの書籍がKindle化されたらTwitterでReplyして通知してくれるサービス「<a href="http://www.kindle-alert.com/">Kindle Alert</a>」というのを作成されました。</p>
+<blockquote>
+<p>Kindle Alert<br /><a href="http://www.kindle-alert.com/">http://www.kindle-alert.com/</a></p>
+</blockquote>
+<p>トップ画面はこんな感じです。</p>
+<p><img title="130128-01.png" src="http://linker.in/journal//images/130128-01.png" alt="130128 01" width="469" height="417" border="0" /></p>
+<p>まずはTwitterアカウントでログインします。</p>
+<p>ログインしたら、Kindle化を通知して欲しい書籍を検索します。</p>
+<p><img title="130128-02.png" src="http://linker.in/journal//images/130128-02.png" alt="130128 02" width="455" height="383" border="0" /></p>
+<p>検索して、一覧から受け取りたい書籍を選択します。</p>
+<p><img title="130128-03.png" src="http://linker.in/journal//images/130128-03.png" alt="130128 03" width="503" height="600" border="0" /></p>
+<p>あとはKindle化されて通知が届くのを待つだけです。<br />最近、本はできるだけKindleで買うようにしてるので、個人的には凄くありがたいサービスです。</p>
+<p>今後の機能追加としては<br />・自分が登録した本を確認できるマイページ<br />・Amazonのページから一発で登録できるBookmarklet<br />などが現時点で予定されてるようです。</p>
+<p>自分でこういったサービスをスピード感もって作れるって凄いですね。<br />ベータテスト中も日々アップデートされていたので、今後もより便利になりそうです。</p>
+<p>気になる方は是非使ってみてはいかがでしょうか。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>3月2日（土）にMTCafe Gunma 2013が開催されます！ #MTCafe</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/01/32mtcafe-gunma-2013.php" />
+    <id>tag:linker.in,2013:/journal//2.1120</id>
+
+    <published>2013-01-21T11:00:00Z</published>
+    <updated>2013-01-21T10:24:05Z</updated>
+
+    <summary>MTCafe Gunma 2013が3月2日に群馬県前橋市で開催されるとのことです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mtcafe" label="MTCafe" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />なんか関東では今週も雪が降る予報が出ているみたいですね。<br />先日は交通が乱れたりしたようなので注意が必要ですね。</p>
+<p>さて、今日は簡単にイベントの紹介を。</p>
+<p>オンライン上では何かと話題が多く、いろいろな形で取り上げられている都道府県という印象がある「群馬」で、<a href="http://www.h-fj.com/blog/archives/2013/01/21-162233.php">MTCafe Gunma 2013</a>が開催されます。</p>
+<blockquote>
+<p>MTCafe Gunma 2013を3月2日に開催 - The blog of H.Fujimoto<br /><a href="http://www.h-fj.com/blog/archives/2013/01/21-162233.php">http://www.h-fj.com/blog/archives/2013/01/21-162233.php</a></p>
+</blockquote>
+<p>3月2日（土）に前橋のカントリーホテル前橋 1Fティールーム「けやき」で開催です。</p>
+<p>申し込みや詳細はこちらの<a href="http://kokucheese.com/event/index/71371/">こくちーず</a>にあります。</p>
+<blockquote>
+<p>3月2日 MTCafe Gunma 2013(群馬県)<br /><a href="http://kokucheese.com/event/index/71371/">http://kokucheese.com/event/index/71371/</a></p>
+</blockquote>
+<p>個人的には3月2日、、、、結婚式が入ってしまっています。。。</p>
+<p>藤本さんが群馬から、東京近郊の色々なイベントに顔をだされていて、個人的には群馬はそこまで遠いイメージはないですね。<br />（藤本さんは東京だけでなく今週末の<a href="http://mtddc2013.mt-kyushu.net/">MTDDC Meetup KYUSHU 2013</a>など色々なところのイベントに参加されていますね。）</p>
+<p>今回日程が合わないのが残念ではありますが、群馬近郊、関東近郊の方は参加されてみてはいかがでしょうか。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>Redmineでチケットを一括編集することができたという話</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/01/redmine.php" />
+    <id>tag:linker.in,2013:/journal//2.1118</id>
+
+    <published>2013-01-10T00:00:00Z</published>
+    <updated>2013-01-09T22:56:56Z</updated>
+
+    <summary>Redmineを使っていて、チケットの一括編集をする方法がないものか？と思って調べたら普通にありましたね。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Tips" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="redmine" label="redmine" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。</p>
+<p>Redmineを使っていて、チケットの一括編集ができないのかなー、と思ったら普通にできたという、知っていれば至極当たり前な話ですが、メモとして。</p>
+<p>チケット一覧で編集したいチケットにチェックを入れます。</p>
+<p><img title="130110-01-1.png" src="http://linker.in/journal//images/130110-01-1.png" alt="130110 01 1" width="600" height="179" border="0" /></p>
+<p>なんかチェックを入れようとするときにカーソルが変わった状態でチェックをいれるとそれまでのチェックが外れてしまうようで、チェックを入れるとき意外と気をつかったりしました。</p>
+<p>チェックを入れた状態で、右クリックで編集のメニューが出てきます。</p>
+<p><img title="130110-02.png" src="http://linker.in/journal//images/130110-02.png" alt="130110 02" width="600" height="144" border="0" /></p>
+<p>そうすると、チケットの一括編集の画面になりました。</p>
+<p><img title="130110-03.png" src="http://linker.in/journal//images/130110-03.png" alt="130110 03" width="600" height="212" border="0" /></p>
+<p>ここで開始日、期日とかを変更します。</p>
+<p>チケット一覧に戻ると変更が反映されていますね。</p>
+<p><img title="130113-04.png" src="http://linker.in/journal//images/130113-04.png" alt="130113 04" width="600" height="96" border="0" /></p>
+<p>なんだ、こんな方法があったのかー、、、ということを知りました。</p>
+<p>一括編集できれば楽なのに、と思うことが多々あったのでこれからさらに便利に使えそうです。<br />早いところちゃんと調べるべきでしたね。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>2013年からbit partという取り組みを始めることにしました</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2013/01/bitpart.php" />
+    <id>tag:linker.in,2013:/journal//2.1115</id>
+
+    <published>2013-01-07T02:00:00Z</published>
+    <updated>2013-01-07T01:31:47Z</updated>
+
+    <summary>今年から@tinybeansさんと脇役として、MT界をもりあげていこー、とbit partという取り組みをスタートすることにしました。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Movable Type" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="bitpart" label="bit part" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、あけましておめでとうございます、まーしーです。<br />本日より仕事始め。本年もどうぞよろしくお願いいたします。</p>
+<p>さて、いつもお世話になってる<a href="https://twitter.com/tinybeans">@tinybeansさん</a>とbit partという取り組みを今年から始めることにしました。</p>
+<blockquote>
+<p><a href="https://www.facebook.com/bit.part.net"><img title="130107-01.png" src="http://linker.in/journal//images/130107-01.png" alt="Logo160 60" width="160" height="60" border="0" /></a></p>
+<p><a href="https://www.facebook.com/bit.part.net">https://www.facebook.com/bit.part.net</a></p>
+</blockquote>
+<p>サイトとか用意してないので、まずはFacebookページを仮で作りました。</p>
+<p>Facebookページに書いてあるのですが、コンセプトとしては以下のような感じです。</p>
+<blockquote>
+<p>僕らは@junnamaさんとか@hjfujiさん、@yujiroさんのような主役にはなれないけど、脇役としてMT界を盛り上げていきたいし、脇役としてみなさんの制作を支えていきたい。<br />そのためにプラグイン等の制作・販売・配布・サポートをしていくのがbit partです。</p>
+</blockquote>
+<p>一緒に仕事をさせてもらったり、プラグインでお世話になってるすごい方々がたくさんいるわけですが、そこまでじゃなくても小さいことをこつこつサポートできるような脇役として色々やっていきたいね、ということで始まってます。</p>
+<p>まぁ、僕が@tinybeansさんにプラグイン作ってー、ってお願いすることがあったり、<a href="https://github.com/tinybeans/mt-plugin-MTAppjQuery">MTAppjQuery</a>のあれこれとか聞いたり、機能追加依頼したりなんだりすることもあったりしたので、そういうところがきっかけですね。<br />普段の仕事は二人ともPowerCMSを使うことがほとんどなので、ある程度のことはPowerCMSで解決できちゃうわけですが、PowerCMSを導入できない、導入するほどでないといった場合や、PowerCMSの手が届いていないところをどうにかするとかそういうかんじです。</p>
+<p>あとはプラグイン作って何かしら還元があるような仕組みも考えたいなー、というのもあったりしています。<br />MTAppjQueryが最初は中心になると思います。</p>
+<p>制作者側視点だとそんなかんじですが、Movable Typeを使ったサイトが増えればいいなー、という思いからサポート的なことも取り組めればいいな、とも思っています。<br />制作のサポートもそうですし、MTを使うことに対するサポートもそうですし、作ったプラグインのサポートもですね。</p>
+<p><a href="http://mtddc2013.mt-kyushu.net/">MTDDC Meetup KYUSHU 2013</a>にも少額ですが協賛するなどして、このイベントも盛り上げていきます。</p>
+<blockquote>
+<p>MTDDC Meetup KYUSHU 2013 公式サイト<br /><a href="http://mtddc2013.mt-kyushu.net/">http://mtddc2013.mt-kyushu.net/</a></p>
+</blockquote>
+<p>二人の間でも色々とこういうのがあるといいよね、的な物は日々投げ合ってるので、そういうのを開発しつつ、そういった要望的なものを他の制作者の方々と共有し合って、少しでも便利に使っていければいいなー、と思ってます。</p>
+<p>ということで、今年も楽しくMTサイトを構築していきたいですね！！</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>2012年に書かれたエントリーでアクセス数上位のものをまとめてみた</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/12/2012linkerjournal.php" />
+    <id>tag:linker.in,2012:/journal//2.1113</id>
+
+    <published>2012-12-27T12:00:00Z</published>
+    <updated>2012-12-27T11:10:13Z</updated>
+
+    <summary>2012年にjournalで書かれたエントリーのうちアクセスが多い物をまとめてみました。自分のが2つしか入ってないので来年は・・・・</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="journal" label="journal" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />月曜がお休みだったので気づいたら木曜とか早いですねー<br />もう年末年始の休暇に入られてる方もちらほらといるみたいで。</p>
+<p>さて、linker journalで今年書かれた記事のうちアクセス数が多かったエントリーのTop10を見てみました。</p>
+<h2>１：防水・耐衝撃ケース「LifeProof」を買ってみた。はてさて、どうでしょうか。</h2>
+<p><a href="http://linker.in/journal/2012/05/lifeproof.php">http://linker.in/journal/2012/05/lifeproof.php</a></p>
+<p>@taku_workのエントリーでLifeProofのが一番読まれているようです。<br />検索からの流入が多いですねー。</p>
+<p>個人的にもLifeProofが欲しいなーと最近思っているところです。</p>
+<h2>２：Bluetoothヘッドフォン「Monster Beats by Dr. Dre ワイヤレス ヘッドフォン」買ってみた。ワイヤレス最高。</h2>
+<p><a href="http://linker.in/journal/2012/06/bluetoothmonster-beats-by-dr-dre.php">http://linker.in/journal/2012/06/bluetoothmonster-beats-by-dr-dre.php</a></p>
+<p>2番目に多いのも@taku_workのガジェット系記事でした。<br />ガジェット系は色々気になってしまいます。</p>
+<h2>３：プロジェクト管理ツールあれこれ</h2>
+<p><a href="http://linker.in/journal/2012/05/post-187.php">http://linker.in/journal/2012/05/post-187.php</a></p>
+<p>３番目は、僕がかいたプロジェクト管理ツールの記事でした。<br />結局、日常的にプロジェクト管理（タスク管理）ツールとして使ってるのは BacklogとRedmineというところに落ち着いています。</p>
+<h2>４：Mac OS X LionのTerminalにてnanoを使ってhostsファイルを書き換える話（画像付き）。</h2>
+<p><a href="http://linker.in/journal/2012/01/mac-os-x-lion-terminal.php">http://linker.in/journal/2012/01/mac-os-x-lion-terminal.php</a></p>
+<p>次は@cremaのhostsファイルをnanoを使って切り替える話です。<br />案件ごとの開発環境の用意とか、その辺は個人的にはちゃんと考えておきたいと思っていることでもあったりします。</p>
+<h2>５：InstagramにやっとPCで見られるProfileページが来るみたい！</h2>
+<p><a href="http://linker.in/journal/2012/11/instagram-profile.php">http://linker.in/journal/2012/11/instagram-profile.php</a></p>
+<p>続いても@cremaのエントリー。<br />InstagramをPCで、という話ですね。</p>
+<p>最近Instagramを使わなくなってしまったなー</p>
+<h2>６：【2013年1月16日】「生き延びるフリーランスの技術！」というお題で話します＠ベースキャンプ名古屋</h2>
+<p><a href="http://linker.in/journal/2012/12/basecamp-nagoya-crema.php">http://linker.in/journal/2012/12/basecamp-nagoya-crema.php</a></p>
+<p>@cremaのエントリー。来年年明けにある「生き延びるフリーランスの技術！」の紹介エントリーですね。</p>
+<p>すでに満席のようですね。フリーランスの実情！？は皆さん興味があるようですね。</p>
+<h2>７：gitのクライアントアプリ「SourceTree」使ってみた。日本語とGUIってありがたい。</h2>
+<p><a href="http://linker.in/journal/2012/08/gitsourcetreegui.php">http://linker.in/journal/2012/08/gitsourcetreegui.php</a></p>
+<p>@taku_workのエントリー。Gitを扱う「SourceTree」の話ですね。</p>
+<p>「<a href="http://linker.in/journal/2011/10/gitmac-appsourcetree.php">Gitを使えるMac AppのSourceTreeをさらっと眺めてみた</a>」というのを書いたりしましたが、最近はもっぱらTowerです。。。</p>
+<h2>８：日経電子版の電子スクラップをPrintopiaとEvernoteで作ってみる</h2>
+<p><a href="http://linker.in/journal/2012/06/printopia.php">http://linker.in/journal/2012/06/printopia.php</a></p>
+<p>僕が書いたエントリー。日経電子版をスクラップする話ですね。</p>
+<p>毎朝iPadで読んでたのですが、最近はPCのブラウザで読むようになりました。<br />気になる記事をどんどん開いていって、読んで気になった物はそのままEvernoteへ保存してます。</p>
+<h2>９：KindleのiPhoneアプリ版を試してみた。もうこれだけでいいとおもう。</h2>
+<p><a href="http://linker.in/journal/2012/12/kindleiphone.php">http://linker.in/journal/2012/12/kindleiphone.php</a></p>
+<p>先日かかれた@taku_workのエントリー。</p>
+<p>ほんとそうですね、Kindleのアプリで十分です。とはいえPaperWhiteはやはり気になります。</p>
+<h2>１０：スクロールをうまく使ったサイト、あれこれ。複雑な背景の動きなど。</h2>
+<p><a href="http://linker.in/journal/2012/03/post187.php">http://linker.in/journal/2012/03/post187.php</a></p>
+<p>@taku_workのエントリーでサイトまとめ記事ですね。</p>
+<h2>ということで</h2>
+<p>最近ちょっと更新が滞りがちなので、来年はもっと貪欲にインプットして、どんどんアウトプットしていきたいと思います。<br />Web系のインプットが足りないなー、というのが正直なところなのでそのあたりも改善しないとですね。</p>
+<p>個人的には今年の業務は本日で終了。<br />明日はアイ・ペアーズのオフィスで大掃除という感じです。</p>
+<p>皆様今年も色々とお世話になりました。<br />来年もlinkerをどうぞよろしくお願いいたします。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>アイコンを使うときに気をつけようとおもったこと</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/12/post-205.php" />
+    <id>tag:linker.in,2012:/journal//2.1112</id>
+
+    <published>2012-12-24T12:00:00Z</published>
+    <updated>2012-12-24T11:35:45Z</updated>
+
+    <summary>アイコンは情報を知るためには便利だったりしますが、必ず伝わる物なのかどうか？というのは意識しておかないといけないな、と思ったりしました。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="その他" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです<br />カレンダー的には3連休でしたね。 どのように過ごされましたか？<br />この3連休は大分・別府へ旅行に行き温泉とうまい物を食べるという贅沢をしてきました。<br />温泉での開発とかに憧れますねー</p>
+<p>さて、今日は自分自身への自戒も込めて書いてみます。</p>
+<p>Webサイトを作っていれば色々アイコンを使ったりすると思います。<br />そこまで意味を持っていないようなアイコンであれば気にはならないかもしれませんが、たくさんの情報を効率よく見せるためにアイコンを使ったりすることがあるでしょう。</p>
+<p>そういった際に、そのアイコンの意味がわかるかどうか？というのは重要かと思います。</p>
+<p>日常的に色々なところで使われていて、アイコンが意味するところがある程度推測できる物であればよいでしょう。<br />日常生活でもトイレの男女のアイコンや食事・レストランといったアイコンはある程度限定されていますので、不自由なく使うことができるでしょう。</p>
+<p>たとえば、こんなページに最初にきてこのアイコンを見たときに、電源とwifiのアイコンがあるので、使えるという判断と、グレーなので使えないという判断もできそうな気もします。</p>
+<p><img title="121224-03-1.png" src="http://linker.in/journal//images/121224-03-1.png" alt="121224 03 1" width="600" height="389" border="0" /></p>
+<p>グレーだから使えないというのは制作してるから、なんとなくイメージできそうな気はしますが、、、</p>
+<p>ただ、実際に店舗一覧のページを見ると、このようなかんじでそもそもこのアイコンは、電源、wifiがあることを意味はしているものの、色がついている場合に使えるものなんだ、ということがわかります。</p>
+<p><img title="121224-02.png" src="http://linker.in/journal//images/121224-02.png" alt="121224 02" width="600" height="383" border="0" /></p>
+<p>このアイコンについての説明はこのような感じで、リストページの最初の方に書かれています。</p>
+<p><img title="121224-01.png" src="http://linker.in/journal//images/121224-01.png" alt="121224 01" width="599" height="306" border="0" /></p>
+<p>ちゃんとリストの最初から見ていった場合は説明書きがかいてあるので、アイコンの意味などは理解できるような気がします。<br />途中のページからきた場合、そのアイコンの意味するところはユーザーがどういう意味なのかを予想しないといけない状況になる場合もあると思います。</p>
+<p>このようなアイコンの説明書きがまとめて書いてある場合もあるかもしれませんが、雑誌や書籍などで見開きで見れている場合は使いやすいかもしれませんが、ユーザーの環境によっては必ずしも、説明書きが見える場所にあるとは限らないこともあるでしょう。</p>
+<p>アイコンにマウスオーバーでツールチップが出るだけでもだいぶ事情が変わったりはしそうですね。</p>
+<p>1ユーザーとしてこういうことを感じる機会があったので、自分が作る際に無意識的に使ってしまってはいないか？というのを考えてみる必要があると思った次第です。</p>]]>
+        
+    </content>
+</entry>
+
+<entry>
+    <title>MovableTypeのファイル内容チェック機能とfileコマンドの話</title>
+    <link rel="alternate" type="text/html" href="http://linker.in/journal/2012/12/movabletypefile.php" />
+    <id>tag:linker.in,2012:/journal//2.1111</id>
+
+    <published>2012-12-13T09:00:00Z</published>
+    <updated>2012-12-13T07:32:57Z</updated>
+
+    <summary>MTではアイテムに登録する際に拡張子の偽装がないかを判定しているようです。</summary>
+    <author>
+        <name>柳谷 真志</name>
+        <uri>http://mersy.jp</uri>
+    </author>
+    
+        <category term="Tips" scheme="http://www.sixapart.com/ns/types#category" />
+    
+    <category term="file" label="file" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="movabletype" label="Movable Type" scheme="http://www.sixapart.com/ns/types#tag" />
+    <category term="mt" label="mt" scheme="http://www.sixapart.com/ns/types#tag" />
+    
+    <content type="html" xml:lang="ja" xml:base="http://linker.in/journal/">
+        <![CDATA[<p>みなさん、こんにちは、まーしーです。<br />
+iOSのGoogleMapアプリがでましたね。早速入れてみたのでしばらくはこれを使ってみようと思います。</p>
+<h2>MTはファイルの内容と拡張子を調べてアップしている</h2>
+<p>MTの管理画面から、支給された.jpgの画像をアップしているはずなのに.pngでアップされていてなんでだろうなぁ？というのがありました。</p>
+<p>聞いてみたら、MTが画像をアップする際に拡張子が偽装されてアップされていないかどうかをチェックしてくれているようです。<br />その際に正しい拡張子に変更してアップされるようです。</p>
+<p>.pngで書き出したのに保存するときにファイル名を間違って.jpgとかにしちゃったんでしょうね。</p>
+<h2>fileコマンドで画像の種類を確認する</h2>
+<p>.jpgの画像が本当に.jpgなのかはfileコマンドで確認できました。</p>
+<p>$ file R0016251.JPG</p>
+<p>とうつと</p>
+<p>$ R0016251.JPG: JPEG image data, EXIF standard</p>
+<p>こんな感じで返ってきますね。.pngに拡張子を変えて</p>
+<p>$ file R0016251.png</p>
+<p>とやってみると</p>
+<p>$ R0016251.png: JPEG image data, EXIF standard</p>
+<p>こんなかんじでjpegです、といわれてますね。</p>
+<p>ということで思わぬ形でMTの機能とfileコマンドの勉強になりました・・・・</p>]]>
+        
+    </content>
+</entry>
+
+</feed>
+

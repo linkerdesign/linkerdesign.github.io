@@ -1,0 +1,122 @@
+<?php echo '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>アルファサードさんのPowerCMS勉強会は大変有意義でした！ #powercms #movabletype｜linker journal</title>
+<link rel="stylesheet" href="http://linker.in/journal/i/css/style.css" type="text/css" />
+<meta name="viewport" content="width=480, user-scalable=no, maximum-scale=0.6667" />
+<meta name="robots" content="noindex" />
+</head>
+
+<body>
+<p id="logo"><a href="http://linker.in/journal/i/">linker journal</a></p>
+
+<div id="content">
+
+<p><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<h1>アルファサードさんのPowerCMS勉強会は大変有意義でした！ #powercms #movabletype</h1>
+
+<p id="topicpath">linker journal&nbsp;&raquo;&nbsp;Movable Type&nbsp;&raquo;&nbsp;アルファサードさんのPowerCMS勉強会は大変有意義でした！ #powercms #movabletype</p>
+
+<p>みなさん、こんにちは、まーしーです。<br />
+次買うMacは11のAirでほぼほぼ決まってるのですが13の方があれこれとかいわれるとすぐ迷ってしまいます。<br /></p>
+<p>さて、いつもおせわになっている<a href="http://alfasado.net/">アルファサードさん</a>が<a href="http://powercms.jp/">PowerCMS</a>の勉強会を開催されたので、昨日参加してきました。</p>
+<blockquote>
+  <p>[セミナー情報] 7月4日(水)開催 PowerCMS勉強会<br />
+  <a href="http://alfasado.net/contents/news/201206201300.html">http://alfasado.net/contents/news/201206201300.html</a></p>
+</blockquote>
+<p>普段、PowerCMSのセミナーに出てる人・出てない人、関係無く参加されていて、それに合わせて<a href="http://twitter.com/#!/junnama">野田さん</a>がセミナーの内容も踏まえつつ、いろんなTipsや考え方を教えてくれました。</p>
+<p>メモしたことの中からいくつか個人的に気になったことを書いてみます。<br />
+（書きすぎると次回のために良くないかも？と思ったのでザックリと・・・）</p>
+<h2>Githubで配布されてるプラグインを見直す</h2>
+<p>GithubのAlfasadoさんのアカウントにいくつかプラグインがあがっています。</p>
+<blockquote>
+  <p>alfasado (Alfasado Inc.)<br />
+  <a href="https://github.com/alfasado">https://github.com/alfasado</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>色々なプラグインが配布されていますよね。<br />
+PowerCMSに入っている機能と似たような物、ベースになったであろうものもあったりするのでMTに組み合わせても使えますね。</p>
+<p>素のMTでPowerCMSじゃないから出来ない、と思っていても機能によってはプラグインで実装出来るかもしれません。</p>
+<p>PowerCMSパートナーに登録するとこれらのプラグインのサポートもしてもらえたりしますしね。</p>
+<blockquote>
+  <p>Power CMS パートナー制度について | Power CMS for MT ブログ<br />
+  <a href="http://powercms.alfasado.net/blog/2011/07/power_cms_partner.html">http://powercms.alfasado.net/blog/2011/07/power_cms_partner.html</a></p>
+</blockquote>
+<h2>マルチブログの代わりとして</h2>
+<p>ウェブサイトやブログの更新に合わせて別のインデックスを再構築させる際に、マルチブログを使うと思います。<br />
+これが若干重かったりするので、MTRebuildindexbyIDというタグで再構築するテンプレートを直接指定してしまおうというお話。</p>
+<blockquote>
+  <p>alfasado/mt-plugin-rebuild-trigger ? GitHub<br />
+  <a href="https://github.com/alfasado/mt-plugin-rebuild-trigger">https://github.com/alfasado/mt-plugin-rebuild-trigger</a></p>
+</blockquote>
+<p>これだと直接指定できて再構築できるので早そうです。<br />
+タイミングも調整できますしね。<br />
+普段何気なくマルチブログを使っていたので、次回これを使ってみようと思います。&nbsp;&nbsp;</p>
+<h2>記事かページかカスタムオブジェクトか？</h2>
+<p>MTのベースはブログなので、ブログ記事／カテゴリやウェブページ／フォルダをうまいこと使ってサイトを構築します。</p>
+<p>そこにPowerCMSはカスタムオブジェクトが加わっているので、何を使うのがいいのか？というのを判断しないといけなくなります。</p>
+<blockquote>
+  <p>カスタムオブジェクト | 機能一覧 | PowerCMS ver.3 - Movable Typeベースの多機能CMS<br />
+  <a href="http://www.powercms.jp/features/object.html">http://www.powercms.jp/features/object.html</a>&nbsp;&nbsp;</p>
+</blockquote>
+<p>そんな中での設計の勘所としてそれぞれの特徴を比較してみます。</p>
+<h3>ブログ記事</h3>
+<ul>
+  <li><b>時系列にならび、唯一日付系のアーカイブを出せる</b></li>
+
+  <li>コメント・トラックバックが使える</li>
+
+  <li>ワークフローがまわせる</li>
+</ul>
+<h3>ウェブページ</h3>
+<ul>
+  <li>ワークフローがまわせる</li>
+
+  <li>コメント・トラックバック</li>
+</ul>
+<h3>カスタムオブジェクト</h3>
+<ul>
+  <li>ワークフローが現バージョンでは回せない</li>
+</ul>
+<p>というあたりが判断基準になりそう、ということです。</p>ブログ記事が時系列というのは無意識で分かっていましたが、設計でこれらの判断基準として時系列を唯一使えるのがブログ記事のみというのがすぐ出てこなかったのでなるほどな〜、と思いました。
+
+<h2>ということで</h2>
+<p>話の内容はもっとたくさんありましたが、個人的に気になったところからいくつかピックアップしてみました。<br />
+PowerCMSを覚えると仕事が増えそう（！？）ですし 、なにより使っていて楽しいです。</p>
+<p>7/20に再度東京で、また7/27に大阪で開催される様です。</p>
+<blockquote>
+  <p>[セミナー情報] 7月20日(金)開催 PowerCMS勉強会<br />
+  <a href="http://alfasado.net/contents/news/201206261036.html">http://alfasado.net/contents/news/201206261036.html</a></p>
+
+  <p>[セミナー情報][大阪開催] 7月27日(金)開催 PowerCMS勉強会<br />
+  <a href="http://alfasado.net/contents/news/201207021030.html">http://alfasado.net/contents/news/201207021030.html</a></p>
+</blockquote>
+<p>どんなものかを知るレベルからでもまったく問題なさそうですし、最後には質疑応答とかもあって大変勉強になりました。<br />
+興味のある方は是非参加してみてはいかがでしょうか？</p>
+
+
+
+
+<p class="previousEntry"><a href="http://linker.in/journal/i/design/post_193.php">&laquo;&nbsp;前の記事へ</a></p>
+<p class="nextEntry"><a href="http://linker.in/journal/i/event/adobe_photoshop_2012.php">次の記事へ&nbsp;&raquo;</a></p>
+
+<p class="totop"><a href="http://linker.in/journal/i/"><img src="http://linker.in/journal/i/img/totop.png" width="136" height="33" alt="トップページへ" /></a></p>
+
+<!-- end div#content --></div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6930174-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
+
